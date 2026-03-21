@@ -1,32 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tornado Simulator</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌪️</text></svg>" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { overflow: hidden; background: #0a0a18; }
-    #root { height: 100vh; }
-    .leaflet-container { background: #0a0a18 !important; cursor: crosshair !important; }
-    .leaflet-control-zoom a { background: #1a1a2e !important; color: #aaa !important; border-color: #333 !important; }
-    .leaflet-control-zoom a:hover { background: #2a2a5a !important; color: #fff !important; }
-    .tornado-popup .leaflet-popup-content-wrapper { background: #1a1a2e; color: #e0e0e0; border: 1px solid #333; border-radius: 8px; }
-    .tornado-popup .leaflet-popup-tip { background: #1a1a2e; }
-    .leaflet-popup-close-button { color: #888 !important; }
-    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-  </style>
-</head>
-<body>
-  <div id="root"></div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.26.2/babel.min.js"></script>
-  <script type="text/babel">
-const { useState, useCallback, useMemo, useEffect, useRef } = React;
+import { useState, useCallback, useMemo, useEffect, useRef } from "react";
 
 // ─── CONSTANTS & MODELS ─────────────────────────────────────────────────────
 
@@ -1283,7 +1255,7 @@ const PRESETS = {
 
 // ─── MAIN APP ───────────────────────────────────────────────────────────────
 
-function TornadoSimulator() {
+export default function TornadoSimulator() {
   const [params, setParams] = useState(PRESETS.suburban_ef4);
   const [activeTab, setActiveTab] = useState("overview");
   const [enabledCountries, setEnabledCountries] = useState("both");
@@ -2580,13 +2552,3 @@ function TornadoSimulator() {
     </div>
   );
 }
-
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <TornadoSimulator />
-  </React.StrictMode>
-);
-  </script>
-</body>
-</html>
