@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tornado Simulator — Multi-Variable Damage Modeler</title>
+  <meta name="description" content="Physics-based tornado damage simulator with real US Census Bureau (3,143 counties) and Statistics Canada (288 census divisions) population data, interactive satellite/map views, and economic loss estimation." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌪️</text></svg>" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
@@ -169,191 +170,6 @@ const findCanadianCensusDivision = (lat, lng) => {
 };
 
 // ─── SIMULATION ENGINE ──────────────────────────────────────────────────────
-
-// Look up population data for a point: returns { popDensity, housingDensity } 
-// For Canada, uses embedded census data. For US, checks the county cache.
-// The county cache is populated asynchronously by fetchCountiesAlongPath.
-function lookupLocalDensity(lat, lng, usCountyCache) {
-  // Check if in Canada (rough boundary)
-  const inCanada = (lat >= 49 && lng >= -141 && lng <= -52) || 
-    (lat >= 41 && lat < 49 && lng >= -95 && lng <= -52 && lat > 42); // southern ON/QC/Maritimes
-  
-  if (inCanada) {
-    const { cd, dist } = findCanadianCensusDivision(lat, lng);
-    if (cd && dist < 5) {
-      return { 
-        popDensity: Math.round(cd.d), 
-        housingDensity: Math.round(cd.h),
-        name: cd.n,
-        country: "canada",
-      };
-    }
-    return { popDensity: 0, housingDensity: 0, name: "Uninhabited", country: "canada" };
-  }
-  
-  // For US points, check the county cache
-  if (usCountyCache) {
-    // Find the nearest cached county (within ~0.5 degrees)
-    let nearest = null;
-    let minDist = Infinity;
-    for (const entry of usCountyCache) {
-      const d = Math.abs(entry.lat - lat) + Math.abs(entry.lng - lng);
-      if (d < minDist) { minDist = d; nearest = entry; }
-    }
-    if (nearest && minDist < 0.7) {
-      return {
-        popDensity: nearest.popDensity,
-        housingDensity: nearest.housingDensity,
-        name: nearest.name,
-        country: "us",
-      };
-    }
-  }
-  
-  // No data available — return null to use params-based defaults
-  return null;
-}
-
-// Run simulation for a single segment of the path 
-function runSegmentSimulation(params, segmentLengthMi, localDensity) {
-  const p = { ...params, pathLength: segmentLengthMi };
-  
-  // Override with local density if available
-  if (localDensity) {
-    p.popDensity = localDensity.popDensity;
-    p.housingDensity = localDensity.housingDensity;
-    // Scale infrastructure proportionally to local density
-    const isRemote = localDensity.popDensity < 5;
-    p.powerLinesPerMile = isRemote ? 0 : Math.min(Math.round(localDensity.popDensity / 80), 30);
-    p.cellTowers = isRemote ? 0 : Math.min(Math.round(localDensity.popDensity / 40), 80);
-    p.bridges = isRemote ? 0 : Math.min(Math.round(localDensity.popDensity / 150), 20);
-    p.waterTowers = isRemote ? 0 : Math.min(Math.round(localDensity.popDensity / 400), 10);
-    p.gasLinesPerMile = isRemote ? 0 : Math.min(Math.round(localDensity.popDensity / 150), 20);
-    p.vehiclesPerMile = isRemote ? 0 : Math.min(Math.round(localDensity.popDensity / 8), 300);
-    p.livestockDensity = localDensity.popDensity < 100 ? Math.min(Math.round((100 - localDensity.popDensity) / 3), 50) : 0;
-  }
-  
-  return runSimulation(p);
-}
-
-// Multi-segment simulation: splits path into segments, looks up local density for each
-// Always generates segments for any path > 2 miles, regardless of mode
-function runMultiSegmentSimulation(params, pathPoints, pathMode, usCountyCache) {
-  if (!pathPoints || pathPoints.length < 2) {
-    return { result: runSimulation(params), segments: null };
-  }
-
-  // For straight mode with only 2 points, interpolate intermediate points
-  let samplingPoints = pathPoints;
-  if (pathPoints.length === 2) {
-    // Interpolate to create ~1 sample per 3 miles (or at least 3 samples)
-    const totalDist = pathLengthFromPoints(pathPoints);
-    const numSamples = Math.max(3, Math.min(15, Math.ceil(totalDist / 3)));
-    samplingPoints = [];
-    for (let i = 0; i <= numSamples; i++) {
-      const t = i / numSamples;
-      samplingPoints.push([
-        pathPoints[0][0] + t * (pathPoints[1][0] - pathPoints[0][0]),
-        pathPoints[0][1] + t * (pathPoints[1][1] - pathPoints[0][1]),
-      ]);
-    }
-  }
-
-  // Calculate segments between consecutive points
-  const segments = [];
-  let totalLength = 0;
-  for (let i = 1; i < samplingPoints.length; i++) {
-    const dLat = samplingPoints[i][0] - samplingPoints[i - 1][0];
-    const dLng = samplingPoints[i][1] - samplingPoints[i - 1][1];
-    const cosLat = Math.cos(samplingPoints[i][0] * Math.PI / 180);
-    const segLen = Math.sqrt(dLat * dLat + (dLng * cosLat) * (dLng * cosLat)) * 69;
-    segments.push({ 
-      start: samplingPoints[i - 1], 
-      end: samplingPoints[i], 
-      length: segLen,
-      midLat: (samplingPoints[i - 1][0] + samplingPoints[i][0]) / 2,
-      midLng: (samplingPoints[i - 1][1] + samplingPoints[i][1]) / 2,
-    });
-    totalLength += segLen;
-  }
-
-  // Limit to 15 sample segments for performance
-  const MAX_SEGMENTS = 15;
-  let sampleSegments = segments;
-  if (segments.length > MAX_SEGMENTS) {
-    const groupSize = Math.ceil(segments.length / MAX_SEGMENTS);
-    sampleSegments = [];
-    for (let i = 0; i < segments.length; i += groupSize) {
-      const group = segments.slice(i, i + groupSize);
-      const totalLen = group.reduce((s, g) => s + g.length, 0);
-      const midIdx = Math.floor(group.length / 2);
-      sampleSegments.push({
-        ...group[midIdx],
-        length: totalLen,
-      });
-    }
-  }
-
-  // Run simulation for each segment with local density
-  const segmentResults = [];
-  const countyNames = [];
-  const seenNames = new Set();
-  let totalFatalities = 0, totalInjuries = 0, totalEconomic = 0;
-  let totalDestroyed = 0, totalDamaged = 0, totalPopInPath = 0;
-  let totalStructures = 0;
-
-  for (const seg of sampleSegments) {
-    const localDensity = lookupLocalDensity(seg.midLat, seg.midLng, usCountyCache);
-    const segResult = runSegmentSimulation(params, seg.length, localDensity);
-    
-    segmentResults.push({
-      ...seg,
-      result: segResult,
-      localDensity,
-    });
-
-    const regionName = localDensity?.name || "Unknown";
-    if (!seenNames.has(regionName)) {
-      seenNames.add(regionName);
-      countyNames.push(regionName);
-    }
-    totalFatalities += segResult.fatalities;
-    totalInjuries += segResult.injuries;
-    totalEconomic += segResult.totalEconomicImpact;
-    totalDestroyed += segResult.totalDestroyed;
-    totalDamaged += segResult.totalDamaged;
-    totalPopInPath += segResult.populationInPath;
-    totalStructures += segResult.totalStructures;
-  }
-
-  // Use the base result for EF rating and non-summable properties
-  const baseResult = runSimulation(params);
-
-  const multiResult = {
-    ...baseResult,
-    fatalities: totalFatalities,
-    injuries: totalInjuries,
-    totalEconomicImpact: totalEconomic,
-    totalDestroyed,
-    totalDamaged,
-    totalStructures,
-    populationInPath: totalPopInPath,
-    residentialLoss: segmentResults.reduce((s, sr) => s + sr.result.residentialLoss, 0),
-    infraLoss: segmentResults.reduce((s, sr) => s + sr.result.infraLoss, 0),
-    vehicleLoss: segmentResults.reduce((s, sr) => s + sr.result.vehicleLoss, 0),
-    cropLoss: segmentResults.reduce((s, sr) => s + sr.result.cropLoss, 0),
-    livestockLoss: segmentResults.reduce((s, sr) => s + sr.result.livestockLoss, 0),
-    emergencyResponseCost: segmentResults.reduce((s, sr) => s + sr.result.emergencyResponseCost, 0),
-    businessInterruption: segmentResults.reduce((s, sr) => s + sr.result.businessInterruption, 0),
-    floodDamage: segmentResults.reduce((s, sr) => s + sr.result.floodDamage, 0),
-    _multiSegment: true,
-    _segmentCount: sampleSegments.length,
-    _countiesCrossed: countyNames,
-    _segments: segmentResults,
-  };
-
-  return { result: multiResult, segments: segmentResults };
-}
 
 function runSimulation(params) {
   const {
@@ -590,111 +406,9 @@ function Section({ title, icon, children, defaultOpen = true }) {
   );
 }
 
-// ─── PATH GENERATION HELPERS ──────────────────────────────────────────────
-
-// Generate path points for any mode. Returns array of [lat, lng] (10+ points for smooth rendering)
-function generatePathPoints(tornadoLat, tornadoLng, params, pathMode, customWaypoints) {
-  const numSteps = 30;
-
-  if (pathMode === "draw" && customWaypoints.length >= 2) {
-    // Draw mode: use the waypoints directly (already a polyline)
-    return customWaypoints;
-  }
-
-  if (pathMode === "curved") {
-    // Curved mode: Bezier arc from start to end, with curvature controlling the control point offset
-    const pathMiles = params.pathLength;
-    const pathDeg = pathMiles / 69;
-    const dirRad = params.direction * Math.PI / 180;
-    const cosLat = Math.cos(tornadoLat * Math.PI / 180);
-    const endLat = tornadoLat + pathDeg * Math.cos(dirRad);
-    const endLng = tornadoLng + pathDeg * Math.sin(dirRad) / cosLat;
-
-    // Control point is offset perpendicular to the path by curvature amount
-    const midLat = (tornadoLat + endLat) / 2;
-    const midLng = (tornadoLng + endLng) / 2;
-    const curvatureRad = (params.curvature || 0) * Math.PI / 180;
-    const perpAngle = dirRad + Math.PI / 2;
-    // Offset proportional to path length and curvature
-    const offsetDeg = pathDeg * Math.sin(curvatureRad) * 0.5;
-    const ctrlLat = midLat + offsetDeg * Math.cos(perpAngle);
-    const ctrlLng = midLng + offsetDeg * Math.sin(perpAngle) / cosLat;
-
-    // Quadratic bezier: B(t) = (1-t)²P0 + 2(1-t)tP1 + t²P2
-    const points = [];
-    for (let i = 0; i <= numSteps; i++) {
-      const t = i / numSteps;
-      const mt = 1 - t;
-      const lat = mt * mt * tornadoLat + 2 * mt * t * ctrlLat + t * t * endLat;
-      const lng = mt * mt * tornadoLng + 2 * mt * t * ctrlLng + t * t * endLng;
-      points.push([lat, lng]);
-    }
-    return points;
-  }
-
-  // Straight mode (default): just start and end
-  const pathMiles = params.pathLength;
-  const pathDeg = pathMiles / 69;
-  const dirRad = params.direction * Math.PI / 180;
-  const cosLat = Math.cos(tornadoLat * Math.PI / 180);
-  const endLat = tornadoLat + pathDeg * Math.cos(dirRad);
-  const endLng = tornadoLng + pathDeg * Math.sin(dirRad) / cosLat;
-  return [[tornadoLat, tornadoLng], [endLat, endLng]];
-}
-
-// Calculate total path length in miles from an array of [lat, lng] points
-function pathLengthFromPoints(points) {
-  let total = 0;
-  for (let i = 1; i < points.length; i++) {
-    const dLat = points[i][0] - points[i - 1][0];
-    const dLng = points[i][1] - points[i - 1][1];
-    const cosLat = Math.cos(points[i][0] * Math.PI / 180);
-    total += Math.sqrt(dLat * dLat + (dLng * cosLat) * (dLng * cosLat)) * 69;
-  }
-  return total;
-}
-
-// Generate swath polygon from path points and width
-function generateSwathPolygon(pathPoints, pathWidthYards) {
-  if (pathPoints.length < 2) return [];
-  const halfWidthDeg = (pathWidthYards / 1760) / 69 / 2;
-  const leftSide = [];
-  const rightSide = [];
-
-  for (let i = 0; i < pathPoints.length; i++) {
-    // Calculate direction at this point
-    let dirLat, dirLng;
-    if (i === 0) {
-      dirLat = pathPoints[1][0] - pathPoints[0][0];
-      dirLng = pathPoints[1][1] - pathPoints[0][1];
-    } else if (i === pathPoints.length - 1) {
-      dirLat = pathPoints[i][0] - pathPoints[i - 1][0];
-      dirLng = pathPoints[i][1] - pathPoints[i - 1][1];
-    } else {
-      dirLat = pathPoints[i + 1][0] - pathPoints[i - 1][0];
-      dirLng = pathPoints[i + 1][1] - pathPoints[i - 1][1];
-    }
-    const angle = Math.atan2(dirLng, dirLat);
-    const perpAngle = angle + Math.PI / 2;
-    const cosLat = Math.cos(pathPoints[i][0] * Math.PI / 180);
-
-    // Width tapers at start and end for realism
-    const frac = pathPoints.length > 1 ? i / (pathPoints.length - 1) : 0.5;
-    const taper = 1 - 0.5 * Math.pow(2 * frac - 1, 4); // smooth taper at edges
-    const w = halfWidthDeg * taper;
-
-    const dLat = w * Math.cos(perpAngle);
-    const dLng = w * Math.sin(perpAngle) / cosLat;
-    leftSide.push([pathPoints[i][0] + dLat, pathPoints[i][1] + dLng]);
-    rightSide.push([pathPoints[i][0] - dLat, pathPoints[i][1] - dLng]);
-  }
-  // Close the polygon: left side forward, right side backward
-  return [...leftSide, ...rightSide.reverse()];
-}
-
 // ─── INTERACTIVE MAP COMPONENT (Leaflet.js) ─────────────────────────────────
 
-function InteractiveMap({ enabledCountries, tornadoLat, tornadoLng, onPlaceTornado, params, result, mapStyle, pathMode, customWaypoints, onAddWaypoint, isDrawing }) {
+function InteractiveMap({ enabledCountries, tornadoLat, tornadoLng, onPlaceTornado, params, result, mapStyle }) {
   const containerRef = useRef(null);
   const mapRef = useRef(null);
   const layersRef = useRef({});
@@ -762,25 +476,7 @@ function InteractiveMap({ enabledCountries, tornadoLat, tornadoLng, onPlaceTorna
     // Click handler
     map.on("click", (e) => {
       const { lat, lng } = e.latlng;
-      const rlat = Math.round(lat * 100) / 100;
-      const rlng = Math.round(lng * 100) / 100;
-      // In draw mode, clicks add waypoints; in other modes, clicks place tornado
-      if (window.__tornadoDrawMode) {
-        if (typeof window.__tornadoAddWaypoint === "function") {
-          window.__tornadoAddWaypoint(rlat, rlng);
-        }
-      } else {
-        onPlaceTornado(Math.round(lat * 10) / 10, Math.round(lng * 10) / 10);
-      }
-    });
-
-    // Double-click finishes drawing
-    map.on("dblclick", (e) => {
-      if (window.__tornadoDrawMode && typeof window.__tornadoFinishDraw === "function") {
-        window.__tornadoFinishDraw();
-        e.originalEvent.preventDefault();
-        e.originalEvent.stopPropagation();
-      }
+      onPlaceTornado(Math.round(lat * 10) / 10, Math.round(lng * 10) / 10);
     });
 
     mapRef.current = map;
@@ -802,26 +498,6 @@ function InteractiveMap({ enabledCountries, tornadoLat, tornadoLng, onPlaceTorna
     if (target) target.addTo(map);
   }, [mapStyle]);
 
-  // Sync draw mode state to window globals for Leaflet click handler
-  useEffect(() => {
-    window.__tornadoDrawMode = isDrawing;
-    window.__tornadoAddWaypoint = (lat, lng) => { if (onAddWaypoint) onAddWaypoint(lat, lng); };
-    const map = mapRef.current;
-    if (map) {
-      const container = map.getContainer();
-      container.style.cursor = isDrawing ? "crosshair" : "crosshair";
-      if (isDrawing) {
-        map.doubleClickZoom.disable();
-      } else {
-        map.doubleClickZoom.enable();
-      }
-    }
-    return () => {
-      window.__tornadoDrawMode = false;
-      window.__tornadoAddWaypoint = null;
-    };
-  }, [isDrawing, onAddWaypoint]);
-
   // Fit bounds when country changes
   useEffect(() => {
     const map = mapRef.current;
@@ -838,107 +514,92 @@ function InteractiveMap({ enabledCountries, tornadoLat, tornadoLng, onPlaceTorna
     markersRef.current.forEach((m) => map.removeLayer(m));
     markersRef.current = [];
 
-    // Draw waypoint markers during draw mode (even before path is complete)
-    if (isDrawing && customWaypoints.length > 0) {
-      const wpLine = L.polyline(customWaypoints, {
-        color: "#4fc3f7", weight: 2, opacity: 0.8, dashArray: "4 4"
-      }).addTo(map);
-      markersRef.current.push(wpLine);
-      customWaypoints.forEach((wp, i) => {
-        const wpIcon = L.divIcon({
-          html: `<div style="width:10px;height:10px;background:${i === 0 ? '#4fc3f7' : '#81c784'};border-radius:50%;border:2px solid #fff;font-size:0"></div>`,
-          className: "", iconSize: [14, 14], iconAnchor: [7, 7],
-        });
-        const wpMarker = L.marker(wp, { icon: wpIcon }).addTo(map);
-        markersRef.current.push(wpMarker);
-      });
-    }
-
     if (!tornadoLat || !tornadoLng) return;
-    // In draw mode, don't render the simulation path until drawing is finished
-    if (pathMode === "draw" && isDrawing) return;
-
-    // Generate path points based on mode
-    const pathPoints = generatePathPoints(tornadoLat, tornadoLng, params, pathMode, customWaypoints);
-    if (pathPoints.length < 2) return;
-
-    const startPt = pathPoints[0];
-    const endPt = pathPoints[pathPoints.length - 1];
 
     // Tornado origin marker
     const icon = L.divIcon({
       html: '<div style="font-size:28px;filter:drop-shadow(0 0 8px rgba(239,83,80,0.8))">🌪️</div>',
-      className: "", iconSize: [32, 32], iconAnchor: [16, 16],
+      className: "",
+      iconSize: [32, 32],
+      iconAnchor: [16, 16],
     });
-    const marker = L.marker(startPt, { icon }).addTo(map);
+    const marker = L.marker([tornadoLat, tornadoLng], { icon }).addTo(map);
     markersRef.current.push(marker);
-
-    // Actual path length for draw mode display
-    const actualPathMi = pathMode === "draw" ? pathLengthFromPoints(pathPoints) : params.pathLength;
 
     // Info popup
     marker.bindPopup(
       `<div style="font-family:monospace;font-size:12px;line-height:1.6">
         <strong style="color:${result.ef.color}">${result.ef.rating}</strong> — ${result.peakWind} mph peak<br>
-        Path: ${actualPathMi.toFixed(1)} mi × ${params.pathWidth} yd ${pathMode !== "straight" ? "(" + pathMode + ")" : ""}<br>
+        Path: ${params.pathLength} mi × ${params.pathWidth} yd<br>
         Fatalities: <span style="color:#ef5350">${result.fatalities}</span> | Injuries: ${result.injuries}<br>
         Damage: <strong>${result.totalEconomicImpact >= 1e9 ? "$" + (result.totalEconomicImpact / 1e9).toFixed(2) + "B" : "$" + (result.totalEconomicImpact / 1e6).toFixed(1) + "M"}</strong>
       </div>`,
       { className: "tornado-popup" }
     );
 
-    // Damage swath polygon (works for all modes)
-    const swathCoords = generateSwathPolygon(pathPoints, params.pathWidth);
-    if (swathCoords.length > 2) {
-      const swath = L.polygon(swathCoords, {
-        color: result.ef.color, fillColor: result.ef.color,
-        fillOpacity: 0.25, weight: 1, opacity: 0.6,
-      }).addTo(map);
-      markersRef.current.push(swath);
-    }
+    // Tornado path line
+    const pathMiles = params.pathLength;
+    const pathDegreesLat = pathMiles / 69;
+    const dirRad = params.direction * Math.PI / 180;
+    const endLat = tornadoLat + pathDegreesLat * Math.cos(dirRad);
+    const endLng = tornadoLng + pathDegreesLat * Math.sin(dirRad) / Math.cos(tornadoLat * Math.PI / 180);
 
-    // Center path line (polyline for all modes)
-    const pathLine = L.polyline(pathPoints, {
-      color: "#fff", weight: 2, opacity: 0.7, dashArray: "6 4"
+    // Damage swath (wider polygon)
+    const pathWidthDeg = (params.pathWidth / 1760) / 69;
+    const perpAngle = dirRad + Math.PI / 2;
+    const dLatPerp = pathWidthDeg * Math.cos(perpAngle) / 2;
+    const dLngPerp = pathWidthDeg * Math.sin(perpAngle) / Math.cos(tornadoLat * Math.PI / 180) / 2;
+
+    const swath = L.polygon([
+      [tornadoLat + dLatPerp, tornadoLng + dLngPerp],
+      [tornadoLat - dLatPerp, tornadoLng - dLngPerp],
+      [endLat - dLatPerp, endLng - dLngPerp],
+      [endLat + dLatPerp, endLng + dLngPerp],
+    ], {
+      color: result.ef.color,
+      fillColor: result.ef.color,
+      fillOpacity: 0.25,
+      weight: 1,
+      opacity: 0.6,
     }).addTo(map);
+    markersRef.current.push(swath);
+
+    // Center path line
+    const pathLine = L.polyline([
+      [tornadoLat, tornadoLng],
+      [endLat, endLng]
+    ], { color: "#fff", weight: 2, opacity: 0.7, dashArray: "6 4" }).addTo(map);
     markersRef.current.push(pathLine);
 
     // End point marker
     const endIcon = L.divIcon({
       html: `<div style="width:8px;height:8px;background:${result.ef.color};border-radius:50%;border:2px solid #fff;box-shadow:0 0 6px ${result.ef.color}"></div>`,
-      className: "", iconSize: [12, 12], iconAnchor: [6, 6],
+      className: "",
+      iconSize: [12, 12],
+      iconAnchor: [6, 6],
     });
-    const endMarker = L.marker(endPt, { icon: endIcon }).addTo(map);
+    const endMarker = L.marker([endLat, endLng], { icon: endIcon }).addTo(map);
     markersRef.current.push(endMarker);
-
-    // Waypoint markers for draw mode
-    if (pathMode === "draw" && customWaypoints.length > 2) {
-      for (let i = 1; i < customWaypoints.length - 1; i++) {
-        const wpIcon = L.divIcon({
-          html: `<div style="width:6px;height:6px;background:#81c784;border-radius:50%;border:1px solid #fff;font-size:0"></div>`,
-          className: "", iconSize: [8, 8], iconAnchor: [4, 4],
-        });
-        const wpMk = L.marker(customWaypoints[i], { icon: wpIcon }).addTo(map);
-        markersRef.current.push(wpMk);
-      }
-    }
 
     // Damage radius circles at intervals along path
     const steps = 5;
     for (let i = 1; i <= steps; i++) {
       const frac = i / (steps + 1);
-      const idx = Math.floor(frac * (pathPoints.length - 1));
-      const cPt = pathPoints[Math.min(idx, pathPoints.length - 1)];
+      const cLat = tornadoLat + (endLat - tornadoLat) * frac;
+      const cLng = tornadoLng + (endLng - tornadoLng) * frac;
       const radiusMeters = (params.pathWidth * 0.9144 / 2) * (1 - Math.abs(frac - 0.5));
-      const circle = L.circle(cPt, {
+      const circle = L.circle([cLat, cLng], {
         radius: Math.max(radiusMeters, 500),
-        color: result.ef.color, fillColor: result.ef.color,
-        fillOpacity: 0.08, weight: 0.5, opacity: 0.3,
+        color: result.ef.color,
+        fillColor: result.ef.color,
+        fillOpacity: 0.08,
+        weight: 0.5,
+        opacity: 0.3,
       }).addTo(map);
       markersRef.current.push(circle);
     }
 
-  }, [tornadoLat, tornadoLng, params.pathLength, params.pathWidth, params.direction, params.curvature, result, pathMode, customWaypoints, isDrawing]);
+  }, [tornadoLat, tornadoLng, params.pathLength, params.pathWidth, params.direction, result]);
 
   return (
     <div ref={containerRef} style={{ width: "100%", height: "100%", borderRadius: 8, overflow: "hidden" }} />
@@ -1179,7 +840,7 @@ const PRESETS = {
     vehiclesPerMile: 5,
     cropType: "corn", growthStage: "mid_season", cropAcresPct: 70,
     popDensity: 30, basementPct: 20, shelterPct: 5, warningLeadTime: 15, preparedness: 0.5,
-    livestockDensity: 15, curvature: 0,
+    livestockDensity: 15,
   },
   suburban_ef4: {
     label: "Suburban EF4",
@@ -1191,7 +852,7 @@ const PRESETS = {
     vehiclesPerMile: 80,
     cropType: "none", growthStage: "mid_season", cropAcresPct: 10,
     popDensity: 2500, basementPct: 40, shelterPct: 10, warningLeadTime: 20, preparedness: 0.7,
-    livestockDensity: 0, curvature: 0,
+    livestockDensity: 0,
   },
   urban_ef5: {
     label: "Urban EF5",
@@ -1203,7 +864,7 @@ const PRESETS = {
     vehiclesPerMile: 200,
     cropType: "none", growthStage: "mid_season", cropAcresPct: 0,
     popDensity: 8000, basementPct: 30, shelterPct: 15, warningLeadTime: 10, preparedness: 0.6,
-    livestockDensity: 0, curvature: 0,
+    livestockDensity: 0,
   },
   joplin_2011: {
     label: "Joplin 2011",
@@ -1215,7 +876,7 @@ const PRESETS = {
     vehiclesPerMile: 120,
     cropType: "none", growthStage: "mid_season", cropAcresPct: 5,
     popDensity: 4000, basementPct: 25, shelterPct: 8, warningLeadTime: 17, preparedness: 0.5,
-    livestockDensity: 0, curvature: 0,
+    livestockDensity: 0,
   },
 };
 
@@ -1231,23 +892,6 @@ function TornadoSimulator() {
   const [mapStyle, setMapStyle] = useState("satellite"); // "satellite", "streets", "topo", "dark"
   const [censusData, setCensusData] = useState(null);
   const [censusLoading, setCensusLoading] = useState(false);
-  const [pathMode, setPathMode] = useState("straight"); // "straight", "curved", "draw"
-  const [customWaypoints, setCustomWaypoints] = useState([]); // [[lat, lng], ...] for draw mode
-  const [isDrawing, setIsDrawing] = useState(false); // actively drawing path
-
-  // Finish drawing callback (called from map double-click)
-  useEffect(() => {
-    window.__tornadoFinishDraw = () => {
-      if (customWaypoints.length >= 2) {
-        setIsDrawing(false);
-        setTornadoLat(customWaypoints[0][0]);
-        setTornadoLng(customWaypoints[0][1]);
-        const drawnDist = pathLengthFromPoints(customWaypoints);
-        setParams(p => ({ ...p, pathLength: Math.round(drawnDist * 10) / 10 }));
-      }
-    };
-    return () => { window.__tornadoFinishDraw = null; };
-  }, [customWaypoints]);
 
   // Fetch real census population density when tornado is placed
   const fetchCensusData = useCallback((lat, lng) => {
@@ -1494,126 +1138,7 @@ function TornadoSimulator() {
     });
   }, []);
 
-  // Generate path points for rendering and multi-segment simulation
-  const pathPoints = useMemo(() => {
-    if (!tornadoLat || !tornadoLng) return [];
-    if (pathMode === "draw" && isDrawing) return customWaypoints;
-    return generatePathPoints(tornadoLat, tornadoLng, params, pathMode, customWaypoints);
-  }, [tornadoLat, tornadoLng, params, pathMode, customWaypoints, isDrawing]);
-
-  // US county cache: stores { lat, lng, popDensity, housingDensity, name } for each fetched county
-  const [usCountyCache, setUsCountyCache] = useState([]);
-
-  // Fetch US county data for sample points along the path
-  // This runs whenever the path changes and populates the county cache
-  useEffect(() => {
-    if (!tornadoLat || !tornadoLng) return;
-    if (pathMode === "draw" && isDrawing) return;
-    
-    const pp = generatePathPoints(tornadoLat, tornadoLng, params, pathMode, customWaypoints);
-    if (pp.length < 2) return;
-    
-    // Generate sample points every ~3 miles along the path
-    let samplePts = [];
-    if (pp.length === 2) {
-      const totalDist = pathLengthFromPoints(pp);
-      const numSamples = Math.max(2, Math.min(12, Math.ceil(totalDist / 3)));
-      for (let i = 0; i <= numSamples; i++) {
-        const t = i / numSamples;
-        samplePts.push([
-          pp[0][0] + t * (pp[1][0] - pp[0][0]),
-          pp[0][1] + t * (pp[1][1] - pp[0][1]),
-        ]);
-      }
-    } else {
-      // For curved/draw paths, sample at regular intervals along the polyline
-      const totalDist = pathLengthFromPoints(pp);
-      const numSamples = Math.max(2, Math.min(12, Math.ceil(totalDist / 3)));
-      for (let i = 0; i <= numSamples; i++) {
-        const frac = i / numSamples;
-        const idx = Math.min(Math.floor(frac * (pp.length - 1)), pp.length - 2);
-        const localFrac = (frac * (pp.length - 1)) - idx;
-        samplePts.push([
-          pp[idx][0] + localFrac * (pp[idx + 1][0] - pp[idx][0]),
-          pp[idx][1] + localFrac * (pp[idx + 1][1] - pp[idx][1]),
-        ]);
-      }
-    }
-
-    // For each sample point in the US, check if we already have it cached
-    // If not, fetch it via Census Geocoder
-    const inUS = (lat, lng) => lat >= 24 && lat <= 50 && lng >= -125 && lng <= -66;
-    const isAlreadyCached = (lat, lng) => usCountyCache.some(c => Math.abs(c.lat - lat) + Math.abs(c.lng - lng) < 0.3);
-    
-    const toFetch = samplePts.filter(([lat, lng]) => inUS(lat, lng) && !isAlreadyCached(lat, lng));
-    
-    if (toFetch.length === 0) return;
-
-    // Fetch counties for uncached US points (max 8 parallel to stay under rate limit)
-    const fetchLimit = Math.min(toFetch.length, 8);
-    let fetched = 0;
-    
-    for (let i = 0; i < fetchLimit; i++) {
-      const [lat, lng] = toFetch[i];
-      const geocodeUrl = `https://geocoding.geo.census.gov/geocoder/geographies/coordinates?x=${lng}&y=${lat}&benchmark=Public_AR_Current&vintage=Current_Current&format=jsonp&callback=__countyCache${i}`;
-      
-      const script = document.createElement("script");
-      window[`__countyCache${i}`] = (geoResult) => {
-        try {
-          const county = geoResult?.result?.geographies?.["Counties"]?.[0];
-          if (county) {
-            const stateFips = county.STATE;
-            const countyFips = county.COUNTY;
-            const areaLand = county.AREALAND;
-            const countyName = county.BASENAME || county.NAME;
-            
-            // Fetch pop data
-            const popUrl = `https://api.census.gov/data/2022/acs/acs5?get=NAME,B01003_001E,B25001_001E&for=county:${countyFips}&in=state:${stateFips}`;
-            fetch(popUrl).then(r => r.json()).then(data => {
-              if (data && data.length > 1) {
-                const row = data[1];
-                const population = parseInt(row[1]) || 0;
-                const housingUnits = parseInt(row[2]) || 0;
-                const areaLandSqMi = areaLand / 2589988.11;
-                const popDensity = Math.round(population / areaLandSqMi);
-                const housingDensity = Math.round(housingUnits / areaLandSqMi);
-                
-                setUsCountyCache(prev => {
-                  // Don't add duplicates
-                  if (prev.some(c => c.stateFips === stateFips && c.countyFips === countyFips)) return prev;
-                  return [...prev, {
-                    lat, lng, stateFips, countyFips,
-                    name: row[0] || countyName,
-                    popDensity, housingDensity,
-                    population, housingUnits,
-                  }];
-                });
-              }
-            }).catch(() => {});
-          }
-        } catch(e) {}
-        // Clean up
-        delete window[`__countyCache${i}`];
-        try { document.head.removeChild(script); } catch(e) {}
-      };
-      script.src = geocodeUrl;
-      script.onerror = () => { delete window[`__countyCache${i}`]; try { document.head.removeChild(script); } catch(e) {} };
-      document.head.appendChild(script);
-    }
-  }, [tornadoLat, tornadoLng, params.pathLength, params.direction, params.curvature, pathMode, customWaypoints, isDrawing]);
-
-  // Run simulation — ALWAYS uses multi-segment to account for
-  // different counties and population densities along the tornado's path
-  const { result, segments: pathSegments } = useMemo(() => {
-    if (pathMode === "draw" && isDrawing) {
-      return { result: runSimulation(params), segments: null };
-    }
-    const pp = (!tornadoLat || !tornadoLng) ? [] : generatePathPoints(tornadoLat, tornadoLng, params, pathMode, customWaypoints);
-    if (pp.length >= 2) {
-      return runMultiSegmentSimulation(params, pp, pathMode, usCountyCache);
-    }
-    return { result: runSimulation(params), segments: null };
-  }, [params, tornadoLat, tornadoLng, pathMode, customWaypoints, isDrawing, usCountyCache]);
+  const result = useMemo(() => runSimulation(params), [params]);
 
   const loadPreset = (key) => setParams(PRESETS[key]);
 
@@ -1735,102 +1260,10 @@ function TornadoSimulator() {
           <Section title="Storm Parameters" icon="⚡" defaultOpen={true}>
             <Slider label="Wind Speed" value={params.windSpeed} onChange={set("windSpeed")} min={65} max={320} unit=" mph" />
             <Slider label="Pressure Deficit" value={params.pressureDeficit} onChange={set("pressureDeficit")} min={10} max={200} unit=" mbar" />
-            {/* Path Mode selector */}
-            <div style={{ marginBottom: 8 }}>
-              <div style={{ fontSize: 9, color: "#888", marginBottom: 4, fontWeight: 600, letterSpacing: "0.04em" }}>PATH MODE</div>
-              <div style={{ display: "flex", gap: 2, background: "#0d0d1a", borderRadius: 4, padding: 2, border: "1px solid #2a2a4a" }}>
-                {[["straight", "Straight"], ["curved", "Curved"], ["draw", "✏️ Draw"]].map(([mode, label]) => (
-                  <button key={mode} onClick={() => {
-                    setPathMode(mode);
-                    if (mode === "draw") {
-                      setCustomWaypoints([]);
-                      setIsDrawing(true);
-                    } else {
-                      setIsDrawing(false);
-                    }
-                  }} style={{
-                    flex: 1, padding: "4px 6px", fontSize: 9, fontWeight: 700, border: "none", cursor: "pointer",
-                    borderRadius: 3, letterSpacing: "0.03em",
-                    background: pathMode === mode ? "#2a2a5a" : "transparent",
-                    color: pathMode === mode ? "#fff" : "#666",
-                  }}>
-                    {label}
-                  </button>
-                ))}
-              </div>
-            </div>
-            {/* Draw mode controls */}
-            {pathMode === "draw" && (
-              <div style={{ background: "#0d1428", borderRadius: 6, padding: "8px 10px", marginBottom: 8, border: "1px solid #1a2a4a" }}>
-                {isDrawing ? (
-                  <>
-                    <div style={{ fontSize: 10, color: "#4fc3f7", marginBottom: 6 }}>
-                      🖱️ Click map to add waypoints. Double-click to finish.
-                    </div>
-                    <div style={{ fontSize: 10, color: "#aaa", marginBottom: 6 }}>
-                      Waypoints: <span style={{ color: "#81c784", fontFamily: "'JetBrains Mono', monospace" }}>{customWaypoints.length}</span>
-                      {customWaypoints.length >= 2 && (
-                        <span style={{ color: "#888" }}> ({pathLengthFromPoints(customWaypoints).toFixed(1)} mi)</span>
-                      )}
-                    </div>
-                    <div style={{ display: "flex", gap: 4 }}>
-                      <button onClick={() => {
-                        if (customWaypoints.length >= 2) {
-                          setIsDrawing(false);
-                          setTornadoLat(customWaypoints[0][0]);
-                          setTornadoLng(customWaypoints[0][1]);
-                          // Update pathLength to match drawn distance
-                          const drawnDist = pathLengthFromPoints(customWaypoints);
-                          setParams(p => ({ ...p, pathLength: Math.round(drawnDist * 10) / 10 }));
-                          handlePlaceTornado(customWaypoints[0][0], customWaypoints[0][1]);
-                        }
-                      }} style={{
-                        flex: 1, padding: "5px 8px", fontSize: 9, fontWeight: 700, border: "none", cursor: "pointer",
-                        borderRadius: 4, background: customWaypoints.length >= 2 ? "#2e7d32" : "#333", color: customWaypoints.length >= 2 ? "#fff" : "#666",
-                      }}>
-                        ✅ Finish ({customWaypoints.length >= 2 ? "ready" : "need 2+ pts"})
-                      </button>
-                      <button onClick={() => { setCustomWaypoints([]); }} style={{
-                        padding: "5px 8px", fontSize: 9, fontWeight: 700, border: "none", cursor: "pointer",
-                        borderRadius: 4, background: "#333", color: "#aaa",
-                      }}>
-                        🗑️ Clear
-                      </button>
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <div style={{ fontSize: 10, color: "#81c784", marginBottom: 4 }}>
-                      ✅ Custom path: {customWaypoints.length} waypoints, {pathLengthFromPoints(customWaypoints).toFixed(1)} mi
-                    </div>
-                    <button onClick={() => {
-                      setCustomWaypoints([]);
-                      setIsDrawing(true);
-                    }} style={{
-                      width: "100%", padding: "5px 8px", fontSize: 9, fontWeight: 700, border: "none", cursor: "pointer",
-                      borderRadius: 4, background: "#1a1a2e", color: "#4fc3f7", border: "1px solid #2a2a4a",
-                    }}>
-                      ✏️ Redraw Path
-                    </button>
-                  </>
-                )}
-              </div>
-            )}
-            {pathMode !== "draw" && (
-              <Slider label="Path Length" value={params.pathLength} onChange={set("pathLength")} min={0.5} max={250} step={0.5} unit=" mi" />
-            )}
-            {pathMode === "draw" && !isDrawing && (
-              <Slider label="Path Length" value={params.pathLength} onChange={set("pathLength")} min={0.5} max={250} step={0.5} unit=" mi" info="Auto-set from drawn path" />
-            )}
+            <Slider label="Path Length" value={params.pathLength} onChange={set("pathLength")} min={0.5} max={250} step={0.5} unit=" mi" />
             <Slider label="Path Width" value={params.pathWidth} onChange={set("pathWidth")} min={50} max={5000} step={10} unit=" yd" />
             <Slider label="Forward Speed" value={params.forwardSpeed} onChange={set("forwardSpeed")} min={5} max={80} unit=" mph" />
-            {pathMode !== "draw" && (
-              <Slider label="Direction" value={params.direction} onChange={set("direction")} min={0} max={359} unit="°" />
-            )}
-            {pathMode === "curved" && (
-              <Slider label="Curvature" value={params.curvature} onChange={set("curvature")} min={-90} max={90} unit="°"
-                info="Negative = curves left, Positive = curves right" />
-            )}
+            <Slider label="Direction" value={params.direction} onChange={set("direction")} min={0} max={359} unit="°" />
             <Slider label="Rainfall" value={params.rainfall} onChange={set("rainfall")} min={0} max={10} step={0.5} unit=" in/hr" />
             <Slider label="Hail Size" value={params.hailSize} onChange={set("hailSize")} min={0} max={6} step={0.25} unit=" in" />
             <Slider label="Sub-Vortices" value={params.subVortices} onChange={set("subVortices")} min={1} max={8} />
@@ -1947,11 +1380,7 @@ function TornadoSimulator() {
                   </div>
                   {tornadoLat && (
                     <span style={{ fontSize: 9, color: "#666", fontFamily: "'JetBrains Mono', monospace", marginLeft: "auto" }}>
-                      {isDrawing ? (
-                        <span style={{ color: "#4fc3f7" }}>✏️ DRAWING ({customWaypoints.length} pts)</span>
-                      ) : (
-                        <>📍 {tornadoLat.toFixed(1)}°N, {Math.abs(tornadoLng).toFixed(1)}°W</>
-                      )}
+                      📍 {tornadoLat.toFixed(1)}°N, {Math.abs(tornadoLng).toFixed(1)}°W
                     </span>
                   )}
                 </>
@@ -1967,10 +1396,6 @@ function TornadoSimulator() {
                   params={params}
                   result={result}
                   mapStyle={mapStyle}
-                  pathMode={pathMode}
-                  customWaypoints={customWaypoints}
-                  onAddWaypoint={(lat, lng) => setCustomWaypoints(prev => [...prev, [lat, lng]])}
-                  isDrawing={isDrawing}
                 />
               ) : (
                 <TornadoPathViz params={params} result={result} />
@@ -2027,26 +1452,6 @@ function TornadoSimulator() {
                   <Stat big label="Total Damage" value={fmt(result.totalEconomicImpact)} color="#4fc3f7" sub="All categories" />
                   <Stat big label="Destroyed" value={numFmt(result.totalDestroyed)} color="#ff8a65" sub={`of ${numFmt(result.totalStructures)}`} />
                 </div>
-
-                {/* Multi-segment path info */}
-                {result._multiSegment && result._countiesCrossed && result._countiesCrossed.length > 0 && (
-                  <div style={{ background: "#0d1428", borderRadius: 8, padding: "10px 14px", border: "1px solid #1a2a4a" }}>
-                    <div style={{ fontSize: 9, fontWeight: 700, color: "#4fc3f7", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 6 }}>
-                      🗺️ Path crosses {result._segmentCount} segment{result._segmentCount > 1 ? "s" : ""} through {result._countiesCrossed.length} region{result._countiesCrossed.length > 1 ? "s" : ""}
-                    </div>
-                    <div style={{ fontSize: 10, color: "#aaa", lineHeight: 1.6 }}>
-                      {result._countiesCrossed.map((name, i) => (
-                        <span key={i}>
-                          <span style={{ color: "#81c784" }}>{name}</span>
-                          {i < result._countiesCrossed.length - 1 && <span style={{ color: "#444" }}> → </span>}
-                        </span>
-                      ))}
-                    </div>
-                    <div style={{ fontSize: 9, color: "#555", marginTop: 4 }}>
-                      Population density varies per segment — totals reflect local census data
-                    </div>
-                  </div>
-                )}
 
                 {/* Damage breakdown bar */}
                 <div style={{ background: "#12122a", borderRadius: 8, padding: 14, border: "1px solid #1e1e3a" }}>
