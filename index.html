@@ -1915,6 +1915,22 @@ function TornadoSimulator() {
                 </div>
               </div>
             )}
+            {/* Path counties summary */}
+            {result._multiSegment && result._countiesCrossed && result._countiesCrossed.length > 0 && (
+              <div style={{ background: "#0d1428", borderRadius: 6, padding: "8px 10px", marginBottom: 8, border: "1px solid #1a2a4a" }}>
+                <div style={{ fontSize: 9, fontWeight: 700, color: "#4fc3f7", marginBottom: 4, letterSpacing: "0.04em" }}>
+                  🗺️ PATH CROSSES {result._countiesCrossed.length} REGION{result._countiesCrossed.length > 1 ? "S" : ""}
+                </div>
+                <div style={{ fontSize: 9, color: "#aaa", lineHeight: 1.6 }}>
+                  {result._countiesCrossed.map((name, i) => (
+                    <div key={i} style={{ display: "flex", alignItems: "center", gap: 4 }}>
+                      <span style={{ color: "#444" }}>{i + 1}.</span>
+                      <span style={{ color: "#81c784" }}>{name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </Section>
 
           <Section title="Storm Parameters" icon="⚡" defaultOpen={true}>
