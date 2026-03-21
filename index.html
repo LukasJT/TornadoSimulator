@@ -1,16 +1,1658 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tornado Simulator</title>
-    <style>
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      body { overflow: hidden; }
-    </style>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tornado Simulator — Multi-Variable Damage Modeler</title>
+  <meta name="description" content="Physics-based tornado damage simulator with real US Census Bureau (3,143 counties) and Statistics Canada (288 census divisions) population data, interactive satellite/map views, and economic loss estimation." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌪️</text></svg>" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { overflow: hidden; background: #0a0a18; }
+    #root { height: 100vh; }
+    .leaflet-container { background: #0a0a18 !important; cursor: crosshair !important; }
+    .leaflet-control-zoom a { background: #1a1a2e !important; color: #aaa !important; border-color: #333 !important; }
+    .leaflet-control-zoom a:hover { background: #2a2a5a !important; color: #fff !important; }
+    .tornado-popup .leaflet-popup-content-wrapper { background: #1a1a2e; color: #e0e0e0; border: 1px solid #333; border-radius: 8px; }
+    .tornado-popup .leaflet-popup-tip { background: #1a1a2e; }
+    .leaflet-popup-close-button { color: #888 !important; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.26.2/babel.min.js"></script>
+  <script type="text/babel">
+const { useState, useCallback, useMemo, useEffect, useRef } = React;
+
+// ─── CONSTANTS & MODELS ─────────────────────────────────────────────────────
+
+const EF_SCALE = [
+  { rating: "EF0", min: 65, max: 85, color: "#4fc3f7", label: "Light" },
+  { rating: "EF1", min: 86, max: 110, color: "#81c784", label: "Moderate" },
+  { rating: "EF2", min: 111, max: 135, color: "#fff176", label: "Significant" },
+  { rating: "EF3", min: 136, max: 165, color: "#ffb74d", label: "Severe" },
+  { rating: "EF4", min: 166, max: 200, color: "#ff8a65", label: "Devastating" },
+  { rating: "EF5", min: 201, max: 320, color: "#ef5350", label: "Incredible" },
+];
+
+const getEFRating = (wind) => EF_SCALE.find((e) => wind >= e.min && wind <= e.max) || (wind > 320 ? EF_SCALE[5] : EF_SCALE[0]);
+
+// Fragility curves: probability of destruction at given wind speed (mph)
+// Based on TTU wind engineering research & HAZUS-MH methodology
+const STRUCTURE_FRAGILITY = {
+  mobile_home:     { v50: 0.15, v100: 0.70, v150: 0.98, v200: 1.00, v250: 1.00, value: 45000 },
+  wood_frame:      { v50: 0.01, v100: 0.10, v150: 0.55, v200: 0.90, v250: 0.99, value: 180000 },
+  brick_masonry:   { v50: 0.005, v100: 0.05, v150: 0.35, v200: 0.75, v250: 0.95, value: 250000 },
+  reinforced_conc: { v50: 0.001, v100: 0.01, v150: 0.08, v200: 0.30, v250: 0.65, value: 500000 },
+};
+
+const interpolateFragility = (type, windSpeed) => {
+  const f = STRUCTURE_FRAGILITY[type];
+  const points = [
+    [50, f.v50], [100, f.v100], [150, f.v150], [200, f.v200], [250, f.v250]
+  ];
+  if (windSpeed <= 50) return f.v50 * (windSpeed / 50);
+  if (windSpeed >= 250) return f.v250;
+  for (let i = 0; i < points.length - 1; i++) {
+    if (windSpeed >= points[i][0] && windSpeed <= points[i + 1][0]) {
+      const t = (windSpeed - points[i][0]) / (points[i + 1][0] - points[i][0]);
+      return points[i][1] + t * (points[i + 1][1] - points[i][1]);
+    }
+  }
+  return f.v250;
+};
+
+// Fatality model based on Simmons & Sutter (2005), Ashley (2007)
+// Base fatality rate per person exposed, by shelter type
+const FATALITY_RATES = {
+  no_shelter:      { ef0: 0.0001, ef1: 0.001, ef2: 0.005, ef3: 0.02, ef4: 0.08, ef5: 0.25 },
+  interior_room:   { ef0: 0.00001, ef1: 0.0001, ef2: 0.001, ef3: 0.005, ef4: 0.025, ef5: 0.10 },
+  basement:        { ef0: 0.000001, ef1: 0.00001, ef2: 0.0001, ef3: 0.001, ef4: 0.008, ef5: 0.04 },
+  storm_shelter:   { ef0: 0, ef1: 0, ef2: 0.00001, ef3: 0.0001, ef4: 0.001, ef5: 0.005 },
+};
+
+const CROP_LOSS_PER_ACRE = {
+  corn:     { value: 950, susceptibility: 0.85 },
+  wheat:    { value: 520, susceptibility: 0.70 },
+  soybeans: { value: 600, susceptibility: 0.80 },
+  cotton:   { value: 780, susceptibility: 0.75 },
+  none:     { value: 0, susceptibility: 0 },
+};
+
+const GROWTH_STAGE_MULT = { planting: 0.3, mid_season: 0.7, near_harvest: 1.0 };
+
+const TERRAIN_WIND_MODIFIER = {
+  flat_plains: 1.0,
+  rolling_hills: 0.92,
+  urban: 0.85,
+  forested: 0.88,
+};
+
+const INFRA_COSTS = {
+  power_lines: 35000,   // per mile destroyed
+  cell_towers: 250000,  // each
+  bridges: 2000000,     // each
+  water_towers: 800000, // each
+  gas_lines: 50000,     // per mile
+};
+
+// ─── US/CANADA SIMPLIFIED MAP DATA ──────────────────────────────────────────
+// Major cities with lat/lng for reference on the map
+const CITIES = {
+  us: [
+    { name: "New York", lat: 40.71, lng: -74.01 },
+    { name: "Chicago", lat: 41.88, lng: -87.63 },
+    { name: "Dallas", lat: 32.78, lng: -96.80 },
+    { name: "Oklahoma City", lat: 35.47, lng: -97.52 },
+    { name: "Joplin", lat: 37.08, lng: -94.51 },
+    { name: "Moore", lat: 35.34, lng: -97.49 },
+    { name: "Tuscaloosa", lat: 33.21, lng: -87.57 },
+    { name: "St. Louis", lat: 38.63, lng: -90.20 },
+    { name: "Kansas City", lat: 39.10, lng: -94.58 },
+    { name: "Memphis", lat: 35.15, lng: -90.05 },
+    { name: "Minneapolis", lat: 44.98, lng: -93.27 },
+    { name: "Denver", lat: 39.74, lng: -104.99 },
+    { name: "Atlanta", lat: 33.75, lng: -84.39 },
+    { name: "Houston", lat: 29.76, lng: -95.37 },
+    { name: "Miami", lat: 25.76, lng: -80.19 },
+    { name: "Los Angeles", lat: 34.05, lng: -118.24 },
+    { name: "Seattle", lat: 47.61, lng: -122.33 },
+  ],
+  canada: [
+    { name: "Toronto", lat: 43.65, lng: -79.38 },
+    { name: "Montreal", lat: 45.50, lng: -73.57 },
+    { name: "Vancouver", lat: 49.28, lng: -123.12 },
+    { name: "Calgary", lat: 51.05, lng: -114.07 },
+    { name: "Edmonton", lat: 53.55, lng: -113.49 },
+    { name: "Ottawa", lat: 45.42, lng: -75.70 },
+    { name: "Winnipeg", lat: 49.90, lng: -97.14 },
+    { name: "Regina", lat: 50.45, lng: -104.62 },
+    { name: "Saskatoon", lat: 52.13, lng: -106.67 },
+  ],
+};
+
+// Tornado Alley approximate polygon (central US)
+const TORNADO_ALLEY = [
+  { lat: 48, lng: -104 }, { lat: 48, lng: -94 }, { lat: 42, lng: -88 },
+  { lat: 35, lng: -88 }, { lat: 28, lng: -95 }, { lat: 28, lng: -100 },
+  { lat: 35, lng: -104 }, { lat: 42, lng: -104 },
+];
+
+// Canadian tornado-prone regions (southern prairies + Ontario)
+const CANADA_TORNADO_ZONE = [
+  { lat: 49, lng: -110 }, { lat: 55, lng: -110 }, { lat: 55, lng: -95 },
+  { lat: 49, lng: -95 }, { lat: 49, lng: -85 }, { lat: 45, lng: -75 },
+  { lat: 42, lng: -80 }, { lat: 43, lng: -85 },
+];
+
+// ─── CANADIAN CENSUS DIVISION DATA (Statistics Canada, 2021 Census) ─────────
+// Source: Statistics Canada, 2021 Census of Population, Table 98-10-0002-02
+// "Population and dwelling counts: Canada, provinces and territories, and census divisions"
+// Centroids from Statistics Canada Geographic Attribute File (GAF), 2021
+// Fields: n=name, lat/lng=centroid, pop=population, a=area(sq mi), d=density(per sq mi), h=housing/sq mi, dw=dwellings
+const CANADA_CENSUS_DIVISIONS = [{"n":"Division No. 1, NL","lat":47.55,"lng":-52.75,"pop":205955,"a":5715.1,"d":36.0,"h":16.5,"dw":94480},{"n":"Division No. 2, NL","lat":47.14,"lng":-55.15,"pop":19980,"a":2988.4,"d":6.7,"h":3.4,"dw":10175},{"n":"Division No. 3, NL","lat":47.6,"lng":-56.05,"pop":21285,"a":3158.3,"d":6.7,"h":3.5,"dw":10900},{"n":"Division No. 4, NL","lat":48.42,"lng":-56.0,"pop":12835,"a":2050.2,"d":6.3,"h":3.5,"dw":7230},{"n":"Division No. 5, NL","lat":48.7,"lng":-56.65,"pop":19270,"a":3803.1,"d":5.1,"h":2.7,"dw":10085},{"n":"Division No. 6, NL","lat":48.95,"lng":-57.9,"pop":27985,"a":5938.2,"d":4.7,"h":2.4,"dw":14235},{"n":"Division No. 7, NL","lat":48.6,"lng":-58.8,"pop":16325,"a":3494.2,"d":4.7,"h":2.4,"dw":8370},{"n":"Division No. 8, NL","lat":49.2,"lng":-55.6,"pop":16720,"a":5108.1,"d":3.3,"h":1.6,"dw":8415},{"n":"Division No. 9, NL","lat":50.0,"lng":-56.8,"pop":26645,"a":6185.4,"d":4.3,"h":2.1,"dw":13130},{"n":"Division No. 10, NL","lat":53.5,"lng":-60.0,"pop":26660,"a":99582.7,"d":0.3,"h":0.1,"dw":12205},{"n":"Division No. 11, NL","lat":51.5,"lng":-56.5,"pop":17270,"a":11436.3,"d":1.5,"h":0.7,"dw":7800},{"n":"Kings, PE","lat":46.37,"lng":-62.48,"pop":19340,"a":664.5,"d":29.1,"h":14.2,"dw":9430},{"n":"Queens, PE","lat":46.24,"lng":-63.13,"pop":92420,"a":722.0,"d":128.0,"h":59.6,"dw":43060},{"n":"Prince, PE","lat":46.65,"lng":-63.85,"pop":42470,"a":785.3,"d":54.1,"h":25.7,"dw":20200},{"n":"Annapolis, NS","lat":44.8,"lng":-65.2,"pop":20970,"a":1215.1,"d":17.3,"h":8.8,"dw":10750},{"n":"Antigonish, NS","lat":45.62,"lng":-61.98,"pop":19750,"a":562.2,"d":35.1,"h":16.3,"dw":9180},{"n":"Cape Breton, NS","lat":46.15,"lng":-60.15,"pop":94285,"a":939.8,"d":100.3,"h":51.3,"dw":48180},{"n":"Colchester, NS","lat":45.37,"lng":-63.25,"pop":52820,"a":1401.6,"d":37.7,"h":17.6,"dw":24650},{"n":"Cumberland, NS","lat":45.6,"lng":-64.3,"pop":28920,"a":1642.9,"d":17.6,"h":8.9,"dw":14700},{"n":"Digby, NS","lat":44.4,"lng":-65.85,"pop":17240,"a":973.0,"d":17.7,"h":9.6,"dw":9380},{"n":"Guysborough, NS","lat":45.25,"lng":-61.8,"pop":7360,"a":1606.2,"d":4.6,"h":2.7,"dw":4340},{"n":"Halifax, NS","lat":44.65,"lng":-63.57,"pop":439819,"a":2119.7,"d":207.5,"h":93.0,"dw":197200},{"n":"Hants, NS","lat":44.95,"lng":-63.85,"pop":43735,"a":1100.0,"d":39.8,"h":17.1,"dw":18820},{"n":"Inverness, NS","lat":46.2,"lng":-61.2,"pop":16305,"a":1459.9,"d":11.2,"h":6.3,"dw":9250},{"n":"Kings, NS","lat":45.05,"lng":-64.6,"pop":61510,"a":819.7,"d":75.0,"h":33.6,"dw":27520},{"n":"Lunenburg, NS","lat":44.4,"lng":-64.4,"pop":47985,"a":1199.2,"d":40.0,"h":21.0,"dw":25160},{"n":"Pictou, NS","lat":45.55,"lng":-62.55,"pop":43070,"a":1097.3,"d":39.3,"h":19.2,"dw":21050},{"n":"Queens, NS","lat":44.05,"lng":-64.75,"pop":10390,"a":928.2,"d":11.2,"h":6.4,"dw":5960},{"n":"Richmond, NS","lat":45.6,"lng":-60.95,"pop":8860,"a":479.2,"d":18.5,"h":11.0,"dw":5250},{"n":"Shelburne, NS","lat":43.75,"lng":-65.3,"pop":13660,"a":936.3,"d":14.6,"h":8.1,"dw":7540},{"n":"Victoria, NS","lat":46.35,"lng":-60.7,"pop":6515,"a":1107.0,"d":5.9,"h":3.6,"dw":3940},{"n":"Yarmouth, NS","lat":43.8,"lng":-66.05,"pop":24220,"a":820.5,"d":29.5,"h":15.1,"dw":12380},{"n":"Albert, NB","lat":45.85,"lng":-64.85,"pop":28460,"a":664.5,"d":42.8,"h":20.1,"dw":13380},{"n":"Carleton, NB","lat":46.4,"lng":-67.55,"pop":27735,"a":1291.1,"d":21.5,"h":10.2,"dw":13200},{"n":"Charlotte, NB","lat":45.1,"lng":-66.95,"pop":27830,"a":1278.8,"d":21.8,"h":11.6,"dw":14780},{"n":"Gloucester, NB","lat":47.6,"lng":-65.35,"pop":75450,"a":1770.7,"d":42.6,"h":19.9,"dw":35290},{"n":"Kent, NB","lat":46.65,"lng":-65.05,"pop":30140,"a":1554.1,"d":19.4,"h":10.1,"dw":15620},{"n":"Kings, NB","lat":45.7,"lng":-65.85,"pop":71865,"a":1332.8,"d":53.9,"h":24.2,"dw":32200},{"n":"Madawaska, NB","lat":47.4,"lng":-68.4,"pop":32580,"a":1315.4,"d":24.8,"h":12.3,"dw":16150},{"n":"Northumberland, NB","lat":47.0,"lng":-65.6,"pop":49535,"a":3845.6,"d":12.9,"h":6.6,"dw":25200},{"n":"Queens, NB","lat":45.9,"lng":-66.15,"pop":11580,"a":1115.8,"d":10.4,"h":5.0,"dw":5540},{"n":"Restigouche, NB","lat":47.9,"lng":-66.5,"pop":30545,"a":2966.0,"d":10.3,"h":5.1,"dw":15200},{"n":"Saint John, NB","lat":45.3,"lng":-66.05,"pop":72345,"a":561.4,"d":128.9,"h":63.2,"dw":35480},{"n":"Sunbury, NB","lat":45.85,"lng":-66.4,"pop":27735,"a":970.3,"d":28.6,"h":12.5,"dw":12100},{"n":"Victoria, NB","lat":46.95,"lng":-67.55,"pop":18625,"a":1403.5,"d":13.3,"h":6.7,"dw":9420},{"n":"Westmorland, NB","lat":46.15,"lng":-64.75,"pop":157580,"a":1542.9,"d":102.1,"h":48.1,"dw":74260},{"n":"York, NB","lat":46.05,"lng":-67.1,"pop":100755,"a":1706.6,"d":59.0,"h":27.0,"dw":46080},{"n":"Communaut\u00e9-Urbaine-de-Montr\u00e9al, QC","lat":45.5,"lng":-73.57,"pop":2028045,"a":192.7,"d":10526.3,"h":4830.1,"dw":930590},{"n":"Laval, QC","lat":45.57,"lng":-73.75,"pop":437413,"a":95.4,"d":4586.6,"h":1842.7,"dw":175730},{"n":"Longueuil, QC","lat":45.52,"lng":-73.4,"pop":433085,"a":193.8,"d":2234.4,"h":974.3,"dw":188850},{"n":"Th\u00e9r\u00e8se-De Blainville, QC","lat":45.65,"lng":-73.85,"pop":172705,"a":81.1,"d":2130.0,"h":845.1,"dw":68520},{"n":"Les Moulins, QC","lat":45.7,"lng":-73.55,"pop":176485,"a":103.1,"d":1712.0,"h":649.6,"dw":66970},{"n":"L'Assomption, QC","lat":45.85,"lng":-73.4,"pop":138180,"a":159.8,"d":864.5,"h":352.0,"dw":56270},{"n":"Joliette, QC","lat":46.02,"lng":-73.43,"pop":67985,"a":486.9,"d":139.6,"h":63.4,"dw":30870},{"n":"Matawinie, QC","lat":46.6,"lng":-73.8,"pop":55270,"a":4027.4,"d":13.7,"h":9.0,"dw":36130},{"n":"D'Autray, QC","lat":46.25,"lng":-73.1,"pop":44560,"a":514.7,"d":86.6,"h":39.7,"dw":20420},{"n":"Les Maskoutains, QC","lat":45.6,"lng":-72.95,"pop":91315,"a":505.8,"d":180.5,"h":77.9,"dw":39400},{"n":"Acton, QC","lat":45.65,"lng":-72.55,"pop":16540,"a":215.8,"d":76.6,"h":35.6,"dw":7680},{"n":"Drummond, QC","lat":45.88,"lng":-72.48,"pop":110270,"a":578.4,"d":190.7,"h":84.8,"dw":49040},{"n":"Arthabaska, QC","lat":46.1,"lng":-72.0,"pop":73750,"a":729.7,"d":101.1,"h":45.4,"dw":33150},{"n":"Sherbrooke, QC","lat":45.4,"lng":-71.9,"pop":227398,"a":570.3,"d":398.8,"h":188.9,"dw":107710},{"n":"Coaticook, QC","lat":45.15,"lng":-71.8,"pop":19555,"a":488.4,"d":40.0,"h":18.2,"dw":8870},{"n":"Memphr\u00e9magog, QC","lat":45.25,"lng":-72.15,"pop":51810,"a":636.7,"d":81.4,"h":43.1,"dw":27450},{"n":"Le Granit, QC","lat":45.55,"lng":-71.35,"pop":22870,"a":1089.2,"d":21.0,"h":10.5,"dw":11440},{"n":"Le Haut-Saint-Fran\u00e7ois, QC","lat":45.4,"lng":-71.5,"pop":22790,"a":890.0,"d":25.6,"h":12.4,"dw":11080},{"n":"Le Val-Saint-Fran\u00e7ois, QC","lat":45.5,"lng":-71.9,"pop":32470,"a":517.0,"d":62.8,"h":27.8,"dw":14370},{"n":"Brome-Missisquoi, QC","lat":45.15,"lng":-72.55,"pop":62775,"a":644.4,"d":97.4,"h":48.7,"dw":31380},{"n":"La Haute-Yamaska, QC","lat":45.38,"lng":-72.75,"pop":97600,"a":241.7,"d":403.8,"h":180.8,"dw":43700},{"n":"Rouville, QC","lat":45.4,"lng":-73.0,"pop":39860,"a":178.8,"d":223.0,"h":94.0,"dw":16810},{"n":"Le Haut-Richelieu, QC","lat":45.2,"lng":-73.25,"pop":123855,"a":354.1,"d":349.8,"h":149.0,"dw":52760},{"n":"Les Jardins-de-Napierville, QC","lat":45.15,"lng":-73.55,"pop":29580,"a":225.9,"d":131.0,"h":53.9,"dw":12170},{"n":"Le Haut-Saint-Laurent, QC","lat":45.1,"lng":-73.9,"pop":24465,"a":447.1,"d":54.7,"h":24.2,"dw":10840},{"n":"Beauharnois-Salaberry, QC","lat":45.3,"lng":-73.9,"pop":68195,"a":182.6,"d":373.4,"h":164.5,"dw":30040},{"n":"Vaudreuil-Soulanges, QC","lat":45.4,"lng":-74.05,"pop":169530,"a":330.1,"d":513.5,"h":194.4,"dw":64160},{"n":"Deux-Montagnes, QC","lat":45.55,"lng":-74.0,"pop":108115,"a":102.7,"d":1052.7,"h":410.2,"dw":42130},{"n":"Mirabel, QC","lat":45.65,"lng":-74.05,"pop":64610,"a":187.3,"d":345.0,"h":129.0,"dw":24150},{"n":"La Rivi\u00e8re-du-Nord, QC","lat":45.85,"lng":-74.0,"pop":120790,"a":169.9,"d":711.0,"h":296.3,"dw":50340},{"n":"Argenteuil, QC","lat":45.6,"lng":-74.4,"pop":33395,"a":488.8,"d":68.3,"h":34.5,"dw":16850},{"n":"Les Pays-d'en-Haut, QC","lat":46.05,"lng":-74.2,"pop":47780,"a":303.9,"d":157.2,"h":94.8,"dw":28810},{"n":"Les Laurentides, QC","lat":46.2,"lng":-74.6,"pop":49695,"a":982.2,"d":50.6,"h":30.2,"dw":29620},{"n":"Antoine-Labelle, QC","lat":46.65,"lng":-75.15,"pop":36235,"a":6030.1,"d":6.0,"h":3.7,"dw":22050},{"n":"Papineau, QC","lat":45.55,"lng":-75.1,"pop":24615,"a":1132.1,"d":21.7,"h":11.1,"dw":12590},{"n":"Gatineau, QC","lat":45.5,"lng":-75.8,"pop":346995,"a":900.8,"d":385.2,"h":172.7,"dw":155570},{"n":"Les Collines-de-l'Outaouais, QC","lat":45.55,"lng":-75.7,"pop":55370,"a":819.3,"d":67.6,"h":26.1,"dw":21400},{"n":"Pontiac, QC","lat":45.9,"lng":-76.7,"pop":14710,"a":4918.2,"d":3.0,"h":1.8,"dw":8620},{"n":"La Vall\u00e9e-de-la-Gatineau, QC","lat":46.6,"lng":-76.0,"pop":22975,"a":5453.3,"d":4.2,"h":2.4,"dw":12980},{"n":"Qu\u00e9bec, QC","lat":46.85,"lng":-71.25,"pop":601811,"a":1293.1,"d":465.4,"h":224.7,"dw":290535},{"n":"L\u00e9vis, QC","lat":46.8,"lng":-71.15,"pop":149735,"a":192.3,"d":778.7,"h":334.3,"dw":64280},{"n":"La Jacques-Cartier, QC","lat":47.05,"lng":-71.5,"pop":42140,"a":583.8,"d":72.2,"h":29.1,"dw":16970},{"n":"L'\u00cele-d'Orl\u00e9ans, QC","lat":46.95,"lng":-71.0,"pop":7580,"a":74.1,"d":102.3,"h":50.2,"dw":3720},{"n":"La C\u00f4te-de-Beaupr\u00e9, QC","lat":47.1,"lng":-70.9,"pop":29720,"a":529.3,"d":56.1,"h":26.0,"dw":13760},{"n":"Charlevoix, QC","lat":47.4,"lng":-70.6,"pop":12745,"a":970.3,"d":13.1,"h":6.8,"dw":6580},{"n":"Charlevoix-Est, QC","lat":47.65,"lng":-70.3,"pop":15985,"a":1116.2,"d":14.3,"h":7.6,"dw":8440},{"n":"Portneuf, QC","lat":46.9,"lng":-72.0,"pop":55110,"a":1500.4,"d":36.7,"h":16.3,"dw":24420},{"n":"Montmagny, QC","lat":46.9,"lng":-70.45,"pop":23020,"a":805.8,"d":28.6,"h":13.9,"dw":11230},{"n":"L'Islet, QC","lat":47.0,"lng":-70.0,"pop":17080,"a":876.1,"d":19.5,"h":10.3,"dw":9060},{"n":"Bellechasse, QC","lat":46.7,"lng":-70.8,"pop":38300,"a":675.7,"d":56.7,"h":24.2,"dw":16330},{"n":"Lotbini\u00e8re, QC","lat":46.55,"lng":-71.75,"pop":32815,"a":636.3,"d":51.6,"h":22.2,"dw":14120},{"n":"L'\u00c9rable, QC","lat":46.35,"lng":-71.95,"pop":23610,"a":683.0,"d":34.6,"h":16.2,"dw":11070},{"n":"Les Appalaches, QC","lat":46.15,"lng":-71.3,"pop":43065,"a":780.7,"d":55.2,"h":27.3,"dw":21310},{"n":"Beauce-Sartigan, QC","lat":46.05,"lng":-70.75,"pop":53985,"a":753.3,"d":71.7,"h":31.0,"dw":23350},{"n":"La Nouvelle-Beauce, QC","lat":46.45,"lng":-71.15,"pop":38555,"a":357.5,"d":107.8,"h":43.9,"dw":15690},{"n":"Robert-Cliche, QC","lat":46.2,"lng":-70.9,"pop":20230,"a":343.6,"d":58.9,"h":26.4,"dw":9070},{"n":"Les Etchemins, QC","lat":46.4,"lng":-70.55,"pop":17145,"a":705.0,"d":24.3,"h":11.7,"dw":8280},{"n":"Montcalm, QC","lat":46.1,"lng":-73.75,"pop":57970,"a":598.8,"d":96.8,"h":39.3,"dw":23530},{"n":"Les Chenaux, QC","lat":46.55,"lng":-72.4,"pop":18825,"a":248.6,"d":75.7,"h":34.4,"dw":8560},{"n":"M\u00e9kinac, QC","lat":46.85,"lng":-72.7,"pop":13310,"a":2029.4,"d":6.6,"h":3.6,"dw":7340},{"n":"Trois-Rivi\u00e8res, QC","lat":46.35,"lng":-72.55,"pop":163335,"a":1228.6,"d":132.9,"h":64.6,"dw":79360},{"n":"B\u00e9cancour, QC","lat":46.35,"lng":-72.3,"pop":21730,"a":455.2,"d":47.7,"h":22.4,"dw":10210},{"n":"Nicolet-Yamaska, QC","lat":46.1,"lng":-72.7,"pop":24395,"a":406.6,"d":60.0,"h":28.4,"dw":11560},{"n":"Francheville, QC","lat":46.5,"lng":-72.7,"pop":163335,"a":442.5,"d":369.1,"h":179.4,"dw":79360},{"n":"Le Centre-de-la-Mauricie, QC","lat":46.55,"lng":-72.7,"pop":55180,"a":830.1,"d":66.5,"h":31.8,"dw":26370},{"n":"Le Haut-Saint-Maurice, QC","lat":47.3,"lng":-73.4,"pop":13005,"a":10151.0,"d":1.3,"h":0.7,"dw":7070},{"n":"Le Domaine-du-Roy, QC","lat":48.55,"lng":-72.25,"pop":31290,"a":5698.1,"d":5.5,"h":2.8,"dw":15760},{"n":"Le Fjord-du-Saguenay, QC","lat":48.3,"lng":-71.4,"pop":23735,"a":1706.2,"d":13.9,"h":6.9,"dw":11750},{"n":"Saguenay (Chicoutimi), QC","lat":48.45,"lng":-71.05,"pop":161210,"a":1246.3,"d":129.3,"h":63.2,"dw":78710},{"n":"Lac-Saint-Jean-Est, QC","lat":48.5,"lng":-71.75,"pop":54320,"a":981.9,"d":55.3,"h":25.6,"dw":25120},{"n":"Maria-Chapdelaine, QC","lat":49.0,"lng":-72.5,"pop":24190,"a":14841.8,"d":1.6,"h":0.8,"dw":12030},{"n":"Rivi\u00e8re-du-Loup, QC","lat":47.8,"lng":-69.55,"pop":34510,"a":435.5,"d":79.2,"h":37.4,"dw":16280},{"n":"T\u00e9miscouata, QC","lat":47.55,"lng":-68.85,"pop":19405,"a":1510.0,"d":12.9,"h":6.7,"dw":10050},{"n":"Les Basques, QC","lat":48.1,"lng":-69.15,"pop":8850,"a":435.5,"d":20.3,"h":11.6,"dw":5060},{"n":"Rimouski-Neigette, QC","lat":48.4,"lng":-68.55,"pop":56730,"a":2256.4,"d":25.1,"h":12.7,"dw":28690},{"n":"La Mitis, QC","lat":48.6,"lng":-68.05,"pop":18965,"a":886.1,"d":21.4,"h":11.3,"dw":10000},{"n":"La Matap\u00e9dia, QC","lat":48.6,"lng":-67.2,"pop":17865,"a":2069.5,"d":8.6,"h":4.3,"dw":8870},{"n":"Matane, QC","lat":48.85,"lng":-67.5,"pop":21310,"a":1280.7,"d":16.6,"h":8.9,"dw":11360},{"n":"Kamouraska, QC","lat":47.5,"lng":-69.85,"pop":20975,"a":876.1,"d":23.9,"h":12.3,"dw":10780},{"n":"La Haute-C\u00f4te-Nord, QC","lat":48.85,"lng":-69.5,"pop":9785,"a":4351.4,"d":2.2,"h":1.2,"dw":5360},{"n":"Manicouagan, QC","lat":49.2,"lng":-68.15,"pop":28115,"a":14188.5,"d":2.0,"h":1.0,"dw":14230},{"n":"Sept-Rivi\u00e8res, QC","lat":50.2,"lng":-66.4,"pop":34830,"a":9439.8,"d":3.7,"h":1.8,"dw":17020},{"n":"Minganie, QC","lat":50.3,"lng":-64.0,"pop":5800,"a":14039.4,"d":0.4,"h":0.2,"dw":3060},{"n":"Le Golfe-du-Saint-Laurent, QC","lat":50.1,"lng":-60.8,"pop":4070,"a":16592.0,"d":0.2,"h":0.1,"dw":2330},{"n":"Abitibi-Ouest, QC","lat":48.7,"lng":-79.3,"pop":20430,"a":1315.8,"d":15.5,"h":7.4,"dw":9720},{"n":"Abitibi, QC","lat":48.6,"lng":-77.8,"pop":25010,"a":2532.8,"d":9.9,"h":4.7,"dw":11860},{"n":"Rouyn-Noranda, QC","lat":48.25,"lng":-79.0,"pop":44335,"a":2485.7,"d":17.8,"h":8.7,"dw":21550},{"n":"Vall\u00e9e-de-l'Or, QC","lat":48.1,"lng":-77.8,"pop":46810,"a":8489.6,"d":5.5,"h":2.6,"dw":21880},{"n":"T\u00e9miscamingue, QC","lat":47.5,"lng":-79.4,"pop":15150,"a":7413.9,"d":2.0,"h":1.2,"dw":8530},{"n":"La Tuque, QC","lat":47.45,"lng":-72.8,"pop":11010,"a":10896.2,"d":1.0,"h":0.5,"dw":5700},{"n":"Jam\u00e9sie, QC","lat":49.8,"lng":-76.5,"pop":13770,"a":114797.0,"d":0.1,"h":0.1,"dw":6990},{"n":"Kativik, QC","lat":58.0,"lng":-73.0,"pop":13605,"a":171162.9,"d":0.1,"h":0.0,"dw":3320},{"n":"Eeyou Istchee, QC","lat":52.0,"lng":-78.0,"pop":18365,"a":1741.3,"d":10.5,"h":2.3,"dw":4000},{"n":"Stormont, Dundas & Glengarry, ON","lat":45.0,"lng":-74.8,"pop":114637,"a":1275.7,"d":89.9,"h":40.4,"dw":51540},{"n":"Prescott and Russell, ON","lat":45.4,"lng":-74.8,"pop":93782,"a":773.4,"d":121.3,"h":48.7,"dw":37680},{"n":"Ottawa, ON","lat":45.42,"lng":-75.7,"pop":1017449,"a":1079.5,"d":942.5,"h":399.1,"dw":430820},{"n":"Leeds and Grenville, ON","lat":44.6,"lng":-75.9,"pop":103050,"a":1306.6,"d":78.9,"h":37.2,"dw":48620},{"n":"Lanark, ON","lat":45.0,"lng":-76.5,"pop":72325,"a":1161.4,"d":62.3,"h":28.8,"dw":33420},{"n":"Frontenac, ON","lat":44.55,"lng":-76.8,"pop":161020,"a":1466.4,"d":109.8,"h":50.1,"dw":73470},{"n":"Lennox and Addington, ON","lat":44.55,"lng":-77.15,"pop":44475,"a":1096.9,"d":40.5,"h":18.2,"dw":19930},{"n":"Hastings, ON","lat":44.4,"lng":-77.5,"pop":174450,"a":2355.2,"d":74.1,"h":32.8,"dw":77260},{"n":"Prince Edward, ON","lat":44.0,"lng":-77.1,"pop":25704,"a":405.4,"d":63.4,"h":36.0,"dw":14600},{"n":"Northumberland, ON","lat":44.05,"lng":-78.0,"pop":89365,"a":735.5,"d":121.5,"h":54.5,"dw":40100},{"n":"Peterborough, ON","lat":44.3,"lng":-78.3,"pop":150635,"a":1485.3,"d":101.4,"h":46.2,"dw":68600},{"n":"Kawartha Lakes, ON","lat":44.55,"lng":-78.9,"pop":78990,"a":1190.4,"d":66.4,"h":36.1,"dw":42980},{"n":"Durham, ON","lat":44.05,"lng":-78.85,"pop":696992,"a":979.5,"d":711.5,"h":258.6,"dw":253350},{"n":"York, ON","lat":43.95,"lng":-79.45,"pop":1173334,"a":680.3,"d":1724.7,"h":574.4,"dw":390780},{"n":"Toronto, ON","lat":43.65,"lng":-79.38,"pop":2794356,"a":243.6,"d":11469.7,"h":4765.0,"dw":1160895},{"n":"Peel, ON","lat":43.7,"lng":-79.85,"pop":1451022,"a":481.5,"d":3013.7,"h":996.8,"dw":479920},{"n":"Dufferin, ON","lat":44.1,"lng":-80.15,"pop":66258,"a":573.7,"d":115.5,"h":42.4,"dw":24320},{"n":"Simcoe, ON","lat":44.4,"lng":-79.9,"pop":490936,"a":1876.1,"d":261.7,"h":104.2,"dw":195510},{"n":"Muskoka, ON","lat":45.1,"lng":-79.3,"pop":67070,"a":1497.7,"d":44.8,"h":28.9,"dw":43250},{"n":"Haliburton, ON","lat":45.1,"lng":-78.5,"pop":20571,"a":1571.8,"d":13.1,"h":10.0,"dw":15650},{"n":"Renfrew, ON","lat":45.6,"lng":-77.0,"pop":108328,"a":2872.6,"d":37.7,"h":17.0,"dw":48830},{"n":"Nipissing, ON","lat":46.3,"lng":-79.45,"pop":84736,"a":4133.6,"d":20.5,"h":10.2,"dw":42200},{"n":"Parry Sound, ON","lat":45.7,"lng":-80.0,"pop":46206,"a":3587.3,"d":12.9,"h":8.5,"dw":30670},{"n":"Manitoulin, ON","lat":45.75,"lng":-82.0,"pop":13866,"a":1199.6,"d":11.6,"h":6.8,"dw":8100},{"n":"Sudbury District, ON","lat":46.8,"lng":-81.4,"pop":22000,"a":15545.6,"d":1.4,"h":0.7,"dw":11610},{"n":"Greater Sudbury, ON","lat":46.49,"lng":-81.0,"pop":166004,"a":1250.2,"d":132.8,"h":61.1,"dw":76420},{"n":"Timiskaming, ON","lat":47.5,"lng":-80.0,"pop":32028,"a":4816.6,"d":6.6,"h":3.4,"dw":16400},{"n":"Cochrane, ON","lat":50.0,"lng":-82.0,"pop":77175,"a":54549.6,"d":1.4,"h":0.7,"dw":38430},{"n":"Algoma, ON","lat":47.0,"lng":-84.0,"pop":104588,"a":18846.8,"d":5.5,"h":2.8,"dw":53100},{"n":"Thunder Bay, ON","lat":48.8,"lng":-89.25,"pop":146048,"a":40045.7,"d":3.6,"h":1.8,"dw":72990},{"n":"Rainy River, ON","lat":48.7,"lng":-93.5,"pop":19634,"a":5979.6,"d":3.3,"h":1.8,"dw":10740},{"n":"Kenora, ON","lat":50.5,"lng":-90.5,"pop":64725,"a":157225.8,"d":0.4,"h":0.2,"dw":31590},{"n":"Halton, ON","lat":43.45,"lng":-79.85,"pop":596637,"a":372.2,"d":1603.0,"h":576.5,"dw":214560},{"n":"Hamilton, ON","lat":43.25,"lng":-79.87,"pop":569353,"a":431.3,"d":1320.2,"h":551.1,"dw":237680},{"n":"Niagara, ON","lat":43.05,"lng":-79.25,"pop":477941,"a":715.8,"d":667.7,"h":283.9,"dw":203200},{"n":"Haldimand-Norfolk, ON","lat":42.9,"lng":-80.2,"pop":116042,"a":1122.4,"d":103.4,"h":44.4,"dw":49810},{"n":"Brant, ON","lat":43.15,"lng":-80.3,"pop":143528,"a":325.5,"d":441.0,"h":181.3,"dw":59020},{"n":"Waterloo, ON","lat":43.45,"lng":-80.5,"pop":587165,"a":528.6,"d":1110.8,"h":443.9,"dw":234625},{"n":"Wellington, ON","lat":43.75,"lng":-80.45,"pop":237889,"a":1027.0,"d":231.6,"h":87.1,"dw":89420},{"n":"Perth, ON","lat":43.65,"lng":-81.0,"pop":83053,"a":856.4,"d":97.0,"h":41.3,"dw":35400},{"n":"Oxford, ON","lat":43.1,"lng":-80.8,"pop":121781,"a":787.6,"d":154.6,"h":64.6,"dw":50880},{"n":"Elgin, ON","lat":42.75,"lng":-81.0,"pop":94905,"a":726.3,"d":130.7,"h":56.1,"dw":40720},{"n":"Middlesex, ON","lat":42.98,"lng":-81.25,"pop":509060,"a":1280.7,"d":397.5,"h":170.5,"dw":218420},{"n":"Lambton, ON","lat":42.9,"lng":-82.0,"pop":130920,"a":1159.1,"d":113.0,"h":50.6,"dw":58610},{"n":"Huron, ON","lat":43.65,"lng":-81.5,"pop":61366,"a":1312.7,"d":46.7,"h":21.0,"dw":27590},{"n":"Bruce, ON","lat":44.4,"lng":-81.3,"pop":72977,"a":1578.4,"d":46.2,"h":25.2,"dw":39810},{"n":"Grey, ON","lat":44.3,"lng":-80.7,"pop":99804,"a":1743.3,"d":57.3,"h":27.6,"dw":48170},{"n":"Essex, ON","lat":42.25,"lng":-82.95,"pop":422860,"a":714.7,"d":591.7,"h":251.5,"dw":179740},{"n":"Chatham-Kent, ON","lat":42.4,"lng":-82.2,"pop":108177,"a":949.0,"d":114.0,"h":52.8,"dw":50130},{"n":"Division No. 1, MB","lat":49.1,"lng":-97.1,"pop":40355,"a":1112.7,"d":36.3,"h":15.3,"dw":17020},{"n":"Division No. 2, MB","lat":49.15,"lng":-98.5,"pop":32120,"a":3745.2,"d":8.6,"h":3.9,"dw":14650},{"n":"Division No. 3, MB","lat":49.15,"lng":-99.7,"pop":15335,"a":1894.2,"d":8.1,"h":3.7,"dw":7070},{"n":"Division No. 4, MB","lat":49.15,"lng":-100.8,"pop":11625,"a":1836.3,"d":6.3,"h":2.9,"dw":5340},{"n":"Division No. 5, MB","lat":49.15,"lng":-101.5,"pop":14585,"a":1888.0,"d":7.7,"h":3.7,"dw":6910},{"n":"Division No. 6, MB","lat":49.5,"lng":-100.5,"pop":11870,"a":1449.4,"d":8.2,"h":3.8,"dw":5580},{"n":"Division No. 7, MB","lat":49.9,"lng":-99.5,"pop":14735,"a":1372.6,"d":10.7,"h":4.9,"dw":6780},{"n":"Division No. 8, MB","lat":50.1,"lng":-100.5,"pop":12445,"a":1882.2,"d":6.6,"h":3.1,"dw":5830},{"n":"Division No. 9, MB","lat":50.1,"lng":-101.0,"pop":26700,"a":1070.7,"d":24.9,"h":11.4,"dw":12210},{"n":"Division No. 10, MB","lat":49.8,"lng":-98.0,"pop":10220,"a":1335.9,"d":7.7,"h":3.6,"dw":4760},{"n":"Division No. 11, MB","lat":49.9,"lng":-97.14,"pop":749607,"a":179.2,"d":4184.2,"h":1765.7,"dw":316330},{"n":"Division No. 12, MB","lat":50.2,"lng":-96.8,"pop":29860,"a":2075.3,"d":14.4,"h":6.1,"dw":12570},{"n":"Division No. 13, MB","lat":49.9,"lng":-97.6,"pop":72870,"a":1342.9,"d":54.3,"h":21.3,"dw":28600},{"n":"Division No. 14, MB","lat":50.4,"lng":-97.5,"pop":37785,"a":1474.9,"d":25.6,"h":10.5,"dw":15550},{"n":"Division No. 15, MB","lat":50.8,"lng":-99.3,"pop":25250,"a":3822.4,"d":6.6,"h":3.1,"dw":11880},{"n":"Division No. 16, MB","lat":51.0,"lng":-100.5,"pop":16625,"a":3374.5,"d":4.9,"h":2.3,"dw":7830},{"n":"Division No. 17, MB","lat":50.5,"lng":-101.0,"pop":16120,"a":2494.2,"d":6.5,"h":2.9,"dw":7310},{"n":"Division No. 18, MB","lat":51.5,"lng":-97.0,"pop":41280,"a":8513.5,"d":4.8,"h":1.9,"dw":16520},{"n":"Division No. 19, MB","lat":51.5,"lng":-99.0,"pop":21515,"a":15081.1,"d":1.4,"h":0.6,"dw":9500},{"n":"Division No. 20, MB","lat":52.5,"lng":-101.5,"pop":20765,"a":17934.4,"d":1.2,"h":0.5,"dw":9210},{"n":"Division No. 21, MB","lat":55.0,"lng":-97.5,"pop":34720,"a":42892.1,"d":0.8,"h":0.2,"dw":10420},{"n":"Division No. 22, MB","lat":55.0,"lng":-99.5,"pop":6430,"a":50077.4,"d":0.1,"h":0.1,"dw":2730},{"n":"Division No. 23, MB","lat":57.0,"lng":-94.0,"pop":9910,"a":105517.8,"d":0.1,"h":0.0,"dw":3100},{"n":"Division No. 1, SK","lat":49.3,"lng":-103.0,"pop":16920,"a":6243.3,"d":2.7,"h":1.3,"dw":8350},{"n":"Division No. 2, SK","lat":49.3,"lng":-105.5,"pop":14875,"a":6571.5,"d":2.3,"h":1.1,"dw":7200},{"n":"Division No. 3, SK","lat":49.3,"lng":-107.8,"pop":13670,"a":8034.8,"d":1.7,"h":0.8,"dw":6590},{"n":"Division No. 4, SK","lat":49.3,"lng":-109.5,"pop":22560,"a":8324.4,"d":2.7,"h":1.3,"dw":10630},{"n":"Division No. 5, SK","lat":50.2,"lng":-102.0,"pop":13820,"a":4115.8,"d":3.4,"h":1.6,"dw":6700},{"n":"Division No. 6, SK","lat":50.45,"lng":-104.62,"pop":271015,"a":2575.7,"d":105.2,"h":45.6,"dw":117500},{"n":"Division No. 7, SK","lat":50.5,"lng":-106.3,"pop":32060,"a":4891.9,"d":6.6,"h":2.9,"dw":14160},{"n":"Division No. 8, SK","lat":50.5,"lng":-108.5,"pop":20310,"a":6988.4,"d":2.9,"h":1.4,"dw":9440},{"n":"Division No. 9, SK","lat":51.5,"lng":-102.5,"pop":14510,"a":6139.0,"d":2.4,"h":1.1,"dw":6970},{"n":"Division No. 10, SK","lat":51.3,"lng":-104.5,"pop":18115,"a":4826.3,"d":3.8,"h":1.7,"dw":8370},{"n":"Division No. 11, SK","lat":52.13,"lng":-106.67,"pop":338225,"a":4529.0,"d":74.7,"h":30.8,"dw":139400},{"n":"Division No. 12, SK","lat":51.8,"lng":-109.0,"pop":40490,"a":9965.3,"d":4.1,"h":1.7,"dw":17250},{"n":"Division No. 13, SK","lat":52.0,"lng":-109.5,"pop":17605,"a":6795.4,"d":2.6,"h":1.2,"dw":8090},{"n":"Division No. 14, SK","lat":52.5,"lng":-104.0,"pop":18020,"a":5965.3,"d":3.0,"h":1.4,"dw":8540},{"n":"Division No. 15, SK","lat":53.0,"lng":-105.5,"pop":29775,"a":8633.2,"d":3.4,"h":1.5,"dw":12870},{"n":"Division No. 16, SK","lat":53.0,"lng":-108.0,"pop":34175,"a":10633.2,"d":3.2,"h":1.4,"dw":14980},{"n":"Division No. 17, SK","lat":54.0,"lng":-109.0,"pop":32870,"a":20343.7,"d":1.6,"h":0.7,"dw":13270},{"n":"Division No. 18, SK","lat":55.5,"lng":-107.5,"pop":38515,"a":74965.6,"d":0.5,"h":0.2,"dw":13490},{"n":"Division No. 1, AB","lat":49.5,"lng":-110.5,"pop":73095,"a":9698.9,"d":7.5,"h":3.3,"dw":31620},{"n":"Division No. 2, AB","lat":49.7,"lng":-112.8,"pop":137230,"a":9169.9,"d":15.0,"h":6.2,"dw":57300},{"n":"Division No. 3, AB","lat":49.8,"lng":-114.0,"pop":42595,"a":5606.2,"d":7.6,"h":3.1,"dw":17350},{"n":"Division No. 4, AB","lat":50.5,"lng":-110.5,"pop":44150,"a":12058.0,"d":3.7,"h":1.6,"dw":19040},{"n":"Division No. 5, AB","lat":51.0,"lng":-112.5,"pop":54095,"a":5586.9,"d":9.7,"h":4.1,"dw":22820},{"n":"Division No. 6, AB","lat":51.05,"lng":-114.07,"pop":1481806,"a":1972.2,"d":751.3,"h":289.5,"dw":571030},{"n":"Division No. 7, AB","lat":51.5,"lng":-115.0,"pop":67740,"a":15031.0,"d":4.5,"h":2.0,"dw":29940},{"n":"Division No. 8, AB","lat":52.25,"lng":-113.8,"pop":222010,"a":4633.2,"d":47.9,"h":19.3,"dw":89540},{"n":"Division No. 9, AB","lat":52.0,"lng":-111.0,"pop":26415,"a":6289.6,"d":4.2,"h":1.9,"dw":11780},{"n":"Division No. 10, AB","lat":52.5,"lng":-110.0,"pop":50850,"a":6308.9,"d":8.1,"h":3.5,"dw":22230},{"n":"Division No. 11, AB","lat":53.55,"lng":-113.49,"pop":1418118,"a":3639.8,"d":389.6,"h":154.2,"dw":561080},{"n":"Division No. 12, AB","lat":53.0,"lng":-111.0,"pop":72870,"a":9598.5,"d":7.6,"h":3.1,"dw":30010},{"n":"Division No. 13, AB","lat":52.5,"lng":-115.5,"pop":26105,"a":15710.5,"d":1.7,"h":0.9,"dw":13400},{"n":"Division No. 14, AB","lat":54.0,"lng":-113.0,"pop":24705,"a":6486.5,"d":3.8,"h":1.6,"dw":10490},{"n":"Division No. 15, AB","lat":54.0,"lng":-115.5,"pop":56515,"a":12092.7,"d":4.7,"h":2.0,"dw":23840},{"n":"Division No. 16, AB","lat":57.0,"lng":-111.5,"pop":70050,"a":26430.2,"d":2.7,"h":1.1,"dw":27870},{"n":"Division No. 17, AB","lat":55.5,"lng":-117.0,"pop":137145,"a":23608.2,"d":5.8,"h":2.4,"dw":55880},{"n":"Division No. 18, AB","lat":55.0,"lng":-114.0,"pop":10880,"a":12227.9,"d":0.9,"h":0.4,"dw":4870},{"n":"Division No. 19, AB","lat":59.0,"lng":-120.0,"pop":3735,"a":72543.9,"d":0.1,"h":0.0,"dw":1750},{"n":"East Kootenay, BC","lat":49.8,"lng":-116.0,"pop":63745,"a":10632.9,"d":6.0,"h":3.1,"dw":32930},{"n":"Central Kootenay, BC","lat":49.5,"lng":-117.2,"pop":62465,"a":8544.4,"d":7.3,"h":3.8,"dw":32720},{"n":"Kootenay Boundary, BC","lat":49.1,"lng":-118.1,"pop":32425,"a":3125.5,"d":10.4,"h":5.2,"dw":16240},{"n":"Okanagan-Similkameen, BC","lat":49.4,"lng":-119.5,"pop":87405,"a":4020.9,"d":21.7,"h":11.0,"dw":44310},{"n":"Fraser Valley, BC","lat":49.1,"lng":-121.9,"pop":332683,"a":5158.7,"d":64.5,"h":23.2,"dw":119530},{"n":"Greater Vancouver, BC","lat":49.25,"lng":-123.0,"pop":2642825,"a":1113.1,"d":2374.2,"h":959.1,"dw":1067595},{"n":"Capital (Victoria), BC","lat":48.45,"lng":-123.5,"pop":415451,"a":904.3,"d":459.4,"h":202.8,"dw":183380},{"n":"Cowichan Valley, BC","lat":48.8,"lng":-123.9,"pop":89955,"a":1340.9,"d":67.1,"h":30.3,"dw":40670},{"n":"Nanaimo, BC","lat":49.15,"lng":-124.0,"pop":170908,"a":786.5,"d":217.3,"h":100.7,"dw":79210},{"n":"Alberni-Clayoquot, BC","lat":49.25,"lng":-125.2,"pop":30905,"a":2553.3,"d":12.1,"h":5.7,"dw":14470},{"n":"Strathcona, BC","lat":50.1,"lng":-125.3,"pop":49765,"a":7076.9,"d":7.0,"h":3.4,"dw":23950},{"n":"Comox Valley, BC","lat":49.7,"lng":-125.0,"pop":72171,"a":659.5,"d":109.4,"h":52.0,"dw":34260},{"n":"Powell River, BC","lat":49.85,"lng":-124.5,"pop":21668,"a":1966.0,"d":11.0,"h":5.4,"dw":10620},{"n":"Sunshine Coast, BC","lat":49.55,"lng":-123.7,"pop":33108,"a":1458.7,"d":22.7,"h":11.8,"dw":17170},{"n":"Squamish-Lillooet, BC","lat":50.1,"lng":-122.8,"pop":46370,"a":6316.6,"d":7.3,"h":3.0,"dw":18880},{"n":"Thompson-Nicola, BC","lat":50.8,"lng":-120.3,"pop":144020,"a":17173.4,"d":8.4,"h":3.7,"dw":63610},{"n":"Central Okanagan, BC","lat":49.9,"lng":-119.5,"pop":222162,"a":1121.2,"d":198.1,"h":90.0,"dw":100880},{"n":"North Okanagan, BC","lat":50.5,"lng":-119.1,"pop":90690,"a":2900.8,"d":31.3,"h":13.9,"dw":40260},{"n":"Columbia-Shuswap, BC","lat":51.1,"lng":-118.2,"pop":55570,"a":11642.9,"d":4.8,"h":2.6,"dw":29890},{"n":"Cariboo, BC","lat":52.5,"lng":-122.5,"pop":59150,"a":30938.4,"d":1.9,"h":0.9,"dw":27730},{"n":"Mount Waddington, BC","lat":50.9,"lng":-127.0,"pop":11065,"a":7833.2,"d":1.4,"h":0.7,"dw":5270},{"n":"Central Coast, BC","lat":52.2,"lng":-127.5,"pop":3210,"a":9596.6,"d":0.3,"h":0.2,"dw":1580},{"n":"Kitimat-Stikine, BC","lat":55.0,"lng":-128.5,"pop":36275,"a":38498.2,"d":0.9,"h":0.4,"dw":16210},{"n":"Bulkley-Nechako, BC","lat":54.0,"lng":-125.5,"pop":38310,"a":28324.8,"d":1.4,"h":0.6,"dw":17060},{"n":"Fraser-Fort George, BC","lat":53.9,"lng":-121.8,"pop":101695,"a":19714.0,"d":5.2,"h":2.2,"dw":43450},{"n":"Peace River, BC","lat":56.0,"lng":-121.0,"pop":63235,"a":45518.0,"d":1.4,"h":0.6,"dw":26330},{"n":"Stikine, BC","lat":58.5,"lng":-130.0,"pop":720,"a":50498.3,"d":0.0,"h":0.0,"dw":390},{"n":"Northern Rockies, BC","lat":59.0,"lng":-124.0,"pop":5405,"a":32572.3,"d":0.2,"h":0.1,"dw":2630},{"n":"North Coast, BC","lat":54.2,"lng":-130.3,"pop":17250,"a":8512.8,"d":2.0,"h":0.9,"dw":8060},{"n":"Yukon, YT","lat":63.0,"lng":-136.0,"pop":40232,"a":183287.6,"d":0.2,"h":0.1,"dw":18770},{"n":"Region 1 (Yellowknife), NT","lat":62.5,"lng":-114.4,"pop":20340,"a":62297.6,"d":0.3,"h":0.1,"dw":8650},{"n":"Region 2 (Dehcho), NT","lat":61.5,"lng":-121.0,"pop":3430,"a":31594.0,"d":0.1,"h":0.0,"dw":1550},{"n":"Region 3 (Sahtu), NT","lat":64.5,"lng":-126.0,"pop":2640,"a":46648.8,"d":0.1,"h":0.0,"dw":1180},{"n":"Region 4 (South Slave), NT","lat":60.5,"lng":-112.0,"pop":7980,"a":57038.8,"d":0.1,"h":0.1,"dw":3450},{"n":"Region 5 (North Slave), NT","lat":64.0,"lng":-115.0,"pop":5545,"a":62934.6,"d":0.1,"h":0.0,"dw":2080},{"n":"Region 6 (Inuvik), NT","lat":68.5,"lng":-134.0,"pop":5635,"a":129838.4,"d":0.0,"h":0.0,"dw":2310},{"n":"Qikiqtaaluk, NU","lat":66.0,"lng":-68.0,"pop":20710,"a":382115.9,"d":0.1,"h":0.0,"dw":6210},{"n":"Kivalliq, NU","lat":62.0,"lng":-95.0,"pop":10413,"a":171680.3,"d":0.1,"h":0.0,"dw":3110},{"n":"Kitikmeot, NU","lat":68.0,"lng":-108.0,"pop":6490,"a":172482.2,"d":0.0,"h":0.0,"dw":2150}];
+
+// Find nearest Canadian census division by lat/lng
+const findCanadianCensusDivision = (lat, lng) => {
+  let nearest = null;
+  let minDist = Infinity;
+  CANADA_CENSUS_DIVISIONS.forEach(cd => {
+    // Weighted distance (lng weight adjusted for latitude)
+    const lngWeight = Math.cos(lat * Math.PI / 180);
+    const d = Math.sqrt((cd.lat - lat) ** 2 + ((cd.lng - lng) * lngWeight) ** 2);
+    if (d < minDist) { minDist = d; nearest = cd; }
+  });
+  return { cd: nearest, dist: minDist };
+};
+
+// ─── SIMULATION ENGINE ──────────────────────────────────────────────────────
+
+function runSimulation(params) {
+  const {
+    windSpeed, pressureDeficit, pathLength, pathWidth, forwardSpeed,
+    direction, rainfall, hailSize, subVortices, lifespan,
+    terrain, timeOfDay, season,
+    housingDensity, mobileHomePct, woodFramePct, brickPct, concretePct,
+    powerLinesPerMile, cellTowers, bridges, waterTowers, gasLinesPerMile,
+    vehiclesPerMile,
+    cropType, growthStage, cropAcresPct,
+    popDensity, basementPct, shelterPct, warningLeadTime, preparedness,
+    livestockDensity,
+  } = params;
+
+  const ef = getEFRating(windSpeed);
+  const efIndex = EF_SCALE.indexOf(ef);
+  const efKey = `ef${efIndex}`;
+
+  // Effective wind with terrain modifier
+  const terrainMod = TERRAIN_WIND_MODIFIER[terrain];
+  const effectiveWind = windSpeed * terrainMod;
+
+  // Path area in sq miles
+  const pathWidthMiles = pathWidth / 1760;
+  const pathAreaSqMi = pathLength * pathWidthMiles;
+
+  // Multi-vortex intensity boost (each sub-vortex adds localized peaks)
+  const vortexBoost = 1 + (subVortices - 1) * 0.05;
+  const peakWind = Math.min(effectiveWind * vortexBoost, 320);
+
+  // Duration of exposure at any point (minutes)
+  const exposureDuration = forwardSpeed > 0 ? (pathWidthMiles * 60) / forwardSpeed : lifespan;
+
+  // ─── STRUCTURAL DAMAGE ──────────────────────────────
+  const totalStructures = housingDensity * pathAreaSqMi;
+  const structureBreakdown = {
+    mobile_home: totalStructures * (mobileHomePct / 100),
+    wood_frame: totalStructures * (woodFramePct / 100),
+    brick_masonry: totalStructures * (brickPct / 100),
+    reinforced_conc: totalStructures * (concretePct / 100),
+  };
+
+  let totalDestroyed = 0;
+  let totalDamaged = 0;
+  let residentialLoss = 0;
+
+  const structureDamage = {};
+  for (const [type, count] of Object.entries(structureBreakdown)) {
+    const destroyProb = interpolateFragility(type, peakWind);
+    // Wind field decay: center has peak, edges have ~40% of peak
+    // Average destruction across path width ≈ 60% of center probability
+    const avgDestroyProb = destroyProb * 0.6;
+    const damageProb = Math.min(avgDestroyProb * 2.5, 1.0);
+
+    const destroyed = Math.round(count * avgDestroyProb);
+    const damaged = Math.round(count * damageProb) - destroyed;
+
+    structureDamage[type] = { total: Math.round(count), destroyed, damaged };
+    totalDestroyed += destroyed;
+    totalDamaged += damaged;
+    residentialLoss += destroyed * STRUCTURE_FRAGILITY[type].value +
+                       damaged * STRUCTURE_FRAGILITY[type].value * 0.35;
+  }
+
+  // ─── INFRASTRUCTURE DAMAGE ──────────────────────────
+  const infraDestroyRate = interpolateFragility("wood_frame", peakWind) * 0.7;
+  const powerLinesDestroyed = pathLength * powerLinesPerMile * infraDestroyRate;
+  const cellTowersInPath = Math.ceil(cellTowers * (pathAreaSqMi / 50));
+  const cellTowersDestroyed = Math.round(cellTowersInPath * infraDestroyRate);
+  const bridgesInPath = Math.ceil(bridges * (pathLength / 30));
+  const bridgesDestroyed = Math.round(bridgesInPath * interpolateFragility("reinforced_conc", peakWind) * 0.5);
+  const waterTowersInPath = Math.ceil(waterTowers * (pathAreaSqMi / 100));
+  const waterTowersDestroyed = Math.round(waterTowersInPath * infraDestroyRate * 0.8);
+  const gasLinesDestroyed = pathLength * gasLinesPerMile * infraDestroyRate * 0.5;
+
+  const infraLoss =
+    powerLinesDestroyed * INFRA_COSTS.power_lines +
+    cellTowersDestroyed * INFRA_COSTS.cell_towers +
+    bridgesDestroyed * INFRA_COSTS.bridges +
+    waterTowersDestroyed * INFRA_COSTS.water_towers +
+    gasLinesDestroyed * INFRA_COSTS.gas_lines;
+
+  // ─── VEHICLE DAMAGE ─────────────────────────────────
+  const vehiclesInPath = vehiclesPerMile * pathLength * (pathWidthMiles / 0.1);
+  const vehiclesDestroyed = Math.round(vehiclesInPath * interpolateFragility("mobile_home", peakWind) * 0.4);
+  const vehicleLoss = vehiclesDestroyed * 25000;
+
+  // ─── CROP & LIVESTOCK DAMAGE ────────────────────────
+  const cropInfo = CROP_LOSS_PER_ACRE[cropType];
+  const cropAcres = pathAreaSqMi * 640 * (cropAcresPct / 100);
+  const windCropDamage = Math.min(peakWind / 200, 1.0) * cropInfo.susceptibility;
+  const hailCropDamage = Math.min(hailSize / 4, 1.0) * 0.5;
+  const totalCropDamagePct = Math.min(windCropDamage + hailCropDamage, 1.0);
+  const cropLoss = cropAcres * cropInfo.value * totalCropDamagePct * GROWTH_STAGE_MULT[growthStage];
+
+  const livestockInPath = livestockDensity * pathAreaSqMi;
+  const livestockFatality = Math.min(peakWind / 300, 0.8) * 0.3;
+  const livestockLost = Math.round(livestockInPath * livestockFatality);
+  const livestockLoss = livestockLost * 1500;
+
+  // ─── CASUALTIES ─────────────────────────────────────
+  const populationInPath = popDensity * pathAreaSqMi;
+
+  // Warning effectiveness: each minute of lead time reduces casualties
+  // Simmons & Sutter: ~1.8% reduction per minute of lead time
+  const warningReduction = Math.max(0, 1 - warningLeadTime * 0.018);
+
+  // Night multiplier: Ashley (2007) — nighttime tornadoes 2.5x more lethal
+  const nightMult = (timeOfDay === "night") ? 2.5 : (timeOfDay === "evening") ? 1.5 : 1.0;
+
+  // Preparedness reduces casualties (siren coverage, education, apps)
+  const preparednessMult = 1 - preparedness * 0.4;
+
+  // Shelter distribution
+  const noShelterPct = mobileHomePct / 100;
+  const inBasement = basementPct / 100;
+  const inShelter = shelterPct / 100;
+  const inInterior = Math.max(0, 1 - noShelterPct - inBasement - inShelter);
+
+  const baseFatalityRate =
+    noShelterPct * (FATALITY_RATES.no_shelter[efKey] || 0) +
+    inInterior * (FATALITY_RATES.interior_room[efKey] || 0) +
+    inBasement * (FATALITY_RATES.basement[efKey] || 0) +
+    inShelter * (FATALITY_RATES.storm_shelter[efKey] || 0);
+
+  const adjustedFatalityRate = baseFatalityRate * warningReduction * nightMult * preparednessMult;
+  const fatalities = Math.round(populationInPath * adjustedFatalityRate);
+  const injuries = Math.round(fatalities * 15); // ~15:1 injury to fatality ratio
+
+  // Rainfall flooding additional damage
+  const floodDamage = rainfall > 3 ? residentialLoss * 0.05 * (rainfall / 3) : 0;
+
+  // ─── TOTAL ECONOMIC IMPACT ──────────────────────────
+  const directDamage = residentialLoss + infraLoss + vehicleLoss + cropLoss + livestockLoss + floodDamage;
+  const emergencyResponseCost = fatalities * 50000 + injuries * 8000 + totalDestroyed * 2000;
+  const businessInterruption = directDamage * 0.15;
+  const totalEconomicImpact = directDamage + emergencyResponseCost + businessInterruption;
+
+  return {
+    ef, efIndex, effectiveWind: Math.round(effectiveWind), peakWind: Math.round(peakWind),
+    pathAreaSqMi: pathAreaSqMi.toFixed(2),
+    exposureDuration: exposureDuration.toFixed(1),
+    structureDamage, totalDestroyed, totalDamaged, totalStructures: Math.round(totalStructures),
+    infraLoss, powerLinesDestroyed: Math.round(powerLinesDestroyed),
+    cellTowersDestroyed, bridgesDestroyed, waterTowersDestroyed,
+    gasLinesDestroyed: Math.round(gasLinesDestroyed),
+    vehiclesDestroyed, vehicleLoss,
+    cropAcres: Math.round(cropAcres), cropLoss, livestockLost, livestockLoss,
+    populationInPath: Math.round(populationInPath),
+    fatalities, injuries,
+    residentialLoss, floodDamage, emergencyResponseCost, businessInterruption,
+    totalEconomicImpact,
+    warningReduction, nightMult, preparednessMult,
+  };
+}
+
+// ─── HISTORICAL COMPARISONS ─────────────────────────────────────────────────
+
+const HISTORICAL = [
+  { name: "Joplin, MO 2011", ef: 5, fatalities: 158, injuries: 1150, damage: 2.8e9, pathLength: 22.1, pathWidth: 1760 },
+  { name: "Moore, OK 2013", ef: 5, fatalities: 24, injuries: 377, damage: 2.0e9, pathLength: 17, pathWidth: 1900 },
+  { name: "Tuscaloosa, AL 2011", ef: 4, fatalities: 64, injuries: 1500, damage: 2.4e9, pathLength: 80.7, pathWidth: 2640 },
+  { name: "Greensburg, KS 2007", ef: 5, fatalities: 11, injuries: 63, damage: 250e6, pathLength: 22, pathWidth: 2816 },
+  { name: "El Reno, OK 2013", ef: 3, fatalities: 8, injuries: 151, damage: 40e6, pathLength: 16.2, pathWidth: 4505 },
+  { name: "Tri-State 1925", ef: 5, fatalities: 695, injuries: 2027, damage: 1.4e9, pathLength: 219, pathWidth: 1760 },
+];
+
+// ─── FORMATTING ─────────────────────────────────────────────────────────────
+
+const fmt = (n) => {
+  if (n >= 1e9) return `$${(n / 1e9).toFixed(2)}B`;
+  if (n >= 1e6) return `$${(n / 1e6).toFixed(1)}M`;
+  if (n >= 1e3) return `$${(n / 1e3).toFixed(0)}K`;
+  return `$${Math.round(n)}`;
+};
+
+const numFmt = (n) => Math.round(n).toLocaleString();
+
+// ─── SLIDER COMPONENT ───────────────────────────────────────────────────────
+
+function Slider({ label, value, onChange, min, max, step = 1, unit = "", info }) {
+  return (
+    <div style={{ marginBottom: 10 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: "#b0b0b0", marginBottom: 3 }}>
+        <span title={info}>{label}</span>
+        <span style={{ color: "#e0e0e0", fontFamily: "'JetBrains Mono', monospace", fontWeight: 600 }}>
+          {typeof value === "number" ? value.toLocaleString() : value}{unit}
+        </span>
+      </div>
+      <input
+        type="range" min={min} max={max} step={step} value={value}
+        onChange={(e) => onChange(parseFloat(e.target.value))}
+        style={{ width: "100%", accentColor: "#ef5350", height: 4 }}
+      />
+    </div>
+  );
+}
+
+function SelectInput({ label, value, onChange, options }) {
+  return (
+    <div style={{ marginBottom: 10 }}>
+      <div style={{ fontSize: 11, color: "#b0b0b0", marginBottom: 3 }}>{label}</div>
+      <select value={value} onChange={(e) => onChange(e.target.value)}
+        style={{
+          width: "100%", padding: "5px 8px", background: "#1a1a2e", color: "#e0e0e0",
+          border: "1px solid #333", borderRadius: 4, fontSize: 11, fontFamily: "inherit"
+        }}>
+        {options.map(([v, l]) => <option key={v} value={v}>{l}</option>)}
+      </select>
+    </div>
+  );
+}
+
+// ─── SECTION COMPONENT ──────────────────────────────────────────────────────
+
+function Section({ title, icon, children, defaultOpen = true }) {
+  const [open, setOpen] = useState(defaultOpen);
+  return (
+    <div style={{ marginBottom: 8 }}>
+      <div
+        onClick={() => setOpen(!open)}
+        style={{
+          display: "flex", alignItems: "center", gap: 6, cursor: "pointer",
+          padding: "6px 0", borderBottom: "1px solid #222", marginBottom: open ? 8 : 0,
+          userSelect: "none",
+        }}
+      >
+        <span style={{ fontSize: 13 }}>{icon}</span>
+        <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "#e0e0e0" }}>{title}</span>
+        <span style={{ marginLeft: "auto", fontSize: 10, color: "#666", transition: "transform .2s", transform: open ? "rotate(180deg)" : "rotate(0)" }}>▼</span>
+      </div>
+      {open && <div style={{ paddingLeft: 4 }}>{children}</div>}
+    </div>
+  );
+}
+
+// ─── INTERACTIVE MAP COMPONENT (Leaflet.js) ─────────────────────────────────
+
+function InteractiveMap({ enabledCountries, tornadoLat, tornadoLng, onPlaceTornado, params, result, mapStyle }) {
+  const containerRef = useRef(null);
+  const mapRef = useRef(null);
+  const layersRef = useRef({});
+  const markersRef = useRef([]);
+
+  // Map bounds per country selection
+  const boundsForCountry = useMemo(() => {
+    if (enabledCountries === "us") return [[24, -125], [50, -66]];
+    if (enabledCountries === "canada") return [[41, -141], [60, -52]];
+    return [[24, -141], [60, -52]];
+  }, [enabledCountries]);
+
+  // Initialize Leaflet map
+  useEffect(() => {
+    if (!containerRef.current || mapRef.current) return;
+    if (typeof L === "undefined") return;
+
+    const map = L.map(containerRef.current, {
+      center: [39, -98],
+      zoom: 4,
+      zoomControl: false,
+      attributionControl: false,
+      maxBounds: [[10, -170], [72, -40]],
+      maxBoundsViscosity: 1.0,
+    });
+
+    L.control.zoom({ position: "topright" }).addTo(map);
+
+    // Tile layers
+    const satellite = L.tileLayer(
+      "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+      { maxZoom: 18 }
+    );
+    const streets = L.tileLayer(
+      "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+      { maxZoom: 19 }
+    );
+    const topo = L.tileLayer(
+      "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
+      { maxZoom: 18 }
+    );
+    const dark = L.tileLayer(
+      "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+      { maxZoom: 19 }
+    );
+
+    layersRef.current = { satellite, streets, topo, dark };
+
+    // Apply initial style
+    const initial = mapStyle === "satellite" ? satellite : mapStyle === "topo" ? topo : mapStyle === "dark" ? dark : streets;
+    initial.addTo(map);
+
+    // Tornado Alley polygon
+    const alley = L.polygon([
+      [48,-104],[48,-94],[42,-88],[35,-88],[28,-95],[28,-100],[35,-104],[42,-104]
+    ], { color: "#ef5350", fillColor: "#ef5350", fillOpacity: 0.06, weight: 1, opacity: 0.3, dashArray: "4 4" });
+    alley.addTo(map);
+
+    // Canada tornado zone
+    const caZone = L.polygon([
+      [49,-110],[55,-110],[55,-95],[49,-95],[49,-85],[45,-75],[42,-80],[43,-85]
+    ], { color: "#ffb74d", fillColor: "#ffb74d", fillOpacity: 0.04, weight: 1, opacity: 0.2, dashArray: "4 4" });
+    caZone.addTo(map);
+
+    // Click handler
+    map.on("click", (e) => {
+      const { lat, lng } = e.latlng;
+      onPlaceTornado(Math.round(lat * 10) / 10, Math.round(lng * 10) / 10);
+    });
+
+    mapRef.current = map;
+
+    // Cleanup
+    return () => {
+      map.remove();
+      mapRef.current = null;
+    };
+  }, []);
+
+  // Switch tile layer when mapStyle changes
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+    const layers = layersRef.current;
+    Object.values(layers).forEach((l) => { if (map.hasLayer(l)) map.removeLayer(l); });
+    const target = mapStyle === "satellite" ? layers.satellite : mapStyle === "topo" ? layers.topo : mapStyle === "dark" ? layers.dark : layers.streets;
+    if (target) target.addTo(map);
+  }, [mapStyle]);
+
+  // Fit bounds when country changes
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+    map.fitBounds(boundsForCountry, { padding: [20, 20], animate: true });
+  }, [boundsForCountry]);
+
+  // Update tornado markers and path
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) return;
+
+    // Clear old markers
+    markersRef.current.forEach((m) => map.removeLayer(m));
+    markersRef.current = [];
+
+    if (!tornadoLat || !tornadoLng) return;
+
+    // Tornado origin marker
+    const icon = L.divIcon({
+      html: '<div style="font-size:28px;filter:drop-shadow(0 0 8px rgba(239,83,80,0.8))">🌪️</div>',
+      className: "",
+      iconSize: [32, 32],
+      iconAnchor: [16, 16],
+    });
+    const marker = L.marker([tornadoLat, tornadoLng], { icon }).addTo(map);
+    markersRef.current.push(marker);
+
+    // Info popup
+    marker.bindPopup(
+      `<div style="font-family:monospace;font-size:12px;line-height:1.6">
+        <strong style="color:${result.ef.color}">${result.ef.rating}</strong> — ${result.peakWind} mph peak<br>
+        Path: ${params.pathLength} mi × ${params.pathWidth} yd<br>
+        Fatalities: <span style="color:#ef5350">${result.fatalities}</span> | Injuries: ${result.injuries}<br>
+        Damage: <strong>${result.totalEconomicImpact >= 1e9 ? "$" + (result.totalEconomicImpact / 1e9).toFixed(2) + "B" : "$" + (result.totalEconomicImpact / 1e6).toFixed(1) + "M"}</strong>
+      </div>`,
+      { className: "tornado-popup" }
+    );
+
+    // Tornado path line
+    const pathMiles = params.pathLength;
+    const pathDegreesLat = pathMiles / 69;
+    const dirRad = params.direction * Math.PI / 180;
+    const endLat = tornadoLat + pathDegreesLat * Math.cos(dirRad);
+    const endLng = tornadoLng + pathDegreesLat * Math.sin(dirRad) / Math.cos(tornadoLat * Math.PI / 180);
+
+    // Damage swath (wider polygon)
+    const pathWidthDeg = (params.pathWidth / 1760) / 69;
+    const perpAngle = dirRad + Math.PI / 2;
+    const dLatPerp = pathWidthDeg * Math.cos(perpAngle) / 2;
+    const dLngPerp = pathWidthDeg * Math.sin(perpAngle) / Math.cos(tornadoLat * Math.PI / 180) / 2;
+
+    const swath = L.polygon([
+      [tornadoLat + dLatPerp, tornadoLng + dLngPerp],
+      [tornadoLat - dLatPerp, tornadoLng - dLngPerp],
+      [endLat - dLatPerp, endLng - dLngPerp],
+      [endLat + dLatPerp, endLng + dLngPerp],
+    ], {
+      color: result.ef.color,
+      fillColor: result.ef.color,
+      fillOpacity: 0.25,
+      weight: 1,
+      opacity: 0.6,
+    }).addTo(map);
+    markersRef.current.push(swath);
+
+    // Center path line
+    const pathLine = L.polyline([
+      [tornadoLat, tornadoLng],
+      [endLat, endLng]
+    ], { color: "#fff", weight: 2, opacity: 0.7, dashArray: "6 4" }).addTo(map);
+    markersRef.current.push(pathLine);
+
+    // End point marker
+    const endIcon = L.divIcon({
+      html: `<div style="width:8px;height:8px;background:${result.ef.color};border-radius:50%;border:2px solid #fff;box-shadow:0 0 6px ${result.ef.color}"></div>`,
+      className: "",
+      iconSize: [12, 12],
+      iconAnchor: [6, 6],
+    });
+    const endMarker = L.marker([endLat, endLng], { icon: endIcon }).addTo(map);
+    markersRef.current.push(endMarker);
+
+    // Damage radius circles at intervals along path
+    const steps = 5;
+    for (let i = 1; i <= steps; i++) {
+      const frac = i / (steps + 1);
+      const cLat = tornadoLat + (endLat - tornadoLat) * frac;
+      const cLng = tornadoLng + (endLng - tornadoLng) * frac;
+      const radiusMeters = (params.pathWidth * 0.9144 / 2) * (1 - Math.abs(frac - 0.5));
+      const circle = L.circle([cLat, cLng], {
+        radius: Math.max(radiusMeters, 500),
+        color: result.ef.color,
+        fillColor: result.ef.color,
+        fillOpacity: 0.08,
+        weight: 0.5,
+        opacity: 0.3,
+      }).addTo(map);
+      markersRef.current.push(circle);
+    }
+
+  }, [tornadoLat, tornadoLng, params.pathLength, params.pathWidth, params.direction, result]);
+
+  return (
+    <div ref={containerRef} style={{ width: "100%", height: "100%", borderRadius: 8, overflow: "hidden" }} />
+  );
+}
+
+// ─── PATH VISUALIZATION ─────────────────────────────────────────────────────
+
+function TornadoPathViz({ params, result }) {
+  const canvasRef = useRef(null);
+  const animRef = useRef(0);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    const W = canvas.width = canvas.offsetWidth * 2;
+    const H = canvas.height = canvas.offsetHeight * 2;
+    ctx.scale(2, 2);
+    const w = W / 2, h = H / 2;
+
+    let frame = 0;
+    const draw = () => {
+      frame++;
+      ctx.fillStyle = "#0a0a18";
+      ctx.fillRect(0, 0, w, h);
+
+      // Grid
+      ctx.strokeStyle = "#151530";
+      ctx.lineWidth = 0.5;
+      for (let x = 0; x < w; x += 30) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke(); }
+      for (let y = 0; y < h; y += 30) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke(); }
+
+      // Scale: path fits in view
+      const margin = 60;
+      const pathLenPx = w - margin * 2;
+      const milesPerPx = params.pathLength / pathLenPx;
+      const pathWidthPx = Math.max(8, (params.pathWidth / 1760) / milesPerPx);
+
+      // Direction
+      const dirRad = (params.direction - 90) * Math.PI / 180;
+      const cx = w / 2, cy = h / 2;
+
+      ctx.save();
+      ctx.translate(cx, cy);
+      ctx.rotate(dirRad);
+
+      // Damage swath with gaussian wind profile
+      const segments = 80;
+      const segLen = pathLenPx / segments;
+      const progress = Math.min(frame / 120, 1);
+
+      for (let i = 0; i < segments * progress; i++) {
+        const x = -pathLenPx / 2 + i * segLen;
+        // Gaussian cross-section: wind decays from center
+        for (let j = -20; j <= 20; j++) {
+          const yOff = (j / 20) * pathWidthPx;
+          const gaussFactor = Math.exp(-0.5 * (j / 8) ** 2);
+          const wobble = Math.sin(i * 0.3 + frame * 0.02) * pathWidthPx * 0.1;
+
+          const intensity = gaussFactor * (result.peakWind / 250);
+          const r = Math.round(200 * intensity + 55);
+          const g = Math.round(80 * (1 - intensity) + 20);
+          const b = Math.round(40);
+          const a = gaussFactor * 0.6;
+
+          ctx.fillStyle = `rgba(${r},${g},${b},${a})`;
+          ctx.fillRect(x, yOff + wobble, segLen + 1, pathWidthPx / 18);
+        }
+      }
+
+      // Tornado vortex indicator
+      const vortexX = -pathLenPx / 2 + pathLenPx * ((frame % 240) / 240);
+      if (progress >= 1) {
+        for (let v = 0; v < params.subVortices; v++) {
+          const angle = (frame * 0.1) + (v * Math.PI * 2 / params.subVortices);
+          const vr = pathWidthPx * 0.15;
+          const vx = vortexX + Math.cos(angle) * vr;
+          const vy = Math.sin(angle) * vr;
+
+          const grad = ctx.createRadialGradient(vx, vy, 0, vx, vy, pathWidthPx * 0.3);
+          grad.addColorStop(0, "rgba(255,255,255,0.3)");
+          grad.addColorStop(0.3, result.ef.color + "80");
+          grad.addColorStop(1, "transparent");
+          ctx.fillStyle = grad;
+          ctx.beginPath();
+          ctx.arc(vx, vy, pathWidthPx * 0.3, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      ctx.restore();
+
+      // Scale bar
+      ctx.fillStyle = "#555";
+      ctx.font = "10px 'JetBrains Mono', monospace";
+      const scaleBarMiles = Math.max(1, Math.round(params.pathLength / 5));
+      const scaleBarPx = scaleBarMiles / milesPerPx;
+      ctx.fillRect(20, h - 30, scaleBarPx, 2);
+      ctx.fillText(`${scaleBarMiles} mi`, 20, h - 15);
+
+      // Direction arrow
+      ctx.fillStyle = "#888";
+      ctx.font = "10px sans-serif";
+      const arrowX = w - 50, arrowY = 30;
+      ctx.save();
+      ctx.translate(arrowX, arrowY);
+      ctx.rotate(dirRad);
+      ctx.fillStyle = "#ef5350";
+      ctx.beginPath();
+      ctx.moveTo(0, -12);
+      ctx.lineTo(6, 8);
+      ctx.lineTo(-6, 8);
+      ctx.fill();
+      ctx.restore();
+      ctx.fillStyle = "#888";
+      ctx.fillText(`${params.direction}°`, arrowX - 8, arrowY + 22);
+
+      // Labels
+      ctx.fillStyle = result.ef.color;
+      ctx.font = "bold 14px 'JetBrains Mono', monospace";
+      ctx.fillText(`${result.ef.rating} — ${result.peakWind} mph peak`, 20, 25);
+      ctx.fillStyle = "#888";
+      ctx.font = "10px 'JetBrains Mono', monospace";
+      ctx.fillText(`Path: ${params.pathLength} mi × ${params.pathWidth} yd | Area: ${result.pathAreaSqMi} sq mi`, 20, 42);
+
+      animRef.current = requestAnimationFrame(draw);
+    };
+
+    draw();
+    return () => cancelAnimationFrame(animRef.current);
+  }, [params, result]);
+
+  return (
+    <canvas ref={canvasRef} style={{ width: "100%", height: "100%", borderRadius: 8, display: "block" }} />
+  );
+}
+
+// ─── STAT CARD ──────────────────────────────────────────────────────────────
+
+function Stat({ label, value, sub, color = "#e0e0e0", big }) {
+  return (
+    <div style={{
+      background: "#12122a", borderRadius: 8, padding: big ? "14px 16px" : "10px 12px",
+      border: "1px solid #1e1e3a", flex: 1, minWidth: big ? 140 : 100,
+    }}>
+      <div style={{ fontSize: 10, color: "#777", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 4 }}>{label}</div>
+      <div style={{ fontSize: big ? 22 : 16, fontWeight: 800, color, fontFamily: "'JetBrains Mono', monospace" }}>{value}</div>
+      {sub && <div style={{ fontSize: 9, color: "#555", marginTop: 2 }}>{sub}</div>}
+    </div>
+  );
+}
+
+// ─── BAR CHART ──────────────────────────────────────────────────────────────
+
+function MiniBar({ items, maxVal }) {
+  const max = maxVal || Math.max(...items.map((i) => i.value), 1);
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
+      {items.map((item, idx) => (
+        <div key={idx}>
+          <div style={{ display: "flex", justifyContent: "space-between", fontSize: 10, color: "#999", marginBottom: 2 }}>
+            <span>{item.label}</span>
+            <span style={{ fontFamily: "'JetBrains Mono', monospace", color: "#ccc" }}>{item.display || numFmt(item.value)}</span>
+          </div>
+          <div style={{ height: 6, background: "#1a1a2e", borderRadius: 3, overflow: "hidden" }}>
+            <div style={{
+              height: "100%", borderRadius: 3,
+              width: `${Math.max(1, (item.value / max) * 100)}%`,
+              background: item.color || "#ef5350",
+              transition: "width 0.5s ease",
+            }} />
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// ─── HISTORICAL COMPARISON ──────────────────────────────────────────────────
+
+function HistoricalComparison({ result }) {
+  const events = [...HISTORICAL, {
+    name: "YOUR SIMULATION",
+    ef: result.efIndex,
+    fatalities: result.fatalities,
+    injuries: result.injuries,
+    damage: result.totalEconomicImpact,
+    pathLength: 0,
+    pathWidth: 0,
+  }].sort((a, b) => b.damage - a.damage);
+
+  const maxDmg = Math.max(...events.map((e) => e.damage));
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+      {events.map((ev, i) => {
+        const isSim = ev.name === "YOUR SIMULATION";
+        return (
+          <div key={i} style={{
+            display: "flex", alignItems: "center", gap: 8, padding: "4px 8px",
+            background: isSim ? "#2a1a1a" : "transparent", borderRadius: 4,
+            border: isSim ? "1px solid #ef535066" : "1px solid transparent",
+          }}>
+            <div style={{ width: 80, fontSize: 9, color: isSim ? "#ef5350" : "#888", fontWeight: isSim ? 700 : 400 }}>
+              {ev.name}
+            </div>
+            <div style={{ flex: 1, height: 5, background: "#1a1a2e", borderRadius: 3, overflow: "hidden" }}>
+              <div style={{
+                height: "100%", borderRadius: 3, transition: "width 0.5s",
+                width: `${(ev.damage / maxDmg) * 100}%`,
+                background: isSim ? "#ef5350" : EF_SCALE[Math.min(ev.ef, 5)].color,
+              }} />
+            </div>
+            <div style={{ width: 55, fontSize: 9, color: "#aaa", textAlign: "right", fontFamily: "'JetBrains Mono', monospace" }}>
+              {fmt(ev.damage)}
+            </div>
+            <div style={{ width: 35, fontSize: 9, color: "#ef5350", textAlign: "right", fontFamily: "'JetBrains Mono', monospace" }}>
+              {ev.fatalities}☠
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+// ─── PRESETS ─────────────────────────────────────────────────────────────────
+
+const PRESETS = {
+  rural_ef3: {
+    label: "Rural EF3",
+    windSpeed: 150, pressureDeficit: 80, pathLength: 15, pathWidth: 600,
+    forwardSpeed: 40, direction: 225, rainfall: 2, hailSize: 2, subVortices: 1, lifespan: 20,
+    terrain: "flat_plains", timeOfDay: "afternoon", season: "spring",
+    housingDensity: 20, mobileHomePct: 25, woodFramePct: 55, brickPct: 15, concretePct: 5,
+    powerLinesPerMile: 3, cellTowers: 5, bridges: 2, waterTowers: 1, gasLinesPerMile: 1,
+    vehiclesPerMile: 5,
+    cropType: "corn", growthStage: "mid_season", cropAcresPct: 70,
+    popDensity: 30, basementPct: 20, shelterPct: 5, warningLeadTime: 15, preparedness: 0.5,
+    livestockDensity: 15,
+  },
+  suburban_ef4: {
+    label: "Suburban EF4",
+    windSpeed: 180, pressureDeficit: 100, pathLength: 20, pathWidth: 1200,
+    forwardSpeed: 45, direction: 230, rainfall: 3, hailSize: 3, subVortices: 3, lifespan: 30,
+    terrain: "rolling_hills", timeOfDay: "afternoon", season: "spring",
+    housingDensity: 500, mobileHomePct: 10, woodFramePct: 60, brickPct: 25, concretePct: 5,
+    powerLinesPerMile: 15, cellTowers: 30, bridges: 8, waterTowers: 5, gasLinesPerMile: 8,
+    vehiclesPerMile: 80,
+    cropType: "none", growthStage: "mid_season", cropAcresPct: 10,
+    popDensity: 2500, basementPct: 40, shelterPct: 10, warningLeadTime: 20, preparedness: 0.7,
+    livestockDensity: 0,
+  },
+  urban_ef5: {
+    label: "Urban EF5",
+    windSpeed: 250, pressureDeficit: 130, pathLength: 25, pathWidth: 1800,
+    forwardSpeed: 50, direction: 240, rainfall: 4, hailSize: 4, subVortices: 5, lifespan: 40,
+    terrain: "urban", timeOfDay: "night", season: "spring",
+    housingDensity: 2000, mobileHomePct: 5, woodFramePct: 40, brickPct: 35, concretePct: 20,
+    powerLinesPerMile: 30, cellTowers: 80, bridges: 20, waterTowers: 10, gasLinesPerMile: 20,
+    vehiclesPerMile: 200,
+    cropType: "none", growthStage: "mid_season", cropAcresPct: 0,
+    popDensity: 8000, basementPct: 30, shelterPct: 15, warningLeadTime: 10, preparedness: 0.6,
+    livestockDensity: 0,
+  },
+  joplin_2011: {
+    label: "Joplin 2011",
+    windSpeed: 225, pressureDeficit: 120, pathLength: 22, pathWidth: 1760,
+    forwardSpeed: 32, direction: 267, rainfall: 2, hailSize: 2.5, subVortices: 4, lifespan: 38,
+    terrain: "urban", timeOfDay: "evening", season: "spring",
+    housingDensity: 1200, mobileHomePct: 12, woodFramePct: 55, brickPct: 25, concretePct: 8,
+    powerLinesPerMile: 20, cellTowers: 40, bridges: 10, waterTowers: 6, gasLinesPerMile: 12,
+    vehiclesPerMile: 120,
+    cropType: "none", growthStage: "mid_season", cropAcresPct: 5,
+    popDensity: 4000, basementPct: 25, shelterPct: 8, warningLeadTime: 17, preparedness: 0.5,
+    livestockDensity: 0,
+  },
+};
+
+// ─── MAIN APP ───────────────────────────────────────────────────────────────
+
+function TornadoSimulator() {
+  const [params, setParams] = useState(PRESETS.suburban_ef4);
+  const [activeTab, setActiveTab] = useState("overview");
+  const [enabledCountries, setEnabledCountries] = useState("both");
+  const [tornadoLat, setTornadoLat] = useState(37.08);
+  const [tornadoLng, setTornadoLng] = useState(-94.51);
+  const [vizMode, setVizMode] = useState("map"); // "map" or "path"
+  const [mapStyle, setMapStyle] = useState("satellite"); // "satellite", "streets", "topo", "dark"
+  const [censusData, setCensusData] = useState(null);
+  const [censusLoading, setCensusLoading] = useState(false);
+
+  // Fetch real census population density when tornado is placed
+  const fetchCensusData = useCallback((lat, lng) => {
+    setCensusLoading(true);
+    setCensusData(null);
+
+    // Step 1: Reverse geocode lat/lng to county FIPS via Census Geocoder
+    const geocodeUrl = `https://geocoding.geo.census.gov/geocoder/geographies/coordinates?x=${lng}&y=${lat}&benchmark=Public_AR_Current&vintage=Current_Current&format=jsonp&callback=__censusCallback`;
+
+    // Use JSONP since Census geocoder doesn't support CORS
+    const script = document.createElement("script");
+    window.__censusCallback = (geoResult) => {
+      try {
+        const geographies = geoResult?.result?.geographies;
+        if (!geographies) { setCensusLoading(false); return; }
+
+        const county = geographies["Counties"]?.[0];
+        const tract = geographies["Census Tracts"]?.[0];
+
+        if (county) {
+          const stateFips = county.STATE;
+          const countyFips = county.COUNTY;
+          const countyName = county.NAME;
+          const areaLand = county.AREALAND; // in sq meters
+
+          // Step 2: Fetch population from ACS 5-year (no key needed for <500/day)
+          const popUrl = `https://api.census.gov/data/2022/acs/acs5?get=NAME,B01003_001E,B25001_001E&for=county:${countyFips}&in=state:${stateFips}`;
+
+          fetch(popUrl)
+            .then(r => r.json())
+            .then(data => {
+              if (data && data.length > 1) {
+                const row = data[1];
+                const name = row[0];
+                const population = parseInt(row[1]) || 0;
+                const housingUnits = parseInt(row[2]) || 0;
+                const areaLandSqMi = areaLand / 2589988.11; // sq meters to sq miles
+                const popDensity = Math.round(population / areaLandSqMi);
+                const housingDensity = Math.round(housingUnits / areaLandSqMi);
+
+                const info = {
+                  name,
+                  stateFips,
+                  countyFips,
+                  population,
+                  housingUnits,
+                  areaLandSqMi: areaLandSqMi.toFixed(1),
+                  popDensity,
+                  housingDensity,
+                  tractName: tract?.NAME || null,
+                  source: "US Census Bureau, ACS 5-Year Estimates (2022), 2020 TIGER/Line",
+                  sourceUrl: "https://data.census.gov",
+                  country: "us",
+                };
+
+                setCensusData(info);
+
+                // Auto-populate simulation parameters with real data
+                const isRemote = popDensity < 5;
+                setParams(p => ({
+                  ...p,
+                  popDensity: Math.min(popDensity, 15000),
+                  housingDensity: Math.min(housingDensity, 5000),
+                  // Scale infrastructure proportionally to real density
+                  powerLinesPerMile: isRemote ? 0 : Math.min(Math.round(popDensity / 80), 30),
+                  cellTowers: isRemote ? 0 : Math.min(Math.round(popDensity / 40), 80),
+                  bridges: isRemote ? 0 : Math.min(Math.round(popDensity / 150), 20),
+                  waterTowers: isRemote ? 0 : Math.min(Math.round(popDensity / 400), 10),
+                  gasLinesPerMile: isRemote ? 0 : Math.min(Math.round(popDensity / 150), 20),
+                  vehiclesPerMile: isRemote ? 0 : Math.min(Math.round(popDensity / 8), 300),
+                  livestockDensity: popDensity < 100 ? Math.min(Math.round((100 - popDensity) / 3), 50) : 0,
+                }));
+              }
+              setCensusLoading(false);
+            })
+            .catch(() => setCensusLoading(false));
+        } else {
+          // No county found — might be water, federal land, or uncovered area within US bounds
+          setCensusData({
+            name: "No census coverage (water/federal land)",
+            population: 0,
+            popDensity: 0,
+            housingDensity: 0,
+            source: "US Census Bureau — no county found at this coordinate",
+            country: "us",
+            note: "Location may be over water, federal land, or outside county boundaries",
+          });
+          setParams(p => ({
+            ...p,
+            popDensity: 0,
+            housingDensity: 0,
+            powerLinesPerMile: 0, cellTowers: 0, bridges: 0,
+            waterTowers: 0, gasLinesPerMile: 0, vehiclesPerMile: 0,
+            cropType: "none", cropAcresPct: 0, livestockDensity: 0,
+          }));
+          setCensusLoading(false);
+        }
+      } catch (e) {
+        setCensusLoading(false);
+      }
+      delete window.__censusCallback;
+      script.remove();
+    };
+    script.src = geocodeUrl;
+    script.onerror = () => { setCensusLoading(false); script.remove(); };
+    document.head.appendChild(script);
+  }, []);
+
+  // Trigger census lookup when tornado is placed
+  const handlePlaceTornado = useCallback((lat, lng) => {
+    setTornadoLat(lat);
+    setTornadoLng(lng);
+
+    // Check if the point is on land (rough bounding boxes)
+    const inUS = lat >= 24 && lat <= 50 && lng >= -125 && lng <= -66;
+    const inCanada = lat > 41 && lat <= 72 && lng >= -141 && lng <= -52 && !inUS;
+    const inAlaska = lat >= 51 && lat <= 72 && lng >= -170 && lng <= -130;
+
+    if (inUS || inAlaska) {
+      // Fetch real US Census data (Alaska is technically in US Census)
+      if (inUS) {
+        fetchCensusData(lat, lng);
+      } else {
+        // Alaska — very sparse, estimate ~1 person/sq mi average
+        const alaskaDensity = 1;
+        setCensusData({
+          name: "Alaska (estimated)",
+          population: null,
+          popDensity: alaskaDensity,
+          housingDensity: 0,
+          source: "US Census Bureau, 2020 Decennial Census",
+          sourceUrl: "https://data.census.gov",
+          country: "us",
+          note: "Alaska average ~1.3 persons/sq mi; most areas near 0",
+        });
+        setParams(p => ({
+          ...p,
+          popDensity: alaskaDensity,
+          housingDensity: 0,
+          powerLinesPerMile: 0, cellTowers: 1, bridges: 0,
+          waterTowers: 0, gasLinesPerMile: 0, vehiclesPerMile: 0,
+          cropType: "none", cropAcresPct: 0, livestockDensity: 0,
+        }));
+        setCensusLoading(false);
+      }
+    } else if (inCanada) {
+      // Canada — look up nearest census division from Statistics Canada 2021 Census
+      const { cd, dist } = findCanadianCensusDivision(lat, lng);
+
+      if (cd && dist < 5) {
+        // Found a census division within reasonable range
+        const popDensity = Math.round(cd.d); // already in per sq mi
+        const housingDensity = Math.round(cd.h);
+        const isRemote = popDensity < 5;
+
+        setCensusData({
+          name: cd.n,
+          population: cd.pop,
+          popDensity,
+          housingDensity,
+          areaLandSqMi: cd.a.toFixed(1),
+          housingUnits: cd.dw,
+          source: "Statistics Canada, 2021 Census of Population, Table 98-10-0002-02",
+          sourceUrl: "https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/index.cfm?Lang=E",
+          country: "canada",
+          note: dist > 2 ? "Matched to nearest census division centroid" : null,
+        });
+
+        setParams(p => ({
+          ...p,
+          popDensity: Math.min(popDensity, 15000),
+          housingDensity: Math.min(housingDensity, 5000),
+          powerLinesPerMile: isRemote ? 0 : Math.min(Math.round(popDensity / 80), 30),
+          cellTowers: isRemote ? 0 : Math.min(Math.round(popDensity / 40), 80),
+          bridges: isRemote ? 0 : Math.min(Math.round(popDensity / 150), 20),
+          waterTowers: isRemote ? 0 : Math.min(Math.round(popDensity / 400), 10),
+          gasLinesPerMile: isRemote ? 0 : Math.min(Math.round(popDensity / 150), 20),
+          vehiclesPerMile: isRemote ? 0 : Math.min(Math.round(popDensity / 8), 300),
+          cropType: lat > 55 ? "none" : p.cropType,
+          cropAcresPct: lat > 55 ? 0 : p.cropAcresPct,
+          livestockDensity: popDensity < 100 ? Math.min(Math.round((100 - popDensity) / 3), 50) : 0,
+        }));
+      } else {
+        // Very remote — no census division nearby (e.g., deep arctic)
+        setCensusData({
+          name: "Remote/Uninhabited Territory, Canada",
+          population: 0,
+          popDensity: 0,
+          housingDensity: 0,
+          source: "Statistics Canada, 2021 Census of Population — no census division at this location",
+          sourceUrl: "https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/index.cfm?Lang=E",
+          country: "canada",
+          note: "Location is in uninhabited territory with no census coverage",
+        });
+        setParams(p => ({
+          ...p,
+          popDensity: 0, housingDensity: 0,
+          powerLinesPerMile: 0, cellTowers: 0, bridges: 0,
+          waterTowers: 0, gasLinesPerMile: 0, vehiclesPerMile: 0,
+          cropType: "none", cropAcresPct: 0, livestockDensity: 0,
+        }));
+      }
+      setCensusLoading(false);
+    } else {
+      // Ocean, outside North America, or other uncovered area
+      // ZERO everything — no people, no structures, no damage
+      setCensusData({
+        name: "Ocean / Outside Coverage Area",
+        population: 0,
+        popDensity: 0,
+        housingDensity: 0,
+        source: "No census data — location is over water or outside North America",
+        country: "none",
+        note: "No population, structures, or infrastructure in this location",
+      });
+      setParams(p => ({
+        ...p,
+        popDensity: 0,
+        housingDensity: 0,
+        powerLinesPerMile: 0, cellTowers: 0, bridges: 0,
+        waterTowers: 0, gasLinesPerMile: 0, vehiclesPerMile: 0,
+        cropType: "none", cropAcresPct: 0, livestockDensity: 0,
+      }));
+      setCensusLoading(false);
+    }
+  }, [fetchCensusData]);
+
+  const set = useCallback((key) => (val) => setParams((p) => ({ ...p, [key]: val })), []);
+
+  // Auto-balance housing percentages
+  const setHousingPct = useCallback((key, val) => {
+    setParams((p) => {
+      const others = ["mobileHomePct", "woodFramePct", "brickPct", "concretePct"].filter((k) => k !== key);
+      const remaining = 100 - val;
+      const currentOthersTotal = others.reduce((s, k) => s + p[k], 0);
+      const newParams = { ...p, [key]: val };
+      if (currentOthersTotal > 0) {
+        others.forEach((k) => { newParams[k] = Math.round((p[k] / currentOthersTotal) * remaining); });
+        // Fix rounding
+        const total = val + others.reduce((s, k) => s + newParams[k], 0);
+        if (total !== 100) newParams[others[0]] += 100 - total;
+      }
+      return newParams;
+    });
+  }, []);
+
+  const result = useMemo(() => runSimulation(params), [params]);
+
+  const loadPreset = (key) => setParams(PRESETS[key]);
+
+  const tabs = ["overview", "structures", "casualties", "economic", "historical"];
+
+  return (
+    <div style={{
+      fontFamily: "'Inter', 'Segoe UI', sans-serif", background: "#0a0a18", color: "#e0e0e0",
+      height: "100vh", display: "flex", flexDirection: "column", overflow: "hidden",
+    }}>
+      {/* GOOGLE FONTS */}
+      <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+      {/* HEADER */}
+      <div style={{
+        padding: "10px 16px", borderBottom: "1px solid #1e1e3a",
+        display: "flex", alignItems: "center", justifyContent: "space-between",
+        background: "linear-gradient(180deg, #12122a 0%, #0a0a18 100%)",
+        flexShrink: 0,
+      }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          <span style={{ fontSize: 22 }}>🌪️</span>
+          <div>
+            <div style={{ fontSize: 14, fontWeight: 800, letterSpacing: "0.04em", color: "#fff" }}>TORNADO SIMULATOR</div>
+            <div style={{ fontSize: 9, color: "#666", letterSpacing: "0.1em" }}>MULTI-VARIABLE DAMAGE MODELER</div>
+          </div>
+        </div>
+        <div style={{ display: "flex", gap: 4 }}>
+          {Object.entries(PRESETS).map(([key, preset]) => (
+            <button key={key} onClick={() => loadPreset(key)} style={{
+              padding: "4px 10px", fontSize: 9, background: "#1a1a2e", border: "1px solid #333",
+              borderRadius: 4, color: "#aaa", cursor: "pointer", fontWeight: 600,
+              letterSpacing: "0.04em",
+            }}>
+              {preset.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* MAIN LAYOUT */}
+      <div style={{ display: "flex", flex: 1, overflow: "hidden" }}>
+
+        {/* LEFT PANEL - Controls */}
+        <div style={{
+          width: 260, borderRight: "1px solid #1e1e3a", overflowY: "auto",
+          padding: "12px 14px", flexShrink: 0,
+          scrollbarWidth: "thin", scrollbarColor: "#333 transparent",
+        }}>
+          <Section title="Location" icon="📍" defaultOpen={true}>
+            <SelectInput label="Region" value={enabledCountries} onChange={(v) => setEnabledCountries(v)}
+              options={[["us", "🇺🇸 United States"], ["canada", "🇨🇦 Canada"], ["both", "🇺🇸🇨🇦 Both Countries"]]} />
+            <div style={{ fontSize: 10, color: "#888", marginBottom: 6 }}>
+              Click the map to place the tornado origin
+            </div>
+            {tornadoLat && (
+              <div style={{ display: "flex", gap: 8, marginBottom: 8 }}>
+                <div style={{ flex: 1, padding: "6px 8px", background: "#1a1a2e", borderRadius: 4, border: "1px solid #2a2a4a" }}>
+                  <div style={{ fontSize: 8, color: "#666" }}>LAT</div>
+                  <div style={{ fontSize: 11, color: "#e0e0e0", fontFamily: "'JetBrains Mono', monospace" }}>{tornadoLat.toFixed(2)}°N</div>
+                </div>
+                <div style={{ flex: 1, padding: "6px 8px", background: "#1a1a2e", borderRadius: 4, border: "1px solid #2a2a4a" }}>
+                  <div style={{ fontSize: 8, color: "#666" }}>LNG</div>
+                  <div style={{ fontSize: 11, color: "#e0e0e0", fontFamily: "'JetBrains Mono', monospace" }}>{Math.abs(tornadoLng).toFixed(2)}°W</div>
+                </div>
+              </div>
+            )}
+            {censusLoading && (
+              <div style={{ fontSize: 10, color: "#4fc3f7", padding: "6px 8px", background: "#0d1428", borderRadius: 4, marginBottom: 8, border: "1px solid #1a2a4a" }}>
+                ⏳ Fetching census data...
+              </div>
+            )}
+            {censusData && (
+              <div style={{ background: "#0d1428", borderRadius: 6, padding: "8px 10px", marginBottom: 8, border: "1px solid #1a2a4a" }}>
+                <div style={{ fontSize: 11, fontWeight: 700, color: "#4fc3f7", marginBottom: 4 }}>
+                  📊 {censusData.name}
+                </div>
+                {censusData.population != null && (
+                  <div style={{ fontSize: 10, color: "#aaa", marginBottom: 2 }}>
+                    Population: <span style={{ color: "#e0e0e0", fontFamily: "'JetBrains Mono', monospace" }}>{censusData.population.toLocaleString()}</span>
+                  </div>
+                )}
+                <div style={{ fontSize: 10, color: "#aaa", marginBottom: 2 }}>
+                  Pop. Density: <span style={{ color: "#81c784", fontWeight: 700, fontFamily: "'JetBrains Mono', monospace" }}>{censusData.popDensity?.toLocaleString()}/sq mi</span>
+                  <span style={{ color: "#555", fontSize: 8 }}> (auto-applied)</span>
+                </div>
+                {censusData.housingDensity != null && (
+                  <div style={{ fontSize: 10, color: "#aaa", marginBottom: 2 }}>
+                    Housing Units: <span style={{ color: "#e0e0e0", fontFamily: "'JetBrains Mono', monospace" }}>{censusData.housingDensity.toLocaleString()}/sq mi</span>
+                  </div>
+                )}
+                {censusData.areaLandSqMi && (
+                  <div style={{ fontSize: 10, color: "#aaa", marginBottom: 2 }}>
+                    County Area: <span style={{ color: "#e0e0e0", fontFamily: "'JetBrains Mono', monospace" }}>{censusData.areaLandSqMi} sq mi</span>
+                  </div>
+                )}
+                {censusData.housingUnits != null && (
+                  <div style={{ fontSize: 10, color: "#aaa", marginBottom: 2 }}>
+                    Total Housing: <span style={{ color: "#e0e0e0", fontFamily: "'JetBrains Mono', monospace" }}>{censusData.housingUnits.toLocaleString()}</span>
+                  </div>
+                )}
+                {censusData.note && (
+                  <div style={{ fontSize: 9, color: "#ffb74d", marginBottom: 4, fontStyle: "italic" }}>
+                    ⚠️ {censusData.note}
+                  </div>
+                )}
+                <div style={{ fontSize: 8, color: "#555", marginTop: 4, borderTop: "1px solid #1a2a4a", paddingTop: 4, lineHeight: 1.4 }}>
+                  <strong style={{ color: "#666" }}>SOURCE:</strong>{" "}
+                  {censusData.sourceUrl ? (
+                    <a href={censusData.sourceUrl} target="_blank" rel="noopener" style={{ color: "#4fc3f780", textDecoration: "none" }}>
+                      {censusData.source}
+                    </a>
+                  ) : censusData.source}
+                </div>
+              </div>
+            )}
+          </Section>
+
+          <Section title="Storm Parameters" icon="⚡" defaultOpen={true}>
+            <Slider label="Wind Speed" value={params.windSpeed} onChange={set("windSpeed")} min={65} max={320} unit=" mph" />
+            <Slider label="Pressure Deficit" value={params.pressureDeficit} onChange={set("pressureDeficit")} min={10} max={200} unit=" mbar" />
+            <Slider label="Path Length" value={params.pathLength} onChange={set("pathLength")} min={0.5} max={250} step={0.5} unit=" mi" />
+            <Slider label="Path Width" value={params.pathWidth} onChange={set("pathWidth")} min={50} max={5000} step={10} unit=" yd" />
+            <Slider label="Forward Speed" value={params.forwardSpeed} onChange={set("forwardSpeed")} min={5} max={80} unit=" mph" />
+            <Slider label="Direction" value={params.direction} onChange={set("direction")} min={0} max={359} unit="°" />
+            <Slider label="Rainfall" value={params.rainfall} onChange={set("rainfall")} min={0} max={10} step={0.5} unit=" in/hr" />
+            <Slider label="Hail Size" value={params.hailSize} onChange={set("hailSize")} min={0} max={6} step={0.25} unit=" in" />
+            <Slider label="Sub-Vortices" value={params.subVortices} onChange={set("subVortices")} min={1} max={8} />
+            <Slider label="Lifespan" value={params.lifespan} onChange={set("lifespan")} min={1} max={120} unit=" min" />
+          </Section>
+
+          <Section title="Environment" icon="🌍" defaultOpen={false}>
+            <SelectInput label="Terrain" value={params.terrain} onChange={set("terrain")}
+              options={[["flat_plains", "Flat Plains"], ["rolling_hills", "Rolling Hills"], ["urban", "Urban"], ["forested", "Forested"]]} />
+            <SelectInput label="Time of Day" value={params.timeOfDay} onChange={set("timeOfDay")}
+              options={[["morning", "Morning"], ["afternoon", "Afternoon"], ["evening", "Evening"], ["night", "Night (2.5× lethality)"]]} />
+            <SelectInput label="Season" value={params.season} onChange={set("season")}
+              options={[["spring", "Spring"], ["summer", "Summer"], ["fall", "Fall"], ["winter", "Winter"]]} />
+          </Section>
+
+          <Section title="Built Environment" icon="🏘️" defaultOpen={false}>
+            <Slider label="Housing Density" value={params.housingDensity} onChange={set("housingDensity")} min={1} max={5000} unit=" /sq mi" />
+            <Slider label="Mobile Homes" value={params.mobileHomePct} onChange={(v) => setHousingPct("mobileHomePct", v)} min={0} max={100} unit="%" />
+            <Slider label="Wood Frame" value={params.woodFramePct} onChange={(v) => setHousingPct("woodFramePct", v)} min={0} max={100} unit="%" />
+            <Slider label="Brick/Masonry" value={params.brickPct} onChange={(v) => setHousingPct("brickPct", v)} min={0} max={100} unit="%" />
+            <Slider label="Reinforced Concrete" value={params.concretePct} onChange={(v) => setHousingPct("concretePct", v)} min={0} max={100} unit="%" />
+          </Section>
+
+          <Section title="Infrastructure" icon="🔌" defaultOpen={false}>
+            <Slider label="Power Lines" value={params.powerLinesPerMile} onChange={set("powerLinesPerMile")} min={0} max={50} unit="/mi" />
+            <Slider label="Cell Towers" value={params.cellTowers} onChange={set("cellTowers")} min={0} max={200} unit=" total" />
+            <Slider label="Bridges" value={params.bridges} onChange={set("bridges")} min={0} max={50} />
+            <Slider label="Water Towers" value={params.waterTowers} onChange={set("waterTowers")} min={0} max={30} />
+            <Slider label="Gas Lines" value={params.gasLinesPerMile} onChange={set("gasLinesPerMile")} min={0} max={40} unit="/mi" />
+            <Slider label="Vehicles on Road" value={params.vehiclesPerMile} onChange={set("vehiclesPerMile")} min={0} max={500} unit="/mi" />
+          </Section>
+
+          <Section title="Agriculture" icon="🌾" defaultOpen={false}>
+            <SelectInput label="Crop Type" value={params.cropType} onChange={set("cropType")}
+              options={[["none", "None"], ["corn", "Corn ($950/ac)"], ["wheat", "Wheat ($520/ac)"], ["soybeans", "Soybeans ($600/ac)"], ["cotton", "Cotton ($780/ac)"]]} />
+            <SelectInput label="Growth Stage" value={params.growthStage} onChange={set("growthStage")}
+              options={[["planting", "Planting (30% value)"], ["mid_season", "Mid-Season (70% value)"], ["near_harvest", "Near Harvest (100% value)"]]} />
+            <Slider label="Crop Coverage" value={params.cropAcresPct} onChange={set("cropAcresPct")} min={0} max={100} unit="%" />
+            <Slider label="Livestock Density" value={params.livestockDensity} onChange={set("livestockDensity")} min={0} max={100} unit=" head/sq mi" />
+          </Section>
+
+          <Section title="Population & Preparedness" icon="👥" defaultOpen={false}>
+            <Slider label="Population Density" value={params.popDensity} onChange={set("popDensity")} min={1} max={15000} unit="/sq mi" />
+            <Slider label="Have Basements" value={params.basementPct} onChange={set("basementPct")} min={0} max={80} unit="%" />
+            <Slider label="Storm Shelters" value={params.shelterPct} onChange={set("shelterPct")} min={0} max={50} unit="%" />
+            <Slider label="Warning Lead Time" value={params.warningLeadTime} onChange={set("warningLeadTime")} min={0} max={60} unit=" min" />
+            <Slider label="Preparedness Index" value={params.preparedness} onChange={set("preparedness")} min={0} max={1} step={0.05}
+              info="Community education, siren coverage, weather app penetration" />
+          </Section>
+
+          {/* Model notes */}
+          <div style={{ fontSize: 8, color: "#444", lineHeight: 1.5, marginTop: 12, padding: "8px 0", borderTop: "1px solid #1a1a2e" }}>
+            <strong style={{ color: "#555" }}>MODEL REFERENCES:</strong><br />
+            Fragility curves: HAZUS-MH / TTU Wind Engineering<br />
+            Casualty model: Simmons & Sutter (2005), Ashley (2007)<br />
+            Warning effectiveness: ~1.8% reduction per minute lead time<br />
+            Injury:fatality ratio: ~15:1 (NOAA Storm Data)<br />
+            Night lethality multiplier: 2.5× (Ashley 2007)<br />
+            <strong style={{ color: "#4fc3f7" }}>POPULATION DATA:</strong><br />
+            US: Census Bureau ACS 5-Year Estimates (2022)<br />
+            &nbsp;&nbsp;via Census Data API + Geocoder API<br />
+            &nbsp;&nbsp;api.census.gov | geocoding.geo.census.gov<br />
+            Canada: Statistics Canada, 2021 Census<br />
+            &nbsp;&nbsp;Table 98-10-0002-02 (CD level)<br />
+            &nbsp;&nbsp;288 census divisions embedded<br />
+            &nbsp;&nbsp;www12.statcan.gc.ca
+          </div>
+        </div>
+
+        {/* CENTER + RIGHT */}
+        <div style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden" }}>
+
+          {/* VISUALIZATION with MAP/PATH toggle */}
+          <div style={{ height: "42%", padding: 12, flexShrink: 0, display: "flex", flexDirection: "column" }}>
+            {/* Viz mode toggle + country selector */}
+            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6, flexShrink: 0 }}>
+              <div style={{ display: "flex", background: "#1a1a2e", borderRadius: 5, overflow: "hidden", border: "1px solid #2a2a4a" }}>
+                {["map", "path"].map((mode) => (
+                  <button key={mode} onClick={() => setVizMode(mode)} style={{
+                    padding: "4px 12px", fontSize: 9, fontWeight: 700, textTransform: "uppercase",
+                    letterSpacing: "0.08em", border: "none", cursor: "pointer",
+                    background: vizMode === mode ? "#2a2a5a" : "transparent",
+                    color: vizMode === mode ? "#fff" : "#666",
+                  }}>
+                    {mode === "map" ? "🗺️ Map" : "📊 Path"}
+                  </button>
+                ))}
+              </div>
+              {vizMode === "map" && (
+                <>
+                  <div style={{ width: 1, height: 16, background: "#333" }} />
+                  <div style={{ display: "flex", background: "#1a1a2e", borderRadius: 5, overflow: "hidden", border: "1px solid #2a2a4a" }}>
+                    {[["us", "🇺🇸 US"], ["canada", "🇨🇦 Canada"], ["both", "Both"]].map(([val, label]) => (
+                      <button key={val} onClick={() => setEnabledCountries(val)} style={{
+                        padding: "4px 10px", fontSize: 9, fontWeight: 600, border: "none", cursor: "pointer",
+                        background: enabledCountries === val ? "#2a2a5a" : "transparent",
+                        color: enabledCountries === val ? "#fff" : "#666",
+                      }}>
+                        {label}
+                      </button>
+                    ))}
+                  </div>
+                  <div style={{ width: 1, height: 16, background: "#333" }} />
+                  <div style={{ display: "flex", background: "#1a1a2e", borderRadius: 5, overflow: "hidden", border: "1px solid #2a2a4a" }}>
+                    {[["satellite", "🛰️ Satellite"], ["streets", "🗺️ Map"], ["topo", "⛰️ Topo"], ["dark", "🌑 Dark"]].map(([val, label]) => (
+                      <button key={val} onClick={() => setMapStyle(val)} style={{
+                        padding: "4px 8px", fontSize: 9, fontWeight: 600, border: "none", cursor: "pointer",
+                        background: mapStyle === val ? "#2a2a5a" : "transparent",
+                        color: mapStyle === val ? "#fff" : "#666",
+                      }}>
+                        {label}
+                      </button>
+                    ))}
+                  </div>
+                  {tornadoLat && (
+                    <span style={{ fontSize: 9, color: "#666", fontFamily: "'JetBrains Mono', monospace", marginLeft: "auto" }}>
+                      📍 {tornadoLat.toFixed(1)}°N, {Math.abs(tornadoLng).toFixed(1)}°W
+                    </span>
+                  )}
+                </>
+              )}
+            </div>
+            <div style={{ flex: 1, minHeight: 0 }}>
+              {vizMode === "map" ? (
+                <InteractiveMap
+                  enabledCountries={enabledCountries}
+                  tornadoLat={tornadoLat}
+                  tornadoLng={tornadoLng}
+                  onPlaceTornado={handlePlaceTornado}
+                  params={params}
+                  result={result}
+                  mapStyle={mapStyle}
+                />
+              ) : (
+                <TornadoPathViz params={params} result={result} />
+              )}
+            </div>
+          </div>
+
+          {/* TABS */}
+          <div style={{
+            display: "flex", borderBottom: "1px solid #1e1e3a", borderTop: "1px solid #1e1e3a",
+            padding: "0 12px", flexShrink: 0, background: "#0e0e22",
+          }}>
+            {tabs.map((tab) => (
+              <button key={tab} onClick={() => setActiveTab(tab)} style={{
+                padding: "8px 14px", fontSize: 10, fontWeight: 600, textTransform: "uppercase",
+                letterSpacing: "0.08em", background: "none", border: "none", cursor: "pointer",
+                color: activeTab === tab ? "#ef5350" : "#666",
+                borderBottom: activeTab === tab ? "2px solid #ef5350" : "2px solid transparent",
+              }}>
+                {tab}
+              </button>
+            ))}
+          </div>
+
+          {/* RESULTS PANEL */}
+          <div style={{ flex: 1, overflowY: "auto", padding: 14, scrollbarWidth: "thin", scrollbarColor: "#333 transparent" }}>
+
+            {activeTab === "overview" && (
+              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                {/* EF Badge */}
+                <div style={{
+                  display: "flex", alignItems: "center", gap: 14, padding: "14px 18px",
+                  background: `linear-gradient(135deg, ${result.ef.color}15, #12122a)`,
+                  borderRadius: 10, border: `1px solid ${result.ef.color}40`,
+                }}>
+                  <div style={{
+                    fontSize: 36, fontWeight: 900, color: result.ef.color,
+                    fontFamily: "'JetBrains Mono', monospace", lineHeight: 1,
+                  }}>
+                    {result.ef.rating}
+                  </div>
+                  <div>
+                    <div style={{ fontSize: 13, fontWeight: 700, color: "#fff" }}>{result.ef.label} Damage</div>
+                    <div style={{ fontSize: 10, color: "#888" }}>
+                      Peak: {result.peakWind} mph | Effective: {result.effectiveWind} mph | Exposure: {result.exposureDuration} min
+                    </div>
+                  </div>
+                </div>
+
+                {/* Key stats */}
+                <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                  <Stat big label="Fatalities" value={numFmt(result.fatalities)} color="#ef5350" sub={`${numFmt(result.populationInPath)} in path`} />
+                  <Stat big label="Injuries" value={numFmt(result.injuries)} color="#ffb74d" sub="~15:1 ratio" />
+                  <Stat big label="Total Damage" value={fmt(result.totalEconomicImpact)} color="#4fc3f7" sub="All categories" />
+                  <Stat big label="Destroyed" value={numFmt(result.totalDestroyed)} color="#ff8a65" sub={`of ${numFmt(result.totalStructures)}`} />
+                </div>
+
+                {/* Damage breakdown bar */}
+                <div style={{ background: "#12122a", borderRadius: 8, padding: 14, border: "1px solid #1e1e3a" }}>
+                  <div style={{ fontSize: 10, fontWeight: 700, color: "#888", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 10 }}>
+                    Damage Breakdown
+                  </div>
+                  <MiniBar items={[
+                    { label: "Residential", value: result.residentialLoss, display: fmt(result.residentialLoss), color: "#ef5350" },
+                    { label: "Infrastructure", value: result.infraLoss, display: fmt(result.infraLoss), color: "#ffb74d" },
+                    { label: "Vehicles", value: result.vehicleLoss, display: fmt(result.vehicleLoss), color: "#ff8a65" },
+                    { label: "Crops", value: result.cropLoss, display: fmt(result.cropLoss), color: "#81c784" },
+                    { label: "Livestock", value: result.livestockLoss, display: fmt(result.livestockLoss), color: "#a5d6a7" },
+                    { label: "Flood Damage", value: result.floodDamage, display: fmt(result.floodDamage), color: "#4fc3f7" },
+                    { label: "Emergency Response", value: result.emergencyResponseCost, display: fmt(result.emergencyResponseCost), color: "#ce93d8" },
+                    { label: "Business Interruption", value: result.businessInterruption, display: fmt(result.businessInterruption), color: "#90a4ae" },
+                  ]} />
+                </div>
+              </div>
+            )}
+
+            {activeTab === "structures" && (
+              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                  <Stat label="Total Structures" value={numFmt(result.totalStructures)} />
+                  <Stat label="Destroyed" value={numFmt(result.totalDestroyed)} color="#ef5350" />
+                  <Stat label="Damaged" value={numFmt(result.totalDamaged)} color="#ffb74d" />
+                  <Stat label="Residential Loss" value={fmt(result.residentialLoss)} color="#4fc3f7" />
+                </div>
+                {Object.entries(result.structureDamage).map(([type, data]) => (
+                  <div key={type} style={{ background: "#12122a", borderRadius: 8, padding: 12, border: "1px solid #1e1e3a" }}>
+                    <div style={{ fontSize: 11, fontWeight: 700, color: "#ccc", marginBottom: 8, textTransform: "capitalize" }}>
+                      {type.replace(/_/g, " ")} — {data.total} structures
+                    </div>
+                    <MiniBar items={[
+                      { label: "Destroyed", value: data.destroyed, color: "#ef5350" },
+                      { label: "Damaged", value: data.destroyed + data.damaged, color: "#ffb74d" },
+                    ]} maxVal={data.total} />
+                    <div style={{ fontSize: 9, color: "#555", marginTop: 6 }}>
+                      Fragility at {result.peakWind} mph: {(interpolateFragility(type, result.peakWind) * 100).toFixed(1)}% destruction probability
+                    </div>
+                  </div>
+                ))}
+
+                <div style={{ background: "#12122a", borderRadius: 8, padding: 12, border: "1px solid #1e1e3a" }}>
+                  <div style={{ fontSize: 10, fontWeight: 700, color: "#888", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 8 }}>Infrastructure</div>
+                  <MiniBar items={[
+                    { label: "Power Lines (mi)", value: result.powerLinesDestroyed, color: "#ffb74d" },
+                    { label: "Cell Towers", value: result.cellTowersDestroyed, color: "#ff8a65" },
+                    { label: "Bridges", value: result.bridgesDestroyed, color: "#ef5350" },
+                    { label: "Water Towers", value: result.waterTowersDestroyed, color: "#4fc3f7" },
+                    { label: "Gas Lines (mi)", value: result.gasLinesDestroyed, color: "#ce93d8" },
+                    { label: "Vehicles", value: result.vehiclesDestroyed, color: "#90a4ae" },
+                  ]} />
+                </div>
+              </div>
+            )}
+
+            {activeTab === "casualties" && (
+              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                  <Stat big label="Population in Path" value={numFmt(result.populationInPath)} />
+                  <Stat big label="Fatalities" value={numFmt(result.fatalities)} color="#ef5350" />
+                  <Stat big label="Injuries" value={numFmt(result.injuries)} color="#ffb74d" />
+                </div>
+
+                <div style={{ background: "#12122a", borderRadius: 8, padding: 14, border: "1px solid #1e1e3a" }}>
+                  <div style={{ fontSize: 10, fontWeight: 700, color: "#888", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 10 }}>
+                    Casualty Modifiers
+                  </div>
+                  <div style={{ display: "flex", flexDirection: "column", gap: 8, fontSize: 11 }}>
+                    <div style={{ display: "flex", justifyContent: "space-between" }}>
+                      <span style={{ color: "#999" }}>Warning reduction ({params.warningLeadTime} min lead time)</span>
+                      <span style={{ color: result.warningReduction < 0.7 ? "#81c784" : "#ffb74d", fontFamily: "'JetBrains Mono', monospace", fontWeight: 700 }}>
+                        {((1 - result.warningReduction) * 100).toFixed(0)}% fewer deaths
+                      </span>
+                    </div>
+                    <div style={{ display: "flex", justifyContent: "space-between" }}>
+                      <span style={{ color: "#999" }}>Time of day ({params.timeOfDay})</span>
+                      <span style={{ color: result.nightMult > 1 ? "#ef5350" : "#81c784", fontFamily: "'JetBrains Mono', monospace", fontWeight: 700 }}>
+                        {result.nightMult}× multiplier
+                      </span>
+                    </div>
+                    <div style={{ display: "flex", justifyContent: "space-between" }}>
+                      <span style={{ color: "#999" }}>Preparedness index ({params.preparedness})</span>
+                      <span style={{ color: "#81c784", fontFamily: "'JetBrains Mono', monospace", fontWeight: 700 }}>
+                        {((1 - result.preparednessMult) * 100).toFixed(0)}% reduction
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div style={{ background: "#12122a", borderRadius: 8, padding: 14, border: "1px solid #1e1e3a" }}>
+                  <div style={{ fontSize: 10, fontWeight: 700, color: "#888", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 10 }}>
+                    Shelter Distribution Effectiveness
+                  </div>
+                  <MiniBar items={[
+                    { label: `No shelter (${params.mobileHomePct}%)`, value: FATALITY_RATES.no_shelter[`ef${result.efIndex}`] || 0, display: `${((FATALITY_RATES.no_shelter[`ef${result.efIndex}`] || 0) * 100).toFixed(2)}% fatality rate`, color: "#ef5350" },
+                    { label: `Interior room`, value: FATALITY_RATES.interior_room[`ef${result.efIndex}`] || 0, display: `${((FATALITY_RATES.interior_room[`ef${result.efIndex}`] || 0) * 100).toFixed(3)}% fatality rate`, color: "#ffb74d" },
+                    { label: `Basement (${params.basementPct}%)`, value: FATALITY_RATES.basement[`ef${result.efIndex}`] || 0, display: `${((FATALITY_RATES.basement[`ef${result.efIndex}`] || 0) * 100).toFixed(4)}% fatality rate`, color: "#81c784" },
+                    { label: `Storm shelter (${params.shelterPct}%)`, value: FATALITY_RATES.storm_shelter[`ef${result.efIndex}`] || 0, display: `${((FATALITY_RATES.storm_shelter[`ef${result.efIndex}`] || 0) * 100).toFixed(4)}% fatality rate`, color: "#4fc3f7" },
+                  ]} />
+                </div>
+
+                {result.livestockLost > 0 && (
+                  <div style={{ display: "flex", gap: 8 }}>
+                    <Stat label="Livestock Lost" value={numFmt(result.livestockLost)} color="#ff8a65" />
+                    <Stat label="Livestock Loss" value={fmt(result.livestockLoss)} color="#ffb74d" />
+                  </div>
+                )}
+              </div>
+            )}
+
+            {activeTab === "economic" && (
+              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                <div style={{
+                  background: `linear-gradient(135deg, #4fc3f715, #12122a)`,
+                  borderRadius: 10, border: "1px solid #4fc3f740", padding: "14px 18px",
+                  display: "flex", alignItems: "center", gap: 14,
+                }}>
+                  <div>
+                    <div style={{ fontSize: 10, color: "#888" }}>TOTAL ECONOMIC IMPACT</div>
+                    <div style={{ fontSize: 28, fontWeight: 900, color: "#4fc3f7", fontFamily: "'JetBrains Mono', monospace" }}>
+                      {fmt(result.totalEconomicImpact)}
+                    </div>
+                  </div>
+                </div>
+
+                <div style={{ background: "#12122a", borderRadius: 8, padding: 14, border: "1px solid #1e1e3a" }}>
+                  <div style={{ fontSize: 10, fontWeight: 700, color: "#888", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 10 }}>
+                    Cost Breakdown
+                  </div>
+                  <MiniBar items={[
+                    { label: "Residential", value: result.residentialLoss, display: fmt(result.residentialLoss), color: "#ef5350" },
+                    { label: "Infrastructure", value: result.infraLoss, display: fmt(result.infraLoss), color: "#ffb74d" },
+                    { label: "Vehicles", value: result.vehicleLoss, display: fmt(result.vehicleLoss), color: "#ff8a65" },
+                    { label: "Crops & Livestock", value: result.cropLoss + result.livestockLoss, display: fmt(result.cropLoss + result.livestockLoss), color: "#81c784" },
+                    { label: "Flood Damage", value: result.floodDamage, display: fmt(result.floodDamage), color: "#4fc3f7" },
+                    { label: "Emergency Response", value: result.emergencyResponseCost, display: fmt(result.emergencyResponseCost), color: "#ce93d8" },
+                    { label: "Business Interruption", value: result.businessInterruption, display: fmt(result.businessInterruption), color: "#90a4ae" },
+                  ]} />
+                </div>
+
+                <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                  <Stat label="Per Structure" value={result.totalStructures > 0 ? fmt(result.totalEconomicImpact / result.totalStructures) : "$0"} />
+                  <Stat label="Per Capita" value={result.populationInPath > 0 ? fmt(result.totalEconomicImpact / result.populationInPath) : "$0"} />
+                  <Stat label="Per Mile of Path" value={fmt(result.totalEconomicImpact / params.pathLength)} />
+                </div>
+
+                {result.cropAcres > 0 && (
+                  <div style={{ background: "#12122a", borderRadius: 8, padding: 12, border: "1px solid #1e1e3a" }}>
+                    <div style={{ fontSize: 10, fontWeight: 700, color: "#888", marginBottom: 6 }}>AGRICULTURAL</div>
+                    <div style={{ fontSize: 11, color: "#aaa" }}>
+                      {numFmt(result.cropAcres)} acres of {params.cropType} affected ({params.growthStage.replace("_", " ")})
+                    </div>
+                    <div style={{ fontSize: 11, color: "#81c784", fontWeight: 700, fontFamily: "'JetBrains Mono', monospace" }}>
+                      {fmt(result.cropLoss)} crop loss + {fmt(result.livestockLoss)} livestock
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {activeTab === "historical" && (
+              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                <div style={{ fontSize: 11, color: "#888", marginBottom: 4 }}>
+                  Your simulated tornado compared to historical events by total damage:
+                </div>
+                <div style={{ background: "#12122a", borderRadius: 8, padding: 14, border: "1px solid #1e1e3a" }}>
+                  <HistoricalComparison result={result} />
+                </div>
+                <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                  {HISTORICAL.map((h, i) => (
+                    <div key={i} style={{
+                      background: "#12122a", borderRadius: 6, padding: "8px 10px",
+                      border: "1px solid #1e1e3a", flex: "1 1 140px", minWidth: 140,
+                    }}>
+                      <div style={{ fontSize: 10, fontWeight: 700, color: EF_SCALE[Math.min(h.ef, 5)].color }}>{h.name}</div>
+                      <div style={{ fontSize: 9, color: "#666", marginTop: 2 }}>
+                        EF{h.ef} | {h.fatalities} killed | {numFmt(h.injuries)} injured | {fmt(h.damage)}
+                      </div>
+                      <div style={{ fontSize: 9, color: "#555" }}>
+                        {h.pathLength} mi × {h.pathWidth} yd
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <TornadoSimulator />
+  </React.StrictMode>
+);
+  </script>
+</body>
 </html>

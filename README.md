@@ -1,82 +1,41 @@
 # 🌪️ Tornado Simulator
 
-A multi-variable tornado damage modeler with physics-based modeling for structural damage, casualties, agricultural impact, infrastructure destruction, and economic loss estimation.
+A multi-variable tornado damage modeler with real census population data and physics-based modeling.
 
-![EF Scale](https://img.shields.io/badge/EF0--EF5-Supported-red)
-![React](https://img.shields.io/badge/React-18-blue)
-![Vite](https://img.shields.io/badge/Vite-6-purple)
+**[▶ Launch Simulator](https://lukasJT.github.io/TornadoSimulator/)**
 
 ## Features
 
-### Storm Parameters
-- Wind speed (65–320 mph, auto-mapped to EF0–EF5)
-- Central pressure deficit, path length/width, forward speed
-- Direction of travel, rainfall rate, hail size
-- Multi-vortex configuration (1–8 sub-vortices)
-- Tornado lifespan
+- **Interactive Leaflet map** with 4 view modes: Satellite, Street Map, Topo, Dark
+- **Click anywhere** to place a tornado — real population data loads automatically
+- **US Census Bureau data**: County-level population & housing via ACS 5-Year (2022) + Geocoder API
+- **Statistics Canada data**: 288 census divisions from 2021 Census, Table 98-10-0002-02
+- **EF0–EF5 scale** with structural fragility curves (HAZUS-MH / TTU Wind Engineering)
+- **Casualty modeling**: Simmons & Sutter (2005), Ashley (2007) — shelter type, warning time, time of day
+- **30+ adjustable parameters**: wind speed, path dimensions, housing mix, infrastructure, crops, livestock
+- **Economic damage estimation**: residential, infrastructure, vehicles, crops, emergency response, business interruption
+- **Historical comparisons**: Joplin 2011, Moore 2013, Tuscaloosa 2011, Tri-State 1925, and more
+- **Zero damage on water/uninhabited areas** — ocean, arctic tundra, remote territories correctly return 0
 
-### Damage Modeling
-- **Structural fragility curves** based on HAZUS-MH / TTU Wind Engineering
-  - Mobile homes, wood frame, brick/masonry, reinforced concrete
-  - Gaussian wind profile across path width (center peak, edge decay)
-- **Infrastructure**: power lines, cell towers, bridges, water towers, gas lines, vehicles
-- **Agriculture**: crop type & growth stage, livestock density, hail + wind damage
-- **Flood damage** from heavy rainfall
+## Data Sources
 
-### Casualty Model
-Based on peer-reviewed tornado fatality research:
-- Shelter-type-specific fatality rates (Simmons & Sutter, 2005)
-- Warning lead time effectiveness (~1.8% reduction per minute)
-- Nighttime lethality multiplier: 2.5× (Ashley, 2007)
-- Community preparedness index
-- 15:1 injury-to-fatality ratio (NOAA Storm Data)
+| Source | Coverage | Detail |
+|--------|----------|--------|
+| US Census Bureau ACS 5-Year (2022) | 3,143 US counties | Population, housing units, land area |
+| US Census Geocoder API | Continental US | Reverse geocode lat/lng → county FIPS |
+| Statistics Canada 2021 Census | 288 census divisions | Population, dwellings, land area |
+| HAZUS-MH / TTU Wind Engineering | Structure fragility | Destruction probability curves |
+| Simmons & Sutter (2005) | Casualty rates | By shelter type and EF rating |
+| Ashley (2007) | Night lethality | 2.5× multiplier for nighttime |
+| NOAA Storm Data | Injury ratio | ~15:1 injury-to-fatality |
 
-### Economic Impact
-- Residential, infrastructure, vehicle, crop, livestock losses
-- Emergency response costs
-- Business interruption (15% of direct damage)
-- Per-structure, per-capita, and per-mile breakdowns
+## Tech Stack
 
-### Historical Comparisons
-Simulated tornado compared against:
-- Joplin, MO 2011 (EF5)
-- Moore, OK 2013 (EF5)
-- Tuscaloosa, AL 2011 (EF4)
-- Greensburg, KS 2007 (EF5)
-- El Reno, OK 2013 (EF3)
-- Tri-State 1925 (EF5)
-
-## Quick Start
-
-```bash
-npm install
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000).
-
-## Build for Production
-
-```bash
-npm run build
-npm run preview
-```
-
-## Presets
-
-| Preset | Wind | Path | Setting |
-|--------|------|------|---------|
-| Rural EF3 | 150 mph | 15 mi × 600 yd | Farmland, low density |
-| Suburban EF4 | 180 mph | 20 mi × 1200 yd | Mixed residential |
-| Urban EF5 | 250 mph | 25 mi × 1800 yd | Dense city, nighttime |
-| Joplin 2011 | 225 mph | 22 mi × 1760 yd | Historical recreation |
-
-## Model References
-
-- **Fragility curves**: HAZUS-MH Multi-Hazard Loss Estimation Methodology (FEMA); TTU Wind Science & Engineering Research Center
-- **Casualty modeling**: Simmons, K.M. & Sutter, D. (2005). "WSR-88D Radar, Tornado Warnings, and Tornado Casualties." *Weather and Forecasting*, 20(3)
-- **Night lethality**: Ashley, W.S. (2007). "Spatial and Temporal Analysis of Tornado Fatalities in the United States: 1880–2005." *Weather and Forecasting*, 22(6)
-- **Injury ratios**: NOAA Storm Prediction Center Storm Data
+Single self-contained HTML file — no build step required:
+- React 18 (CDN)
+- Babel Standalone (CDN)
+- Leaflet.js 1.9.4 (CDN) with Esri/OSM/CartoDB tiles
+- US Census Data API + Geocoder API (no key needed, 500 req/day)
 
 ## License
 
