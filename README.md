@@ -2,7 +2,7 @@
 
 A multi-variable tornado damage modeler with real census population data and physics-based modeling.
 
-**[▶ Launch Simulator](https://lukasJT.github.io/TornadoSimulator/)**
+**[▶ Launch Simulator](https://www.tornadosimulator.net/)**
 
 ## Features
 
