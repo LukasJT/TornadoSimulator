@@ -8,6 +8,7 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌪️</text></svg>" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="./us-counties.js"></script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -1573,12 +1574,21 @@ function TornadoSimulator() {
     return generatePathPoints(tornadoLat, tornadoLng, params, pathMode, customWaypoints);
   }, [tornadoLat, tornadoLng, params, pathMode, customWaypoints, isDrawing]);
 
-  // US county cache: stores { lat, lng, popDensity, housingDensity, name } for each fetched county
-  const [usCountyCache, setUsCountyCache] = useState([]);
+  // US county cache: preloaded from us-counties.js (3,144 counties).
+  // Falls back to empty array + dynamic Census fetch if the static file failed to load.
+  const [usCountyCache, setUsCountyCache] = useState(() => {
+    const preloaded = (typeof window !== "undefined" && window.US_COUNTIES) || [];
+    return preloaded.map(c => ({
+      lat: c.lat, lng: c.lng, name: c.n,
+      popDensity: c.d, housingDensity: c.h,
+      population: c.pop, area: c.a,
+    }));
+  });
 
-  // Fetch US county data for sample points along the path
-  // This runs whenever the path changes and populates the county cache
+  // Fetch US county data for sample points along the path (fallback only).
+  // Skipped entirely when the static us-counties.js bundle is present.
   useEffect(() => {
+    if (typeof window !== "undefined" && window.US_COUNTIES) return;
     if (!tornadoLat || !tornadoLng) return;
     if (pathMode === "draw" && isDrawing) return;
     
