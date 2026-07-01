@@ -1191,6 +1191,92 @@ function MiniBar({ items, maxVal }) {
   );
 }
 
+// ─── PROTECTION CTA (affiliate/sponsor block) ───────────────────────────────
+// Placeholder affiliate URLs — swap in your own affiliate tags after signing up:
+//   Amazon Associates:  replace `YOURTAG-20` in Amazon links
+//   Home insurance:     replace with your lead-gen partner URL (QuoteWizard, MediaAlpha, etc.)
+//   Storm shelter:      replace with your affiliate link (Survive-a-Storm, Rhino Steel, etc.)
+
+const AFFILIATE_LINKS = [
+  {
+    icon: "🏠",
+    title: "Get a home insurance quote",
+    sub: "Compare rates from top insurers in your ZIP",
+    url: "https://quotewizard.com/homeowners-insurance",
+    tier: "primary",
+  },
+  {
+    icon: "🚨",
+    title: "NOAA weather radio",
+    sub: "Midland WR120 — Amazon bestseller",
+    url: "https://www.amazon.com/s?k=midland+wr120+noaa+weather+radio&tag=YOURTAG-20",
+    tier: "secondary",
+  },
+  {
+    icon: "🛖",
+    title: "Storm shelter installation",
+    sub: "Get quotes from local certified installers",
+    url: "https://www.google.com/search?q=storm+shelter+installation+near+me",
+    tier: "primary",
+  },
+];
+
+function ProtectionCTA({ fatalities, damage }) {
+  const [hoverIdx, setHoverIdx] = useState(-1);
+  const damageStr = damage >= 1e9 ? `$${(damage / 1e9).toFixed(1)}B` : damage >= 1e6 ? `$${(damage / 1e6).toFixed(0)}M` : `$${(damage / 1e3).toFixed(0)}K`;
+  const severe = fatalities >= 50;
+  const headline = severe
+    ? `A tornado like this would kill ${numFmt(fatalities)} people and cause ${damageStr} in damage. Is your home ready?`
+    : fatalities > 0
+      ? `This tornado would cause ${damageStr} in damage. Prepare your home before the next one:`
+      : `You lucked out this time. But 1,200+ tornadoes hit the US each year — prepare now:`;
+
+  return (
+    <div style={{
+      background: "linear-gradient(135deg, #1a1230, #241a3e)",
+      borderRadius: 8, padding: 14, border: "1px solid #3a2a5a",
+    }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
+        <div style={{ fontSize: 10, fontWeight: 700, color: "#a78bfa", textTransform: "uppercase", letterSpacing: "0.08em" }}>
+          🛡️ Protect Your Home
+        </div>
+        <div style={{ fontSize: 8, color: "#555", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+          Sponsored
+        </div>
+      </div>
+      <div style={{ fontSize: 11, color: "#bbb", marginBottom: 12, lineHeight: 1.5 }}>
+        {headline}
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+        {AFFILIATE_LINKS.map((item, i) => (
+          <a
+            key={i}
+            href={item.url}
+            target="_blank"
+            rel="noopener sponsored nofollow"
+            onMouseEnter={() => setHoverIdx(i)}
+            onMouseLeave={() => setHoverIdx(-1)}
+            style={{
+              display: "flex", alignItems: "center", gap: 10, padding: "10px 12px",
+              background: hoverIdx === i ? "rgba(167,139,250,0.12)" : "rgba(255,255,255,0.03)",
+              border: `1px solid ${hoverIdx === i ? "#5a3aaa" : "#2a1e40"}`,
+              borderRadius: 6, textDecoration: "none",
+              transition: "background 0.15s, border-color 0.15s",
+            }}
+          >
+            <span style={{ fontSize: 20, lineHeight: 1 }}>{item.icon}</span>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div style={{ fontSize: 12, color: "#fff", fontWeight: 600 }}>{item.title}</div>
+              <div style={{ fontSize: 10, color: "#888", marginTop: 2 }}>{item.sub}</div>
+            </div>
+            <span style={{ color: "#a78bfa", fontSize: 14 }}>→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 // ─── HISTORICAL COMPARISON ──────────────────────────────────────────────────
 
 function HistoricalComparison({ result }) {
@@ -2421,6 +2507,8 @@ function TornadoSimulator() {
                     { label: "Business Interruption", value: result.businessInterruption, display: fmt(result.businessInterruption), color: "#90a4ae" },
                   ]} />
                 </div>
+
+                <ProtectionCTA fatalities={result.fatalities} damage={result.totalEconomicImpact} />
               </div>
             )}
 
