@@ -12,7 +12,15 @@
   <script src="//ezoicanalytics.com/analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tornado Simulator — Multi-Variable Damage Modeler</title>
-  <meta name="description" content="Physics-based tornado damage simulator with real US Census Bureau and Statistics Canada population data, interactive satellite/map views, custom paths, live simulation, and economic loss estimation." />
+  <meta name="description" content="Interactive tornado damage simulator — click anywhere on the US or Canada map to place an EF0–EF5 tornado and model real fatalities, structural damage, and economic loss using US Census + Statistics Canada data. Also: guides to the deadliest and costliest US tornadoes, every EF5 ever recorded, and the EF Scale explained." />
+  <meta name="keywords" content="tornado simulator, tornado damage calculator, EF scale, deadliest tornadoes, costliest tornadoes, EF5 tornadoes, Joplin 2011, Moore 2013, Tri-State 1925, tornado alley" />
+  <meta property="og:title" content="Tornado Simulator — Multi-Variable Damage Modeler" />
+  <meta property="og:description" content="Click anywhere on the map to place an EF0–EF5 tornado and see modeled fatalities, damage, and economic loss based on real census data." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.tornadosimulator.net/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tornado Simulator — Multi-Variable Damage Modeler" />
+  <meta name="twitter:description" content="Interactive tornado damage simulator with real census population data." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌪️</text></svg>" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
@@ -2701,6 +2709,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <a href="/deadliest-us-tornadoes/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#ffb74d;text-decoration:none;margin-right:8px;pointer-events:auto;font-weight:600;">Deadliest</a>
     <a href="/costliest-us-tornadoes/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#ffb74d;text-decoration:none;margin-right:8px;pointer-events:auto;font-weight:600;">Costliest</a>
     <a href="/every-ef5-tornado/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#ffb74d;text-decoration:none;margin-right:8px;pointer-events:auto;font-weight:600;">Every EF5</a>
+    <a href="/tornado-alley/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#ffb74d;text-decoration:none;margin-right:8px;pointer-events:auto;font-weight:600;">Tornado Alley</a>
     <a href="/joplin-2011/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#4fc3f7;text-decoration:none;margin-right:8px;pointer-events:auto;">Joplin 2011</a>
     <a href="/moore-2013/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#4fc3f7;text-decoration:none;margin-right:8px;pointer-events:auto;">Moore 2013</a>
     <a href="/moore-1999/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#4fc3f7;text-decoration:none;margin-right:8px;pointer-events:auto;">Moore 1999</a>
