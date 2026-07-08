@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — Tornado Hub</title>
+<meta name="description" content="About Tornado Hub — an educational resource for understanding tornadoes. Our data sources, editorial approach, and why we built this." />
+<link rel="canonical" href="https://www.tornadosimulator.net/about/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌪️</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg: #fbfaf7; --bg-alt: #f4f1ea; --surface: #ffffff;
+  --text: #14161c; --text-secondary: #4a5061; --text-muted: #8b8f9c;
+  --border: #e5e1d8;
+  --accent: #a02818; --accent-hover: #7d1f13;
+  --link: #1e3a5f;
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--accent); text-decoration: underline; }
+.nav { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+.nav-inner { max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.nav-brand { font-family: var(--serif); font-weight: 700; font-size: 20px; color: var(--text); display: flex; align-items: center; gap: 8px; text-decoration: none; }
+.nav-links { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+.nav-links a { color: var(--text-secondary); padding: 8px 14px; font-size: 14px; font-weight: 500; border-radius: 6px; text-decoration: none; }
+.nav-links a:hover { background: var(--bg-alt); color: var(--text); text-decoration: none; }
+.nav-links a.cta { background: var(--accent); color: white; font-weight: 600; }
+.nav-links a.cta:hover { background: var(--accent-hover); color: white; }
+.page-header { background: linear-gradient(180deg, var(--bg), var(--bg-alt)); border-bottom: 1px solid var(--border); padding: 72px 24px 56px; }
+.page-header-inner { max-width: 720px; margin: 0 auto; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+.page-header h1 { font-family: var(--serif); font-size: clamp(36px, 5vw, 52px); font-weight: 700; line-height: 1.1; margin-bottom: 16px; letter-spacing: -0.02em; }
+.page-header p.lede { font-size: 20px; color: var(--text-secondary); line-height: 1.55; }
+.main { max-width: 720px; margin: 0 auto; padding: 56px 24px 72px; }
+.main p { font-size: 17px; margin-bottom: 20px; }
+.main h2 { font-family: var(--serif); font-size: 28px; font-weight: 700; margin: 48px 0 16px; letter-spacing: -0.01em; }
+.main h2:first-child { margin-top: 0; }
+.main ul { margin: 0 0 20px 22px; }
+.main li { font-size: 17px; margin-bottom: 10px; line-height: 1.55; }
+.callout { background: var(--surface); border-left: 4px solid var(--accent); border-radius: 4px; padding: 20px 24px; margin: 32px 0; }
+.callout h3 { font-family: var(--serif); font-size: 18px; margin-bottom: 8px; }
+.callout p { font-size: 15px; margin-bottom: 0; color: var(--text-secondary); }
+.sources { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 24px; margin: 32px 0; }
+.sources h3 { font-family: var(--serif); font-size: 18px; margin-bottom: 12px; }
+.sources ul { margin: 0; list-style: none; padding: 0; }
+.sources li { font-size: 14px; padding: 8px 0; border-bottom: 1px solid var(--border); color: var(--text-secondary); }
+.sources li:last-child { border-bottom: none; }
+.sources li strong { color: var(--text); font-weight: 600; }
+.footer { background: #14161c; color: #94a3b8; padding: 40px 24px; border-top: 4px solid var(--accent); text-align: center; font-size: 13px; }
+.footer a { color: white; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+@media (max-width: 500px) { .nav-links { gap: 0; } .nav-links a { padding: 6px 10px; font-size: 13px; } }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand"><span>🌪️</span> Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/learn/">Learn</a>
+      <a href="/safety/">Safety</a>
+      <a href="/simulator/" class="cta">Launch Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <div class="eyebrow">About</div>
+    <h1>An open resource for understanding tornadoes.</h1>
+    <p class="lede">Tornado Hub is a free educational site — a simulator, an archive of historical events, safety guides for every scenario, and learning tracks for students, teachers, and enthusiasts.</p>
+  </div>
+</header>
+
+<main class="main">
+
+<h2>What this site is</h2>
+<p>Tornado Hub started as a single interactive damage simulator and grew into a broader resource. The core idea is simple: tornadoes are widely misunderstood — from what they actually are, to how they form, to what to do when a warning is issued. Most freely-available information is either too shallow (the-weather-in-30-seconds explainers) or too specialized (peer-reviewed meteorology).</p>
+<p>We aim for the middle: rigorous, referenced, and readable in ten minutes. Every article cites sources you can verify. Every safety guide is written for someone who might actually need it in the next 24 hours.</p>
+
+<div class="callout">
+  <h3>⚠️ Not a real-time warning system</h3>
+  <p>Nothing on this site is a substitute for NOAA Weather Radio, Wireless Emergency Alerts, or your local NWS forecast office. If a tornado warning is issued for your location, follow official channels.</p>
+</div>
+
+<h2>Editorial approach</h2>
+<p>We write in plain English. We use "warning" and "watch" the way meteorologists use them. When there's genuine scientific uncertainty — like the eastward-shifting Tornado Alley debate or the exact wind speed of a poorly-instrumented tornado — we say so. When there's a myth (overpasses as shelter, "tornadoes don't cross rivers"), we say so more forcefully.</p>
+<p>We take casualty statistics seriously and try not to sensationalize. Historical event articles focus on what happened, what changed after, and what the meteorological record shows — not disaster-porn narratives.</p>
+
+<h2>The simulator</h2>
+<p>The simulator lets you place an EF0–EF5 tornado anywhere in the world and see modeled fatalities, structural damage, and economic loss. It's a teaching tool — not a forecast tool. The math behind it uses:</p>
+<ul>
+  <li>HAZUS-MH fragility curves for building damage by construction type</li>
+  <li>Simmons & Sutter (2005) and Ashley (2007) casualty models</li>
+  <li>NOAA Storm Data injury:fatality ratios (~15:1)</li>
+  <li>Warning-effectiveness attenuation of ~1.8% per minute of lead time</li>
+  <li>2.5× nighttime lethality multiplier (Ashley 2007)</li>
+</ul>
+<p>Population density comes from the US Census Bureau (ACS 5-Year Estimates 2022), Statistics Canada (2021 Census, census-division level), and UN World Population Prospects 2023 + CIA World Factbook for 173 other countries. When you place a tornado outside US/Canada, we apply a regional construction profile — a Bangladesh tornado uses ~40% informal/mobile housing, not the US default of 55% wood-frame.</p>
+
+<div class="sources">
+  <h3>Primary data sources</h3>
+  <ul>
+    <li><strong>NOAA Storm Events Database</strong> — every US tornado since 1950</li>
+    <li><strong>Storm Prediction Center</strong> — outlooks, verification, research</li>
+    <li><strong>US Census Bureau ACS</strong> — 2022 5-year estimates, county-level</li>
+    <li><strong>Statistics Canada</strong> — 2021 Census of Population, Table 98-10-0002-02</li>
+    <li><strong>UN World Population Prospects 2023</strong> — country-level population</li>
+    <li><strong>CIA World Factbook</strong> — country land area</li>
+    <li><strong>NWS local office narratives</strong> — event-by-event summaries</li>
+    <li><strong>Peer-reviewed atmospheric science</strong> — cited inline when relevant</li>
+  </ul>
+</div>
+
+<h2>What we're not</h2>
+<p>We're not affiliated with NOAA, NWS, FEMA, or any government agency. We're not a certified storm shelter installer, insurance broker, or emergency management authority. When we recommend a product (like a specific NOAA weather radio model), we say so as an editorial recommendation — most links to Amazon and third-party services are affiliate links that help fund the site.</p>
+
+<h2>Support</h2>
+<p>The site runs on ad revenue and affiliate commissions. If you find it useful, the best thing you can do is share a link to a specific article with someone else. That's how a small independent resource stays online.</p>
+
+<h2>Contact</h2>
+<p>For corrections, source questions, or feedback: this site doesn't accept guest posts, sponsored content, or link exchanges. Please don't email about those.</p>
+
+<h2>A note on tone</h2>
+<p>Some of what's on this site is technical. Some is grim — tornadoes kill people every year, and we don't sugarcoat that. But we're also unabashedly fascinated by tornadoes as a phenomenon. Weather is one of the last visceral, unpredictable, awe-inspiring things left. Understanding it makes you less afraid, not more.</p>
+
+</main>
+
+<footer class="footer">
+  &copy; Tornado Hub. An educational resource. <a href="/">Home</a> &middot; <a href="/simulator/">Simulator</a> &middot; <a href="/articles/">Articles</a> &middot; <a href="/learn/">Learn</a> &middot; <a href="/safety/">Safety</a>
+</footer>
+
+</body>
+</html>
+</content>
+</invoke>

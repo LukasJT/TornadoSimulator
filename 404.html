@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Page Not Found — Tornado Hub</title>
+<meta name="description" content="The page you're looking for doesn't exist. Browse articles, learn about tornadoes, or launch the interactive simulator." />
+<meta name="robots" content="noindex" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌪️</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg: #fbfaf7; --bg-alt: #f4f1ea; --surface: #ffffff;
+  --text: #14161c; --text-secondary: #4a5061; --text-muted: #8b8f9c;
+  --border: #e5e1d8;
+  --accent: #a02818; --accent-hover: #7d1f13;
+  --link: #1e3a5f;
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased; min-height: 100vh; display: flex; flex-direction: column; }
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--accent); text-decoration: underline; }
+.nav { background: var(--surface); border-bottom: 1px solid var(--border); }
+.nav-inner { max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.nav-brand { font-family: var(--serif); font-weight: 700; font-size: 20px; color: var(--text); display: flex; align-items: center; gap: 8px; text-decoration: none; }
+.nav-links { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+.nav-links a { color: var(--text-secondary); padding: 8px 14px; font-size: 14px; font-weight: 500; border-radius: 6px; text-decoration: none; }
+.nav-links a:hover { background: var(--bg-alt); color: var(--text); text-decoration: none; }
+.nav-links a.cta { background: var(--accent); color: white; font-weight: 600; }
+.nav-links a.cta:hover { background: var(--accent-hover); color: white; }
+.main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 80px 24px; }
+.card { max-width: 640px; text-align: center; }
+.icon { font-size: 96px; margin-bottom: 24px; opacity: 0.4; }
+.code { font-family: var(--serif); font-size: 96px; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 16px; letter-spacing: -0.05em; }
+h1 { font-family: var(--serif); font-size: 40px; font-weight: 700; line-height: 1.15; margin-bottom: 16px; letter-spacing: -0.02em; }
+p.lede { font-size: 18px; color: var(--text-secondary); line-height: 1.55; margin-bottom: 40px; }
+.suggestions { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 32px; text-align: left; }
+.suggestions h2 { font-family: var(--serif); font-size: 18px; font-weight: 700; text-align: center; margin-bottom: 20px; }
+.suggest-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.suggest-grid a { display: block; padding: 12px 14px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 14px; font-weight: 500; }
+.suggest-grid a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+.suggest-grid a small { display: block; color: var(--text-muted); font-size: 12px; font-weight: 400; margin-top: 2px; }
+.actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 32px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 6px; font-size: 15px; font-weight: 600; text-decoration: none; border: 1px solid transparent; }
+.btn-primary { background: var(--accent); color: white; }
+.btn-primary:hover { background: var(--accent-hover); color: white; text-decoration: none; }
+.btn-outline { background: transparent; color: var(--text); border-color: var(--border); }
+.btn-outline:hover { background: var(--bg-alt); text-decoration: none; }
+.footer { background: #14161c; color: #94a3b8; padding: 32px 24px; border-top: 4px solid var(--accent); text-align: center; font-size: 13px; }
+.footer a { color: white; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+@media (max-width: 500px) {
+  .nav-links { gap: 0; }
+  .nav-links a { padding: 6px 10px; font-size: 13px; }
+  .suggest-grid { grid-template-columns: 1fr; }
+  .code { font-size: 72px; }
+  h1 { font-size: 30px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand"><span>🌪️</span> Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/learn/">Learn</a>
+      <a href="/safety/">Safety</a>
+      <a href="/simulator/" class="cta">Launch Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<main class="main">
+  <div class="card">
+    <div class="icon">🌪️</div>
+    <div class="code">404</div>
+    <h1>This page took a different path.</h1>
+    <p class="lede">The article you're looking for doesn't exist, has moved, or was never here to begin with. That's not unlike a tornado — long-tracked events are actually the exception.</p>
+
+    <div class="suggestions">
+      <h2>Try one of these instead</h2>
+      <div class="suggest-grid">
+        <a href="/articles/">Browse all articles<small>290+ topics</small></a>
+        <a href="/simulator/">Interactive simulator<small>Worldwide damage modeler</small></a>
+        <a href="/learn/">Learning tracks<small>5 curated paths</small></a>
+        <a href="/safety/">Safety guides<small>By scenario</small></a>
+        <a href="/tri-state-1925/">Tri-State 1925<small>Deadliest US tornado</small></a>
+        <a href="/every-ef5-tornado/">Every EF5 tornado<small>Complete catalog</small></a>
+        <a href="/tornado-alley/">What is Tornado Alley?<small>Regional geography</small></a>
+        <a href="/how-do-tornadoes-form/">How tornadoes form<small>Meteorology 101</small></a>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a href="/" class="btn btn-primary">Return to home</a>
+      <a href="/articles/" class="btn btn-outline">Browse the article library →</a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  &copy; Tornado Hub. An educational resource. <a href="/">Home</a> &middot; <a href="/simulator/">Simulator</a> &middot; <a href="/articles/">Articles</a> &middot; <a href="/learn/">Learn</a> &middot; <a href="/safety/">Safety</a>
+</footer>
+
+</body>
+</html>
+</content>
+</invoke>
