@@ -550,6 +550,136 @@ function getConstructionProfile(iso) {
   return key ? REGIONAL_CONSTRUCTION[key] : null;
 }
 
+// ─── LOCAL CURRENCY DISPLAY ─────────────────────────────────────────────────
+// Approximate USD → local currency rates (2025 averages). Not intended for
+// financial precision — used solely to give users an intuitive damage number
+// in the currency they think about. Damages internally remain USD.
+// Source: mid-2025 average rates from ECB/IMF; rounded for stability.
+const CURRENCY_RATES = {
+  USD: {code:"USD", sym:"$",   rate:1,      name:"US Dollar"},
+  EUR: {code:"EUR", sym:"€",   rate:0.92,   name:"Euro"},
+  GBP: {code:"GBP", sym:"£",   rate:0.79,   name:"British Pound"},
+  JPY: {code:"JPY", sym:"¥",   rate:150,    name:"Japanese Yen"},
+  CNY: {code:"CNY", sym:"¥",   rate:7.2,    name:"Chinese Yuan"},
+  INR: {code:"INR", sym:"₹",   rate:83,     name:"Indian Rupee"},
+  BDT: {code:"BDT", sym:"৳",   rate:118,    name:"Bangladeshi Taka"},
+  IDR: {code:"IDR", sym:"Rp",  rate:15800,  name:"Indonesian Rupiah"},
+  PHP: {code:"PHP", sym:"₱",   rate:57,     name:"Philippine Peso"},
+  PKR: {code:"PKR", sym:"₨",   rate:280,    name:"Pakistani Rupee"},
+  KRW: {code:"KRW", sym:"₩",   rate:1350,   name:"South Korean Won"},
+  THB: {code:"THB", sym:"฿",   rate:36,     name:"Thai Baht"},
+  VND: {code:"VND", sym:"₫",   rate:25000,  name:"Vietnamese Dong"},
+  MYR: {code:"MYR", sym:"RM",  rate:4.7,    name:"Malaysian Ringgit"},
+  SGD: {code:"SGD", sym:"S$",  rate:1.35,   name:"Singapore Dollar"},
+  HKD: {code:"HKD", sym:"HK$", rate:7.8,    name:"Hong Kong Dollar"},
+  TWD: {code:"TWD", sym:"NT$", rate:32,     name:"Taiwan Dollar"},
+  AUD: {code:"AUD", sym:"A$",  rate:1.52,   name:"Australian Dollar"},
+  NZD: {code:"NZD", sym:"NZ$", rate:1.65,   name:"NZ Dollar"},
+  CAD: {code:"CAD", sym:"C$",  rate:1.36,   name:"Canadian Dollar"},
+  MXN: {code:"MXN", sym:"$",   rate:18,     name:"Mexican Peso"},
+  BRL: {code:"BRL", sym:"R$",  rate:5.1,    name:"Brazilian Real"},
+  ARS: {code:"ARS", sym:"$",   rate:950,    name:"Argentine Peso"},
+  CLP: {code:"CLP", sym:"$",   rate:930,    name:"Chilean Peso"},
+  COP: {code:"COP", sym:"$",   rate:3900,   name:"Colombian Peso"},
+  PEN: {code:"PEN", sym:"S/",  rate:3.75,   name:"Peruvian Sol"},
+  VES: {code:"VES", sym:"Bs",  rate:37,     name:"Venezuelan Bolívar"},
+  CHF: {code:"CHF", sym:"CHF", rate:0.87,   name:"Swiss Franc"},
+  SEK: {code:"SEK", sym:"kr",  rate:10.5,   name:"Swedish Krona"},
+  NOK: {code:"NOK", sym:"kr",  rate:10.7,   name:"Norwegian Krone"},
+  DKK: {code:"DKK", sym:"kr",  rate:6.9,    name:"Danish Krone"},
+  PLN: {code:"PLN", sym:"zł",  rate:4.0,    name:"Polish Zloty"},
+  CZK: {code:"CZK", sym:"Kč",  rate:23,     name:"Czech Koruna"},
+  HUF: {code:"HUF", sym:"Ft",  rate:355,    name:"Hungarian Forint"},
+  RON: {code:"RON", sym:"lei", rate:4.6,    name:"Romanian Leu"},
+  RUB: {code:"RUB", sym:"₽",   rate:92,     name:"Russian Ruble"},
+  UAH: {code:"UAH", sym:"₴",   rate:40,     name:"Ukrainian Hryvnia"},
+  TRY: {code:"TRY", sym:"₺",   rate:33,     name:"Turkish Lira"},
+  ILS: {code:"ILS", sym:"₪",   rate:3.7,    name:"Israeli Shekel"},
+  AED: {code:"AED", sym:"د.إ", rate:3.67,   name:"UAE Dirham"},
+  SAR: {code:"SAR", sym:"﷼",   rate:3.75,   name:"Saudi Riyal"},
+  QAR: {code:"QAR", sym:"﷼",   rate:3.64,   name:"Qatari Riyal"},
+  EGP: {code:"EGP", sym:"E£",  rate:49,     name:"Egyptian Pound"},
+  ZAR: {code:"ZAR", sym:"R",   rate:18,     name:"South African Rand"},
+  NGN: {code:"NGN", sym:"₦",   rate:1550,   name:"Nigerian Naira"},
+  KES: {code:"KES", sym:"KSh", rate:129,    name:"Kenyan Shilling"},
+  MAD: {code:"MAD", sym:"د.م.",rate:9.9,    name:"Moroccan Dirham"},
+  IRR: {code:"IRR", sym:"﷼",   rate:42000,  name:"Iranian Rial"},
+  IQD: {code:"IQD", sym:"ع.د", rate:1310,   name:"Iraqi Dinar"},
+  // African CFA francs (pegged to EUR at 655.957)
+  XOF: {code:"XOF", sym:"CFA", rate:600,    name:"West African CFA Franc"},
+  XAF: {code:"XAF", sym:"FCFA",rate:600,    name:"Central African CFA Franc"},
+  ETB: {code:"ETB", sym:"Br",  rate:120,    name:"Ethiopian Birr"},
+  GHS: {code:"GHS", sym:"₵",   rate:15.5,   name:"Ghanaian Cedi"},
+  UGX: {code:"UGX", sym:"USh", rate:3700,   name:"Ugandan Shilling"},
+  TZS: {code:"TZS", sym:"TSh", rate:2650,   name:"Tanzanian Shilling"},
+  DZD: {code:"DZD", sym:"د.ج", rate:135,    name:"Algerian Dinar"},
+  TND: {code:"TND", sym:"د.ت", rate:3.1,    name:"Tunisian Dinar"},
+  LYD: {code:"LYD", sym:"ل.د", rate:4.85,   name:"Libyan Dinar"},
+};
+
+// Map country ISO → currency code. For Eurozone/etc, one currency maps to many.
+const COUNTRY_CURRENCY = {
+  US:"USD", CA:"CAD", MX:"MXN",
+  // Eurozone
+  FR:"EUR", DE:"EUR", IT:"EUR", ES:"EUR", NL:"EUR", BE:"EUR", AT:"EUR", IE:"EUR",
+  PT:"EUR", FI:"EUR", GR:"EUR", LU:"EUR", MT:"EUR", CY:"EUR", SK:"EUR", SI:"EUR",
+  EE:"EUR", LV:"EUR", LT:"EUR", HR:"EUR", MC:"EUR", AD:"EUR",
+  // UK + Nordics
+  GB:"GBP", CH:"CHF", SE:"SEK", NO:"NOK", DK:"DKK", IS:"DKK",
+  // Central/E Europe
+  PL:"PLN", CZ:"CZK", HU:"HUF", RO:"RON", BG:"EUR", RS:"EUR", BA:"EUR", AL:"EUR",
+  MK:"EUR", MD:"EUR",
+  RU:"RUB", UA:"UAH", BY:"RUB", KZ:"RUB",
+  // Asia
+  JP:"JPY", CN:"CNY", KR:"KRW", TW:"TWD", HK:"HKD", SG:"SGD", MY:"MYR", TH:"THB",
+  VN:"VND", ID:"IDR", PH:"PHP", IN:"INR", PK:"PKR", BD:"BDT", NP:"INR", BT:"INR",
+  LK:"INR", MM:"THB", KH:"THB", LA:"THB", MN:"CNY", AF:"USD",
+  // Middle East
+  TR:"TRY", IL:"ILS", AE:"AED", SA:"SAR", QA:"QAR", KW:"USD", BH:"USD", OM:"USD",
+  JO:"USD", LB:"USD", SY:"USD", IR:"IRR", IQ:"IQD", YE:"USD", AZ:"USD", AM:"USD",
+  GE:"USD",
+  // Africa
+  EG:"EGP", ZA:"ZAR", NG:"NGN", KE:"KES", MA:"MAD", DZ:"DZD", TN:"TND", LY:"LYD",
+  ET:"ETB", GH:"GHS", TZ:"TZS", UG:"UGX", MZ:"ZAR", AO:"USD", ZM:"USD", ZW:"ZAR",
+  // West African CFA (XOF): Benin, Burkina Faso, Ivory Coast, Guinea-Bissau, Mali, Niger, Senegal, Togo
+  BJ:"XOF", BF:"XOF", CI:"XOF", GW:"XOF", ML:"XOF", NE:"XOF", SN:"XOF", TG:"XOF",
+  // Central African CFA (XAF): Cameroon, CAR, Chad, Congo (Brazzaville), Equatorial Guinea, Gabon
+  CM:"XAF", CF:"XAF", TD:"XAF", CG:"XAF", GQ:"XAF", GA:"XAF",
+  MG:"USD", SD:"EGP", SS:"USD", SO:"USD", SL:"USD", LR:"USD", RW:"USD", BI:"USD",
+  BW:"ZAR", NA:"ZAR", MW:"USD", LS:"ZAR", SZ:"ZAR", DJ:"USD", ER:"USD", CD:"USD",
+  GN:"USD", GM:"USD", KM:"USD", MU:"USD", MR:"USD", CV:"USD",
+  // Americas
+  BR:"BRL", AR:"ARS", CL:"CLP", CO:"COP", PE:"PEN", VE:"VES", BO:"USD", PY:"USD",
+  UY:"USD", EC:"USD", GY:"USD", SR:"USD",
+  GT:"USD", HN:"USD", NI:"USD", SV:"USD", CR:"USD", PA:"USD", BZ:"USD",
+  CU:"USD", DO:"USD", HT:"USD", JM:"USD", BS:"USD", BB:"USD", TT:"USD", PR:"USD",
+  // Oceania
+  AU:"AUD", NZ:"NZD", FJ:"AUD", PG:"AUD", VU:"AUD", KI:"AUD",
+  // Polar
+  GL:"DKK", AQ:"USD",
+};
+
+// Convert USD damage → local currency + format nicely
+function formatLocalCurrency(usdAmount, iso) {
+  if (!iso || iso === "US") return null;
+  const currCode = COUNTRY_CURRENCY[iso];
+  if (!currCode || currCode === "USD") return null;
+  const curr = CURRENCY_RATES[currCode];
+  if (!curr) return null;
+  const local = usdAmount * curr.rate;
+  let display;
+  if (local >= 1e12)      display = (local/1e12).toFixed(1) + "T";
+  else if (local >= 1e9)  display = (local/1e9).toFixed(1) + "B";
+  else if (local >= 1e6)  display = (local/1e6).toFixed(1) + "M";
+  else if (local >= 1e3)  display = (local/1e3).toFixed(1) + "K";
+  else                    display = Math.round(local).toString();
+  return {
+    text: `${curr.sym}${display}`,
+    code: curr.code,
+    name: curr.name,
+  };
+}
+
 // Find which country a point falls within (fast bounding box check)
 // Returns the country object or null (ocean/unknown)
 // Uses centroid-distance tiebreaker when multiple bboxes contain the point
@@ -3017,7 +3147,11 @@ function TornadoSimulator() {
                 <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
                   <Stat big label="Fatalities" value={numFmt(result.fatalities)} color="#ef5350" sub={`${numFmt(result.populationInPath)} in path`} />
                   <Stat big label="Injuries" value={numFmt(result.injuries)} color="#ffb74d" sub="~15:1 ratio" />
-                  <Stat big label="Total Damage" value={fmt(result.totalEconomicImpact)} color="#4fc3f7" sub="All categories" />
+                  <Stat big label="Total Damage" value={fmt(result.totalEconomicImpact)} color="#4fc3f7"
+                    sub={(() => {
+                      const local = formatLocalCurrency(result.totalEconomicImpact, censusData?.iso);
+                      return local ? `${local.text} ${local.code}` : "All categories";
+                    })()} />
                   <Stat big label="Destroyed" value={numFmt(result.totalDestroyed)} color="#ff8a65" sub={`of ${numFmt(result.totalStructures)}`} />
                 </div>
 
