@@ -372,6 +372,72 @@ const WORLD_COUNTRIES = [
 {"n":"Antarctica","iso":"AQ","pop":1500,"a":5405430,"d":0.0003,"bbox":[-90,-180,-60,180]}
 ];
 
+// ─── QUICK-JUMP WORLD CITIES ────────────────────────────────────────────────
+// Major world cities for the "Quick City" dropdown in World mode.
+// Fields: n=name, lat/lng=city center, r=region (for grouping)
+const WORLD_CITIES = [
+  // North America
+  {n:"New York, USA",lat:40.71,lng:-74.01,r:"N America"},
+  {n:"Los Angeles, USA",lat:34.05,lng:-118.24,r:"N America"},
+  {n:"Chicago, USA",lat:41.88,lng:-87.63,r:"N America"},
+  {n:"Mexico City, Mexico",lat:19.43,lng:-99.13,r:"N America"},
+  {n:"Toronto, Canada",lat:43.65,lng:-79.38,r:"N America"},
+  {n:"Havana, Cuba",lat:23.11,lng:-82.37,r:"N America"},
+  // South America
+  {n:"São Paulo, Brazil",lat:-23.55,lng:-46.63,r:"S America"},
+  {n:"Buenos Aires, Argentina",lat:-34.60,lng:-58.38,r:"S America"},
+  {n:"Bogotá, Colombia",lat:4.71,lng:-74.07,r:"S America"},
+  {n:"Lima, Peru",lat:-12.05,lng:-77.04,r:"S America"},
+  {n:"Rio de Janeiro, Brazil",lat:-22.91,lng:-43.17,r:"S America"},
+  // Europe
+  {n:"London, UK",lat:51.51,lng:-0.13,r:"Europe"},
+  {n:"Paris, France",lat:48.86,lng:2.35,r:"Europe"},
+  {n:"Berlin, Germany",lat:52.52,lng:13.40,r:"Europe"},
+  {n:"Rome, Italy",lat:41.90,lng:12.50,r:"Europe"},
+  {n:"Madrid, Spain",lat:40.42,lng:-3.70,r:"Europe"},
+  {n:"Moscow, Russia",lat:55.75,lng:37.62,r:"Europe"},
+  {n:"Istanbul, Turkey",lat:41.01,lng:28.98,r:"Europe"},
+  {n:"Amsterdam, Netherlands",lat:52.37,lng:4.90,r:"Europe"},
+  // Asia
+  {n:"Tokyo, Japan",lat:35.68,lng:139.69,r:"Asia"},
+  {n:"Beijing, China",lat:39.90,lng:116.41,r:"Asia"},
+  {n:"Shanghai, China",lat:31.23,lng:121.47,r:"Asia"},
+  {n:"Delhi, India",lat:28.61,lng:77.21,r:"Asia"},
+  {n:"Mumbai, India",lat:19.08,lng:72.88,r:"Asia"},
+  {n:"Seoul, South Korea",lat:37.57,lng:126.98,r:"Asia"},
+  {n:"Bangkok, Thailand",lat:13.76,lng:100.50,r:"Asia"},
+  {n:"Jakarta, Indonesia",lat:-6.21,lng:106.85,r:"Asia"},
+  {n:"Manila, Philippines",lat:14.60,lng:120.98,r:"Asia"},
+  {n:"Dhaka, Bangladesh",lat:23.71,lng:90.41,r:"Asia"},
+  {n:"Karachi, Pakistan",lat:24.86,lng:67.01,r:"Asia"},
+  {n:"Tehran, Iran",lat:35.69,lng:51.39,r:"Asia"},
+  {n:"Ho Chi Minh City, Vietnam",lat:10.82,lng:106.63,r:"Asia"},
+  {n:"Singapore",lat:1.35,lng:103.82,r:"Asia"},
+  {n:"Hong Kong",lat:22.32,lng:114.17,r:"Asia"},
+  // Middle East
+  {n:"Dubai, UAE",lat:25.20,lng:55.27,r:"Mid East"},
+  {n:"Riyadh, Saudi Arabia",lat:24.71,lng:46.68,r:"Mid East"},
+  {n:"Baghdad, Iraq",lat:33.32,lng:44.42,r:"Mid East"},
+  {n:"Jerusalem",lat:31.78,lng:35.22,r:"Mid East"},
+  // Africa
+  {n:"Cairo, Egypt",lat:30.04,lng:31.24,r:"Africa"},
+  {n:"Lagos, Nigeria",lat:6.52,lng:3.38,r:"Africa"},
+  {n:"Johannesburg, South Africa",lat:-26.20,lng:28.05,r:"Africa"},
+  {n:"Nairobi, Kenya",lat:-1.29,lng:36.82,r:"Africa"},
+  {n:"Casablanca, Morocco",lat:33.57,lng:-7.59,r:"Africa"},
+  {n:"Addis Ababa, Ethiopia",lat:9.03,lng:38.75,r:"Africa"},
+  {n:"Kinshasa, DR Congo",lat:-4.44,lng:15.27,r:"Africa"},
+  // Oceania
+  {n:"Sydney, Australia",lat:-33.87,lng:151.21,r:"Oceania"},
+  {n:"Melbourne, Australia",lat:-37.81,lng:144.96,r:"Oceania"},
+  {n:"Auckland, New Zealand",lat:-36.85,lng:174.76,r:"Oceania"},
+  // Extreme locations (fun demos)
+  {n:"North Pole",lat:89.5,lng:0,r:"Extreme"},
+  {n:"Sahara Desert",lat:23.4,lng:12.7,r:"Extreme"},
+  {n:"Amazon Rainforest",lat:-3.5,lng:-62,r:"Extreme"},
+  {n:"Mount Everest area",lat:27.99,lng:86.93,r:"Extreme"},
+];
+
 // Find which country a point falls within (fast bounding box check)
 // Returns the country object or null (ocean/unknown)
 // Uses centroid-distance tiebreaker when multiple bboxes contain the point
@@ -2254,6 +2320,64 @@ function TornadoSimulator() {
           <Section title="Location" icon="📍" defaultOpen={true}>
             <SelectInput label="Region" value={enabledCountries} onChange={(v) => setEnabledCountries(v)}
               options={[["us", "🇺🇸 United States"], ["canada", "🇨🇦 Canada"], ["both", "🇺🇸🇨🇦 Both Countries"], ["world", "🌍 World (200+ countries)"]]} />
+
+            {enabledCountries === "world" && (
+              <>
+                <div style={{ marginBottom: 8 }}>
+                  <div style={{ fontSize: 9, color: "#888", marginBottom: 4, fontWeight: 600, letterSpacing: "0.04em" }}>QUICK JUMP TO CITY</div>
+                  <select
+                    onChange={(e) => {
+                      if (!e.target.value) return;
+                      const city = WORLD_CITIES.find(c => c.n === e.target.value);
+                      if (city) handlePlaceTornado(city.lat, city.lng);
+                      e.target.value = "";
+                    }}
+                    style={{
+                      width: "100%", padding: "6px 8px", fontSize: 11,
+                      background: "#0d0d1a", color: "#e0e0e0", border: "1px solid #2a2a4a",
+                      borderRadius: 4, cursor: "pointer",
+                    }}
+                    defaultValue=""
+                  >
+                    <option value="">— Select a major city —</option>
+                    {["N America","S America","Europe","Asia","Mid East","Africa","Oceania","Extreme"].map(region => (
+                      <optgroup key={region} label={region}>
+                        {WORLD_CITIES.filter(c => c.r === region).map(c => (
+                          <option key={c.n} value={c.n}>{c.n}</option>
+                        ))}
+                      </optgroup>
+                    ))}
+                  </select>
+                </div>
+                <button
+                  onClick={() => {
+                    // Pick a random inhabited country weighted by population
+                    const pool = WORLD_COUNTRIES.filter(c => c.pop > 1000000);
+                    const totalPop = pool.reduce((s, c) => s + c.pop, 0);
+                    let r = Math.random() * totalPop;
+                    let picked = pool[0];
+                    for (const c of pool) {
+                      r -= c.pop;
+                      if (r <= 0) { picked = c; break; }
+                    }
+                    // Random point within country's bbox
+                    const [minLat, minLng, maxLat, maxLng] = picked.bbox;
+                    const rlat = minLat + Math.random() * (maxLat - minLat);
+                    const rlng = minLng + Math.random() * (maxLng - minLng);
+                    handlePlaceTornado(rlat, rlng);
+                  }}
+                  style={{
+                    width: "100%", padding: "6px 8px", fontSize: 10, fontWeight: 700,
+                    background: "linear-gradient(135deg, #4a1a8a, #2a3a8a)", color: "#fff",
+                    border: "1px solid #5a3aaa", borderRadius: 4, cursor: "pointer",
+                    marginBottom: 8, textTransform: "uppercase", letterSpacing: "0.05em",
+                  }}
+                >
+                  🎲 Random World Location
+                </button>
+              </>
+            )}
+
             <div style={{ fontSize: 10, color: "#888", marginBottom: 6 }}>
               Click the map to place the tornado origin
             </div>
@@ -2261,11 +2385,11 @@ function TornadoSimulator() {
               <div style={{ display: "flex", gap: 8, marginBottom: 8 }}>
                 <div style={{ flex: 1, padding: "6px 8px", background: "#1a1a2e", borderRadius: 4, border: "1px solid #2a2a4a" }}>
                   <div style={{ fontSize: 8, color: "#666" }}>LAT</div>
-                  <div style={{ fontSize: 11, color: "#e0e0e0", fontFamily: "'JetBrains Mono', monospace" }}>{tornadoLat.toFixed(2)}°N</div>
+                  <div style={{ fontSize: 11, color: "#e0e0e0", fontFamily: "'JetBrains Mono', monospace" }}>{Math.abs(tornadoLat).toFixed(2)}°{tornadoLat >= 0 ? "N" : "S"}</div>
                 </div>
                 <div style={{ flex: 1, padding: "6px 8px", background: "#1a1a2e", borderRadius: 4, border: "1px solid #2a2a4a" }}>
                   <div style={{ fontSize: 8, color: "#666" }}>LNG</div>
-                  <div style={{ fontSize: 11, color: "#e0e0e0", fontFamily: "'JetBrains Mono', monospace" }}>{Math.abs(tornadoLng).toFixed(2)}°W</div>
+                  <div style={{ fontSize: 11, color: "#e0e0e0", fontFamily: "'JetBrains Mono', monospace" }}>{Math.abs(tornadoLng).toFixed(2)}°{tornadoLng >= 0 ? "E" : "W"}</div>
                 </div>
               </div>
             )}
@@ -2594,7 +2718,7 @@ function TornadoSimulator() {
                       {isDrawing ? (
                         <span style={{ color: "#4fc3f7" }}>✏️ DRAWING ({customWaypoints.length} pts)</span>
                       ) : (
-                        <>📍 {tornadoLat.toFixed(1)}°N, {Math.abs(tornadoLng).toFixed(1)}°W</>
+                        <>📍 {Math.abs(tornadoLat).toFixed(1)}°{tornadoLat >= 0 ? "N" : "S"}, {Math.abs(tornadoLng).toFixed(1)}°{tornadoLng >= 0 ? "E" : "W"}</>
                       )}
                     </span>
                   )}
