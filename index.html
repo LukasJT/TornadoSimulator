@@ -374,14 +374,16 @@ const WORLD_COUNTRIES = [
 
 // Find which country a point falls within (fast bounding box check)
 // Returns the country object or null (ocean/unknown)
+// Uses centroid-distance tiebreaker when multiple bboxes contain the point
+// (fixes cases like Delhi where India + Pakistan bboxes both overlap)
 const findWorldCountry = (lat, lng) => {
   // Normalize longitude to [-180, 180]
   let nlng = lng;
   while (nlng > 180) nlng -= 360;
   while (nlng < -180) nlng += 360;
-  // Try to find smallest bounding box containing point (smaller = better match)
-  let best = null;
-  let bestArea = Infinity;
+
+  // Collect all candidates whose bbox contains the point
+  const candidates = [];
   for (const c of WORLD_COUNTRIES) {
     const [minLat, minLng, maxLat, maxLng] = c.bbox;
     if (lat >= minLat && lat <= maxLat) {
@@ -389,13 +391,41 @@ const findWorldCountry = (lat, lng) => {
       const inLng = minLng <= maxLng
         ? (nlng >= minLng && nlng <= maxLng)
         : (nlng >= minLng || nlng <= maxLng);
-      if (inLng) {
-        const area = (maxLat - minLat) * (maxLng - minLng);
-        if (area < bestArea) { bestArea = area; best = c; }
-      }
+      if (inLng) candidates.push(c);
     }
   }
-  return best;
+  if (candidates.length === 0) return null;
+  if (candidates.length === 1) return candidates[0];
+
+  // Multiple candidates — sort by bbox area ascending, prefer smaller candidates
+  // when the point sits meaningfully inside them (border cities and enclaves).
+  // Falls back to largest candidate for points at all bboxes' edges.
+  // The tunable MIN_DEPTH threshold prevents picking a tiny neighbor whose
+  // bbox barely clips the point.
+  const MIN_DEPTH = 0.15; // must be at least 15% into bbox to pick smaller
+  const scored = candidates.map(c => {
+    const [minLat, minLng, maxLat, maxLng] = c.bbox;
+    const depth = Math.min(
+      lat - minLat, maxLat - lat,
+      nlng - minLng, maxLng - nlng
+    );
+    const w = maxLat - minLat;
+    const h = maxLng - minLng;
+    const size = Math.min(w, h);
+    const area = w * h;
+    const normDepth = size > 0 ? depth / size : 0;
+    return { c, area, normDepth };
+  });
+  // Try smallest bbox first — if point is well inside (normDepth >= threshold),
+  // pick it. Otherwise walk up to next larger candidate.
+  scored.sort((a, b) => a.area - b.area);
+  for (const s of scored) {
+    if (s.normDepth >= MIN_DEPTH) return s.c;
+  }
+  // No candidate meets the threshold — return the one with highest normDepth
+  // regardless of size (best-fit fallback).
+  scored.sort((a, b) => b.normDepth - a.normDepth);
+  return scored[0].c;
 };
 
 // ─── SIMULATION ENGINE ──────────────────────────────────────────────────────
