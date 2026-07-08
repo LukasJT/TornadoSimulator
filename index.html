@@ -438,6 +438,118 @@ const WORLD_CITIES = [
   {n:"Mount Everest area",lat:27.99,lng:86.93,r:"Extreme"},
 ];
 
+// ─── REGIONAL CONSTRUCTION PROFILES ─────────────────────────────────────────
+// Housing type mix + basement % for each region. Placing a tornado in Bangladesh
+// uses very different construction (mud/thatch/informal) than a tornado in Japan
+// (concrete/reinforced). These defaults dramatically improve damage realism
+// when the user picks a location outside the US/Canada.
+//
+// Percentages sum to 100 (mobileHome + woodFrame + brick + concrete).
+// basementPct is separate (fraction of homes with basements — big protective factor).
+// Sources: World Bank housing surveys, UN-Habitat World Cities Report, Hazus regional.
+const REGIONAL_CONSTRUCTION = {
+  developed_west: {           // US, Canada, W Europe, Aus, NZ
+    mobileHomePct: 10, woodFramePct: 55, brickPct: 25, concretePct: 10,
+    basementPct: 40, shelterPct: 8, preparedness: 0.7,
+  },
+  developed_asia: {           // Japan, S Korea, Taiwan, Singapore, HK
+    mobileHomePct: 3, woodFramePct: 20, brickPct: 20, concretePct: 57,
+    basementPct: 5, shelterPct: 2, preparedness: 0.8,
+  },
+  developing_asia: {          // Bangladesh, India, Pakistan, Indonesia, Philippines, Myanmar, Vietnam
+    mobileHomePct: 40, woodFramePct: 15, brickPct: 35, concretePct: 10,
+    basementPct: 0, shelterPct: 1, preparedness: 0.3,
+  },
+  middle_east: {              // UAE, Saudi, Qatar, Kuwait, Bahrain, Israel, Jordan
+    mobileHomePct: 3, woodFramePct: 5, brickPct: 32, concretePct: 60,
+    basementPct: 0, shelterPct: 3, preparedness: 0.5,
+  },
+  sub_saharan_africa: {       // Most of Africa south of Sahara
+    mobileHomePct: 55, woodFramePct: 10, brickPct: 25, concretePct: 10,
+    basementPct: 0, shelterPct: 0, preparedness: 0.2,
+  },
+  north_africa: {             // Egypt, Morocco, Algeria, Tunisia, Libya
+    mobileHomePct: 15, woodFramePct: 5, brickPct: 45, concretePct: 35,
+    basementPct: 0, shelterPct: 1, preparedness: 0.3,
+  },
+  latin_america: {            // Mexico, Central + S America
+    mobileHomePct: 25, woodFramePct: 15, brickPct: 35, concretePct: 25,
+    basementPct: 5, shelterPct: 2, preparedness: 0.4,
+  },
+  eastern_europe: {           // Russia, Ukraine, Belarus, Balkans, ex-USSR
+    mobileHomePct: 15, woodFramePct: 25, brickPct: 35, concretePct: 25,
+    basementPct: 30, shelterPct: 4, preparedness: 0.5,
+  },
+  polar: {                    // Antarctica, Greenland
+    mobileHomePct: 5, woodFramePct: 60, brickPct: 5, concretePct: 30,
+    basementPct: 0, shelterPct: 0, preparedness: 0.2,
+  },
+};
+
+// Map ISO country code → construction profile
+const COUNTRY_PROFILE_MAP = {
+  // developed_west
+  US:"developed_west", CA:"developed_west", GB:"developed_west", FR:"developed_west",
+  DE:"developed_west", IT:"developed_west", ES:"developed_west", NL:"developed_west",
+  BE:"developed_west", AT:"developed_west", CH:"developed_west", IE:"developed_west",
+  PT:"developed_west", SE:"developed_west", NO:"developed_west", DK:"developed_west",
+  FI:"developed_west", IS:"developed_west", AU:"developed_west", NZ:"developed_west",
+  LU:"developed_west", MC:"developed_west", AD:"developed_west", LI:"developed_west",
+  MT:"developed_west", CY:"developed_west",
+  // developed_asia
+  JP:"developed_asia", KR:"developed_asia", TW:"developed_asia", SG:"developed_asia",
+  // developing_asia
+  BD:"developing_asia", IN:"developing_asia", PK:"developing_asia", ID:"developing_asia",
+  PH:"developing_asia", MM:"developing_asia", VN:"developing_asia", LA:"developing_asia",
+  KH:"developing_asia", NP:"developing_asia", LK:"developing_asia", BT:"developing_asia",
+  MV:"developing_asia", TH:"developing_asia", MY:"developing_asia", MN:"developing_asia",
+  AF:"developing_asia",
+  // middle_east
+  AE:"middle_east", SA:"middle_east", QA:"middle_east", KW:"middle_east", BH:"middle_east",
+  OM:"middle_east", IL:"middle_east", JO:"middle_east", LB:"middle_east", SY:"middle_east",
+  IQ:"middle_east", IR:"middle_east", YE:"middle_east", TR:"middle_east", AZ:"middle_east",
+  AM:"middle_east", GE:"middle_east",
+  // sub_saharan_africa (all below Sahara)
+  NG:"sub_saharan_africa", KE:"sub_saharan_africa", ET:"sub_saharan_africa", ZA:"sub_saharan_africa",
+  UG:"sub_saharan_africa", TZ:"sub_saharan_africa", GH:"sub_saharan_africa", CI:"sub_saharan_africa",
+  CM:"sub_saharan_africa", SN:"sub_saharan_africa", ML:"sub_saharan_africa", BF:"sub_saharan_africa",
+  NE:"sub_saharan_africa", MZ:"sub_saharan_africa", AO:"sub_saharan_africa", CD:"sub_saharan_africa",
+  CG:"sub_saharan_africa", ZM:"sub_saharan_africa", ZW:"sub_saharan_africa", MW:"sub_saharan_africa",
+  RW:"sub_saharan_africa", BI:"sub_saharan_africa", SO:"sub_saharan_africa", SS:"sub_saharan_africa",
+  ER:"sub_saharan_africa", DJ:"sub_saharan_africa", NA:"sub_saharan_africa", BW:"sub_saharan_africa",
+  LS:"sub_saharan_africa", SZ:"sub_saharan_africa", MG:"sub_saharan_africa", CV:"sub_saharan_africa",
+  GN:"sub_saharan_africa", GW:"sub_saharan_africa", SL:"sub_saharan_africa", LR:"sub_saharan_africa",
+  BJ:"sub_saharan_africa", TG:"sub_saharan_africa", GA:"sub_saharan_africa", GQ:"sub_saharan_africa",
+  CF:"sub_saharan_africa", TD:"sub_saharan_africa", GM:"sub_saharan_africa", KM:"sub_saharan_africa",
+  MU:"sub_saharan_africa", MR:"sub_saharan_africa",
+  // north_africa
+  EG:"north_africa", MA:"north_africa", DZ:"north_africa", TN:"north_africa", LY:"north_africa",
+  SD:"north_africa",
+  // latin_america
+  MX:"latin_america", BR:"latin_america", AR:"latin_america", CO:"latin_america",
+  PE:"latin_america", VE:"latin_america", CL:"latin_america", EC:"latin_america",
+  BO:"latin_america", PY:"latin_america", UY:"latin_america", GT:"latin_america",
+  CU:"latin_america", DO:"latin_america", HT:"latin_america", HN:"latin_america",
+  NI:"latin_america", CR:"latin_america", PA:"latin_america", SV:"latin_america",
+  BZ:"latin_america", JM:"latin_america", TT:"latin_america", BS:"latin_america",
+  BB:"latin_america", SR:"latin_america", GY:"latin_america", PR:"latin_america",
+  // eastern_europe
+  RU:"eastern_europe", UA:"eastern_europe", BY:"eastern_europe", PL:"eastern_europe",
+  RO:"eastern_europe", BG:"eastern_europe", CZ:"eastern_europe", SK:"eastern_europe",
+  HU:"eastern_europe", HR:"eastern_europe", SI:"eastern_europe", RS:"eastern_europe",
+  BA:"eastern_europe", ME:"eastern_europe", MK:"eastern_europe", AL:"eastern_europe",
+  MD:"eastern_europe", EE:"eastern_europe", LT:"eastern_europe", LV:"eastern_europe",
+  GR:"eastern_europe", KZ:"eastern_europe", UZ:"eastern_europe", TJ:"eastern_europe",
+  TM:"eastern_europe", KG:"eastern_europe",
+  // polar
+  GL:"polar", AQ:"polar",
+};
+
+function getConstructionProfile(iso) {
+  const key = COUNTRY_PROFILE_MAP[iso];
+  return key ? REGIONAL_CONSTRUCTION[key] : null;
+}
+
 // Find which country a point falls within (fast bounding box check)
 // Returns the country object or null (ocean/unknown)
 // Uses centroid-distance tiebreaker when multiple bboxes contain the point
@@ -1955,6 +2067,8 @@ function TornadoSimulator() {
         const popDensity = Math.round(country.d);
         const housingDensity = Math.round(country.d * 0.4); // ~40% of pop density is typical
         const isRemote = popDensity < 5;
+        // Load regional construction profile (housing mix, basements, prep)
+        const profile = getConstructionProfile(country.iso);
         setCensusData({
           name: country.n,
           population: country.pop,
@@ -1965,7 +2079,9 @@ function TornadoSimulator() {
           sourceUrl: "https://population.un.org/wpp/",
           country: "world",
           iso: country.iso,
-          note: "Country-level average density — real values vary widely within borders",
+          note: profile
+            ? "Country avg density + regional construction profile applied (housing mix, basements, preparedness)"
+            : "Country-level average density — real values vary widely within borders",
         });
         setParams(p => ({
           ...p,
@@ -1980,6 +2096,16 @@ function TornadoSimulator() {
           cropType: p.cropType,
           cropAcresPct: p.cropAcresPct,
           livestockDensity: popDensity < 100 ? Math.min(Math.round((100 - popDensity) / 3), 50) : 0,
+          // Apply regional construction profile if available for this country
+          ...(profile ? {
+            mobileHomePct: profile.mobileHomePct,
+            woodFramePct: profile.woodFramePct,
+            brickPct: profile.brickPct,
+            concretePct: profile.concretePct,
+            basementPct: profile.basementPct,
+            shelterPct: profile.shelterPct,
+            preparedness: profile.preparedness,
+          } : {}),
         }));
       } else {
         // Ocean / uninhabited — ZERO everything
