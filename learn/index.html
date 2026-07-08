@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Learn — Tornado Hub</title>
+<meta name="description" content="Learning resources for students, teachers, and enthusiasts. Meteorology explainers, classroom projects, storm chase guides, and educational activities covering everything from CAPE to hook echoes." />
+<link rel="canonical" href="https://www.tornadosimulator.net/learn/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌪️</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<style>
+:root {
+  --bg: #fbfaf7; --bg-alt: #f4f1ea; --surface: #ffffff;
+  --text: #14161c; --text-secondary: #4a5061; --text-muted: #8b8f9c;
+  --border: #e5e1d8; --border-strong: #d4cfc3;
+  --accent: #a02818; --accent-hover: #7d1f13;
+  --link: #1e3a5f;
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--accent); text-decoration: underline; }
+.nav { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+.nav-inner { max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.nav-brand { font-family: var(--serif); font-weight: 700; font-size: 20px; color: var(--text); display: flex; align-items: center; gap: 8px; text-decoration: none; }
+.nav-links { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+.nav-links a { color: var(--text-secondary); padding: 8px 14px; font-size: 14px; font-weight: 500; border-radius: 6px; text-decoration: none; }
+.nav-links a:hover { background: var(--bg-alt); color: var(--text); text-decoration: none; }
+.nav-links a.cta { background: var(--accent); color: white; font-weight: 600; }
+.nav-links a.cta:hover { background: var(--accent-hover); color: white; }
+.page-header { background: linear-gradient(180deg, var(--bg), var(--bg-alt)); border-bottom: 1px solid var(--border); padding: 64px 24px 48px; }
+.page-header-inner { max-width: 1000px; margin: 0 auto; }
+.page-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+.page-header h1 { font-family: var(--serif); font-size: clamp(32px, 4vw, 48px); font-weight: 700; line-height: 1.1; margin-bottom: 12px; letter-spacing: -0.02em; }
+.page-header p { font-size: 17px; color: var(--text-secondary); max-width: 700px; line-height: 1.55; }
+.main { max-width: 1200px; margin: 0 auto; padding: 56px 24px; }
+.track { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 32px; margin-bottom: 32px; }
+.track-header { display: flex; gap: 16px; align-items: start; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+.track-icon { font-size: 40px; line-height: 1; }
+.track-title { font-family: var(--serif); font-size: 26px; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.01em; }
+.track-sub { color: var(--text-secondary); font-size: 15px; }
+.track-lessons { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 8px; }
+.lesson { display: block; padding: 12px 14px; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 14px; text-decoration: none; transition: border-color 0.15s; }
+.lesson:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+.lesson-num { color: var(--text-muted); font-family: var(--serif); font-size: 12px; margin-right: 8px; }
+.footer { background: #14161c; color: #94a3b8; padding: 40px 24px; border-top: 4px solid var(--accent); text-align: center; font-size: 13px; }
+.footer a { color: white; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+@media (max-width: 500px) { .nav-links { gap: 0; } .nav-links a { padding: 6px 10px; font-size: 13px; } }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand"><span>🌪️</span> Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/learn/">Learn</a>
+      <a href="/safety/">Safety</a>
+      <a href="/simulator/" class="cta">Launch Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <div class="page-eyebrow">Educational Resources</div>
+    <h1>Learn about tornadoes — at any level.</h1>
+    <p>From elementary school science projects to graduate-level meteorology. Pick a track and work through it — every link opens a full article you can read in ten minutes.</p>
+  </div>
+</header>
+
+<main class="main">
+
+<div class="track">
+  <div class="track-header">
+    <div class="track-icon">🎒</div>
+    <div>
+      <div class="track-title">For students (K-8)</div>
+      <div class="track-sub">Age-appropriate facts, classroom projects, and hands-on science.</div>
+    </div>
+  </div>
+  <div class="track-lessons">
+    <a class="lesson" href="/tornado-facts-for-kids/"><span class="lesson-num">01</span>Tornado facts for kids</a>
+    <a class="lesson" href="/tornado-in-a-bottle-experiment/"><span class="lesson-num">02</span>Make a tornado in a bottle</a>
+    <a class="lesson" href="/tornado-activities-kids/"><span class="lesson-num">03</span>Classroom activities</a>
+    <a class="lesson" href="/how-do-tornadoes-form/"><span class="lesson-num">04</span>How do tornadoes form?</a>
+    <a class="lesson" href="/tornado-safety/"><span class="lesson-num">05</span>Tornado safety basics</a>
+    <a class="lesson" href="/tornado-facts/"><span class="lesson-num">06</span>Amazing facts</a>
+    <a class="lesson" href="/night-of-the-twisters/"><span class="lesson-num">07</span>Night of the Twisters</a>
+  </div>
+</div>
+
+<div class="track">
+  <div class="track-header">
+    <div class="track-icon">🧪</div>
+    <div>
+      <div class="track-title">Meteorology track</div>
+      <div class="track-sub">The atmospheric science of tornado formation, from ingredients to detection.</div>
+    </div>
+  </div>
+  <div class="track-lessons">
+    <a class="lesson" href="/how-do-tornadoes-form/"><span class="lesson-num">01</span>Formation basics</a>
+    <a class="lesson" href="/tornado-formation-conditions/"><span class="lesson-num">02</span>CAPE, shear, and lift</a>
+    <a class="lesson" href="/mesocyclone/"><span class="lesson-num">03</span>Mesocyclones</a>
+    <a class="lesson" href="/wall-cloud/"><span class="lesson-num">04</span>Wall clouds</a>
+    <a class="lesson" href="/tornado-vs-supercell/"><span class="lesson-num">05</span>Supercell structure</a>
+    <a class="lesson" href="/hook-echo/"><span class="lesson-num">06</span>Reading a hook echo</a>
+    <a class="lesson" href="/how-tornadoes-are-detected/"><span class="lesson-num">07</span>Detection: Doppler radar</a>
+    <a class="lesson" href="/how-do-meteorologists-predict-tornadoes/"><span class="lesson-num">08</span>Prediction methods</a>
+    <a class="lesson" href="/tornado-forecast-models/"><span class="lesson-num">09</span>Forecast models</a>
+    <a class="lesson" href="/tornado-warning-technology/"><span class="lesson-num">10</span>Warning technology history</a>
+    <a class="lesson" href="/multi-vortex-tornado/"><span class="lesson-num">11</span>Multi-vortex tornadoes</a>
+    <a class="lesson" href="/ef-scale/"><span class="lesson-num">12</span>The EF Scale</a>
+    <a class="lesson" href="/tornado-wind-speed/"><span class="lesson-num">13</span>Wind speeds & measurement</a>
+    <a class="lesson" href="/tornado-effects-on-buildings/"><span class="lesson-num">14</span>Effects on buildings</a>
+    <a class="lesson" href="/tornado-weather-terms/"><span class="lesson-num">15</span>Glossary of terms</a>
+  </div>
+</div>
+
+<div class="track">
+  <div class="track-header">
+    <div class="track-icon">📸</div>
+    <div>
+      <div class="track-title">Storm chasing</div>
+      <div class="track-sub">Career, ethics, safety, and the culture around documenting severe weather.</div>
+    </div>
+  </div>
+  <div class="track-lessons">
+    <a class="lesson" href="/storm-chaser/"><span class="lesson-num">01</span>Storm chaser overview</a>
+    <a class="lesson" href="/how-to-become-a-storm-chaser/"><span class="lesson-num">02</span>Getting started</a>
+    <a class="lesson" href="/storm-chasing-safety/"><span class="lesson-num">03</span>Safety fundamentals</a>
+    <a class="lesson" href="/how-to-photograph-a-tornado/"><span class="lesson-num">04</span>Photography</a>
+    <a class="lesson" href="/famous-storm-chasers/"><span class="lesson-num">05</span>Legendary chasers</a>
+    <a class="lesson" href="/chaser-vehicles-guide/"><span class="lesson-num">06</span>Chase vehicles</a>
+    <a class="lesson" href="/storm-chase-tour-guide/"><span class="lesson-num">07</span>Booking a tour</a>
+    <a class="lesson" href="/tornado-sound-recordings/"><span class="lesson-num">08</span>Sound recordings</a>
+  </div>
+</div>
+
+<div class="track">
+  <div class="track-header">
+    <div class="track-icon">🗺️</div>
+    <div>
+      <div class="track-title">Geography & climate</div>
+      <div class="track-sub">Where tornadoes actually happen — and how that's shifting.</div>
+    </div>
+  </div>
+  <div class="track-lessons">
+    <a class="lesson" href="/tornado-alley/"><span class="lesson-num">01</span>What is Tornado Alley?</a>
+    <a class="lesson" href="/dixie-alley/"><span class="lesson-num">02</span>Dixie Alley</a>
+    <a class="lesson" href="/tornado-alley-2/"><span class="lesson-num">03</span>Tornado Alley 2.0</a>
+    <a class="lesson" href="/tornado-season/"><span class="lesson-num">04</span>Tornado season</a>
+    <a class="lesson" href="/nocturnal-tornadoes/"><span class="lesson-num">05</span>Nocturnal tornadoes</a>
+    <a class="lesson" href="/tornado-density-map-us/"><span class="lesson-num">06</span>US density map</a>
+    <a class="lesson" href="/tornadoes-and-climate-change/"><span class="lesson-num">07</span>Climate change context</a>
+    <a class="lesson" href="/hurricane-tornadoes/"><span class="lesson-num">08</span>Hurricane-spawned</a>
+    <a class="lesson" href="/tornadoes-in-europe/"><span class="lesson-num">09</span>Tornadoes in Europe</a>
+    <a class="lesson" href="/worst-tornado-in-history/"><span class="lesson-num">10</span>Bangladesh & global risk</a>
+    <a class="lesson" href="/where-to-live-to-avoid-tornadoes/"><span class="lesson-num">11</span>Safest US states</a>
+    <a class="lesson" href="/how-often-do-tornadoes-hit-my-town/"><span class="lesson-num">12</span>Frequency by location</a>
+  </div>
+</div>
+
+<div class="track">
+  <div class="track-header">
+    <div class="track-icon">📜</div>
+    <div>
+      <div class="track-title">History track</div>
+      <div class="track-sub">How our understanding evolved — from 1925 Tri-State to modern Doppler.</div>
+    </div>
+  </div>
+  <div class="track-lessons">
+    <a class="lesson" href="/tornado-history-timeline/"><span class="lesson-num">01</span>Complete timeline</a>
+    <a class="lesson" href="/tri-state-1925/"><span class="lesson-num">02</span>Tri-State 1925</a>
+    <a class="lesson" href="/palm-sunday-1965/"><span class="lesson-num">03</span>Palm Sunday 1965</a>
+    <a class="lesson" href="/1974-super-outbreak/"><span class="lesson-num">04</span>1974 Super Outbreak</a>
+    <a class="lesson" href="/moore-1999/"><span class="lesson-num">05</span>Moore 1999 (302 mph)</a>
+    <a class="lesson" href="/joplin-2011/"><span class="lesson-num">06</span>Joplin 2011</a>
+    <a class="lesson" href="/2011-super-outbreak/"><span class="lesson-num">07</span>2011 Super Outbreak</a>
+    <a class="lesson" href="/el-reno-2013/"><span class="lesson-num">08</span>El Reno 2013</a>
+    <a class="lesson" href="/mayfield-2021/"><span class="lesson-num">09</span>Mayfield 2021</a>
+    <a class="lesson" href="/every-ef5-tornado/"><span class="lesson-num">10</span>Every EF5 ever</a>
+    <a class="lesson" href="/deadliest-us-tornadoes/"><span class="lesson-num">11</span>Deadliest US events</a>
+    <a class="lesson" href="/tornado-siren-history/"><span class="lesson-num">12</span>Warning siren history</a>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  &copy; Tornado Hub. An educational resource. <a href="/">Home</a> &middot; <a href="/simulator/">Simulator</a> &middot; <a href="/articles/">Articles</a> &middot; <a href="/safety/">Safety</a>
+</footer>
+
+</body>
+</html>
+</content>
+</invoke>

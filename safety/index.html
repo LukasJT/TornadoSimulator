@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Safety Guides — Tornado Hub</title>
+<meta name="description" content="Tornado safety, by scenario. Where you are when a warning is issued determines what you should do. Guides for home, mobile home, car, apartment, high-rise, school, workplace, hospital, and more." />
+<link rel="canonical" href="https://www.tornadosimulator.net/safety/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌪️</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<style>
+:root {
+  --bg: #fbfaf7; --bg-alt: #f4f1ea; --surface: #ffffff;
+  --text: #14161c; --text-secondary: #4a5061; --text-muted: #8b8f9c;
+  --border: #e5e1d8; --border-strong: #d4cfc3;
+  --accent: #a02818; --accent-hover: #7d1f13;
+  --link: #1e3a5f;
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--accent); text-decoration: underline; }
+.nav { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+.nav-inner { max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.nav-brand { font-family: var(--serif); font-weight: 700; font-size: 20px; color: var(--text); display: flex; align-items: center; gap: 8px; text-decoration: none; }
+.nav-links { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+.nav-links a { color: var(--text-secondary); padding: 8px 14px; font-size: 14px; font-weight: 500; border-radius: 6px; text-decoration: none; }
+.nav-links a:hover { background: var(--bg-alt); color: var(--text); text-decoration: none; }
+.nav-links a.cta { background: var(--accent); color: white; font-weight: 600; }
+.nav-links a.cta:hover { background: var(--accent-hover); color: white; }
+.page-header { background: linear-gradient(180deg, var(--bg), var(--bg-alt)); border-bottom: 1px solid var(--border); padding: 64px 24px 48px; }
+.page-header-inner { max-width: 1000px; margin: 0 auto; }
+.page-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+.page-header h1 { font-family: var(--serif); font-size: clamp(32px, 4vw, 48px); font-weight: 700; line-height: 1.1; margin-bottom: 12px; letter-spacing: -0.02em; }
+.page-header p { font-size: 17px; color: var(--text-secondary); max-width: 700px; line-height: 1.55; }
+.warning-banner { background: #fef3f2; border: 1px solid #fecdca; color: #7c2d12; padding: 16px 20px; border-radius: 8px; margin: 24px auto; max-width: 900px; font-size: 14px; }
+.warning-banner strong { font-weight: 700; color: #7c2d12; }
+.main { max-width: 1200px; margin: 0 auto; padding: 24px 24px 56px; }
+.category { margin-bottom: 48px; }
+.cat-title { font-family: var(--serif); font-size: 24px; font-weight: 700; color: var(--text); margin-bottom: 6px; letter-spacing: -0.01em; }
+.cat-sub { color: var(--text-secondary); font-size: 15px; margin-bottom: 20px; }
+.scenario-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.scenario { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 18px 20px; text-decoration: none; color: inherit; transition: border-color 0.15s, transform 0.15s; display: block; }
+.scenario:hover { border-color: var(--accent); text-decoration: none; transform: translateY(-2px); color: inherit; }
+.scenario-title { font-family: var(--serif); font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.scenario-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+.footer { background: #14161c; color: #94a3b8; padding: 40px 24px; border-top: 4px solid var(--accent); text-align: center; font-size: 13px; }
+.footer a { color: white; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+@media (max-width: 500px) { .nav-links { gap: 0; } .nav-links a { padding: 6px 10px; font-size: 13px; } }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand"><span>🌪️</span> Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/learn/">Learn</a>
+      <a href="/safety/">Safety</a>
+      <a href="/simulator/" class="cta">Launch Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <div class="page-eyebrow">Safety Guides</div>
+    <h1>Safety, by scenario.</h1>
+    <p>Where you are when a tornado warning is issued determines what you should do. Pick the situation that matches your reality — every guide is written for people who might actually need it.</p>
+  </div>
+</header>
+
+<div class="warning-banner">
+  <strong>⚠️ This is educational content, not a real-time warning system.</strong> During an active tornado warning, follow NOAA Weather Radio and your local National Weather Service. Enable Wireless Emergency Alerts on your phone.
+</div>
+
+<main class="main">
+
+<section class="category">
+  <h2 class="cat-title">Primary safety guides</h2>
+  <p class="cat-sub">Start here if you haven't read anything else.</p>
+  <div class="scenario-grid">
+    <a href="/tornado-safety/" class="scenario">
+      <div class="scenario-title">The main safety guide</div>
+      <div class="scenario-desc">Core principles for tornado safety, regardless of where you are.</div>
+    </a>
+    <a href="/how-to-survive-a-tornado/" class="scenario">
+      <div class="scenario-title">How to survive</div>
+      <div class="scenario-desc">Every scenario, in one guide. If you read one thing, read this.</div>
+    </a>
+    <a href="/tornado-preparation-checklist/" class="scenario">
+      <div class="scenario-title">Preparation checklist</div>
+      <div class="scenario-desc">Family plan, supplies, communication, insurance.</div>
+    </a>
+    <a href="/tornado-safety-checklist-printable/" class="scenario">
+      <div class="scenario-title">Printable checklist</div>
+      <div class="scenario-desc">Post on the fridge. Update once a year.</div>
+    </a>
+    <a href="/tornado-emergency-kit/" class="scenario">
+      <div class="scenario-title">Emergency kit</div>
+      <div class="scenario-desc">Exactly what to put in it. Water, food, radio, medications.</div>
+    </a>
+    <a href="/tornado-drill-guide/" class="scenario">
+      <div class="scenario-title">Running a family drill</div>
+      <div class="scenario-desc">How to practice, how often, and why kids need to see it.</div>
+    </a>
+  </div>
+</section>
+
+<section class="category">
+  <h2 class="cat-title">Where are you?</h2>
+  <p class="cat-sub">Location-specific safety — because the right answer depends on where you're standing.</p>
+  <div class="scenario-grid">
+    <a href="/tornado-safety-basement/" class="scenario">
+      <div class="scenario-title">In a basement</div>
+      <div class="scenario-desc">Where to position, what to avoid, and why basements aren't automatically safe.</div>
+    </a>
+    <a href="/mobile-home-tornado-safety/" class="scenario">
+      <div class="scenario-title">In a mobile home</div>
+      <div class="scenario-desc">The highest-risk residential category. What to do — and why the answer is often "leave."</div>
+    </a>
+    <a href="/tornado-safety-apartment/" class="scenario">
+      <div class="scenario-title">In an apartment</div>
+      <div class="scenario-desc">Interior room, lowest floor, away from windows. Details matter.</div>
+    </a>
+    <a href="/tornado-safety-high-rise-building/" class="scenario">
+      <div class="scenario-title">In a high-rise</div>
+      <div class="scenario-desc">Stairwells over elevators. Interior corridors over apartments with windows.</div>
+    </a>
+    <a href="/tornado-safety-in-a-car/" class="scenario">
+      <div class="scenario-title">In a car</div>
+      <div class="scenario-desc">Why the "underpass myth" is deadly, and what to actually do.</div>
+    </a>
+    <a href="/tornado-safety-highway/" class="scenario">
+      <div class="scenario-title">On the highway</div>
+      <div class="scenario-desc">Time is critical. Decisions in 30 seconds.</div>
+    </a>
+    <a href="/tornado-safety-at-school/" class="scenario">
+      <div class="scenario-title">At school</div>
+      <div class="scenario-desc">What good school protocols look like. What parents should ask.</div>
+    </a>
+    <a href="/tornado-safety-at-work/" class="scenario">
+      <div class="scenario-title">At work</div>
+      <div class="scenario-desc">Interior offices, stairwells, bathrooms. Employer responsibilities.</div>
+    </a>
+    <a href="/tornado-safety-hospital/" class="scenario">
+      <div class="scenario-title">In a hospital</div>
+      <div class="scenario-desc">How hospitals protect patients — including bed-bound patients.</div>
+    </a>
+    <a href="/tornado-safety-nursing-home/" class="scenario">
+      <div class="scenario-title">In a nursing home</div>
+      <div class="scenario-desc">Mobility, medication, cognitive impairment. What facilities should have.</div>
+    </a>
+    <a href="/tornado-safety-airport/" class="scenario">
+      <div class="scenario-title">At an airport</div>
+      <div class="scenario-desc">Interior corridors and restrooms, never jet bridges.</div>
+    </a>
+    <a href="/tornado-outdoors/" class="scenario">
+      <div class="scenario-title">Outdoors</div>
+      <div class="scenario-desc">Ditches, ravines, and why you can't outrun a tornado.</div>
+    </a>
+    <a href="/tornado-safety-camping/" class="scenario">
+      <div class="scenario-title">Camping</div>
+      <div class="scenario-desc">Tents are not shelter. Where to actually go.</div>
+    </a>
+    <a href="/tornado-safety-rv-park/" class="scenario">
+      <div class="scenario-title">RV parks</div>
+      <div class="scenario-desc">RVs are not shelter either. Community shelter options.</div>
+    </a>
+    <a href="/tornado-safety-mobile-home-community/" class="scenario">
+      <div class="scenario-title">Mobile home communities</div>
+      <div class="scenario-desc">Community shelters, coordination, and advocacy.</div>
+    </a>
+  </div>
+</section>
+
+<section class="category">
+  <h2 class="cat-title">Timing & conditions</h2>
+  <p class="cat-sub">Nighttime, winter, power outages — the harder cases.</p>
+  <div class="scenario-grid">
+    <a href="/tornado-safety-at-night/" class="scenario">
+      <div class="scenario-title">At night</div>
+      <div class="scenario-desc">Twice as deadly as daytime. NOAA weather radio is essential.</div>
+    </a>
+    <a href="/tornado-safety-during-power-outage/" class="scenario">
+      <div class="scenario-title">During a power outage</div>
+      <div class="scenario-desc">Battery radios, charged phones, and communication plans.</div>
+    </a>
+    <a href="/can-tornadoes-happen-in-winter/" class="scenario">
+      <div class="scenario-title">In winter</div>
+      <div class="scenario-desc">Yes. Mayfield 2021 was December. Don't let the season fool you.</div>
+    </a>
+    <a href="/nocturnal-tornadoes/" class="scenario">
+      <div class="scenario-title">Nocturnal tornadoes</div>
+      <div class="scenario-desc">The specific risk profile of nighttime events.</div>
+    </a>
+  </div>
+</section>
+
+<section class="category">
+  <h2 class="cat-title">Special populations</h2>
+  <p class="cat-sub">Children, elderly, disabled, and pets.</p>
+  <div class="scenario-grid">
+    <a href="/tornado-preparedness-elderly/" class="scenario">
+      <div class="scenario-title">Elderly preparedness</div>
+      <div class="scenario-desc">Mobility, medication, and medical alerts.</div>
+    </a>
+    <a href="/tornado-safety-for-pets/" class="scenario">
+      <div class="scenario-title">Pets</div>
+      <div class="scenario-desc">Include them in the plan. ID, carriers, and post-storm reunification.</div>
+    </a>
+  </div>
+</section>
+
+<section class="category">
+  <h2 class="cat-title">Warnings & alerts</h2>
+  <p class="cat-sub">Understanding what the alerts mean and how to receive them.</p>
+  <div class="scenario-grid">
+    <a href="/tornado-warning-vs-watch/" class="scenario">
+      <div class="scenario-title">Watch vs Warning</div>
+      <div class="scenario-desc">The one distinction everyone needs to know.</div>
+    </a>
+    <a href="/tornado-warning-vs-tornado-emergency/" class="scenario">
+      <div class="scenario-title">Warning vs Emergency</div>
+      <div class="scenario-desc">"Tornado Emergency" is the highest alert level. Here's what it means.</div>
+    </a>
+    <a href="/tornado-vs-severe-thunderstorm-warning/" class="scenario">
+      <div class="scenario-title">Tornado vs Severe T-Storm</div>
+      <div class="scenario-desc">Different threats, different response — but both deserve attention.</div>
+    </a>
+    <a href="/tornado-warning-sound/" class="scenario">
+      <div class="scenario-title">What warnings sound like</div>
+      <div class="scenario-desc">Siren tones, WEA alerts, weather radio SAME codes.</div>
+    </a>
+    <a href="/tornado-warning-signs/" class="scenario">
+      <div class="scenario-title">Warning signs in the sky</div>
+      <div class="scenario-desc">What to look for. What to trust more than looking (radar).</div>
+    </a>
+    <a href="/wireless-emergency-alert-tornado/" class="scenario">
+      <div class="scenario-title">Enabling WEA</div>
+      <div class="scenario-desc">Wireless Emergency Alerts — how to set them up on iPhone and Android.</div>
+    </a>
+    <a href="/tornado-warning-apps/" class="scenario">
+      <div class="scenario-title">Weather apps</div>
+      <div class="scenario-desc">RadarScope, Storm Shield, WeatherBug — what actually works.</div>
+    </a>
+    <a href="/best-noaa-weather-radios/" class="scenario">
+      <div class="scenario-title">NOAA weather radios</div>
+      <div class="scenario-desc">The one device every household in tornado country should own.</div>
+    </a>
+  </div>
+</section>
+
+<section class="category">
+  <h2 class="cat-title">After the tornado</h2>
+  <p class="cat-sub">Recovery, insurance, mental health, and how to help.</p>
+  <div class="scenario-grid">
+    <a href="/after-a-tornado/" class="scenario">
+      <div class="scenario-title">Immediately after</div>
+      <div class="scenario-desc">First hours, first days — what to do and what to avoid.</div>
+    </a>
+    <a href="/tornado-post-event-cleanup/" class="scenario">
+      <div class="scenario-title">Cleanup</div>
+      <div class="scenario-desc">Documentation, contractors, and avoiding scams.</div>
+    </a>
+    <a href="/tornado-insurance/" class="scenario">
+      <div class="scenario-title">Insurance</div>
+      <div class="scenario-desc">Wind deductibles, coverage gaps, and filing claims.</div>
+    </a>
+    <a href="/tornado-ptsd-mental-health/" class="scenario">
+      <div class="scenario-title">Mental health</div>
+      <div class="scenario-desc">PTSD is common. Getting help early matters.</div>
+    </a>
+    <a href="/how-to-help-tornado-victims/" class="scenario">
+      <div class="scenario-title">How to help victims</div>
+      <div class="scenario-desc">If you want to donate, volunteer, or send supplies — how to do it well.</div>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  &copy; Tornado Hub. An educational resource. <a href="/">Home</a> &middot; <a href="/simulator/">Simulator</a> &middot; <a href="/articles/">Articles</a> &middot; <a href="/learn/">Learn</a>
+</footer>
+
+</body>
+</html>
+</content>
+</invoke>
