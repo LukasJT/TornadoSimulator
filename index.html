@@ -12,10 +12,10 @@
   <script src="//ezoicanalytics.com/analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tornado Simulator — Multi-Variable Damage Modeler</title>
-  <meta name="description" content="Interactive tornado damage simulator — click anywhere on the US or Canada map to place an EF0–EF5 tornado and model real fatalities, structural damage, and economic loss using US Census + Statistics Canada data. Also: guides to the deadliest and costliest US tornadoes, every EF5 ever recorded, and the EF Scale explained." />
-  <meta name="keywords" content="tornado simulator, tornado damage calculator, EF scale, deadliest tornadoes, costliest tornadoes, EF5 tornadoes, Joplin 2011, Moore 2013, Tri-State 1925, tornado alley" />
-  <meta property="og:title" content="Tornado Simulator — Multi-Variable Damage Modeler" />
-  <meta property="og:description" content="Click anywhere on the map to place an EF0–EF5 tornado and see modeled fatalities, damage, and economic loss based on real census data." />
+  <meta name="description" content="Interactive tornado damage simulator — click anywhere in the world to place an EF0–EF5 tornado and model real fatalities, structural damage, and economic loss. US Census + Statistics Canada + UN population data for 173+ countries. Guides to deadliest/costliest tornadoes, every EF5 recorded, and the EF Scale." />
+  <meta name="keywords" content="tornado simulator, tornado damage calculator, EF scale, world tornado map, deadliest tornadoes, costliest tornadoes, EF5 tornadoes, Joplin 2011, Moore 2013, Tri-State 1925, Bangladesh 1989, tornado alley" />
+  <meta property="og:title" content="Tornado Simulator — Worldwide Damage Modeler" />
+  <meta property="og:description" content="Click anywhere on the world map to place an EF0–EF5 tornado. Real census data for US/Canada + population averages for 173+ countries." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.tornadosimulator.net/" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -188,6 +188,216 @@ const findCanadianCensusDivision = (lat, lng) => {
   return { cd: nearest, dist: minDist };
 };
 
+// ─── WORLD COUNTRY DATA ─────────────────────────────────────────────────────
+// Source: UN World Population Prospects 2023, CIA World Factbook areas
+// Fields: n=name, iso=ISO code, pop=population, a=area(sq mi), d=avg density/sq mi,
+// bbox=[minLat, minLng, maxLat, maxLng] — used for fast point-in-country lookup
+const WORLD_COUNTRIES = [
+{"n":"Afghanistan","iso":"AF","pop":42239854,"a":251827,"d":168,"bbox":[29.4,60.5,38.5,74.9]},
+{"n":"Albania","iso":"AL","pop":2745972,"a":11100,"d":247,"bbox":[39.6,19.3,42.7,21.1]},
+{"n":"Algeria","iso":"DZ","pop":45606480,"a":919595,"d":50,"bbox":[19.0,-8.7,37.1,12.0]},
+{"n":"Andorra","iso":"AD","pop":80088,"a":181,"d":443,"bbox":[42.4,1.4,42.7,1.8]},
+{"n":"Angola","iso":"AO","pop":36684202,"a":481354,"d":76,"bbox":[-18.0,11.7,-4.4,24.1]},
+{"n":"Argentina","iso":"AR","pop":45773884,"a":1068302,"d":43,"bbox":[-55.1,-73.6,-21.8,-53.6]},
+{"n":"Armenia","iso":"AM","pop":2777970,"a":11484,"d":242,"bbox":[38.8,43.4,41.3,46.6]},
+{"n":"Australia","iso":"AU","pop":26638544,"a":2969907,"d":9,"bbox":[-43.6,113.3,-10.7,153.6]},
+{"n":"Austria","iso":"AT","pop":8958960,"a":32383,"d":277,"bbox":[46.4,9.5,49.0,17.2]},
+{"n":"Azerbaijan","iso":"AZ","pop":10412651,"a":33436,"d":311,"bbox":[38.4,44.8,41.9,50.4]},
+{"n":"Bahamas","iso":"BS","pop":412623,"a":5358,"d":77,"bbox":[20.9,-79.5,27.3,-72.7]},
+{"n":"Bahrain","iso":"BH","pop":1485509,"a":293,"d":5069,"bbox":[25.6,50.4,26.3,50.8]},
+{"n":"Bangladesh","iso":"BD","pop":172954319,"a":57321,"d":3018,"bbox":[20.6,88.0,26.6,92.7]},
+{"n":"Barbados","iso":"BB","pop":281995,"a":166,"d":1699,"bbox":[13.0,-59.7,13.3,-59.4]},
+{"n":"Belarus","iso":"BY","pop":9498240,"a":80153,"d":118,"bbox":[51.3,23.2,56.2,32.8]},
+{"n":"Belgium","iso":"BE","pop":11686140,"a":11787,"d":991,"bbox":[49.5,2.5,51.5,6.4]},
+{"n":"Belize","iso":"BZ","pop":410825,"a":8867,"d":46,"bbox":[15.9,-89.2,18.5,-87.8]},
+{"n":"Benin","iso":"BJ","pop":13712828,"a":43484,"d":315,"bbox":[6.2,0.8,12.4,3.8]},
+{"n":"Bhutan","iso":"BT","pop":787424,"a":14824,"d":53,"bbox":[26.7,88.7,28.4,92.1]},
+{"n":"Bolivia","iso":"BO","pop":12388571,"a":424164,"d":29,"bbox":[-22.9,-69.6,-9.7,-57.5]},
+{"n":"Bosnia and Herzegovina","iso":"BA","pop":3210847,"a":19767,"d":162,"bbox":[42.6,15.7,45.3,19.6]},
+{"n":"Botswana","iso":"BW","pop":2675352,"a":224610,"d":12,"bbox":[-26.9,20.0,-17.8,29.4]},
+{"n":"Brazil","iso":"BR","pop":216422446,"a":3287956,"d":66,"bbox":[-33.8,-73.9,5.3,-34.8]},
+{"n":"Brunei","iso":"BN","pop":454820,"a":2226,"d":204,"bbox":[4.0,114.1,5.1,115.4]},
+{"n":"Bulgaria","iso":"BG","pop":6687717,"a":42811,"d":156,"bbox":[41.2,22.4,44.2,28.6]},
+{"n":"Burkina Faso","iso":"BF","pop":23251485,"a":105869,"d":220,"bbox":[9.4,-5.5,15.1,2.4]},
+{"n":"Burundi","iso":"BI","pop":13238559,"a":10747,"d":1232,"bbox":[-4.5,29.0,-2.3,30.9]},
+{"n":"Cambodia","iso":"KH","pop":16944826,"a":69898,"d":242,"bbox":[10.4,102.3,14.7,107.6]},
+{"n":"Cameroon","iso":"CM","pop":28647293,"a":183568,"d":156,"bbox":[1.6,8.5,13.1,16.2]},
+{"n":"Cape Verde","iso":"CV","pop":598682,"a":1557,"d":384,"bbox":[14.8,-25.4,17.2,-22.7]},
+{"n":"Central African Republic","iso":"CF","pop":5742316,"a":240535,"d":24,"bbox":[2.2,14.4,11.0,27.5]},
+{"n":"Chad","iso":"TD","pop":18278568,"a":495755,"d":37,"bbox":[7.4,13.5,23.5,24.0]},
+{"n":"Chile","iso":"CL","pop":19629590,"a":291930,"d":67,"bbox":[-56.0,-75.7,-17.5,-66.4]},
+{"n":"China","iso":"CN","pop":1425671352,"a":3705407,"d":385,"bbox":[18.2,73.5,53.6,134.8]},
+{"n":"Colombia","iso":"CO","pop":52321818,"a":439736,"d":119,"bbox":[-4.2,-79.0,13.4,-66.9]},
+{"n":"Comoros","iso":"KM","pop":852075,"a":719,"d":1185,"bbox":[-12.4,43.2,-11.4,44.5]},
+{"n":"Congo (Kinshasa)","iso":"CD","pop":102262809,"a":905568,"d":113,"bbox":[-13.5,12.2,5.4,31.3]},
+{"n":"Congo (Brazzaville)","iso":"CG","pop":6106869,"a":132047,"d":46,"bbox":[-5.0,11.2,3.7,18.6]},
+{"n":"Costa Rica","iso":"CR","pop":5212173,"a":19730,"d":264,"bbox":[8.0,-85.9,11.2,-82.6]},
+{"n":"Croatia","iso":"HR","pop":4008617,"a":21851,"d":184,"bbox":[42.4,13.5,46.5,19.4]},
+{"n":"Cuba","iso":"CU","pop":11194449,"a":42803,"d":261,"bbox":[19.8,-84.9,23.2,-74.1]},
+{"n":"Cyprus","iso":"CY","pop":1260138,"a":3572,"d":353,"bbox":[34.5,32.3,35.7,34.6]},
+{"n":"Czech Republic","iso":"CZ","pop":10495295,"a":30450,"d":345,"bbox":[48.6,12.1,51.1,18.9]},
+{"n":"Denmark","iso":"DK","pop":5946952,"a":16639,"d":357,"bbox":[54.6,8.1,57.7,15.2]},
+{"n":"Djibouti","iso":"DJ","pop":1136455,"a":8958,"d":127,"bbox":[10.9,41.8,12.7,43.4]},
+{"n":"Dominican Republic","iso":"DO","pop":11332972,"a":18792,"d":603,"bbox":[17.5,-72.0,19.9,-68.3]},
+{"n":"Ecuador","iso":"EC","pop":18190484,"a":109484,"d":166,"bbox":[-5.0,-81.0,1.4,-75.2]},
+{"n":"Egypt","iso":"EG","pop":112716598,"a":386662,"d":291,"bbox":[22.0,25.0,31.7,36.9]},
+{"n":"El Salvador","iso":"SV","pop":6364943,"a":8124,"d":783,"bbox":[13.2,-90.1,14.5,-87.7]},
+{"n":"Equatorial Guinea","iso":"GQ","pop":1714672,"a":10831,"d":158,"bbox":[-1.5,5.6,3.8,11.3]},
+{"n":"Eritrea","iso":"ER","pop":3748901,"a":45406,"d":83,"bbox":[12.4,36.4,18.0,43.1]},
+{"n":"Estonia","iso":"EE","pop":1322766,"a":17462,"d":76,"bbox":[57.5,21.8,59.7,28.2]},
+{"n":"Eswatini","iso":"SZ","pop":1210822,"a":6704,"d":181,"bbox":[-27.3,30.8,-25.7,32.1]},
+{"n":"Ethiopia","iso":"ET","pop":126527060,"a":426373,"d":297,"bbox":[3.4,32.9,14.9,48.0]},
+{"n":"Fiji","iso":"FJ","pop":924610,"a":7056,"d":131,"bbox":[-19.2,177.0,-16.1,180.2]},
+{"n":"Finland","iso":"FI","pop":5545475,"a":130558,"d":42,"bbox":[59.8,20.5,70.1,31.6]},
+{"n":"France","iso":"FR","pop":64756584,"a":248573,"d":261,"bbox":[41.3,-5.2,51.1,9.6]},
+{"n":"Gabon","iso":"GA","pop":2436566,"a":103347,"d":24,"bbox":[-3.9,8.7,2.3,14.5]},
+{"n":"Gambia","iso":"GM","pop":2773168,"a":4363,"d":636,"bbox":[13.1,-16.9,13.9,-13.8]},
+{"n":"Georgia","iso":"GE","pop":3728282,"a":26911,"d":139,"bbox":[41.0,40.0,43.6,46.7]},
+{"n":"Germany","iso":"DE","pop":83294633,"a":137847,"d":604,"bbox":[47.3,5.9,55.1,15.0]},
+{"n":"Ghana","iso":"GH","pop":34121985,"a":92098,"d":371,"bbox":[4.7,-3.3,11.2,1.2]},
+{"n":"Greece","iso":"GR","pop":10341278,"a":50949,"d":203,"bbox":[34.8,19.4,41.7,28.3]},
+{"n":"Guatemala","iso":"GT","pop":18092026,"a":42042,"d":430,"bbox":[13.7,-92.2,17.8,-88.2]},
+{"n":"Guinea","iso":"GN","pop":14190612,"a":94926,"d":149,"bbox":[7.2,-15.1,12.7,-7.6]},
+{"n":"Guinea-Bissau","iso":"GW","pop":2150842,"a":13948,"d":154,"bbox":[10.9,-16.7,12.7,-13.6]},
+{"n":"Guyana","iso":"GY","pop":813834,"a":83000,"d":10,"bbox":[1.2,-61.4,8.6,-56.5]},
+{"n":"Haiti","iso":"HT","pop":11724763,"a":10714,"d":1094,"bbox":[18.0,-74.5,20.1,-71.6]},
+{"n":"Honduras","iso":"HN","pop":10593798,"a":43278,"d":245,"bbox":[13.0,-89.4,17.4,-83.1]},
+{"n":"Hungary","iso":"HU","pop":10156239,"a":35918,"d":283,"bbox":[45.7,16.1,48.6,22.9]},
+{"n":"Iceland","iso":"IS","pop":393396,"a":39769,"d":10,"bbox":[63.3,-24.6,66.6,-13.5]},
+{"n":"India","iso":"IN","pop":1428627663,"a":1269219,"d":1126,"bbox":[6.7,68.1,35.7,97.4]},
+{"n":"Indonesia","iso":"ID","pop":277534123,"a":735358,"d":377,"bbox":[-11.0,95.0,6.1,141.0]},
+{"n":"Iran","iso":"IR","pop":89172767,"a":636372,"d":140,"bbox":[25.1,44.0,39.8,63.3]},
+{"n":"Iraq","iso":"IQ","pop":45504560,"a":169235,"d":269,"bbox":[29.1,38.8,37.4,48.6]},
+{"n":"Ireland","iso":"IE","pop":5056935,"a":27133,"d":186,"bbox":[51.4,-10.5,55.4,-6.0]},
+{"n":"Israel","iso":"IL","pop":9174520,"a":8019,"d":1144,"bbox":[29.5,34.3,33.3,35.9]},
+{"n":"Italy","iso":"IT","pop":58870762,"a":116348,"d":506,"bbox":[36.6,6.6,47.1,18.5]},
+{"n":"Ivory Coast","iso":"CI","pop":28873034,"a":124504,"d":232,"bbox":[4.4,-8.6,10.7,-2.5]},
+{"n":"Jamaica","iso":"JM","pop":2825544,"a":4244,"d":666,"bbox":[17.7,-78.4,18.5,-76.2]},
+{"n":"Japan","iso":"JP","pop":123294513,"a":145914,"d":845,"bbox":[24.0,122.9,45.5,145.8]},
+{"n":"Jordan","iso":"JO","pop":11337052,"a":34495,"d":329,"bbox":[29.2,34.9,33.4,39.3]},
+{"n":"Kazakhstan","iso":"KZ","pop":19606633,"a":1052090,"d":19,"bbox":[40.6,46.5,55.4,87.3]},
+{"n":"Kenya","iso":"KE","pop":55100586,"a":224081,"d":246,"bbox":[-4.7,33.9,5.5,41.9]},
+{"n":"Kiribati","iso":"KI","pop":133515,"a":313,"d":426,"bbox":[-11.5,169.5,4.7,-150.2]},
+{"n":"Kuwait","iso":"KW","pop":4310108,"a":6879,"d":626,"bbox":[28.5,46.6,30.1,48.4]},
+{"n":"Kyrgyzstan","iso":"KG","pop":6735347,"a":77201,"d":87,"bbox":[39.2,69.3,43.3,80.3]},
+{"n":"Laos","iso":"LA","pop":7633779,"a":91429,"d":83,"bbox":[13.9,100.1,22.5,107.7]},
+{"n":"Latvia","iso":"LV","pop":1830212,"a":24938,"d":73,"bbox":[55.7,20.9,58.1,28.2]},
+{"n":"Lebanon","iso":"LB","pop":5353930,"a":4036,"d":1327,"bbox":[33.1,35.1,34.7,36.6]},
+{"n":"Lesotho","iso":"LS","pop":2298496,"a":11720,"d":196,"bbox":[-30.7,27.0,-28.6,29.5]},
+{"n":"Liberia","iso":"LR","pop":5418377,"a":43000,"d":126,"bbox":[4.4,-11.5,8.6,-7.4]},
+{"n":"Libya","iso":"LY","pop":6888388,"a":679362,"d":10,"bbox":[19.5,9.3,33.2,25.2]},
+{"n":"Liechtenstein","iso":"LI","pop":39584,"a":62,"d":641,"bbox":[47.0,9.5,47.3,9.6]},
+{"n":"Lithuania","iso":"LT","pop":2718352,"a":25212,"d":108,"bbox":[53.9,20.9,56.5,26.9]},
+{"n":"Luxembourg","iso":"LU","pop":654768,"a":998,"d":656,"bbox":[49.4,5.7,50.2,6.5]},
+{"n":"Madagascar","iso":"MG","pop":30325732,"a":226658,"d":134,"bbox":[-25.6,43.2,-11.9,50.5]},
+{"n":"Malawi","iso":"MW","pop":20931751,"a":45747,"d":458,"bbox":[-17.1,32.7,-9.4,35.9]},
+{"n":"Malaysia","iso":"MY","pop":34308525,"a":127355,"d":269,"bbox":[0.9,99.6,7.4,119.3]},
+{"n":"Maldives","iso":"MV","pop":521021,"a":115,"d":4529,"bbox":[-0.7,72.7,7.1,73.7]},
+{"n":"Mali","iso":"ML","pop":23293698,"a":478767,"d":49,"bbox":[10.2,-12.2,25.0,4.3]},
+{"n":"Malta","iso":"MT","pop":535064,"a":122,"d":4386,"bbox":[35.8,14.2,36.1,14.6]},
+{"n":"Mauritania","iso":"MR","pop":4862989,"a":397955,"d":12,"bbox":[14.7,-17.1,27.3,-4.8]},
+{"n":"Mauritius","iso":"MU","pop":1300557,"a":790,"d":1646,"bbox":[-20.5,57.3,-20.0,57.8]},
+{"n":"Mexico","iso":"MX","pop":128455567,"a":761606,"d":169,"bbox":[14.5,-118.4,32.7,-86.7]},
+{"n":"Moldova","iso":"MD","pop":3435931,"a":13068,"d":263,"bbox":[45.5,26.6,48.5,30.2]},
+{"n":"Monaco","iso":"MC","pop":36297,"a":0.78,"d":46535,"bbox":[43.7,7.4,43.8,7.5]},
+{"n":"Mongolia","iso":"MN","pop":3447157,"a":603909,"d":6,"bbox":[41.5,87.7,52.2,119.9]},
+{"n":"Montenegro","iso":"ME","pop":626485,"a":5333,"d":117,"bbox":[41.8,18.4,43.6,20.4]},
+{"n":"Morocco","iso":"MA","pop":37840044,"a":172414,"d":219,"bbox":[21.4,-17.1,35.9,-1.0]},
+{"n":"Mozambique","iso":"MZ","pop":33897354,"a":308642,"d":110,"bbox":[-26.9,30.2,-10.5,40.8]},
+{"n":"Myanmar","iso":"MM","pop":54577997,"a":261228,"d":209,"bbox":[9.5,92.2,28.5,101.2]},
+{"n":"Namibia","iso":"NA","pop":2604172,"a":318261,"d":8,"bbox":[-28.9,11.7,-17.0,25.3]},
+{"n":"Nepal","iso":"NP","pop":30896590,"a":56827,"d":544,"bbox":[26.4,80.0,30.5,88.2]},
+{"n":"Netherlands","iso":"NL","pop":17618299,"a":16033,"d":1099,"bbox":[50.7,3.4,53.6,7.2]},
+{"n":"New Zealand","iso":"NZ","pop":5228100,"a":103798,"d":50,"bbox":[-47.3,166.4,-34.4,178.5]},
+{"n":"Nicaragua","iso":"NI","pop":7046311,"a":50337,"d":140,"bbox":[10.7,-87.7,15.0,-83.1]},
+{"n":"Niger","iso":"NE","pop":27202843,"a":489191,"d":56,"bbox":[11.7,0.2,23.5,16.0]},
+{"n":"Nigeria","iso":"NG","pop":223804632,"a":356669,"d":628,"bbox":[4.3,2.7,13.9,14.7]},
+{"n":"North Korea","iso":"KP","pop":26160821,"a":46540,"d":562,"bbox":[37.7,124.2,43.0,130.7]},
+{"n":"North Macedonia","iso":"MK","pop":2085679,"a":9928,"d":210,"bbox":[40.9,20.5,42.4,23.0]},
+{"n":"Norway","iso":"NO","pop":5474360,"a":148729,"d":37,"bbox":[57.9,4.6,71.2,31.1]},
+{"n":"Oman","iso":"OM","pop":4644384,"a":119499,"d":39,"bbox":[16.6,52.0,26.4,59.9]},
+{"n":"Pakistan","iso":"PK","pop":240485658,"a":307374,"d":783,"bbox":[23.7,60.9,37.1,77.8]},
+{"n":"Panama","iso":"PA","pop":4468087,"a":29119,"d":153,"bbox":[7.2,-83.1,9.7,-77.2]},
+{"n":"Papua New Guinea","iso":"PG","pop":10329931,"a":178704,"d":58,"bbox":[-11.7,140.9,-1.3,155.9]},
+{"n":"Paraguay","iso":"PY","pop":6861524,"a":157048,"d":44,"bbox":[-27.6,-62.6,-19.3,-54.3]},
+{"n":"Peru","iso":"PE","pop":34352719,"a":496225,"d":69,"bbox":[-18.3,-81.3,-0.0,-68.7]},
+{"n":"Philippines","iso":"PH","pop":117337368,"a":115831,"d":1013,"bbox":[4.6,116.9,21.1,126.6]},
+{"n":"Poland","iso":"PL","pop":41026067,"a":120728,"d":340,"bbox":[49.0,14.1,54.8,24.2]},
+{"n":"Portugal","iso":"PT","pop":10247605,"a":35603,"d":288,"bbox":[36.9,-9.5,42.2,-6.2]},
+{"n":"Qatar","iso":"QA","pop":2716391,"a":4473,"d":607,"bbox":[24.5,50.7,26.2,51.6]},
+{"n":"Romania","iso":"RO","pop":19892812,"a":92043,"d":216,"bbox":[43.6,20.3,48.3,29.7]},
+{"n":"Russia","iso":"RU","pop":144444359,"a":6601668,"d":22,"bbox":[41.2,19.6,81.9,180]},
+{"n":"Rwanda","iso":"RW","pop":14094683,"a":10169,"d":1386,"bbox":[-2.9,28.9,-1.0,30.9]},
+{"n":"Saudi Arabia","iso":"SA","pop":36947025,"a":830000,"d":45,"bbox":[16.4,34.5,32.2,55.7]},
+{"n":"Senegal","iso":"SN","pop":17763163,"a":75955,"d":234,"bbox":[12.3,-17.6,16.7,-11.4]},
+{"n":"Serbia","iso":"RS","pop":7149077,"a":29913,"d":239,"bbox":[42.2,18.8,46.2,23.0]},
+{"n":"Sierra Leone","iso":"SL","pop":8791092,"a":27699,"d":317,"bbox":[6.9,-13.3,10.0,-10.3]},
+{"n":"Singapore","iso":"SG","pop":6014723,"a":278,"d":21640,"bbox":[1.2,103.6,1.5,104.1]},
+{"n":"Slovakia","iso":"SK","pop":5795199,"a":18933,"d":306,"bbox":[47.7,16.8,49.6,22.6]},
+{"n":"Slovenia","iso":"SI","pop":2119844,"a":7827,"d":271,"bbox":[45.4,13.4,46.9,16.6]},
+{"n":"Somalia","iso":"SO","pop":18143379,"a":246201,"d":74,"bbox":[-1.7,40.9,12.0,51.4]},
+{"n":"South Africa","iso":"ZA","pop":60414495,"a":471011,"d":128,"bbox":[-34.9,16.4,-22.1,32.9]},
+{"n":"South Korea","iso":"KR","pop":51784060,"a":38622,"d":1341,"bbox":[33.1,124.6,38.6,131.9]},
+{"n":"South Sudan","iso":"SS","pop":11088796,"a":248776,"d":45,"bbox":[3.5,24.1,12.3,35.9]},
+{"n":"Spain","iso":"ES","pop":47519628,"a":195364,"d":243,"bbox":[35.9,-9.3,43.8,4.3]},
+{"n":"Sri Lanka","iso":"LK","pop":21893579,"a":25332,"d":864,"bbox":[5.9,79.6,9.9,81.9]},
+{"n":"Sudan","iso":"SD","pop":48109006,"a":718723,"d":67,"bbox":[8.7,21.8,22.2,38.6]},
+{"n":"Suriname","iso":"SR","pop":623236,"a":63037,"d":10,"bbox":[1.8,-58.1,6.0,-53.9]},
+{"n":"Sweden","iso":"SE","pop":10612086,"a":173860,"d":61,"bbox":[55.3,10.9,69.1,24.2]},
+{"n":"Switzerland","iso":"CH","pop":8796669,"a":15940,"d":552,"bbox":[45.8,5.9,47.8,10.5]},
+{"n":"Syria","iso":"SY","pop":23227014,"a":71498,"d":325,"bbox":[32.3,35.7,37.3,42.4]},
+{"n":"Taiwan","iso":"TW","pop":23923276,"a":13974,"d":1712,"bbox":[21.9,120.0,25.3,122.0]},
+{"n":"Tajikistan","iso":"TJ","pop":10143543,"a":55251,"d":184,"bbox":[36.7,67.4,41.1,75.2]},
+{"n":"Tanzania","iso":"TZ","pop":67438106,"a":365755,"d":184,"bbox":[-11.7,29.3,-0.9,40.4]},
+{"n":"Thailand","iso":"TH","pop":71801279,"a":198117,"d":362,"bbox":[5.6,97.3,20.5,105.6]},
+{"n":"Togo","iso":"TG","pop":9053799,"a":21925,"d":413,"bbox":[6.1,-0.1,11.1,1.8]},
+{"n":"Trinidad and Tobago","iso":"TT","pop":1534937,"a":1980,"d":775,"bbox":[10.0,-61.9,11.3,-60.5]},
+{"n":"Tunisia","iso":"TN","pop":12458223,"a":63170,"d":197,"bbox":[30.2,7.5,37.5,11.6]},
+{"n":"Turkey","iso":"TR","pop":85816199,"a":302535,"d":284,"bbox":[35.8,25.7,42.1,44.8]},
+{"n":"Turkmenistan","iso":"TM","pop":6516100,"a":188456,"d":35,"bbox":[35.1,52.4,42.8,66.7]},
+{"n":"Uganda","iso":"UG","pop":48582334,"a":93065,"d":522,"bbox":[-1.5,29.6,4.2,35.0]},
+{"n":"Ukraine","iso":"UA","pop":36744634,"a":233032,"d":158,"bbox":[44.4,22.1,52.4,40.2]},
+{"n":"United Arab Emirates","iso":"AE","pop":9516871,"a":32278,"d":295,"bbox":[22.6,51.5,26.1,56.4]},
+{"n":"United Kingdom","iso":"GB","pop":67736802,"a":94058,"d":720,"bbox":[49.9,-8.6,60.9,1.8]},
+{"n":"Uruguay","iso":"UY","pop":3423108,"a":68037,"d":50,"bbox":[-34.9,-58.4,-30.1,-53.1]},
+{"n":"Uzbekistan","iso":"UZ","pop":35163944,"a":172742,"d":204,"bbox":[37.2,55.9,45.6,73.1]},
+{"n":"Vanuatu","iso":"VU","pop":334506,"a":4706,"d":71,"bbox":[-20.3,166.5,-13.1,170.2]},
+{"n":"Venezuela","iso":"VE","pop":28838499,"a":352144,"d":82,"bbox":[0.6,-73.4,12.2,-59.8]},
+{"n":"Vietnam","iso":"VN","pop":98858950,"a":128066,"d":772,"bbox":[8.4,102.1,23.4,109.5]},
+{"n":"Yemen","iso":"YE","pop":34449825,"a":203850,"d":169,"bbox":[12.1,42.5,19.0,54.5]},
+{"n":"Zambia","iso":"ZM","pop":20569737,"a":290587,"d":71,"bbox":[-18.1,21.9,-8.2,33.7]},
+{"n":"Zimbabwe","iso":"ZW","pop":16665409,"a":150872,"d":110,"bbox":[-22.4,25.2,-15.6,33.1]},
+{"n":"Puerto Rico","iso":"PR","pop":3260314,"a":3515,"d":927,"bbox":[17.9,-67.9,18.5,-65.6]},
+{"n":"Greenland","iso":"GL","pop":56865,"a":836330,"d":0.07,"bbox":[59.0,-73.0,83.0,-11.0]},
+{"n":"Antarctica","iso":"AQ","pop":1500,"a":5405430,"d":0.0003,"bbox":[-90,-180,-60,180]}
+];
+
+// Find which country a point falls within (fast bounding box check)
+// Returns the country object or null (ocean/unknown)
+const findWorldCountry = (lat, lng) => {
+  // Normalize longitude to [-180, 180]
+  let nlng = lng;
+  while (nlng > 180) nlng -= 360;
+  while (nlng < -180) nlng += 360;
+  // Try to find smallest bounding box containing point (smaller = better match)
+  let best = null;
+  let bestArea = Infinity;
+  for (const c of WORLD_COUNTRIES) {
+    const [minLat, minLng, maxLat, maxLng] = c.bbox;
+    if (lat >= minLat && lat <= maxLat) {
+      // Handle Russia's wrap-around case (bbox crosses 180)
+      const inLng = minLng <= maxLng
+        ? (nlng >= minLng && nlng <= maxLng)
+        : (nlng >= minLng || nlng <= maxLng);
+      if (inLng) {
+        const area = (maxLat - minLat) * (maxLng - minLng);
+        if (area < bestArea) { bestArea = area; best = c; }
+      }
+    }
+  }
+  return best;
+};
+
 // ─── SIMULATION ENGINE ──────────────────────────────────────────────────────
 
 // Look up population data for a point: returns { popDensity, housingDensity } 
@@ -229,8 +439,23 @@ function lookupLocalDensity(lat, lng, usCountyCache) {
       };
     }
   }
-  
-  // No data available — return null to use params-based defaults
+
+  // Fall back to world country data (averaged national density)
+  const worldCountry = findWorldCountry(lat, lng);
+  if (worldCountry) {
+    // Estimate housing density as ~40% of population density (typical avg)
+    return {
+      popDensity: Math.round(worldCountry.d),
+      housingDensity: Math.round(worldCountry.d * 0.4),
+      name: worldCountry.n,
+      country: "world",
+      iso: worldCountry.iso,
+      countryPop: worldCountry.pop,
+      countryArea: worldCountry.a,
+    };
+  }
+
+  // Ocean / uninhabited — return null to use params-based defaults
   return null;
 }
 
@@ -748,6 +973,7 @@ function InteractiveMap({ enabledCountries, tornadoLat, tornadoLng, onPlaceTorna
   const boundsForCountry = useMemo(() => {
     if (enabledCountries === "us") return [[24, -125], [50, -66]];
     if (enabledCountries === "canada") return [[41, -141], [60, -52]];
+    if (enabledCountries === "world") return [[-60, -180], [75, 180]];
     return [[24, -141], [60, -52]];
   }, [enabledCountries]);
 
@@ -1627,25 +1853,58 @@ function TornadoSimulator() {
       }
       setCensusLoading(false);
     } else {
-      // Ocean, outside North America, or other uncovered area
-      // ZERO everything — no people, no structures, no damage
-      setCensusData({
-        name: "Ocean / Outside Coverage Area",
-        population: 0,
-        popDensity: 0,
-        housingDensity: 0,
-        source: "No census data — location is over water or outside North America",
-        country: "none",
-        note: "No population, structures, or infrastructure in this location",
-      });
-      setParams(p => ({
-        ...p,
-        popDensity: 0,
-        housingDensity: 0,
-        powerLinesPerMile: 0, cellTowers: 0, bridges: 0,
-        waterTowers: 0, gasLinesPerMile: 0, vehiclesPerMile: 0,
-        cropType: "none", cropAcresPct: 0, livestockDensity: 0,
-      }));
+      // Outside US/Canada — try world country lookup (UN + CIA World Factbook)
+      const country = findWorldCountry(lat, lng);
+      if (country) {
+        const popDensity = Math.round(country.d);
+        const housingDensity = Math.round(country.d * 0.4); // ~40% of pop density is typical
+        const isRemote = popDensity < 5;
+        setCensusData({
+          name: country.n,
+          population: country.pop,
+          popDensity,
+          housingDensity,
+          areaLandSqMi: country.a.toFixed(0),
+          source: "UN World Population Prospects 2023 + CIA World Factbook (country-level average)",
+          sourceUrl: "https://population.un.org/wpp/",
+          country: "world",
+          iso: country.iso,
+          note: "Country-level average density — real values vary widely within borders",
+        });
+        setParams(p => ({
+          ...p,
+          popDensity: Math.min(popDensity, 15000),
+          housingDensity: Math.min(housingDensity, 5000),
+          powerLinesPerMile: isRemote ? 0 : Math.min(Math.round(popDensity / 80), 30),
+          cellTowers: isRemote ? 0 : Math.min(Math.round(popDensity / 40), 80),
+          bridges: isRemote ? 0 : Math.min(Math.round(popDensity / 150), 20),
+          waterTowers: isRemote ? 0 : Math.min(Math.round(popDensity / 400), 10),
+          gasLinesPerMile: isRemote ? 0 : Math.min(Math.round(popDensity / 150), 20),
+          vehiclesPerMile: isRemote ? 0 : Math.min(Math.round(popDensity / 8), 300),
+          cropType: p.cropType,
+          cropAcresPct: p.cropAcresPct,
+          livestockDensity: popDensity < 100 ? Math.min(Math.round((100 - popDensity) / 3), 50) : 0,
+        }));
+      } else {
+        // Ocean / uninhabited — ZERO everything
+        setCensusData({
+          name: "Ocean / Uninhabited",
+          population: 0,
+          popDensity: 0,
+          housingDensity: 0,
+          source: "No census data — open ocean or unclassified area",
+          country: "none",
+          note: "No population, structures, or infrastructure at this location",
+        });
+        setParams(p => ({
+          ...p,
+          popDensity: 0,
+          housingDensity: 0,
+          powerLinesPerMile: 0, cellTowers: 0, bridges: 0,
+          waterTowers: 0, gasLinesPerMile: 0, vehiclesPerMile: 0,
+          cropType: "none", cropAcresPct: 0, livestockDensity: 0,
+        }));
+      }
       setCensusLoading(false);
     }
   }, [fetchCensusData]);
@@ -1964,7 +2223,7 @@ function TornadoSimulator() {
         }}>
           <Section title="Location" icon="📍" defaultOpen={true}>
             <SelectInput label="Region" value={enabledCountries} onChange={(v) => setEnabledCountries(v)}
-              options={[["us", "🇺🇸 United States"], ["canada", "🇨🇦 Canada"], ["both", "🇺🇸🇨🇦 Both Countries"]]} />
+              options={[["us", "🇺🇸 United States"], ["canada", "🇨🇦 Canada"], ["both", "🇺🇸🇨🇦 Both Countries"], ["world", "🌍 World (200+ countries)"]]} />
             <div style={{ fontSize: 10, color: "#888", marginBottom: 6 }}>
               Click the map to place the tornado origin
             </div>
@@ -2248,7 +2507,10 @@ function TornadoSimulator() {
             Canada: Statistics Canada, 2021 Census<br />
             &nbsp;&nbsp;Table 98-10-0002-02 (CD level)<br />
             &nbsp;&nbsp;288 census divisions embedded<br />
-            &nbsp;&nbsp;www12.statcan.gc.ca
+            &nbsp;&nbsp;www12.statcan.gc.ca<br />
+            World: UN WPP 2023 + CIA World Factbook<br />
+            &nbsp;&nbsp;173 countries embedded (avg density)<br />
+            &nbsp;&nbsp;Ocean/uninhabited → params fallback
           </div>
         </div>
 
@@ -2275,7 +2537,7 @@ function TornadoSimulator() {
                 <>
                   <div style={{ width: 1, height: 16, background: "#333" }} />
                   <div style={{ display: "flex", background: "#1a1a2e", borderRadius: 5, overflow: "hidden", border: "1px solid #2a2a4a" }}>
-                    {[["us", "🇺🇸 US"], ["canada", "🇨🇦 Canada"], ["both", "Both"]].map(([val, label]) => (
+                    {[["us", "🇺🇸 US"], ["canada", "🇨🇦 Canada"], ["both", "Both"], ["world", "🌍 World"]].map(([val, label]) => (
                       <button key={val} onClick={() => setEnabledCountries(val)} style={{
                         padding: "4px 10px", fontSize: 9, fontWeight: 600, border: "none", cursor: "pointer",
                         background: enabledCountries === val ? "#2a2a5a" : "transparent",
