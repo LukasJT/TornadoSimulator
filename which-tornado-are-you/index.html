@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Which Historic Tornado Are You? — Personality Quiz</title>
+<meta name="description" content="Answer 10 questions about your life, mood, work ethic and taste — and find out which infamous tornado in history matches your personality. Are you Jarrell? El Reno? Elie? Take the free personality quiz and share your result." />
+<meta name="keywords" content="which tornado are you, tornado personality quiz, buzzfeed tornado quiz, historic tornado quiz, tornado personality test, fun weather quiz" />
+<meta property="og:title" content="Which Historic Tornado Are You?" />
+<meta property="og:description" content="10 questions decide which famous tornado matches your personality. Free, shareable, weirdly accurate." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.tornadosimulator.net/which-tornado-are-you/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/which-tornado-are-you/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌪️</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Quiz","name":"Which Historic Tornado Are You?","about":"A personality quiz matching users to famous tornadoes in history","numberOfQuestions":10,"publisher":{"@type":"Organization","name":"Tornado Hub","url":"https://www.tornadosimulator.net/"}}
+</script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --border-strong:#d4cfc3; --accent:#a02818; --accent-hover:#7d1f13; --link:#1e3a5f; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text);text-decoration:none}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+
+.hero{padding:50px 24px 26px;text-align:center;max-width:700px;margin:0 auto}
+.hero .eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.hero h1{font-family:var(--serif);font-size:clamp(32px,5vw,50px);font-weight:700;line-height:1.1;letter-spacing:-0.02em;margin-bottom:16px}
+.hero h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.hero p{font-size:17px;color:var(--text-secondary);max-width:560px;margin:0 auto}
+
+.quiz{max-width:640px;margin:24px auto 40px;padding:0 20px}
+.progress{position:sticky;top:66px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin-bottom:24px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 12px rgba(0,0,0,0.04);z-index:50}
+.progress-count{font-size:13px;font-weight:600;color:var(--text-secondary)}
+.progress-count b{color:var(--accent)}
+.track{flex:1;height:6px;background:var(--bg-alt);border-radius:3px;margin:0 14px;overflow:hidden}
+.fill{height:100%;background:var(--accent);width:0;transition:width 0.3s}
+
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:26px;margin-bottom:16px;transition:opacity 0.3s}
+.card.hidden{display:none}
+.qn{font-size:11px;color:var(--text-muted);font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px}
+.qt{font-family:var(--serif);font-size:22px;line-height:1.3;letter-spacing:-0.01em;margin-bottom:20px;font-weight:600}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{padding:14px 18px;background:var(--bg);border:1.5px solid var(--border);border-radius:8px;cursor:pointer;text-align:left;font-family:var(--sans);font-size:15px;color:var(--text);transition:all 0.15s;line-height:1.4}
+.opt:hover{background:var(--bg-alt);border-color:var(--accent);transform:translateX(4px)}
+
+.result{background:linear-gradient(135deg,var(--surface) 0%,var(--bg-alt) 100%);border:2px solid var(--accent);border-radius:16px;padding:34px 30px;text-align:center;display:none;box-shadow:0 12px 40px rgba(160,40,24,0.14)}
+.result.show{display:block;animation:pop 0.4s ease-out}
+@keyframes pop{0%{transform:scale(0.9);opacity:0}100%{transform:scale(1);opacity:1}}
+.result .emoji{font-size:64px;line-height:1;margin-bottom:14px}
+.result .tag{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.result h2{font-family:var(--serif);font-size:34px;line-height:1.1;letter-spacing:-0.02em;margin-bottom:6px}
+.result .subtitle{font-size:14px;color:var(--text-muted);margin-bottom:20px;font-style:italic}
+.result p.desc{font-size:16px;color:var(--text-secondary);margin-bottom:22px;text-align:left;line-height:1.6}
+.stats-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;background:var(--surface);border-radius:10px;padding:14px;margin-bottom:22px}
+.stat-item{text-align:center}
+.stat-val{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--accent);line-height:1}
+.stat-lbl{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;font-weight:600;margin-top:2px}
+.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;font-size:14px;font-weight:600;border-radius:8px;text-decoration:none;cursor:pointer;font-family:var(--sans);border:1.5px solid var(--border-strong);background:transparent;color:var(--text)}
+.btn.primary{background:var(--accent);color:white;border-color:var(--accent)}
+.btn.primary:hover{background:var(--accent-hover);color:white;text-decoration:none}
+.btn:hover{background:var(--bg-alt);text-decoration:none}
+
+.footer{text-align:center;padding:26px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px}
+.inline-ad{text-align:center;margin:20px auto;max-width:728px;overflow:hidden}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/quiz/">Quizzes</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/supercell-simulator/">Supercell Sim</a>
+      <a href="/tornadoes/">Index</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="eyebrow">🌪️ Personality quiz · 10 questions</div>
+  <h1>Which historic <em>tornado</em> are you?</h1>
+  <p>Answer 10 questions about how you move through the world — and we'll tell you which of history's most notorious tornadoes you'd be if you were a spinning column of air.</p>
+</section>
+
+<div class="quiz">
+
+  <div class="progress">
+    <div class="progress-count">Question <b id="qnum">1</b> of 10</div>
+    <div class="track"><div class="fill" id="fill"></div></div>
+  </div>
+
+  <div id="cards"></div>
+
+  <div id="result" class="result">
+    <div class="emoji" id="r-emoji">🌪️</div>
+    <div class="tag">You are…</div>
+    <h2 id="r-name">—</h2>
+    <div class="subtitle" id="r-subtitle">—</div>
+    <p class="desc" id="r-desc">—</p>
+    <div class="stats-strip">
+      <div class="stat-item"><div class="stat-val" id="r-ef">—</div><div class="stat-lbl">Rating</div></div>
+      <div class="stat-item"><div class="stat-val" id="r-year">—</div><div class="stat-lbl">Year</div></div>
+      <div class="stat-item"><div class="stat-val" id="r-loc">—</div><div class="stat-lbl">Location</div></div>
+    </div>
+    <div class="actions">
+      <button class="btn primary" onclick="share()">📋 Share your result</button>
+      <a class="btn" id="r-link" href="/">Read the story →</a>
+      <button class="btn" onclick="restart()">Retake quiz</button>
+    </div>
+  </div>
+
+  <div class="inline-ad">
+    <script type="text/javascript">atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};</script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
+  </div>
+
+</div>
+
+<footer class="footer">
+  Just for fun — part of <a href="/">Tornado Hub</a>. Try our <a href="/tornadle/">daily Tornadle</a> or <a href="/simulator/">damage simulator</a>.
+</footer>
+
+<script>
+// Result "tornadoes" with personality traits scored across 8 axes.
+// Each axis: intense, precise, unpredictable, showy, methodical, social, resilient, weird
+const RESULTS = {
+  jarrell: {
+    emoji: '💀', name: 'Jarrell 1997', subtitle: 'The one that stayed too long',
+    ef: 'F5', year: '1997', loc: 'Texas',
+    desc: "You're intense, focused, and when you decide to do something, you don't back off. You move slowly and deliberately — which is exactly why the impact is so total. People underestimate how much damage a slow-moving force can do. You're not showy; you're just complete.",
+    href: '/jarrell-1997/',
+    traits: { intense: 3, precise: 2, unpredictable: 1, showy: 0, methodical: 3, social: 0, resilient: 1, weird: 1 }
+  },
+  joplin: {
+    emoji: '💔', name: 'Joplin 2011', subtitle: "The one that hit where it hurt",
+    ef: 'EF5', year: '2011', loc: 'Missouri',
+    desc: "You're a straight-line, no-nonsense force. You don't announce yourself — you just arrive. People remember the exact moment they realized you were serious. You've probably surprised everyone in your life at least once with how far you could go.",
+    href: '/joplin-2011/',
+    traits: { intense: 3, precise: 2, unpredictable: 2, showy: 1, methodical: 2, social: 1, resilient: 2, weird: 0 }
+  },
+  elreno: {
+    emoji: '🌀', name: 'El Reno 2013', subtitle: 'The one that broke the rules',
+    ef: 'EF3', year: '2013', loc: 'Oklahoma',
+    desc: "You're the widest personality in the room — huge, unpredictable, and impossible to actually read from the outside. You've got layers people don't see, and your priorities shift on a dime. When you get moving, no one can quite tell how big you actually are.",
+    href: '/el-reno-2013/',
+    traits: { intense: 2, precise: 0, unpredictable: 3, showy: 2, methodical: 0, social: 1, resilient: 2, weird: 3 }
+  },
+  elie: {
+    emoji: '🍁', name: 'Elie 2007', subtitle: 'The Canadian one that surprised everyone',
+    ef: 'F5', year: '2007', loc: 'Manitoba',
+    desc: "You're polite, low-profile and quietly exceptional. People never expect the kind of intensity you're actually capable of. You're often the only one of your kind in the room — and you don't feel the need to make a scene about it. Somewhere, someone is bragging about the time they met you.",
+    href: '/elie-2007/',
+    traits: { intense: 2, precise: 3, unpredictable: 2, showy: 0, methodical: 2, social: 2, resilient: 3, weird: 2 }
+  },
+  moore: {
+    emoji: '🏘️', name: 'Moore, OK 2013', subtitle: 'The one everyone knows by name',
+    ef: 'EF5', year: '2013', loc: 'Oklahoma',
+    desc: "You're the recognizable one — the person your friends describe to strangers by saying 'you know, THAT one.' You're famous for showing up more than once. You have a reputation, and honestly, you've earned it. Some part of you keeps returning to the same places.",
+    href: '/moore-tornadoes/',
+    traits: { intense: 3, precise: 2, unpredictable: 1, showy: 3, methodical: 2, social: 3, resilient: 2, weird: 0 }
+  },
+  tristate: {
+    emoji: '🎯', name: 'Tri-State 1925', subtitle: 'The long-hauler',
+    ef: 'F5', year: '1925', loc: 'MO/IL/IN',
+    desc: "You commit for the long haul. Once you start something, you're in it for hours — 219 miles' worth, in fact. You go through phases most people never see because they burned out before they got there. You're the marathon, not the sprint. History remembers you.",
+    href: '/1925-tri-state-tornado/',
+    traits: { intense: 3, precise: 3, unpredictable: 1, showy: 1, methodical: 3, social: 1, resilient: 3, weird: 1 }
+  },
+  greensburg: {
+    emoji: '🌱', name: 'Greensburg 2007', subtitle: 'The rebuild',
+    ef: 'EF5', year: '2007', loc: 'Kansas',
+    desc: "You've been through the worst version of a bad day and came back greener. You're the kind of person who takes a total wipeout and turns it into a plan — often a plan more beautiful than what existed before. You are proof that resilience is a personality trait.",
+    href: '/greensburg-2007/',
+    traits: { intense: 2, precise: 2, unpredictable: 1, showy: 2, methodical: 2, social: 2, resilient: 3, weird: 1 }
+  },
+  xenia: {
+    emoji: '📼', name: 'Xenia 1974', subtitle: 'The Super Outbreak headliner',
+    ef: 'F5', year: '1974', loc: 'Ohio',
+    desc: "You've got main-character energy in a big cast. Even in a crowded room of intense personalities — a super outbreak of them — you're the one who ends up in the headline. You do you, and you do it dramatically.",
+    href: '/xenia-1974/',
+    traits: { intense: 3, precise: 1, unpredictable: 2, showy: 3, methodical: 1, social: 2, resilient: 2, weird: 1 }
+  },
+  tuscaloosa: {
+    emoji: '📸', name: 'Tuscaloosa 2011', subtitle: 'The one everyone filmed',
+    ef: 'EF4', year: '2011', loc: 'Alabama',
+    desc: "You're the person everyone in the group chat is documenting in real time. You show up huge, you're unforgettable, and people talk about the day they saw you for years afterward. You have a way of arriving right when the world is watching.",
+    href: '/tuscaloosa-2011/',
+    traits: { intense: 3, precise: 1, unpredictable: 2, showy: 3, methodical: 2, social: 3, resilient: 2, weird: 0 }
+  },
+};
+
+// 10 personality questions, each option contributes to trait scores
+const QUESTIONS = [
+  {
+    q: "You've got a whole Saturday to yourself. What do you do?",
+    opts: [
+      { text: "One focused project, start to finish", t: { methodical: 2, intense: 1, precise: 1 } },
+      { text: "Bounce between five different plans", t: { unpredictable: 2, showy: 1 } },
+      { text: "Nothing. Absolutely nothing. Full recovery mode.", t: { resilient: 2, weird: 1 } },
+      { text: "Something no one else in my group would ever do", t: { weird: 2, unpredictable: 1 } },
+    ],
+  },
+  {
+    q: "How do people describe you in one sentence?",
+    opts: [
+      { text: "'They are extremely their own person.'", t: { weird: 2, resilient: 1 } },
+      { text: "'When they're in, they're all in.'", t: { intense: 3 } },
+      { text: "'You always know where you stand with them.'", t: { precise: 2, methodical: 1 } },
+      { text: "'You can never quite predict what they'll do.'", t: { unpredictable: 3 } },
+    ],
+  },
+  {
+    q: "You bake a cake for someone. It ends up:",
+    opts: [
+      { text: "Perfect. Photographed. Posted.", t: { showy: 2, precise: 1 } },
+      { text: "Structurally unsound but emotionally excellent", t: { unpredictable: 1, social: 2 } },
+      { text: "Exactly what I intended", t: { methodical: 3 } },
+      { text: "A different cake entirely from what the recipe said", t: { weird: 2, unpredictable: 1 } },
+    ],
+  },
+  {
+    q: "You've been dropped in a completely unfamiliar city with $20 and 24 hours. What's your move?",
+    opts: [
+      { text: "Set a goal and grind through it", t: { methodical: 2, intense: 1 } },
+      { text: "Follow whoever looks most interesting", t: { social: 2, unpredictable: 1 } },
+      { text: "Find the weirdest niche experience possible", t: { weird: 3 } },
+      { text: "Make it a story people will retell for years", t: { showy: 2, resilient: 1 } },
+    ],
+  },
+  {
+    q: "Your ideal party:",
+    opts: [
+      { text: "Big, loud, everyone I've ever met", t: { social: 3, showy: 1 } },
+      { text: "Five close friends, deep conversations", t: { precise: 1, social: 2 } },
+      { text: "Me and one weird stranger for six hours", t: { weird: 3 } },
+      { text: "I'm the party. Wherever I am is the party.", t: { showy: 3, intense: 1 } },
+    ],
+  },
+  {
+    q: "You get some devastating news. First move?",
+    opts: [
+      { text: "Full stop. Feel it. Then rebuild.", t: { resilient: 3, methodical: 1 } },
+      { text: "Immediate action — I don't sit still", t: { intense: 2, unpredictable: 1 } },
+      { text: "Isolate for a while, then reappear stronger", t: { resilient: 2, weird: 1 } },
+      { text: "Turn it into something creative", t: { resilient: 1, showy: 2 } },
+    ],
+  },
+  {
+    q: "The thing you're most quietly proud of:",
+    opts: [
+      { text: "How much I've been through and kept going", t: { resilient: 3, intense: 1 } },
+      { text: "How consistent I am about things I care about", t: { methodical: 3 } },
+      { text: "How unusual my life is compared to others", t: { weird: 3 } },
+      { text: "How much people remember me for", t: { showy: 2, social: 1 } },
+    ],
+  },
+  {
+    q: "You're doing a group project. What are you?",
+    opts: [
+      { text: "The one who quietly does 80% of the work", t: { methodical: 2, precise: 2 } },
+      { text: "The one presenting", t: { showy: 3, social: 1 } },
+      { text: "The one with the wildly out-of-scope idea", t: { weird: 2, unpredictable: 2 } },
+      { text: "The one who keeps everyone together", t: { social: 3, precise: 1 } },
+    ],
+  },
+  {
+    q: "Pick a road trip music:",
+    opts: [
+      { text: "Something instrumental and cinematic", t: { intense: 2, methodical: 1 } },
+      { text: "One artist, whole catalog, no shuffle", t: { precise: 2, methodical: 1 } },
+      { text: "Everything on shuffle, chaos allowed", t: { unpredictable: 3 } },
+      { text: "Whatever gets me shouting along", t: { showy: 2, social: 2 } },
+    ],
+  },
+  {
+    q: "Someone asks: what should we do tonight?",
+    opts: [
+      { text: "I've already got a plan and it's dinner at 7:30", t: { methodical: 3, precise: 1 } },
+      { text: "I don't care. I'll follow.", t: { social: 2, resilient: 1 } },
+      { text: "Something we've never done before", t: { weird: 3, unpredictable: 1 } },
+      { text: "Something big. Something people will talk about tomorrow.", t: { showy: 3, intense: 1 } },
+    ],
+  },
+];
+
+let scores = {};
+Object.keys(RESULTS).forEach(k => scores[k] = 0);
+let current = 0;
+
+function renderQuestion() {
+  const c = document.getElementById('cards');
+  c.innerHTML = '';
+  if (current >= QUESTIONS.length) return finish();
+  const Q = QUESTIONS[current];
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.innerHTML = `
+    <div class="qn">Question ${current + 1} of 10</div>
+    <div class="qt">${Q.q}</div>
+    <div class="opts">
+      ${Q.opts.map((o, i) => `<button class="opt" data-i="${i}">${o.text}</button>`).join('')}
+    </div>
+  `;
+  c.appendChild(card);
+  card.querySelectorAll('.opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const i = parseInt(btn.dataset.i);
+      applyTraits(Q.opts[i].t);
+      current++;
+      updateProgress();
+      renderQuestion();
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+  });
+}
+
+function applyTraits(t) {
+  // For each result, add up how well its trait profile matches the option's contribution
+  Object.entries(RESULTS).forEach(([k, r]) => {
+    let sum = 0;
+    Object.entries(t).forEach(([trait, val]) => {
+      sum += (r.traits[trait] || 0) * val;
+    });
+    scores[k] += sum;
+  });
+}
+
+function updateProgress() {
+  document.getElementById('qnum').textContent = Math.min(current + 1, QUESTIONS.length);
+  document.getElementById('fill').style.width = (current / QUESTIONS.length * 100) + '%';
+}
+
+function finish() {
+  const winnerKey = Object.entries(scores).sort((a, b) => b[1] - a[1])[0][0];
+  const r = RESULTS[winnerKey];
+  document.getElementById('r-emoji').textContent = r.emoji;
+  document.getElementById('r-name').textContent = r.name;
+  document.getElementById('r-subtitle').textContent = r.subtitle;
+  document.getElementById('r-desc').textContent = r.desc;
+  document.getElementById('r-ef').textContent = r.ef;
+  document.getElementById('r-year').textContent = r.year;
+  document.getElementById('r-loc').textContent = r.loc;
+  document.getElementById('r-link').href = r.href;
+  document.getElementById('r-link').textContent = 'Read about ' + r.name + ' →';
+  document.getElementById('result').classList.add('show');
+  document.getElementById('fill').style.width = '100%';
+  window._winner = r;
+  setTimeout(() => document.getElementById('result').scrollIntoView({behavior:'smooth', block:'center'}), 300);
+}
+
+function share() {
+  const r = window._winner;
+  if (!r) return;
+  const text = `I'm ${r.name} — "${r.subtitle}"\n\nWhich historic tornado are you? Take the quiz: tornadosimulator.net/which-tornado-are-you/`;
+  if (navigator.share) navigator.share({ text }).catch(() => copy(text));
+  else copy(text);
+}
+function copy(t) {
+  if (navigator.clipboard) navigator.clipboard.writeText(t).then(() => alert('Copied to clipboard!'));
+  else { const ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); alert('Copied to clipboard!'); }
+}
+function restart() {
+  scores = {}; Object.keys(RESULTS).forEach(k => scores[k] = 0);
+  current = 0;
+  document.getElementById('result').classList.remove('show');
+  updateProgress();
+  renderQuestion();
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+renderQuestion();
+</script>
+</body>
+</html>
