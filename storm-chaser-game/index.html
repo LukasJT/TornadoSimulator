@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Storm Chaser Game — Interactive Tornado Chase Adventure</title>
+<meta name="description" content="A free branching-choice storm chaser text adventure. Read the radar, pick your target cell, choose your intercept angle, and decide when to bail. Every choice leads to a different ending — from great data to close call to blindsided." />
+<meta name="keywords" content="storm chaser game, tornado chaser game, storm chasing simulator, interactive storm chase, text adventure weather, radar reading game" />
+<meta property="og:title" content="Storm Chaser Game" />
+<meta property="og:description" content="A branching decision-tree storm chase. Read the radar. Pick the cell. Get the data — or get blindsided." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.tornadosimulator.net/storm-chaser-game/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/storm-chaser-game/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚙</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Game","name":"Storm Chaser Game","genre":"Text adventure","description":"Interactive storm chase simulator with branching outcomes","publisher":{"@type":"Organization","name":"Tornado Hub","url":"https://www.tornadosimulator.net/"}}
+</script>
+<style>
+:root {
+  --bg:#0d1117; --bg-alt:#161b22; --surface:#1c232f; --surface-alt:#242c3b;
+  --text:#e6edf3; --text-secondary:#8b949e; --text-muted:#6b7280;
+  --border:#30363d; --border-strong:#484f58;
+  --accent:#ff6b47; --accent-hover:#ff8560;
+  --link:#7ec4ff;
+  --green:#6bcf7f; --yellow:#ffd166; --orange:#ff9f43; --red:#ef4444;
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Inter",-apple-system,sans-serif;
+  --mono:"JetBrains Mono",monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--surface-alt);color:var(--text);text-decoration:none}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.nav-links a.cta:hover{background:var(--accent-hover)}
+
+.hero{padding:36px 20px 20px;text-align:center;max-width:720px;margin:0 auto}
+.hero .eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.hero h1{font-family:var(--serif);font-size:clamp(32px,5vw,44px);font-weight:700;line-height:1.1;letter-spacing:-0.02em;margin-bottom:12px}
+.hero h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.hero p{color:var(--text-secondary);font-size:16px;max-width:580px;margin:0 auto}
+
+.game{max-width:760px;margin:24px auto 40px;padding:0 20px}
+
+.hud{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 20px;margin-bottom:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;font-size:13px}
+.hud-item{display:flex;flex-direction:column;gap:2px}
+.hud-lbl{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;font-weight:600}
+.hud-val{font-family:var(--mono);font-weight:700;color:var(--accent);font-size:15px}
+.hud-val.safe{color:var(--green)}
+.hud-val.warn{color:var(--yellow)}
+.hud-val.danger{color:var(--red)}
+
+.scene{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 30px;margin-bottom:14px;box-shadow:0 4px 24px rgba(0,0,0,0.25)}
+.scene .setting{font-family:var(--mono);font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px}
+.scene h2{font-family:var(--serif);font-size:26px;font-weight:700;letter-spacing:-0.01em;margin-bottom:12px;line-height:1.2}
+.scene p{color:var(--text);margin-bottom:14px;font-size:16px;line-height:1.65}
+.scene p.narrator{color:var(--text-secondary);font-style:italic;border-left:3px solid var(--accent);padding-left:14px}
+.scene .radar-panel{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:14px 18px;margin:16px 0;font-family:var(--mono);font-size:13px;color:var(--text-secondary);line-height:1.75}
+.scene .radar-panel div{margin-bottom:2px}
+.scene .radar-panel .flag{color:var(--accent);font-weight:700}
+.scene .radar-panel .good{color:var(--green);font-weight:700}
+.scene .radar-panel .warn{color:var(--yellow);font-weight:700}
+
+.choices{display:flex;flex-direction:column;gap:10px;margin-top:22px}
+.choice{background:var(--surface-alt);border:1.5px solid var(--border);border-radius:10px;padding:16px 20px;text-align:left;cursor:pointer;font-family:var(--sans);font-size:15px;color:var(--text);transition:all 0.15s;line-height:1.4}
+.choice:hover{background:var(--bg-alt);border-color:var(--accent);transform:translateX(4px)}
+.choice strong{color:var(--accent);display:block;margin-bottom:2px}
+.choice .flavor{color:var(--text-muted);font-size:12px;margin-top:4px}
+
+.ending{border:2px solid var(--accent);box-shadow:0 12px 40px rgba(255,107,71,0.2)}
+.ending.good{border-color:var(--green)}
+.ending.great{border-color:var(--green);box-shadow:0 12px 40px rgba(107,207,127,0.28)}
+.ending.bad{border-color:var(--red);box-shadow:0 12px 40px rgba(239,68,68,0.28)}
+.ending .tag{display:inline-block;padding:4px 12px;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;background:var(--surface-alt);color:var(--accent);border-radius:16px;margin-bottom:14px}
+.ending.good .tag{background:rgba(107,207,127,0.18);color:var(--green)}
+.ending.great .tag{background:rgba(107,207,127,0.18);color:var(--green)}
+.ending.bad .tag{background:rgba(239,68,68,0.18);color:var(--red)}
+.ending h2{font-size:32px}
+.result-stats{background:var(--bg);border-radius:8px;padding:16px;margin:16px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px}
+.rs-item{text-align:center}
+.rs-lbl{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;font-weight:600;margin-bottom:4px}
+.rs-val{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--accent);line-height:1.1}
+
+.action-btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;font-size:14px;font-weight:700;border-radius:8px;text-decoration:none;cursor:pointer;font-family:var(--sans);border:1.5px solid var(--border-strong);background:transparent;color:var(--text)}
+.btn.primary{background:var(--accent);color:white;border-color:var(--accent)}
+.btn.primary:hover{background:var(--accent-hover);color:white;text-decoration:none}
+.btn:hover{background:var(--surface-alt);text-decoration:none}
+
+.footer{text-align:center;padding:24px;border-top:1px solid var(--border);background:var(--surface);color:var(--text-muted);font-size:13px}
+.inline-ad{text-align:center;margin:20px auto;max-width:728px;overflow:hidden}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/quiz/">Quizzes</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/supercell-simulator/">Supercell Sim</a>
+      <a href="/tornadoes/">Index</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="eyebrow">🚙 Interactive text adventure</div>
+  <h1>Storm chaser: <em>the chase</em></h1>
+  <p>You're in a Ford Explorer full of camera gear on a Kansas dirt road. It's 4:15 pm on a May afternoon. Every decision you make branches the story. Get the shot — or get in over your head.</p>
+</section>
+
+<div class="game">
+
+  <div class="hud" id="hud">
+    <div class="hud-item"><div class="hud-lbl">Time</div><div class="hud-val" id="hud-time">4:15 pm</div></div>
+    <div class="hud-item"><div class="hud-lbl">Distance to storm</div><div class="hud-val" id="hud-dist">18 mi</div></div>
+    <div class="hud-item"><div class="hud-lbl">Fuel</div><div class="hud-val safe" id="hud-fuel">Full</div></div>
+    <div class="hud-item"><div class="hud-lbl">Data quality</div><div class="hud-val" id="hud-data">—</div></div>
+    <div class="hud-item"><div class="hud-lbl">Safety margin</div><div class="hud-val safe" id="hud-safe">Good</div></div>
+  </div>
+
+  <div id="scene"></div>
+
+  <div class="inline-ad">
+    <script type="text/javascript">atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};</script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
+  </div>
+
+</div>
+
+<footer class="footer">
+  Fictional scenario — real storm chasing requires training. Educational content from <a href="/">Tornado Hub</a>.
+</footer>
+
+<script>
+// State
+let state = {
+  time: '4:15 pm', dist: 18, fuel: 'Full', data: '—', safe: 'Good',
+  target: null, dataScore: 0, hits: 0, deaths: 0,
+  route: [],
+};
+
+// ─── SCENES ────────────────────────────────────────────────────────────
+const SCENES = {
+  start: {
+    setting: 'Highway 400, near Wichita — 4:15 PM Central',
+    title: "The setup",
+    body: [
+      "SPC has a moderate risk stamped across central Kansas. Dewpoints are 68°F, 500-mb winds are cranking at 55 knots, and the dryline is bulging east faster than the models predicted. You've been driving since 9 am.",
+      { narrator: "Three cells have gone up in the last twenty minutes. Which one do you chase?" },
+    ],
+    radar: [
+      "RADAR — 21:15 UTC",
+      { text: "Cell A: 30 mi NW — <span class='good'>discrete, cyclonic 60 dBZ core</span>, moving E at 30 mph", type: 'good' },
+      { text: "Cell B: 22 mi W — big HP monster, <span class='warn'>rain-wrapped</span>, moving NE", type: 'warn' },
+      { text: "Cell C: 40 mi S — small tail-end Charlie, <span class='flag'>looks weak but on a fresh boundary</span>", type: 'flag' },
+    ],
+    choices: [
+      { text: 'Target Cell A — the classic discrete supercell', flavor: 'Best visibility, but 30 miles to close', next: 'chase_a' },
+      { text: 'Target Cell B — HP monster with tornado written all over the radar', flavor: 'Closer, but rain-wrapped means you might get blindsided', next: 'chase_b' },
+      { text: 'Play the tail-end Charlie', flavor: 'The southernmost storm often dominates. Long shot.', next: 'chase_c' },
+    ],
+  },
+
+  chase_a: {
+    setting: 'Kansas Turnpike, headed north-northeast',
+    title: "Cell A — classic supercell",
+    body: [
+      "You floor it. Cell A has been building for 40 minutes with a clean flanking line and a hard-edged updraft you can already see from 15 miles out. There's a small storm chaser convergence forming — five other Explorers on Highway 15.",
+      { narrator: "The storm is now 12 miles northwest. You need to pick an intercept angle." },
+    ],
+    radar: [
+      "RADAR — 21:32 UTC",
+      { text: "Cell A: hook echo <span class='good'>clearly visible</span>, TDS not yet detected", type: 'good' },
+      { text: "Motion: E at 32 mph — <span class='good'>catchable</span>", type: 'good' },
+      { text: "Storm-relative motion: 220° at 20 kt — <span class='flag'>right-mover</span>", type: 'flag' },
+    ],
+    choices: [
+      { text: 'South of the meso — classic chaser position', flavor: 'Best view of the wall cloud, safe from precip core', next: 'position_south', modify: { data: 'Excellent', dist: 3 } },
+      { text: 'Head east — get ahead of the storm', flavor: 'Great long shots but you\'re racing the storm', next: 'position_east', modify: { data: 'Good', dist: 5 } },
+      { text: 'Punch north through the notch', flavor: 'You\'ll get incredibly close but there\'s a hail core to cross', next: 'punch_core', modify: { data: 'High risk', dist: 1 } },
+    ],
+  },
+
+  chase_b: {
+    setting: 'US-54 westbound, into the rain',
+    title: "Cell B — the HP monster",
+    body: [
+      "Cell B is enormous on radar — a spinning yellow-red blob with couplet colors that would make an SPC forecaster's coffee go cold. The problem is, it's high-precipitation. You can't see the mesocyclone. You can only get near it.",
+      { narrator: "The rain hits your windshield at 20 miles out. Visibility drops to a quarter mile. This is not fun anymore." },
+    ],
+    radar: [
+      "RADAR — 21:29 UTC",
+      { text: "Cell B: <span class='flag'>strong couplet</span>, gate-to-gate shear 130 kt", type: 'flag' },
+      { text: "Debris ball: <span class='flag'>YES</span> — tornado on the ground somewhere in there", type: 'flag' },
+      { text: "Rain-wrapped: <span class='warn'>YES</span> — you cannot see it visually", type: 'warn' },
+    ],
+    choices: [
+      { text: 'Push in anyway — you have a lightning-fast Explorer and adrenaline', flavor: 'Real chasers know: HP + rain = blindsided', next: 'hp_punch', modify: { data: 'Unknown', safe: 'BAD' } },
+      { text: 'Bail to the south immediately', flavor: 'You lose the shot but keep your family a father', next: 'bail', modify: { data: 'Zero', dist: 15 } },
+      { text: 'Loop around to the east and get ahead of it', flavor: 'The storm is 40 mph forward; you\'ll be racing hail', next: 'race_east', modify: { data: 'Marginal', dist: 8 } },
+    ],
+  },
+
+  chase_c: {
+    setting: 'US-77 southbound, dust devils on the shoulder',
+    title: "Cell C — the tail-end gamble",
+    body: [
+      "Cell C is a small updraft base on radar but it's sitting on a warm-front / dryline intersection. History says these boundary-intersection storms explode. History also says they don't always.",
+      { narrator: "You're 25 miles out. The updraft looks strong from here — crisp cauliflower edges." },
+    ],
+    radar: [
+      "RADAR — 21:26 UTC",
+      { text: "Cell C: <span class='warn'>weak reflectivity</span>, no rotation yet", type: 'warn' },
+      { text: "Environment: <span class='good'>0-1 km SRH 320 m²/s², LCL 800m</span>", type: 'good' },
+      { text: "Boundary intersection <span class='flag'>2 mi south</span> — the good spot", type: 'flag' },
+    ],
+    choices: [
+      { text: 'Sit and wait at the boundary — patience play', flavor: 'You could catch tornadogenesis from the front row', next: 'boundary_wait', modify: { data: 'TBD', dist: 3 } },
+      { text: 'Abandon it, race back to Cell A', flavor: 'You lose 40 minutes but Cell A is the safer bet', next: 'switch_a', modify: { data: 'Delayed', dist: 25, fuel: '3/4' } },
+      { text: 'Push north to intercept Cell C directly', flavor: 'It\'s barely a storm yet; you\'ll be on top of it if it fires', next: 'sit_on_c', modify: { data: 'Good if it fires', dist: 6 } },
+    ],
+  },
+
+  position_south: {
+    setting: 'Roadside pull-off, 3 miles south of Cell A',
+    title: "Front-row seat",
+    body: [
+      "You pull off on a dirt road 3 miles south of the wall cloud. The rain-free base is directly to your north. You can see the beaver's tail extending east. The RFD clear slot is punching in.",
+      { narrator: "This is what you drove eight hours for." },
+    ],
+    radar: [
+      "RADAR — 21:38 UTC",
+      { text: "TDS <span class='flag'>DETECTED</span> — tornado on the ground 1.8 mi NW", type: 'flag' },
+      { text: "Motion: E at 32 mph — coming <span class='warn'>right at you</span>", type: 'warn' },
+    ],
+    choices: [
+      { text: 'Hold position — you\'ve got a paved road east if you need it', flavor: 'The tornado is 1.8 miles away and closing at 30 mph', next: 'hold_south', modify: { data: 'Amazing' } },
+      { text: 'Repo east 2 miles — better safety margin', flavor: 'Standard chaser move: never let the storm cut off your escape', next: 'repo_east', modify: { data: 'Great', safe: 'Good' } },
+      { text: 'Move west to close the distance for hero shot', flavor: 'Distance to storm goes from 3 mi to 1 mi', next: 'move_west', modify: { data: 'Historic if survived', safe: 'CRITICAL' } },
+    ],
+  },
+
+  hold_south: {
+    setting: 'Roadside pull-off, tornado 1.8 miles NW',
+    title: "The rope-out",
+    body: [
+      "The tornado is a picture-perfect stovepipe. You lock the tripod, hit record, and watch it rope out for a full 90 seconds. The wall cloud dissipates. A second wall cloud spins up behind you.",
+      { narrator: "The chase converges into three exhausted minutes of the best photography of your life." },
+    ],
+    ending: {
+      tier: 'great',
+      tag: '🏆 Storm chaser legend',
+      title: 'You got the shot.',
+      body: "You caught a full lifecycle EF3 tornado from touchdown to rope-out on the same tripod. Reed Timmer retweeted your clip. National Geographic emailed you the next morning. This is what you paid for.",
+      stats: { 'Data quality': 'Historic', 'Injuries': '0', 'Videos posted': '3', 'Total drive': '824 mi' },
+    },
+  },
+
+  repo_east: {
+    setting: 'Moving east on gravel road',
+    title: "Textbook chase",
+    body: [
+      "You repo east 2 miles. The tornado passes to your northwest at safe distance. You get great data — visible funnel with the RFD wrapping around it, then a lovely rope-out.",
+      { narrator: "Not the closest shot in the world but every parameter you tracked will hold up in peer review." },
+    ],
+    ending: {
+      tier: 'great',
+      tag: '📊 Textbook chase',
+      title: 'Data science, not stunt work.',
+      body: "Your dashcam captured a clean intercept of an EF2 tornado from the perfect chaser position. You got mobile mesonet data, a spotter report to the NWS, and made it home for dinner. This is what professional chasers do.",
+      stats: { 'Data quality': 'Excellent', 'Spotter reports': '2', 'Injuries': '0', 'Total drive': '780 mi' },
+    },
+  },
+
+  move_west: {
+    setting: 'Gravel road, tornado 1 mile away and closing',
+    title: "The hero shot",
+    body: [
+      "You've closed to a mile from a rain-wrapped EF3. Your camera's fogged. You can't hear yourself think over the roar. The RFD is now blowing debris across the road ahead of you.",
+      { narrator: "This is where chasers die. Two miles ago your safety margin was fine. Now it's negative." },
+    ],
+    choices: [
+      { text: 'Slam it into reverse — south road is still clear', flavor: 'You bail the shot but keep your life', next: 'bail_west', modify: { data: 'Wasted' } },
+      { text: 'Ride it out inside the truck — you\'ve got a full frame', flavor: 'Tornadoes have thrown F-350s a quarter mile', next: 'ride_it_out', modify: { data: 'Historic if survived' } },
+    ],
+  },
+
+  bail_west: {
+    setting: 'Reversing south on gravel',
+    title: "You bail",
+    body: [
+      "You slam the Explorer in reverse, spin around, and race south. The tornado passes your position 90 seconds after you leave. A power pole lands where you were standing.",
+    ],
+    ending: {
+      tier: 'good',
+      tag: '😅 Close call',
+      title: "You lived to chase another day.",
+      body: "You didn't get the hero shot. You didn't get the retweet. But the power pole that landed on your parking spot 90 seconds after you left convinced you that experienced chasers bail on hero shots because they still want to chase in ten years.",
+      stats: { 'Data quality': 'Wasted', 'Distance from death': '90 sec', 'Videos posted': '0', 'Total drive': '798 mi' },
+    },
+  },
+
+  ride_it_out: {
+    setting: 'Inside the vehicle, wind gauge pinned at 140 mph',
+    title: "You are the shot",
+    body: [
+      "The Explorer flips. The camera keeps rolling. The windshield goes. You go with it. Your body is recovered 400 meters east.",
+    ],
+    ending: {
+      tier: 'bad',
+      tag: '💀 Fatal chase',
+      title: "You did not survive.",
+      body: "You are dead. On May 31, 2013, three professional chasers with 40+ years of experience died in a very similar way in El Reno, Oklahoma. There is no video worth this. Read about them and rethink your choices.",
+      stats: { 'Fatalities': '1 (you)', 'Camera survived': 'Yes', 'Video posthumous': 'Yes', 'Point': 'None' },
+    },
+  },
+
+  punch_core: {
+    setting: 'Blinding rain and hail on gravel road',
+    title: "Core-punching",
+    body: [
+      "You punch north through the forward-flank precipitation core. The visibility goes to zero. Tennis-ball hail cracks the windshield. Your GPS says you're 800 meters from the mesocyclone.",
+      { narrator: "You can't see the tornado. You can't see the road. You can hear the roar." },
+    ],
+    ending: {
+      tier: 'bad',
+      tag: '🏥 Injured',
+      title: "You got hit.",
+      body: "Hail totaled the vehicle. A hidden power line down across the road totaled your right knee. You survived — you have great insurance. But every chase since then, you feel the ghost of that gravel road, and you turn around a little sooner.",
+      stats: { 'Data quality': 'Zero', 'Injuries': 'Serious', 'Vehicle': 'Totaled', 'Insurance claim': '$41,200' },
+    },
+  },
+
+  position_east: {
+    setting: 'Highway 15 north of a small town',
+    title: "The east flank",
+    body: [
+      "You get ahead of the storm to the east and pull off on an overpass. From here you have long views to the west. The wall cloud is 5 miles away and rotating hard.",
+    ],
+    ending: {
+      tier: 'good',
+      tag: '📷 Photographer\'s dream',
+      title: 'A wide-angle masterpiece.',
+      body: "You got sunset behind the mesocyclone from the perfect angle. The tornado never touched down in your view but the storm's structure was some of the most photogenic of your career. Instagram loved it.",
+      stats: { 'Data quality': 'Structure', 'Photos posted': '17', 'Injuries': '0', 'Total drive': '810 mi' },
+    },
+  },
+
+  hp_punch: {
+    setting: 'Inside the rain wall',
+    title: "You went in",
+    body: [
+      "The rain closes in. You see nothing. You hear only the roar. You keep driving because your GPS says the road is straight. Then it isn't. The tornado has crossed the road ahead of you. You see it two seconds before impact.",
+    ],
+    ending: {
+      tier: 'bad',
+      tag: '💀 Blindsided',
+      title: "That's why we say rain-wrapped is unsurvivable.",
+      body: "This is the exact death that HP-supercell chasing keeps producing. If you cannot see the tornado, it can see you. Real chasers who survive HP storms drop them and go home.",
+      stats: { 'Data quality': 'None', 'Fatalities': '1 (you)', 'Warning heeded': 'No', 'Total drive': '620 mi (final)' },
+    },
+  },
+
+  race_east: {
+    setting: 'Highway 400 eastbound, storm gaining on you',
+    title: "The race",
+    body: [
+      "You loop around and race east. The storm is doing 40 mph forward speed and you're doing 65. You're gaining, but you're also blowing through the storm's forward flank precipitation core.",
+    ],
+    ending: {
+      tier: 'good',
+      tag: '⛈️ Survived the race',
+      title: 'You made it — but barely.',
+      body: "You outran the storm to a safe position east, but the drive was terrifying and you got no data. The HP monster was later confirmed as an EF4. You promise yourself you'll never chase an HP alone again.",
+      stats: { 'Data quality': 'Poor', 'Fear level': 'Maximum', 'Videos posted': '0', 'Total drive': '840 mi' },
+    },
+  },
+
+  bail: {
+    setting: 'Fuel station, 15 miles south of the storm',
+    title: "You bail",
+    body: [
+      "You pull off, gas up, and watch the radar from the parking lot. Cell B produced an EF4 tornado that killed 4 people in a small town 20 minutes later. You wouldn't have saved them, but you also wouldn't have died with them.",
+    ],
+    ending: {
+      tier: 'good',
+      tag: '🧠 Wisdom',
+      title: "You lived. You'll chase next week.",
+      body: "The best chasers know when not to chase. HP monsters, low visibility, and unfamiliar terrain add up to a chase you cannot win. You paid $85 for gas to drive 400 miles and watch radar from a Kwik Trip. That's a good day.",
+      stats: { 'Data quality': 'None', 'Chases remaining': '∞', 'Injuries': '0', 'Total drive': '620 mi' },
+    },
+  },
+
+  boundary_wait: {
+    setting: 'Empty pasture road at the boundary intersection',
+    title: "The gamble",
+    body: [
+      "You sit at the intersection of the warm front and dryline. Cell C fires. Within 15 minutes it explodes from cumulus to a wedge tornado 800 meters from where you're parked. The environment was right; the storm was right; you were there.",
+    ],
+    ending: {
+      tier: 'great',
+      tag: '🏆 The catch of a career',
+      title: 'You called it perfectly.',
+      body: "Boundary intersections are where legends are made. You caught tornadogenesis from 3 miles away with clean sightlines, safe positioning, and 4K video. The mesoanalysis proved right. So did you.",
+      stats: { 'Data quality': 'Historic', 'Distance to tornadogenesis': '800 m', 'Videos posted': '5', 'Total drive': '730 mi' },
+    },
+  },
+
+  switch_a: {
+    setting: 'Cell A intercept, 40 minutes late',
+    title: "The switch",
+    body: [
+      "You gave up on Cell C and raced 25 miles back to Cell A. By the time you got there, the tornado had already come and gone. You catch the anvil and mammatus on the back side of the storm.",
+    ],
+    ending: {
+      tier: 'good',
+      tag: '📉 Almost',
+      title: "You missed it by 40 minutes.",
+      body: "You got some pretty photos of mammatus at sunset. Nobody died. The chase log will call it 'meh.' You'll spend the drive home second-guessing.",
+      stats: { 'Data quality': 'Post-storm', 'Videos posted': '1', 'Injuries': '0', 'Total drive': '855 mi' },
+    },
+  },
+
+  sit_on_c: {
+    setting: 'Directly under Cell C, updraft strengthening',
+    title: "The gamble that failed",
+    body: [
+      "You sit right underneath Cell C. It doesn't do what you hoped. The updraft looks strong for 20 minutes, then a nearby cell steals its inflow and Cell C weakens and dies without ever producing a tornado.",
+    ],
+    ending: {
+      tier: 'good',
+      tag: '📉 Bust',
+      title: "The bust chase.",
+      body: "Every chaser has a hundred of these. You did the math right. The atmosphere just doesn't always cooperate. There's next weekend.",
+      stats: { 'Data quality': 'None', 'Bust status': 'Confirmed', 'Fuel spent': '$92', 'Total drive': '712 mi' },
+    },
+  },
+};
+
+// ─── RENDER ────────────────────────────────────────────────────────────
+function fmtBody(body) {
+  return body.map(item => {
+    if (typeof item === 'string') return `<p>${item}</p>`;
+    if (item.narrator) return `<p class="narrator">${item.narrator}</p>`;
+    return '';
+  }).join('');
+}
+
+function fmtRadar(rows) {
+  if (!rows) return '';
+  return `<div class="radar-panel">${rows.map(r => {
+    if (typeof r === 'string') return `<div>${r}</div>`;
+    return `<div>${r.text}</div>`;
+  }).join('')}</div>`;
+}
+
+function updateHud() {
+  const setColor = (el, val) => {
+    el.classList.remove('safe', 'warn', 'danger');
+    if (['Good','Full','Excellent','Amazing','Historic','TBD'].includes(val)) el.classList.add('safe');
+    else if (['BAD','CRITICAL','Unknown'].includes(val)) el.classList.add('danger');
+  };
+  document.getElementById('hud-time').textContent = state.time;
+  document.getElementById('hud-dist').textContent = state.dist + ' mi';
+  document.getElementById('hud-fuel').textContent = state.fuel;
+  document.getElementById('hud-data').textContent = state.data;
+  document.getElementById('hud-safe').textContent = state.safe;
+  setColor(document.getElementById('hud-fuel'), state.fuel);
+  setColor(document.getElementById('hud-safe'), state.safe);
+  setColor(document.getElementById('hud-data'), state.data);
+}
+
+function goto(key) {
+  const S = SCENES[key];
+  if (!S) return;
+  const el = document.getElementById('scene');
+  if (S.ending) {
+    const e = S.ending;
+    el.innerHTML = `
+      <div class="scene ending ${e.tier}">
+        <span class="tag">${e.tag}</span>
+        <h2>${e.title}</h2>
+        <p>${e.body}</p>
+        <div class="result-stats">
+          ${Object.entries(e.stats).map(([k, v]) => `<div class="rs-item"><div class="rs-lbl">${k}</div><div class="rs-val">${v}</div></div>`).join('')}
+        </div>
+        <div class="action-btns">
+          <button class="btn primary" onclick="share('${e.title.replace(/'/g,"\\'")}', '${e.tag.replace(/'/g,"\\'")}')">📋 Share your ending</button>
+          <button class="btn" onclick="restart()">↻ Restart the chase</button>
+          <a class="btn" href="/simulator/">Try the damage simulator →</a>
+        </div>
+      </div>
+    `;
+  } else {
+    el.innerHTML = `
+      <div class="scene">
+        <div class="setting">${S.setting}</div>
+        <h2>${S.title}</h2>
+        ${fmtBody(S.body)}
+        ${fmtRadar(S.radar)}
+        <div class="choices">
+          ${S.choices.map((c, i) => `
+            <button class="choice" data-next="${c.next}" data-i="${i}">
+              <strong>${c.text}</strong>
+              ${c.flavor ? `<div class="flavor">${c.flavor}</div>` : ''}
+            </button>
+          `).join('')}
+        </div>
+      </div>
+    `;
+    document.querySelectorAll('.choice').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const i = parseInt(btn.dataset.i);
+        const choice = S.choices[i];
+        if (choice.modify) Object.assign(state, choice.modify);
+        state.route.push(key + ':' + i);
+        updateHud();
+        goto(choice.next);
+        window.scrollTo({top:0,behavior:'smooth'});
+      });
+    });
+  }
+}
+
+window.restart = () => {
+  state = { time: '4:15 pm', dist: 18, fuel: 'Full', data: '—', safe: 'Good', target: null, dataScore: 0, hits: 0, deaths: 0, route: [] };
+  updateHud();
+  goto('start');
+  window.scrollTo({top:0,behavior:'smooth'});
+};
+
+window.share = (title, tag) => {
+  const text = `I chased a supercell — ending: "${title}" ${tag}\n\nPlay the storm chaser game: tornadosimulator.net/storm-chaser-game/`;
+  if (navigator.share) navigator.share({ text }).catch(() => copy(text));
+  else copy(text);
+};
+function copy(t) {
+  if (navigator.clipboard) navigator.clipboard.writeText(t).then(() => alert('Copied to clipboard!'));
+  else { const ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); alert('Copied to clipboard!'); }
+}
+
+updateHud();
+goto('start');
+</script>
+</body>
+</html>

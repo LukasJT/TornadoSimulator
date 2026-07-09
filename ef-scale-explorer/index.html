@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Enhanced Fujita Scale Explorer — EF0 to EF5 Explained</title>
+<meta name="description" content="An interactive explorer for the Enhanced Fujita (EF) Scale — the rating system meteorologists use to classify tornado intensity. Click each rating from EF0 to EF5 to see wind speeds, damage examples, and historic tornadoes at that strength. Live statistics on how common each rating is in the US." />
+<meta name="keywords" content="EF scale, Enhanced Fujita scale, EF0, EF1, EF2, EF3, EF4, EF5, tornado ratings, tornado damage scale, EF scale explained, tornado wind speeds" />
+<meta property="og:title" content="EF Scale Explorer — EF0 to EF5" />
+<meta property="og:description" content="Click through the Enhanced Fujita Scale. See what each rating actually means in wind speed, damage and historic examples." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.tornadosimulator.net/ef-scale-explorer/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/ef-scale-explorer/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Enhanced Fujita Scale Explorer","author":{"@type":"Organization","name":"Tornado Hub"},"datePublished":"2026-07-09","mainEntityOfPage":"https://www.tornadosimulator.net/ef-scale-explorer/"}
+</script>
+<style>
+:root {
+  --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff;
+  --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c;
+  --border:#e5e1d8; --border-strong:#d4cfc3;
+  --accent:#a02818; --accent-hover:#7d1f13; --link:#1e3a5f;
+  --ef0:#88c057; --ef1:#eec53a; --ef2:#e88f2b; --ef3:#dd5c1a; --ef4:#c02929; --ef5:#7d0e0e;
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Inter",sans-serif;
+  --mono:"JetBrains Mono",monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text);text-decoration:none}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+
+.hero{padding:40px 20px 28px;text-align:center;max-width:800px;margin:0 auto}
+.hero .eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.hero h1{font-family:var(--serif);font-size:clamp(30px,4.5vw,44px);font-weight:700;line-height:1.1;letter-spacing:-0.02em;margin-bottom:14px}
+.hero h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.hero p{color:var(--text-secondary);font-size:16px;max-width:640px;margin:0 auto}
+
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px 60px}
+
+/* Scale strip */
+.scale-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:22px}
+.scale-btn{padding:20px 8px 14px;border:none;border-radius:10px;cursor:pointer;font-family:var(--serif);font-weight:700;color:white;transition:transform 0.15s,box-shadow 0.15s;text-align:center;position:relative;overflow:hidden}
+.scale-btn:hover{transform:translateY(-4px)}
+.scale-btn.active{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.2);outline:3px solid var(--text)}
+.scale-btn.ef-0{background:var(--ef0)}
+.scale-btn.ef-1{background:var(--ef1);color:#333}
+.scale-btn.ef-2{background:var(--ef2)}
+.scale-btn.ef-3{background:var(--ef3)}
+.scale-btn.ef-4{background:var(--ef4)}
+.scale-btn.ef-5{background:var(--ef5)}
+.scale-btn .rank{font-size:clamp(24px,4vw,36px);line-height:1;font-weight:700;letter-spacing:-0.02em}
+.scale-btn .name{font-family:var(--sans);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;opacity:0.9;margin-top:3px;font-weight:600}
+.scale-btn .pct{font-family:var(--mono);font-size:10px;opacity:0.8;margin-top:2px}
+
+/* Detail card */
+.detail{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 30px;transition:box-shadow 0.2s,border-color 0.2s;position:relative;overflow:hidden}
+.detail::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--ef2);transition:background 0.2s}
+.detail.ef-0::before{background:var(--ef0)}
+.detail.ef-1::before{background:var(--ef1)}
+.detail.ef-2::before{background:var(--ef2)}
+.detail.ef-3::before{background:var(--ef3)}
+.detail.ef-4::before{background:var(--ef4)}
+.detail.ef-5::before{background:var(--ef5)}
+.detail-head{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:18px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.detail-title{font-family:var(--serif);font-size:34px;font-weight:700;letter-spacing:-0.02em;line-height:1}
+.detail-subtitle{font-size:14px;color:var(--text-muted);font-style:italic;letter-spacing:0.01em}
+.detail-wind{font-family:var(--mono);font-size:15px;font-weight:600;color:var(--accent);background:rgba(160,40,24,0.08);padding:6px 12px;border-radius:6px;margin-left:auto}
+
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:22px}
+.stat-item{background:var(--bg-alt);border-radius:8px;padding:14px 16px}
+.stat-item .lbl{font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px}
+.stat-item .val{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--text);line-height:1.1}
+.stat-item .sub{font-size:11px;color:var(--text-muted);margin-top:2px}
+
+.detail h3{font-family:var(--serif);font-size:20px;margin:22px 0 10px;color:var(--text)}
+.detail p{margin-bottom:12px;font-size:15px}
+.detail ul{margin:6px 0 16px 20px}
+.detail li{margin-bottom:5px;font-size:15px;color:var(--text-secondary)}
+
+.damage-visual{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin:16px 0 20px;display:flex;align-items:center;gap:16px}
+.damage-visual .icon{font-size:36px;line-height:1;flex-shrink:0}
+.damage-visual .desc{font-size:14px;color:var(--text-secondary);line-height:1.5}
+.damage-visual strong{color:var(--text);font-family:var(--serif);font-size:16px}
+
+.examples{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin:14px 0 8px}
+.example{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 14px;text-decoration:none;color:var(--text);transition:transform 0.15s,border-color 0.15s;display:block}
+.example:hover{transform:translateY(-2px);border-color:var(--accent);text-decoration:none}
+.example .ex-name{font-family:var(--serif);font-weight:600;font-size:15px;margin-bottom:3px}
+.example .ex-meta{font-size:12px;color:var(--text-muted)}
+
+.footer{text-align:center;padding:26px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px;margin-top:40px}
+.inline-ad{text-align:center;margin:24px auto;max-width:728px;overflow:hidden}
+
+@media (max-width: 600px) {
+  .scale-strip{grid-template-columns:repeat(3,1fr)}
+  .detail-head{flex-direction:column;align-items:flex-start;gap:8px}
+  .detail-wind{margin-left:0}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/quiz/">Quizzes</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/supercell-simulator/">Supercell Sim</a>
+      <a href="/tornadoes/">Index</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="eyebrow">📊 Interactive scale reference</div>
+  <h1>The Enhanced Fujita Scale, <em>explained</em></h1>
+  <p>Click any rating to see the wind speed range, damage examples, and historic tornadoes at that intensity. Data comes from the NOAA Storm Prediction Center's tornado database.</p>
+</section>
+
+<div class="wrap">
+
+  <div class="scale-strip" id="scale-strip"></div>
+
+  <div id="detail" class="detail ef-2">
+    <!-- Populated by JS -->
+  </div>
+
+  <div class="inline-ad">
+    <script type="text/javascript">atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};</script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
+  </div>
+
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px 26px;margin-top:26px">
+    <h3 style="font-family:var(--serif);font-size:20px;margin-bottom:10px">A brief history of the scale</h3>
+    <p style="color:var(--text-secondary);font-size:15px;margin-bottom:12px">The original Fujita Scale (F0–F5) was published in 1971 by Dr. Ted Fujita of the University of Chicago. It tied wind speed estimates to damage in an era before Doppler radar, so the wind ranges were rough guesses.</p>
+    <p style="color:var(--text-secondary);font-size:15px;margin-bottom:12px">Meteorologists and engineers spent decades pointing out that the original scale over-estimated the winds needed to cause a given level of damage. In February 2007, the National Weather Service adopted the <strong>Enhanced Fujita Scale</strong>, which uses 28 "damage indicators" (from mobile homes to shopping malls) and calibrated wind estimates from engineering studies.</p>
+    <p style="color:var(--text-secondary);font-size:15px;margin-bottom:0">All tornadoes since February 2, 2007 are rated EF. Older tornadoes use the original F scale, but the numbering (0–5) means roughly the same thing. There is no EF6 — the scale explicitly caps at EF5.</p>
+  </div>
+
+  <div style="margin-top:26px">
+    <h3 style="font-family:var(--serif);font-size:20px;margin-bottom:12px">Related tools</h3>
+    <div class="examples">
+      <a class="example" href="/simulator/">
+        <div class="ex-name">Damage Simulator</div>
+        <div class="ex-meta">Place a tornado anywhere in the world</div>
+      </a>
+      <a class="example" href="/supercell-simulator/">
+        <div class="ex-name">Supercell Simulator</div>
+        <div class="ex-meta">Model the ingredients that make an EF5</div>
+      </a>
+      <a class="example" href="/what-makes-a-tornado/">
+        <div class="ex-name">What Makes a Tornado?</div>
+        <div class="ex-meta">The six atmospheric ingredients</div>
+      </a>
+      <a class="example" href="/tornadoes/">
+        <div class="ex-name">Live Tornado Index</div>
+        <div class="ex-meta">Every EF5 ever recorded, live updates</div>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  Data sources: NOAA Storm Prediction Center, National Weather Service damage assessment surveys. Part of <a href="/">Tornado Hub</a>.
+</footer>
+
+<script>
+const EF_DATA = {
+  0: {
+    name: 'EF0',
+    subtitle: 'Gale-force tornado',
+    windRange: '65-85 mph',
+    frequency: '~54%',
+    fatalityPct: '<1%',
+    pathAvg: '0.9 mi',
+    widthAvg: '35 yd',
+    icon: '🌱',
+    damageHeadline: 'Peels roof surfaces, breaks tree branches',
+    damageDesc: 'Light damage. Loose siding torn off, gutters and awnings damaged, small tree branches broken, shallow-rooted trees pushed over. Well-constructed homes are essentially unharmed structurally.',
+    whatItLooksLike: 'Usually a brief funnel or narrow cone. Damage path is short and easy to miss unless you drive right through it.',
+    survivability: 'Effectively 100% survivable indoors, even on the second floor of a wood-frame home. Most fatalities at this rating involve mobile homes, vehicles or being outside.',
+    examples: [
+      { name: 'Most brief spin-ups', meta: 'The average tornado is EF0', href: '' },
+      { name: 'Cold-season landspouts', meta: 'Weak non-supercell tornadoes', href: '/landspout/' },
+    ],
+  },
+  1: {
+    name: 'EF1',
+    subtitle: 'Weak tornado',
+    windRange: '86-110 mph',
+    frequency: '~32%',
+    fatalityPct: '~2%',
+    pathAvg: '2.4 mi',
+    widthAvg: '85 yd',
+    icon: '🏚️',
+    damageHeadline: 'Roofs peeled, mobile homes overturned',
+    damageDesc: 'Moderate damage. Roofs badly damaged, mobile homes overturned or badly damaged, exterior doors blown off, glass broken. Well-built garage doors fail. Loss of exterior wall covering.',
+    whatItLooksLike: 'Visible funnel that can persist for several minutes. Debris in the air makes it clearly visible even in rain.',
+    survivability: 'Very survivable in a well-built home\'s interior room. Mobile homes are dangerous — 40 percent of EF1 fatalities are in mobile homes.',
+    examples: [
+      { name: 'Most weekend-warrior chases', meta: 'The typical Plains chase result', href: '' },
+      { name: 'Weak QLCS spin-ups', meta: 'Cool-season tornadoes', href: '' },
+    ],
+  },
+  2: {
+    name: 'EF2',
+    subtitle: 'Significant tornado',
+    windRange: '111-135 mph',
+    frequency: '~9%',
+    fatalityPct: '~5%',
+    pathAvg: '5.5 mi',
+    widthAvg: '210 yd',
+    icon: '🏠',
+    damageHeadline: 'Frame homes lose roofs; mobile homes destroyed',
+    damageDesc: 'Considerable damage. Roofs torn off well-constructed houses, foundations of frame homes shifted, mobile homes completely destroyed, large trees snapped or uprooted, light-object missiles generated, cars lifted off the ground.',
+    whatItLooksLike: 'Substantial cone or stovepipe. This is the boundary at which a tornado becomes "significant" in NWS terminology and gets a dedicated damage assessment.',
+    survivability: 'Interior rooms of well-built homes still highly survivable. Mobile homes are effectively unsurvivable at ground level — 65 percent of EF2 fatalities are mobile home occupants.',
+    examples: [
+      { name: 'Chattanooga, TN 2020', meta: 'EF3 in center, EF2 damage across suburbs', href: '' },
+      { name: 'Andover, KS 2022', meta: 'EF3 rating in some segments', href: '/andover-2022/' },
+    ],
+  },
+  3: {
+    name: 'EF3',
+    subtitle: 'Severe tornado',
+    windRange: '136-165 mph',
+    frequency: '~4%',
+    fatalityPct: '~17%',
+    pathAvg: '11.5 mi',
+    widthAvg: '440 yd',
+    icon: '💨',
+    damageHeadline: 'Entire stories of well-built homes destroyed',
+    damageDesc: 'Severe damage. Entire stories of well-constructed houses destroyed, severe damage to large buildings such as shopping malls, trains overturned, trees debarked, heavy cars lifted off the ground and thrown.',
+    whatItLooksLike: 'Large wedge or classic cone with visible sub-vortices spinning around the main circulation. Very loud roar audible at distance.',
+    survivability: 'A basement or storm shelter is now important. Above-ground safe rooms in interior first-floor spaces protect most occupants, but structural collapse becomes a real possibility.',
+    examples: [
+      { name: 'El Reno, OK 2013', meta: 'EF3 but widest ever recorded at 2.6 mi', href: '/el-reno-2013/' },
+      { name: 'Andover, KS 2022', meta: 'EF3 through the Andover metro', href: '/andover-2022/' },
+      { name: 'Mayfield, KY 2021', meta: 'EF3 tornado', href: '/mayfield-2021/' },
+    ],
+  },
+  4: {
+    name: 'EF4',
+    subtitle: 'Devastating tornado',
+    windRange: '166-200 mph',
+    frequency: '~1%',
+    fatalityPct: '~35%',
+    pathAvg: '20 mi',
+    widthAvg: '700 yd',
+    icon: '🔥',
+    damageHeadline: 'Well-built homes leveled; cars thrown for blocks',
+    damageDesc: 'Devastating damage. Whole frame houses leveled, structures with weak foundations blown some distance, cars thrown and small missiles generated. Trees debarked and stripped. Steel-reinforced concrete structures damaged.',
+    whatItLooksLike: 'Large wedge tornado — often wider than it is tall. Often multi-vortex with clearly visible sub-vortices doing the worst damage.',
+    survivability: 'Basements and purpose-built storm shelters are essential. Above-ground interior rooms of standard frame homes are unsafe if the home is directly hit.',
+    examples: [
+      { name: 'Tuscaloosa-Birmingham 2011', meta: 'EF4, 80 mi path', href: '/tuscaloosa-2011/' },
+      { name: 'Mayfield, KY 2021', meta: 'EF4 through the town center', href: '/mayfield-2021/' },
+      { name: 'Rolling Fork, MS 2023', meta: 'EF4, killed 26', href: '' },
+    ],
+  },
+  5: {
+    name: 'EF5',
+    subtitle: 'Incredible tornado',
+    windRange: '200+ mph',
+    frequency: '<0.1%',
+    fatalityPct: '~45%',
+    pathAvg: '29 mi',
+    widthAvg: '1,200 yd',
+    icon: '💀',
+    damageHeadline: 'Well-built homes swept from foundations',
+    damageDesc: 'Incredible damage. Well-built frame houses swept clean off their foundations and blown away, steel-reinforced concrete structures critically damaged, high-rise buildings deformed, automobile-sized missiles fly through the air more than 100 meters, trees completely debarked and de-limbed. Ground can be scoured clear of vegetation.',
+    whatItLooksLike: 'Massive wedge, often over a mile wide, with a roaring inflow you can hear from miles away. The most reliable EF5 signature is complete slab-clean removal of well-built frame homes.',
+    survivability: 'Only a purpose-built above-ground safe room or a deep underground shelter is reliably safe in a direct hit. Basements survive, but debris fill has been fatal in EF5s (Joplin 2011, Moore 2013).',
+    examples: [
+      { name: 'Bridge Creek-Moore 1999', meta: '301 mph — fastest ever measured', href: '/moore-1999/' },
+      { name: 'Joplin 2011', meta: 'EF5, 158 dead', href: '/joplin-2011/' },
+      { name: 'Moore 2013', meta: 'EF5, 24 dead', href: '/moore-tornadoes/' },
+      { name: 'Greensburg 2007', meta: 'EF5, town rebuilt green', href: '/greensburg-2007/' },
+      { name: 'Elie, Manitoba 2007', meta: 'Only F5 outside USA', href: '/elie-2007/' },
+      { name: 'Hackleburg 2011', meta: 'EF5, 132 mi path', href: '/hackleburg-2011/' },
+      { name: 'Parkersburg 2008', meta: 'EF5', href: '/parkersburg-2008/' },
+      { name: 'Jarrell 1997', meta: 'F5, essentially unsurvivable', href: '/jarrell-1997/' },
+      { name: 'Xenia 1974', meta: 'F5 in Super Outbreak', href: '/xenia-1974/' },
+    ],
+  },
+};
+
+function render(ef) {
+  // Update strip
+  document.querySelectorAll('.scale-btn').forEach(b => {
+    b.classList.toggle('active', parseInt(b.dataset.ef) === ef);
+  });
+  const d = EF_DATA[ef];
+  const el = document.getElementById('detail');
+  el.className = 'detail ef-' + ef;
+  el.innerHTML = `
+    <div class="detail-head">
+      <div>
+        <div class="detail-title">${d.name}</div>
+        <div class="detail-subtitle">${d.subtitle}</div>
+      </div>
+      <div class="detail-wind">${d.windRange}</div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-item"><div class="lbl">Wind speed</div><div class="val">${d.windRange}</div><div class="sub">3-second gust</div></div>
+      <div class="stat-item"><div class="lbl">Frequency</div><div class="val">${d.frequency}</div><div class="sub">of US tornadoes</div></div>
+      <div class="stat-item"><div class="lbl">Avg path length</div><div class="val">${d.pathAvg}</div><div class="sub">at this rating</div></div>
+      <div class="stat-item"><div class="lbl">Avg path width</div><div class="val">${d.widthAvg}</div><div class="sub">at this rating</div></div>
+      <div class="stat-item"><div class="lbl">Share of fatalities</div><div class="val">${d.fatalityPct}</div><div class="sub">of all US tornado deaths</div></div>
+    </div>
+
+    <div class="damage-visual">
+      <div class="icon">${d.icon}</div>
+      <div class="desc"><strong>${d.damageHeadline}</strong><br>${d.damageDesc}</div>
+    </div>
+
+    <h3>What it looks like</h3>
+    <p>${d.whatItLooksLike}</p>
+
+    <h3>Survivability</h3>
+    <p>${d.survivability}</p>
+
+    <h3>Historic ${d.name} tornadoes</h3>
+    <div class="examples">
+      ${d.examples.map(e => e.href
+        ? `<a class="example" href="${e.href}"><div class="ex-name">${e.name}</div><div class="ex-meta">${e.meta}</div></a>`
+        : `<div class="example" style="cursor:default"><div class="ex-name">${e.name}</div><div class="ex-meta">${e.meta}</div></div>`
+      ).join('')}
+    </div>
+  `;
+  // Update URL hash for shareability
+  history.replaceState(null, '', '#ef' + ef);
+}
+
+// Build scale strip
+const strip = document.getElementById('scale-strip');
+for (let ef = 0; ef <= 5; ef++) {
+  const d = EF_DATA[ef];
+  const b = document.createElement('button');
+  b.className = 'scale-btn ef-' + ef;
+  b.dataset.ef = ef;
+  b.innerHTML = `<div class="rank">EF${ef}</div><div class="name">${d.subtitle}</div><div class="pct">${d.frequency}</div>`;
+  b.addEventListener('click', () => render(ef));
+  strip.appendChild(b);
+}
+
+// Initial from hash or default to EF2
+const initial = parseInt((location.hash.match(/#ef(\d)/) || [])[1]) || 2;
+render(Math.min(5, Math.max(0, initial)));
+</script>
+</body>
+</html>

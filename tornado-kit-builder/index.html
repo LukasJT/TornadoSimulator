@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tornado Kit Builder — Personalized Emergency Checklist</title>
+<meta name="description" content="A free interactive tornado emergency kit builder that generates a personalized checklist based on your household size, pets, medications and mobility. Follows FEMA and Red Cross recommendations. Print, save progress, and track what you've packed." />
+<meta name="keywords" content="tornado kit builder, tornado emergency kit, emergency kit checklist, FEMA tornado kit, storm shelter supplies, disaster preparedness list, 72 hour kit builder" />
+<meta property="og:title" content="Tornado Kit Builder" />
+<meta property="og:description" content="Interactive checklist tailored to your household — printable and free." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.tornadosimulator.net/tornado-kit-builder/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/tornado-kit-builder/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎒</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"Build a Tornado Emergency Kit","description":"Personalized 72-hour tornado emergency kit checklist"}
+</script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --border-strong:#d4cfc3; --accent:#a02818; --accent-hover:#7d1f13; --link:#1e3a5f; --success:#2d6a4f; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text);text-decoration:none}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+
+.hero{padding:40px 20px 24px;text-align:center;max-width:700px;margin:0 auto}
+.hero .eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.hero h1{font-family:var(--serif);font-size:clamp(30px,4.5vw,42px);font-weight:700;line-height:1.1;letter-spacing:-0.02em;margin-bottom:12px}
+.hero h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.hero p{color:var(--text-secondary);font-size:16px;max-width:560px;margin:0 auto}
+
+.wrap{max-width:800px;margin:24px auto 40px;padding:0 20px}
+
+.step-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:26px 30px;margin-bottom:16px}
+.step-num{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px}
+.step-q{font-family:var(--serif);font-size:20px;font-weight:600;margin-bottom:14px;letter-spacing:-0.01em;line-height:1.3}
+.step-opts{display:flex;flex-wrap:wrap;gap:8px}
+.step-opts button{padding:10px 16px;background:var(--bg);border:1.5px solid var(--border);border-radius:8px;cursor:pointer;font-size:14px;font-weight:500;font-family:var(--sans);color:var(--text);transition:all 0.15s}
+.step-opts button:hover{background:var(--bg-alt);border-color:var(--border-strong)}
+.step-opts button.selected{background:var(--accent);color:white;border-color:var(--accent)}
+.step-opts input[type="number"]{width:80px;padding:9px 12px;font-size:15px;border:1.5px solid var(--border);border-radius:8px;font-family:var(--sans);font-weight:600;text-align:center}
+
+.controls{display:flex;justify-content:space-between;gap:12px;margin-top:18px}
+.controls button{padding:12px 24px;background:var(--accent);color:white;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--sans);transition:background 0.15s}
+.controls button:hover{background:var(--accent-hover)}
+.controls button.secondary{background:transparent;color:var(--text-secondary);border:1.5px solid var(--border-strong)}
+.controls button.secondary:hover{background:var(--bg-alt);color:var(--text)}
+.controls button:disabled{opacity:0.4;cursor:not-allowed}
+
+.summary-bar{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 22px;margin-bottom:16px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.summary-bar .stats{display:flex;gap:22px;font-size:13px;color:var(--text-secondary)}
+.summary-bar .stats b{color:var(--accent);font-family:var(--serif);font-size:18px;font-weight:700;display:block}
+.summary-bar .actions{display:flex;gap:8px}
+.summary-bar .actions button{padding:8px 14px;font-size:13px;border-radius:6px;border:1px solid var(--border-strong);background:var(--surface);cursor:pointer;font-weight:600;color:var(--text)}
+.summary-bar .actions button:hover{background:var(--bg-alt)}
+
+.category{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:14px}
+.cat-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.cat-title{font-family:var(--serif);font-size:20px;font-weight:700;letter-spacing:-0.01em}
+.cat-title .icon{margin-right:8px}
+.cat-progress{font-size:12px;color:var(--text-muted);font-weight:600}
+.item{display:flex;align-items:flex-start;gap:12px;padding:8px 0;font-size:14px;transition:opacity 0.15s;cursor:pointer}
+.item.done{opacity:0.5}
+.item.done .item-name{text-decoration:line-through}
+.item input[type="checkbox"]{margin-top:3px;width:18px;height:18px;accent-color:var(--accent);cursor:pointer;flex-shrink:0}
+.item-body{flex:1}
+.item-name{font-weight:600;color:var(--text)}
+.item-qty{color:var(--text-muted);font-family:monospace;font-size:12px;margin-left:6px}
+.item-note{font-size:12px;color:var(--text-secondary);margin-top:2px;line-height:1.4}
+.item-cost{color:var(--text-muted);font-size:12px;font-family:monospace;flex-shrink:0}
+
+@media print { .nav, .controls, .summary-bar .actions, .hero { display: none; } .item.done { opacity: 1; } .category { break-inside: avoid; page-break-inside: avoid; box-shadow: none; } }
+
+.footer{text-align:center;padding:26px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px;margin-top:40px}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/quiz/">Quizzes</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/supercell-simulator/">Supercell Sim</a>
+      <a href="/safety/">Safety</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="eyebrow">🎒 Free planner tool</div>
+  <h1>Build your <em>tornado emergency kit</em></h1>
+  <p>Answer six quick questions about your household — we'll generate a personalized 72-hour kit checklist you can save, print, and track.</p>
+</section>
+
+<div class="wrap">
+  <div id="form"></div>
+  <div id="result" style="display:none"></div>
+</div>
+
+<footer class="footer">
+  Based on FEMA and Red Cross emergency-kit recommendations. For a static reference list see the <a href="/tornado-emergency-kit/">tornado emergency kit article</a>.
+</footer>
+
+<script>
+const QUESTIONS = [
+  { id: 'adults', q: 'How many adults are in your household?', type: 'number', min: 1, max: 12, default: 2 },
+  { id: 'kids', q: 'How many children under 12?', type: 'number', min: 0, max: 10, default: 0 },
+  { id: 'infants', q: 'Any infants or toddlers who need formula, diapers, or specific food?', type: 'buttons', options: ['None', '1 infant', '2+ infants'] },
+  { id: 'pets', q: 'Which pets need supplies?', type: 'multi', options: ['Dogs', 'Cats', 'Fish/reptiles', 'Small mammals', 'None'] },
+  { id: 'medications', q: 'Does anyone need daily prescription medications?', type: 'buttons', options: ['No one', 'One person', 'Multiple people'] },
+  { id: 'mobility', q: 'Any mobility, vision or hearing needs?', type: 'multi', options: ['Wheelchair/walker', 'Hearing impaired', 'Vision impaired', 'None'] },
+];
+
+const answers = {};
+QUESTIONS.forEach(q => {
+  if (q.type === 'number') answers[q.id] = q.default;
+  if (q.type === 'buttons') answers[q.id] = q.options[0];
+  if (q.type === 'multi') answers[q.id] = ['None'];
+});
+
+let step = 0;
+
+function renderForm() {
+  const form = document.getElementById('form');
+  form.innerHTML = '';
+  const Q = QUESTIONS[step];
+  const card = document.createElement('div');
+  card.className = 'step-card';
+  let optsHtml = '';
+  if (Q.type === 'number') {
+    optsHtml = `<div class="step-opts"><input type="number" id="input-${Q.id}" min="${Q.min}" max="${Q.max}" value="${answers[Q.id]}"></div>`;
+  } else if (Q.type === 'buttons') {
+    optsHtml = `<div class="step-opts">${Q.options.map(o => `<button type="button" data-val="${o}" class="${answers[Q.id]===o?'selected':''}">${o}</button>`).join('')}</div>`;
+  } else if (Q.type === 'multi') {
+    optsHtml = `<div class="step-opts">${Q.options.map(o => `<button type="button" data-val="${o}" class="${answers[Q.id].includes(o)?'selected':''}">${o}</button>`).join('')}</div>`;
+  }
+  card.innerHTML = `
+    <div class="step-num">Question ${step + 1} of ${QUESTIONS.length}</div>
+    <div class="step-q">${Q.q}</div>
+    ${optsHtml}
+    <div class="controls">
+      <button class="secondary" ${step===0?'disabled':''} onclick="prev()">← Back</button>
+      <button onclick="next()">${step === QUESTIONS.length - 1 ? 'Generate my kit →' : 'Next →'}</button>
+    </div>
+  `;
+  form.appendChild(card);
+
+  if (Q.type === 'number') {
+    document.getElementById('input-' + Q.id).addEventListener('input', (e) => {
+      answers[Q.id] = Math.max(Q.min, Math.min(Q.max, parseInt(e.target.value) || Q.min));
+    });
+  } else if (Q.type === 'buttons') {
+    card.querySelectorAll('.step-opts button').forEach(b => {
+      b.addEventListener('click', () => {
+        answers[Q.id] = b.dataset.val;
+        card.querySelectorAll('.step-opts button').forEach(x => x.classList.remove('selected'));
+        b.classList.add('selected');
+      });
+    });
+  } else if (Q.type === 'multi') {
+    card.querySelectorAll('.step-opts button').forEach(b => {
+      b.addEventListener('click', () => {
+        const val = b.dataset.val;
+        if (val === 'None') answers[Q.id] = ['None'];
+        else {
+          answers[Q.id] = answers[Q.id].filter(x => x !== 'None');
+          if (answers[Q.id].includes(val)) answers[Q.id] = answers[Q.id].filter(x => x !== val);
+          else answers[Q.id].push(val);
+          if (answers[Q.id].length === 0) answers[Q.id] = ['None'];
+        }
+        card.querySelectorAll('.step-opts button').forEach(x => x.classList.toggle('selected', answers[Q.id].includes(x.dataset.val)));
+      });
+    });
+  }
+}
+window.prev = () => { step--; renderForm(); window.scrollTo({top:0,behavior:'smooth'}); };
+window.next = () => {
+  if (step < QUESTIONS.length - 1) { step++; renderForm(); window.scrollTo({top:0,behavior:'smooth'}); }
+  else generate();
+};
+
+function generate() {
+  const people = answers.adults + answers.kids;
+  const days = 3;
+  const list = [];
+
+  const gallons = people * days;
+  list.push({ cat: 'Water', icon: '💧', items: [
+    { name: 'Bottled water', qty: gallons + ' gallons', note: '1 gallon per person per day for 3 days', cost: gallons * 1.5 },
+    { name: 'Water purification tablets', qty: '1 pack', note: 'Backup in case supply runs out', cost: 12 },
+  ]});
+
+  const kcal = (answers.adults * 2000 + answers.kids * 1400) * days;
+  const canCount = Math.ceil(kcal / 900);
+  list.push({ cat: 'Non-perishable food', icon: '🥫', items: [
+    { name: 'Canned meals (soup, chili, stew)', qty: Math.ceil(canCount / 3) + ' cans', note: 'Choose ready-to-eat, pull-tab preferred', cost: Math.ceil(canCount / 3) * 3 },
+    { name: 'Peanut butter', qty: '1 jar', note: 'Dense calories, long shelf life', cost: 5 },
+    { name: 'Granola / protein bars', qty: (people * days * 2) + ' bars', note: '2 per person per day', cost: people * days * 2 * 1.5 },
+    { name: 'Trail mix / dried fruit', qty: '2 lb', note: 'Kid-friendly and shelf-stable', cost: 12 },
+    { name: 'Manual can opener', qty: '1', note: 'Non-electric, essential for canned goods', cost: 8 },
+    { name: 'Disposable plates, cups, utensils', qty: (people * days * 3) + ' sets', note: 'No water needed for washing', cost: 8 },
+  ]});
+
+  list.push({ cat: 'Power & light', icon: '🔦', items: [
+    { name: 'NOAA weather radio (battery/hand-crank)', qty: '1', note: 'Midland WR120 or similar', cost: 32 },
+    { name: 'LED flashlight', qty: Math.max(2, Math.ceil(people / 2)) + '', note: 'One per adult, one per teen', cost: Math.max(2, Math.ceil(people / 2)) * 12 },
+    { name: 'Extra AA / AAA batteries', qty: '1 pack of each', note: 'Fresh, unopened', cost: 15 },
+    { name: 'Portable phone charger (10,000+ mAh)', qty: '1', note: 'Fully charged, kept in kit', cost: 25 },
+    { name: 'Charging cables (USB-A / USB-C / Lightning)', qty: '1 of each', note: 'Everyone in the house may need to top up', cost: 15 },
+    { name: 'Glow sticks', qty: '6', note: 'Safe light for kids, no batteries needed', cost: 8 },
+  ]});
+
+  const firstAid = [
+    { name: 'First-aid kit (300+ pieces)', qty: '1', note: 'Bandages, gauze, tape, antiseptic wipes', cost: 25 },
+    { name: 'Pain relievers (ibuprofen, acetaminophen)', qty: '1 bottle each', note: 'For adults', cost: 12 },
+    { name: 'Antihistamines (Benadryl)', qty: '1 box', note: 'Allergic reactions to displaced dust/mold', cost: 8 },
+    { name: 'N95 masks', qty: (people * 3) + '', note: 'For dust in the aftermath', cost: people * 3 * 2 },
+    { name: 'Work gloves', qty: people + '', note: 'For clearing debris safely', cost: people * 10 },
+    { name: 'Whistle', qty: people + '', note: 'To signal rescuers if trapped', cost: people * 4 },
+    { name: 'Thermometer', qty: '1', note: 'Digital, battery-powered', cost: 12 },
+  ];
+  if (answers.medications !== 'No one') {
+    const rxCount = answers.medications === 'One person' ? 1 : 2;
+    firstAid.push({ name: 'Prescription medications', qty: (rxCount * days) + '+ doses', note: 'At least 3 days of every prescription in original packaging', cost: 0 });
+    firstAid.push({ name: 'Medication list & dosages', qty: '1 laminated copy', note: 'For paramedics if you can\'t communicate', cost: 2 });
+  }
+  if (answers.kids > 0) {
+    firstAid.push({ name: 'Children\'s pain reliever', qty: '1 bottle', note: 'Age-appropriate liquid', cost: 8 });
+    firstAid.push({ name: 'Kid-friendly bandages', qty: '1 pack', note: 'Colored/character bandages', cost: 5 });
+  }
+  list.push({ cat: 'First aid & medical', icon: '🚑', items: firstAid });
+
+  list.push({ cat: 'Hygiene', icon: '🧻', items: [
+    { name: 'Toilet paper', qty: '2 rolls', note: 'Vacuum-sealed if possible', cost: 4 },
+    { name: 'Personal hygiene items', qty: people + ' kits', note: 'Toothbrush, toothpaste, deodorant, soap', cost: people * 8 },
+    { name: 'Wet wipes / baby wipes', qty: '3 packs', note: 'Bathing when no water is available', cost: 12 },
+    { name: 'Hand sanitizer', qty: '2 bottles', note: 'Alcohol-based, 60%+', cost: 8 },
+    { name: 'Feminine hygiene supplies', qty: '1 pack per person', note: 'If applicable', cost: 10 },
+    { name: 'Small trash bags', qty: '1 box', note: 'For waste disposal', cost: 6 },
+  ]});
+
+  list.push({ cat: 'Documents & cash', icon: '📋', items: [
+    { name: 'Cash in small bills', qty: '$200 minimum', note: 'ATMs and cards won\'t work if power is out', cost: 200 },
+    { name: 'Waterproof document pouch', qty: '1', note: 'IDs, insurance, medical records, deeds', cost: 15 },
+    { name: 'Copies of driver\'s license', qty: answers.adults + '', note: 'Kept in the pouch', cost: 0 },
+    { name: 'Insurance policy numbers', qty: '1 sheet', note: 'Homeowners, renters, auto, health', cost: 0 },
+    { name: 'Emergency contact list', qty: '1 laminated card', note: 'Written down — don\'t rely on phone contacts', cost: 3 },
+    { name: 'Recent family photo', qty: '1', note: 'For rescuers to identify missing family members', cost: 0 },
+  ]});
+
+  list.push({ cat: 'Clothing & shelter', icon: '👕', items: [
+    { name: 'Change of clothes per person', qty: people + ' sets', note: 'Pants, shirt, underwear, socks — season appropriate', cost: 0 },
+    { name: 'Sturdy closed-toe shoes', qty: people + ' pairs', note: 'For walking through debris', cost: 0 },
+    { name: 'Rain poncho', qty: people + '', note: 'Cheap plastic ponchos are fine', cost: people * 5 },
+    { name: 'Emergency mylar blankets', qty: people + '', note: 'Compact, retain 90% of body heat', cost: people * 4 },
+    { name: 'Sleeping bags or blankets', qty: people + '', note: 'One per person', cost: 0 },
+  ]});
+
+  list.push({ cat: 'Tools & other', icon: '🔧', items: [
+    { name: 'Multi-tool (Leatherman, etc.)', qty: '1', note: 'Pliers, knife, screwdriver combined', cost: 25 },
+    { name: 'Duct tape', qty: '1 roll', note: 'Universal repairs, sealing broken windows', cost: 6 },
+    { name: 'Plastic sheeting', qty: '10 ft²', note: 'Emergency window and roof covers', cost: 8 },
+    { name: 'Zip ties', qty: '1 bag', note: 'Assorted sizes', cost: 5 },
+    { name: 'Waterproof matches / lighter', qty: '2', note: 'Kept in a sealed bag', cost: 4 },
+    { name: 'Paper map of your area', qty: '1', note: 'GPS may not work; know your evacuation routes', cost: 5 },
+    { name: 'Pen & notepad', qty: '1', note: 'For notes, messages, tracking meds', cost: 3 },
+    { name: 'Deck of cards / small games', qty: '1 or 2', note: 'Sanity for waiting hours in a shelter', cost: 5 },
+  ]});
+
+  if (answers.kids > 0 || answers.infants !== 'None') {
+    const kidItems = [];
+    if (answers.infants !== 'None') {
+      const inf = answers.infants === '1 infant' ? 1 : 2;
+      kidItems.push({ name: 'Formula & bottles', qty: (inf * days * 6) + ' bottles', note: 'Pre-mixed if possible', cost: inf * days * 8 });
+      kidItems.push({ name: 'Diapers', qty: (inf * days * 10) + '', note: 'Sized for current age', cost: inf * days * 0.5 });
+      kidItems.push({ name: 'Baby wipes', qty: '2 packs', note: 'Fragrance-free preferred', cost: 8 });
+      kidItems.push({ name: 'Baby food / pouches', qty: (inf * days * 4) + '', note: 'Room-temp shelf-stable', cost: inf * days * 2 });
+    }
+    if (answers.kids > 0) {
+      kidItems.push({ name: 'Comfort item / stuffed animal', qty: answers.kids + '', note: 'One favorite per child', cost: 0 });
+      kidItems.push({ name: 'Small books or coloring supplies', qty: answers.kids + ' sets', note: 'Screen-free entertainment', cost: answers.kids * 5 });
+      kidItems.push({ name: 'Kid-friendly snacks', qty: '5 varieties', note: 'Familiar foods reduce anxiety', cost: 10 });
+    }
+    list.push({ cat: 'For children', icon: '🧸', items: kidItems });
+  }
+
+  const pets = answers.pets.filter(p => p !== 'None');
+  if (pets.length > 0) {
+    const petItems = [];
+    if (pets.includes('Dogs')) {
+      petItems.push({ name: 'Dry dog food', qty: (days * 2) + ' cups per dog', note: 'Sealed in waterproof bag', cost: 15 });
+      petItems.push({ name: 'Leash & collar with ID tags', qty: '1 per dog', note: 'Include current phone number', cost: 12 });
+    }
+    if (pets.includes('Cats')) {
+      petItems.push({ name: 'Dry cat food', qty: (days * 1) + ' cups per cat', note: 'Sealed', cost: 12 });
+      petItems.push({ name: 'Portable litter box + litter', qty: '1', note: 'Disposable liner style', cost: 10 });
+    }
+    if (pets.includes('Small mammals')) {
+      petItems.push({ name: 'Small-mammal food & bedding', qty: days + ' days worth', note: '', cost: 10 });
+    }
+    if (pets.includes('Fish/reptiles')) {
+      petItems.push({ name: 'Extra water conditioner / heat pad', qty: '1', note: 'For rehoming during outages', cost: 15 });
+    }
+    petItems.push({ name: 'Pet carrier or crate', qty: '1 per pet', note: 'Required for many public shelters', cost: 0 });
+    petItems.push({ name: 'Vaccination records', qty: '1 copy', note: 'Kept in document pouch', cost: 0 });
+    petItems.push({ name: 'Extra collapsible bowl', qty: 'per pet', note: '', cost: pets.length * 5 });
+    list.push({ cat: 'For pets', icon: '🐾', items: petItems });
+  }
+
+  const mob = answers.mobility.filter(x => x !== 'None');
+  if (mob.length > 0) {
+    const accessItems = [];
+    if (mob.includes('Wheelchair/walker')) {
+      accessItems.push({ name: 'Backup mobility aid parts', qty: 'as needed', note: 'Batteries, tire tubes, chargers', cost: 30 });
+      accessItems.push({ name: 'Manual backup wheelchair (if possible)', qty: '1', note: 'For power-loss scenarios', cost: 0 });
+    }
+    if (mob.includes('Hearing impaired')) {
+      accessItems.push({ name: 'Extra hearing aid batteries', qty: '1 pack', note: 'Type-matched', cost: 8 });
+      accessItems.push({ name: 'Vibrating weather alert device', qty: '1', note: 'Vibrates and flashes on NWS alerts', cost: 45 });
+    }
+    if (mob.includes('Vision impaired')) {
+      accessItems.push({ name: 'Backup glasses / reading glasses', qty: '1 pair', note: 'Old prescription is fine', cost: 0 });
+      accessItems.push({ name: 'Braille labels or high-contrast tags', qty: 'per item', note: 'On critical kit items', cost: 5 });
+    }
+    list.push({ cat: 'Accessibility', icon: '♿', items: accessItems });
+  }
+
+  renderResult(list);
+}
+
+function renderResult(list) {
+  document.getElementById('form').style.display = 'none';
+  const res = document.getElementById('result');
+  res.style.display = 'block';
+
+  const totalItems = list.reduce((s, c) => s + c.items.length, 0);
+  const totalCost = list.reduce((s, c) => s + c.items.reduce((ss, i) => ss + (i.cost || 0), 0), 0);
+  const saved = JSON.parse(localStorage.getItem('kitChecked') || '{}');
+
+  res.innerHTML = `
+    <div class="summary-bar">
+      <div class="stats">
+        <div><b>${totalItems}</b>items</div>
+        <div><b>${list.length}</b>categories</div>
+        <div><b>~$${totalCost.toFixed(0)}</b>est. cost</div>
+      </div>
+      <div class="actions">
+        <button onclick="window.print()">🖨️ Print</button>
+        <button onclick="restart()">↻ Redo quiz</button>
+      </div>
+    </div>
+    ${list.map((cat, ci) => {
+      const done = cat.items.filter((_, ii) => saved[ci + '-' + ii]).length;
+      return `
+      <div class="category">
+        <div class="cat-head">
+          <div class="cat-title"><span class="icon">${cat.icon}</span>${cat.cat}</div>
+          <div class="cat-progress" id="prog-${ci}">${done}/${cat.items.length}</div>
+        </div>
+        ${cat.items.map((it, ii) => {
+          const key = ci + '-' + ii;
+          return `
+          <label class="item ${saved[key] ? 'done' : ''}" id="item-${key}">
+            <input type="checkbox" ${saved[key] ? 'checked' : ''} onchange="toggle('${key}', this.checked, ${ci}, ${cat.items.length})">
+            <div class="item-body">
+              <span class="item-name">${it.name}</span><span class="item-qty">${it.qty}</span>
+              ${it.note ? `<div class="item-note">${it.note}</div>` : ''}
+            </div>
+            ${it.cost ? `<div class="item-cost">$${it.cost.toFixed(0)}</div>` : ''}
+          </label>
+        `;}).join('')}
+      </div>
+    `}).join('')}
+  `;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+window.toggle = (key, checked, ci, total) => {
+  const saved = JSON.parse(localStorage.getItem('kitChecked') || '{}');
+  if (checked) saved[key] = 1; else delete saved[key];
+  localStorage.setItem('kitChecked', JSON.stringify(saved));
+  document.getElementById('item-' + key).classList.toggle('done', checked);
+  const done = Object.keys(saved).filter(k => k.startsWith(ci + '-')).length;
+  document.getElementById('prog-' + ci).textContent = done + '/' + total;
+};
+
+window.restart = () => {
+  step = 0;
+  document.getElementById('form').style.display = 'block';
+  document.getElementById('result').style.display = 'none';
+  renderForm();
+  window.scrollTo({top:0,behavior:'smooth'});
+};
+
+renderForm();
+</script>
+</body>
+</html>
