@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>What Actually Makes a Tornado — The Science of Storm Ingredients</title>
+<meta name="description" content="Not every thunderstorm makes a tornado. This article walks through the six atmospheric ingredients — CAPE, CIN, wind shear, storm-relative helicity, LCL and moisture — that separate a garden-variety storm from a violent tornadic supercell. Includes a live simulator." />
+<meta name="keywords" content="what makes a tornado, how tornadoes form, tornado ingredients, supercell formation, CAPE explained, wind shear tornado, storm relative helicity, LCL tornado, tornado science" />
+<meta property="og:title" content="What Actually Makes a Tornado — The Science of Storm Ingredients" />
+<meta property="og:description" content="The six atmospheric ingredients that separate a garden-variety storm from a violent tornadic supercell — with a live simulator." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tornadosimulator.net/what-makes-a-tornado/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/what-makes-a-tornado/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌪️</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"What Actually Makes a Tornado — The Science of Storm Ingredients","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub","url":"https://www.tornadosimulator.net/"},"datePublished":"2026-07-09","mainEntityOfPage":"https://www.tornadosimulator.net/what-makes-a-tornado/"}
+</script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --accent:#a02818; --link:#1e3a5f; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.7}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text);text-decoration:none}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.breadcrumb{max-width:760px;margin:16px auto 0;padding:0 24px;font-size:13px;color:var(--text-muted)}
+article{max-width:760px;margin:32px auto 60px;padding:0 24px}
+.article-header{margin-bottom:36px;padding-bottom:24px;border-bottom:1px solid var(--border)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h1{font-family:var(--serif);font-size:clamp(32px,4vw,44px);line-height:1.15;letter-spacing:-0.02em;margin-bottom:14px}
+.lede{font-size:19px;color:var(--text-secondary);max-width:640px;line-height:1.55}
+article h2{font-family:var(--serif);font-size:28px;margin:44px 0 14px;letter-spacing:-0.01em}
+article h3{font-family:var(--serif);font-size:20px;margin:30px 0 10px}
+article p{margin-bottom:16px;font-size:17px;color:var(--text);}
+article ul{margin:8px 0 18px 22px}
+article li{margin-bottom:6px;font-size:16px}
+.callout{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:6px;padding:20px 24px;margin:28px 0}
+.callout p{margin:0;font-size:15px;color:var(--text-secondary)}
+.callout strong{color:var(--text)}
+.cta-box{background:linear-gradient(135deg,var(--accent) 0%,#7d1f13 100%);color:white;border-radius:14px;padding:28px 30px;margin:36px 0;display:flex;gap:22px;align-items:center;text-decoration:none;transition:transform 0.15s}
+.cta-box:hover{transform:translateY(-2px);text-decoration:none;color:white}
+.cta-emoji{font-size:44px;line-height:1}
+.cta-title{font-family:var(--serif);font-size:24px;font-weight:700;letter-spacing:-0.01em;margin-bottom:4px}
+.cta-desc{opacity:0.9;font-size:15px}
+.cta-arrow{margin-left:auto;font-size:22px}
+.recipe{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin:24px 0 36px}
+.ingredient{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 18px}
+.ingredient-name{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--accent);margin-bottom:4px}
+.ingredient-abbr{font-family:"Courier New",monospace;font-size:11px;color:var(--text-muted);margin-bottom:8px}
+.ingredient-body{font-size:14px;color:var(--text-secondary);line-height:1.5}
+.footer{text-align:center;padding:30px 24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px}
+.inline-ad{text-align:center;margin:32px auto;max-width:728px;overflow:hidden}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/quiz/">Quizzes</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/supercell-simulator/">Supercell Sim</a>
+      <a href="/tornadoes/">Index</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb"><a href="/">Home</a> · <a href="/articles/">Articles</a> · The science of tornado ingredients</div>
+
+<article>
+
+  <header class="article-header">
+    <div class="eyebrow">Science of severe weather</div>
+    <h1>What actually makes a tornado?</h1>
+    <p class="lede">Not every thunderstorm becomes a supercell, and not every supercell drops a tornado. Meteorologists watch a specific short list of atmospheric ingredients that decide the outcome. Here they are, in plain English.</p>
+  </header>
+
+  <p>If you've watched a live SPC outlook, you've heard the language: <em>2500 J/kg of CAPE, 60 knots of deep-layer shear, 300 m²/s² of low-level helicity, low LCL heights along the boundary</em>. It sounds like jargon, but each phrase is answering a very specific question about whether the sky is going to spit out a tornado today. There are only about six of them.</p>
+
+  <h2>The recipe</h2>
+
+  <div class="recipe">
+    <div class="ingredient">
+      <div class="ingredient-name">Instability</div>
+      <div class="ingredient-abbr">CAPE — J/kg</div>
+      <div class="ingredient-body">How much "spring energy" a rising air parcel gets. Values over 2500 J/kg mean an updraft can accelerate to jetliner speeds.</div>
+    </div>
+    <div class="ingredient">
+      <div class="ingredient-name">The cap</div>
+      <div class="ingredient-abbr">CIN — J/kg</div>
+      <div class="ingredient-body">A warm layer aloft that acts like a lid. A little cap concentrates energy; too much, and nothing forms all day.</div>
+    </div>
+    <div class="ingredient">
+      <div class="ingredient-name">Deep-layer shear</div>
+      <div class="ingredient-abbr">0–6 km — kt</div>
+      <div class="ingredient-body">The change in wind speed and direction from the surface to storm-top height. This is what turns a thunderstorm into a supercell.</div>
+    </div>
+    <div class="ingredient">
+      <div class="ingredient-name">Low-level helicity</div>
+      <div class="ingredient-abbr">SRH — m²/s²</div>
+      <div class="ingredient-body">How much horizontal spin is available in the lowest kilometer. This is the spin the mesocyclone stretches into a tornado.</div>
+    </div>
+    <div class="ingredient">
+      <div class="ingredient-name">Cloud base height</div>
+      <div class="ingredient-abbr">LCL — meters</div>
+      <div class="ingredient-body">Where the updraft first condenses. Lower cloud bases mean the storm's cold outflow doesn't cut off the low-level spin.</div>
+    </div>
+    <div class="ingredient">
+      <div class="ingredient-name">Boundary-layer moisture</div>
+      <div class="ingredient-abbr">Dewpoint — °F</div>
+      <div class="ingredient-body">The fuel for CAPE and the anchor for a low LCL. 70°F dewpoints across the Plains are a very red flag.</div>
+    </div>
+  </div>
+
+  <div class="callout"><p><strong>Skip the reading?</strong> Build your own atmosphere on the live <a href="/supercell-simulator/">supercell simulator</a> and watch the storm mode, STP score and expected tornado strength update in real time.</p></div>
+
+  <h2>Ingredient one: instability (CAPE)</h2>
+  <p>Take a warm, moist parcel of air at the surface. If the air above it is cool enough, that parcel rises freely — buoyancy accelerates it upward like a hot-air balloon released from a hand. The total "spring energy" stored between the surface and the storm top is called <strong>Convective Available Potential Energy</strong>, or CAPE.</p>
+  <p>The number matters. Under about 500 J/kg you're not going to see much beyond weak scattered showers. At 1500 J/kg you're in normal severe-thunderstorm territory. At 3000 J/kg the atmosphere can put out sustained updrafts of 40 meters per second — 90 mph vertical winds inside the storm. Over 5000 J/kg is territory you associate with the biggest hail and the strongest supercells in history.</p>
+  <p>But CAPE by itself is not enough. Plenty of days feature big CAPE and produce nothing at all.</p>
+
+  <h2>Ingredient two: the cap (CIN)</h2>
+  <p>Just above the moist surface layer, there's often a layer of warm, dry air — sometimes called the "elevated mixed layer" or EML — that's been pushed east from the Mexican plateau. This warm layer is <em>more buoyant</em> than the parcel trying to rise through it, so it acts like a lid, or <strong>Convective Inhibition</strong> (CIN, always negative). The parcel has to burn off some energy to break through.</p>
+  <p>Meteorologists <em>love</em> a small cap. Something like -50 J/kg is ideal: it holds back small storms during the day while surface heating builds enormous CAPE, then breaks late in the afternoon and lets everything explode at once. What you don't want is -250 J/kg, which typically caps out completely — the classic "cap bust" that fools forecasters into thinking severe weather is coming, then produces a beautiful sunset instead.</p>
+
+  <div class="inline-ad">
+    <script type="text/javascript">atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};</script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
+  </div>
+
+  <h2>Ingredient three: deep-layer shear</h2>
+  <p>Even the tallest thunderstorm dies quickly if it rains on itself. The updraft draws warm humid air up; the downdraft plunges rain-cooled air back down. If the wind speed and direction don't change much between the surface and 6 km up, those two air currents share the same column of sky and the storm chokes on its own outflow.</p>
+  <p>But if the wind at 6 km is <em>much faster</em> or in a different direction than the wind at the surface, the storm tilts. The updraft leans away from the rain shaft. The rain falls into different air. The storm can now sustain itself for hours.</p>
+  <p>The threshold to look for is about 40 knots of "bulk shear" over the 0–6 km layer. Below that, storms are short-lived and messy. Above it, you can get discrete rotating supercells — the kind that stay isolated on radar and can be tracked visually for hours.</p>
+
+  <h2>Ingredient four: low-level rotation (SRH)</h2>
+  <p>Deep shear organizes storms. But tornadoes need spin near the ground — specifically in the lowest 1 kilometer. That's where <strong>Storm-Relative Helicity</strong> (SRH) comes in: a measure of the horizontal spin available in the low-level wind field, integrated along the storm's motion.</p>
+  <p>When the mesocyclone at mid-levels of a supercell reaches down, the low-level flow feeds it a corkscrew of streamwise vorticity. As the parcel accelerates upward, that corkscrew stretches vertically — same conservation of angular momentum as a figure skater pulling their arms in. The vortex spins up, tightens, and can drop to the ground as a funnel.</p>
+  <p>Rough thresholds: SRH under 100 m²/s² and you rarely see tornadoes. 100 to 200 supports isolated brief ones. Above 300 and you're in the territory of long-track significant tornadoes. On <a href="/2011-super-outbreak/">April 27, 2011</a>, mesoanalysis was pegging SRH values over 500 across Alabama.</p>
+
+  <h2>Ingredient five: low cloud bases (LCL)</h2>
+  <p>Every parcel that rises eventually cools to its dew point and condenses — that's the cloud base, or the <strong>Lifted Condensation Level</strong>. The height of the LCL turns out to matter a lot for tornado potential.</p>
+  <p>The reason has to do with the storm's cold pool. When rain falls into dry air and evaporates, it cools the downdraft dramatically. That cold pool is what usually chokes off the low-level circulation, ending the tornado. But if the LCL is <em>low</em> — meaning the air below the cloud base is already humid — the rain doesn't evaporate as much and the cold pool stays modest. The mesocyclone survives longer at ground level, which means the tornado does too.</p>
+  <p>This is the mechanism that makes <a href="/dixie-alley/">Dixie Alley</a> so deadly. Gulf moisture keeps LCLs low, storms stay tornadic longer, and the terrain plus the trees hide the twisters until they're on top of you.</p>
+
+  <h2>Ingredient six: dewpoint</h2>
+  <p>The last variable is the simplest one. Surface dewpoint is a proxy for absolute humidity — how much water is available in the boundary layer to fuel the whole show. A 70°F dewpoint packs enormous latent-heat energy: as parcels rise and that vapor condenses, the release fuels the updraft. It also drives the LCL down and pumps up CAPE indirectly.</p>
+  <p>You can eyeball a threat map by dewpoint alone. Anything over 65°F across the Plains in spring is worth watching. Anything over 70°F ahead of a well-defined dryline is a very bad sign.</p>
+
+  <h2>Putting it all together</h2>
+  <p>Meteorologists roll all six variables into composite indices. The most-used is the <strong>Significant Tornado Parameter (STP)</strong>:</p>
+  <p style="font-family:'Courier New',monospace;background:var(--bg-alt);padding:14px 18px;border-radius:6px;font-size:14px;overflow-x:auto">STP = (CAPE/1500) × ((2000-LCL)/1000) × (SRH01/150) × (Shear06/20) × ((-CIN-50)/-50)</p>
+  <p>An STP over 1 means significant tornado potential. Over 3 means <em>Particularly Dangerous Situation</em> in Weather Service language. Over 6 is the territory of April 27, 2011 and May 3, 1999 — the days that produce the tornadoes people write books about.</p>
+
+  <a class="cta-box" href="/supercell-simulator/">
+    <div class="cta-emoji">⛈️</div>
+    <div>
+      <div class="cta-title">Try it yourself</div>
+      <div class="cta-desc">Adjust CAPE, shear, helicity, LCL and moisture on our supercell simulator. Watch the STP and expected tornado strength update live.</div>
+    </div>
+    <div class="cta-arrow">→</div>
+  </a>
+
+  <h2>Why forecasters still can't always tell you</h2>
+  <p>You'd think that with a well-tuned checklist like this, forecasting tornadoes would be a solved problem. It's not. Two reasons.</p>
+  <p>The first is that the atmosphere is turbulent. A model run at noon might tell you dewpoints will be 68°F at 3 pm. In the real world, a subtle boundary or an outflow from a morning storm can nudge that number to 71 — enough to shift STP from "3" to "6," which is the difference between "some brief tornadoes" and "PDS."</p>
+  <p>The second is that even when the environment is textbook, storms can fail to organize, or a single storm's cold pool can undercut the low-level flow. On days when everything is objectively right, sometimes only one storm out of ten produces a tornado.</p>
+  <p>That's why forecasters talk in probabilities. A 15% hatched tornado area doesn't mean "guaranteed to happen." It means "the environment supports it and history says one in six such areas gets a strong tornado."</p>
+
+  <h2>Learn more</h2>
+  <ul>
+    <li><a href="/supercell-simulator/">Live supercell simulator</a> — move the sliders and see it happen</li>
+    <li><a href="/what-is-a-supercell/">What is a supercell?</a></li>
+    <li><a href="/what-is-a-mesocyclone/">What is a mesocyclone?</a></li>
+    <li><a href="/hook-echo/">Hook echoes and the tornado debris signature on radar</a></li>
+    <li><a href="/2011-super-outbreak/">The 2011 Super Outbreak</a> — a real-world PDS day</li>
+    <li><a href="/dixie-alley/">Dixie Alley</a> — why low LCLs and hidden terrain make the Southeast so deadly</li>
+  </ul>
+
+</article>
+
+<footer class="footer">
+  Part of <a href="/">Tornado Hub</a> — educational content, not a forecast. For live watches see the <a href="https://www.spc.noaa.gov/" target="_blank" rel="noopener">NOAA Storm Prediction Center</a>.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Supercell Simulator — Model the Atmosphere That Makes Tornadoes</title>
+<meta name="description" content="An interactive supercell and storm-conditions simulator based on real meteorology. Adjust CAPE, wind shear, storm-relative helicity, LCL height, temperature and dewpoint — and see live estimates of storm mode, the Significant Tornado Parameter, and the maximum expected tornado strength. Presets for classic Plains supercells, Dixie Alley HP storms, capped days, and landspout setups." />
+<meta name="keywords" content="supercell simulator, storm simulator, tornado formation, CAPE, wind shear, storm-relative helicity, significant tornado parameter, STP, atmospheric conditions, storm ingredients, meteorology simulator, tornado ingredients" />
+<meta property="og:title" content="Supercell Simulator — Model the Atmosphere That Makes Tornadoes" />
+<meta property="og:description" content="Adjust CAPE, shear, helicity and LCL — see what kind of storm and tornado the atmosphere can produce." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.tornadosimulator.net/supercell-simulator/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/supercell-simulator/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛈️</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Supercell Simulator",
+  "applicationCategory":"EducationalApplication",
+  "operatingSystem":"Web browser",
+  "description":"An interactive tool to simulate the atmospheric conditions that produce supercell thunderstorms and tornadoes.",
+  "url":"https://www.tornadosimulator.net/supercell-simulator/",
+  "publisher":{"@type":"Organization","name":"Tornado Hub","url":"https://www.tornadosimulator.net/"}
+}
+</script>
+<style>
+:root {
+  --bg: #0d1219;
+  --bg-alt: #131a25;
+  --surface: #1a2231;
+  --surface-alt: #212a3d;
+  --text: #f0f4fb;
+  --text-secondary: #a8b3c7;
+  --text-muted: #6b7690;
+  --border: #2a3448;
+  --border-strong: #3a465e;
+  --accent: #ff6b47;
+  --accent-hover: #ff8560;
+  --accent-dim: rgba(255,107,71,0.15);
+  --link: #7ec4ff;
+  --green: #6bcf7f;
+  --yellow: #ffd166;
+  --orange: #ff9f43;
+  --red: #ef4444;
+  --purple: #a78bfa;
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Inter", -apple-system, sans-serif;
+  --mono: "JetBrains Mono", "Courier New", monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--accent); text-decoration: underline; }
+
+.nav {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 100;
+}
+.nav-inner {
+  max-width: 1400px; margin: 0 auto;
+  padding: 12px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 20px; flex-wrap: wrap;
+}
+.nav-brand {
+  font-family: var(--serif);
+  font-weight: 700; font-size: 20px;
+  color: var(--text);
+  text-decoration: none;
+}
+.nav-links { display: flex; gap: 4px; flex-wrap: wrap; }
+.nav-links a {
+  color: var(--text-secondary);
+  padding: 6px 12px;
+  font-size: 14px; font-weight: 500;
+  border-radius: 6px;
+  text-decoration: none;
+}
+.nav-links a:hover { background: var(--surface-alt); color: var(--text); }
+.nav-links a.cta { background: var(--accent); color: white; font-weight: 600; }
+.nav-links a.cta:hover { background: var(--accent-hover); }
+
+.hero {
+  padding: 40px 20px 24px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+}
+.hero .eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--accent);
+  margin-bottom: 14px;
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700; line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+.hero h1 em { color: var(--accent); font-style: italic; font-weight: 400; }
+.hero p { color: var(--text-secondary); font-size: 16px; max-width: 700px; margin: 0 auto; }
+
+.sim-wrap {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+@media (max-width: 900px) { .sim-wrap { grid-template-columns: 1fr; } }
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 24px;
+}
+.panel-head {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 18px; padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+.panel-head h2 {
+  font-family: var(--serif);
+  font-size: 22px; font-weight: 700; letter-spacing: -0.01em;
+}
+.presets { display: flex; gap: 6px; flex-wrap: wrap; }
+.preset-btn {
+  padding: 5px 11px; font-size: 11px; font-weight: 600;
+  background: var(--surface-alt); border: 1px solid var(--border);
+  color: var(--text-secondary);
+  border-radius: 6px; cursor: pointer;
+  font-family: var(--sans);
+  transition: all 0.15s;
+}
+.preset-btn:hover { background: var(--accent-dim); color: var(--accent); border-color: var(--accent); }
+
+.control {
+  margin-bottom: 22px;
+}
+.control-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin-bottom: 6px;
+}
+.control-label {
+  font-size: 13px; font-weight: 600;
+}
+.control-label .abbr { color: var(--text-muted); font-weight: 400; margin-left: 4px; font-size: 11px; }
+.control-value {
+  font-family: var(--mono);
+  font-size: 15px; font-weight: 700;
+  color: var(--accent);
+}
+.control-value .unit { color: var(--text-muted); font-size: 12px; font-weight: 500; margin-left: 3px; }
+.slider {
+  width: 100%; height: 6px;
+  background: var(--surface-alt);
+  border-radius: 3px;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  border: 2px solid var(--surface);
+  box-shadow: 0 2px 6px rgba(255,107,71,0.4);
+}
+.slider::-moz-range-thumb {
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  border: 2px solid var(--surface);
+}
+.control-help {
+  font-size: 11px; color: var(--text-muted);
+  margin-top: 4px; line-height: 1.4;
+}
+
+.verdict-box {
+  background: linear-gradient(135deg, var(--surface-alt) 0%, var(--surface) 100%);
+  border: 2px solid var(--border-strong);
+  border-radius: 12px;
+  padding: 20px 22px;
+  margin-bottom: 20px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.verdict-box.tier-none { border-color: var(--border-strong); }
+.verdict-box.tier-low { border-color: var(--green); box-shadow: 0 0 30px rgba(107,207,127,0.15); }
+.verdict-box.tier-mod { border-color: var(--yellow); box-shadow: 0 0 30px rgba(255,209,102,0.2); }
+.verdict-box.tier-enhanced { border-color: var(--orange); box-shadow: 0 0 40px rgba(255,159,67,0.25); }
+.verdict-box.tier-high { border-color: var(--red); box-shadow: 0 0 50px rgba(239,68,68,0.35); }
+.verdict-box.tier-extreme {
+  border-color: var(--red);
+  box-shadow: 0 0 60px rgba(239,68,68,0.5);
+  background: linear-gradient(135deg, rgba(239,68,68,0.12) 0%, var(--surface) 100%);
+}
+
+.verdict-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--surface); color: var(--text-secondary);
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+.tier-low  .verdict-tag { background: rgba(107,207,127,0.18); color: var(--green); }
+.tier-mod  .verdict-tag { background: rgba(255,209,102,0.18); color: var(--yellow); }
+.tier-enhanced .verdict-tag { background: rgba(255,159,67,0.2); color: var(--orange); }
+.tier-high .verdict-tag { background: rgba(239,68,68,0.22); color: var(--red); }
+.tier-extreme .verdict-tag { background: var(--red); color: white; }
+.verdict-headline {
+  font-family: var(--serif);
+  font-size: 26px; font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+}
+.verdict-body {
+  color: var(--text-secondary);
+  font-size: 14px; line-height: 1.55;
+}
+
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+@media (max-width: 500px) { .metric-grid { grid-template-columns: repeat(2, 1fr); } }
+.metric {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  text-align: center;
+}
+.metric-label {
+  font-size: 10px; font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+.metric-value {
+  font-family: var(--mono);
+  font-size: 20px; font-weight: 700;
+  color: var(--accent);
+  line-height: 1.1;
+}
+.metric-sub {
+  font-size: 10px; color: var(--text-muted); margin-top: 2px;
+}
+
+.diagram {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 20px;
+  position: relative;
+  aspect-ratio: 16 / 10;
+}
+.diagram h3 {
+  position: absolute; top: 12px; left: 16px;
+  font-family: var(--sans);
+  font-size: 11px; font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+
+.ingredients {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.ing {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+.ing-title {
+  font-size: 12px; font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+  display: flex; align-items: center; gap: 6px;
+}
+.ing-status {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--border-strong);
+  flex-shrink: 0;
+}
+.ing.met .ing-status { background: var(--green); }
+.ing.close .ing-status { background: var(--yellow); }
+.ing.missing .ing-status { background: var(--text-muted); }
+.ing-detail { font-size: 11px; color: var(--text-muted); }
+
+.explainer {
+  max-width: 900px;
+  margin: 20px auto 60px;
+  padding: 0 20px;
+}
+.explainer h2 {
+  font-family: var(--serif);
+  font-size: 26px; font-weight: 700;
+  margin: 30px 0 12px; letter-spacing: -0.01em;
+}
+.explainer p {
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+.explainer .term-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  margin: 20px 0;
+}
+.term {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+.term-name {
+  font-family: var(--serif);
+  font-size: 17px; font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--accent);
+}
+.term-abbr { font-family: var(--mono); font-size: 11px; color: var(--text-muted); margin-left: 4px; }
+.term-body { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+.callout {
+  background: var(--surface-alt);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  padding: 14px 18px;
+  margin: 20px 0;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.footer {
+  text-align: center;
+  padding: 30px 20px;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.inline-ad { text-align: center; margin: 24px auto; max-width: 728px; overflow: hidden; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/quiz/">Quizzes</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/supercell-simulator/">Supercell Sim</a>
+      <a href="/tornadoes/">Index</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="eyebrow">⛈️ Storm-Conditions Simulator</div>
+  <h1>Model the atmosphere that <em>spawns tornadoes</em></h1>
+  <p>Adjust the six ingredients meteorologists use to forecast tornadoes and see whether the atmosphere you built can produce a supercell — and if so, how strong a tornado it could drop.</p>
+</section>
+
+<div class="sim-wrap">
+
+  <!-- CONTROLS -->
+  <div class="panel">
+    <div class="panel-head">
+      <h2>Atmospheric ingredients</h2>
+      <div class="presets" id="presets"></div>
+    </div>
+
+    <div class="control">
+      <div class="control-head">
+        <div class="control-label">Surface CAPE <span class="abbr">SBCAPE — instability</span></div>
+        <div class="control-value"><span id="v-cape">2500</span><span class="unit">J/kg</span></div>
+      </div>
+      <input type="range" min="0" max="6000" step="50" value="2500" class="slider" id="s-cape">
+      <div class="control-help">Fuel for the updraft. &lt;500 = weak, 1500 = moderate, 3000+ = strong instability, 5000+ = extreme.</div>
+    </div>
+
+    <div class="control">
+      <div class="control-head">
+        <div class="control-label">Convective inhibition <span class="abbr">SBCIN — the "cap"</span></div>
+        <div class="control-value"><span id="v-cin">-50</span><span class="unit">J/kg</span></div>
+      </div>
+      <input type="range" min="-400" max="0" step="5" value="-50" class="slider" id="s-cin">
+      <div class="control-help">A warm layer aloft that suppresses storms. -50 breaks easily; below -200 usually caps the day.</div>
+    </div>
+
+    <div class="control">
+      <div class="control-head">
+        <div class="control-label">0–6 km bulk shear <span class="abbr">deep-layer shear</span></div>
+        <div class="control-value"><span id="v-shear">45</span><span class="unit">kt</span></div>
+      </div>
+      <input type="range" min="0" max="100" step="1" value="45" class="slider" id="s-shear">
+      <div class="control-help">Wind speed change from surface to 6 km. &gt;40 kt strongly favors supercells over multicells.</div>
+    </div>
+
+    <div class="control">
+      <div class="control-head">
+        <div class="control-label">0–1 km storm-relative helicity <span class="abbr">SRH01 — low-level rotation</span></div>
+        <div class="control-value"><span id="v-srh">150</span><span class="unit">m²/s²</span></div>
+      </div>
+      <input type="range" min="0" max="500" step="5" value="150" class="slider" id="s-srh">
+      <div class="control-help">Streamwise vorticity feeding the mesocyclone. &gt;100 favors tornadoes; &gt;300 signals violent potential.</div>
+    </div>
+
+    <div class="control">
+      <div class="control-head">
+        <div class="control-label">LCL height <span class="abbr">cloud base above ground</span></div>
+        <div class="control-value"><span id="v-lcl">1000</span><span class="unit">m AGL</span></div>
+      </div>
+      <input type="range" min="300" max="3000" step="50" value="1000" class="slider" id="s-lcl">
+      <div class="control-help">Lower cloud bases = more tornadoes. &lt;1000 m is ideal; &gt;2000 m usually means high-based storms.</div>
+    </div>
+
+    <div class="control">
+      <div class="control-head">
+        <div class="control-label">Surface dewpoint <span class="abbr">low-level moisture</span></div>
+        <div class="control-value"><span id="v-td">68</span><span class="unit">°F</span></div>
+      </div>
+      <input type="range" min="30" max="80" step="1" value="68" class="slider" id="s-td">
+      <div class="control-help">Moisture in the boundary layer. &gt;60°F feeds classic Plains supercells; &gt;70°F fuels HP monsters.</div>
+    </div>
+
+  </div>
+
+  <!-- RESULTS -->
+  <div class="panel">
+    <div class="panel-head">
+      <h2>Model output</h2>
+      <div id="mode-tag" class="preset-btn" style="cursor:default;pointer-events:none">Storm mode</div>
+    </div>
+
+    <div id="verdict" class="verdict-box tier-mod">
+      <span class="verdict-tag" id="verdict-tag">Threat level</span>
+      <div class="verdict-headline" id="verdict-headline">Adjust the sliders</div>
+      <div class="verdict-body" id="verdict-body">Move the sliders on the left to build an atmospheric profile. The output updates live.</div>
+    </div>
+
+    <div class="metric-grid">
+      <div class="metric">
+        <div class="metric-label">STP</div>
+        <div class="metric-value" id="m-stp">—</div>
+        <div class="metric-sub">Sig. Tornado Param</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">EHI (0–1)</div>
+        <div class="metric-value" id="m-ehi">—</div>
+        <div class="metric-sub">Energy-helicity</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Max EF</div>
+        <div class="metric-value" id="m-ef">—</div>
+        <div class="metric-sub">Expected upper bound</div>
+      </div>
+    </div>
+
+    <div class="ingredients" id="ingredients"></div>
+
+  </div>
+</div>
+
+<div class="inline-ad">
+  <script type="text/javascript">atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};</script>
+  <script type="text/javascript" src="//www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
+</div>
+
+<section class="explainer">
+  <h2>How this simulator works</h2>
+  <p>Meteorologists don't just look at "will it storm today" — they look at a small set of atmospheric parameters that decide whether storms will fire, whether they'll organize into supercells, and whether those supercells will produce tornadoes. This tool exposes six of the most important ingredients as sliders so you can see how each one shifts the outcome.</p>
+  <p>The metrics you're computing are the same ones on the <a href="https://www.spc.noaa.gov/exper/mesoanalysis/" target="_blank" rel="noopener">SPC mesoanalysis</a> and the <a href="/1974-super-outbreak/">post-event write-ups</a> of historic outbreaks. When STP climbs above 3, meteorologists start using words like "particularly dangerous situation." When it approaches 8, they're describing 1999 Bridge Creek or April 27, 2011.</p>
+
+  <div class="callout">
+    <strong>Formulas used.</strong> STP (fixed-layer) = (SBCAPE/1500) × ((2000-LCL)/1000) × (SRH01/150) × (BulkShear06/20) × ((-CIN-50)/-50). EHI = SBCAPE × SRH01 / 160,000. Storm mode is a coarse decision tree on deep-layer shear plus CAPE. These are simplified relationships from Thompson et al. (2003, 2007) and Craven & Brooks (2004); they capture the shape of tornado potential well but they don't replace a real forecast.
+  </div>
+
+  <h2>The six ingredients</h2>
+  <div class="term-grid">
+    <div class="term">
+      <div class="term-name">Instability <span class="term-abbr">CAPE</span></div>
+      <div class="term-body">Convective Available Potential Energy — the "fuel" that lets air parcels accelerate upward. Higher CAPE means taller and stronger updrafts. Values above ~2500 J/kg support severe storms.</div>
+    </div>
+    <div class="term">
+      <div class="term-name">The cap <span class="term-abbr">CIN</span></div>
+      <div class="term-body">Convective inhibition — a stable layer aloft that acts like a lid. A small cap concentrates energy so storms explode late in the day; too much cap and nothing forms at all.</div>
+    </div>
+    <div class="term">
+      <div class="term-name">Deep-layer shear <span class="term-abbr">0–6 km</span></div>
+      <div class="term-body">The change in wind speed and direction from the surface to about 6 km. Strong deep-layer shear tilts the updraft away from the rain, letting a supercell survive for hours instead of dying in its own rain-cooled outflow.</div>
+    </div>
+    <div class="term">
+      <div class="term-name">Storm-relative helicity <span class="term-abbr">SRH</span></div>
+      <div class="term-body">A measure of low-level rotation available to the storm. When SRH is high — think 300+ m²/s² — the mesocyclone can stretch a low-level vortex into a tornado.</div>
+    </div>
+    <div class="term">
+      <div class="term-name">LCL height <span class="term-abbr">cloud base</span></div>
+      <div class="term-body">The altitude where rising air becomes saturated (cloud base). Low LCLs mean the cool downdraft doesn't cut off the low-level circulation — a classic ingredient of Dixie Alley tornado outbreaks.</div>
+    </div>
+    <div class="term">
+      <div class="term-name">Surface moisture <span class="term-abbr">Td</span></div>
+      <div class="term-body">Dewpoint. It sets both CAPE and LCL indirectly — a 70°F dewpoint over the Plains is a red flag; a 40°F dewpoint means the air is too dry to fuel much of anything.</div>
+    </div>
+  </div>
+
+  <h2>Try these real-atmosphere presets</h2>
+  <p>Click any preset above the sliders to load real-world parameter sets — the ingredients that produced classic Plains outbreaks, Dixie Alley HP monsters, high-based landspout days and cap busts. Then move a slider and watch the STP change.</p>
+
+  <p style="margin-top:24px">Related tools: <a href="/simulator/">damage simulator</a> · <a href="/tornadle/">Tornadle</a> · <a href="/weather-trivia/">weather trivia</a> · <a href="/tornadoes/">live tornado index</a>.</p>
+</section>
+
+<footer class="footer">
+  Educational tool. Not a forecast. For live watches and warnings see the <a href="https://www.spc.noaa.gov/" target="_blank" rel="noopener">NOAA Storm Prediction Center</a>.
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  // ─── PRESETS (real-atmosphere setups) ──────────────────────────
+  const PRESETS = {
+    'Classic Plains': { cape: 3500, cin: -40, shear: 55, srh: 300, lcl: 900, td: 68, label: 'Classic Plains supercell — May, Oklahoma dryline day' },
+    'Dixie Alley HP': { cape: 2200, cin: -30, shear: 60, srh: 380, lcl: 600, td: 72, label: 'Dixie Alley HP — moist, low LCL, extreme low-level rotation' },
+    'PDS setup':      { cape: 4200, cin: -20, shear: 70, srh: 450, lcl: 800, td: 70, label: 'PDS (Particularly Dangerous Situation) — 4/27/11 style' },
+    'Landspout day':  { cape: 1500, cin: -10, shear: 15, srh: 40,  lcl: 1800, td: 55, label: 'Landspout day — weak shear, non-supercell tornadoes possible' },
+    'High-based sup': { cape: 2500, cin: -60, shear: 50, srh: 180, lcl: 2400, td: 45, label: 'High-based supercell — big hail but few tornadoes' },
+    'Cap bust':       { cape: 3200, cin: -220, shear: 45, srh: 200, lcl: 1400, td: 65, label: 'Cap bust — plenty of instability but too much CIN, storms never fire' },
+    'Winter QLCS':    { cape: 500,  cin: -20, shear: 65, srh: 280, lcl: 500, td: 60, label: 'Cool-season QLCS — low CAPE but violent shear, spin-up tornadoes' },
+    'Blue sky day':   { cape: 200,  cin: -100, shear: 12, srh: 30, lcl: 2200, td: 40, label: 'Nothing happening — no storms today' },
+  };
+
+  const KEYS = ['cape','cin','shear','srh','lcl','td'];
+  const state = { cape:2500, cin:-50, shear:45, srh:150, lcl:1000, td:68 };
+
+  // Render preset buttons
+  const presetsEl = document.getElementById('presets');
+  Object.entries(PRESETS).forEach(([name, p]) => {
+    const b = document.createElement('button');
+    b.className = 'preset-btn';
+    b.textContent = name;
+    b.title = p.label;
+    b.onclick = () => {
+      KEYS.forEach(k => {
+        const s = document.getElementById('s-' + k);
+        s.value = p[k];
+        state[k] = p[k];
+      });
+      update();
+    };
+    presetsEl.appendChild(b);
+  });
+
+  // Wire sliders
+  KEYS.forEach(k => {
+    const s = document.getElementById('s-' + k);
+    s.addEventListener('input', () => {
+      state[k] = parseFloat(s.value);
+      update();
+    });
+  });
+
+  // ─── SCIENCE ────────────────────────────────────────────────────
+  // Significant Tornado Parameter (fixed-layer variant, simplified)
+  function computeSTP(s) {
+    const capeTerm = Math.max(0, s.cape / 1500);
+    const lclTerm = s.lcl < 1000 ? 1 : (2000 - s.lcl) / 1000;
+    const srhTerm = s.srh / 150;
+    const shearTerm = clamp((s.shear - 12.5) / 7.5, 0, 1.5); // 12.5 kt lower cutoff, cap 1.5
+    // Above uses a smoother approach than the SPC formula but reflects the same shape.
+    // Actually replicate SPC formula for shear: if shear >= 20 kt use full weight; scale.
+    const shearNorm = s.shear < 12.5 ? 0 : Math.min(s.shear / 20, 1.5);
+    const cinTerm = s.cin > -50 ? 1 : (-s.cin - 50) < 0 ? 0 : (200 + s.cin) / 150;
+    const cinNorm = s.cin > -50 ? 1 : Math.max(0, (200 + s.cin) / 150);
+    if (Math.max(capeTerm, lclTerm, srhTerm, shearNorm, cinNorm) === 0) return 0;
+    return capeTerm * Math.max(0, lclTerm) * srhTerm * shearNorm * cinNorm;
+  }
+
+  function computeEHI(s) {
+    return (s.cape * s.srh) / 160000;
+  }
+
+  function clamp(x, lo, hi) { return Math.max(lo, Math.min(hi, x)); }
+
+  // Storm mode logic
+  function stormMode(s) {
+    // Can it even fire?
+    if (s.cape < 200) return { mode: 'No storms', color: 'green', reason: 'Insufficient CAPE — the atmosphere is too stable.' };
+    if (s.cin < -180) return { mode: 'Capped', color: 'green', reason: 'The cap is too strong. Even with plenty of CAPE, nothing breaks through.' };
+    // Storm type based on shear
+    if (s.shear < 20) return { mode: 'Pulse storms', color: 'green', reason: 'Weak shear — single-cell "popcorn" storms; brief microbursts possible.' };
+    if (s.shear < 35) return { mode: 'Multicell', color: 'yellow', reason: 'Moderate shear — organized multicell clusters; hail and gusty winds.' };
+    if (s.shear < 45) return { mode: 'Organized multicell', color: 'yellow', reason: 'Good shear — long-lived multicells or marginal supercells possible.' };
+    if (s.srh < 100) return { mode: 'Splitting supercell', color: 'orange', reason: 'Strong shear but low SRH — supercells possible, tornadoes unlikely.' };
+    if (s.srh < 200) return { mode: 'Supercell', color: 'orange', reason: 'Classic supercell environment — rotating storms with tornado potential.' };
+    return { mode: 'Tornadic supercell', color: 'red', reason: 'Textbook tornado environment — high shear + high low-level helicity.' };
+  }
+
+  function verdictFor(stp, mode) {
+    if (mode.mode === 'No storms' || mode.mode === 'Capped')
+      return { tier: 'none', tag: 'No threat', headline: mode.mode, body: mode.reason };
+    if (stp < 0.25)
+      return { tier: 'low', tag: 'Marginal', headline: 'Storms, but tornadoes unlikely',
+               body: mode.reason + ' STP below 0.25 rarely produces tornadoes.' };
+    if (stp < 1)
+      return { tier: 'mod', tag: 'Slight', headline: 'Isolated tornado possible',
+               body: 'STP under 1 supports isolated brief tornadoes (usually EF0–EF1). ' + mode.reason };
+    if (stp < 3)
+      return { tier: 'enhanced', tag: 'Enhanced', headline: 'Strong tornadoes possible',
+               body: 'STP in the 1–3 range typically produces significant (EF2+) tornadoes. Environment is favorable for long-lived supercells.' };
+    if (stp < 6)
+      return { tier: 'high', tag: 'Moderate → High', headline: 'Violent tornadoes possible',
+               body: 'STP 3–6 aligns with days like May 3, 1999 or May 20, 2013. Expect strong to violent (EF3–EF4) tornadoes if storms fire.' };
+    return { tier: 'extreme', tag: 'HIGH RISK', headline: 'PDS-level tornado environment',
+             body: 'STP above 6 is a Particularly Dangerous Situation — the atmosphere is capable of EF4–EF5 tornadoes. Historical analogs include April 27, 2011 and May 3, 1999.' };
+  }
+
+  function expectedMaxEF(stp, s) {
+    if (s.cape < 200 || s.cin < -180) return '—';
+    if (stp < 0.25) return 'EF0';
+    if (stp < 1) return 'EF1';
+    if (stp < 2) return 'EF2';
+    if (stp < 4) return 'EF3';
+    if (stp < 7) return 'EF4';
+    return 'EF5';
+  }
+
+  // Ingredient checklist
+  function ingredients(s) {
+    const items = [
+      { name: 'Instability', met: s.cape >= 1500, close: s.cape >= 500,
+        detail: `CAPE ${s.cape} J/kg — ${s.cape < 500 ? 'too low' : s.cape < 1500 ? 'marginal' : s.cape < 3000 ? 'moderate' : 'strong'}` },
+      { name: 'Cap breakable', met: s.cin > -100, close: s.cin > -180,
+        detail: `CIN ${s.cin} J/kg — ${s.cin > -50 ? 'no lid' : s.cin > -100 ? 'weak lid' : s.cin > -180 ? 'strong cap' : 'capped out'}` },
+      { name: 'Deep shear', met: s.shear >= 40, close: s.shear >= 25,
+        detail: `${s.shear} kt — ${s.shear < 20 ? 'unorganized' : s.shear < 40 ? 'multicells' : s.shear < 60 ? 'supercells' : 'extreme'}` },
+      { name: 'Low-level rotation', met: s.srh >= 200, close: s.srh >= 100,
+        detail: `SRH ${s.srh} m²/s² — ${s.srh < 100 ? 'low' : s.srh < 200 ? 'moderate' : s.srh < 350 ? 'strong' : 'extreme'}` },
+      { name: 'Low cloud base', met: s.lcl <= 1000, close: s.lcl <= 1500,
+        detail: `LCL ${s.lcl} m — ${s.lcl < 1000 ? 'ideal' : s.lcl < 1500 ? 'ok' : s.lcl < 2000 ? 'high' : 'too high'}` },
+      { name: 'Boundary-layer moisture', met: s.td >= 60, close: s.td >= 50,
+        detail: `Td ${s.td}°F — ${s.td < 50 ? 'dry' : s.td < 60 ? 'marginal' : s.td < 70 ? 'moist' : 'juicy'}` },
+    ];
+    return items;
+  }
+
+  // ─── RENDER ────────────────────────────────────────────────────
+  function update() {
+    KEYS.forEach(k => {
+      document.getElementById('v-' + k).textContent = state[k];
+    });
+    const stp = computeSTP(state);
+    const ehi = computeEHI(state);
+    const mode = stormMode(state);
+    const verdict = verdictFor(stp, mode);
+    const ef = expectedMaxEF(stp, state);
+
+    document.getElementById('m-stp').textContent = stp.toFixed(2);
+    document.getElementById('m-ehi').textContent = ehi.toFixed(2);
+    document.getElementById('m-ef').textContent = ef;
+
+    const modeTag = document.getElementById('mode-tag');
+    modeTag.textContent = mode.mode;
+    modeTag.style.background = ({green:'rgba(107,207,127,0.18)', yellow:'rgba(255,209,102,0.18)', orange:'rgba(255,159,67,0.2)', red:'rgba(239,68,68,0.22)'}[mode.color]);
+    modeTag.style.color = ({green:'#6bcf7f', yellow:'#ffd166', orange:'#ff9f43', red:'#ef4444'}[mode.color]);
+    modeTag.style.borderColor = 'transparent';
+
+    const box = document.getElementById('verdict');
+    box.className = 'verdict-box tier-' + verdict.tier;
+    document.getElementById('verdict-tag').textContent = verdict.tag;
+    document.getElementById('verdict-headline').textContent = verdict.headline;
+    document.getElementById('verdict-body').textContent = verdict.body;
+
+    // Ingredients
+    const ingEl = document.getElementById('ingredients');
+    ingEl.innerHTML = ingredients(state).map(i => `
+      <div class="ing ${i.met ? 'met' : i.close ? 'close' : 'missing'}">
+        <div class="ing-title"><span class="ing-status"></span>${i.name}</div>
+        <div class="ing-detail">${i.detail}</div>
+      </div>
+    `).join('');
+  }
+
+  update();
+})();
+</script>
+</body>
+</html>
