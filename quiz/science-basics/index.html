@@ -8,7 +8,6 @@
 <link rel="canonical" href="https://www.tornadosimulator.net/quiz/science-basics/" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌪️</text></svg>" />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Quiz","name":"Tornado Science 101","description":"Meteorology basics.","url":"https://www.tornadosimulator.net/quiz/science-basics/"}
 </script>
@@ -58,7 +57,8 @@ a:hover { color:var(--accent); text-decoration:underline; }
 .next-btn { display:block; margin-top:20px; padding:12px 24px; background:var(--accent); color:white; border:none; border-radius:6px; font-size:15px; font-weight:600; cursor:pointer; width:100%; transition:background 0.15s; }
 .next-btn:hover { background:var(--accent-hover); }
 .next-btn.hidden { display:none; }
-.ad-slot { background:var(--bg-alt); border:1px dashed var(--border-strong); border-radius:8px; margin:24px 0; padding:20px; text-align:center; min-height:100px; }
+.ad-inline { text-align:center; margin: 24px 0; min-height:250px; }
+.ad-inline-wide { text-align:center; margin: 24px 0; min-height:90px; overflow:hidden; }
 .result-card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:40px 32px; text-align:center; }
 .result-score { font-family:var(--serif); font-size:72px; font-weight:700; color:var(--accent); line-height:1; margin-bottom:12px; letter-spacing:-0.03em; }
 .result-title { font-family:var(--serif); font-size:26px; font-weight:700; margin-bottom:12px; }
@@ -111,23 +111,32 @@ a:hover { color:var(--accent); text-decoration:underline; }
 
   <div id="quiz-body"></div>
 
-  <div style="text-align:center; margin: 24px 0; min-height:250px;">
-<script type="text/javascript">
-  atOptions = {'key':'1fe957d85bb2cf92027de309038cd17b','format':'iframe','height':250,'width':300,'params':{}};
-</script>
-<script type="text/javascript" src="https://www.highperformanceformat.com/1fe957d85bb2cf92027de309038cd17b/invoke.js"></script>
-</div>
+  <!-- Adsterra 300x250 rectangle -->
+  <div class="ad-inline">
+    <script type="text/javascript">
+      atOptions = {'key':'1fe957d85bb2cf92027de309038cd17b','format':'iframe','height':250,'width':300,'params':{}};
+    </script>
+    <script type="text/javascript" src="https://www.highperformanceformat.com/1fe957d85bb2cf92027de309038cd17b/invoke.js"></script>
+  </div>
 
   <div class="related-quizzes">
     <h3>More quizzes like this</h3>
     <div class="related-list">
-      <a class="related-item" href="/quiz/kids-tornado-trivia-2/">Kids Tornado Trivia #2</a>
-      <a class="related-item" href="/quiz/warning-times-quiz/">Warning Lead Time Quiz</a>
-      <a class="related-item" href="/quiz/warning-technology-quiz/">Warning Technology History Quiz</a>
-      <a class="related-item" href="/quiz/pds-warning-quiz/">The 'PDS' Tornado Warning Quiz</a>
-      <a class="related-item" href="/quiz/science-easy/">Easy Tornado Science Quiz</a>
-      <a class="related-item" href="/quiz/radar-tornado-quiz/">Reading Tornado Radar</a>
+      <a class="related-item" href="/quiz/kids-science-quiz/">Tornado Science Quiz for Kids</a>
+      <a class="related-item" href="/quiz/sound-and-color-quiz/">Tornado Sound & Sky Color Quiz</a>
+      <a class="related-item" href="/quiz/kids-tornado-quiz/">Tornado Quiz for Kids</a>
+      <a class="related-item" href="/quiz/supercell-quiz/">The Supercell Quiz</a>
+      <a class="related-item" href="/quiz/wind-speed-quiz/">Tornado Wind Speed Quiz</a>
+      <a class="related-item" href="/quiz/ef-scale-quiz/">The Enhanced Fujita Scale Quiz</a>
     </div>
+  </div>
+
+  <!-- Adsterra 728x90 leaderboard -->
+  <div class="ad-inline-wide">
+    <script type="text/javascript">
+      atOptions = {'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};
+    </script>
+    <script type="text/javascript" src="https://www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
   </div>
 </div>
 
@@ -136,7 +145,7 @@ a:hover { color:var(--accent); text-decoration:underline; }
 </footer>
 
 <script>
-const QUESTIONS = [{"q": "What atmospheric ingredient is critical for tornado formation?", "choices": ["High pressure", "Wind shear (change with height)", "Uniform winds", "Low humidity"], "correct": 1, "explain": "Wind shear — the change in wind speed and direction with altitude — is the tornadic ingredient."}, {"q": "On average, how many tornadoes occur in the US per year?", "choices": ["~200", "~600", "~1,200", "~2,000"], "correct": 2, "explain": "About 1,200 tornadoes annually in the US — the most of any country."}, {"q": "How is tornado intensity officially rated?", "choices": ["By wind speed measurement", "By damage indicators surveyed after the event", "By radar Doppler velocity", "By storm chaser video"], "correct": 1, "explain": "The EF Scale rates damage — actual wind is inferred from the damage."}, {"q": "What is the 'rear-flank downdraft' (RFD)?", "choices": ["Rain from behind a tornado", "A downdraft behind the updraft, often important for tornadogenesis", "A wind ahead of the storm", "A cold front"], "correct": 1, "explain": "The RFD wraps around the mesocyclone and appears to play a key role in tornado formation."}, {"q": "What is CAPE?", "choices": ["Cyclone Angular Pressure Energy", "Convective Available Potential Energy", "Constant Air Pressure Estimate", "Center Anemometer Placement"], "correct": 1, "explain": "CAPE measures the energy available for convection — higher = more powerful storms."}, {"q": "What are the wind speed thresholds for an EF5 tornado?", "choices": ["136-165 mph", "166-200 mph", "200+ mph", "Over 260 mph only"], "correct": 2, "explain": "200+ mph three-second gust — capable of leveling well-built houses."}, {"q": "What's a 'hook echo'?", "choices": ["A radar echo shaped like a hook, indicating a supercell", "A visual observation of a tornado", "A cloud formation", "A radar artifact"], "correct": 0, "explain": "The hook echo appears on radar reflectivity in supercells — indicating precip wrapping around the mesocyclone."}, {"q": "What type of thunderstorm produces most tornadoes?", "choices": ["Squall line", "Supercell", "Multicell cluster", "Single-cell"], "correct": 1, "explain": "Supercells — thunderstorms with a rotating updraft (mesocyclone)."}, {"q": "What does 'debris signature' mean on radar?", "choices": ["A visual sign of a tornado", "A dual-pol radar indication of debris in the air (confirms tornado)", "A cloud pattern", "An audio recording"], "correct": 1, "explain": "Dual-polarization radar can detect airborne debris — confirming a tornado is on the ground."}, {"q": "What does the 'EF' in EF Scale stand for?", "choices": ["Extreme Force", "Enhanced Fujita", "Extreme Fujita", "Enhanced Force"], "correct": 1, "explain": "Enhanced Fujita — updated in 2007 to reflect modern engineering damage indicators."}];
+const QUESTIONS = [{"q": "What does the 'EF' in EF Scale stand for?", "choices": ["Extreme Force", "Enhanced Fujita", "Extreme Fujita", "Enhanced Force"], "correct": 1, "explain": "Enhanced Fujita — updated in 2007."}, {"q": "What's a recommended way to protect your head during a tornado?", "choices": ["Blankets alone", "Bicycle or football helmet", "A pillow", "Just your hands"], "correct": 1, "explain": "A helmet dramatically reduces head trauma — the #1 cause of tornado deaths."}, {"q": "When did the EF Scale replace the F Scale in the US?", "choices": ["1995", "2003", "2007", "2011"], "correct": 2, "explain": "February 2007 — the EF Scale is an engineering-based revision."}, {"q": "Wind speed threshold for EF5?", "choices": ["136-165 mph", "166-200 mph", "200+ mph", "260+ mph only"], "correct": 2, "explain": "200+ mph three-second gust — can level well-built houses."}, {"q": "Wind speed range for EF4?", "choices": ["111-135 mph", "136-165 mph", "166-200 mph", "200+ mph"], "correct": 2, "explain": "166-200 mph — devastating damage."}, {"q": "What's the leading cause of death in tornadoes?", "choices": ["Suffocation", "Head trauma from flying debris", "Drowning", "Building collapse crushing"], "correct": 1, "explain": "Head trauma from wind-driven debris. Helmets reduce risk."}, {"q": "Wind speed range for EF3?", "choices": ["86-110 mph", "111-135 mph", "136-165 mph", "166-200 mph"], "correct": 2, "explain": "136-165 mph."}, {"q": "The 'rear-flank downdraft' (RFD) is important because it:", "choices": ["Cools the ground", "Wraps around the mesocyclone and appears crucial for tornadogenesis", "Prevents tornadoes", "Only occurs after tornadoes"], "correct": 1, "explain": "The RFD wraps around the mesocyclone and appears to trigger tornado formation."}, {"q": "In a house without a basement, where should you shelter during a tornado warning?", "choices": ["Living room away from doors", "Interior bathroom, closet, or hallway on lowest floor", "Behind heavy furniture", "On the roof"], "correct": 1, "explain": "Interior small rooms on the lowest floor — most walls between you and outside debris."}, {"q": "Which thunderstorm type produces most tornadoes?", "choices": ["Squall line", "Supercell", "Multicell cluster", "Single-cell"], "correct": 1, "explain": "Supercells — with rotating updrafts (mesocyclones)."}];
 const QUIZ_KIND = "trivia";
 const QUIZ_TITLE = "Tornado Science 101";
 
@@ -179,7 +188,6 @@ window.handleAnswer = function(i) {
   answers.push(i);
 
   if (QUIZ_KIND === 'personality') {
-    // No right/wrong — just show the reveal
     choices[i].classList.add('correct');
     choices[i].classList.remove('disabled');
     score += 1;
@@ -217,17 +225,14 @@ function showResult() {
   progress.style.width = '100%';
   currEl.textContent = QUESTIONS.length;
 
-  let title, desc;
   if (QUIZ_KIND === 'personality') {
-    // Simple personality reveal
     const personas = ['The Storm Chaser', 'The Meteorologist', 'The Preparer', 'The Casual Observer'];
-    title = personas[Math.floor(Math.random() * personas.length)];
-    desc = "You approach severe weather with a mix of curiosity, respect, and readiness. Share your result with a friend and see what they get.";
+    const title = personas[Math.floor(Math.random() * personas.length)];
     body.innerHTML = `
       <div class="result-card">
         <div style="font-size:72px; margin-bottom:16px;">🌪️</div>
         <div class="result-title">You are: ${title}</div>
-        <div class="result-desc">${desc}</div>
+        <div class="result-desc">You approach severe weather with your own mix of curiosity, respect, and readiness. Share your result with a friend and see what they get.</div>
         <div class="result-actions">
           <a href="/simulator/" class="btn-primary">Try the tornado simulator</a>
           <button onclick="location.reload()" class="btn-outline">Retake quiz</button>

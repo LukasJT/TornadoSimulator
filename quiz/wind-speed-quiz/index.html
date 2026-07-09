@@ -4,13 +4,12 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Tornado Wind Speed Quiz</title>
-<meta name="description" content="How fast can tornadoes really spin?" />
+<meta name="description" content="How fast can they really spin?" />
 <link rel="canonical" href="https://www.tornadosimulator.net/quiz/wind-speed-quiz/" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌪️</text></svg>" />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Quiz","name":"Tornado Wind Speed Quiz","description":"How fast can tornadoes really spin?","url":"https://www.tornadosimulator.net/quiz/wind-speed-quiz/"}
+{"@context":"https://schema.org","@type":"Quiz","name":"Tornado Wind Speed Quiz","description":"How fast can they really spin?","url":"https://www.tornadosimulator.net/quiz/wind-speed-quiz/"}
 </script>
 <style>
 :root {
@@ -58,7 +57,8 @@ a:hover { color:var(--accent); text-decoration:underline; }
 .next-btn { display:block; margin-top:20px; padding:12px 24px; background:var(--accent); color:white; border:none; border-radius:6px; font-size:15px; font-weight:600; cursor:pointer; width:100%; transition:background 0.15s; }
 .next-btn:hover { background:var(--accent-hover); }
 .next-btn.hidden { display:none; }
-.ad-slot { background:var(--bg-alt); border:1px dashed var(--border-strong); border-radius:8px; margin:24px 0; padding:20px; text-align:center; min-height:100px; }
+.ad-inline { text-align:center; margin: 24px 0; min-height:250px; }
+.ad-inline-wide { text-align:center; margin: 24px 0; min-height:90px; overflow:hidden; }
 .result-card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:40px 32px; text-align:center; }
 .result-score { font-family:var(--serif); font-size:72px; font-weight:700; color:var(--accent); line-height:1; margin-bottom:12px; letter-spacing:-0.03em; }
 .result-title { font-family:var(--serif); font-size:26px; font-weight:700; margin-bottom:12px; }
@@ -102,32 +102,41 @@ a:hover { color:var(--accent); text-decoration:underline; }
 <header class="page-header">
   <div class="eyebrow">Quiz</div>
   <h1>Tornado Wind Speed Quiz</h1>
-  <p class="lede">How fast can tornadoes really spin?</p>
+  <p class="lede">How fast can they really spin?</p>
 </header>
 
 <div class="quiz-container">
-  <div class="progress-text">Question <span id="q-current">1</span> of <span id="q-total">10</span></div>
+  <div class="progress-text">Question <span id="q-current">1</span> of <span id="q-total">5</span></div>
   <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
 
   <div id="quiz-body"></div>
 
-  <div style="text-align:center; margin: 24px 0; min-height:250px;">
-<script type="text/javascript">
-  atOptions = {'key':'1fe957d85bb2cf92027de309038cd17b','format':'iframe','height':250,'width':300,'params':{}};
-</script>
-<script type="text/javascript" src="https://www.highperformanceformat.com/1fe957d85bb2cf92027de309038cd17b/invoke.js"></script>
-</div>
+  <!-- Adsterra 300x250 rectangle -->
+  <div class="ad-inline">
+    <script type="text/javascript">
+      atOptions = {'key':'1fe957d85bb2cf92027de309038cd17b','format':'iframe','height':250,'width':300,'params':{}};
+    </script>
+    <script type="text/javascript" src="https://www.highperformanceformat.com/1fe957d85bb2cf92027de309038cd17b/invoke.js"></script>
+  </div>
 
   <div class="related-quizzes">
     <h3>More quizzes like this</h3>
     <div class="related-list">
-      <a class="related-item" href="/quiz/all-topics-quiz-4/">All Topics: Tornado Trivia #4</a>
-      <a class="related-item" href="/quiz/tornado-vs-hurricane/">Tornado vs. Hurricane: Know the Difference</a>
+      <a class="related-item" href="/quiz/wind-speed-records/">Wind Speed Records Quiz</a>
       <a class="related-item" href="/quiz/ef-scale-quiz/">The Enhanced Fujita Scale Quiz</a>
-      <a class="related-item" href="/quiz/tornado-vs-cyclone/">Tornado vs. Cyclone: Same Thing?</a>
-      <a class="related-item" href="/quiz/wea-alerts-quiz/">Wireless Emergency Alerts (WEA)</a>
-      <a class="related-item" href="/quiz/warning-trivia-2/">Tornado Warning Trivia #2</a>
+      <a class="related-item" href="/quiz/science-basics/">Tornado Science 101</a>
+      <a class="related-item" href="/quiz/widest-longest-quiz/">Widest, Longest, Fastest Quiz</a>
+      <a class="related-item" href="/quiz/records-quiz/">The Tornado Records Quiz</a>
+      <a class="related-item" href="/quiz/tornado-vs-cyclone/">Tornado vs. Cyclone Quiz</a>
     </div>
+  </div>
+
+  <!-- Adsterra 728x90 leaderboard -->
+  <div class="ad-inline-wide">
+    <script type="text/javascript">
+      atOptions = {'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};
+    </script>
+    <script type="text/javascript" src="https://www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
   </div>
 </div>
 
@@ -136,7 +145,7 @@ a:hover { color:var(--accent); text-decoration:underline; }
 </footer>
 
 <script>
-const QUESTIONS = [{"q": "What is a 'dry line'?", "choices": ["The edge of the desert", "A boundary between dry and humid air masses", "A radar artifact", "A cloud absent area"], "correct": 1, "explain": "The dry line is a moisture discontinuity often present in the Plains during severe weather season."}, {"q": "What is Storm Relative Helicity (SRH)?", "choices": ["Wind velocity relative to a moving storm", "A measure of low-level wind shear conducive to tornadoes", "The pressure difference across a tornado", "A rating for storm damage"], "correct": 1, "explain": "SRH is one of the strongest predictors of tornado potential — especially 0-1 km SRH."}, {"q": "What's a mesocyclone?", "choices": ["The eye of a tornado", "A rotating updraft within a supercell", "A small tornado", "A downdraft"], "correct": 1, "explain": "Mesocyclone = the rotating updraft in a supercell. It's the parent of most tornadoes."}, {"q": "How long can a tornado last on the ground?", "choices": ["Less than a minute always", "A few minutes to over an hour", "At least 30 minutes minimum", "No time limit"], "correct": 1, "explain": "Range from seconds to over an hour (1925 Tri-State was 3.5 hours)."}, {"q": "What's a 'multi-vortex' tornado?", "choices": ["Two side-by-side tornadoes", "A tornado with multiple smaller vortices rotating within", "A waterspout that split", "A tornado above and below cloud"], "correct": 1, "explain": "Sub-vortices within a larger circulation — often responsible for concentrated damage."}, {"q": "What does 'debris signature' mean on radar?", "choices": ["A visual sign of a tornado", "A dual-pol radar indication of debris in the air (confirms tornado)", "A cloud pattern", "An audio recording"], "correct": 1, "explain": "Dual-polarization radar can detect airborne debris — confirming a tornado is on the ground."}, {"q": "What type of thunderstorm produces most tornadoes?", "choices": ["Squall line", "Supercell", "Multicell cluster", "Single-cell"], "correct": 1, "explain": "Supercells — thunderstorms with a rotating updraft (mesocyclone)."}, {"q": "How is tornado intensity officially rated?", "choices": ["By wind speed measurement", "By damage indicators surveyed after the event", "By radar Doppler velocity", "By storm chaser video"], "correct": 1, "explain": "The EF Scale rates damage — actual wind is inferred from the damage."}, {"q": "What's a 'hook echo'?", "choices": ["A radar echo shaped like a hook, indicating a supercell", "A visual observation of a tornado", "A cloud formation", "A radar artifact"], "correct": 0, "explain": "The hook echo appears on radar reflectivity in supercells — indicating precip wrapping around the mesocyclone."}, {"q": "What's the difference between an F5 and EF5?", "choices": ["F5 was theoretical only", "EF5 uses damage-based wind estimates that are lower", "EF5 requires an actual wind measurement", "They mean the same thing"], "correct": 1, "explain": "EF Scale (2007) lowered the wind estimates. F5 was 261-318 mph estimate; EF5 is 200+ mph."}];
+const QUESTIONS = [{"q": "Wind speed range for EF4?", "choices": ["111-135 mph", "136-165 mph", "166-200 mph", "200+ mph"], "correct": 2, "explain": "166-200 mph — devastating damage."}, {"q": "Wind speed range for EF3?", "choices": ["86-110 mph", "111-135 mph", "136-165 mph", "166-200 mph"], "correct": 2, "explain": "136-165 mph."}, {"q": "Highest wind speed ever recorded in a tornado?", "choices": ["266 mph", "302 mph", "318 mph", "350 mph"], "correct": 1, "explain": "302 mph in the 1999 Bridge Creek-Moore, OK tornado."}, {"q": "How are tornado wind speeds most accurately measured today?", "choices": ["Fixed anemometers", "Mobile Doppler radar", "Damage surveys", "Weather balloons"], "correct": 1, "explain": "Mobile Doppler radars like DOW get closest to actual wind measurement."}, {"q": "Highest wind speed ever measured on Earth was:", "choices": ["230 mph in Kansas", "258 mph in Alabama", "302 mph in Oklahoma (1999 Moore)", "350 mph in Nebraska"], "correct": 2, "explain": "302 mph — the 1999 Bridge Creek-Moore tornado, measured by mobile Doppler."}];
 const QUIZ_KIND = "trivia";
 const QUIZ_TITLE = "Tornado Wind Speed Quiz";
 
@@ -179,7 +188,6 @@ window.handleAnswer = function(i) {
   answers.push(i);
 
   if (QUIZ_KIND === 'personality') {
-    // No right/wrong — just show the reveal
     choices[i].classList.add('correct');
     choices[i].classList.remove('disabled');
     score += 1;
@@ -217,17 +225,14 @@ function showResult() {
   progress.style.width = '100%';
   currEl.textContent = QUESTIONS.length;
 
-  let title, desc;
   if (QUIZ_KIND === 'personality') {
-    // Simple personality reveal
     const personas = ['The Storm Chaser', 'The Meteorologist', 'The Preparer', 'The Casual Observer'];
-    title = personas[Math.floor(Math.random() * personas.length)];
-    desc = "You approach severe weather with a mix of curiosity, respect, and readiness. Share your result with a friend and see what they get.";
+    const title = personas[Math.floor(Math.random() * personas.length)];
     body.innerHTML = `
       <div class="result-card">
         <div style="font-size:72px; margin-bottom:16px;">🌪️</div>
         <div class="result-title">You are: ${title}</div>
-        <div class="result-desc">${desc}</div>
+        <div class="result-desc">You approach severe weather with your own mix of curiosity, respect, and readiness. Share your result with a friend and see what they get.</div>
         <div class="result-actions">
           <a href="/simulator/" class="btn-primary">Try the tornado simulator</a>
           <button onclick="location.reload()" class="btn-outline">Retake quiz</button>

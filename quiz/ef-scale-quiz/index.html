@@ -8,7 +8,6 @@
 <link rel="canonical" href="https://www.tornadosimulator.net/quiz/ef-scale-quiz/" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌪️</text></svg>" />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Quiz","name":"The Enhanced Fujita Scale Quiz","description":"F5 vs. EF5, wind speeds, damage descriptors.","url":"https://www.tornadosimulator.net/quiz/ef-scale-quiz/"}
 </script>
@@ -58,7 +57,8 @@ a:hover { color:var(--accent); text-decoration:underline; }
 .next-btn { display:block; margin-top:20px; padding:12px 24px; background:var(--accent); color:white; border:none; border-radius:6px; font-size:15px; font-weight:600; cursor:pointer; width:100%; transition:background 0.15s; }
 .next-btn:hover { background:var(--accent-hover); }
 .next-btn.hidden { display:none; }
-.ad-slot { background:var(--bg-alt); border:1px dashed var(--border-strong); border-radius:8px; margin:24px 0; padding:20px; text-align:center; min-height:100px; }
+.ad-inline { text-align:center; margin: 24px 0; min-height:250px; }
+.ad-inline-wide { text-align:center; margin: 24px 0; min-height:90px; overflow:hidden; }
 .result-card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:40px 32px; text-align:center; }
 .result-score { font-family:var(--serif); font-size:72px; font-weight:700; color:var(--accent); line-height:1; margin-bottom:12px; letter-spacing:-0.03em; }
 .result-title { font-family:var(--serif); font-size:26px; font-weight:700; margin-bottom:12px; }
@@ -111,23 +111,32 @@ a:hover { color:var(--accent); text-decoration:underline; }
 
   <div id="quiz-body"></div>
 
-  <div style="text-align:center; margin: 24px 0; min-height:250px;">
-<script type="text/javascript">
-  atOptions = {'key':'1fe957d85bb2cf92027de309038cd17b','format':'iframe','height':250,'width':300,'params':{}};
-</script>
-<script type="text/javascript" src="https://www.highperformanceformat.com/1fe957d85bb2cf92027de309038cd17b/invoke.js"></script>
-</div>
+  <!-- Adsterra 300x250 rectangle -->
+  <div class="ad-inline">
+    <script type="text/javascript">
+      atOptions = {'key':'1fe957d85bb2cf92027de309038cd17b','format':'iframe','height':250,'width':300,'params':{}};
+    </script>
+    <script type="text/javascript" src="https://www.highperformanceformat.com/1fe957d85bb2cf92027de309038cd17b/invoke.js"></script>
+  </div>
 
   <div class="related-quizzes">
     <h3>More quizzes like this</h3>
     <div class="related-list">
-      <a class="related-item" href="/quiz/severe-vs-warning-quiz/">Severe Thunderstorm vs. Tornado Warning</a>
-      <a class="related-item" href="/quiz/chasing-death-quiz/">Chasing Deaths — What We've Learned</a>
-      <a class="related-item" href="/quiz/kids-tornado-trivia-1/">Kids Tornado Trivia #1</a>
-      <a class="related-item" href="/quiz/radar-tornado-quiz/">Reading Tornado Radar</a>
-      <a class="related-item" href="/quiz/tornado-sound-quiz/">How Loud is a Tornado?</a>
-      <a class="related-item" href="/quiz/weather-expert-quiz/">Are You a Weather Expert?</a>
+      <a class="related-item" href="/quiz/wind-speed-quiz/">Tornado Wind Speed Quiz</a>
+      <a class="related-item" href="/quiz/science-basics/">Tornado Science 101</a>
+      <a class="related-item" href="/quiz/records-quiz/">The Tornado Records Quiz</a>
+      <a class="related-item" href="/quiz/wind-speed-records/">Wind Speed Records Quiz</a>
+      <a class="related-item" href="/quiz/ef5-drought-quiz/">The EF5 Drought Quiz</a>
+      <a class="related-item" href="/quiz/ef5-tornado-quiz/">Every EF5 (and F5) Quiz</a>
     </div>
+  </div>
+
+  <!-- Adsterra 728x90 leaderboard -->
+  <div class="ad-inline-wide">
+    <script type="text/javascript">
+      atOptions = {'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};
+    </script>
+    <script type="text/javascript" src="https://www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
   </div>
 </div>
 
@@ -136,7 +145,7 @@ a:hover { color:var(--accent); text-decoration:underline; }
 </footer>
 
 <script>
-const QUESTIONS = [{"q": "What does the 'EF' in EF Scale stand for?", "choices": ["Extreme Force", "Enhanced Fujita", "Extreme Fujita", "Enhanced Force"], "correct": 1, "explain": "Enhanced Fujita — updated in 2007 to reflect modern engineering damage indicators."}, {"q": "What's a 'landspout'?", "choices": ["A tornado that touches only over land", "A tornado without supercell origins — from developing thunderstorms", "A tornado from a hurricane", "A very weak tornado"], "correct": 1, "explain": "Landspouts form via non-supercell processes, similar to how waterspouts develop over water."}, {"q": "What's a mesocyclone?", "choices": ["The eye of a tornado", "A rotating updraft within a supercell", "A small tornado", "A downdraft"], "correct": 1, "explain": "Mesocyclone = the rotating updraft in a supercell. It's the parent of most tornadoes."}, {"q": "What is the 'rear-flank downdraft' (RFD)?", "choices": ["Rain from behind a tornado", "A downdraft behind the updraft, often important for tornadogenesis", "A wind ahead of the storm", "A cold front"], "correct": 1, "explain": "The RFD wraps around the mesocyclone and appears to play a key role in tornado formation."}, {"q": "When is peak US tornado season?", "choices": ["January-February", "April-June", "August-September", "November-December"], "correct": 1, "explain": "April-June is peak. Regional variation: Southeast peaks earlier, Plains later."}, {"q": "Roughly how fast does an average US tornado move?", "choices": ["10 mph", "30 mph", "60 mph", "90 mph"], "correct": 1, "explain": "~30 mph forward speed on average. Some move much slower, some over 60 mph."}, {"q": "What is Storm Relative Helicity (SRH)?", "choices": ["Wind velocity relative to a moving storm", "A measure of low-level wind shear conducive to tornadoes", "The pressure difference across a tornado", "A rating for storm damage"], "correct": 1, "explain": "SRH is one of the strongest predictors of tornado potential — especially 0-1 km SRH."}, {"q": "What's the difference between an F5 and EF5?", "choices": ["F5 was theoretical only", "EF5 uses damage-based wind estimates that are lower", "EF5 requires an actual wind measurement", "They mean the same thing"], "correct": 1, "explain": "EF Scale (2007) lowered the wind estimates. F5 was 261-318 mph estimate; EF5 is 200+ mph."}, {"q": "What atmospheric ingredient is critical for tornado formation?", "choices": ["High pressure", "Wind shear (change with height)", "Uniform winds", "Low humidity"], "correct": 1, "explain": "Wind shear — the change in wind speed and direction with altitude — is the tornadic ingredient."}, {"q": "What's a 'multi-vortex' tornado?", "choices": ["Two side-by-side tornadoes", "A tornado with multiple smaller vortices rotating within", "A waterspout that split", "A tornado above and below cloud"], "correct": 1, "explain": "Sub-vortices within a larger circulation — often responsible for concentrated damage."}];
+const QUESTIONS = [{"q": "How long was the 2011 Hackleburg, Alabama EF5's continuous path?", "choices": ["45 miles", "82 miles", "132 miles", "165 miles"], "correct": 2, "explain": "132 miles — the longest continuous path since the 1925 Tri-State event."}, {"q": "Highest wind speed ever recorded in a tornado?", "choices": ["266 mph", "302 mph", "318 mph", "350 mph"], "correct": 1, "explain": "302 mph in the 1999 Bridge Creek-Moore, OK tornado."}, {"q": "Wind speed range for EF4?", "choices": ["111-135 mph", "136-165 mph", "166-200 mph", "200+ mph"], "correct": 2, "explain": "166-200 mph — devastating damage."}, {"q": "Wind speed range for EF3?", "choices": ["86-110 mph", "111-135 mph", "136-165 mph", "166-200 mph"], "correct": 2, "explain": "136-165 mph."}, {"q": "Which Iowa town was hit by an EF5 on Memorial Day weekend 2008?", "choices": ["Parkersburg", "Cedar Rapids", "Waverly", "Grinnell"], "correct": 0, "explain": "Parkersburg, IA — EF5 on May 25, 2008."}, {"q": "How many killed by the 2011 Hackleburg EF5?", "choices": ["23", "44", "71", "102"], "correct": 2, "explain": "71 killed by this single tornado."}, {"q": "How wide was the Joplin tornado at its peak?", "choices": ["0.5 miles", "0.75 miles", "1 mile", "1.6 miles"], "correct": 2, "explain": "Roughly 1 mile wide — devastated a huge swath of the city."}, {"q": "How are tornado wind speeds most accurately measured today?", "choices": ["Fixed anemometers", "Mobile Doppler radar", "Damage surveys", "Weather balloons"], "correct": 1, "explain": "Mobile Doppler radars like DOW get closest to actual wind measurement."}, {"q": "How many killed in Greensburg by the 2007 EF5?", "choices": ["11", "23", "36", "44"], "correct": 0, "explain": "11 killed — a low toll given the destruction, thanks to good warning."}, {"q": "Which Mississippi town was devastated by an EF4 in March 2023?", "choices": ["Rolling Fork", "Amory", "Yazoo City", "Greenwood"], "correct": 0, "explain": "Rolling Fork, MS — the EF4 struck on March 24, 2023."}];
 const QUIZ_KIND = "trivia";
 const QUIZ_TITLE = "The Enhanced Fujita Scale Quiz";
 
@@ -179,7 +188,6 @@ window.handleAnswer = function(i) {
   answers.push(i);
 
   if (QUIZ_KIND === 'personality') {
-    // No right/wrong — just show the reveal
     choices[i].classList.add('correct');
     choices[i].classList.remove('disabled');
     score += 1;
@@ -217,17 +225,14 @@ function showResult() {
   progress.style.width = '100%';
   currEl.textContent = QUESTIONS.length;
 
-  let title, desc;
   if (QUIZ_KIND === 'personality') {
-    // Simple personality reveal
     const personas = ['The Storm Chaser', 'The Meteorologist', 'The Preparer', 'The Casual Observer'];
-    title = personas[Math.floor(Math.random() * personas.length)];
-    desc = "You approach severe weather with a mix of curiosity, respect, and readiness. Share your result with a friend and see what they get.";
+    const title = personas[Math.floor(Math.random() * personas.length)];
     body.innerHTML = `
       <div class="result-card">
         <div style="font-size:72px; margin-bottom:16px;">🌪️</div>
         <div class="result-title">You are: ${title}</div>
-        <div class="result-desc">${desc}</div>
+        <div class="result-desc">You approach severe weather with your own mix of curiosity, respect, and readiness. Share your result with a friend and see what they get.</div>
         <div class="result-actions">
           <a href="/simulator/" class="btn-primary">Try the tornado simulator</a>
           <button onclick="location.reload()" class="btn-outline">Retake quiz</button>

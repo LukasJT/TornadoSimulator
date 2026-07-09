@@ -8,7 +8,6 @@
 <link rel="canonical" href="https://www.tornadosimulator.net/quiz/wizard-of-oz-quiz/" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌪️</text></svg>" />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Quiz","name":"The Wizard of Oz Tornado Quiz","description":"Where it all started for movie tornadoes.","url":"https://www.tornadosimulator.net/quiz/wizard-of-oz-quiz/"}
 </script>
@@ -58,7 +57,8 @@ a:hover { color:var(--accent); text-decoration:underline; }
 .next-btn { display:block; margin-top:20px; padding:12px 24px; background:var(--accent); color:white; border:none; border-radius:6px; font-size:15px; font-weight:600; cursor:pointer; width:100%; transition:background 0.15s; }
 .next-btn:hover { background:var(--accent-hover); }
 .next-btn.hidden { display:none; }
-.ad-slot { background:var(--bg-alt); border:1px dashed var(--border-strong); border-radius:8px; margin:24px 0; padding:20px; text-align:center; min-height:100px; }
+.ad-inline { text-align:center; margin: 24px 0; min-height:250px; }
+.ad-inline-wide { text-align:center; margin: 24px 0; min-height:90px; overflow:hidden; }
 .result-card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:40px 32px; text-align:center; }
 .result-score { font-family:var(--serif); font-size:72px; font-weight:700; color:var(--accent); line-height:1; margin-bottom:12px; letter-spacing:-0.03em; }
 .result-title { font-family:var(--serif); font-size:26px; font-weight:700; margin-bottom:12px; }
@@ -106,28 +106,37 @@ a:hover { color:var(--accent); text-decoration:underline; }
 </header>
 
 <div class="quiz-container">
-  <div class="progress-text">Question <span id="q-current">1</span> of <span id="q-total">10</span></div>
+  <div class="progress-text">Question <span id="q-current">1</span> of <span id="q-total">3</span></div>
   <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
 
   <div id="quiz-body"></div>
 
-  <div style="text-align:center; margin: 24px 0; min-height:250px;">
-<script type="text/javascript">
-  atOptions = {'key':'1fe957d85bb2cf92027de309038cd17b','format':'iframe','height':250,'width':300,'params':{}};
-</script>
-<script type="text/javascript" src="https://www.highperformanceformat.com/1fe957d85bb2cf92027de309038cd17b/invoke.js"></script>
-</div>
+  <!-- Adsterra 300x250 rectangle -->
+  <div class="ad-inline">
+    <script type="text/javascript">
+      atOptions = {'key':'1fe957d85bb2cf92027de309038cd17b','format':'iframe','height':250,'width':300,'params':{}};
+    </script>
+    <script type="text/javascript" src="https://www.highperformanceformat.com/1fe957d85bb2cf92027de309038cd17b/invoke.js"></script>
+  </div>
 
   <div class="related-quizzes">
     <h3>More quizzes like this</h3>
     <div class="related-list">
-      <a class="related-item" href="/quiz/world-tornado-records/">World Tornado Records</a>
-      <a class="related-item" href="/quiz/hurricane-vs-tornado-history/">Hurricanes That Made Tornadoes</a>
-      <a class="related-item" href="/quiz/tri-state-quiz/">The 1925 Tri-State Tornado</a>
-      <a class="related-item" href="/quiz/weather-expert-quiz/">Are You a Weather Expert?</a>
-      <a class="related-item" href="/quiz/all-topics-quiz-1/">All Topics: Tornado Trivia #1</a>
-      <a class="related-item" href="/quiz/least-tornadoes/">Records: Fewest Tornadoes</a>
+      <a class="related-item" href="/quiz/twister-movie-quiz/">The 1996 'Twister' Movie Quiz</a>
+      <a class="related-item" href="/quiz/tornado-alley-quiz/">The Tornado Alley Quiz</a>
+      <a class="related-item" href="/quiz/twisters-2024-quiz/">The 'Twisters' 2024 Movie Quiz</a>
+      <a class="related-item" href="/quiz/storm-chasers-tv/">Discovery's 'Storm Chasers' TV Quiz</a>
+      <a class="related-item" href="/quiz/night-of-twisters/">Night of the Twisters (1996) Quiz</a>
+      <a class="related-item" href="/quiz/wea-alerts-quiz/">Wireless Emergency Alerts (WEA) Quiz</a>
     </div>
+  </div>
+
+  <!-- Adsterra 728x90 leaderboard -->
+  <div class="ad-inline-wide">
+    <script type="text/javascript">
+      atOptions = {'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};
+    </script>
+    <script type="text/javascript" src="https://www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
   </div>
 </div>
 
@@ -136,7 +145,7 @@ a:hover { color:var(--accent); text-decoration:underline; }
 </footer>
 
 <script>
-const QUESTIONS = [{"q": "What year did the Joplin, Missouri EF5 tornado strike?", "choices": ["2007", "2011", "2013", "2015"], "correct": 1, "explain": "May 22, 2011. It killed 158 people — the deadliest single US tornado since 1947."}, {"q": "The 2007 Greensburg, Kansas EF5 destroyed what percentage of the town?", "choices": ["45%", "60%", "80%", "95%"], "correct": 3, "explain": "About 95% of the town was destroyed."}, {"q": "The 1957 Fargo, North Dakota tornado outbreak produced how many F5s?", "choices": ["0", "1", "2", "3"], "correct": 1, "explain": "One F5 — Fargo — which killed 13 and was extensively documented for research."}, {"q": "What year was the deadliest tornado in world history — the Daulatpur-Saturia tornado in Bangladesh?", "choices": ["1969", "1978", "1989", "1996"], "correct": 2, "explain": "1989. It killed approximately 1,300 people."}, {"q": "Which April 3, 1974 Super Outbreak tornado leveled most of Xenia, Ohio?", "choices": ["Xenia F4", "Xenia F5", "Guin F5", "Brandenburg F5"], "correct": 1, "explain": "Xenia was hit by an F5 that killed 32."}, {"q": "What was the sensor device called in 'Twister'?", "choices": ["Dorothy", "Toto", "F5", "Trakr"], "correct": 0, "explain": "Dorothy — a nod to The Wizard of Oz."}, {"q": "What is the name of the classic Wizard of Oz cyclone reference?", "choices": ["Kansas", "Emerald City", "Dorothy", "Toto's Twister"], "correct": 0, "explain": "'A Kansas tornado' — the setting for Dorothy's departure to Oz."}, {"q": "What is a 'Dominator'?", "choices": ["A tornado type", "Reed Timmer's armored chase vehicle", "A Weather Channel show", "A tornado simulator game"], "correct": 1, "explain": "The Dominator series — armored chase vehicles designed for close intercepts."}, {"q": "Which small Iowa town was 90% destroyed by an EF4 in May 2024?", "choices": ["Winterset", "Greenfield", "Adair", "Denison"], "correct": 1, "explain": "Greenfield (pop ~1,900) was devastated May 21, 2024."}, {"q": "Which storm chaser was killed in the 2013 El Reno tornado?", "choices": ["Reed Timmer", "Tim Samaras", "Sean Casey", "Warren Faidley"], "correct": 1, "explain": "Tim Samaras, along with his son Paul and Carl Young — all killed by the sudden expansion of the tornado."}];
+const QUESTIONS = [{"q": "In 'The Wizard of Oz', the tornado carries Dorothy from what state?", "choices": ["Nebraska", "Kansas", "Oklahoma", "Iowa"], "correct": 1, "explain": "Kansas — Dorothy's home."}, {"q": "About what percentage of Greensburg, Kansas was destroyed by the 2007 EF5?", "choices": ["45%", "60%", "80%", "95%"], "correct": 3, "explain": "95% of the town destroyed."}, {"q": "Andover, Kansas was hit AGAIN by an EF3 in what year?", "choices": ["2019", "2020", "2022", "2024"], "correct": 2, "explain": "April 29, 2022 — same town hit by another significant tornado."}];
 const QUIZ_KIND = "trivia";
 const QUIZ_TITLE = "The Wizard of Oz Tornado Quiz";
 
@@ -179,7 +188,6 @@ window.handleAnswer = function(i) {
   answers.push(i);
 
   if (QUIZ_KIND === 'personality') {
-    // No right/wrong — just show the reveal
     choices[i].classList.add('correct');
     choices[i].classList.remove('disabled');
     score += 1;
@@ -217,17 +225,14 @@ function showResult() {
   progress.style.width = '100%';
   currEl.textContent = QUESTIONS.length;
 
-  let title, desc;
   if (QUIZ_KIND === 'personality') {
-    // Simple personality reveal
     const personas = ['The Storm Chaser', 'The Meteorologist', 'The Preparer', 'The Casual Observer'];
-    title = personas[Math.floor(Math.random() * personas.length)];
-    desc = "You approach severe weather with a mix of curiosity, respect, and readiness. Share your result with a friend and see what they get.";
+    const title = personas[Math.floor(Math.random() * personas.length)];
     body.innerHTML = `
       <div class="result-card">
         <div style="font-size:72px; margin-bottom:16px;">🌪️</div>
         <div class="result-title">You are: ${title}</div>
-        <div class="result-desc">${desc}</div>
+        <div class="result-desc">You approach severe weather with your own mix of curiosity, respect, and readiness. Share your result with a friend and see what they get.</div>
         <div class="result-actions">
           <a href="/simulator/" class="btn-primary">Try the tornado simulator</a>
           <button onclick="location.reload()" class="btn-outline">Retake quiz</button>

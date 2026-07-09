@@ -8,7 +8,6 @@
 <link rel="canonical" href="https://www.tornadosimulator.net/quiz/december-tornadoes/" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌪️</text></svg>" />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Quiz","name":"December Tornadoes Quiz","description":"Winter tornado events people always forget.","url":"https://www.tornadosimulator.net/quiz/december-tornadoes/"}
 </script>
@@ -58,7 +57,8 @@ a:hover { color:var(--accent); text-decoration:underline; }
 .next-btn { display:block; margin-top:20px; padding:12px 24px; background:var(--accent); color:white; border:none; border-radius:6px; font-size:15px; font-weight:600; cursor:pointer; width:100%; transition:background 0.15s; }
 .next-btn:hover { background:var(--accent-hover); }
 .next-btn.hidden { display:none; }
-.ad-slot { background:var(--bg-alt); border:1px dashed var(--border-strong); border-radius:8px; margin:24px 0; padding:20px; text-align:center; min-height:100px; }
+.ad-inline { text-align:center; margin: 24px 0; min-height:250px; }
+.ad-inline-wide { text-align:center; margin: 24px 0; min-height:90px; overflow:hidden; }
 .result-card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:40px 32px; text-align:center; }
 .result-score { font-family:var(--serif); font-size:72px; font-weight:700; color:var(--accent); line-height:1; margin-bottom:12px; letter-spacing:-0.03em; }
 .result-title { font-family:var(--serif); font-size:26px; font-weight:700; margin-bottom:12px; }
@@ -106,28 +106,37 @@ a:hover { color:var(--accent); text-decoration:underline; }
 </header>
 
 <div class="quiz-container">
-  <div class="progress-text">Question <span id="q-current">1</span> of <span id="q-total">10</span></div>
+  <div class="progress-text">Question <span id="q-current">1</span> of <span id="q-total">4</span></div>
   <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
 
   <div id="quiz-body"></div>
 
-  <div style="text-align:center; margin: 24px 0; min-height:250px;">
-<script type="text/javascript">
-  atOptions = {'key':'1fe957d85bb2cf92027de309038cd17b','format':'iframe','height':250,'width':300,'params':{}};
-</script>
-<script type="text/javascript" src="https://www.highperformanceformat.com/1fe957d85bb2cf92027de309038cd17b/invoke.js"></script>
-</div>
+  <!-- Adsterra 300x250 rectangle -->
+  <div class="ad-inline">
+    <script type="text/javascript">
+      atOptions = {'key':'1fe957d85bb2cf92027de309038cd17b','format':'iframe','height':250,'width':300,'params':{}};
+    </script>
+    <script type="text/javascript" src="https://www.highperformanceformat.com/1fe957d85bb2cf92027de309038cd17b/invoke.js"></script>
+  </div>
 
   <div class="related-quizzes">
     <h3>More quizzes like this</h3>
     <div class="related-list">
-      <a class="related-item" href="/quiz/outbreak-records-quiz/">Tornado Outbreak Records</a>
-      <a class="related-item" href="/quiz/joplin-mayfield/">Joplin vs. Mayfield: Death Tolls & Facts</a>
-      <a class="related-item" href="/quiz/famous-fictional-tornadoes/">Famous Fictional Tornadoes</a>
-      <a class="related-item" href="/quiz/mega-tornado-quiz/">The Mega Tornado Quiz</a>
-      <a class="related-item" href="/quiz/weather-expert-quiz/">Are You a Weather Expert?</a>
-      <a class="related-item" href="/quiz/mixed-tornado-quiz-1/">Mixed Tornado Quiz #1</a>
+      <a class="related-item" href="/quiz/mayfield-2021-quiz/">The Mayfield 2021 Tornado Quiz</a>
+      <a class="related-item" href="/quiz/modern-tornado-events/">Modern Tornado Events (2010s-2020s)</a>
+      <a class="related-item" href="/quiz/deadliest-tornadoes/">The Deadliest US Tornadoes Quiz</a>
+      <a class="related-item" href="/quiz/tupelo-1936-quiz/">The 1936 Tupelo-Gainesville Outbreak Quiz</a>
+      <a class="related-item" href="/quiz/plainfield-1990/">The Plainfield 1990 F5 Quiz</a>
+      <a class="related-item" href="/quiz/parkersburg-2008/">The Parkersburg 2008 EF5 Quiz</a>
     </div>
+  </div>
+
+  <!-- Adsterra 728x90 leaderboard -->
+  <div class="ad-inline-wide">
+    <script type="text/javascript">
+      atOptions = {'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};
+    </script>
+    <script type="text/javascript" src="https://www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
   </div>
 </div>
 
@@ -136,7 +145,7 @@ a:hover { color:var(--accent); text-decoration:underline; }
 </footer>
 
 <script>
-const QUESTIONS = [{"q": "The 2011 Super Outbreak produced how many tornadoes in a single 24-hour period?", "choices": ["124", "148", "199", "247"], "correct": 2, "explain": "199 tornadoes on April 27, 2011 — the largest single-day count in US history."}, {"q": "Which small Iowa town was 90% destroyed by an EF4 in May 2024?", "choices": ["Winterset", "Greenfield", "Adair", "Denison"], "correct": 1, "explain": "Greenfield (pop ~1,900) was devastated May 21, 2024."}, {"q": "How many tornadoes affected communities during the December 10, 2021 Quad-State outbreak?", "choices": ["18", "32", "41", "61"], "correct": 3, "explain": "61 tornadoes across five states — remarkable for a December event."}, {"q": "The 1953 Worcester tornado killed 94 in what US region?", "choices": ["Deep South", "Great Plains", "New England", "Pacific Northwest"], "correct": 2, "explain": "Massachusetts — the deadliest tornado in New England history."}, {"q": "The 2013 Moore, Oklahoma EF5 struck the same city that had already been hit by an F5 in what year?", "choices": ["1979", "1989", "1999", "2009"], "correct": 2, "explain": "Moore was struck by the 1999 Bridge Creek-Moore F5 — and again by an EF5 in 2013."}, {"q": "Which April 3, 1974 Super Outbreak tornado leveled most of Xenia, Ohio?", "choices": ["Xenia F4", "Xenia F5", "Guin F5", "Brandenburg F5"], "correct": 1, "explain": "Xenia was hit by an F5 that killed 32."}, {"q": "Which 2011 Alabama town lost 71 people to an EF5?", "choices": ["Tuscaloosa", "Hackleburg", "Smithville", "Rainsville"], "correct": 1, "explain": "Hackleburg, Alabama — 71 killed."}, {"q": "How many people did the 1925 Tri-State tornado kill — the deadliest tornado in US history?", "choices": ["158", "324", "516", "695"], "correct": 3, "explain": "695 killed across Missouri, Illinois, and Indiana. Its 219-mile continuous path is still the longest ever recorded."}, {"q": "How many EF5 tornadoes struck on April 27, 2011?", "choices": ["1", "2", "4", "6"], "correct": 2, "explain": "4 EF5s in one day — the most ever recorded on a single day."}, {"q": "How many killed in the 1947 Woodward, Oklahoma F5?", "choices": ["68", "116", "184", "244"], "correct": 2, "explain": "184 killed — one of the deadliest single tornadoes ever in Oklahoma."}];
+const QUESTIONS = [{"q": "How many states did the December 10, 2021 outbreak affect?", "choices": ["3", "4", "5", "7"], "correct": 2, "explain": "5 states — Kentucky, Arkansas, Illinois, Missouri, Tennessee — hence 'Quad-State' misnomer."}, {"q": "Which December 2021 tornado devastated Mayfield, Kentucky?", "choices": ["Mayfield EF3", "Mayfield EF4", "Mayfield EF5", "Mayfield EF2"], "correct": 1, "explain": "An EF4 struck as part of the Quad-State outbreak on December 10, 2021."}, {"q": "What Mayfield business was destroyed in the 2021 tornado with 8 employees killed?", "choices": ["Grain elevator", "Candle factory", "Retail store", "Nursing home"], "correct": 1, "explain": "The Mayfield Consumer Products candle factory."}, {"q": "About how many people died in Kentucky during the December 10, 2021 outbreak?", "choices": ["17", "57", "89", "121"], "correct": 2, "explain": "89 killed in Kentucky — most in Graves County (Mayfield) and Muhlenberg County."}];
 const QUIZ_KIND = "trivia";
 const QUIZ_TITLE = "December Tornadoes Quiz";
 
@@ -179,7 +188,6 @@ window.handleAnswer = function(i) {
   answers.push(i);
 
   if (QUIZ_KIND === 'personality') {
-    // No right/wrong — just show the reveal
     choices[i].classList.add('correct');
     choices[i].classList.remove('disabled');
     score += 1;
@@ -217,17 +225,14 @@ function showResult() {
   progress.style.width = '100%';
   currEl.textContent = QUESTIONS.length;
 
-  let title, desc;
   if (QUIZ_KIND === 'personality') {
-    // Simple personality reveal
     const personas = ['The Storm Chaser', 'The Meteorologist', 'The Preparer', 'The Casual Observer'];
-    title = personas[Math.floor(Math.random() * personas.length)];
-    desc = "You approach severe weather with a mix of curiosity, respect, and readiness. Share your result with a friend and see what they get.";
+    const title = personas[Math.floor(Math.random() * personas.length)];
     body.innerHTML = `
       <div class="result-card">
         <div style="font-size:72px; margin-bottom:16px;">🌪️</div>
         <div class="result-title">You are: ${title}</div>
-        <div class="result-desc">${desc}</div>
+        <div class="result-desc">You approach severe weather with your own mix of curiosity, respect, and readiness. Share your result with a friend and see what they get.</div>
         <div class="result-actions">
           <a href="/simulator/" class="btn-primary">Try the tornado simulator</a>
           <button onclick="location.reload()" class="btn-outline">Retake quiz</button>
