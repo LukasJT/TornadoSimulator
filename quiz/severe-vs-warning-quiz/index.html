@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Severe Thunderstorm vs. Tornado Warning</title>
+<meta name="description" content="Different warnings, different meanings." />
+<link rel="canonical" href="https://www.tornadosimulator.net/quiz/severe-vs-warning-quiz/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌪️</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Quiz","name":"Severe Thunderstorm vs. Tornado Warning","description":"Different warnings, different meanings.","url":"https://www.tornadosimulator.net/quiz/severe-vs-warning-quiz/"}
+</script>
+<style>
+:root {
+  --bg: #fbfaf7; --bg-alt: #f4f1ea; --surface: #ffffff;
+  --text: #14161c; --text-secondary: #4a5061; --text-muted: #8b8f9c;
+  --border: #e5e1d8; --border-strong: #d4cfc3;
+  --accent: #a02818; --accent-hover: #7d1f13;
+  --link: #1e3a5f;
+  --success: #2d6a4f; --error: #b91c1c;
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:var(--sans); background:var(--bg); color:var(--text); line-height:1.6; -webkit-font-smoothing:antialiased; }
+a { color:var(--link); text-decoration:none; }
+a:hover { color:var(--accent); text-decoration:underline; }
+.nav { background:var(--surface); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:100; }
+.nav-inner { max-width:1200px; margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+.nav-brand { font-family:var(--serif); font-weight:700; font-size:20px; color:var(--text); display:flex; align-items:center; gap:8px; text-decoration:none; }
+.nav-links { display:flex; gap:4px; align-items:center; flex-wrap:wrap; }
+.nav-links a { color:var(--text-secondary); padding:8px 14px; font-size:14px; font-weight:500; border-radius:6px; text-decoration:none; }
+.nav-links a:hover { background:var(--bg-alt); color:var(--text); text-decoration:none; }
+.nav-links a.cta { background:var(--accent); color:white; font-weight:600; }
+.nav-links a.cta:hover { background:var(--accent-hover); color:white; }
+.breadcrumb { max-width:820px; margin:0 auto; padding:16px 24px 0; font-size:13px; color:var(--text-muted); }
+.breadcrumb a { color:var(--text-secondary); }
+.page-header { padding:32px 24px; max-width:820px; margin:0 auto; }
+.eyebrow { font-size:12px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px; }
+.page-header h1 { font-family:var(--serif); font-size:clamp(32px, 4.5vw, 44px); font-weight:700; line-height:1.15; color:var(--text); margin-bottom:12px; letter-spacing:-0.02em; }
+.page-header p.lede { font-size:18px; color:var(--text-secondary); line-height:1.55; }
+.quiz-container { max-width:720px; margin:0 auto; padding:0 24px 40px; }
+.progress-bar { height:8px; background:var(--border); border-radius:4px; overflow:hidden; margin-bottom:24px; }
+.progress-fill { height:100%; background:var(--accent); transition:width 0.3s; width:0; }
+.progress-text { font-size:12px; text-transform:uppercase; letter-spacing:0.1em; color:var(--text-muted); margin-bottom:8px; font-weight:600; }
+.question-card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:32px; margin-bottom:20px; }
+.question-number { font-size:12px; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent); font-weight:700; margin-bottom:12px; }
+.question-text { font-family:var(--serif); font-size:22px; font-weight:600; line-height:1.4; color:var(--text); margin-bottom:20px; letter-spacing:-0.01em; }
+.choice-list { display:flex; flex-direction:column; gap:10px; }
+.choice { background:var(--bg); border:2px solid var(--border); border-radius:8px; padding:14px 18px; font-size:16px; font-weight:500; color:var(--text); cursor:pointer; text-align:left; transition:all 0.15s; font-family:inherit; }
+.choice:hover:not(:disabled) { border-color:var(--accent); background:var(--surface); }
+.choice.correct { background:#e8f5e9; border-color:var(--success); color:var(--success); font-weight:600; }
+.choice.wrong { background:#fef2f2; border-color:var(--error); color:var(--error); font-weight:600; }
+.choice.disabled { opacity:0.55; cursor:not-allowed; }
+.explanation { background:var(--bg-alt); border-left:4px solid var(--accent); padding:16px 20px; margin-top:16px; border-radius:4px; font-size:14px; color:var(--text); line-height:1.6; }
+.next-btn { display:block; margin-top:20px; padding:12px 24px; background:var(--accent); color:white; border:none; border-radius:6px; font-size:15px; font-weight:600; cursor:pointer; width:100%; transition:background 0.15s; }
+.next-btn:hover { background:var(--accent-hover); }
+.next-btn.hidden { display:none; }
+.ad-slot { background:var(--bg-alt); border:1px dashed var(--border-strong); border-radius:8px; margin:24px 0; padding:20px; text-align:center; min-height:100px; }
+.result-card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:40px 32px; text-align:center; }
+.result-score { font-family:var(--serif); font-size:72px; font-weight:700; color:var(--accent); line-height:1; margin-bottom:12px; letter-spacing:-0.03em; }
+.result-title { font-family:var(--serif); font-size:26px; font-weight:700; margin-bottom:12px; }
+.result-desc { font-size:16px; color:var(--text-secondary); margin-bottom:32px; line-height:1.55; }
+.result-actions { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+.result-actions a, .result-actions button { padding:12px 22px; border-radius:6px; font-size:15px; font-weight:600; text-decoration:none; border:1px solid transparent; cursor:pointer; font-family:inherit; }
+.btn-primary { background:var(--accent); color:white; }
+.btn-primary:hover { background:var(--accent-hover); text-decoration:none; color:white; }
+.btn-outline { background:transparent; color:var(--text); border-color:var(--border-strong); }
+.btn-outline:hover { background:var(--bg-alt); text-decoration:none; }
+.share-strip { margin-top:32px; padding-top:24px; border-top:1px solid var(--border); }
+.share-strip h3 { font-family:var(--serif); font-size:16px; margin-bottom:12px; font-weight:600; }
+.related-quizzes { margin-top:40px; }
+.related-quizzes h3 { font-family:var(--serif); font-size:20px; font-weight:700; margin-bottom:16px; }
+.related-list { display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:10px; }
+.related-item { background:var(--surface); border:1px solid var(--border); border-radius:6px; padding:12px 14px; color:var(--text); font-size:14px; font-weight:500; text-decoration:none; }
+.related-item:hover { border-color:var(--accent); color:var(--accent); text-decoration:none; }
+.footer { background:#14161c; color:#94a3b8; padding:40px 24px; border-top:4px solid var(--accent); text-align:center; font-size:13px; }
+.footer a { color:white; text-decoration:none; }
+.footer a:hover { text-decoration:underline; }
+@media (max-width:500px) { .nav-links { gap:0; } .nav-links a { padding:6px 10px; font-size:13px; } .question-text { font-size:18px; } .result-score { font-size:56px; } }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand"><span>🌪️</span> Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/quiz/">Quizzes</a>
+      <a href="/safety/">Safety</a>
+      <a href="/simulator/" class="cta">Launch Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb"><a href="/">Home</a> &middot; <a href="/quiz/">Quizzes</a> &middot; Severe Thunderstorm vs. Tornado Warning</div>
+
+<header class="page-header">
+  <div class="eyebrow">Quiz</div>
+  <h1>Severe Thunderstorm vs. Tornado Warning</h1>
+  <p class="lede">Different warnings, different meanings.</p>
+</header>
+
+<div class="quiz-container">
+  <div class="progress-text">Question <span id="q-current">1</span> of <span id="q-total">10</span></div>
+  <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
+
+  <div id="quiz-body"></div>
+
+  <div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block;width:100%" data-ad-client="ca-pub-6394912562617960" data-ad-slot="3333333333" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+
+  <div class="related-quizzes">
+    <h3>More quizzes like this</h3>
+    <div class="related-list">
+      <a class="related-item" href="/quiz/mixed-tornado-quiz-2/">Mixed Tornado Quiz #2</a>
+      <a class="related-item" href="/quiz/warning-times-quiz/">Warning Lead Time Quiz</a>
+      <a class="related-item" href="/quiz/chase-safety-quiz/">Chase Safety Quiz</a>
+      <a class="related-item" href="/quiz/chase-tech-quiz/">Chase Tech Quiz</a>
+      <a class="related-item" href="/quiz/waterspout-quiz/">The Waterspout Quiz</a>
+      <a class="related-item" href="/quiz/tornado-vs-cyclone/">Tornado vs. Cyclone: Same Thing?</a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  &copy; Tornado Hub. An educational resource. <a href="/">Home</a> &middot; <a href="/quiz/">Quizzes</a> &middot; <a href="/articles/">Articles</a> &middot; <a href="/simulator/">Simulator</a>
+</footer>
+
+<script>
+const QUESTIONS = [{"q": "What is 'dual-polarization' in NEXRAD radar?", "choices": ["Two radars sending signals", "Horizontal and vertical polarized beams — can detect debris", "A polar orbit design", "Two-mode operation"], "correct": 1, "explain": "Dual-pol (upgraded 2011-2013) can detect tornado debris signatures — confirming ground contact."}, {"q": "What's a mesocyclone?", "choices": ["The eye of a tornado", "A rotating updraft within a supercell", "A small tornado", "A downdraft"], "correct": 1, "explain": "Mesocyclone = the rotating updraft in a supercell. It's the parent of most tornadoes."}, {"q": "What does WEA stand for?", "choices": ["Weather Emergency Alert", "Wireless Emergency Alerts", "Warning Emergency Announcement", "Weekly Emergency Alert"], "correct": 1, "explain": "Wireless Emergency Alerts — the government system that pushes tornado warnings to phones."}, {"q": "When was Doppler radar (WSR-88D) fully deployed nationwide?", "choices": ["1965", "1975", "1997", "2010"], "correct": 2, "explain": "The NEXRAD network was completed in 1997 — dramatically improving tornado detection."}, {"q": "How is tornado intensity officially rated?", "choices": ["By wind speed measurement", "By damage indicators surveyed after the event", "By radar Doppler velocity", "By storm chaser video"], "correct": 1, "explain": "The EF Scale rates damage — actual wind is inferred from the damage."}, {"q": "On average, how many tornadoes occur in the US per year?", "choices": ["~200", "~600", "~1,200", "~2,000"], "correct": 2, "explain": "About 1,200 tornadoes annually in the US — the most of any country."}, {"q": "What is the 'rear-flank downdraft' (RFD)?", "choices": ["Rain from behind a tornado", "A downdraft behind the updraft, often important for tornadogenesis", "A wind ahead of the storm", "A cold front"], "correct": 1, "explain": "The RFD wraps around the mesocyclone and appears to play a key role in tornado formation."}, {"q": "What is CAPE?", "choices": ["Cyclone Angular Pressure Energy", "Convective Available Potential Energy", "Constant Air Pressure Estimate", "Center Anemometer Placement"], "correct": 1, "explain": "CAPE measures the energy available for convection — higher = more powerful storms."}, {"q": "What type of thunderstorm produces most tornadoes?", "choices": ["Squall line", "Supercell", "Multicell cluster", "Single-cell"], "correct": 1, "explain": "Supercells — thunderstorms with a rotating updraft (mesocyclone)."}, {"q": "What does 'debris signature' mean on radar?", "choices": ["A visual sign of a tornado", "A dual-pol radar indication of debris in the air (confirms tornado)", "A cloud pattern", "An audio recording"], "correct": 1, "explain": "Dual-polarization radar can detect airborne debris — confirming a tornado is on the ground."}];
+const QUIZ_KIND = "trivia";
+const QUIZ_TITLE = "Severe Thunderstorm vs. Tornado Warning";
+
+let idx = 0;
+let score = 0;
+let answers = [];
+
+const body = document.getElementById('quiz-body');
+const progress = document.getElementById('progress');
+const currEl = document.getElementById('q-current');
+const totalEl = document.getElementById('q-total');
+totalEl.textContent = QUESTIONS.length;
+
+function render() {
+  const q = QUESTIONS[idx];
+  currEl.textContent = idx + 1;
+  progress.style.width = ((idx) / QUESTIONS.length * 100) + '%';
+
+  const choicesHtml = q.choices.map((c, i) =>
+    `<button class="choice" data-i="${i}" onclick="handleAnswer(${i})">${c}</button>`
+  ).join('');
+
+  body.innerHTML = `
+    <div class="question-card">
+      <div class="question-number">Question ${idx + 1}</div>
+      <div class="question-text">${q.q}</div>
+      <div class="choice-list">${choicesHtml}</div>
+      <div id="explanation-slot"></div>
+      <button class="next-btn hidden" id="next-btn" onclick="next()">${idx === QUESTIONS.length - 1 ? 'See your result →' : 'Next question →'}</button>
+    </div>
+  `;
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+window.handleAnswer = function(i) {
+  const q = QUESTIONS[idx];
+  const choices = body.querySelectorAll('.choice');
+  choices.forEach(c => c.disabled = true);
+  choices.forEach(c => c.classList.add('disabled'));
+  answers.push(i);
+
+  if (QUIZ_KIND === 'personality') {
+    // No right/wrong — just show the reveal
+    choices[i].classList.add('correct');
+    choices[i].classList.remove('disabled');
+    score += 1;
+  } else {
+    if (i === q.correct) {
+      choices[i].classList.add('correct');
+      choices[i].classList.remove('disabled');
+      score += 1;
+    } else {
+      choices[i].classList.add('wrong');
+      if (q.correct >= 0) {
+        choices[q.correct].classList.add('correct');
+        choices[q.correct].classList.remove('disabled');
+      }
+    }
+  }
+
+  if (q.explain) {
+    document.getElementById('explanation-slot').innerHTML =
+      `<div class="explanation">${q.explain}</div>`;
+  }
+  document.getElementById('next-btn').classList.remove('hidden');
+};
+
+window.next = function() {
+  idx += 1;
+  if (idx >= QUESTIONS.length) {
+    showResult();
+  } else {
+    render();
+  }
+};
+
+function showResult() {
+  progress.style.width = '100%';
+  currEl.textContent = QUESTIONS.length;
+
+  let title, desc;
+  if (QUIZ_KIND === 'personality') {
+    // Simple personality reveal
+    const personas = ['The Storm Chaser', 'The Meteorologist', 'The Preparer', 'The Casual Observer'];
+    title = personas[Math.floor(Math.random() * personas.length)];
+    desc = "You approach severe weather with a mix of curiosity, respect, and readiness. Share your result with a friend and see what they get.";
+    body.innerHTML = `
+      <div class="result-card">
+        <div style="font-size:72px; margin-bottom:16px;">🌪️</div>
+        <div class="result-title">You are: ${title}</div>
+        <div class="result-desc">${desc}</div>
+        <div class="result-actions">
+          <a href="/simulator/" class="btn-primary">Try the tornado simulator</a>
+          <button onclick="location.reload()" class="btn-outline">Retake quiz</button>
+        </div>
+      </div>
+    `;
+  } else {
+    const pct = Math.round(score / QUESTIONS.length * 100);
+    let tier, tierDesc;
+    if (pct >= 90) { tier = "Tornado Expert"; tierDesc = "You know your stuff. Time to try the simulator."; }
+    else if (pct >= 70) { tier = "Storm Enthusiast"; tierDesc = "Solid knowledge base. A few gaps to fill in."; }
+    else if (pct >= 50) { tier = "Weather Curious"; tierDesc = "A decent showing. There's a lot more to learn."; }
+    else { tier = "Just Getting Started"; tierDesc = "Everyone starts somewhere. Our articles are a good next step."; }
+
+    body.innerHTML = `
+      <div class="result-card">
+        <div class="result-score">${score}/${QUESTIONS.length}</div>
+        <div style="font-size:22px; color:var(--text-secondary); margin-bottom:24px;">${pct}%</div>
+        <div class="result-title">${tier}</div>
+        <div class="result-desc">${tierDesc}</div>
+        <div class="result-actions">
+          <a href="/simulator/" class="btn-primary">Try the tornado simulator</a>
+          <a href="/articles/" class="btn-outline">Read the articles</a>
+          <button onclick="location.reload()" class="btn-outline">Retake quiz</button>
+        </div>
+        <div class="share-strip">
+          <h3>Share your result</h3>
+          <div class="result-actions">
+            <a href="https://twitter.com/intent/tweet?text=I%20scored%20${score}%2F${QUESTIONS.length}%20on%20${encodeURIComponent(QUIZ_TITLE)}&url=${encodeURIComponent(location.href)}" target="_blank" class="btn-outline">Share on X</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}" target="_blank" class="btn-outline">Share on Facebook</a>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+render();
+</script>
+
+</body>
+</html>

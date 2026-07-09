@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tornado Quizzes — Tornado Hub</title>
+<meta name="description" content="Take a tornado quiz. History, safety, science, geography, pop culture, and more. Free interactive quizzes with instant scoring and shareable results." />
+<link rel="canonical" href="https://www.tornadosimulator.net/quiz/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌪️</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<style>
+:root {
+  --bg:#fbfaf7;--bg-alt:#f4f1ea;--surface:#ffffff;
+  --text:#14161c;--text-secondary:#4a5061;--text-muted:#8b8f9c;
+  --border:#e5e1d8;--border-strong:#d4cfc3;
+  --accent:#a02818;--accent-hover:#7d1f13;
+  --link:#1e3a5f;
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:var(--link);text-decoration:none;}
+a:hover{color:var(--accent);text-decoration:underline;}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;color:var(--text);display:flex;align-items:center;gap:8px;text-decoration:none;}
+.nav-links{display:flex;gap:4px;align-items:center;flex-wrap:wrap;}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px;text-decoration:none;}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text);text-decoration:none;}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600;}
+.nav-links a.cta:hover{background:var(--accent-hover);color:white;}
+.page-header{background:linear-gradient(180deg,var(--bg),var(--bg-alt));border-bottom:1px solid var(--border);padding:64px 24px 48px;}
+.page-header-inner{max-width:1000px;margin:0 auto;}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;}
+.page-header h1{font-family:var(--serif);font-size:clamp(32px,4vw,48px);font-weight:700;line-height:1.1;margin-bottom:12px;letter-spacing:-0.02em;}
+.page-header p{font-size:17px;color:var(--text-secondary);max-width:700px;line-height:1.55;}
+.main{max-width:1200px;margin:0 auto;padding:56px 24px;}
+.category{margin-bottom:56px;}
+.cat-heading{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--text);margin-bottom:6px;letter-spacing:-0.01em;}
+.cat-sub{color:var(--text-secondary);font-size:15px;margin-bottom:24px;}
+.quiz-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;}
+.quiz-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 22px;color:inherit;text-decoration:none;transition:border-color 0.15s,transform 0.15s;display:block;}
+.quiz-card:hover{border-color:var(--accent);text-decoration:none;color:inherit;transform:translateY(-2px);}
+.quiz-cat{font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;}
+.quiz-title{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--text);margin-bottom:8px;line-height:1.3;}
+.quiz-desc{color:var(--text-secondary);font-size:13px;line-height:1.5;margin-bottom:10px;}
+.quiz-meta{font-size:11px;color:var(--text-muted);font-weight:500;letter-spacing:0.05em;text-transform:uppercase;}
+.ad-slot{background:var(--bg-alt);border:1px dashed var(--border-strong);min-height:100px;border-radius:8px;margin:32px 0;padding:24px;text-align:center;color:var(--text-muted);font-size:12px;}
+.footer{background:#14161c;color:#94a3b8;padding:40px 24px;border-top:4px solid var(--accent);text-align:center;font-size:13px;}
+.footer a{color:white;text-decoration:none;}
+.footer a:hover{text-decoration:underline;}
+@media (max-width:500px){.nav-links{gap:0;}.nav-links a{padding:6px 10px;font-size:13px;}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand"><span>🌪️</span> Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/quiz/">Quizzes</a>
+      <a href="/safety/">Safety</a>
+      <a href="/simulator/" class="cta">Launch Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <div class="eyebrow">Quizzes</div>
+    <h1>205 tornado quizzes.</h1>
+    <p>Test your tornado knowledge. History, safety, science, geography, pop culture, and personality quizzes — instant scoring, shareable results, all free.</p>
+  </div>
+</header>
+
+<main class="main">
+<section class="category"><h2 class="cat-heading">History Quizzes</h2><p class="cat-sub">The events that shaped tornado meteorology.</p><div class="quiz-grid"><a class="quiz-card" href="/quiz/history-basics/"><div class="quiz-cat">History</div><div class="quiz-title">Tornado History Basics</div><div class="quiz-desc">Ten fundamental questions on the events that shaped meteorology.</div><div class="quiz-meta">15 questions</div></a>
+<a class="quiz-card" href="/quiz/history-deep-dive/"><div class="quiz-cat">History</div><div class="quiz-title">Tornado History Deep Dive</div><div class="quiz-desc">For serious weather nerds — 15 questions on famous events.</div><div class="quiz-meta">15 questions</div></a>
+<a class="quiz-card" href="/quiz/deadliest-tornadoes/"><div class="quiz-cat">History</div><div class="quiz-title">How Well Do You Know the Deadliest Tornadoes?</div><div class="quiz-desc">Ten questions on the worst US tornado disasters.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/ef5-tornado-knowledge/"><div class="quiz-cat">History</div><div class="quiz-title">The EF5 Tornado Quiz</div><div class="quiz-desc">How much do you know about the strongest tornadoes ever recorded?</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/modern-tornado-events/"><div class="quiz-cat">History</div><div class="quiz-title">Modern Tornado Events (2010s-2020s)</div><div class="quiz-desc">Ten questions covering recent major events.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/historical-outbreaks/"><div class="quiz-cat">History</div><div class="quiz-title">The Great Tornado Outbreaks</div><div class="quiz-desc">Multi-day events that reshaped forecasting.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/tri-state-quiz/"><div class="quiz-cat">History</div><div class="quiz-title">The 1925 Tri-State Tornado</div><div class="quiz-desc">Ten questions on the deadliest US tornado.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/2011-super-outbreak/"><div class="quiz-cat">History</div><div class="quiz-title">The 2011 Super Outbreak Quiz</div><div class="quiz-desc">Everything about April 25-28, 2011.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/moore-oklahoma/"><div class="quiz-cat">History</div><div class="quiz-title">Moore, Oklahoma's Tornado History</div><div class="quiz-desc">The town hit by TWO F5/EF5 tornadoes.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/joplin-mayfield/"><div class="quiz-cat">History</div><div class="quiz-title">Joplin vs. Mayfield: Death Tolls & Facts</div><div class="quiz-desc">Two devastating events, decades apart.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/mystery-tornado-year/"><div class="quiz-cat">History</div><div class="quiz-title">Guess the Year of the Tornado</div><div class="quiz-desc">Match famous tornadoes to when they happened.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/supersize-outbreaks/"><div class="quiz-cat">History</div><div class="quiz-title">The Biggest Tornado Outbreaks Ever</div><div class="quiz-desc">Ten questions ranking the largest outbreaks.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/december-tornadoes/"><div class="quiz-cat">History</div><div class="quiz-title">December Tornadoes Quiz</div><div class="quiz-desc">Winter tornado events people always forget.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/tornado-decade-1970s/"><div class="quiz-cat">History</div><div class="quiz-title">1970s Tornado Trivia</div><div class="quiz-desc">Ten questions on the Super Outbreak decade.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/tornado-decade-2020s/"><div class="quiz-cat">History</div><div class="quiz-title">2020s Tornado Trivia</div><div class="quiz-desc">Ten questions on current-decade events.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/bangladeshi-tornadoes/"><div class="quiz-cat">History</div><div class="quiz-title">Tornadoes Beyond America: Bangladesh</div><div class="quiz-desc">The world's deadliest tornado region.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/small-town-tornadoes/"><div class="quiz-cat">History</div><div class="quiz-title">The Small Towns That Vanished</div><div class="quiz-desc">Ten questions on tornadoes that erased small communities.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/nashville-2020/"><div class="quiz-cat">History</div><div class="quiz-title">Nashville's 2020 Tornado</div><div class="quiz-desc">One of the most photographed urban tornadoes ever.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/hurricane-vs-tornado-history/"><div class="quiz-cat">History</div><div class="quiz-title">Hurricanes That Made Tornadoes</div><div class="quiz-desc">Hurricane-spawned tornado outbreaks.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/elie-manitoba/"><div class="quiz-cat">History</div><div class="quiz-title">The Elie, Manitoba F5</div><div class="quiz-desc">Canada's only recorded F5 — how much do you know?</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/ranking-quiz-1/"><div class="quiz-cat">History</div><div class="quiz-title">Ranking Tornado Legends</div><div class="quiz-desc">Match names, dates, and death tolls.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/greensburg-2007/"><div class="quiz-cat">History</div><div class="quiz-title">Greensburg 2007: The Town Rebuilt Green</div><div class="quiz-desc">The 95% destruction event.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/mayfield-2021/"><div class="quiz-cat">History</div><div class="quiz-title">The Mayfield 2021 Quad-State Outbreak</div><div class="quiz-desc">December mayhem in Kentucky and beyond.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/waco-1953/"><div class="quiz-cat">History</div><div class="quiz-title">Waco Tornado of 1953</div><div class="quiz-desc">Downtown Texas devastation.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/famous-photographed/"><div class="quiz-cat">History</div><div class="quiz-title">Most Photographed Tornadoes</div><div class="quiz-desc">Iconic images and the events behind them.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/tornado-trivia-history-1/"><div class="quiz-cat">History</div><div class="quiz-title">Tornado History Trivia #1</div><div class="quiz-desc">Random historical trivia grab bag.</div><div class="quiz-meta">15 questions</div></a>
+<a class="quiz-card" href="/quiz/tornado-trivia-history-2/"><div class="quiz-cat">History</div><div class="quiz-title">Tornado History Trivia #2</div><div class="quiz-desc">More random historical trivia.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/tornado-trivia-history-3/"><div class="quiz-cat">History</div><div class="quiz-title">Tornado History Trivia #3</div><div class="quiz-desc">Even more historical trivia.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/century-of-tornadoes/"><div class="quiz-cat">History</div><div class="quiz-title">100 Years of Tornado History</div><div class="quiz-desc">From 1925 to today — can you keep up?</div><div class="quiz-meta">15 questions</div></a>
+<a class="quiz-card" href="/quiz/hackleburg-tuscaloosa/"><div class="quiz-cat">History</div><div class="quiz-title">Hackleburg & Tuscaloosa: 2011's Alabama Nightmare</div><div class="quiz-desc">The state's darkest tornado day.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/ultimate-tornado-quiz/"><div class="quiz-cat">History</div><div class="quiz-title">The Ultimate Tornado Quiz</div><div class="quiz-desc">20 questions covering everything.</div><div class="quiz-meta">20 questions</div></a>
+<a class="quiz-card" href="/quiz/mega-tornado-quiz/"><div class="quiz-cat">History</div><div class="quiz-title">The Mega Tornado Quiz</div><div class="quiz-desc">25 questions — all topics.</div><div class="quiz-meta">20 questions</div></a>
+<a class="quiz-card" href="/quiz/all-topics-quiz-1/"><div class="quiz-cat">History</div><div class="quiz-title">All Topics: Tornado Trivia #1</div><div class="quiz-desc">Mix of history, safety, science, and geography.</div><div class="quiz-meta">20 questions</div></a>
+<a class="quiz-card" href="/quiz/all-topics-quiz-2/"><div class="quiz-cat">History</div><div class="quiz-title">All Topics: Tornado Trivia #2</div><div class="quiz-desc">More mixed trivia.</div><div class="quiz-meta">20 questions</div></a>
+<a class="quiz-card" href="/quiz/all-topics-quiz-3/"><div class="quiz-cat">History</div><div class="quiz-title">All Topics: Tornado Trivia #3</div><div class="quiz-desc">Even more mixed trivia.</div><div class="quiz-meta">20 questions</div></a>
+<a class="quiz-card" href="/quiz/all-topics-quiz-4/"><div class="quiz-cat">History</div><div class="quiz-title">All Topics: Tornado Trivia #4</div><div class="quiz-desc">And more.</div><div class="quiz-meta">20 questions</div></a>
+<a class="quiz-card" href="/quiz/mixed-tornado-quiz-1/"><div class="quiz-cat">History</div><div class="quiz-title">Mixed Tornado Quiz #1</div><div class="quiz-desc">General knowledge.</div><div class="quiz-meta">20 questions</div></a>
+<a class="quiz-card" href="/quiz/mixed-tornado-quiz-2/"><div class="quiz-cat">History</div><div class="quiz-title">Mixed Tornado Quiz #2</div><div class="quiz-desc">More general knowledge.</div><div class="quiz-meta">20 questions</div></a>
+<a class="quiz-card" href="/quiz/weather-expert-quiz/"><div class="quiz-cat">History</div><div class="quiz-title">Are You a Weather Expert?</div><div class="quiz-desc">20 questions to test everything.</div><div class="quiz-meta">20 questions</div></a>
+<a class="quiz-card" href="/quiz/tornado-master-quiz/"><div class="quiz-cat">History</div><div class="quiz-title">The Tornado Master Quiz</div><div class="quiz-desc">Test yourself against the very hardest questions.</div><div class="quiz-meta">20 questions</div></a>
+</div></section>
+<section class="category"><h2 class="cat-heading">Safety Quizzes</h2><p class="cat-sub">Test your response instincts.</p><div class="quiz-grid"><a class="quiz-card" href="/quiz/safety-basics/"><div class="quiz-cat">Safety</div><div class="quiz-title">Tornado Safety Basics</div><div class="quiz-desc">Ten essentials everyone should know.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/safety-advanced/"><div class="quiz-cat">Safety</div><div class="quiz-title">Advanced Tornado Safety</div><div class="quiz-desc">For those who want to go deeper.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/would-you-survive/"><div class="quiz-cat">Safety</div><div class="quiz-title">Would You Survive a Tornado?</div><div class="quiz-desc">Scenario-based safety questions.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/safety-myths/"><div class="quiz-cat">Safety</div><div class="quiz-title">Debunking Tornado Safety Myths</div><div class="quiz-desc">How many of these did you believe?</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/shelter-choice/"><div class="quiz-cat">Safety</div><div class="quiz-title">Where Would You Shelter?</div><div class="quiz-desc">Ten location scenarios — where do you go?</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/mobile-home-safety/"><div class="quiz-cat">Safety</div><div class="quiz-title">Mobile Home Tornado Safety Quiz</div><div class="quiz-desc">Statistically the highest-risk residential category.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/car-tornado-quiz/"><div class="quiz-cat">Safety</div><div class="quiz-title">In a Car During a Tornado?</div><div class="quiz-desc">Ten questions on vehicle tornado safety.</div><div class="quiz-meta">15 questions</div></a>
+<a class="quiz-card" href="/quiz/outdoor-tornado-quiz/"><div class="quiz-cat">Safety</div><div class="quiz-title">Outdoors When Tornado Strikes?</div><div class="quiz-desc">Camping, hiking, sports — what do you do?</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/kid-safety-quiz/"><div class="quiz-cat">Safety</div><div class="quiz-title">Tornado Safety for Kids</div><div class="quiz-desc">Age-appropriate quiz.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/family-plan-quiz/"><div class="quiz-cat">Safety</div><div class="quiz-title">The Family Tornado Plan Quiz</div><div class="quiz-desc">How prepared is your household?</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/safety-warnings/"><div class="quiz-cat">Safety</div><div class="quiz-title">Watch or Warning?</div><div class="quiz-desc">Terminology and response — do you know the difference?</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/emergency-kit-quiz/"><div class="quiz-cat">Safety</div><div class="quiz-title">What's in Your Tornado Emergency Kit?</div><div class="quiz-desc">Ten questions on preparation supplies.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/night-tornado-safety/"><div class="quiz-cat">Safety</div><div class="quiz-title">Nighttime Tornado Safety</div><div class="quiz-desc">The most deadly scenario — are you ready?</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/apartment-safety-quiz/"><div class="quiz-cat">Safety</div><div class="quiz-title">Apartment Tornado Safety</div><div class="quiz-desc">High-rise vs. low-rise — different rules.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/high-rise-safety-quiz/"><div class="quiz-cat">Safety</div><div class="quiz-title">High-Rise Building Tornado Safety</div><div class="quiz-desc">Never take the elevator!</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/school-safety-quiz/"><div class="quiz-cat">Safety</div><div class="quiz-title">School Tornado Safety</div><div class="quiz-desc">For parents, teachers, and students.</div><div class="quiz-meta">15 questions</div></a>
+<a class="quiz-card" href="/quiz/workplace-safety-quiz/"><div class="quiz-cat">Safety</div><div class="quiz-title">Tornado Safety at Work</div><div class="quiz-desc">Office, warehouse, retail — different responses.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/hospital-safety-quiz/"><div class="quiz-cat">Safety</div><div class="quiz-title">Tornado Safety in Hospitals</div><div class="quiz-desc">Complex environment, complex response.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/pet-safety-quiz/"><div class="quiz-cat">Safety</div><div class="quiz-title">Tornado Safety for Pets</div><div class="quiz-desc">Don't leave them behind.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/weather-radio-quiz/"><div class="quiz-cat">Safety</div><div class="quiz-title">The NOAA Weather Radio Quiz</div><div class="quiz-desc">Essential purchase — do you know how to use it?</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/post-tornado-quiz/"><div class="quiz-cat">Safety</div><div class="quiz-title">After the Tornado: What Now?</div><div class="quiz-desc">Recovery, cleanup, and safety hazards.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/hypothetical-safety-1/"><div class="quiz-cat">Safety</div><div class="quiz-title">You're at a Restaurant When...</div><div class="quiz-desc">Situational tornado safety.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/hypothetical-safety-2/"><div class="quiz-cat">Safety</div><div class="quiz-title">You're at a Football Game...</div><div class="quiz-desc">Stadium and event tornado safety.</div><div class="quiz-meta">15 questions</div></a>
+<a class="quiz-card" href="/quiz/basement-safety-quiz/"><div class="quiz-cat">Safety</div><div class="quiz-title">Tornado Safety in a Basement</div><div class="quiz-desc">Where in the basement — and why?</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/safety-rapid-fire/"><div class="quiz-cat">Safety</div><div class="quiz-title">Rapid Fire Tornado Safety</div><div class="quiz-desc">15 quick-fire safety questions.</div><div class="quiz-meta">15 questions</div></a>
+<a class="quiz-card" href="/quiz/survival-questions/"><div class="quiz-cat">Safety</div><div class="quiz-title">Tornado Survival Trivia</div><div class="quiz-desc">What actually saves lives.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/safety-trivia-1/"><div class="quiz-cat">Safety</div><div class="quiz-title">Tornado Safety Trivia #1</div><div class="quiz-desc">Random safety questions.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/safety-trivia-2/"><div class="quiz-cat">Safety</div><div class="quiz-title">Tornado Safety Trivia #2</div><div class="quiz-desc">More random safety questions.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/elderly-safety-quiz/"><div class="quiz-cat">Safety</div><div class="quiz-title">Tornado Safety for Seniors</div><div class="quiz-desc">Elderly-specific concerns.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/driver-safety-quiz/"><div class="quiz-cat">Safety</div><div class="quiz-title">Tornado Safety for Drivers</div><div class="quiz-desc">For anyone behind the wheel.</div><div class="quiz-meta">10 questions</div></a>
+</div></section>
+<section class="category"><h2 class="cat-heading">Science Quizzes</h2><p class="cat-sub">Meteorology, radar, storm structure.</p><div class="quiz-grid"><a class="quiz-card" href="/quiz/science-basics/"><div class="quiz-cat">Science</div><div class="quiz-title">Tornado Science 101</div><div class="quiz-desc">Meteorology basics.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/ef-scale-quiz/"><div class="quiz-cat">Science</div><div class="quiz-title">The Enhanced Fujita Scale Quiz</div><div class="quiz-desc">F5 vs. EF5, wind speeds, damage descriptors.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/meteorology-advanced/"><div class="quiz-cat">Science</div><div class="quiz-title">Advanced Tornado Meteorology</div><div class="quiz-desc">For serious weather geeks.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/supercell-quiz/"><div class="quiz-cat">Science</div><div class="quiz-title">The Supercell Quiz</div><div class="quiz-desc">Mesocyclones, wall clouds, RFDs.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/radar-tornado-quiz/"><div class="quiz-cat">Science</div><div class="quiz-title">Reading Tornado Radar</div><div class="quiz-desc">Hook echoes, debris signatures, TVS.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/wind-speed-quiz/"><div class="quiz-cat">Science</div><div class="quiz-title">Tornado Wind Speed Quiz</div><div class="quiz-desc">How fast can tornadoes really spin?</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/formation-quiz/"><div class="quiz-cat">Science</div><div class="quiz-title">How Tornadoes Form</div><div class="quiz-desc">Ingredients: shear, CAPE, moisture, lift.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/tornado-vs-hurricane/"><div class="quiz-cat">Science</div><div class="quiz-title">Tornado vs. Hurricane: Know the Difference</div><div class="quiz-desc">Two different storms, two different rules.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/waterspout-quiz/"><div class="quiz-cat">Science</div><div class="quiz-title">The Waterspout Quiz</div><div class="quiz-desc">Are waterspouts tornadoes?</div><div class="quiz-meta">15 questions</div></a>
+<a class="quiz-card" href="/quiz/landspout-vs-tornado/"><div class="quiz-cat">Science</div><div class="quiz-title">Landspout vs. Tornado</div><div class="quiz-desc">Not all rotation is created equal.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/microburst-quiz/"><div class="quiz-cat">Science</div><div class="quiz-title">Tornado vs. Microburst</div><div class="quiz-desc">Damage patterns and physics.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/severe-thunderstorm-quiz/"><div class="quiz-cat">Science</div><div class="quiz-title">Severe Thunderstorm Quiz</div><div class="quiz-desc">The parent of tornadoes.</div><div class="quiz-meta">15 questions</div></a>
+<a class="quiz-card" href="/quiz/hook-echo-quiz/"><div class="quiz-cat">Science</div><div class="quiz-title">The Hook Echo Quiz</div><div class="quiz-desc">Radar's iconic tornado signature.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/tornado-color-sound-quiz/"><div class="quiz-cat">Science</div><div class="quiz-title">Colors and Sounds of Tornadoes</div><div class="quiz-desc">What green skies and freight-train roars really mean.</div><div class="quiz-meta">15 questions</div></a>
+<a class="quiz-card" href="/quiz/multi-vortex-quiz/"><div class="quiz-cat">Science</div><div class="quiz-title">Multi-Vortex Tornadoes</div><div class="quiz-desc">Sub-vortex physics.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/science-easy/"><div class="quiz-cat">Science</div><div class="quiz-title">Easy Tornado Science Quiz</div><div class="quiz-desc">Kid-friendly meteorology.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/weather-facts-quiz/"><div class="quiz-cat">Science</div><div class="quiz-title">Weather Facts Quiz</div><div class="quiz-desc">Broader severe weather trivia.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/cape-shear-quiz/"><div class="quiz-cat">Science</div><div class="quiz-title">CAPE, Shear, and Instability</div><div class="quiz-desc">The three ingredients of tornadic supercells.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/tornado-sound-quiz/"><div class="quiz-cat">Science</div><div class="quiz-title">How Loud is a Tornado?</div><div class="quiz-desc">Freight train — and other roars.</div><div class="quiz-meta">15 questions</div></a>
+<a class="quiz-card" href="/quiz/dual-pol-radar-quiz/"><div class="quiz-cat">Science</div><div class="quiz-title">Dual-Polarization Radar Quiz</div><div class="quiz-desc">The 2013 NEXRAD upgrade — do you know why it matters?</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/tornado-vs-cyclone/"><div class="quiz-cat">Science</div><div class="quiz-title">Tornado vs. Cyclone: Same Thing?</div><div class="quiz-desc">Not quite.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/science-trivia-1/"><div class="quiz-cat">Science</div><div class="quiz-title">Tornado Science Trivia #1</div><div class="quiz-desc">Random science questions.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/science-trivia-2/"><div class="quiz-cat">Science</div><div class="quiz-title">Tornado Science Trivia #2</div><div class="quiz-desc">More random science.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/meteorology-legend/"><div class="quiz-cat">Science</div><div class="quiz-title">Tornado Meteorology Legends</div><div class="quiz-desc">The greats who studied tornadoes.</div><div class="quiz-meta">15 questions</div></a>
+<a class="quiz-card" href="/quiz/science-mixed/"><div class="quiz-cat">Science</div><div class="quiz-title">Mixed Tornado Science</div><div class="quiz-desc">A little of everything.</div><div class="quiz-meta">12 questions</div></a>
+</div></section>
+<section class="category"><h2 class="cat-heading">Geography Quizzes</h2><p class="cat-sub">Tornado Alley, Dixie Alley, and beyond.</p><div class="quiz-grid"><a class="quiz-card" href="/quiz/state-by-state/"><div class="quiz-cat">Geography</div><div class="quiz-title">Tornado Trivia: State by State</div><div class="quiz-desc">Which state gets the most tornadoes?</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/tornado-alley-quiz/"><div class="quiz-cat">Geography</div><div class="quiz-title">The Tornado Alley Quiz</div><div class="quiz-desc">Do you know the geography?</div><div class="quiz-meta">15 questions</div></a>
+<a class="quiz-card" href="/quiz/dixie-alley-quiz/"><div class="quiz-cat">Geography</div><div class="quiz-title">The Dixie Alley Quiz</div><div class="quiz-desc">The Southeast's own tornado corridor.</div><div class="quiz-meta">15 questions</div></a>
+<a class="quiz-card" href="/quiz/world-tornadoes/"><div class="quiz-cat">Geography</div><div class="quiz-title">Tornadoes Around the World</div><div class="quiz-desc">Beyond the US — where else?</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/bangladesh-tornadoes/"><div class="quiz-cat">Geography</div><div class="quiz-title">Tornadoes in Bangladesh</div><div class="quiz-desc">The deadliest tornado nation.</div><div class="quiz-meta">15 questions</div></a>
+<a class="quiz-card" href="/quiz/canada-tornadoes/"><div class="quiz-cat">Geography</div><div class="quiz-title">Canadian Tornadoes</div><div class="quiz-desc">Yes, they get tornadoes too.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/europe-tornadoes/"><div class="quiz-cat">Geography</div><div class="quiz-title">European Tornadoes</div><div class="quiz-desc">Rare but real.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/oklahoma-tornado-quiz/"><div class="quiz-cat">Geography</div><div class="quiz-title">Oklahoma Tornado Quiz</div><div class="quiz-desc">The heart of Tornado Alley.</div><div class="quiz-meta">15 questions</div></a>
+<a class="quiz-card" href="/quiz/kansas-tornado-quiz/"><div class="quiz-cat">Geography</div><div class="quiz-title">Kansas Tornado Quiz</div><div class="quiz-desc">The Wizard of Oz state.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/texas-tornado-quiz/"><div class="quiz-cat">Geography</div><div class="quiz-title">Texas Tornado Quiz</div><div class="quiz-desc">The most tornadoes total.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/alabama-tornado-quiz/"><div class="quiz-cat">Geography</div><div class="quiz-title">Alabama Tornado Quiz</div><div class="quiz-desc">Deep in Dixie Alley.</div><div class="quiz-meta">15 questions</div></a>
+<a class="quiz-card" href="/quiz/mississippi-tornado-quiz/"><div class="quiz-cat">Geography</div><div class="quiz-title">Mississippi Tornado Quiz</div><div class="quiz-desc">Historically the deadliest tornado state per capita.</div><div class="quiz-meta">15 questions</div></a>
+<a class="quiz-card" href="/quiz/floridatornado-quiz/"><div class="quiz-cat">Geography</div><div class="quiz-title">Florida Tornado Quiz</div><div class="quiz-desc">Hurricane-driven and non-hurricane events.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/us-map-quiz/"><div class="quiz-cat">Geography</div><div class="quiz-title">Tornado US Map Quiz</div><div class="quiz-desc">Locate tornado events by state.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/global-tornado-quiz/"><div class="quiz-cat">Geography</div><div class="quiz-title">Global Tornado Quiz</div><div class="quiz-desc">Every continent gets tornadoes — do you know where?</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/nebraska-tornado-quiz/"><div class="quiz-cat">Geography</div><div class="quiz-title">Nebraska Tornado Quiz</div><div class="quiz-desc">The Great Plains classic.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/iowa-tornado-quiz/"><div class="quiz-cat">Geography</div><div class="quiz-title">Iowa Tornado Quiz</div><div class="quiz-desc">Corn Belt severe weather.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/tennessee-tornado-quiz/"><div class="quiz-cat">Geography</div><div class="quiz-title">Tennessee Tornado Quiz</div><div class="quiz-desc">Multiple deadly events.</div><div class="quiz-meta">15 questions</div></a>
+<a class="quiz-card" href="/quiz/geography-easy/"><div class="quiz-cat">Geography</div><div class="quiz-title">Easy Tornado Geography</div><div class="quiz-desc">For beginners.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/safest-states/"><div class="quiz-cat">Geography</div><div class="quiz-title">Safest US States from Tornadoes</div><div class="quiz-desc">Where do tornadoes never really strike?</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/season-quiz/"><div class="quiz-cat">Geography</div><div class="quiz-title">The Tornado Season Quiz</div><div class="quiz-desc">When are tornadoes most likely?</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/geography-trivia-1/"><div class="quiz-cat">Geography</div><div class="quiz-title">Tornado Geography Trivia #1</div><div class="quiz-desc">Random geography questions.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/geography-trivia-2/"><div class="quiz-cat">Geography</div><div class="quiz-title">Tornado Geography Trivia #2</div><div class="quiz-desc">More geography questions.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/east-vs-west/"><div class="quiz-cat">Geography</div><div class="quiz-title">East vs. West: Where Do Tornadoes Live?</div><div class="quiz-desc">The geography of severe weather.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/hurricane-tornado-states/"><div class="quiz-cat">Geography</div><div class="quiz-title">Hurricane-Spawned Tornado States</div><div class="quiz-desc">Coastal states that see hurricane tornadoes.</div><div class="quiz-meta">10 questions</div></a>
+</div></section>
+<section class="category"><h2 class="cat-heading">Records Quizzes</h2><p class="cat-sub">Deadliest, widest, longest — the superlatives.</p><div class="quiz-grid"><a class="quiz-card" href="/quiz/record-tornado-quiz/"><div class="quiz-cat">Records</div><div class="quiz-title">The Tornado Records Quiz</div><div class="quiz-desc">Deadliest, widest, fastest, longest.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/widest-longest-fastest/"><div class="quiz-cat">Records</div><div class="quiz-title">Widest, Longest, Fastest</div><div class="quiz-desc">Superlatives quiz.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/wind-speed-records/"><div class="quiz-cat">Records</div><div class="quiz-title">Wind Speed Records</div><div class="quiz-desc">Test your knowledge on measured wind speeds.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/death-toll-records/"><div class="quiz-cat">Records</div><div class="quiz-title">Tornado Death Toll Records</div><div class="quiz-desc">The saddest records.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/outbreak-records-quiz/"><div class="quiz-cat">Records</div><div class="quiz-title">Tornado Outbreak Records</div><div class="quiz-desc">Multi-day event superlatives.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/path-length-records/"><div class="quiz-cat">Records</div><div class="quiz-title">Path Length Records</div><div class="quiz-desc">Longest tracked tornadoes.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/hail-tornado-records/"><div class="quiz-cat">Records</div><div class="quiz-title">Hail & Tornado Records</div><div class="quiz-desc">Big hail and big twisters.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/world-tornado-records/"><div class="quiz-cat">Records</div><div class="quiz-title">World Tornado Records</div><div class="quiz-desc">Global superlatives.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/recent-records/"><div class="quiz-cat">Records</div><div class="quiz-title">Recent Tornado Records</div><div class="quiz-desc">Since 2000.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/historical-records/"><div class="quiz-cat">Records</div><div class="quiz-title">Historical Tornado Records</div><div class="quiz-desc">Before 1970.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/records-trivia-1/"><div class="quiz-cat">Records</div><div class="quiz-title">Tornado Records Trivia #1</div><div class="quiz-desc">Random records questions.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/records-trivia-2/"><div class="quiz-cat">Records</div><div class="quiz-title">Tornado Records Trivia #2</div><div class="quiz-desc">More records trivia.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/worst-of-worst/"><div class="quiz-cat">Records</div><div class="quiz-title">The Worst of the Worst</div><div class="quiz-desc">The single most devastating events ever.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/record-holders/"><div class="quiz-cat">Records</div><div class="quiz-title">Record-Holding States</div><div class="quiz-desc">Which states hold the tornado records?</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/least-tornadoes/"><div class="quiz-cat">Records</div><div class="quiz-title">Records: Fewest Tornadoes</div><div class="quiz-desc">Which places see almost none?</div><div class="quiz-meta">10 questions</div></a>
+</div></section>
+<section class="category"><h2 class="cat-heading">Warnings Quizzes</h2><p class="cat-sub">How the warning system works.</p><div class="quiz-grid"><a class="quiz-card" href="/quiz/warnings-basics-quiz/"><div class="quiz-cat">Warnings</div><div class="quiz-title">Tornado Warning Basics</div><div class="quiz-desc">Watch, Warning, Emergency — do you know?</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/radar-history-quiz/"><div class="quiz-cat">Warnings</div><div class="quiz-title">The History of Tornado Warning</div><div class="quiz-desc">From radar development to NEXRAD.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/weather-radio-quiz-adv/"><div class="quiz-cat">Warnings</div><div class="quiz-title">Advanced Weather Radio Quiz</div><div class="quiz-desc">SAME codes, alerts, and more.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/wea-alerts-quiz/"><div class="quiz-cat">Warnings</div><div class="quiz-title">Wireless Emergency Alerts (WEA)</div><div class="quiz-desc">Your phone's tornado early warning system.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/warning-times-quiz/"><div class="quiz-cat">Warnings</div><div class="quiz-title">Warning Lead Time Quiz</div><div class="quiz-desc">How much time do you actually have?</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/warning-technology-quiz/"><div class="quiz-cat">Warnings</div><div class="quiz-title">Warning Technology History Quiz</div><div class="quiz-desc">The evolution of tornado warning tech.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/nws-quiz/"><div class="quiz-cat">Warnings</div><div class="quiz-title">The National Weather Service Quiz</div><div class="quiz-desc">The agency behind every warning.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/radar-tornado-quiz/"><div class="quiz-cat">Warnings</div><div class="quiz-title">Reading Radar for Tornadoes</div><div class="quiz-desc">Understand what forecasters see.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/severe-vs-warning-quiz/"><div class="quiz-cat">Warnings</div><div class="quiz-title">Severe Thunderstorm vs. Tornado Warning</div><div class="quiz-desc">Different warnings, different meanings.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/first-tornado-warning/"><div class="quiz-cat">Warnings</div><div class="quiz-title">The First Tornado Warning</div><div class="quiz-desc">It was for Tinker AFB.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/warning-trivia-1/"><div class="quiz-cat">Warnings</div><div class="quiz-title">Tornado Warning Trivia #1</div><div class="quiz-desc">Random warning-related questions.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/warning-trivia-2/"><div class="quiz-cat">Warnings</div><div class="quiz-title">Tornado Warning Trivia #2</div><div class="quiz-desc">More warning trivia.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/pds-warning-quiz/"><div class="quiz-cat">Warnings</div><div class="quiz-title">The 'PDS' Tornado Warning Quiz</div><div class="quiz-desc">Particularly Dangerous Situations.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/tornado-emergency-quiz/"><div class="quiz-cat">Warnings</div><div class="quiz-title">The Tornado Emergency Quiz</div><div class="quiz-desc">The highest warning level.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/historical-warnings/"><div class="quiz-cat">Warnings</div><div class="quiz-title">Historical Warnings Quiz</div><div class="quiz-desc">Notable warning successes and failures.</div><div class="quiz-meta">10 questions</div></a>
+</div></section>
+<section class="category"><h2 class="cat-heading">Storm Chasing Quizzes</h2><p class="cat-sub">For chasers and chase-curious.</p><div class="quiz-grid"><a class="quiz-card" href="/quiz/chasing-basics/"><div class="quiz-cat">Storm Chasing</div><div class="quiz-title">Storm Chasing Basics</div><div class="quiz-desc">Ten questions for aspiring chasers.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/chasing-legends/"><div class="quiz-cat">Storm Chasing</div><div class="quiz-title">Storm Chasing Legends</div><div class="quiz-desc">Names you should know.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/skywarn-quiz/"><div class="quiz-cat">Storm Chasing</div><div class="quiz-title">The SKYWARN Quiz</div><div class="quiz-desc">NWS's volunteer spotter program.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/chase-tech-quiz/"><div class="quiz-cat">Storm Chasing</div><div class="quiz-title">Chase Tech Quiz</div><div class="quiz-desc">Radar apps, mobile Doppler, and gear.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/dominator-tiv-quiz/"><div class="quiz-cat">Storm Chasing</div><div class="quiz-title">The Dominator & TIV Quiz</div><div class="quiz-desc">Iconic chase vehicles.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/photography-quiz/"><div class="quiz-cat">Storm Chasing</div><div class="quiz-title">Storm Photography Quiz</div><div class="quiz-desc">Capturing the perfect shot.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/chase-ethics-quiz/"><div class="quiz-cat">Storm Chasing</div><div class="quiz-title">Storm Chase Ethics Quiz</div><div class="quiz-desc">The unwritten rules of chasing.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/tim-samaras-quiz/"><div class="quiz-cat">Storm Chasing</div><div class="quiz-title">The Tim Samaras Quiz</div><div class="quiz-desc">His research and legacy.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/chasing-death-quiz/"><div class="quiz-cat">Storm Chasing</div><div class="quiz-title">Chasing Deaths — What We've Learned</div><div class="quiz-desc">Fatal chase incidents and lessons.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/chase-tour-quiz/"><div class="quiz-cat">Storm Chasing</div><div class="quiz-title">Storm Chase Tour Quiz</div><div class="quiz-desc">Booking a real chase tour.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/becoming-a-chaser/"><div class="quiz-cat">Storm Chasing</div><div class="quiz-title">So You Want To Be A Storm Chaser</div><div class="quiz-desc">Ten questions on getting started.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/chase-trivia-1/"><div class="quiz-cat">Storm Chasing</div><div class="quiz-title">Storm Chasing Trivia #1</div><div class="quiz-desc">Random questions for chasers.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/chase-trivia-2/"><div class="quiz-cat">Storm Chasing</div><div class="quiz-title">Storm Chasing Trivia #2</div><div class="quiz-desc">More chase trivia.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/famous-chase-events/"><div class="quiz-cat">Storm Chasing</div><div class="quiz-title">Famous Chased Tornadoes</div><div class="quiz-desc">The most famous chase moments.</div><div class="quiz-meta">12 questions</div></a>
+<a class="quiz-card" href="/quiz/chase-safety-quiz/"><div class="quiz-cat">Storm Chasing</div><div class="quiz-title">Chase Safety Quiz</div><div class="quiz-desc">How not to die on a chase.</div><div class="quiz-meta">10 questions</div></a>
+</div></section>
+<section class="category"><h2 class="cat-heading">Pop Culture Quizzes</h2><p class="cat-sub">Movies, TV, and cultural moments.</p><div class="quiz-grid"><a class="quiz-card" href="/quiz/twister-movie-quiz/"><div class="quiz-cat">Pop Culture</div><div class="quiz-title">The 'Twister' Movie Quiz</div><div class="quiz-desc">The 1996 classic.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/twisters-2024-quiz/"><div class="quiz-cat">Pop Culture</div><div class="quiz-title">The 'Twisters' 2024 Quiz</div><div class="quiz-desc">The sequel.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/tornado-movies-quiz/"><div class="quiz-cat">Pop Culture</div><div class="quiz-title">Tornado Movies Quiz</div><div class="quiz-desc">Wizard of Oz to Into the Storm.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/tornado-tv-quiz/"><div class="quiz-cat">Pop Culture</div><div class="quiz-title">Tornado TV Quiz</div><div class="quiz-desc">Storm Chasers, weather channel specials, and more.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/pop-culture-basics/"><div class="quiz-cat">Pop Culture</div><div class="quiz-title">Tornado Pop Culture Basics</div><div class="quiz-desc">Ten fun questions.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/dorothy-quiz/"><div class="quiz-cat">Pop Culture</div><div class="quiz-title">The 'Dorothy' Quiz</div><div class="quiz-desc">The sensor probe in Twister.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/storm-chase-tv/"><div class="quiz-cat">Pop Culture</div><div class="quiz-title">Storm Chase TV Quiz</div><div class="quiz-desc">Discovery Channel and beyond.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/famous-fictional-tornadoes/"><div class="quiz-cat">Pop Culture</div><div class="quiz-title">Famous Fictional Tornadoes</div><div class="quiz-desc">Movies, TV, and literature.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/tornado-music-quiz/"><div class="quiz-cat">Pop Culture</div><div class="quiz-title">Tornado Music Quiz</div><div class="quiz-desc">Songs that reference severe weather.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/wizard-of-oz-quiz/"><div class="quiz-cat">Pop Culture</div><div class="quiz-title">The Wizard of Oz Tornado Quiz</div><div class="quiz-desc">Where it all started for movie tornadoes.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/pop-culture-trivia-1/"><div class="quiz-cat">Pop Culture</div><div class="quiz-title">Pop Culture Tornado Trivia #1</div><div class="quiz-desc">Random fun questions.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/pop-culture-trivia-2/"><div class="quiz-cat">Pop Culture</div><div class="quiz-title">Pop Culture Tornado Trivia #2</div><div class="quiz-desc">More fun trivia.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/storm-chase-personalities/"><div class="quiz-cat">Pop Culture</div><div class="quiz-title">Storm Chase Personalities</div><div class="quiz-desc">The Reed Timmers of the world.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/weather-channel-quiz/"><div class="quiz-cat">Pop Culture</div><div class="quiz-title">The Weather Channel Quiz</div><div class="quiz-desc">TV's most famous weather brand.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/night-of-the-twisters/"><div class="quiz-cat">Pop Culture</div><div class="quiz-title">Night of the Twisters Quiz</div><div class="quiz-desc">The 1996 TV movie.</div><div class="quiz-meta">10 questions</div></a>
+</div></section>
+<section class="category"><h2 class="cat-heading">Quizzes for Kids</h2><p class="cat-sub">Age-appropriate and educational.</p><div class="quiz-grid"><a class="quiz-card" href="/quiz/kids-tornado-quiz/"><div class="quiz-cat">Quizzes for Kids</div><div class="quiz-title">Tornado Quiz for Kids</div><div class="quiz-desc">Fun and educational.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/kids-easy-tornado/"><div class="quiz-cat">Quizzes for Kids</div><div class="quiz-title">Easy Tornado Quiz for Kids</div><div class="quiz-desc">Ages 6-10.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/kids-tornado-safety/"><div class="quiz-cat">Quizzes for Kids</div><div class="quiz-title">Tornado Safety for Kids Quiz</div><div class="quiz-desc">Practical safety.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/kids-science/"><div class="quiz-cat">Quizzes for Kids</div><div class="quiz-title">Tornado Science for Kids</div><div class="quiz-desc">How tornadoes form.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/kids-tornado-fun/"><div class="quiz-cat">Quizzes for Kids</div><div class="quiz-title">Fun Tornado Facts for Kids</div><div class="quiz-desc">Cool stuff to know.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/kids-tornado-facts/"><div class="quiz-cat">Quizzes for Kids</div><div class="quiz-title">Tornado Facts Quiz for Kids</div><div class="quiz-desc">Ten easy facts.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/kids-tornado-history/"><div class="quiz-cat">Quizzes for Kids</div><div class="quiz-title">Tornado History for Kids</div><div class="quiz-desc">The big events.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/kids-tornado-alley/"><div class="quiz-cat">Quizzes for Kids</div><div class="quiz-title">Tornado Alley for Kids</div><div class="quiz-desc">Where tornadoes happen.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/kids-tornado-safety-2/"><div class="quiz-cat">Quizzes for Kids</div><div class="quiz-title">Kids: Are You Tornado-Safe?</div><div class="quiz-desc">Test your safety knowledge.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/kids-weather-quiz/"><div class="quiz-cat">Quizzes for Kids</div><div class="quiz-title">Weather Quiz for Kids</div><div class="quiz-desc">Broader weather trivia.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/teacher-quiz/"><div class="quiz-cat">Quizzes for Kids</div><div class="quiz-title">Tornado Quiz for Teachers</div><div class="quiz-desc">Classroom-ready.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/family-quiz/"><div class="quiz-cat">Quizzes for Kids</div><div class="quiz-title">Family Tornado Quiz Night</div><div class="quiz-desc">Fun for the whole family.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/classroom-quiz/"><div class="quiz-cat">Quizzes for Kids</div><div class="quiz-title">Classroom Tornado Quiz</div><div class="quiz-desc">Group learning.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/kids-tornado-trivia-1/"><div class="quiz-cat">Quizzes for Kids</div><div class="quiz-title">Kids Tornado Trivia #1</div><div class="quiz-desc">Ten easy questions.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/kids-tornado-trivia-2/"><div class="quiz-cat">Quizzes for Kids</div><div class="quiz-title">Kids Tornado Trivia #2</div><div class="quiz-desc">Ten more easy questions.</div><div class="quiz-meta">10 questions</div></a>
+</div></section>
+<section class="category"><h2 class="cat-heading">Personality Quizzes</h2><p class="cat-sub">Which type of tornado personality are you?</p><div class="quiz-grid"><a class="quiz-card" href="/quiz/what-tornado-type/"><div class="quiz-cat">Personality</div><div class="quiz-title">What Type of Tornado Are You?</div><div class="quiz-desc">Ten questions reveal your inner twister.</div><div class="quiz-meta">8 questions</div></a>
+<a class="quiz-card" href="/quiz/what-storm-chaser/"><div class="quiz-cat">Personality</div><div class="quiz-title">What Type of Storm Chaser Are You?</div><div class="quiz-desc">Casual, obsessive, or somewhere in between?</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/would-you-survive-1/"><div class="quiz-cat">Personality</div><div class="quiz-title">Would You Actually Survive a Tornado?</div><div class="quiz-desc">Ten scenarios to test your instincts.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/which-state-tornado/"><div class="quiz-cat">Personality</div><div class="quiz-title">Which Tornado-Prone State Should You Move To?</div><div class="quiz-desc">Based on your risk tolerance.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/what-tornado-alley-personality/"><div class="quiz-cat">Personality</div><div class="quiz-title">What's Your Tornado Alley Personality?</div><div class="quiz-desc">Fun personality assessment.</div><div class="quiz-meta">8 questions</div></a>
+<a class="quiz-card" href="/quiz/preparedness-personality/"><div class="quiz-cat">Personality</div><div class="quiz-title">What's Your Tornado Preparedness Personality?</div><div class="quiz-desc">Are you ready?</div><div class="quiz-meta">8 questions</div></a>
+<a class="quiz-card" href="/quiz/weather-personality/"><div class="quiz-cat">Personality</div><div class="quiz-title">What Kind of Weather Person Are You?</div><div class="quiz-desc">Broader weather personality.</div><div class="quiz-meta">8 questions</div></a>
+<a class="quiz-card" href="/quiz/chaser-quiz/"><div class="quiz-cat">Personality</div><div class="quiz-title">Are You a Storm Chaser at Heart?</div><div class="quiz-desc">You might not know it yet.</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/weather-alert-personality/"><div class="quiz-cat">Personality</div><div class="quiz-title">Weather Alert Personality Quiz</div><div class="quiz-desc">How do you respond to warnings?</div><div class="quiz-meta">10 questions</div></a>
+<a class="quiz-card" href="/quiz/survival-personality/"><div class="quiz-cat">Personality</div><div class="quiz-title">Weather Emergency Personality</div><div class="quiz-desc">How would you handle a real emergency?</div><div class="quiz-meta">8 questions</div></a>
+</div></section>
+
+<div class="ad-slot">
+  <ins class="adsbygoogle" style="display:block;width:100%" data-ad-client="ca-pub-6394912562617960" data-ad-slot="3333333333" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
+</main>
+
+<footer class="footer">
+  &copy; Tornado Hub. An educational resource. <a href="/">Home</a> &middot; <a href="/quiz/">Quizzes</a> &middot; <a href="/articles/">Articles</a> &middot; <a href="/simulator/">Simulator</a>
+</footer>
+
+</body>
+</html>

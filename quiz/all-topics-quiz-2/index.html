@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>All Topics: Tornado Trivia #2</title>
+<meta name="description" content="More mixed trivia." />
+<link rel="canonical" href="https://www.tornadosimulator.net/quiz/all-topics-quiz-2/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌪️</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Quiz","name":"All Topics: Tornado Trivia #2","description":"More mixed trivia.","url":"https://www.tornadosimulator.net/quiz/all-topics-quiz-2/"}
+</script>
+<style>
+:root {
+  --bg: #fbfaf7; --bg-alt: #f4f1ea; --surface: #ffffff;
+  --text: #14161c; --text-secondary: #4a5061; --text-muted: #8b8f9c;
+  --border: #e5e1d8; --border-strong: #d4cfc3;
+  --accent: #a02818; --accent-hover: #7d1f13;
+  --link: #1e3a5f;
+  --success: #2d6a4f; --error: #b91c1c;
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:var(--sans); background:var(--bg); color:var(--text); line-height:1.6; -webkit-font-smoothing:antialiased; }
+a { color:var(--link); text-decoration:none; }
+a:hover { color:var(--accent); text-decoration:underline; }
+.nav { background:var(--surface); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:100; }
+.nav-inner { max-width:1200px; margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+.nav-brand { font-family:var(--serif); font-weight:700; font-size:20px; color:var(--text); display:flex; align-items:center; gap:8px; text-decoration:none; }
+.nav-links { display:flex; gap:4px; align-items:center; flex-wrap:wrap; }
+.nav-links a { color:var(--text-secondary); padding:8px 14px; font-size:14px; font-weight:500; border-radius:6px; text-decoration:none; }
+.nav-links a:hover { background:var(--bg-alt); color:var(--text); text-decoration:none; }
+.nav-links a.cta { background:var(--accent); color:white; font-weight:600; }
+.nav-links a.cta:hover { background:var(--accent-hover); color:white; }
+.breadcrumb { max-width:820px; margin:0 auto; padding:16px 24px 0; font-size:13px; color:var(--text-muted); }
+.breadcrumb a { color:var(--text-secondary); }
+.page-header { padding:32px 24px; max-width:820px; margin:0 auto; }
+.eyebrow { font-size:12px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); margin-bottom:12px; }
+.page-header h1 { font-family:var(--serif); font-size:clamp(32px, 4.5vw, 44px); font-weight:700; line-height:1.15; color:var(--text); margin-bottom:12px; letter-spacing:-0.02em; }
+.page-header p.lede { font-size:18px; color:var(--text-secondary); line-height:1.55; }
+.quiz-container { max-width:720px; margin:0 auto; padding:0 24px 40px; }
+.progress-bar { height:8px; background:var(--border); border-radius:4px; overflow:hidden; margin-bottom:24px; }
+.progress-fill { height:100%; background:var(--accent); transition:width 0.3s; width:0; }
+.progress-text { font-size:12px; text-transform:uppercase; letter-spacing:0.1em; color:var(--text-muted); margin-bottom:8px; font-weight:600; }
+.question-card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:32px; margin-bottom:20px; }
+.question-number { font-size:12px; text-transform:uppercase; letter-spacing:0.1em; color:var(--accent); font-weight:700; margin-bottom:12px; }
+.question-text { font-family:var(--serif); font-size:22px; font-weight:600; line-height:1.4; color:var(--text); margin-bottom:20px; letter-spacing:-0.01em; }
+.choice-list { display:flex; flex-direction:column; gap:10px; }
+.choice { background:var(--bg); border:2px solid var(--border); border-radius:8px; padding:14px 18px; font-size:16px; font-weight:500; color:var(--text); cursor:pointer; text-align:left; transition:all 0.15s; font-family:inherit; }
+.choice:hover:not(:disabled) { border-color:var(--accent); background:var(--surface); }
+.choice.correct { background:#e8f5e9; border-color:var(--success); color:var(--success); font-weight:600; }
+.choice.wrong { background:#fef2f2; border-color:var(--error); color:var(--error); font-weight:600; }
+.choice.disabled { opacity:0.55; cursor:not-allowed; }
+.explanation { background:var(--bg-alt); border-left:4px solid var(--accent); padding:16px 20px; margin-top:16px; border-radius:4px; font-size:14px; color:var(--text); line-height:1.6; }
+.next-btn { display:block; margin-top:20px; padding:12px 24px; background:var(--accent); color:white; border:none; border-radius:6px; font-size:15px; font-weight:600; cursor:pointer; width:100%; transition:background 0.15s; }
+.next-btn:hover { background:var(--accent-hover); }
+.next-btn.hidden { display:none; }
+.ad-slot { background:var(--bg-alt); border:1px dashed var(--border-strong); border-radius:8px; margin:24px 0; padding:20px; text-align:center; min-height:100px; }
+.result-card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:40px 32px; text-align:center; }
+.result-score { font-family:var(--serif); font-size:72px; font-weight:700; color:var(--accent); line-height:1; margin-bottom:12px; letter-spacing:-0.03em; }
+.result-title { font-family:var(--serif); font-size:26px; font-weight:700; margin-bottom:12px; }
+.result-desc { font-size:16px; color:var(--text-secondary); margin-bottom:32px; line-height:1.55; }
+.result-actions { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+.result-actions a, .result-actions button { padding:12px 22px; border-radius:6px; font-size:15px; font-weight:600; text-decoration:none; border:1px solid transparent; cursor:pointer; font-family:inherit; }
+.btn-primary { background:var(--accent); color:white; }
+.btn-primary:hover { background:var(--accent-hover); text-decoration:none; color:white; }
+.btn-outline { background:transparent; color:var(--text); border-color:var(--border-strong); }
+.btn-outline:hover { background:var(--bg-alt); text-decoration:none; }
+.share-strip { margin-top:32px; padding-top:24px; border-top:1px solid var(--border); }
+.share-strip h3 { font-family:var(--serif); font-size:16px; margin-bottom:12px; font-weight:600; }
+.related-quizzes { margin-top:40px; }
+.related-quizzes h3 { font-family:var(--serif); font-size:20px; font-weight:700; margin-bottom:16px; }
+.related-list { display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:10px; }
+.related-item { background:var(--surface); border:1px solid var(--border); border-radius:6px; padding:12px 14px; color:var(--text); font-size:14px; font-weight:500; text-decoration:none; }
+.related-item:hover { border-color:var(--accent); color:var(--accent); text-decoration:none; }
+.footer { background:#14161c; color:#94a3b8; padding:40px 24px; border-top:4px solid var(--accent); text-align:center; font-size:13px; }
+.footer a { color:white; text-decoration:none; }
+.footer a:hover { text-decoration:underline; }
+@media (max-width:500px) { .nav-links { gap:0; } .nav-links a { padding:6px 10px; font-size:13px; } .question-text { font-size:18px; } .result-score { font-size:56px; } }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand"><span>🌪️</span> Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/quiz/">Quizzes</a>
+      <a href="/safety/">Safety</a>
+      <a href="/simulator/" class="cta">Launch Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb"><a href="/">Home</a> &middot; <a href="/quiz/">Quizzes</a> &middot; All Topics: Tornado Trivia #2</div>
+
+<header class="page-header">
+  <div class="eyebrow">Quiz</div>
+  <h1>All Topics: Tornado Trivia #2</h1>
+  <p class="lede">More mixed trivia.</p>
+</header>
+
+<div class="quiz-container">
+  <div class="progress-text">Question <span id="q-current">1</span> of <span id="q-total">20</span></div>
+  <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
+
+  <div id="quiz-body"></div>
+
+  <div class="ad-slot">
+    <ins class="adsbygoogle" style="display:block;width:100%" data-ad-client="ca-pub-6394912562617960" data-ad-slot="3333333333" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+
+  <div class="related-quizzes">
+    <h3>More quizzes like this</h3>
+    <div class="related-list">
+      <a class="related-item" href="/quiz/tornado-decade-2020s/">2020s Tornado Trivia</a>
+      <a class="related-item" href="/quiz/ranking-quiz-1/">Ranking Tornado Legends</a>
+      <a class="related-item" href="/quiz/pet-safety-quiz/">Tornado Safety for Pets</a>
+      <a class="related-item" href="/quiz/2011-super-outbreak/">The 2011 Super Outbreak Quiz</a>
+      <a class="related-item" href="/quiz/kids-tornado-fun/">Fun Tornado Facts for Kids</a>
+      <a class="related-item" href="/quiz/tornado-master-quiz/">The Tornado Master Quiz</a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  &copy; Tornado Hub. An educational resource. <a href="/">Home</a> &middot; <a href="/quiz/">Quizzes</a> &middot; <a href="/articles/">Articles</a> &middot; <a href="/simulator/">Simulator</a>
+</footer>
+
+<script>
+const QUESTIONS = [{"q": "The longest continuously-tracked tornado path in US history is:", "choices": ["82 miles", "132 miles", "181 miles", "219 miles"], "correct": 3, "explain": "219 miles — the 1925 Tri-State tornado. Still standing as the record."}, {"q": "What's the recommended minimum lead time to shelter after a tornado warning?", "choices": ["Immediately — never wait", "5-10 minutes to grab essentials", "15 minutes to alert neighbors", "30 minutes to gather family"], "correct": 0, "explain": "Immediate action. Modern warnings average 13 minutes lead time but can be much shorter."}, {"q": "What type of thunderstorm produces most tornadoes?", "choices": ["Squall line", "Supercell", "Multicell cluster", "Single-cell"], "correct": 1, "explain": "Supercells — thunderstorms with a rotating updraft (mesocyclone)."}, {"q": "Where in the US did tornadoes first attract organized scientific study?", "choices": ["Central Plains", "Deep South", "Southwest", "New England"], "correct": 0, "explain": "The Central Plains — high frequency and open terrain — became the natural focus of tornado research."}, {"q": "What is a 'dry line'?", "choices": ["The edge of the desert", "A boundary between dry and humid air masses", "A radar artifact", "A cloud absent area"], "correct": 1, "explain": "The dry line is a moisture discontinuity often present in the Plains during severe weather season."}, {"q": "When a tornado warning is issued and you're in a house without a basement, where should you shelter?", "choices": ["Living room, away from doors", "Interior bathroom, closet, or hallway on lowest floor", "Behind a heavy piece of furniture", "Under the front porch"], "correct": 1, "explain": "Interior small rooms on the lowest floor put the most walls between you and outside debris."}, {"q": "What was the largest single-day tornado outbreak in US history?", "choices": ["April 3, 1974", "May 3, 1999", "April 27, 2011", "May 22, 2011"], "correct": 2, "explain": "April 27, 2011 — 199 tornadoes in a single day."}, {"q": "You're in a mobile home and a tornado warning is issued. What should you do?", "choices": ["Get in the bathtub", "Go outside and lie in a ditch", "Leave for a sturdy building or community shelter", "Open all windows to reduce pressure"], "correct": 2, "explain": "Mobile homes offer essentially zero tornado protection. Leave — even lying in a ditch outside is safer."}, {"q": "The 2007 Greensburg, Kansas EF5 destroyed what percentage of the town?", "choices": ["45%", "60%", "80%", "95%"], "correct": 3, "explain": "About 95% of the town was destroyed."}, {"q": "Which 2020 tornado struck downtown Nashville at night, killing 25?", "choices": ["Nashville EF3", "Cookeville EF4", "Both were the same overall event", "Neither — 2020 was quiet"], "correct": 2, "explain": "The March 3, 2020 event produced both — Nashville EF3 hit downtown, Cookeville EF4 killed 19 people."}, {"q": "What's a 'landspout'?", "choices": ["A tornado that touches only over land", "A tornado without supercell origins — from developing thunderstorms", "A tornado from a hurricane", "A very weak tornado"], "correct": 1, "explain": "Landspouts form via non-supercell processes, similar to how waterspouts develop over water."}, {"q": "What's the difference between a Tornado Watch and a Tornado Warning?", "choices": ["Watch = tornado detected; Warning = conditions favorable", "Watch = conditions favorable; Warning = tornado detected or imminent", "They mean the same thing", "Watch is for daytime; Warning is for nighttime"], "correct": 1, "explain": "Watch = be prepared. Warning = take shelter now."}, {"q": "Which December 2021 tornado killed 57 people in a single Kentucky county?", "choices": ["Bowling Green", "Mayfield", "Dawson Springs", "Paducah"], "correct": 1, "explain": "The Mayfield EF4 was part of the Quad-State Tornado outbreak."}, {"q": "Which country in South America has significant tornado activity?", "choices": ["Argentina", "Peru", "Colombia", "Venezuela"], "correct": 0, "explain": "Argentina has tornado outbreaks similar to the US Great Plains, especially in the Pampas."}, {"q": "Which small Iowa town was 90% destroyed by an EF4 in May 2024?", "choices": ["Winterset", "Greenfield", "Adair", "Denison"], "correct": 1, "explain": "Greenfield (pop ~1,900) was devastated May 21, 2024."}, {"q": "How long was the 2011 Hackleburg, Alabama EF5's continuous path?", "choices": ["45 miles", "82 miles", "132 miles", "165 miles"], "correct": 2, "explain": "132 miles — the longest since the 1925 Tri-State event."}, {"q": "What's the 'tornado shift' hypothesis?", "choices": ["Tornadoes are moving east from the Great Plains toward the Southeast", "Tornadoes are decreasing", "Tornado season is starting later", "All tornadoes come from Canada"], "correct": 0, "explain": "Research indicates tornado activity is shifting eastward from traditional Tornado Alley into Dixie Alley."}, {"q": "Which 1997 F5 tornado killed 27 people in a small subdivision — Double Creek Estates?", "choices": ["Jarrell, TX", "Andover, KS", "Piedmont, OK", "Van Wert, OH"], "correct": 0, "explain": "Jarrell, Texas. It's known for the slow-moving path that ground-scoured concrete slabs."}, {"q": "How many tornadoes affected communities during the December 10, 2021 Quad-State outbreak?", "choices": ["18", "32", "41", "61"], "correct": 3, "explain": "61 tornadoes across five states — remarkable for a December event."}, {"q": "What is the 'rear-flank downdraft' (RFD)?", "choices": ["Rain from behind a tornado", "A downdraft behind the updraft, often important for tornadogenesis", "A wind ahead of the storm", "A cold front"], "correct": 1, "explain": "The RFD wraps around the mesocyclone and appears to play a key role in tornado formation."}];
+const QUIZ_KIND = "trivia";
+const QUIZ_TITLE = "All Topics: Tornado Trivia #2";
+
+let idx = 0;
+let score = 0;
+let answers = [];
+
+const body = document.getElementById('quiz-body');
+const progress = document.getElementById('progress');
+const currEl = document.getElementById('q-current');
+const totalEl = document.getElementById('q-total');
+totalEl.textContent = QUESTIONS.length;
+
+function render() {
+  const q = QUESTIONS[idx];
+  currEl.textContent = idx + 1;
+  progress.style.width = ((idx) / QUESTIONS.length * 100) + '%';
+
+  const choicesHtml = q.choices.map((c, i) =>
+    `<button class="choice" data-i="${i}" onclick="handleAnswer(${i})">${c}</button>`
+  ).join('');
+
+  body.innerHTML = `
+    <div class="question-card">
+      <div class="question-number">Question ${idx + 1}</div>
+      <div class="question-text">${q.q}</div>
+      <div class="choice-list">${choicesHtml}</div>
+      <div id="explanation-slot"></div>
+      <button class="next-btn hidden" id="next-btn" onclick="next()">${idx === QUESTIONS.length - 1 ? 'See your result →' : 'Next question →'}</button>
+    </div>
+  `;
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+window.handleAnswer = function(i) {
+  const q = QUESTIONS[idx];
+  const choices = body.querySelectorAll('.choice');
+  choices.forEach(c => c.disabled = true);
+  choices.forEach(c => c.classList.add('disabled'));
+  answers.push(i);
+
+  if (QUIZ_KIND === 'personality') {
+    // No right/wrong — just show the reveal
+    choices[i].classList.add('correct');
+    choices[i].classList.remove('disabled');
+    score += 1;
+  } else {
+    if (i === q.correct) {
+      choices[i].classList.add('correct');
+      choices[i].classList.remove('disabled');
+      score += 1;
+    } else {
+      choices[i].classList.add('wrong');
+      if (q.correct >= 0) {
+        choices[q.correct].classList.add('correct');
+        choices[q.correct].classList.remove('disabled');
+      }
+    }
+  }
+
+  if (q.explain) {
+    document.getElementById('explanation-slot').innerHTML =
+      `<div class="explanation">${q.explain}</div>`;
+  }
+  document.getElementById('next-btn').classList.remove('hidden');
+};
+
+window.next = function() {
+  idx += 1;
+  if (idx >= QUESTIONS.length) {
+    showResult();
+  } else {
+    render();
+  }
+};
+
+function showResult() {
+  progress.style.width = '100%';
+  currEl.textContent = QUESTIONS.length;
+
+  let title, desc;
+  if (QUIZ_KIND === 'personality') {
+    // Simple personality reveal
+    const personas = ['The Storm Chaser', 'The Meteorologist', 'The Preparer', 'The Casual Observer'];
+    title = personas[Math.floor(Math.random() * personas.length)];
+    desc = "You approach severe weather with a mix of curiosity, respect, and readiness. Share your result with a friend and see what they get.";
+    body.innerHTML = `
+      <div class="result-card">
+        <div style="font-size:72px; margin-bottom:16px;">🌪️</div>
+        <div class="result-title">You are: ${title}</div>
+        <div class="result-desc">${desc}</div>
+        <div class="result-actions">
+          <a href="/simulator/" class="btn-primary">Try the tornado simulator</a>
+          <button onclick="location.reload()" class="btn-outline">Retake quiz</button>
+        </div>
+      </div>
+    `;
+  } else {
+    const pct = Math.round(score / QUESTIONS.length * 100);
+    let tier, tierDesc;
+    if (pct >= 90) { tier = "Tornado Expert"; tierDesc = "You know your stuff. Time to try the simulator."; }
+    else if (pct >= 70) { tier = "Storm Enthusiast"; tierDesc = "Solid knowledge base. A few gaps to fill in."; }
+    else if (pct >= 50) { tier = "Weather Curious"; tierDesc = "A decent showing. There's a lot more to learn."; }
+    else { tier = "Just Getting Started"; tierDesc = "Everyone starts somewhere. Our articles are a good next step."; }
+
+    body.innerHTML = `
+      <div class="result-card">
+        <div class="result-score">${score}/${QUESTIONS.length}</div>
+        <div style="font-size:22px; color:var(--text-secondary); margin-bottom:24px;">${pct}%</div>
+        <div class="result-title">${tier}</div>
+        <div class="result-desc">${tierDesc}</div>
+        <div class="result-actions">
+          <a href="/simulator/" class="btn-primary">Try the tornado simulator</a>
+          <a href="/articles/" class="btn-outline">Read the articles</a>
+          <button onclick="location.reload()" class="btn-outline">Retake quiz</button>
+        </div>
+        <div class="share-strip">
+          <h3>Share your result</h3>
+          <div class="result-actions">
+            <a href="https://twitter.com/intent/tweet?text=I%20scored%20${score}%2F${QUESTIONS.length}%20on%20${encodeURIComponent(QUIZ_TITLE)}&url=${encodeURIComponent(location.href)}" target="_blank" class="btn-outline">Share on X</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}" target="_blank" class="btn-outline">Share on Facebook</a>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+render();
+</script>
+
+</body>
+</html>
