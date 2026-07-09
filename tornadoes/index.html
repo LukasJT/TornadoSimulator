@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tornado Index — Live Data + Historical Records — Tornado Hub</title>
+<meta name="description" content="A live-updating tornado index. Recent tornadoes from NOAA Storm Prediction Center, historical records, US Storm Events Database, and every significant tornado since 1950. Refreshed daily." />
+<link rel="canonical" href="https://www.tornadosimulator.net/tornadoes/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌪️</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg: #fbfaf7; --bg-alt: #f4f1ea; --surface: #ffffff;
+  --text: #14161c; --text-secondary: #4a5061; --text-muted: #8b8f9c;
+  --border: #e5e1d8; --border-strong: #d4cfc3;
+  --accent: #a02818; --accent-hover: #7d1f13;
+  --link: #1e3a5f;
+  --success: #2d6a4f;
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--accent); text-decoration: underline; }
+.nav { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+.nav-inner { max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.nav-brand { font-family: var(--serif); font-weight: 700; font-size: 20px; color: var(--text); display: flex; align-items: center; gap: 8px; text-decoration: none; }
+.nav-links { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+.nav-links a { color: var(--text-secondary); padding: 8px 14px; font-size: 14px; font-weight: 500; border-radius: 6px; text-decoration: none; }
+.nav-links a:hover { background: var(--bg-alt); color: var(--text); text-decoration: none; }
+.nav-links a.cta { background: var(--accent); color: white; font-weight: 600; }
+.nav-links a.cta:hover { background: var(--accent-hover); color: white; }
+.page-header { background: linear-gradient(180deg, var(--bg), var(--bg-alt)); border-bottom: 1px solid var(--border); padding: 56px 24px 40px; }
+.page-header-inner { max-width: 1000px; margin: 0 auto; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+.page-header h1 { font-family: var(--serif); font-size: clamp(32px, 4.5vw, 48px); font-weight: 700; line-height: 1.1; margin-bottom: 12px; letter-spacing: -0.02em; }
+.page-header p { font-size: 17px; color: var(--text-secondary); max-width: 700px; line-height: 1.55; }
+.refresh-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; background: #e8f5e9; color: var(--success); border: 1px solid #a5d6a7; border-radius: 20px; font-size: 12px; font-weight: 600; margin-top: 20px; }
+.refresh-badge .dot { width: 8px; height: 8px; background: var(--success); border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+.main { max-width: 1200px; margin: 0 auto; padding: 40px 24px; }
+.tab-nav { display: flex; gap: 4px; margin-bottom: 24px; border-bottom: 1px solid var(--border); overflow-x: auto; }
+.tab-btn { padding: 12px 18px; background: none; border: none; font-family: inherit; font-size: 14px; font-weight: 600; color: var(--text-secondary); cursor: pointer; border-bottom: 2px solid transparent; transition: color 0.15s, border-color 0.15s; white-space: nowrap; }
+.tab-btn:hover { color: var(--text); }
+.tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+.loading { text-align: center; padding: 60px 24px; color: var(--text-muted); font-size: 15px; }
+.loading::before { content: "⏳ "; }
+.stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 32px; }
+.stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 20px; text-align: center; }
+.stat-num { font-family: var(--serif); font-size: 36px; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 6px; }
+.stat-lbl { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); font-weight: 600; }
+.event-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+.event-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; }
+.event-card .ef { display: inline-block; font-family: var(--serif); font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-bottom: 8px; letter-spacing: 0.05em; }
+.ef-0 { background: #e0e7ff; color: #3730a3; }
+.ef-1 { background: #ddf4e0; color: #256029; }
+.ef-2 { background: #fef3c7; color: #92400e; }
+.ef-3 { background: #ffe4d6; color: #b45309; }
+.ef-4 { background: #fee4e2; color: #9f1239; }
+.ef-5 { background: #fecaca; color: #7f1d1d; }
+.event-date { font-size: 13px; color: var(--text-muted); font-weight: 500; margin-bottom: 4px; }
+.event-loc { font-family: var(--serif); font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 6px; letter-spacing: -0.01em; }
+.event-details { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+.event-details span { display: inline-block; margin-right: 12px; }
+.section-title { font-family: var(--serif); font-size: 22px; font-weight: 700; margin: 32px 0 12px; letter-spacing: -0.01em; }
+.section-lede { color: var(--text-secondary); font-size: 14px; margin-bottom: 20px; }
+.source-line { padding: 20px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; font-size: 13px; color: var(--text-secondary); margin-top: 32px; }
+.source-line strong { color: var(--text); }
+.ad-slot-inline { text-align:center; margin: 32px 0; min-height:250px; }
+.ad-slot-wide { text-align:center; margin: 32px 0; min-height:90px; overflow:hidden; }
+.footer { background: #14161c; color: #94a3b8; padding: 40px 24px; border-top: 4px solid var(--accent); text-align: center; font-size: 13px; }
+.footer a { color: white; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+@media (max-width: 500px) { .nav-links { gap: 0; } .nav-links a { padding: 6px 10px; font-size: 13px; } }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand"><span>🌪️</span> Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/quiz/">Quizzes</a>
+      <a href="/tornadoes/">Tornado Index</a>
+      <a href="/safety/">Safety</a>
+      <a href="/simulator/" class="cta">Launch Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <div class="eyebrow">Tornado Index</div>
+    <h1>Every tornado, one place.</h1>
+    <p>A live-updating tornado index — recent events pulled from the NOAA Storm Prediction Center, historical F/EF5 records, US Storm Events Database, and every notable tornado since 1950. Refreshed every 24 hours.</p>
+    <div class="refresh-badge">
+      <span class="dot"></span>
+      <span>Last refresh: <span id="last-refresh">loading…</span></span>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+
+<div class="tab-nav">
+  <button class="tab-btn active" data-tab="recent">Recent tornadoes</button>
+  <button class="tab-btn" data-tab="ef5">All EF5/F5</button>
+  <button class="tab-btn" data-tab="deadliest">Deadliest ever</button>
+  <button class="tab-btn" data-tab="stats">By year</button>
+</div>
+
+<!-- ─── Recent tornadoes (from NOAA SPC preliminary reports) ───────────── -->
+<div class="tab-content active" id="tab-recent">
+  <div id="recent-stats" class="stat-row"></div>
+  <div id="recent-events">
+    <div class="loading">Loading recent tornado reports…</div>
+  </div>
+</div>
+
+<!-- Mid-page ad -->
+<div class="ad-slot-inline">
+  <script type="text/javascript">
+    atOptions = {'key':'1fe957d85bb2cf92027de309038cd17b','format':'iframe','height':250,'width':300,'params':{}};
+  </script>
+  <script type="text/javascript" src="https://www.highperformanceformat.com/1fe957d85bb2cf92027de309038cd17b/invoke.js"></script>
+</div>
+
+<!-- ─── EF5 catalog ────────────────────────────────────────────────────── -->
+<div class="tab-content" id="tab-ef5">
+  <div id="ef5-events"><div class="loading">Loading EF5/F5 catalog…</div></div>
+</div>
+
+<!-- ─── Deadliest tornadoes ────────────────────────────────────────────── -->
+<div class="tab-content" id="tab-deadliest">
+  <div id="deadliest-events"><div class="loading">Loading deadliest events…</div></div>
+</div>
+
+<!-- ─── By year ────────────────────────────────────────────────────────── -->
+<div class="tab-content" id="tab-stats">
+  <div id="yearly-stats"><div class="loading">Loading yearly stats…</div></div>
+</div>
+
+<div class="ad-slot-wide">
+  <script type="text/javascript">
+    atOptions = {'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};
+  </script>
+  <script type="text/javascript" src="https://www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
+</div>
+
+<div class="source-line">
+  <strong>Data sources.</strong> Recent tornado reports: <a href="https://www.spc.noaa.gov/climo/reports/" target="_blank" rel="noopener">NOAA Storm Prediction Center Storm Reports</a> (preliminary, subject to NWS damage survey confirmation). Historical events: internal database curated from <a href="https://www.ncdc.noaa.gov/stormevents/" target="_blank" rel="noopener">NOAA Storm Events Database</a> and NWS local storm reports. This page auto-refreshes daily via a GitHub Actions workflow. Times shown in your local timezone.
+</div>
+
+</main>
+
+<footer class="footer">
+  &copy; Tornado Hub. An educational resource. <a href="/">Home</a> &middot; <a href="/tornadoes/">Tornado Index</a> &middot; <a href="/articles/">Articles</a> &middot; <a href="/simulator/">Simulator</a>
+</footer>
+
+<script>
+// ─── LOAD DATA ────────────────────────────────────────────────────────────
+async function loadData() {
+  try {
+    const r = await fetch('/tornadoes/data.json?v=' + Date.now());
+    if (!r.ok) throw new Error('Data unavailable');
+    const data = await r.json();
+    renderAll(data);
+  } catch (err) {
+    document.getElementById('recent-events').innerHTML =
+      '<div class="loading">Data currently unavailable. Please try again shortly.</div>';
+  }
+}
+
+function fmtDate(iso) {
+  const d = new Date(iso);
+  return d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+}
+
+function fmtWhen(iso) {
+  const d = new Date(iso);
+  const now = new Date();
+  const diffMs = now - d;
+  const diffH = Math.floor(diffMs / (1000 * 60 * 60));
+  const diffD = Math.floor(diffH / 24);
+  if (diffH < 1) return 'less than an hour ago';
+  if (diffH < 24) return diffH + ' hour' + (diffH === 1 ? '' : 's') + ' ago';
+  if (diffD < 7) return diffD + ' day' + (diffD === 1 ? '' : 's') + ' ago';
+  return fmtDate(iso);
+}
+
+function renderAll(data) {
+  document.getElementById('last-refresh').textContent =
+    fmtWhen(data.generated_at) + ' (' + fmtDate(data.generated_at) + ')';
+
+  renderRecent(data.recent || []);
+  renderEF5(data.ef5 || []);
+  renderDeadliest(data.deadliest || []);
+  renderYearly(data.yearly || []);
+}
+
+function renderRecent(events) {
+  const stats = document.getElementById('recent-stats');
+  const total = events.length;
+  const last7 = events.filter(e => (Date.now() - new Date(e.date)) < 7 * 86400000).length;
+  const last24 = events.filter(e => (Date.now() - new Date(e.date)) < 86400000).length;
+  const states = new Set(events.map(e => e.state)).size;
+
+  stats.innerHTML = `
+    <div class="stat-card"><div class="stat-num">${last24}</div><div class="stat-lbl">last 24 hours</div></div>
+    <div class="stat-card"><div class="stat-num">${last7}</div><div class="stat-lbl">last 7 days</div></div>
+    <div class="stat-card"><div class="stat-num">${total}</div><div class="stat-lbl">total reports</div></div>
+    <div class="stat-card"><div class="stat-num">${states}</div><div class="stat-lbl">states affected</div></div>
+  `;
+
+  const target = document.getElementById('recent-events');
+  if (!events.length) {
+    target.innerHTML = '<div class="loading">No recent tornado reports on file. This is either quiet weather (good) or a transient data-fetch issue.</div>';
+    return;
+  }
+  const html = '<div class="event-grid">' + events.map(e => `
+    <div class="event-card">
+      <div class="ef ef-${(e.ef || 'unrated').toString().replace('EF','')}">${e.ef || 'Preliminary'}</div>
+      <div class="event-date">${fmtDate(e.date)} · ${fmtWhen(e.date)}</div>
+      <div class="event-loc">${e.location || 'Location TBD'}, ${e.state || ''}</div>
+      <div class="event-details">
+        ${e.injuries ? `<span>Injuries: <strong>${e.injuries}</strong></span>` : ''}
+        ${e.deaths ? `<span>Deaths: <strong>${e.deaths}</strong></span>` : ''}
+        ${e.path_length_mi ? `<span>Path: <strong>${e.path_length_mi} mi</strong></span>` : ''}
+        ${e.notes ? `<div style="margin-top:8px;">${e.notes}</div>` : ''}
+      </div>
+    </div>
+  `).join('') + '</div>';
+  target.innerHTML = html;
+}
+
+function renderEF5(events) {
+  const target = document.getElementById('ef5-events');
+  if (!events.length) {
+    target.innerHTML = '<div class="loading">Loading EF5/F5 catalog…</div>';
+    return;
+  }
+  const html = '<p class="section-lede">Every F5 (1971-2006) and EF5 (2007-present) officially rated by the NWS. The 2013 Moore, OK EF5 remains the most recent as of the last data refresh.</p><div class="event-grid">' + events.map(e => `
+    <div class="event-card">
+      <div class="ef ef-5">${e.ef || 'F5'}</div>
+      <div class="event-date">${fmtDate(e.date)}</div>
+      <div class="event-loc">${e.location}</div>
+      <div class="event-details">
+        ${e.deaths ? `<span>Killed: <strong>${e.deaths}</strong></span>` : ''}
+        ${e.path_length_mi ? `<span>Path: <strong>${e.path_length_mi} mi</strong></span>` : ''}
+        ${e.notes ? `<div style="margin-top:8px;">${e.notes}</div>` : ''}
+        ${e.article ? `<div style="margin-top:8px;"><a href="${e.article}">Read our full article →</a></div>` : ''}
+      </div>
+    </div>
+  `).join('') + '</div>';
+  target.innerHTML = html;
+}
+
+function renderDeadliest(events) {
+  const target = document.getElementById('deadliest-events');
+  if (!events.length) {
+    target.innerHTML = '<div class="loading">Loading deadliest events…</div>';
+    return;
+  }
+  const html = '<p class="section-lede">The 20 deadliest US tornadoes on record.</p><div class="event-grid">' + events.map((e, i) => `
+    <div class="event-card">
+      <div class="ef ef-${(e.ef || '5').toString().replace('EF','').replace('F','')}">#${i+1} · ${e.ef || 'F5'}</div>
+      <div class="event-date">${fmtDate(e.date)}</div>
+      <div class="event-loc">${e.location}</div>
+      <div class="event-details">
+        <span>Killed: <strong>${e.deaths}</strong></span>
+        ${e.injuries ? `<span>Injured: <strong>${e.injuries}</strong></span>` : ''}
+        ${e.notes ? `<div style="margin-top:8px;">${e.notes}</div>` : ''}
+        ${e.article ? `<div style="margin-top:8px;"><a href="${e.article}">Read our full article →</a></div>` : ''}
+      </div>
+    </div>
+  `).join('') + '</div>';
+  target.innerHTML = html;
+}
+
+function renderYearly(years) {
+  const target = document.getElementById('yearly-stats');
+  if (!years.length) {
+    target.innerHTML = '<div class="loading">Loading yearly stats…</div>';
+    return;
+  }
+  const maxCount = Math.max(...years.map(y => y.count));
+  const html = '<p class="section-lede">Annual US tornado count over the past 25 years. Data from the NOAA Storm Events Database.</p>' +
+    '<div style="background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:24px;">' +
+    years.map(y => `
+      <div style="display:grid; grid-template-columns: 60px 1fr 60px; gap:12px; align-items:center; margin-bottom:6px;">
+        <div style="font-family:var(--serif); font-weight:600; color:var(--text-muted); font-size:13px;">${y.year}</div>
+        <div style="background:var(--bg-alt); height:22px; border-radius:4px; overflow:hidden;">
+          <div style="background:var(--accent); height:100%; width:${(y.count / maxCount * 100).toFixed(0)}%;"></div>
+        </div>
+        <div style="font-family:var(--serif); font-weight:700; color:var(--text); font-size:13px; text-align:right;">${y.count.toLocaleString()}</div>
+      </div>
+    `).join('') + '</div>';
+  target.innerHTML = html;
+}
+
+// ─── TAB SWITCHING ────────────────────────────────────────────────────────
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
+loadData();
+</script>
+
+<aside id="adsterra-side" style="position:fixed;right:8px;top:50%;transform:translateY(-50%);width:160px;height:600px;z-index:50;display:none;">
+<script type="text/javascript">
+  atOptions = {'key':'da8c75671b236383c52eb13078c2a148','format':'iframe','height':600,'width':160,'params':{}};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/da8c75671b236383c52eb13078c2a148/invoke.js"></script>
+</aside>
+<style>@media (min-width:1280px){#adsterra-side{display:block!important;}}</style>
+
+<aside id="adsterra-left" style="position:fixed;left:8px;top:50%;transform:translateY(-50%);width:160px;height:300px;z-index:50;display:none;">
+<script type="text/javascript">
+  atOptions = {'key':'ff3f3758b896daf1842b3be893ed46f2','format':'iframe','height':300,'width':160,'params':{}};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/ff3f3758b896daf1842b3be893ed46f2/invoke.js"></script>
+</aside>
+<style>@media (min-width:1400px){#adsterra-left{display:block!important;}}</style>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+name: Refresh tornado index
+
+on:
+  schedule:
+    # Run daily at 06:00 UTC (about 1 AM Central, after the previous day's
+    # storm reports have settled)
+    - cron: '0 6 * * *'
+  workflow_dispatch:  # allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Fetch fresh tornado data
+        run: python .github/scripts/refresh_tornado_data.py
+
+      - name: Commit updated data (if changed)
+        run: |
+          git config user.name "tornado-hub-bot"
+          git config user.email "bot@tornadosimulator.net"
+          git add tornadoes/data.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Refresh tornado index data ($(date -u +'%Y-%m-%d'))"
+            git push
+          fi
