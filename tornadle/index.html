@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tornadle — The Daily Tornado Wordle Game</title>
+<meta name="description" content="Tornadle is a daily Wordle-style word game where the secret word is always a famous tornado, town, or storm-chaser term. Six guesses. New word every day. Share your results." />
+<meta name="keywords" content="tornadle, tornado wordle, tornado word game, weather wordle, storm wordle, daily tornado game, tornado quiz, tornado puzzle" />
+<meta property="og:title" content="Tornadle — The Daily Tornado Wordle" />
+<meta property="og:description" content="A daily word game for weather nerds. Guess today's tornado in 6 tries." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.tornadosimulator.net/tornadle/" />
+<meta property="og:site_name" content="Tornado Hub" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Tornadle — The Daily Tornado Wordle" />
+<meta name="twitter:description" content="Guess the daily tornado in 6 tries." />
+<link rel="canonical" href="https://www.tornadosimulator.net/tornadle/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌪️</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Game",
+  "name":"Tornadle",
+  "description":"A daily Wordle-style word game where the secret word is always related to tornadoes — famous twister names, historic outbreaks, storm-chaser vocabulary and severe-weather terms.",
+  "url":"https://www.tornadosimulator.net/tornadle/",
+  "genre":"Word Game",
+  "publisher":{"@type":"Organization","name":"Tornado Hub","url":"https://www.tornadosimulator.net/"},
+  "playMode":"SinglePlayer",
+  "gamePlatform":"Web browser"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"What is Tornadle?","acceptedAnswer":{"@type":"Answer","text":"Tornadle is a daily word-guessing game in the style of Wordle where the hidden word is always related to tornadoes — a famous tornado town, a historic outbreak, a storm-chaser term or a severe-weather word. You get six guesses; each guess reveals which letters are correct, misplaced or absent."}},
+    {"@type":"Question","name":"Is the answer the same length every day?","acceptedAnswer":{"@type":"Answer","text":"No. Unlike Wordle, Tornadle answers vary in length. Some days you might guess a 4-letter word like ELIE, other days a 10-letter word like TUSCALOOSA. The grid adjusts to fit."}},
+    {"@type":"Question","name":"How often does the word change?","acceptedAnswer":{"@type":"Answer","text":"A new Tornadle drops every day at midnight UTC. Come back tomorrow for a fresh puzzle."}},
+    {"@type":"Question","name":"Where do the words come from?","acceptedAnswer":{"@type":"Answer","text":"Every answer is drawn from the Tornado Hub database — real tornado locations, EF-rating vocabulary, and storm-chaser terminology."}}
+  ]
+}
+</script>
+<style>
+:root {
+  --bg: #fbfaf7;
+  --bg-alt: #f4f1ea;
+  --surface: #ffffff;
+  --text: #14161c;
+  --text-secondary: #4a5061;
+  --text-muted: #8b8f9c;
+  --border: #e5e1d8;
+  --border-strong: #d4cfc3;
+  --accent: #a02818;
+  --accent-hover: #7d1f13;
+  --link: #1e3a5f;
+  --link-hover: #a02818;
+  --tile-empty: #ffffff;
+  --tile-border: #d4cfc3;
+  --tile-active: #8b8f9c;
+  --tile-correct: #2d6a4f;
+  --tile-present: #b8860b;
+  --tile-absent: #6c757d;
+  --tile-text: #ffffff;
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--link-hover); text-decoration: underline; }
+
+/* Nav */
+.nav {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 100;
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  padding: 12px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 20px; flex-wrap: wrap;
+}
+.nav-brand {
+  font-family: var(--serif);
+  font-weight: 700; font-size: 20px;
+  color: var(--text);
+  display: flex; align-items: center; gap: 8px;
+}
+.nav-links { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+.nav-links a {
+  color: var(--text-secondary);
+  padding: 6px 12px;
+  font-size: 14px; font-weight: 500;
+  border-radius: 6px;
+}
+.nav-links a:hover { background: var(--bg-alt); color: var(--text); text-decoration: none; }
+.nav-links a.cta {
+  background: var(--accent); color: white; font-weight: 600;
+}
+.nav-links a.cta:hover { background: var(--accent-hover); color: white; }
+
+/* Header */
+.game-header {
+  text-align: center;
+  padding: 28px 20px 16px;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+}
+.game-header h1 {
+  font-family: var(--serif);
+  font-size: clamp(32px, 5vw, 48px);
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+.game-header h1 .accent { color: var(--accent); font-style: italic; }
+.game-header p {
+  color: var(--text-secondary);
+  font-size: 15px;
+  max-width: 560px; margin: 0 auto;
+}
+.game-meta {
+  display: inline-flex; align-items: center; gap: 12px;
+  margin-top: 12px; font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 0.08em;
+  font-weight: 600;
+}
+.game-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); }
+
+/* Toolbar */
+.toolbar {
+  display: flex; justify-content: center; gap: 8px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+.tool-btn {
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  font-size: 13px; font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: var(--sans);
+  transition: all 0.15s;
+}
+.tool-btn:hover { background: var(--bg-alt); color: var(--text); }
+
+/* Board */
+.board-wrap {
+  flex: 1;
+  display: flex; flex-direction: column; align-items: center;
+  padding: 20px 12px;
+  gap: 16px;
+}
+.category-hint {
+  font-size: 13px; color: var(--text-secondary);
+  text-align: center;
+  padding: 6px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+}
+.category-hint strong { color: var(--accent); }
+.board {
+  display: grid; gap: 5px;
+  padding: 8px;
+}
+.board-row {
+  display: grid; gap: 5px;
+  justify-content: center;
+}
+.tile {
+  width: min(56px, calc((100vw - 60px) / var(--cols, 5)));
+  height: min(56px, calc((100vw - 60px) / var(--cols, 5)));
+  max-width: 56px; max-height: 56px;
+  border: 2px solid var(--tile-border);
+  background: var(--tile-empty);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(20px, 6vw, 32px);
+  text-transform: uppercase;
+  color: var(--text);
+  transition: transform 0.15s, background 0.3s, border-color 0.3s, color 0.3s;
+}
+.tile.filled { border-color: var(--tile-active); animation: pop 0.1s ease-in-out; }
+.tile.correct { background: var(--tile-correct); border-color: var(--tile-correct); color: var(--tile-text); }
+.tile.present { background: var(--tile-present); border-color: var(--tile-present); color: var(--tile-text); }
+.tile.absent { background: var(--tile-absent); border-color: var(--tile-absent); color: var(--tile-text); }
+.tile.flip { animation: flip 0.5s ease forwards; }
+@keyframes pop { 50% { transform: scale(1.08); } }
+@keyframes flip {
+  0% { transform: rotateX(0); }
+  50% { transform: rotateX(90deg); }
+  100% { transform: rotateX(0); }
+}
+.board-row.shake { animation: shake 0.4s; }
+@keyframes shake { 0%,100% {transform:translateX(0)} 20% {transform:translateX(-6px)} 40% {transform:translateX(6px)} 60% {transform:translateX(-4px)} 80% {transform:translateX(4px)} }
+
+/* Keyboard */
+.keyboard {
+  padding: 8px 4px 16px;
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  user-select: none;
+}
+.kbd-row {
+  display: flex; justify-content: center; gap: 4px;
+  margin-bottom: 6px;
+}
+.key {
+  flex: 1; max-width: 44px;
+  height: 52px;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 0.05s, background 0.2s;
+  display: flex; align-items: center; justify-content: center;
+}
+.key:hover { background: var(--bg-alt); }
+.key:active { transform: scale(0.94); }
+.key.wide { max-width: 68px; font-size: 12px; letter-spacing: 0.05em; }
+.key.correct { background: var(--tile-correct); color: var(--tile-text); border-color: var(--tile-correct); }
+.key.present { background: var(--tile-present); color: var(--tile-text); border-color: var(--tile-present); }
+.key.absent { background: var(--tile-absent); color: var(--tile-text); border-color: var(--tile-absent); }
+
+/* Modal */
+.modal-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(20, 22, 28, 0.6);
+  backdrop-filter: blur(2px);
+  display: none;
+  align-items: center; justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+.modal-backdrop.show { display: flex; }
+.modal {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 28px;
+  max-width: 480px; width: 100%;
+  max-height: 88vh; overflow-y: auto;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+}
+.modal h2 {
+  font-family: var(--serif);
+  font-size: 26px;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+.modal h3 {
+  font-family: var(--serif);
+  font-size: 18px;
+  margin-top: 20px; margin-bottom: 8px;
+}
+.modal p { color: var(--text-secondary); font-size: 14px; margin-bottom: 10px; }
+.modal ul { margin: 8px 0 12px 20px; font-size: 14px; color: var(--text-secondary); }
+.modal li { margin-bottom: 4px; }
+.modal .close {
+  float: right; background: none; border: none;
+  font-size: 26px; cursor: pointer; color: var(--text-muted);
+  line-height: 1; padding: 0;
+}
+.modal .close:hover { color: var(--text); }
+.example {
+  display: flex; gap: 3px; margin-bottom: 6px;
+}
+.example .tile-mini {
+  width: 26px; height: 26px;
+  border: 1.5px solid var(--tile-border);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-family: var(--serif);
+  font-size: 14px;
+  color: var(--text);
+}
+.example .tile-mini.correct { background: var(--tile-correct); color: var(--tile-text); border-color: var(--tile-correct); }
+.example .tile-mini.present { background: var(--tile-present); color: var(--tile-text); border-color: var(--tile-present); }
+.example .tile-mini.absent { background: var(--tile-absent); color: var(--tile-text); border-color: var(--tile-absent); }
+
+.stat-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 6px; margin: 12px 0 18px;
+}
+.stat-item { text-align: center; }
+.stat-item .num {
+  font-family: var(--serif); font-size: 26px; font-weight: 700;
+}
+.stat-item .lbl {
+  font-size: 10px; color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 0.05em;
+}
+.dist { margin: 8px 0 18px; }
+.dist-row {
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 4px; font-size: 13px;
+}
+.dist-row .lab { width: 12px; font-weight: 600; }
+.dist-row .bar {
+  background: var(--tile-absent); color: white;
+  padding: 2px 8px; min-width: 24px;
+  border-radius: 3px;
+  text-align: right; font-weight: 600; font-size: 12px;
+}
+.dist-row .bar.win { background: var(--tile-correct); }
+.share-btn {
+  display: block; width: 100%;
+  background: var(--accent); color: white;
+  border: none; padding: 14px;
+  border-radius: 8px; font-size: 15px; font-weight: 700;
+  cursor: pointer;
+  font-family: var(--sans);
+  letter-spacing: 0.03em;
+  transition: background 0.15s;
+}
+.share-btn:hover { background: var(--accent-hover); }
+.reveal-note {
+  padding: 12px; background: var(--bg-alt);
+  border-radius: 8px; margin: 12px 0;
+  font-size: 14px;
+}
+.reveal-note strong { font-family: var(--serif); font-size: 18px; color: var(--accent); }
+
+/* Toast */
+.toast {
+  position: fixed; top: 100px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--text); color: var(--surface);
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 14px; font-weight: 500;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  opacity: 0; transition: opacity 0.2s;
+  z-index: 500; pointer-events: none;
+}
+.toast.show { opacity: 1; }
+
+/* SEO body content shown below the fold */
+.about-section {
+  max-width: 800px; margin: 0 auto;
+  padding: 32px 20px 60px;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+.about-section h2 {
+  font-family: var(--serif);
+  font-size: 28px;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+.about-section h3 {
+  font-family: var(--serif);
+  font-size: 20px;
+  margin-top: 24px; margin-bottom: 8px;
+  color: var(--text);
+}
+.about-section p {
+  color: var(--text-secondary);
+  margin-bottom: 12px; font-size: 15px;
+}
+.related-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px; margin-top: 16px;
+}
+.related-card {
+  padding: 14px;
+  background: var(--bg-alt);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: transform 0.15s;
+}
+.related-card:hover { transform: translateY(-2px); text-decoration: none; }
+.related-card .title { font-weight: 600; color: var(--text); font-family: var(--serif); font-size: 16px; }
+.related-card .desc { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 24px 20px;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 13px;
+  background: var(--bg-alt);
+}
+
+@media (max-width: 500px) {
+  .tile { width: min(48px, calc((100vw - 40px) / var(--cols, 5))); height: min(48px, calc((100vw - 40px) / var(--cols, 5))); font-size: clamp(18px, 5vw, 26px); }
+  .key { height: 44px; font-size: 13px; }
+  .key.wide { font-size: 11px; }
+  .game-header { padding: 20px 16px 12px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand"><span>🌪️</span> Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/quiz/">Quizzes</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/tornadoes/">Index</a>
+      <a href="/safety/">Safety</a>
+      <a href="/simulator/" class="cta">Launch Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<header class="game-header">
+  <h1>Torn<span class="accent">adle</span></h1>
+  <p>Guess today's tornado in six tries. New puzzle every day at midnight UTC.</p>
+  <div class="game-meta">
+    <span id="puzzle-number">Puzzle #—</span>
+    <span class="dot"></span>
+    <span id="puzzle-date">—</span>
+  </div>
+</header>
+
+<div class="toolbar">
+  <button class="tool-btn" id="btn-help">How to play</button>
+  <button class="tool-btn" id="btn-stats">Statistics</button>
+</div>
+
+<div class="board-wrap">
+  <div id="cat-hint" class="category-hint" style="display:none"></div>
+  <div id="board" class="board"></div>
+</div>
+
+<div class="keyboard" id="keyboard"></div>
+
+<div id="toast" class="toast"></div>
+
+<!-- How to Play modal -->
+<div class="modal-backdrop" id="modal-help">
+  <div class="modal">
+    <button class="close" data-close="modal-help">×</button>
+    <h2>How to play Tornadle</h2>
+    <p>Guess the daily <strong>Tornadle</strong> in 6 tries. Every answer is a tornado name, storm location, chaser term or severe-weather word.</p>
+    <ul>
+      <li>Type any real word of the correct length.</li>
+      <li>Colors show how close you are:</li>
+    </ul>
+    <h3>Examples</h3>
+    <div class="example"><div class="tile-mini correct">E</div><div class="tile-mini">L</div><div class="tile-mini">I</div><div class="tile-mini">E</div></div>
+    <p><strong>E</strong> is in the word and in the right spot.</p>
+    <div class="example"><div class="tile-mini">S</div><div class="tile-mini present">U</div><div class="tile-mini">P</div><div class="tile-mini">E</div><div class="tile-mini">R</div></div>
+    <p><strong>U</strong> is in the word but in the wrong spot.</p>
+    <div class="example"><div class="tile-mini">M</div><div class="tile-mini">O</div><div class="tile-mini absent">O</div><div class="tile-mini">R</div><div class="tile-mini">E</div></div>
+    <p><strong>O</strong> is not in the word anywhere.</p>
+    <h3>New puzzle daily</h3>
+    <p>The word changes at midnight UTC — one puzzle per day, no cheating with a re-roll.</p>
+  </div>
+</div>
+
+<!-- Stats / End-of-game modal -->
+<div class="modal-backdrop" id="modal-stats">
+  <div class="modal">
+    <button class="close" data-close="modal-stats">×</button>
+    <h2 id="stats-title">Statistics</h2>
+    <div id="reveal-container"></div>
+    <div class="stat-grid">
+      <div class="stat-item"><div class="num" id="s-played">0</div><div class="lbl">Played</div></div>
+      <div class="stat-item"><div class="num" id="s-winpct">0</div><div class="lbl">Win %</div></div>
+      <div class="stat-item"><div class="num" id="s-streak">0</div><div class="lbl">Streak</div></div>
+      <div class="stat-item"><div class="num" id="s-best">0</div><div class="lbl">Best</div></div>
+    </div>
+    <h3>Guess distribution</h3>
+    <div class="dist" id="dist"></div>
+    <button class="share-btn" id="btn-share">📋 Share result</button>
+  </div>
+</div>
+
+<!-- SEO content below the fold -->
+<section class="about-section">
+  <h2>What is Tornadle?</h2>
+  <p>Tornadle is a daily word-guessing game inspired by Wordle, built specifically for weather nerds, storm chasers and tornado history buffs. Every answer is drawn from the Tornado Hub database — famous twister towns like <a href="/jarrell-1997/">Jarrell</a>, <a href="/moore-tornadoes/">Moore</a> and <a href="/tuscaloosa-2011/">Tuscaloosa</a>, storm-chaser terminology like <em>mesocyclone</em> and <em>wedge</em>, and severe-weather vocabulary you'll recognize if you've ever watched a supercell roll across the plains.</p>
+  <p>Unlike Wordle, Tornadle answers vary in length. Some days it's a compact four-letter town, other days a mouthful like <em>tuscaloosa</em>. The grid automatically adjusts. You get six guesses, colored feedback after each one, and a shareable result card at the end.</p>
+
+  <h3>How Tornadle is different from Wordle</h3>
+  <ul>
+    <li><strong>Variable word length.</strong> The grid resizes to match today's answer.</li>
+    <li><strong>Themed vocabulary.</strong> Every answer is tornado-related and appears in a real article you can read.</li>
+    <li><strong>Category hint.</strong> A small tag above the board tells you whether today's word is a town, a term or an outbreak name.</li>
+    <li><strong>Free forever.</strong> No paywall, no subscription, no account. Just the puzzle.</li>
+  </ul>
+
+  <h3>Explore more tornado tools</h3>
+  <div class="related-links">
+    <a class="related-card" href="/simulator/">
+      <div class="title">Tornado Simulator</div>
+      <div class="desc">Place an EF-scale tornado anywhere in the world and simulate the damage path with live census data.</div>
+    </a>
+    <a class="related-card" href="/quiz/">
+      <div class="title">Tornado Quizzes</div>
+      <div class="desc">Hundreds of BuzzFeed-style quizzes about famous tornadoes, chasers and weather trivia.</div>
+    </a>
+    <a class="related-card" href="/tornadoes/">
+      <div class="title">Live Tornado Index</div>
+      <div class="desc">Recent reports, every EF5/F5 ever recorded and the deadliest events in history.</div>
+    </a>
+    <a class="related-card" href="/articles/">
+      <div class="title">Articles</div>
+      <div class="desc">Long-form pieces on the science and history behind the world's most powerful storms.</div>
+    </a>
+  </div>
+
+  <h3>Come back tomorrow</h3>
+  <p>A fresh Tornadle drops every day at midnight UTC. Bookmark <a href="https://www.tornadosimulator.net/tornadle/">tornadosimulator.net/tornadle</a> and don't miss a streak.</p>
+</section>
+
+<footer class="footer">
+  Part of <a href="/">Tornado Hub</a> — educational resource, not affiliated with the National Weather Service.
+</footer>
+
+<script src="/tornadle/game.js" defer></script>
+</body>
+</html>

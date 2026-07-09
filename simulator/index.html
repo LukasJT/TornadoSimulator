@@ -70,6 +70,7 @@
       <a href="/">Home</a>
       <a href="/articles/">Articles</a>
       <a href="/quiz/">Quizzes</a>
+      <a href="/tornadle/">Tornadle</a>
       <a href="/tornadoes/">Tornado Index</a>
       <a href="/learn/">Learn</a>
       <a href="/safety/">Safety</a>
@@ -1807,25 +1808,25 @@ function MiniBar({ items, maxVal }) {
 
 const AFFILIATE_LINKS = [
   {
-    icon: "🏠",
-    title: "Get a home insurance quote",
-    sub: "Compare rates from top insurers in your ZIP",
-    url: "https://quotewizard.com/homeowners-insurance",
-    tier: "primary",
-  },
-  {
     icon: "🚨",
     title: "NOAA weather radio",
-    sub: "Midland WR120 — Amazon bestseller",
-    url: "https://www.amazon.com/s?k=midland+wr120+noaa+weather+radio&tag=YOURTAG-20",
-    tier: "secondary",
+    sub: "Midland WR120 — the standard for tornado alerts",
+    url: "https://www.amazon.com/s?k=midland+wr120+noaa+weather+radio",
+    tier: "primary",
   },
   {
     icon: "🛖",
     title: "Storm shelter installation",
-    sub: "Get quotes from local certified installers",
+    sub: "Find certified installers near you",
     url: "https://www.google.com/search?q=storm+shelter+installation+near+me",
     tier: "primary",
+  },
+  {
+    icon: "🎒",
+    title: "Emergency preparedness kit",
+    sub: "FEMA-recommended 72-hour bag essentials",
+    url: "https://www.amazon.com/s?k=emergency+preparedness+kit+72+hour",
+    tier: "secondary",
   },
 ];
 
@@ -1846,10 +1847,7 @@ function ProtectionCTA({ fatalities, damage }) {
     }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
         <div style={{ fontSize: 10, fontWeight: 700, color: "#a78bfa", textTransform: "uppercase", letterSpacing: "0.08em" }}>
-          🛡️ Protect Your Home
-        </div>
-        <div style={{ fontSize: 8, color: "#555", textTransform: "uppercase", letterSpacing: "0.05em" }}>
-          Sponsored
+          🛡️ Preparedness Resources
         </div>
       </div>
       <div style={{ fontSize: 11, color: "#bbb", marginBottom: 12, lineHeight: 1.5 }}>
@@ -1986,14 +1984,60 @@ const PRESETS = {
   },
 };
 
+// ─── URL PARAMS (deep-link from articles: "Simulate this tornado") ─────────
+// Accepted params:
+//   ef       0-5             set windSpeed and pressureDeficit to that EF band
+//   length   miles           pathLength (0.1 - 200)
+//   width    miles           pathWidth in yards (1 mile ≈ 1760 yd)
+//   lat, lon float           starting position
+//   name     string          just shown, not stored in state
+//   preset   key             one of PRESETS keys (overrides ef/length/width fallbacks)
+function parseSimUrlParams() {
+  try {
+    const q = new URLSearchParams(window.location.search);
+    if (![...q.keys()].length) return null;
+    const num = (k) => {
+      const v = q.get(k);
+      if (v == null) return null;
+      const n = parseFloat(v);
+      return Number.isFinite(n) ? n : null;
+    };
+    const preset = q.get("preset");
+    const base = (preset && PRESETS[preset]) ? { ...PRESETS[preset] } : { ...PRESETS.suburban_ef4 };
+    const ef = num("ef");
+    if (ef != null && ef >= 0 && ef <= 5) {
+      // Center of each EF wind range
+      const winds = { 0: 75, 1: 100, 2: 125, 3: 150, 4: 180, 5: 220 };
+      const deficits = { 0: 30, 1: 50, 2: 70, 3: 90, 4: 110, 5: 130 };
+      base.windSpeed = winds[Math.round(ef)];
+      base.pressureDeficit = deficits[Math.round(ef)];
+    }
+    const len = num("length");
+    if (len != null && len >= 0.1 && len <= 300) base.pathLength = len;
+    const w = num("width");
+    if (w != null) {
+      // Width may be provided as miles (e.g. 1.7) or yards (e.g. 1760)
+      base.pathWidth = w < 20 ? Math.round(w * 1760) : Math.round(w);
+    }
+    const lat = num("lat");
+    const lon = num("lon") ?? num("lng");
+    const name = q.get("name");
+    return { params: base, lat, lon, name };
+  } catch (e) {
+    return null;
+  }
+}
+const URL_INIT = parseSimUrlParams();
+
 // ─── MAIN APP ───────────────────────────────────────────────────────────────
 
 function TornadoSimulator() {
-  const [params, setParams] = useState(PRESETS.suburban_ef4);
+  const [params, setParams] = useState(URL_INIT?.params || PRESETS.suburban_ef4);
   const [activeTab, setActiveTab] = useState("overview");
   const [enabledCountries, setEnabledCountries] = useState("both");
-  const [tornadoLat, setTornadoLat] = useState(37.08);
-  const [tornadoLng, setTornadoLng] = useState(-94.51);
+  const [tornadoLat, setTornadoLat] = useState(URL_INIT?.lat ?? 37.08);
+  const [tornadoLng, setTornadoLng] = useState(URL_INIT?.lon ?? -94.51);
+  const [urlPrefillName] = useState(URL_INIT?.name || null);
   const [vizMode, setVizMode] = useState("map"); // "map" or "path"
   const [mapStyle, setMapStyle] = useState("satellite"); // "satellite", "streets", "topo", "dark"
   const [censusData, setCensusData] = useState(null);
@@ -2584,7 +2628,9 @@ function TornadoSimulator() {
           <span style={{ fontSize: 22 }}>🌪️</span>
           <div>
             <div style={{ fontSize: 14, fontWeight: 800, letterSpacing: "0.04em", color: "#fff" }}>TORNADO SIMULATOR</div>
-            <div style={{ fontSize: 9, color: "#666", letterSpacing: "0.1em" }}>MULTI-VARIABLE DAMAGE MODELER</div>
+            <div style={{ fontSize: 9, color: "#666", letterSpacing: "0.1em" }}>
+              {urlPrefillName ? `PRELOADED: ${urlPrefillName.toUpperCase()}` : "MULTI-VARIABLE DAMAGE MODELER"}
+            </div>
           </div>
         </div>
         <div style={{ display: "flex", gap: 4 }}>
@@ -3473,6 +3519,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 </script>
 <script type="text/javascript" src="//www.highperformanceformat.com/ff3f3758b896daf1842b3be893ed46f2/invoke.js"></script>
 </aside>
-<style>@media (min-width:1400px){#adsterra-left{display:block!important;}}</style>
+<style>@media (min-width:1200px){#adsterra-left{display:block!important;}}</style>
 </body>
 </html>
