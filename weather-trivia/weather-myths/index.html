@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Weather Myths & Misconceptions Trivia — Free Interactive Weather Trivia</title>
+<meta name="description" content="Can you separate weather fact from folk myth? 15 questions that tell truth from tall tale. Instant scoring, share your result." />
+<meta name="keywords" content="weather trivia, weather quiz, weather-myths trivia, weather questions and answers" />
+<meta property="og:title" content="Weather Myths & Misconceptions Trivia" />
+<meta property="og:description" content="Can you separate weather fact from folk myth? 15 questions that tell truth from tall tale." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tornadosimulator.net/weather-trivia/weather-myths/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/weather-trivia/weather-myths/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤔</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Quiz","name":"Weather Myths & Misconceptions Trivia","about":"Weather trivia","educationalLevel":"General","numberOfQuestions":15,"publisher":{"@type":"Organization","name":"Tornado Hub","url":"https://www.tornadosimulator.net/"} }
+</script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --border-strong:#d4cfc3; --accent:#a02818; --accent-hover:#7d1f13; --link:#1e3a5f; --correct:#2d6a4f; --wrong:#a02818; --serif:"Fraunces",Georgia,serif; --sans:"Inter",-apple-system,sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--link);text-decoration:none}
+a:hover{color:var(--accent);text-decoration:underline}
+
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text);text-decoration:none}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.breadcrumb{max-width:800px;margin:20px auto 0;padding:0 24px;font-size:13px;color:var(--text-muted)}
+
+.hero{padding:40px 24px 20px;max-width:800px;margin:0 auto;text-align:center}
+.hero .emoji{font-size:56px;line-height:1;margin-bottom:16px}
+.hero h1{font-family:var(--serif);font-size:clamp(28px,4vw,42px);font-weight:700;line-height:1.15;letter-spacing:-0.02em;margin-bottom:14px}
+.hero p{color:var(--text-secondary);font-size:17px;max-width:600px;margin:0 auto}
+
+.quiz-wrap{max-width:720px;margin:20px auto;padding:0 20px 60px}
+.progress-bar{position:sticky;top:66px;background:var(--surface);border-radius:8px;padding:12px 18px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,0.04);display:flex;justify-content:space-between;align-items:center;z-index:50;border:1px solid var(--border)}
+.progress-count{font-size:13px;color:var(--text-secondary);font-weight:600}
+.progress-count .score{color:var(--accent)}
+.progress-track{flex:1;margin:0 16px;height:6px;background:var(--bg-alt);border-radius:3px;overflow:hidden}
+.progress-fill{height:100%;background:var(--accent);width:0;transition:width 0.3s}
+
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:16px;transition:box-shadow 0.15s}
+.card.answered{opacity:0.85}
+.q-num{font-size:11px;color:var(--text-muted);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px}
+.q-text{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.35;margin-bottom:16px;letter-spacing:-0.01em}
+.options{display:flex;flex-direction:column;gap:8px}
+.opt{padding:12px 16px;background:var(--bg);border:1.5px solid var(--border);border-radius:8px;cursor:pointer;text-align:left;font-family:var(--sans);font-size:15px;color:var(--text);transition:background 0.15s,border-color 0.15s;display:flex;align-items:center;gap:10px}
+.opt:hover:not(:disabled){background:var(--bg-alt);border-color:var(--border-strong)}
+.opt .letter{width:24px;height:24px;background:var(--surface);border:1.5px solid var(--border-strong);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;flex-shrink:0}
+.opt.correct{background:#e0f2e9;border-color:var(--correct);color:var(--correct)}
+.opt.correct .letter{background:var(--correct);color:white;border-color:var(--correct)}
+.opt.wrong{background:#fbe0dc;border-color:var(--wrong);color:var(--wrong)}
+.opt.wrong .letter{background:var(--wrong);color:white;border-color:var(--wrong)}
+.opt:disabled{cursor:default}
+.explanation{margin-top:14px;padding:12px 14px;background:var(--bg-alt);border-left:3px solid var(--accent);border-radius:4px;font-size:14px;color:var(--text-secondary);display:none}
+.explanation.show{display:block}
+.explanation strong{color:var(--accent)}
+
+.result{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:32px;margin-top:20px;text-align:center;display:none}
+.result.show{display:block}
+.result h2{font-family:var(--serif);font-size:32px;margin-bottom:12px}
+.result .score-big{font-family:var(--serif);font-size:72px;font-weight:700;color:var(--accent);line-height:1;margin:20px 0}
+.result .verdict{font-size:17px;color:var(--text-secondary);margin-bottom:20px}
+.result-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;font-size:14px;font-weight:600;border-radius:8px;border:1px solid var(--border-strong);background:transparent;color:var(--text);cursor:pointer;font-family:var(--sans);text-decoration:none}
+.btn.primary{background:var(--accent);color:white;border-color:var(--accent)}
+.btn.primary:hover{background:var(--accent-hover);color:white}
+.btn:hover{background:var(--bg-alt);text-decoration:none}
+
+.footer{text-align:center;padding:24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px;margin-top:40px}
+.inline-ad{text-align:center;margin:24px auto;max-width:728px;overflow:hidden}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/quiz/">Quizzes</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/tornadoes/">Index</a>
+      <a href="/simulator/" class="cta">Launch Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb"><a href="/">Home</a> · <a href="/weather-trivia/">Weather Trivia</a> · Weather Myths & Misconceptions Trivia</div>
+
+<section class="hero">
+  <div class="emoji">🤔</div>
+  <h1>Weather Myths & Misconceptions Trivia</h1>
+  <p>Can you separate weather fact from folk myth? 15 questions that tell truth from tall tale.</p>
+</section>
+
+<div class="quiz-wrap">
+
+  <div class="progress-bar">
+    <div class="progress-count">Question <span id="qnum">1</span>/15</div>
+    <div class="progress-track"><div class="progress-fill" id="fill"></div></div>
+    <div class="progress-count"><span class="score" id="scoreLive">0</span> correct</div>
+  </div>
+
+  <div id="questions">
+    <div class="card" id="q0">
+      <div class="q-num">Question 1 of 15</div>
+      <div class="q-text">Is it safe to shelter under a highway overpass during a tornado?</div>
+      <div class="options"><button class="opt" onclick="pick(0,0,this)"><span class="letter">A</span><span>Yes, always</span></button><button class="opt" onclick="pick(0,1,this)"><span class="letter">B</span><span>No, the wind accelerates through the opening</span></button><button class="opt" onclick="pick(0,2,this)"><span class="letter">C</span><span>Only if it&#x27;s an interstate</span></button><button class="opt" onclick="pick(0,3,this)"><span class="letter">D</span><span>Only if no other shelter is close</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Overpasses funnel wind and debris — they&#x27;re not safe shelters.</div>
+    </div>
+    <div class="card" id="q1">
+      <div class="q-num">Question 2 of 15</div>
+      <div class="q-text">Does opening windows equalize pressure during a tornado?</div>
+      <div class="options"><button class="opt" onclick="pick(1,0,this)"><span class="letter">A</span><span>Yes, always</span></button><button class="opt" onclick="pick(1,1,this)"><span class="letter">B</span><span>No — it wastes time and lets in debris</span></button><button class="opt" onclick="pick(1,2,this)"><span class="letter">C</span><span>Only for weak tornadoes</span></button><button class="opt" onclick="pick(1,3,this)"><span class="letter">D</span><span>Only in mobile homes</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Pressure drops from tornadoes are not what destroys buildings; wind is.</div>
+    </div>
+    <div class="card" id="q2">
+      <div class="q-num">Question 3 of 15</div>
+      <div class="q-text">Can lightning strike the same place twice?</div>
+      <div class="options"><button class="opt" onclick="pick(2,0,this)"><span class="letter">A</span><span>No, it always finds a new target</span></button><button class="opt" onclick="pick(2,1,this)"><span class="letter">B</span><span>Yes, often — tall structures get struck repeatedly</span></button><button class="opt" onclick="pick(2,2,this)"><span class="letter">C</span><span>Only during the same storm</span></button><button class="opt" onclick="pick(2,3,this)"><span class="letter">D</span><span>Only if the object is metal</span></button></div>
+      <div class="explanation"><strong>Why:</strong> The Empire State Building is struck about 20–25 times a year.</div>
+    </div>
+    <div class="card" id="q3">
+      <div class="q-num">Question 4 of 15</div>
+      <div class="q-text">Does cold weather cause colds?</div>
+      <div class="options"><button class="opt" onclick="pick(3,0,this)"><span class="letter">A</span><span>Yes, always</span></button><button class="opt" onclick="pick(3,1,this)"><span class="letter">B</span><span>No, viruses cause colds</span></button><button class="opt" onclick="pick(3,2,this)"><span class="letter">C</span><span>Only if you have wet hair</span></button><button class="opt" onclick="pick(3,3,this)"><span class="letter">D</span><span>Only in children</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Cold weather may enhance viral transmission indoors, but it doesn&#x27;t cause colds itself.</div>
+    </div>
+    <div class="card" id="q4">
+      <div class="q-num">Question 5 of 15</div>
+      <div class="q-text">Does thunder mean lightning is close?</div>
+      <div class="options"><button class="opt" onclick="pick(4,0,this)"><span class="letter">A</span><span>Only if it&#x27;s loud</span></button><button class="opt" onclick="pick(4,1,this)"><span class="letter">B</span><span>Only if it rumbles</span></button><button class="opt" onclick="pick(4,2,this)"><span class="letter">C</span><span>Yes — any thunder means lightning is within about 10 miles</span></button><button class="opt" onclick="pick(4,3,this)"><span class="letter">D</span><span>No, thunder can happen alone</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Thunder is always caused by lightning.</div>
+    </div>
+    <div class="card" id="q5">
+      <div class="q-num">Question 6 of 15</div>
+      <div class="q-text">Do tornadoes never hit big cities?</div>
+      <div class="options"><button class="opt" onclick="pick(5,0,this)"><span class="letter">A</span><span>True</span></button><button class="opt" onclick="pick(5,1,this)"><span class="letter">B</span><span>False — many big cities have been hit</span></button><button class="opt" onclick="pick(5,2,this)"><span class="letter">C</span><span>Only small towns get hit</span></button><button class="opt" onclick="pick(5,3,this)"><span class="letter">D</span><span>Only in Kansas</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Dallas, St. Louis, Nashville, Atlanta and Salt Lake City have all been hit.</div>
+    </div>
+    <div class="card" id="q6">
+      <div class="q-num">Question 7 of 15</div>
+      <div class="q-text">Are you safer in a car than outside in a tornado?</div>
+      <div class="options"><button class="opt" onclick="pick(6,0,this)"><span class="letter">A</span><span>Yes, cars protect you</span></button><button class="opt" onclick="pick(6,1,this)"><span class="letter">B</span><span>No — a car is unsafe; get into a sturdy building or low ground</span></button><button class="opt" onclick="pick(6,2,this)"><span class="letter">C</span><span>Only in a modern car</span></button><button class="opt" onclick="pick(6,3,this)"><span class="letter">D</span><span>Only if seatbelted</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Cars are easily lifted; abandon them for a building or ditch.</div>
+    </div>
+    <div class="card" id="q7">
+      <div class="q-num">Question 8 of 15</div>
+      <div class="q-text">Does a heavy raindrop fall harder than a small one?</div>
+      <div class="options"><button class="opt" onclick="pick(7,0,this)"><span class="letter">A</span><span>Yes, faster</span></button><button class="opt" onclick="pick(7,1,this)"><span class="letter">B</span><span>They fall at the same terminal velocity</span></button><button class="opt" onclick="pick(7,2,this)"><span class="letter">C</span><span>No, small ones fall faster</span></button><button class="opt" onclick="pick(7,3,this)"><span class="letter">D</span><span>Depends on temperature</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Actually — bigger drops have higher terminal velocity, up to about 20 mph.</div>
+    </div>
+    <div class="card" id="q8">
+      <div class="q-num">Question 9 of 15</div>
+      <div class="q-text">Are all tornadoes visible?</div>
+      <div class="options"><button class="opt" onclick="pick(8,0,this)"><span class="letter">A</span><span>Yes, you can always see the funnel</span></button><button class="opt" onclick="pick(8,1,this)"><span class="letter">B</span><span>No — rain and darkness can hide them</span></button><button class="opt" onclick="pick(8,2,this)"><span class="letter">C</span><span>Only F5s are visible</span></button><button class="opt" onclick="pick(8,3,this)"><span class="letter">D</span><span>Only in daytime</span></button></div>
+      <div class="explanation"><strong>Why:</strong> &#x27;Rain-wrapped&#x27; tornadoes are especially dangerous.</div>
+    </div>
+    <div class="card" id="q9">
+      <div class="q-num">Question 10 of 15</div>
+      <div class="q-text">Can hail form in warm weather?</div>
+      <div class="options"><button class="opt" onclick="pick(9,0,this)"><span class="letter">A</span><span>No, only in winter</span></button><button class="opt" onclick="pick(9,1,this)"><span class="letter">B</span><span>Yes — hail requires strong summer thunderstorm updrafts</span></button><button class="opt" onclick="pick(9,2,this)"><span class="letter">C</span><span>Only above the Arctic Circle</span></button><button class="opt" onclick="pick(9,3,this)"><span class="letter">D</span><span>Only over mountains</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Hail is most common in late spring / early summer thunderstorms.</div>
+    </div>
+    <div class="card" id="q10">
+      <div class="q-num">Question 11 of 15</div>
+      <div class="q-text">Does rain follow the plow?</div>
+      <div class="options"><button class="opt" onclick="pick(10,0,this)"><span class="letter">A</span><span>Yes, farming brings rain</span></button><button class="opt" onclick="pick(10,1,this)"><span class="letter">B</span><span>No, that was a debunked 19th-century belief</span></button><button class="opt" onclick="pick(10,2,this)"><span class="letter">C</span><span>Only in humid areas</span></button><button class="opt" onclick="pick(10,3,this)"><span class="letter">D</span><span>Only in the tropics</span></button></div>
+      <div class="explanation"><strong>Why:</strong> The belief drove settlement of the arid US Plains; the region reverted to droughts.</div>
+    </div>
+    <div class="card" id="q11">
+      <div class="q-num">Question 12 of 15</div>
+      <div class="q-text">Are red skies at night a reliable forecast?</div>
+      <div class="options"><button class="opt" onclick="pick(11,0,this)"><span class="letter">A</span><span>Yes, a shepherd&#x27;s delight</span></button><button class="opt" onclick="pick(11,1,this)"><span class="letter">B</span><span>Somewhat — dry air to the west can precede fair weather at mid-latitudes</span></button><button class="opt" onclick="pick(11,2,this)"><span class="letter">C</span><span>Never accurate</span></button><button class="opt" onclick="pick(11,3,this)"><span class="letter">D</span><span>Only near oceans</span></button></div>
+      <div class="explanation"><strong>Why:</strong> There&#x27;s some truth in mid-latitudes but it&#x27;s not a rigorous forecast.</div>
+    </div>
+    <div class="card" id="q12">
+      <div class="q-num">Question 13 of 15</div>
+      <div class="q-text">Can you actually smell rain coming?</div>
+      <div class="options"><button class="opt" onclick="pick(12,0,this)"><span class="letter">A</span><span>No, that&#x27;s psychosomatic</span></button><button class="opt" onclick="pick(12,1,this)"><span class="letter">B</span><span>Yes — ozone from lightning and petrichor from wet soil</span></button><button class="opt" onclick="pick(12,2,this)"><span class="letter">C</span><span>Only after a drought</span></button><button class="opt" onclick="pick(12,3,this)"><span class="letter">D</span><span>Only in the desert</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Both ozone and petrichor (from actinomycetes bacteria) can be smelled.</div>
+    </div>
+    <div class="card" id="q13">
+      <div class="q-num">Question 14 of 15</div>
+      <div class="q-text">Is it more likely to be humid on a hot day than a cold day?</div>
+      <div class="options"><button class="opt" onclick="pick(13,0,this)"><span class="letter">A</span><span>Yes always</span></button><button class="opt" onclick="pick(13,1,this)"><span class="letter">B</span><span>It depends on absolute vs. relative humidity</span></button><button class="opt" onclick="pick(13,2,this)"><span class="letter">C</span><span>No, cold air is always humid</span></button><button class="opt" onclick="pick(13,3,this)"><span class="letter">D</span><span>They&#x27;re always the same</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Warm air holds more water vapor absolutely, but relative humidity depends on saturation.</div>
+    </div>
+    <div class="card" id="q14">
+      <div class="q-num">Question 15 of 15</div>
+      <div class="q-text">Does putting a spoon under your pillow bring a snow day?</div>
+      <div class="options"><button class="opt" onclick="pick(14,0,this)"><span class="letter">A</span><span>Yes, it works</span></button><button class="opt" onclick="pick(14,1,this)"><span class="letter">B</span><span>No — but many kids swear by it</span></button><button class="opt" onclick="pick(14,2,this)"><span class="letter">C</span><span>Only if pjs are inside out</span></button><button class="opt" onclick="pick(14,3,this)"><span class="letter">D</span><span>Only in Michigan</span></button></div>
+      <div class="explanation"><strong>Why:</strong> A cheerful but unverified superstition.</div>
+    </div>
+  </div>
+
+  <div class="inline-ad">
+    <script type="text/javascript">atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};</script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
+  </div>
+
+  <div id="result" class="result">
+    <h2>You're done!</h2>
+    <div class="score-big"><span id="scoreFinal">0</span>/15</div>
+    <div class="verdict" id="verdict"></div>
+    <div class="result-btns">
+      <button class="btn primary" onclick="shareResult()">📋 Share your score</button>
+      <a class="btn" href="/weather-trivia/">More trivia →</a>
+      <a class="btn" href="/tornadle/">Try Tornadle</a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  Part of <a href="/">Tornado Hub</a> — free weather trivia.
+</footer>
+
+<script>
+const QUESTIONS = [{"q": "Is it safe to shelter under a highway overpass during a tornado?", "options": ["Yes, always", "No, the wind accelerates through the opening", "Only if it's an interstate", "Only if no other shelter is close"], "a": 1, "exp": "Overpasses funnel wind and debris \u2014 they're not safe shelters."}, {"q": "Does opening windows equalize pressure during a tornado?", "options": ["Yes, always", "No \u2014 it wastes time and lets in debris", "Only for weak tornadoes", "Only in mobile homes"], "a": 1, "exp": "Pressure drops from tornadoes are not what destroys buildings; wind is."}, {"q": "Can lightning strike the same place twice?", "options": ["No, it always finds a new target", "Yes, often \u2014 tall structures get struck repeatedly", "Only during the same storm", "Only if the object is metal"], "a": 1, "exp": "The Empire State Building is struck about 20\u201325 times a year."}, {"q": "Does cold weather cause colds?", "options": ["Yes, always", "No, viruses cause colds", "Only if you have wet hair", "Only in children"], "a": 1, "exp": "Cold weather may enhance viral transmission indoors, but it doesn't cause colds itself."}, {"q": "Does thunder mean lightning is close?", "options": ["Only if it's loud", "Only if it rumbles", "Yes \u2014 any thunder means lightning is within about 10 miles", "No, thunder can happen alone"], "a": 2, "exp": "Thunder is always caused by lightning."}, {"q": "Do tornadoes never hit big cities?", "options": ["True", "False \u2014 many big cities have been hit", "Only small towns get hit", "Only in Kansas"], "a": 1, "exp": "Dallas, St. Louis, Nashville, Atlanta and Salt Lake City have all been hit."}, {"q": "Are you safer in a car than outside in a tornado?", "options": ["Yes, cars protect you", "No \u2014 a car is unsafe; get into a sturdy building or low ground", "Only in a modern car", "Only if seatbelted"], "a": 1, "exp": "Cars are easily lifted; abandon them for a building or ditch."}, {"q": "Does a heavy raindrop fall harder than a small one?", "options": ["Yes, faster", "They fall at the same terminal velocity", "No, small ones fall faster", "Depends on temperature"], "a": 0, "exp": "Actually \u2014 bigger drops have higher terminal velocity, up to about 20 mph."}, {"q": "Are all tornadoes visible?", "options": ["Yes, you can always see the funnel", "No \u2014 rain and darkness can hide them", "Only F5s are visible", "Only in daytime"], "a": 1, "exp": "'Rain-wrapped' tornadoes are especially dangerous."}, {"q": "Can hail form in warm weather?", "options": ["No, only in winter", "Yes \u2014 hail requires strong summer thunderstorm updrafts", "Only above the Arctic Circle", "Only over mountains"], "a": 1, "exp": "Hail is most common in late spring / early summer thunderstorms."}, {"q": "Does rain follow the plow?", "options": ["Yes, farming brings rain", "No, that was a debunked 19th-century belief", "Only in humid areas", "Only in the tropics"], "a": 1, "exp": "The belief drove settlement of the arid US Plains; the region reverted to droughts."}, {"q": "Are red skies at night a reliable forecast?", "options": ["Yes, a shepherd's delight", "Somewhat \u2014 dry air to the west can precede fair weather at mid-latitudes", "Never accurate", "Only near oceans"], "a": 1, "exp": "There's some truth in mid-latitudes but it's not a rigorous forecast."}, {"q": "Can you actually smell rain coming?", "options": ["No, that's psychosomatic", "Yes \u2014 ozone from lightning and petrichor from wet soil", "Only after a drought", "Only in the desert"], "a": 1, "exp": "Both ozone and petrichor (from actinomycetes bacteria) can be smelled."}, {"q": "Is it more likely to be humid on a hot day than a cold day?", "options": ["Yes always", "It depends on absolute vs. relative humidity", "No, cold air is always humid", "They're always the same"], "a": 1, "exp": "Warm air holds more water vapor absolutely, but relative humidity depends on saturation."}, {"q": "Does putting a spoon under your pillow bring a snow day?", "options": ["Yes, it works", "No \u2014 but many kids swear by it", "Only if pjs are inside out", "Only in Michigan"], "a": 1, "exp": "A cheerful but unverified superstition."}];
+let answered = 0, score = 0;
+const total = QUESTIONS.length;
+
+function pick(qIdx, oIdx, btn) {
+  const q = QUESTIONS[qIdx];
+  if (btn.parentElement.dataset.done) return;
+  btn.parentElement.dataset.done = '1';
+  const buttons = btn.parentElement.querySelectorAll('.opt');
+  buttons.forEach((b, i) => {
+    b.disabled = true;
+    if (i === q.a) b.classList.add('correct');
+    else if (i === oIdx) b.classList.add('wrong');
+  });
+  const card = btn.closest('.card');
+  card.classList.add('answered');
+  card.querySelector('.explanation').classList.add('show');
+  if (oIdx === q.a) score++;
+  answered++;
+  document.getElementById('scoreLive').textContent = score;
+  document.getElementById('qnum').textContent = Math.min(answered + 1, total);
+  document.getElementById('fill').style.width = (answered / total * 100) + '%';
+  if (answered === total) showResult();
+  else {
+    // Auto-scroll to next question
+    const next = document.querySelectorAll('.card')[answered];
+    if (next) setTimeout(() => next.scrollIntoView({behavior:'smooth', block:'center'}), 400);
+  }
+}
+
+function showResult() {
+  const r = document.getElementById('result');
+  r.classList.add('show');
+  document.getElementById('scoreFinal').textContent = score;
+  const pct = Math.round(score / total * 100);
+  let msg;
+  if (pct === 100) msg = "🏆 Perfect score! You're a weather encyclopedia.";
+  else if (pct >= 80) msg = "🌪️ Impressive. Nearly a professional forecaster.";
+  else if (pct >= 60) msg = "🌤️ Solid — better than most casual weather watchers.";
+  else if (pct >= 40) msg = "🌫️ Not bad. Brush up and come back for another round.";
+  else msg = "🌧️ Room to grow — check out our articles and try again.";
+  document.getElementById('verdict').textContent = msg;
+  setTimeout(() => r.scrollIntoView({behavior:'smooth', block:'center'}), 300);
+}
+
+function shareResult() {
+  const pct = Math.round(score / total * 100);
+  const text = `I scored ${score}/${total} (${pct}%) on the ${document.title.split(' — ')[0]}!\n\nTry it at tornadosimulator.net/weather-trivia/weather-myths/`;
+  if (navigator.share) navigator.share({ text }).catch(() => copyText(text));
+  else copyText(text);
+}
+function copyText(t) {
+  if (navigator.clipboard) navigator.clipboard.writeText(t).then(() => alert('Copied to clipboard!'));
+  else {
+    const ta = document.createElement('textarea');
+    ta.value = t; document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); document.body.removeChild(ta);
+    alert('Copied to clipboard!');
+  }
+}
+</script>
+</body>
+</html>

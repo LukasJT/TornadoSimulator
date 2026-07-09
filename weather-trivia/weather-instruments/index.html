@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Weather Instruments Trivia Quiz — Free Interactive Weather Trivia</title>
+<meta name="description" content="Barometers to Doppler radar — how well do you know the tools of meteorology? Instant scoring, share your result." />
+<meta name="keywords" content="weather trivia, weather quiz, weather-instruments trivia, weather questions and answers" />
+<meta property="og:title" content="Weather Instruments Trivia Quiz" />
+<meta property="og:description" content="Barometers to Doppler radar — how well do you know the tools of meteorology?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tornadosimulator.net/weather-trivia/weather-instruments/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/weather-trivia/weather-instruments/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌡️</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Quiz","name":"Weather Instruments Trivia Quiz","about":"Weather trivia","educationalLevel":"General","numberOfQuestions":15,"publisher":{"@type":"Organization","name":"Tornado Hub","url":"https://www.tornadosimulator.net/"} }
+</script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --border-strong:#d4cfc3; --accent:#a02818; --accent-hover:#7d1f13; --link:#1e3a5f; --correct:#2d6a4f; --wrong:#a02818; --serif:"Fraunces",Georgia,serif; --sans:"Inter",-apple-system,sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--link);text-decoration:none}
+a:hover{color:var(--accent);text-decoration:underline}
+
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text);text-decoration:none}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.breadcrumb{max-width:800px;margin:20px auto 0;padding:0 24px;font-size:13px;color:var(--text-muted)}
+
+.hero{padding:40px 24px 20px;max-width:800px;margin:0 auto;text-align:center}
+.hero .emoji{font-size:56px;line-height:1;margin-bottom:16px}
+.hero h1{font-family:var(--serif);font-size:clamp(28px,4vw,42px);font-weight:700;line-height:1.15;letter-spacing:-0.02em;margin-bottom:14px}
+.hero p{color:var(--text-secondary);font-size:17px;max-width:600px;margin:0 auto}
+
+.quiz-wrap{max-width:720px;margin:20px auto;padding:0 20px 60px}
+.progress-bar{position:sticky;top:66px;background:var(--surface);border-radius:8px;padding:12px 18px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,0.04);display:flex;justify-content:space-between;align-items:center;z-index:50;border:1px solid var(--border)}
+.progress-count{font-size:13px;color:var(--text-secondary);font-weight:600}
+.progress-count .score{color:var(--accent)}
+.progress-track{flex:1;margin:0 16px;height:6px;background:var(--bg-alt);border-radius:3px;overflow:hidden}
+.progress-fill{height:100%;background:var(--accent);width:0;transition:width 0.3s}
+
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:16px;transition:box-shadow 0.15s}
+.card.answered{opacity:0.85}
+.q-num{font-size:11px;color:var(--text-muted);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px}
+.q-text{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.35;margin-bottom:16px;letter-spacing:-0.01em}
+.options{display:flex;flex-direction:column;gap:8px}
+.opt{padding:12px 16px;background:var(--bg);border:1.5px solid var(--border);border-radius:8px;cursor:pointer;text-align:left;font-family:var(--sans);font-size:15px;color:var(--text);transition:background 0.15s,border-color 0.15s;display:flex;align-items:center;gap:10px}
+.opt:hover:not(:disabled){background:var(--bg-alt);border-color:var(--border-strong)}
+.opt .letter{width:24px;height:24px;background:var(--surface);border:1.5px solid var(--border-strong);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;flex-shrink:0}
+.opt.correct{background:#e0f2e9;border-color:var(--correct);color:var(--correct)}
+.opt.correct .letter{background:var(--correct);color:white;border-color:var(--correct)}
+.opt.wrong{background:#fbe0dc;border-color:var(--wrong);color:var(--wrong)}
+.opt.wrong .letter{background:var(--wrong);color:white;border-color:var(--wrong)}
+.opt:disabled{cursor:default}
+.explanation{margin-top:14px;padding:12px 14px;background:var(--bg-alt);border-left:3px solid var(--accent);border-radius:4px;font-size:14px;color:var(--text-secondary);display:none}
+.explanation.show{display:block}
+.explanation strong{color:var(--accent)}
+
+.result{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:32px;margin-top:20px;text-align:center;display:none}
+.result.show{display:block}
+.result h2{font-family:var(--serif);font-size:32px;margin-bottom:12px}
+.result .score-big{font-family:var(--serif);font-size:72px;font-weight:700;color:var(--accent);line-height:1;margin:20px 0}
+.result .verdict{font-size:17px;color:var(--text-secondary);margin-bottom:20px}
+.result-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;font-size:14px;font-weight:600;border-radius:8px;border:1px solid var(--border-strong);background:transparent;color:var(--text);cursor:pointer;font-family:var(--sans);text-decoration:none}
+.btn.primary{background:var(--accent);color:white;border-color:var(--accent)}
+.btn.primary:hover{background:var(--accent-hover);color:white}
+.btn:hover{background:var(--bg-alt);text-decoration:none}
+
+.footer{text-align:center;padding:24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px;margin-top:40px}
+.inline-ad{text-align:center;margin:24px auto;max-width:728px;overflow:hidden}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/quiz/">Quizzes</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/tornadoes/">Index</a>
+      <a href="/simulator/" class="cta">Launch Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb"><a href="/">Home</a> · <a href="/weather-trivia/">Weather Trivia</a> · Weather Instruments Trivia Quiz</div>
+
+<section class="hero">
+  <div class="emoji">🌡️</div>
+  <h1>Weather Instruments Trivia Quiz</h1>
+  <p>Barometers to Doppler radar — how well do you know the tools of meteorology?</p>
+</section>
+
+<div class="quiz-wrap">
+
+  <div class="progress-bar">
+    <div class="progress-count">Question <span id="qnum">1</span>/15</div>
+    <div class="progress-track"><div class="progress-fill" id="fill"></div></div>
+    <div class="progress-count"><span class="score" id="scoreLive">0</span> correct</div>
+  </div>
+
+  <div id="questions">
+    <div class="card" id="q0">
+      <div class="q-num">Question 1 of 15</div>
+      <div class="q-text">What instrument measures air pressure?</div>
+      <div class="options"><button class="opt" onclick="pick(0,0,this)"><span class="letter">A</span><span>Thermometer</span></button><button class="opt" onclick="pick(0,1,this)"><span class="letter">B</span><span>Barometer</span></button><button class="opt" onclick="pick(0,2,this)"><span class="letter">C</span><span>Hygrometer</span></button><button class="opt" onclick="pick(0,3,this)"><span class="letter">D</span><span>Anemometer</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Barometers are essential for forecasting.</div>
+    </div>
+    <div class="card" id="q1">
+      <div class="q-num">Question 2 of 15</div>
+      <div class="q-text">What instrument measures wind speed?</div>
+      <div class="options"><button class="opt" onclick="pick(1,0,this)"><span class="letter">A</span><span>Anemometer</span></button><button class="opt" onclick="pick(1,1,this)"><span class="letter">B</span><span>Weather vane</span></button><button class="opt" onclick="pick(1,2,this)"><span class="letter">C</span><span>Rain gauge</span></button><button class="opt" onclick="pick(1,3,this)"><span class="letter">D</span><span>Ceilometer</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Cup and sonic anemometers are the common types.</div>
+    </div>
+    <div class="card" id="q2">
+      <div class="q-num">Question 3 of 15</div>
+      <div class="q-text">What instrument measures humidity?</div>
+      <div class="options"><button class="opt" onclick="pick(2,0,this)"><span class="letter">A</span><span>Barometer</span></button><button class="opt" onclick="pick(2,1,this)"><span class="letter">B</span><span>Hygrometer</span></button><button class="opt" onclick="pick(2,2,this)"><span class="letter">C</span><span>Thermometer</span></button><button class="opt" onclick="pick(2,3,this)"><span class="letter">D</span><span>Psychrometer</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Psychrometers are also acceptable — a wet-and-dry-bulb variant.</div>
+    </div>
+    <div class="card" id="q3">
+      <div class="q-num">Question 4 of 15</div>
+      <div class="q-text">What instrument measures rainfall?</div>
+      <div class="options"><button class="opt" onclick="pick(3,0,this)"><span class="letter">A</span><span>Rain gauge</span></button><button class="opt" onclick="pick(3,1,this)"><span class="letter">B</span><span>Ombrometer</span></button><button class="opt" onclick="pick(3,2,this)"><span class="letter">C</span><span>Pluviometer</span></button><button class="opt" onclick="pick(3,3,this)"><span class="letter">D</span><span>All of the above</span></button></div>
+      <div class="explanation"><strong>Why:</strong> All are names for the same thing.</div>
+    </div>
+    <div class="card" id="q4">
+      <div class="q-num">Question 5 of 15</div>
+      <div class="q-text">What technology uses radio waves to detect precipitation?</div>
+      <div class="options"><button class="opt" onclick="pick(4,0,this)"><span class="letter">A</span><span>Sonar</span></button><button class="opt" onclick="pick(4,1,this)"><span class="letter">B</span><span>Lidar</span></button><button class="opt" onclick="pick(4,2,this)"><span class="letter">C</span><span>Radar</span></button><button class="opt" onclick="pick(4,3,this)"><span class="letter">D</span><span>Infrared</span></button></div>
+      <div class="explanation"><strong>Why:</strong> The word &#x27;radar&#x27; is short for RAdio Detection And Ranging.</div>
+    </div>
+    <div class="card" id="q5">
+      <div class="q-num">Question 6 of 15</div>
+      <div class="q-text">What type of radar detects motion using frequency shift?</div>
+      <div class="options"><button class="opt" onclick="pick(5,0,this)"><span class="letter">A</span><span>Doppler</span></button><button class="opt" onclick="pick(5,1,this)"><span class="letter">B</span><span>Phased-array</span></button><button class="opt" onclick="pick(5,2,this)"><span class="letter">C</span><span>Continuous-wave</span></button><button class="opt" onclick="pick(5,3,this)"><span class="letter">D</span><span>S-band</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Doppler radar is essential for tornado warnings.</div>
+    </div>
+    <div class="card" id="q6">
+      <div class="q-num">Question 7 of 15</div>
+      <div class="q-text">What weather balloon instrument sends data as it rises?</div>
+      <div class="options"><button class="opt" onclick="pick(6,0,this)"><span class="letter">A</span><span>Radiosonde</span></button><button class="opt" onclick="pick(6,1,this)"><span class="letter">B</span><span>Dropsonde</span></button><button class="opt" onclick="pick(6,2,this)"><span class="letter">C</span><span>Ceilometer</span></button><button class="opt" onclick="pick(6,3,this)"><span class="letter">D</span><span>Nephelometer</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Radiosondes are launched twice daily worldwide.</div>
+    </div>
+    <div class="card" id="q7">
+      <div class="q-num">Question 8 of 15</div>
+      <div class="q-text">What scale measures wind at sea?</div>
+      <div class="options"><button class="opt" onclick="pick(7,0,this)"><span class="letter">A</span><span>Fujita</span></button><button class="opt" onclick="pick(7,1,this)"><span class="letter">B</span><span>Beaufort</span></button><button class="opt" onclick="pick(7,2,this)"><span class="letter">C</span><span>Saffir–Simpson</span></button><button class="opt" onclick="pick(7,3,this)"><span class="letter">D</span><span>Torro</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Sir Francis Beaufort devised it in 1805.</div>
+    </div>
+    <div class="card" id="q8">
+      <div class="q-num">Question 9 of 15</div>
+      <div class="q-text">What map line connects points of equal pressure?</div>
+      <div class="options"><button class="opt" onclick="pick(8,0,this)"><span class="letter">A</span><span>Isotherm</span></button><button class="opt" onclick="pick(8,1,this)"><span class="letter">B</span><span>Isobar</span></button><button class="opt" onclick="pick(8,2,this)"><span class="letter">C</span><span>Isohyet</span></button><button class="opt" onclick="pick(8,3,this)"><span class="letter">D</span><span>Isopleth</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Isobars appear on synoptic charts.</div>
+    </div>
+    <div class="card" id="q9">
+      <div class="q-num">Question 10 of 15</div>
+      <div class="q-text">What map line connects points of equal temperature?</div>
+      <div class="options"><button class="opt" onclick="pick(9,0,this)"><span class="letter">A</span><span>Isotherm</span></button><button class="opt" onclick="pick(9,1,this)"><span class="letter">B</span><span>Isobar</span></button><button class="opt" onclick="pick(9,2,this)"><span class="letter">C</span><span>Isohyet</span></button><button class="opt" onclick="pick(9,3,this)"><span class="letter">D</span><span>Isopleth</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Isotherms show temperature gradients.</div>
+    </div>
+    <div class="card" id="q10">
+      <div class="q-num">Question 11 of 15</div>
+      <div class="q-text">Who invented the mercury barometer?</div>
+      <div class="options"><button class="opt" onclick="pick(10,0,this)"><span class="letter">A</span><span>Galileo</span></button><button class="opt" onclick="pick(10,1,this)"><span class="letter">B</span><span>Torricelli</span></button><button class="opt" onclick="pick(10,2,this)"><span class="letter">C</span><span>Newton</span></button><button class="opt" onclick="pick(10,3,this)"><span class="letter">D</span><span>Ferrel</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Evangelista Torricelli, in 1643.</div>
+    </div>
+    <div class="card" id="q11">
+      <div class="q-num">Question 12 of 15</div>
+      <div class="q-text">What US model is a common deterministic forecast tool?</div>
+      <div class="options"><button class="opt" onclick="pick(11,0,this)"><span class="letter">A</span><span>ECMWF</span></button><button class="opt" onclick="pick(11,1,this)"><span class="letter">B</span><span>GFS</span></button><button class="opt" onclick="pick(11,2,this)"><span class="letter">C</span><span>UKMO</span></button><button class="opt" onclick="pick(11,3,this)"><span class="letter">D</span><span>JMA</span></button></div>
+      <div class="explanation"><strong>Why:</strong> The GFS runs 4 times daily out to 384 hours.</div>
+    </div>
+    <div class="card" id="q12">
+      <div class="q-num">Question 13 of 15</div>
+      <div class="q-text">What European center&#x27;s model is highly regarded for accuracy?</div>
+      <div class="options"><button class="opt" onclick="pick(12,0,this)"><span class="letter">A</span><span>ECMWF</span></button><button class="opt" onclick="pick(12,1,this)"><span class="letter">B</span><span>DWD</span></button><button class="opt" onclick="pick(12,2,this)"><span class="letter">C</span><span>Meteorage</span></button><button class="opt" onclick="pick(12,3,this)"><span class="letter">D</span><span>EUMETSAT</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Based in Reading, England.</div>
+    </div>
+    <div class="card" id="q13">
+      <div class="q-num">Question 14 of 15</div>
+      <div class="q-text">What is CAPE?</div>
+      <div class="options"><button class="opt" onclick="pick(13,0,this)"><span class="letter">A</span><span>Convective Available Potential Energy</span></button><button class="opt" onclick="pick(13,1,this)"><span class="letter">B</span><span>Cold Air Precipitation Effect</span></button><button class="opt" onclick="pick(13,2,this)"><span class="letter">C</span><span>Cloud Altitude and Position Ensemble</span></button><button class="opt" onclick="pick(13,3,this)"><span class="letter">D</span><span>Cyclone Approach Prediction Equation</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Higher CAPE = more instability = bigger storms possible.</div>
+    </div>
+    <div class="card" id="q14">
+      <div class="q-num">Question 15 of 15</div>
+      <div class="q-text">What is a &#x27;sounding&#x27;?</div>
+      <div class="options"><button class="opt" onclick="pick(14,0,this)"><span class="letter">A</span><span>A weather warning tone</span></button><button class="opt" onclick="pick(14,1,this)"><span class="letter">B</span><span>A vertical profile from a radiosonde</span></button><button class="opt" onclick="pick(14,2,this)"><span class="letter">C</span><span>A cyclone name</span></button><button class="opt" onclick="pick(14,3,this)"><span class="letter">D</span><span>A satellite scan</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Soundings are plotted on skew-T diagrams.</div>
+    </div>
+  </div>
+
+  <div class="inline-ad">
+    <script type="text/javascript">atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};</script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
+  </div>
+
+  <div id="result" class="result">
+    <h2>You're done!</h2>
+    <div class="score-big"><span id="scoreFinal">0</span>/15</div>
+    <div class="verdict" id="verdict"></div>
+    <div class="result-btns">
+      <button class="btn primary" onclick="shareResult()">📋 Share your score</button>
+      <a class="btn" href="/weather-trivia/">More trivia →</a>
+      <a class="btn" href="/tornadle/">Try Tornadle</a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  Part of <a href="/">Tornado Hub</a> — free weather trivia.
+</footer>
+
+<script>
+const QUESTIONS = [{"q": "What instrument measures air pressure?", "options": ["Thermometer", "Barometer", "Hygrometer", "Anemometer"], "a": 1, "exp": "Barometers are essential for forecasting."}, {"q": "What instrument measures wind speed?", "options": ["Anemometer", "Weather vane", "Rain gauge", "Ceilometer"], "a": 0, "exp": "Cup and sonic anemometers are the common types."}, {"q": "What instrument measures humidity?", "options": ["Barometer", "Hygrometer", "Thermometer", "Psychrometer"], "a": 1, "exp": "Psychrometers are also acceptable \u2014 a wet-and-dry-bulb variant."}, {"q": "What instrument measures rainfall?", "options": ["Rain gauge", "Ombrometer", "Pluviometer", "All of the above"], "a": 3, "exp": "All are names for the same thing."}, {"q": "What technology uses radio waves to detect precipitation?", "options": ["Sonar", "Lidar", "Radar", "Infrared"], "a": 2, "exp": "The word 'radar' is short for RAdio Detection And Ranging."}, {"q": "What type of radar detects motion using frequency shift?", "options": ["Doppler", "Phased-array", "Continuous-wave", "S-band"], "a": 0, "exp": "Doppler radar is essential for tornado warnings."}, {"q": "What weather balloon instrument sends data as it rises?", "options": ["Radiosonde", "Dropsonde", "Ceilometer", "Nephelometer"], "a": 0, "exp": "Radiosondes are launched twice daily worldwide."}, {"q": "What scale measures wind at sea?", "options": ["Fujita", "Beaufort", "Saffir\u2013Simpson", "Torro"], "a": 1, "exp": "Sir Francis Beaufort devised it in 1805."}, {"q": "What map line connects points of equal pressure?", "options": ["Isotherm", "Isobar", "Isohyet", "Isopleth"], "a": 1, "exp": "Isobars appear on synoptic charts."}, {"q": "What map line connects points of equal temperature?", "options": ["Isotherm", "Isobar", "Isohyet", "Isopleth"], "a": 0, "exp": "Isotherms show temperature gradients."}, {"q": "Who invented the mercury barometer?", "options": ["Galileo", "Torricelli", "Newton", "Ferrel"], "a": 1, "exp": "Evangelista Torricelli, in 1643."}, {"q": "What US model is a common deterministic forecast tool?", "options": ["ECMWF", "GFS", "UKMO", "JMA"], "a": 1, "exp": "The GFS runs 4 times daily out to 384 hours."}, {"q": "What European center's model is highly regarded for accuracy?", "options": ["ECMWF", "DWD", "Meteorage", "EUMETSAT"], "a": 0, "exp": "Based in Reading, England."}, {"q": "What is CAPE?", "options": ["Convective Available Potential Energy", "Cold Air Precipitation Effect", "Cloud Altitude and Position Ensemble", "Cyclone Approach Prediction Equation"], "a": 0, "exp": "Higher CAPE = more instability = bigger storms possible."}, {"q": "What is a 'sounding'?", "options": ["A weather warning tone", "A vertical profile from a radiosonde", "A cyclone name", "A satellite scan"], "a": 1, "exp": "Soundings are plotted on skew-T diagrams."}];
+let answered = 0, score = 0;
+const total = QUESTIONS.length;
+
+function pick(qIdx, oIdx, btn) {
+  const q = QUESTIONS[qIdx];
+  if (btn.parentElement.dataset.done) return;
+  btn.parentElement.dataset.done = '1';
+  const buttons = btn.parentElement.querySelectorAll('.opt');
+  buttons.forEach((b, i) => {
+    b.disabled = true;
+    if (i === q.a) b.classList.add('correct');
+    else if (i === oIdx) b.classList.add('wrong');
+  });
+  const card = btn.closest('.card');
+  card.classList.add('answered');
+  card.querySelector('.explanation').classList.add('show');
+  if (oIdx === q.a) score++;
+  answered++;
+  document.getElementById('scoreLive').textContent = score;
+  document.getElementById('qnum').textContent = Math.min(answered + 1, total);
+  document.getElementById('fill').style.width = (answered / total * 100) + '%';
+  if (answered === total) showResult();
+  else {
+    // Auto-scroll to next question
+    const next = document.querySelectorAll('.card')[answered];
+    if (next) setTimeout(() => next.scrollIntoView({behavior:'smooth', block:'center'}), 400);
+  }
+}
+
+function showResult() {
+  const r = document.getElementById('result');
+  r.classList.add('show');
+  document.getElementById('scoreFinal').textContent = score;
+  const pct = Math.round(score / total * 100);
+  let msg;
+  if (pct === 100) msg = "🏆 Perfect score! You're a weather encyclopedia.";
+  else if (pct >= 80) msg = "🌪️ Impressive. Nearly a professional forecaster.";
+  else if (pct >= 60) msg = "🌤️ Solid — better than most casual weather watchers.";
+  else if (pct >= 40) msg = "🌫️ Not bad. Brush up and come back for another round.";
+  else msg = "🌧️ Room to grow — check out our articles and try again.";
+  document.getElementById('verdict').textContent = msg;
+  setTimeout(() => r.scrollIntoView({behavior:'smooth', block:'center'}), 300);
+}
+
+function shareResult() {
+  const pct = Math.round(score / total * 100);
+  const text = `I scored ${score}/${total} (${pct}%) on the ${document.title.split(' — ')[0]}!\n\nTry it at tornadosimulator.net/weather-trivia/weather-instruments/`;
+  if (navigator.share) navigator.share({ text }).catch(() => copyText(text));
+  else copyText(text);
+}
+function copyText(t) {
+  if (navigator.clipboard) navigator.clipboard.writeText(t).then(() => alert('Copied to clipboard!'));
+  else {
+    const ta = document.createElement('textarea');
+    ta.value = t; document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); document.body.removeChild(ta);
+    alert('Copied to clipboard!');
+  }
+}
+</script>
+</body>
+</html>

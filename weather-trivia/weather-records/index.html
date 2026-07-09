@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Weather Records Trivia Quiz — Free Interactive Weather Trivia</title>
+<meta name="description" content="Extreme temperatures, wind speeds, rainfall totals — how well do you know Earth's weather records? Instant scoring, share your result." />
+<meta name="keywords" content="weather trivia, weather quiz, weather-records trivia, weather questions and answers" />
+<meta property="og:title" content="Weather Records Trivia Quiz" />
+<meta property="og:description" content="Extreme temperatures, wind speeds, rainfall totals — how well do you know Earth's weather records?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tornadosimulator.net/weather-trivia/weather-records/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/weather-trivia/weather-records/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Quiz","name":"Weather Records Trivia Quiz","about":"Weather trivia","educationalLevel":"General","numberOfQuestions":15,"publisher":{"@type":"Organization","name":"Tornado Hub","url":"https://www.tornadosimulator.net/"} }
+</script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --border-strong:#d4cfc3; --accent:#a02818; --accent-hover:#7d1f13; --link:#1e3a5f; --correct:#2d6a4f; --wrong:#a02818; --serif:"Fraunces",Georgia,serif; --sans:"Inter",-apple-system,sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--link);text-decoration:none}
+a:hover{color:var(--accent);text-decoration:underline}
+
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text);text-decoration:none}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.breadcrumb{max-width:800px;margin:20px auto 0;padding:0 24px;font-size:13px;color:var(--text-muted)}
+
+.hero{padding:40px 24px 20px;max-width:800px;margin:0 auto;text-align:center}
+.hero .emoji{font-size:56px;line-height:1;margin-bottom:16px}
+.hero h1{font-family:var(--serif);font-size:clamp(28px,4vw,42px);font-weight:700;line-height:1.15;letter-spacing:-0.02em;margin-bottom:14px}
+.hero p{color:var(--text-secondary);font-size:17px;max-width:600px;margin:0 auto}
+
+.quiz-wrap{max-width:720px;margin:20px auto;padding:0 20px 60px}
+.progress-bar{position:sticky;top:66px;background:var(--surface);border-radius:8px;padding:12px 18px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,0.04);display:flex;justify-content:space-between;align-items:center;z-index:50;border:1px solid var(--border)}
+.progress-count{font-size:13px;color:var(--text-secondary);font-weight:600}
+.progress-count .score{color:var(--accent)}
+.progress-track{flex:1;margin:0 16px;height:6px;background:var(--bg-alt);border-radius:3px;overflow:hidden}
+.progress-fill{height:100%;background:var(--accent);width:0;transition:width 0.3s}
+
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:16px;transition:box-shadow 0.15s}
+.card.answered{opacity:0.85}
+.q-num{font-size:11px;color:var(--text-muted);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px}
+.q-text{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.35;margin-bottom:16px;letter-spacing:-0.01em}
+.options{display:flex;flex-direction:column;gap:8px}
+.opt{padding:12px 16px;background:var(--bg);border:1.5px solid var(--border);border-radius:8px;cursor:pointer;text-align:left;font-family:var(--sans);font-size:15px;color:var(--text);transition:background 0.15s,border-color 0.15s;display:flex;align-items:center;gap:10px}
+.opt:hover:not(:disabled){background:var(--bg-alt);border-color:var(--border-strong)}
+.opt .letter{width:24px;height:24px;background:var(--surface);border:1.5px solid var(--border-strong);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;flex-shrink:0}
+.opt.correct{background:#e0f2e9;border-color:var(--correct);color:var(--correct)}
+.opt.correct .letter{background:var(--correct);color:white;border-color:var(--correct)}
+.opt.wrong{background:#fbe0dc;border-color:var(--wrong);color:var(--wrong)}
+.opt.wrong .letter{background:var(--wrong);color:white;border-color:var(--wrong)}
+.opt:disabled{cursor:default}
+.explanation{margin-top:14px;padding:12px 14px;background:var(--bg-alt);border-left:3px solid var(--accent);border-radius:4px;font-size:14px;color:var(--text-secondary);display:none}
+.explanation.show{display:block}
+.explanation strong{color:var(--accent)}
+
+.result{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:32px;margin-top:20px;text-align:center;display:none}
+.result.show{display:block}
+.result h2{font-family:var(--serif);font-size:32px;margin-bottom:12px}
+.result .score-big{font-family:var(--serif);font-size:72px;font-weight:700;color:var(--accent);line-height:1;margin:20px 0}
+.result .verdict{font-size:17px;color:var(--text-secondary);margin-bottom:20px}
+.result-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;font-size:14px;font-weight:600;border-radius:8px;border:1px solid var(--border-strong);background:transparent;color:var(--text);cursor:pointer;font-family:var(--sans);text-decoration:none}
+.btn.primary{background:var(--accent);color:white;border-color:var(--accent)}
+.btn.primary:hover{background:var(--accent-hover);color:white}
+.btn:hover{background:var(--bg-alt);text-decoration:none}
+
+.footer{text-align:center;padding:24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px;margin-top:40px}
+.inline-ad{text-align:center;margin:24px auto;max-width:728px;overflow:hidden}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/quiz/">Quizzes</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/tornadoes/">Index</a>
+      <a href="/simulator/" class="cta">Launch Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb"><a href="/">Home</a> · <a href="/weather-trivia/">Weather Trivia</a> · Weather Records Trivia Quiz</div>
+
+<section class="hero">
+  <div class="emoji">📊</div>
+  <h1>Weather Records Trivia Quiz</h1>
+  <p>Extreme temperatures, wind speeds, rainfall totals — how well do you know Earth's weather records?</p>
+</section>
+
+<div class="quiz-wrap">
+
+  <div class="progress-bar">
+    <div class="progress-count">Question <span id="qnum">1</span>/15</div>
+    <div class="progress-track"><div class="progress-fill" id="fill"></div></div>
+    <div class="progress-count"><span class="score" id="scoreLive">0</span> correct</div>
+  </div>
+
+  <div id="questions">
+    <div class="card" id="q0">
+      <div class="q-num">Question 1 of 15</div>
+      <div class="q-text">Where was the highest-ever air temperature (officially) recorded?</div>
+      <div class="options"><button class="opt" onclick="pick(0,0,this)"><span class="letter">A</span><span>Dubai</span></button><button class="opt" onclick="pick(0,1,this)"><span class="letter">B</span><span>Baghdad</span></button><button class="opt" onclick="pick(0,2,this)"><span class="letter">C</span><span>Death Valley, USA</span></button><button class="opt" onclick="pick(0,3,this)"><span class="letter">D</span><span>Kuwait City</span></button></div>
+      <div class="explanation"><strong>Why:</strong> 134°F (56.7°C) at Furnace Creek, Death Valley on July 10, 1913.</div>
+    </div>
+    <div class="card" id="q1">
+      <div class="q-num">Question 2 of 15</div>
+      <div class="q-text">What was the largest hailstone measured in the US?</div>
+      <div class="options"><button class="opt" onclick="pick(1,0,this)"><span class="letter">A</span><span>6 in</span></button><button class="opt" onclick="pick(1,1,this)"><span class="letter">B</span><span>7 in</span></button><button class="opt" onclick="pick(1,2,this)"><span class="letter">C</span><span>8 in</span></button><button class="opt" onclick="pick(1,3,this)"><span class="letter">D</span><span>10 in</span></button></div>
+      <div class="explanation"><strong>Why:</strong> 8-inch stone in Vivian, South Dakota, 2010.</div>
+    </div>
+    <div class="card" id="q2">
+      <div class="q-num">Question 3 of 15</div>
+      <div class="q-text">Where is the wettest place on Earth?</div>
+      <div class="options"><button class="opt" onclick="pick(2,0,this)"><span class="letter">A</span><span>Cherrapunji, India</span></button><button class="opt" onclick="pick(2,1,this)"><span class="letter">B</span><span>Mawsynram, India</span></button><button class="opt" onclick="pick(2,2,this)"><span class="letter">C</span><span>Debundscha, Cameroon</span></button><button class="opt" onclick="pick(2,3,this)"><span class="letter">D</span><span>Mount Waialeale, Hawaii</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Mawsynram averages about 467 inches of rain per year.</div>
+    </div>
+    <div class="card" id="q3">
+      <div class="q-num">Question 4 of 15</div>
+      <div class="q-text">Where is Earth&#x27;s driest place?</div>
+      <div class="options"><button class="opt" onclick="pick(3,0,this)"><span class="letter">A</span><span>Sahara Desert</span></button><button class="opt" onclick="pick(3,1,this)"><span class="letter">B</span><span>Atacama Desert</span></button><button class="opt" onclick="pick(3,2,this)"><span class="letter">C</span><span>Gobi Desert</span></button><button class="opt" onclick="pick(3,3,this)"><span class="letter">D</span><span>Antarctic Dry Valleys</span></button></div>
+      <div class="explanation"><strong>Why:</strong> The Atacama has areas that have gone decades between measurable rain.</div>
+    </div>
+    <div class="card" id="q4">
+      <div class="q-num">Question 5 of 15</div>
+      <div class="q-text">What was the coldest temperature ever recorded on Earth?</div>
+      <div class="options"><button class="opt" onclick="pick(4,0,this)"><span class="letter">A</span><span>-100°F</span></button><button class="opt" onclick="pick(4,1,this)"><span class="letter">B</span><span>-128.6°F</span></button><button class="opt" onclick="pick(4,2,this)"><span class="letter">C</span><span>-140°F</span></button><button class="opt" onclick="pick(4,3,this)"><span class="letter">D</span><span>-150°F</span></button></div>
+      <div class="explanation"><strong>Why:</strong> -128.6°F (-89.2°C) at Vostok Station, Antarctica, in 1983.</div>
+    </div>
+    <div class="card" id="q5">
+      <div class="q-num">Question 6 of 15</div>
+      <div class="q-text">What state has the most tornadoes on average?</div>
+      <div class="options"><button class="opt" onclick="pick(5,0,this)"><span class="letter">A</span><span>Texas</span></button><button class="opt" onclick="pick(5,1,this)"><span class="letter">B</span><span>Oklahoma</span></button><button class="opt" onclick="pick(5,2,this)"><span class="letter">C</span><span>Kansas</span></button><button class="opt" onclick="pick(5,3,this)"><span class="letter">D</span><span>Nebraska</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Texas is #1 in raw count; Oklahoma leads per square mile.</div>
+    </div>
+    <div class="card" id="q6">
+      <div class="q-num">Question 7 of 15</div>
+      <div class="q-text">Where does the world&#x27;s most concentrated lightning occur?</div>
+      <div class="options"><button class="opt" onclick="pick(6,0,this)"><span class="letter">A</span><span>Central Africa</span></button><button class="opt" onclick="pick(6,1,this)"><span class="letter">B</span><span>Lake Maracaibo, Venezuela</span></button><button class="opt" onclick="pick(6,2,this)"><span class="letter">C</span><span>Florida</span></button><button class="opt" onclick="pick(6,3,this)"><span class="letter">D</span><span>Bangladesh</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Lake Maracaibo has ~28 lightning flashes per square kilometer per year.</div>
+    </div>
+    <div class="card" id="q7">
+      <div class="q-num">Question 8 of 15</div>
+      <div class="q-text">What was the highest wind gust ever measured on Earth&#x27;s surface?</div>
+      <div class="options"><button class="opt" onclick="pick(7,0,this)"><span class="letter">A</span><span>200 mph</span></button><button class="opt" onclick="pick(7,1,this)"><span class="letter">B</span><span>231 mph</span></button><button class="opt" onclick="pick(7,2,this)"><span class="letter">C</span><span>253 mph</span></button><button class="opt" onclick="pick(7,3,this)"><span class="letter">D</span><span>301 mph</span></button></div>
+      <div class="explanation"><strong>Why:</strong> 253 mph in Cyclone Olivia at Barrow Island, Australia, 1996.</div>
+    </div>
+    <div class="card" id="q8">
+      <div class="q-num">Question 9 of 15</div>
+      <div class="q-text">Where is the world&#x27;s snowiest large city?</div>
+      <div class="options"><button class="opt" onclick="pick(8,0,this)"><span class="letter">A</span><span>Anchorage</span></button><button class="opt" onclick="pick(8,1,this)"><span class="letter">B</span><span>Aomori, Japan</span></button><button class="opt" onclick="pick(8,2,this)"><span class="letter">C</span><span>Sapporo</span></button><button class="opt" onclick="pick(8,3,this)"><span class="letter">D</span><span>Buffalo</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Aomori averages 26 feet of snow per winter.</div>
+    </div>
+    <div class="card" id="q9">
+      <div class="q-num">Question 10 of 15</div>
+      <div class="q-text">What&#x27;s the sunniest US city?</div>
+      <div class="options"><button class="opt" onclick="pick(9,0,this)"><span class="letter">A</span><span>Los Angeles</span></button><button class="opt" onclick="pick(9,1,this)"><span class="letter">B</span><span>Miami</span></button><button class="opt" onclick="pick(9,2,this)"><span class="letter">C</span><span>Yuma, Arizona</span></button><button class="opt" onclick="pick(9,3,this)"><span class="letter">D</span><span>Phoenix</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Yuma averages over 4,000 hours of sunshine per year.</div>
+    </div>
+    <div class="card" id="q10">
+      <div class="q-num">Question 11 of 15</div>
+      <div class="q-text">What&#x27;s the fastest recorded temperature drop?</div>
+      <div class="options"><button class="opt" onclick="pick(10,0,this)"><span class="letter">A</span><span>30°F in 5 min</span></button><button class="opt" onclick="pick(10,1,this)"><span class="letter">B</span><span>47°F in 1 min</span></button><button class="opt" onclick="pick(10,2,this)"><span class="letter">C</span><span>60°F in 10 min</span></button><button class="opt" onclick="pick(10,3,this)"><span class="letter">D</span><span>72°F in 15 min</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Spearfish, South Dakota, 1943 — a Chinook event.</div>
+    </div>
+    <div class="card" id="q11">
+      <div class="q-num">Question 12 of 15</div>
+      <div class="q-text">What was the highest measured atmospheric pressure at sea level?</div>
+      <div class="options"><button class="opt" onclick="pick(11,0,this)"><span class="letter">A</span><span>1,050 hPa</span></button><button class="opt" onclick="pick(11,1,this)"><span class="letter">B</span><span>1,065 hPa</span></button><button class="opt" onclick="pick(11,2,this)"><span class="letter">C</span><span>1,084 hPa</span></button><button class="opt" onclick="pick(11,3,this)"><span class="letter">D</span><span>1,100 hPa</span></button></div>
+      <div class="explanation"><strong>Why:</strong> 1,084 hPa at Agata, Siberia, in December 1968.</div>
+    </div>
+    <div class="card" id="q12">
+      <div class="q-num">Question 13 of 15</div>
+      <div class="q-text">What was the peak wind gust at Mount Washington, NH?</div>
+      <div class="options"><button class="opt" onclick="pick(12,0,this)"><span class="letter">A</span><span>200 mph</span></button><button class="opt" onclick="pick(12,1,this)"><span class="letter">B</span><span>231 mph</span></button><button class="opt" onclick="pick(12,2,this)"><span class="letter">C</span><span>260 mph</span></button><button class="opt" onclick="pick(12,3,this)"><span class="letter">D</span><span>301 mph</span></button></div>
+      <div class="explanation"><strong>Why:</strong> April 12, 1934 — held the record for decades.</div>
+    </div>
+    <div class="card" id="q13">
+      <div class="q-num">Question 14 of 15</div>
+      <div class="q-text">What place recorded the most consecutive days above 100°F?</div>
+      <div class="options"><button class="opt" onclick="pick(13,0,this)"><span class="letter">A</span><span>Death Valley</span></button><button class="opt" onclick="pick(13,1,this)"><span class="letter">B</span><span>Marble Bar, Australia</span></button><button class="opt" onclick="pick(13,2,this)"><span class="letter">C</span><span>Baghdad</span></button><button class="opt" onclick="pick(13,3,this)"><span class="letter">D</span><span>Kuwait</span></button></div>
+      <div class="explanation"><strong>Why:</strong> 160 consecutive days in 1923–24.</div>
+    </div>
+    <div class="card" id="q14">
+      <div class="q-num">Question 15 of 15</div>
+      <div class="q-text">What&#x27;s the biggest single-storm snowfall?</div>
+      <div class="options"><button class="opt" onclick="pick(14,0,this)"><span class="letter">A</span><span>100 in</span></button><button class="opt" onclick="pick(14,1,this)"><span class="letter">B</span><span>150 in</span></button><button class="opt" onclick="pick(14,2,this)"><span class="letter">C</span><span>189 in</span></button><button class="opt" onclick="pick(14,3,this)"><span class="letter">D</span><span>250 in</span></button></div>
+      <div class="explanation"><strong>Why:</strong> 189 in at Mount Shasta Ski Bowl, California, in February 1959.</div>
+    </div>
+  </div>
+
+  <div class="inline-ad">
+    <script type="text/javascript">atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};</script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
+  </div>
+
+  <div id="result" class="result">
+    <h2>You're done!</h2>
+    <div class="score-big"><span id="scoreFinal">0</span>/15</div>
+    <div class="verdict" id="verdict"></div>
+    <div class="result-btns">
+      <button class="btn primary" onclick="shareResult()">📋 Share your score</button>
+      <a class="btn" href="/weather-trivia/">More trivia →</a>
+      <a class="btn" href="/tornadle/">Try Tornadle</a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  Part of <a href="/">Tornado Hub</a> — free weather trivia.
+</footer>
+
+<script>
+const QUESTIONS = [{"q": "Where was the highest-ever air temperature (officially) recorded?", "options": ["Dubai", "Baghdad", "Death Valley, USA", "Kuwait City"], "a": 2, "exp": "134\u00b0F (56.7\u00b0C) at Furnace Creek, Death Valley on July 10, 1913."}, {"q": "What was the largest hailstone measured in the US?", "options": ["6 in", "7 in", "8 in", "10 in"], "a": 2, "exp": "8-inch stone in Vivian, South Dakota, 2010."}, {"q": "Where is the wettest place on Earth?", "options": ["Cherrapunji, India", "Mawsynram, India", "Debundscha, Cameroon", "Mount Waialeale, Hawaii"], "a": 1, "exp": "Mawsynram averages about 467 inches of rain per year."}, {"q": "Where is Earth's driest place?", "options": ["Sahara Desert", "Atacama Desert", "Gobi Desert", "Antarctic Dry Valleys"], "a": 1, "exp": "The Atacama has areas that have gone decades between measurable rain."}, {"q": "What was the coldest temperature ever recorded on Earth?", "options": ["-100\u00b0F", "-128.6\u00b0F", "-140\u00b0F", "-150\u00b0F"], "a": 1, "exp": "-128.6\u00b0F (-89.2\u00b0C) at Vostok Station, Antarctica, in 1983."}, {"q": "What state has the most tornadoes on average?", "options": ["Texas", "Oklahoma", "Kansas", "Nebraska"], "a": 0, "exp": "Texas is #1 in raw count; Oklahoma leads per square mile."}, {"q": "Where does the world's most concentrated lightning occur?", "options": ["Central Africa", "Lake Maracaibo, Venezuela", "Florida", "Bangladesh"], "a": 1, "exp": "Lake Maracaibo has ~28 lightning flashes per square kilometer per year."}, {"q": "What was the highest wind gust ever measured on Earth's surface?", "options": ["200 mph", "231 mph", "253 mph", "301 mph"], "a": 2, "exp": "253 mph in Cyclone Olivia at Barrow Island, Australia, 1996."}, {"q": "Where is the world's snowiest large city?", "options": ["Anchorage", "Aomori, Japan", "Sapporo", "Buffalo"], "a": 1, "exp": "Aomori averages 26 feet of snow per winter."}, {"q": "What's the sunniest US city?", "options": ["Los Angeles", "Miami", "Yuma, Arizona", "Phoenix"], "a": 2, "exp": "Yuma averages over 4,000 hours of sunshine per year."}, {"q": "What's the fastest recorded temperature drop?", "options": ["30\u00b0F in 5 min", "47\u00b0F in 1 min", "60\u00b0F in 10 min", "72\u00b0F in 15 min"], "a": 1, "exp": "Spearfish, South Dakota, 1943 \u2014 a Chinook event."}, {"q": "What was the highest measured atmospheric pressure at sea level?", "options": ["1,050 hPa", "1,065 hPa", "1,084 hPa", "1,100 hPa"], "a": 2, "exp": "1,084 hPa at Agata, Siberia, in December 1968."}, {"q": "What was the peak wind gust at Mount Washington, NH?", "options": ["200 mph", "231 mph", "260 mph", "301 mph"], "a": 1, "exp": "April 12, 1934 \u2014 held the record for decades."}, {"q": "What place recorded the most consecutive days above 100\u00b0F?", "options": ["Death Valley", "Marble Bar, Australia", "Baghdad", "Kuwait"], "a": 1, "exp": "160 consecutive days in 1923\u201324."}, {"q": "What's the biggest single-storm snowfall?", "options": ["100 in", "150 in", "189 in", "250 in"], "a": 2, "exp": "189 in at Mount Shasta Ski Bowl, California, in February 1959."}];
+let answered = 0, score = 0;
+const total = QUESTIONS.length;
+
+function pick(qIdx, oIdx, btn) {
+  const q = QUESTIONS[qIdx];
+  if (btn.parentElement.dataset.done) return;
+  btn.parentElement.dataset.done = '1';
+  const buttons = btn.parentElement.querySelectorAll('.opt');
+  buttons.forEach((b, i) => {
+    b.disabled = true;
+    if (i === q.a) b.classList.add('correct');
+    else if (i === oIdx) b.classList.add('wrong');
+  });
+  const card = btn.closest('.card');
+  card.classList.add('answered');
+  card.querySelector('.explanation').classList.add('show');
+  if (oIdx === q.a) score++;
+  answered++;
+  document.getElementById('scoreLive').textContent = score;
+  document.getElementById('qnum').textContent = Math.min(answered + 1, total);
+  document.getElementById('fill').style.width = (answered / total * 100) + '%';
+  if (answered === total) showResult();
+  else {
+    // Auto-scroll to next question
+    const next = document.querySelectorAll('.card')[answered];
+    if (next) setTimeout(() => next.scrollIntoView({behavior:'smooth', block:'center'}), 400);
+  }
+}
+
+function showResult() {
+  const r = document.getElementById('result');
+  r.classList.add('show');
+  document.getElementById('scoreFinal').textContent = score;
+  const pct = Math.round(score / total * 100);
+  let msg;
+  if (pct === 100) msg = "🏆 Perfect score! You're a weather encyclopedia.";
+  else if (pct >= 80) msg = "🌪️ Impressive. Nearly a professional forecaster.";
+  else if (pct >= 60) msg = "🌤️ Solid — better than most casual weather watchers.";
+  else if (pct >= 40) msg = "🌫️ Not bad. Brush up and come back for another round.";
+  else msg = "🌧️ Room to grow — check out our articles and try again.";
+  document.getElementById('verdict').textContent = msg;
+  setTimeout(() => r.scrollIntoView({behavior:'smooth', block:'center'}), 300);
+}
+
+function shareResult() {
+  const pct = Math.round(score / total * 100);
+  const text = `I scored ${score}/${total} (${pct}%) on the ${document.title.split(' — ')[0]}!\n\nTry it at tornadosimulator.net/weather-trivia/weather-records/`;
+  if (navigator.share) navigator.share({ text }).catch(() => copyText(text));
+  else copyText(text);
+}
+function copyText(t) {
+  if (navigator.clipboard) navigator.clipboard.writeText(t).then(() => alert('Copied to clipboard!'));
+  else {
+    const ta = document.createElement('textarea');
+    ta.value = t; document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); document.body.removeChild(ta);
+    alert('Copied to clipboard!');
+  }
+}
+</script>
+</body>
+</html>

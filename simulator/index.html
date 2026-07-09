@@ -71,6 +71,7 @@
       <a href="/articles/">Articles</a>
       <a href="/quiz/">Quizzes</a>
       <a href="/tornadle/">Tornadle</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
       <a href="/tornadoes/">Tornado Index</a>
       <a href="/learn/">Learn</a>
       <a href="/safety/">Safety</a>
@@ -3493,7 +3494,19 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <a href="/tri-state-1925/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#4fc3f7;text-decoration:none;margin-right:8px;pointer-events:auto;">Tri-State 1925</a>
     <a href="/ef-scale/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#4fc3f7;text-decoration:none;pointer-events:auto;">EF Scale</a>
   </nav>
-  <!-- Side ads removed on /simulator/ so they don't overlap the control panels.
-       Monetization here happens via the in-app Preparedness Resources block. -->
+  <!-- Single right-side rail — only appears on wide monitors (>=1600px)
+       so it never overlaps the simulator's control panels. -->
+  <aside id="adsterra-side" style="position:fixed;right:8px;top:50%;transform:translateY(-50%);width:160px;height:600px;z-index:9999;display:none;">
+    <script type="text/javascript">
+      atOptions = {'key':'da8c75671b236383c52eb13078c2a148','format':'iframe','height':600,'width':160,'params':{}};
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/da8c75671b236383c52eb13078c2a148/invoke.js"></script>
+  </aside>
+  <style>
+    @media (min-width: 1600px) {
+      #adsterra-side { display: block !important; }
+      body { padding-right: 176px; box-sizing: border-box; }
+    }
+  </style>
 </body>
 </html>
