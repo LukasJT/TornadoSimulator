@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wind Speed Converter — mph, km/h, knots, m/s, Beaufort, EF, Hurricane</title>
+<meta name="description" content="Convert wind speed between mph, km/h, knots, m/s, and feet per second. See the Beaufort scale rating, EF-scale equivalent, hurricane category, and a real-world comparison for any speed. Free, no signup, mobile friendly." />
+<meta name="keywords" content="wind speed converter, mph to knots, mph to kmh, knots to mph, wind speed calculator, beaufort scale, EF scale wind speed, hurricane category wind speed" />
+<meta property="og:title" content="Wind Speed Converter" />
+<meta property="og:description" content="Convert mph, km/h, knots, m/s and see the Beaufort / EF / hurricane rating for any speed." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.tornadosimulator.net/wind-speed-converter/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/wind-speed-converter/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💨</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Wind Speed Converter","applicationCategory":"UtilitiesApplication","operatingSystem":"Web browser","url":"https://www.tornadosimulator.net/wind-speed-converter/"}
+</script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --border-strong:#d4cfc3; --accent:#a02818; --accent-hover:#7d1f13; --link:#1e3a5f; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; --mono:"JetBrains Mono",monospace; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text);text-decoration:none}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.hero{padding:36px 20px 20px;text-align:center;max-width:700px;margin:0 auto}
+.hero .eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.hero h1{font-family:var(--serif);font-size:clamp(30px,4.5vw,42px);font-weight:700;line-height:1.1;letter-spacing:-0.02em;margin-bottom:12px}
+.hero h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.hero p{color:var(--text-secondary);font-size:16px}
+.wrap{max-width:760px;margin:24px auto 40px;padding:0 20px}
+.input-card{background:var(--surface);border:2px solid var(--border-strong);border-radius:14px;padding:26px 30px;margin-bottom:16px}
+.input-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.input-row input{flex:1;min-width:180px;padding:20px 22px;font-size:32px;font-weight:700;font-family:var(--mono);border:2px solid var(--border);border-radius:10px;color:var(--accent);text-align:right;background:var(--bg-alt)}
+.input-row input:focus{outline:none;border-color:var(--accent)}
+.input-row select{padding:20px 18px;font-size:16px;font-weight:600;border:2px solid var(--border);border-radius:10px;font-family:var(--sans);background:var(--surface);cursor:pointer}
+.conv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:16px}
+.conv-item{background:var(--bg-alt);border-radius:10px;padding:14px 16px;text-align:center}
+.conv-val{font-family:var(--mono);font-size:22px;font-weight:700;color:var(--text);line-height:1.1}
+.conv-unit{font-size:11px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-top:4px}
+.scale-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 26px;margin-bottom:12px;transition:border-color 0.2s}
+.scale-card.active{border-color:var(--accent);box-shadow:0 4px 20px rgba(160,40,24,0.12)}
+.scale-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.scale-title{font-family:var(--serif);font-size:20px;font-weight:700}
+.scale-rating{font-family:var(--mono);font-size:15px;font-weight:700;color:var(--accent);background:rgba(160,40,24,0.08);padding:4px 12px;border-radius:6px}
+.scale-desc{color:var(--text-secondary);font-size:14px;line-height:1.5}
+.scale-desc strong{color:var(--text);font-family:var(--serif)}
+.presets{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.presets button{padding:6px 12px;font-size:12px;background:var(--surface);border:1px solid var(--border-strong);border-radius:6px;cursor:pointer;font-weight:600;color:var(--text-secondary);font-family:var(--sans)}
+.presets button:hover{background:var(--bg-alt);color:var(--text);border-color:var(--accent)}
+.footer{text-align:center;padding:26px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px;margin-top:40px}
+.inline-ad{text-align:center;margin:24px auto;max-width:728px;overflow:hidden}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/quiz/">Quizzes</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/supercell-simulator/">Supercell Sim</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="eyebrow">💨 Interactive tool</div>
+  <h1>Wind speed <em>converter</em></h1>
+  <p>Convert between mph, km/h, knots, m/s and feet per second — and see the Beaufort, EF-scale, hurricane category, and real-world equivalent for any speed.</p>
+</section>
+
+<div class="wrap">
+
+  <div class="input-card">
+    <div class="input-row">
+      <input type="number" id="input" value="120" min="0" step="1" />
+      <select id="unit">
+        <option value="mph" selected>mph</option>
+        <option value="kmh">km/h</option>
+        <option value="kt">knots</option>
+        <option value="ms">m/s</option>
+        <option value="fps">ft/s</option>
+      </select>
+    </div>
+    <div class="conv-grid" id="conv-grid"></div>
+    <div class="presets">
+      <button data-v="0" data-u="mph">Calm</button>
+      <button data-v="20" data-u="mph">Windy day</button>
+      <button data-v="60" data-u="mph">Severe gust</button>
+      <button data-v="74" data-u="mph">Cat 1 hurricane</button>
+      <button data-v="86" data-u="mph">EF1 tornado</button>
+      <button data-v="111" data-u="mph">EF2 / Cat 3</button>
+      <button data-v="136" data-u="mph">EF3</button>
+      <button data-v="157" data-u="mph">Cat 5 hurricane</button>
+      <button data-v="166" data-u="mph">EF4</button>
+      <button data-v="200" data-u="mph">EF5</button>
+      <button data-v="301" data-u="mph">Bridge Creek '99 record</button>
+    </div>
+  </div>
+
+  <div id="scales"></div>
+
+  <div class="inline-ad">
+    <script type="text/javascript">atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};</script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
+  </div>
+
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 26px;margin-top:20px">
+    <h3 style="font-family:var(--serif);font-size:20px;margin-bottom:10px">Conversion formulas</h3>
+    <div style="font-family:var(--mono);font-size:13px;color:var(--text-secondary);line-height:1.9">
+      1 mph = 1.60934 km/h = 0.868976 knots = 0.44704 m/s = 1.46667 ft/s<br>
+      1 knot = 1.15078 mph = 1.852 km/h = 0.514444 m/s<br>
+      1 m/s = 2.23694 mph = 3.6 km/h = 1.94384 knots
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  Part of <a href="/">Tornado Hub</a>. See also the <a href="/ef-scale-explorer/">EF Scale explorer</a>, <a href="/supercell-simulator/">supercell simulator</a>, and <a href="/thunder-distance/">thunder distance calculator</a>.
+</footer>
+
+<script>
+// All conversions to mph as base
+const TO_MPH = { mph:1, kmh:1/1.60934, kt:1.15078, ms:2.23694, fps:1/1.46667 };
+const UNITS = [
+  { id:'mph', label:'mph', full:'Miles per hour' },
+  { id:'kmh', label:'km/h', full:'Kilometers per hour' },
+  { id:'kt', label:'knots', full:'Knots' },
+  { id:'ms', label:'m/s', full:'Meters per second' },
+  { id:'fps', label:'ft/s', full:'Feet per second' },
+];
+
+// Beaufort scale (mph thresholds)
+const BEAUFORT = [
+  { b:0, min:0, max:1, name:'Calm', desc:'Smoke rises vertically. Sea like a mirror.' },
+  { b:1, min:1, max:3, name:'Light air', desc:'Direction shown by smoke drift. Ripples on the water.' },
+  { b:2, min:4, max:7, name:'Light breeze', desc:'Wind felt on face. Leaves rustle. Small wavelets.' },
+  { b:3, min:8, max:12, name:'Gentle breeze', desc:'Leaves in constant motion. Small flags extend.' },
+  { b:4, min:13, max:18, name:'Moderate breeze', desc:'Dust and paper raised. Small branches move.' },
+  { b:5, min:19, max:24, name:'Fresh breeze', desc:'Small trees sway. Crested wavelets on inland waters.' },
+  { b:6, min:25, max:31, name:'Strong breeze', desc:'Large branches move. Umbrellas hard to use.' },
+  { b:7, min:32, max:38, name:'Near gale', desc:'Whole trees in motion. Walking against wind is inconvenient.' },
+  { b:8, min:39, max:46, name:'Gale', desc:'Twigs break off trees. Walking is generally impeded.' },
+  { b:9, min:47, max:54, name:'Strong gale', desc:'Slight structural damage. Chimney pots blown off.' },
+  { b:10, min:55, max:63, name:'Storm', desc:'Trees uprooted. Considerable structural damage.' },
+  { b:11, min:64, max:72, name:'Violent storm', desc:'Widespread damage. Rare on land.' },
+  { b:12, min:73, max:9999, name:'Hurricane force', desc:'Devastation. Beaufort scale caps at 12.' },
+];
+
+// EF-scale (mph 3-second gust)
+const EF = [
+  { r:'—', min:0, max:64, name:'Below tornadic', desc:'Not strong enough to be rated as a tornado.' },
+  { r:'EF0', min:65, max:85, name:'Gale-force tornado', desc:'Peels roof surfaces, breaks tree branches, shallow-rooted trees pushed over. 54% of tornadoes.' },
+  { r:'EF1', min:86, max:110, name:'Weak tornado', desc:'Mobile homes overturned, roofs badly damaged, exterior doors blown off. 32% of tornadoes.' },
+  { r:'EF2', min:111, max:135, name:'Significant tornado', desc:'Roofs torn off frame houses, mobile homes destroyed, cars lifted. 9% of tornadoes.' },
+  { r:'EF3', min:136, max:165, name:'Severe tornado', desc:'Entire stories of well-built houses destroyed, trains overturned, trees debarked. 4% of tornadoes.' },
+  { r:'EF4', min:166, max:200, name:'Devastating tornado', desc:'Well-built homes leveled, cars thrown for blocks. 1% of tornadoes.' },
+  { r:'EF5', min:200, max:9999, name:'Incredible tornado', desc:'Well-built homes swept clean from foundations. Concrete deformed. <0.1% of tornadoes.' },
+];
+
+// Saffir–Simpson hurricane
+const HURRICANE = [
+  { c:'—', min:0, max:38, name:'Not tropical storm', desc:'Below tropical depression threshold.' },
+  { c:'TD', min:39, max:73, name:'Tropical storm', desc:'Named tropical cyclone. Rain and gusty winds.' },
+  { c:'Cat 1', min:74, max:95, name:'Category 1 hurricane', desc:'Some damage to shingles, siding, gutters. Large branches down.' },
+  { c:'Cat 2', min:96, max:110, name:'Category 2 hurricane', desc:'Major roof and siding damage to well-built homes. Widespread power outages.' },
+  { c:'Cat 3', min:111, max:129, name:'Category 3 major', desc:'Well-built framed homes have major damage. Electricity out for days.' },
+  { c:'Cat 4', min:130, max:156, name:'Category 4 major', desc:'Well-built framed homes suffer severe damage. Most trees snapped.' },
+  { c:'Cat 5', min:157, max:9999, name:'Category 5 major', desc:'A high percentage of framed homes destroyed. Areas uninhabitable for weeks.' },
+];
+
+const grid = document.getElementById('conv-grid');
+const scales = document.getElementById('scales');
+const inputEl = document.getElementById('input');
+const unitEl = document.getElementById('unit');
+
+function update() {
+  const val = parseFloat(inputEl.value);
+  const unit = unitEl.value;
+  if (!Number.isFinite(val)) return;
+  const mph = val * TO_MPH[unit];
+
+  grid.innerHTML = UNITS.map(u => {
+    const converted = mph / TO_MPH[u.id];
+    const display = converted < 10 ? converted.toFixed(2) : converted < 100 ? converted.toFixed(1) : Math.round(converted).toLocaleString();
+    return `<div class="conv-item" title="${u.full}"><div class="conv-val">${display}</div><div class="conv-unit">${u.label}</div></div>`;
+  }).join('');
+
+  const beau = BEAUFORT.find(b => mph >= b.min && mph <= b.max) || BEAUFORT[BEAUFORT.length-1];
+  const ef = EF.find(e => mph >= e.min && mph <= e.max) || EF[EF.length-1];
+  const hur = HURRICANE.find(h => mph >= h.min && mph <= h.max) || HURRICANE[HURRICANE.length-1];
+
+  scales.innerHTML = `
+    <div class="scale-card active">
+      <div class="scale-head"><div class="scale-title">Beaufort scale</div><div class="scale-rating">Force ${beau.b}</div></div>
+      <div class="scale-desc"><strong>${beau.name}.</strong> ${beau.desc}</div>
+    </div>
+    <div class="scale-card active">
+      <div class="scale-head"><div class="scale-title">Enhanced Fujita scale</div><div class="scale-rating">${ef.r}</div></div>
+      <div class="scale-desc"><strong>${ef.name}.</strong> ${ef.desc} <a href="/ef-scale-explorer/">Explore the EF scale →</a></div>
+    </div>
+    <div class="scale-card active">
+      <div class="scale-head"><div class="scale-title">Saffir–Simpson hurricane scale</div><div class="scale-rating">${hur.c}</div></div>
+      <div class="scale-desc"><strong>${hur.name}.</strong> ${hur.desc}</div>
+    </div>
+  `;
+}
+
+inputEl.addEventListener('input', update);
+unitEl.addEventListener('change', update);
+document.querySelectorAll('.presets button').forEach(b => {
+  b.addEventListener('click', () => {
+    inputEl.value = b.dataset.v;
+    unitEl.value = b.dataset.u;
+    update();
+  });
+});
+update();
+</script>
+</body>
+</html>

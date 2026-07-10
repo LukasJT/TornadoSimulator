@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Interactive Tornado Alley Map — US Tornado Statistics by State</title>
+<meta name="description" content="Interactive US tornado map: click any state to see annual tornado averages, deadliest historic events, EF5 counts, and safety ranking. Highlights Tornado Alley and Dixie Alley. Data sourced from NOAA Storm Prediction Center." />
+<meta name="keywords" content="tornado alley map, tornado alley, dixie alley, US tornado map, tornadoes by state, tornado statistics, tornado risk map, tornado belt" />
+<meta property="og:title" content="Interactive Tornado Alley Map" />
+<meta property="og:description" content="Click any US state to see its tornado history and risk." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.tornadosimulator.net/tornado-alley-map/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/tornado-alley-map/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗺️</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --accent:#a02818; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; --mono:"JetBrains Mono",monospace; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6}
+a{color:#1e3a5f;text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text);text-decoration:none}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.hero{padding:36px 20px 20px;text-align:center;max-width:720px;margin:0 auto}
+.hero .eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.hero h1{font-family:var(--serif);font-size:clamp(30px,4.5vw,42px);font-weight:700;line-height:1.1;letter-spacing:-0.02em;margin-bottom:12px}
+.hero h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.hero p{color:var(--text-secondary);font-size:16px}
+.wrap{max-width:1100px;margin:20px auto 40px;padding:0 20px;display:grid;grid-template-columns:1fr 320px;gap:20px}
+@media (max-width:900px){.wrap{grid-template-columns:1fr}}
+.map-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px}
+.legend{display:flex;justify-content:center;gap:14px;margin-bottom:8px;flex-wrap:wrap;font-size:12px}
+.legend-item{display:flex;align-items:center;gap:6px;color:var(--text-secondary)}
+.swatch{width:14px;height:14px;border-radius:3px}
+.state{cursor:pointer;stroke:#fff;stroke-width:0.5;transition:opacity 0.2s}
+.state:hover{opacity:0.7}
+.state.selected{stroke:#000;stroke-width:2}
+.detail-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 24px;height:fit-content;position:sticky;top:80px}
+.detail-name{font-family:var(--serif);font-size:26px;font-weight:700;letter-spacing:-0.01em;margin-bottom:4px}
+.detail-region{font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;font-weight:600;margin-bottom:16px}
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:16px}
+.stat{background:var(--bg-alt);border-radius:8px;padding:10px 12px;text-align:center}
+.stat-val{font-family:var(--mono);font-size:20px;font-weight:700;color:var(--accent);line-height:1.1}
+.stat-lbl{font-size:9px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;font-weight:600;margin-top:2px}
+.notable{background:var(--bg-alt);border-radius:8px;padding:12px 14px;font-size:13px;color:var(--text-secondary);line-height:1.5;margin-bottom:8px}
+.notable strong{color:var(--text);font-family:var(--serif);font-size:14px}
+.link-row{margin-top:14px}
+.link-row a{display:block;padding:10px 14px;background:var(--bg-alt);border-radius:6px;font-size:13px;font-weight:600;margin-bottom:6px}
+.zones{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 26px;margin-top:20px}
+.zones h3{font-family:var(--serif);font-size:22px;margin-bottom:12px}
+.zone{padding:14px 18px;border-radius:8px;margin-bottom:10px}
+.zone-title{font-family:var(--serif);font-size:16px;font-weight:600;margin-bottom:4px}
+.zone p{font-size:13px;color:var(--text-secondary);line-height:1.5;margin:0}
+.zone.alley{background:rgba(255,193,7,0.12);border-left:3px solid #ffc107}
+.zone.dixie{background:rgba(160,40,24,0.1);border-left:3px solid var(--accent)}
+.zone.hoosier{background:rgba(45,106,79,0.1);border-left:3px solid #2d6a4f}
+.footer{text-align:center;padding:24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px}
+.inline-ad{text-align:center;margin:20px auto;max-width:728px;overflow:hidden}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/quiz/">Quizzes</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/supercell-simulator/">Supercell Sim</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="eyebrow">🗺️ Interactive US map</div>
+  <h1>The <em>Tornado Alley</em> map</h1>
+  <p>Click any state to see its annual tornado average, EF5 count, deadliest event and safety ranking. Shading reflects the average tornadoes per year.</p>
+</section>
+
+<div class="wrap">
+  <div class="map-card">
+    <div class="legend">
+      <div class="legend-item"><div class="swatch" style="background:#e6efee"></div>0-25/yr</div>
+      <div class="legend-item"><div class="swatch" style="background:#ffe8b7"></div>25-50/yr</div>
+      <div class="legend-item"><div class="swatch" style="background:#ffb559"></div>50-100/yr</div>
+      <div class="legend-item"><div class="swatch" style="background:#e8621e"></div>100+/yr</div>
+      <div class="legend-item"><div class="swatch" style="background:#a02818"></div>Tornado / Dixie Alley core</div>
+    </div>
+    <!-- Simplified US map. Each rect represents a state. Layout is a schematic grid, not geographically precise. -->
+    <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" id="usmap" style="width:100%;height:auto;font-family:Inter,sans-serif;font-size:11px;font-weight:600">
+      <!-- Row 1 (border states, north) -->
+      <g id="states"></g>
+    </svg>
+    <p style="text-align:center;font-size:12px;color:var(--text-muted);margin-top:10px;font-style:italic">Schematic layout — click a state for detailed stats.</p>
+  </div>
+
+  <div class="detail-card" id="detail">
+    <div class="detail-name">Pick a state</div>
+    <div class="detail-region">Click any state on the map</div>
+    <p style="font-size:14px;color:var(--text-secondary);margin-bottom:12px">Or start with the tornado-alley heavies: Texas, Oklahoma, Kansas, Alabama, Mississippi.</p>
+  </div>
+</div>
+
+<div style="max-width:1100px;margin:0 auto;padding:0 20px">
+<div class="zones">
+  <h3>The alleys</h3>
+  <div class="zone alley">
+    <div class="zone-title">Tornado Alley</div>
+    <p>The traditional zone stretching from north Texas through Oklahoma, Kansas, and Nebraska. Flat terrain, dryline convection, and peak activity in April-June. Historically the most photogenic supercells.</p>
+  </div>
+  <div class="zone dixie">
+    <div class="zone-title">Dixie Alley</div>
+    <p>Mississippi, Alabama, Tennessee, Arkansas, western Georgia and northern Louisiana. Nocturnal tornadoes, rain-wrapped storms, and heavy tree cover make Dixie Alley the deadliest US tornado zone — more per-tornado fatalities than the traditional alley.</p>
+  </div>
+  <div class="zone hoosier">
+    <div class="zone-title">Hoosier Alley</div>
+    <p>The lesser-known Ohio Valley zone: Indiana, Illinois, Ohio, Kentucky. Peaks slightly later than Tornado Alley (May-June) and has produced some of the deadliest single tornadoes ever, including the 1925 Tri-State Tornado.</p>
+  </div>
+</div>
+
+<div class="inline-ad">
+  <script type="text/javascript">atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};</script>
+  <script type="text/javascript" src="//www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
+</div>
+</div>
+
+<footer class="footer">
+  Data averages 2000-2024 from NOAA SPC. Not affiliated with the National Weather Service. Part of <a href="/">Tornado Hub</a>.
+</footer>
+
+<script>
+// State data — annual avg tornadoes 2000-2024, EF5 count since 1950, deadliest event, article slug
+const STATES = {
+  TX:{ name:'Texas', ann:135, ef5:8, dead:'1953 Waco F5 (114 killed)', region:'Tornado Alley', href:'/texas-tornadoes/', tier:4 },
+  OK:{ name:'Oklahoma', ann:56, ef5:7, dead:'1947 Woodward F5 (181)', region:'Tornado Alley core', href:'/oklahoma-tornadoes/', tier:4 },
+  KS:{ name:'Kansas', ann:87, ef5:8, dead:'1955 Udall F5 (80)', region:'Tornado Alley core', href:'/kansas-tornadoes/', tier:4 },
+  NE:{ name:'Nebraska', ann:57, ef5:1, dead:'1913 Omaha (103)', region:'Tornado Alley', href:'/nebraska-tornadoes/', tier:3 },
+  MO:{ name:'Missouri', ann:44, ef5:5, dead:'1925 Tri-State (695 across 3 states)', region:'Hoosier Alley edge', href:'/missouri-tornadoes/', tier:3 },
+  IA:{ name:'Iowa', ann:47, ef5:1, dead:'2008 Parkersburg EF5', region:'Tornado Alley', href:'/iowa-tornadoes/', tier:3 },
+  AR:{ name:'Arkansas', ann:39, ef5:0, dead:'1929 Sneed (23)', region:'Dixie Alley', href:'/arkansas-tornadoes/', tier:3 },
+  MS:{ name:'Mississippi', ann:56, ef5:5, dead:'1936 Tupelo F5 (216)', region:'Dixie Alley core', href:'/mississippi-tornadoes/', tier:4 },
+  AL:{ name:'Alabama', ann:65, ef5:5, dead:'April 27, 2011 Hackleburg EF5 (72)', region:'Dixie Alley core', href:'/alabama-tornadoes/', tier:4 },
+  TN:{ name:'Tennessee', ann:33, ef5:0, dead:'2020 Nashville EF3 (25)', region:'Dixie Alley', href:'/tennessee-tornadoes/', tier:3 },
+  GA:{ name:'Georgia', ann:29, ef5:0, dead:'1936 Gainesville F4 (203)', region:'Dixie Alley edge', href:'/georgia-tornadoes/', tier:2 },
+  LA:{ name:'Louisiana', ann:33, ef5:0, dead:'1908 Amite (72)', region:'Dixie Alley', href:'/louisiana-tornadoes/', tier:3 },
+  FL:{ name:'Florida', ann:52, ef5:0, dead:'1998 Kissimmee outbreak (42)', region:'Hurricane spawn', href:'/florida-tornadoes/', tier:3 },
+  KY:{ name:'Kentucky', ann:20, ef5:0, dead:'2021 Mayfield EF4 (57)', region:'Hoosier Alley', href:'/kentucky-tornadoes/', tier:2 },
+  IL:{ name:'Illinois', ann:52, ef5:2, dead:'1925 Tri-State', region:'Hoosier Alley', href:'/illinois-tornadoes/', tier:3 },
+  IN:{ name:'Indiana', ann:20, ef5:2, dead:'1925 Tri-State', region:'Hoosier Alley', href:'/indiana-tornadoes/', tier:2 },
+  OH:{ name:'Ohio', ann:22, ef5:1, dead:'1974 Xenia F5 (32 in state)', region:'Hoosier Alley', href:'/ohio-tornadoes/', tier:2 },
+  MI:{ name:'Michigan', ann:14, ef5:2, dead:'1953 Flint F5 (116)', region:'', href:'/michigan-tornadoes/', tier:1 },
+  WI:{ name:'Wisconsin', ann:23, ef5:1, dead:'1984 Barneveld F5 (9)', region:'', href:'/wisconsin-tornadoes/', tier:2 },
+  MN:{ name:'Minnesota', ann:45, ef5:0, dead:'2010 Wadena EF4', region:'', href:'/minnesota-tornadoes/', tier:3 },
+  ND:{ name:'North Dakota', ann:26, ef5:0, dead:'1957 Fargo F5 (10)', region:'', href:'/north-dakota-tornadoes/', tier:2 },
+  SD:{ name:'South Dakota', ann:37, ef5:0, dead:'2003 Manchester F4', region:'', href:'/south-dakota-tornadoes/', tier:2 },
+  MT:{ name:'Montana', ann:11, ef5:0, dead:'Rare', region:'', href:'/montana-tornadoes/', tier:1 },
+  WY:{ name:'Wyoming', ann:12, ef5:0, dead:'Rare', region:'', href:'/wyoming-tornadoes/', tier:1 },
+  CO:{ name:'Colorado', ann:47, ef5:0, dead:'2008 Windsor EF3', region:'Rockies', href:'/colorado-tornadoes/', tier:3 },
+  NM:{ name:'New Mexico', ann:11, ef5:0, dead:'Rare', region:'', href:'/new-mexico-tornadoes/', tier:1 },
+  AZ:{ name:'Arizona', ann:5, ef5:0, dead:'Very rare', region:'', href:'/arizona-tornadoes/', tier:0 },
+  UT:{ name:'Utah', ann:2, ef5:0, dead:'1999 Salt Lake City F2', region:'', href:'/utah-tornadoes/', tier:0 },
+  NV:{ name:'Nevada', ann:2, ef5:0, dead:'Very rare', region:'', href:'/nevada-tornadoes/', tier:0 },
+  CA:{ name:'California', ann:9, ef5:0, dead:'Rare', region:'', href:'/california-tornadoes/', tier:1 },
+  OR:{ name:'Oregon', ann:3, ef5:0, dead:'1993 Vancouver WA outbreak', region:'', href:'/oregon-tornadoes/', tier:0 },
+  WA:{ name:'Washington', ann:3, ef5:0, dead:'Rare', region:'', href:'/washington-state-tornadoes/', tier:0 },
+  ID:{ name:'Idaho', ann:5, ef5:0, dead:'Rare', region:'', href:'/idaho-tornadoes/', tier:0 },
+  ME:{ name:'Maine', ann:3, ef5:0, dead:'Rare', region:'', href:'/maine-tornadoes/', tier:0 },
+  NH:{ name:'New Hampshire', ann:1, ef5:0, dead:'Rare', region:'', href:'/new-hampshire-tornadoes/', tier:0 },
+  VT:{ name:'Vermont', ann:1, ef5:0, dead:'Rare', region:'', href:'/vermont-tornadoes/', tier:0 },
+  MA:{ name:'Massachusetts', ann:2, ef5:0, dead:'1953 Worcester F4 (94)', region:'', href:'/massachusetts-tornadoes/', tier:0 },
+  RI:{ name:'Rhode Island', ann:1, ef5:0, dead:'Rare', region:'', href:'/rhode-island-tornadoes/', tier:0 },
+  CT:{ name:'Connecticut', ann:1, ef5:0, dead:'Rare', region:'', href:'/connecticut-tornadoes/', tier:0 },
+  NY:{ name:'New York', ann:9, ef5:0, dead:'2014 Smithfield', region:'', href:'/new-york-tornadoes/', tier:1 },
+  NJ:{ name:'New Jersey', ann:3, ef5:0, dead:'Rare', region:'', href:'/new-jersey-tornadoes/', tier:0 },
+  PA:{ name:'Pennsylvania', ann:16, ef5:0, dead:'1985 Wheatland F5 (16)', region:'', href:'/pennsylvania-tornadoes/', tier:1 },
+  DE:{ name:'Delaware', ann:2, ef5:0, dead:'Rare', region:'', href:'/delaware-tornadoes/', tier:0 },
+  MD:{ name:'Maryland', ann:6, ef5:0, dead:'2001 La Plata F4', region:'', href:'/maryland-tornadoes/', tier:1 },
+  VA:{ name:'Virginia', ann:14, ef5:0, dead:'1959 Ivy F4', region:'', href:'/virginia-tornadoes/', tier:1 },
+  WV:{ name:'West Virginia', ann:4, ef5:0, dead:'Rare', region:'', href:'/west-virginia-tornadoes/', tier:0 },
+  NC:{ name:'North Carolina', ann:29, ef5:0, dead:'2011 Sanford EF3', region:'', href:'/north-carolina-tornadoes/', tier:2 },
+  SC:{ name:'South Carolina', ann:22, ef5:0, dead:'1984 Newberry F4', region:'', href:'', tier:2 },
+  AK:{ name:'Alaska', ann:0, ef5:0, dead:'None documented', region:'', href:'/alaska-tornadoes/', tier:0 },
+  HI:{ name:'Hawaii', ann:1, ef5:0, dead:'Very rare', region:'', href:'/hawaii-tornadoes/', tier:0 },
+};
+
+// Layout: simplified US grid — [col, row] positions
+const GRID = {
+  WA:[0,0], MT:[1,0], ND:[2,0], MN:[3,0], WI:[4,0], MI:[5,0], NY:[6,0], VT:[7,0], NH:[7.5,0], ME:[8,0],
+  OR:[0,1], ID:[1,1], WY:[2,1], SD:[3,1], IA:[4,1], IL:[5,1], IN:[5.5,0.5], OH:[6,1], PA:[6.5,0.7], NJ:[7,1], CT:[7.5,0.7], MA:[7.7,0.7], RI:[7.7,0.85],
+  CA:[0,2], NV:[1,2], UT:[1.7,2], CO:[2.3,2], NE:[3,1.5], KS:[3.3,2], MO:[4.2,2], KY:[5.4,1.5], WV:[6.3,1.5], VA:[6.8,1.7], MD:[7,1.4], DE:[7.4,1.3],
+  AZ:[1.3,3], NM:[2.2,3], TX:[3.5,3.5], OK:[3.5,2.7], AR:[4.4,2.8], TN:[5,2.5], NC:[6.4,2.4], SC:[6.2,2.9],
+  LA:[4.5,3.7], MS:[5,3.2], AL:[5.4,3.3], GA:[5.9,3.3], FL:[6.2,4],
+  HI:[0,4], AK:[0,3.7],
+};
+
+const COLORS = ['#e6efee', '#ffe8b7', '#ffb559', '#e8621e', '#a02818'];
+
+// Render
+const g = document.getElementById('states');
+const CELL = 78;
+const XPAD = 20, YPAD = 20;
+Object.entries(GRID).forEach(([code, [col, row]]) => {
+  const S = STATES[code];
+  const x = XPAD + col * CELL;
+  const y = YPAD + row * CELL;
+  const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+  rect.setAttribute('x', x); rect.setAttribute('y', y);
+  rect.setAttribute('width', CELL - 4); rect.setAttribute('height', CELL - 4);
+  rect.setAttribute('rx', 6);
+  rect.setAttribute('fill', COLORS[S.tier]);
+  rect.setAttribute('class', 'state'); rect.dataset.code = code;
+  g.appendChild(rect);
+  const t = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+  t.setAttribute('x', x + (CELL-4)/2); t.setAttribute('y', y + (CELL-4)/2 - 2);
+  t.setAttribute('text-anchor', 'middle');
+  t.setAttribute('font-weight', '700');
+  t.setAttribute('fill', S.tier >= 3 ? '#fff' : '#14161c');
+  t.setAttribute('pointer-events', 'none');
+  t.setAttribute('font-size', '13');
+  t.textContent = code;
+  g.appendChild(t);
+  const t2 = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+  t2.setAttribute('x', x + (CELL-4)/2); t2.setAttribute('y', y + (CELL-4)/2 + 14);
+  t2.setAttribute('text-anchor', 'middle');
+  t2.setAttribute('font-weight', '600');
+  t2.setAttribute('font-size', '10');
+  t2.setAttribute('fill', S.tier >= 3 ? '#fff' : '#4a5061');
+  t2.setAttribute('pointer-events', 'none');
+  t2.textContent = S.ann + '/yr';
+  g.appendChild(t2);
+  rect.addEventListener('click', () => selectState(code));
+});
+
+function selectState(code) {
+  document.querySelectorAll('.state').forEach(s => s.classList.toggle('selected', s.dataset.code === code));
+  const S = STATES[code];
+  const detail = document.getElementById('detail');
+  detail.innerHTML = `
+    <div class="detail-name">${S.name}</div>
+    <div class="detail-region">${S.region || 'Outside major alleys'}</div>
+    <div class="stat-grid">
+      <div class="stat"><div class="stat-val">${S.ann}</div><div class="stat-lbl">Avg/yr</div></div>
+      <div class="stat"><div class="stat-val">${S.ef5}</div><div class="stat-lbl">F5/EF5 since 1950</div></div>
+    </div>
+    <div class="notable"><strong>Deadliest event</strong><br>${S.dead}</div>
+    ${S.href ? `<div class="link-row"><a href="${S.href}">Read more about ${S.name} tornadoes →</a></div>` : ''}
+  `;
+}
+
+// Auto-set viewbox to fit
+const svg = document.getElementById('usmap');
+svg.setAttribute('viewBox', `0 0 ${XPAD*2 + 9*CELL} ${YPAD*2 + 5*CELL}`);
+
+selectState('OK');
+</script>
+</body>
+</html>

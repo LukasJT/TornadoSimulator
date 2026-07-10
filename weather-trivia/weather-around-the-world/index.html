@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Weather Around the World Trivia — Free Interactive Weather Trivia</title>
+<meta name="description" content="Monsoons, wadis, chinooks, mistrals, Santa Ana winds — how well do you know the weather of other continents? Instant scoring, share your result." />
+<meta property="og:title" content="Weather Around the World Trivia" />
+<meta property="og:description" content="Monsoons, wadis, chinooks, mistrals, Santa Ana winds — how well do you know the weather of other continents?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tornadosimulator.net/weather-trivia/weather-around-the-world/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/weather-trivia/weather-around-the-world/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌏</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Quiz","name":"Weather Around the World Trivia","numberOfQuestions":15}
+</script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --border-strong:#d4cfc3; --accent:#a02818; --accent-hover:#7d1f13; --link:#1e3a5f; --correct:#2d6a4f; --wrong:#a02818; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--link);text-decoration:none}
+a:hover{color:var(--accent)}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text)}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.breadcrumb{max-width:800px;margin:20px auto 0;padding:0 24px;font-size:13px;color:var(--text-muted)}
+.hero{padding:40px 24px 20px;max-width:800px;margin:0 auto;text-align:center}
+.hero .emoji{font-size:56px;line-height:1;margin-bottom:16px}
+.hero h1{font-family:var(--serif);font-size:clamp(28px,4vw,42px);font-weight:700;letter-spacing:-0.02em;margin-bottom:14px}
+.hero p{color:var(--text-secondary);font-size:17px;max-width:600px;margin:0 auto}
+.quiz-wrap{max-width:720px;margin:20px auto;padding:0 20px 60px}
+.progress-bar{position:sticky;top:66px;background:var(--surface);border-radius:8px;padding:12px 18px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center;z-index:50;border:1px solid var(--border)}
+.progress-count{font-size:13px;color:var(--text-secondary);font-weight:600}
+.progress-count .score{color:var(--accent)}
+.progress-track{flex:1;margin:0 16px;height:6px;background:var(--bg-alt);border-radius:3px;overflow:hidden}
+.progress-fill{height:100%;background:var(--accent);width:0;transition:width 0.3s}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:16px}
+.q-num{font-size:11px;color:var(--text-muted);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px}
+.q-text{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.35;margin-bottom:16px}
+.options{display:flex;flex-direction:column;gap:8px}
+.opt{padding:12px 16px;background:var(--bg);border:1.5px solid var(--border);border-radius:8px;cursor:pointer;text-align:left;font-family:var(--sans);font-size:15px;color:var(--text);transition:background 0.15s,border-color 0.15s;display:flex;align-items:center;gap:10px}
+.opt:hover:not(:disabled){background:var(--bg-alt)}
+.opt .letter{width:24px;height:24px;background:var(--surface);border:1.5px solid var(--border-strong);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;flex-shrink:0}
+.opt.correct{background:#e0f2e9;border-color:var(--correct);color:var(--correct)}
+.opt.correct .letter{background:var(--correct);color:white;border-color:var(--correct)}
+.opt.wrong{background:#fbe0dc;border-color:var(--wrong);color:var(--wrong)}
+.opt.wrong .letter{background:var(--wrong);color:white;border-color:var(--wrong)}
+.explanation{margin-top:14px;padding:12px 14px;background:var(--bg-alt);border-left:3px solid var(--accent);border-radius:4px;font-size:14px;color:var(--text-secondary);display:none}
+.explanation.show{display:block}
+.explanation strong{color:var(--accent)}
+.result{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:32px;margin-top:20px;text-align:center;display:none}
+.result.show{display:block}
+.result h2{font-family:var(--serif);font-size:32px;margin-bottom:12px}
+.result .score-big{font-family:var(--serif);font-size:72px;font-weight:700;color:var(--accent);line-height:1;margin:20px 0}
+.result .verdict{font-size:17px;color:var(--text-secondary);margin-bottom:20px}
+.result-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn{padding:10px 20px;font-size:14px;font-weight:600;border-radius:8px;border:1px solid var(--border-strong);background:transparent;color:var(--text);cursor:pointer;text-decoration:none;font-family:var(--sans)}
+.btn.primary{background:var(--accent);color:white;border-color:var(--accent)}
+.footer{text-align:center;padding:24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px;margin-top:40px}
+.inline-ad{text-align:center;margin:24px auto;max-width:728px;overflow:hidden}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand" style="color:var(--text);text-decoration:none">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/quiz/">Quizzes</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/supercell-simulator/">Supercell Sim</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+<div class="breadcrumb"><a href="/">Home</a> · <a href="/weather-trivia/">Weather Trivia</a> · Weather Around the World Trivia</div>
+<section class="hero">
+  <div class="emoji">🌏</div>
+  <h1>Weather Around the World Trivia</h1>
+  <p>Monsoons, wadis, chinooks, mistrals, Santa Ana winds — how well do you know the weather of other continents?</p>
+</section>
+<div class="quiz-wrap">
+  <div class="progress-bar">
+    <div class="progress-count">Question <span id="qnum">1</span>/15</div>
+    <div class="progress-track"><div class="progress-fill" id="fill"></div></div>
+    <div class="progress-count"><span class="score" id="scoreLive">0</span> correct</div>
+  </div>
+  <div id="questions">
+    <div class="card">
+      <div class="q-num">Question 1 of 15</div>
+      <div class="q-text">What wind sweeps down the eastern slopes of the Rockies, warming rapidly?</div>
+      <div class="options"><button class="opt" onclick="pick(0,0,this)"><span class="letter">A</span><span>Santa Ana</span></button><button class="opt" onclick="pick(0,1,this)"><span class="letter">B</span><span>Chinook</span></button><button class="opt" onclick="pick(0,2,this)"><span class="letter">C</span><span>Mistral</span></button><button class="opt" onclick="pick(0,3,this)"><span class="letter">D</span><span>Sirocco</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Chinook winds can raise temperatures 40°F in an hour.</div>
+    </div>
+    <div class="card">
+      <div class="q-num">Question 2 of 15</div>
+      <div class="q-text">What hot dry wind blows into Southern California from the desert?</div>
+      <div class="options"><button class="opt" onclick="pick(1,0,this)"><span class="letter">A</span><span>Chinook</span></button><button class="opt" onclick="pick(1,1,this)"><span class="letter">B</span><span>Santa Ana</span></button><button class="opt" onclick="pick(1,2,this)"><span class="letter">C</span><span>Foehn</span></button><button class="opt" onclick="pick(1,3,this)"><span class="letter">D</span><span>Mistral</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Santa Ana winds fuel California wildfires.</div>
+    </div>
+    <div class="card">
+      <div class="q-num">Question 3 of 15</div>
+      <div class="q-text">What wind blows from Africa across the Mediterranean?</div>
+      <div class="options"><button class="opt" onclick="pick(2,0,this)"><span class="letter">A</span><span>Mistral</span></button><button class="opt" onclick="pick(2,1,this)"><span class="letter">B</span><span>Sirocco</span></button><button class="opt" onclick="pick(2,2,this)"><span class="letter">C</span><span>Foehn</span></button><button class="opt" onclick="pick(2,3,this)"><span class="letter">D</span><span>Levanter</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Sirocco can carry Saharan dust across Europe.</div>
+    </div>
+    <div class="card">
+      <div class="q-num">Question 4 of 15</div>
+      <div class="q-text">What monsoon dominates the Indian subcontinent&#x27;s summer?</div>
+      <div class="options"><button class="opt" onclick="pick(3,0,this)"><span class="letter">A</span><span>Winter monsoon</span></button><button class="opt" onclick="pick(3,1,this)"><span class="letter">B</span><span>Southwest monsoon</span></button><button class="opt" onclick="pick(3,2,this)"><span class="letter">C</span><span>Northeast monsoon</span></button><button class="opt" onclick="pick(3,3,this)"><span class="letter">D</span><span>Northern monsoon</span></button></div>
+      <div class="explanation"><strong>Why:</strong> The southwest monsoon delivers most annual rainfall from June to September.</div>
+    </div>
+    <div class="card">
+      <div class="q-num">Question 5 of 15</div>
+      <div class="q-text">What is the &#x27;ITCZ&#x27;?</div>
+      <div class="options"><button class="opt" onclick="pick(4,0,this)"><span class="letter">A</span><span>International tornado zone</span></button><button class="opt" onclick="pick(4,1,this)"><span class="letter">B</span><span>Intertropical Convergence Zone</span></button><button class="opt" onclick="pick(4,2,this)"><span class="letter">C</span><span>Ice-topped cyclone zone</span></button><button class="opt" onclick="pick(4,3,this)"><span class="letter">D</span><span>None</span></button></div>
+      <div class="explanation"><strong>Why:</strong> The band of thunderstorms circling Earth near the equator.</div>
+    </div>
+    <div class="card">
+      <div class="q-num">Question 6 of 15</div>
+      <div class="q-text">What Southern Ocean wind belt has notorious storms?</div>
+      <div class="options"><button class="opt" onclick="pick(5,0,this)"><span class="letter">A</span><span>Roaring Forties</span></button><button class="opt" onclick="pick(5,1,this)"><span class="letter">B</span><span>Trade winds</span></button><button class="opt" onclick="pick(5,2,this)"><span class="letter">C</span><span>Doldrums</span></button><button class="opt" onclick="pick(5,3,this)"><span class="letter">D</span><span>Horse latitudes</span></button></div>
+      <div class="explanation"><strong>Why:</strong> 40°S also known as Furious Fifties and Screaming Sixties further south.</div>
+    </div>
+    <div class="card">
+      <div class="q-num">Question 7 of 15</div>
+      <div class="q-text">What weather phenomenon dominates the equatorial Pacific climate?</div>
+      <div class="options"><button class="opt" onclick="pick(6,0,this)"><span class="letter">A</span><span>ENSO</span></button><button class="opt" onclick="pick(6,1,this)"><span class="letter">B</span><span>AMO</span></button><button class="opt" onclick="pick(6,2,this)"><span class="letter">C</span><span>PDO</span></button><button class="opt" onclick="pick(6,3,this)"><span class="letter">D</span><span>NAO</span></button></div>
+      <div class="explanation"><strong>Why:</strong> El Niño-Southern Oscillation cycles between warm and cool phases.</div>
+    </div>
+    <div class="card">
+      <div class="q-num">Question 8 of 15</div>
+      <div class="q-text">What deadly heat wave killed 70,000+ across Europe in 2003?</div>
+      <div class="options"><button class="opt" onclick="pick(7,0,this)"><span class="letter">A</span><span>The 2003 European heatwave</span></button><button class="opt" onclick="pick(7,1,this)"><span class="letter">B</span><span>Great Heat</span></button><button class="opt" onclick="pick(7,2,this)"><span class="letter">C</span><span>European Fire</span></button><button class="opt" onclick="pick(7,3,this)"><span class="letter">D</span><span>Sahara Wave</span></button></div>
+      <div class="explanation"><strong>Why:</strong> The August 2003 heatwave was a catastrophic event.</div>
+    </div>
+    <div class="card">
+      <div class="q-num">Question 9 of 15</div>
+      <div class="q-text">What is a &#x27;haboob&#x27;?</div>
+      <div class="options"><button class="opt" onclick="pick(8,0,this)"><span class="letter">A</span><span>Sand storm from thunderstorm outflow</span></button><button class="opt" onclick="pick(8,1,this)"><span class="letter">B</span><span>Volcanic ash cloud</span></button><button class="opt" onclick="pick(8,2,this)"><span class="letter">C</span><span>Ice fog</span></button><button class="opt" onclick="pick(8,3,this)"><span class="letter">D</span><span>Tornado in Arabic</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Common in Sudan and Arizona.</div>
+    </div>
+    <div class="card">
+      <div class="q-num">Question 10 of 15</div>
+      <div class="q-text">What tropical cyclone is called in the northwestern Pacific?</div>
+      <div class="options"><button class="opt" onclick="pick(9,0,this)"><span class="letter">A</span><span>Hurricane</span></button><button class="opt" onclick="pick(9,1,this)"><span class="letter">B</span><span>Cyclone</span></button><button class="opt" onclick="pick(9,2,this)"><span class="letter">C</span><span>Typhoon</span></button><button class="opt" onclick="pick(9,3,this)"><span class="letter">D</span><span>Willy-willy</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Typhoons form in the western North Pacific.</div>
+    </div>
+    <div class="card">
+      <div class="q-num">Question 11 of 15</div>
+      <div class="q-text">Which African weather feature drives Sahel drought?</div>
+      <div class="options"><button class="opt" onclick="pick(10,0,this)"><span class="letter">A</span><span>West African Monsoon shifts</span></button><button class="opt" onclick="pick(10,1,this)"><span class="letter">B</span><span>Namibian desert</span></button><button class="opt" onclick="pick(10,2,this)"><span class="letter">C</span><span>Congo rainforest</span></button><button class="opt" onclick="pick(10,3,this)"><span class="letter">D</span><span>Nile floods</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Sahel rainfall depends on monsoon strength and position.</div>
+    </div>
+    <div class="card">
+      <div class="q-num">Question 12 of 15</div>
+      <div class="q-text">What is a &#x27;gully-washer&#x27; in Australia?</div>
+      <div class="options"><button class="opt" onclick="pick(11,0,this)"><span class="letter">A</span><span>Sudden heavy tropical rain</span></button><button class="opt" onclick="pick(11,1,this)"><span class="letter">B</span><span>Small cyclone</span></button><button class="opt" onclick="pick(11,2,this)"><span class="letter">C</span><span>Bushfire wind</span></button><button class="opt" onclick="pick(11,3,this)"><span class="letter">D</span><span>Dust devil</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Aussie slang for intense localized rainfall.</div>
+    </div>
+    <div class="card">
+      <div class="q-num">Question 13 of 15</div>
+      <div class="q-text">Which country experiences &#x27;polar night&#x27;?</div>
+      <div class="options"><button class="opt" onclick="pick(12,0,this)"><span class="letter">A</span><span>Iceland</span></button><button class="opt" onclick="pick(12,1,this)"><span class="letter">B</span><span>Norway</span></button><button class="opt" onclick="pick(12,2,this)"><span class="letter">C</span><span>Russia</span></button><button class="opt" onclick="pick(12,3,this)"><span class="letter">D</span><span>All of the above</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Any location above the Arctic Circle sees polar night in winter.</div>
+    </div>
+    <div class="card">
+      <div class="q-num">Question 14 of 15</div>
+      <div class="q-text">What causes the &#x27;Alberta clipper&#x27; storm?</div>
+      <div class="options"><button class="opt" onclick="pick(13,0,this)"><span class="letter">A</span><span>A fast-moving low from the Canadian Prairies</span></button><button class="opt" onclick="pick(13,1,this)"><span class="letter">B</span><span>A cyclone off Newfoundland</span></button><button class="opt" onclick="pick(13,2,this)"><span class="letter">C</span><span>A hurricane remnant</span></button><button class="opt" onclick="pick(13,3,this)"><span class="letter">D</span><span>A polar vortex breakout</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Fast-moving lows bring brief snow bursts to the northern US.</div>
+    </div>
+    <div class="card">
+      <div class="q-num">Question 15 of 15</div>
+      <div class="q-text">Where does the &#x27;sundowner wind&#x27; blow?</div>
+      <div class="options"><button class="opt" onclick="pick(14,0,this)"><span class="letter">A</span><span>Sub-Saharan Africa</span></button><button class="opt" onclick="pick(14,1,this)"><span class="letter">B</span><span>Santa Barbara, California</span></button><button class="opt" onclick="pick(14,2,this)"><span class="letter">C</span><span>New Zealand</span></button><button class="opt" onclick="pick(14,3,this)"><span class="letter">D</span><span>Chile</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Sundowners are downslope winds from the Santa Ynez Mountains toward Santa Barbara.</div>
+    </div>
+  </div>
+  <div class="inline-ad">
+    <script type="text/javascript">atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};</script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
+  </div>
+  <div id="result" class="result">
+    <h2>You're done!</h2>
+    <div class="score-big"><span id="scoreFinal">0</span>/15</div>
+    <div class="verdict" id="verdict"></div>
+    <div class="result-btns">
+      <button class="btn primary" onclick="shareResult()">📋 Share your score</button>
+      <a class="btn" href="/weather-trivia/">More trivia →</a>
+    </div>
+  </div>
+</div>
+<footer class="footer">Part of <a href="/">Tornado Hub</a>.</footer>
+<script>
+const QUESTIONS = [{"q": "What wind sweeps down the eastern slopes of the Rockies, warming rapidly?", "options": ["Santa Ana", "Chinook", "Mistral", "Sirocco"], "a": 1, "exp": "Chinook winds can raise temperatures 40\u00b0F in an hour."}, {"q": "What hot dry wind blows into Southern California from the desert?", "options": ["Chinook", "Santa Ana", "Foehn", "Mistral"], "a": 1, "exp": "Santa Ana winds fuel California wildfires."}, {"q": "What wind blows from Africa across the Mediterranean?", "options": ["Mistral", "Sirocco", "Foehn", "Levanter"], "a": 1, "exp": "Sirocco can carry Saharan dust across Europe."}, {"q": "What monsoon dominates the Indian subcontinent's summer?", "options": ["Winter monsoon", "Southwest monsoon", "Northeast monsoon", "Northern monsoon"], "a": 1, "exp": "The southwest monsoon delivers most annual rainfall from June to September."}, {"q": "What is the 'ITCZ'?", "options": ["International tornado zone", "Intertropical Convergence Zone", "Ice-topped cyclone zone", "None"], "a": 1, "exp": "The band of thunderstorms circling Earth near the equator."}, {"q": "What Southern Ocean wind belt has notorious storms?", "options": ["Roaring Forties", "Trade winds", "Doldrums", "Horse latitudes"], "a": 0, "exp": "40\u00b0S also known as Furious Fifties and Screaming Sixties further south."}, {"q": "What weather phenomenon dominates the equatorial Pacific climate?", "options": ["ENSO", "AMO", "PDO", "NAO"], "a": 0, "exp": "El Ni\u00f1o-Southern Oscillation cycles between warm and cool phases."}, {"q": "What deadly heat wave killed 70,000+ across Europe in 2003?", "options": ["The 2003 European heatwave", "Great Heat", "European Fire", "Sahara Wave"], "a": 0, "exp": "The August 2003 heatwave was a catastrophic event."}, {"q": "What is a 'haboob'?", "options": ["Sand storm from thunderstorm outflow", "Volcanic ash cloud", "Ice fog", "Tornado in Arabic"], "a": 0, "exp": "Common in Sudan and Arizona."}, {"q": "What tropical cyclone is called in the northwestern Pacific?", "options": ["Hurricane", "Cyclone", "Typhoon", "Willy-willy"], "a": 2, "exp": "Typhoons form in the western North Pacific."}, {"q": "Which African weather feature drives Sahel drought?", "options": ["West African Monsoon shifts", "Namibian desert", "Congo rainforest", "Nile floods"], "a": 0, "exp": "Sahel rainfall depends on monsoon strength and position."}, {"q": "What is a 'gully-washer' in Australia?", "options": ["Sudden heavy tropical rain", "Small cyclone", "Bushfire wind", "Dust devil"], "a": 0, "exp": "Aussie slang for intense localized rainfall."}, {"q": "Which country experiences 'polar night'?", "options": ["Iceland", "Norway", "Russia", "All of the above"], "a": 3, "exp": "Any location above the Arctic Circle sees polar night in winter."}, {"q": "What causes the 'Alberta clipper' storm?", "options": ["A fast-moving low from the Canadian Prairies", "A cyclone off Newfoundland", "A hurricane remnant", "A polar vortex breakout"], "a": 0, "exp": "Fast-moving lows bring brief snow bursts to the northern US."}, {"q": "Where does the 'sundowner wind' blow?", "options": ["Sub-Saharan Africa", "Santa Barbara, California", "New Zealand", "Chile"], "a": 1, "exp": "Sundowners are downslope winds from the Santa Ynez Mountains toward Santa Barbara."}];
+let answered = 0, score = 0;
+const total = QUESTIONS.length;
+function pick(qIdx, oIdx, btn) {
+  const q = QUESTIONS[qIdx];
+  if (btn.parentElement.dataset.done) return;
+  btn.parentElement.dataset.done = '1';
+  const buttons = btn.parentElement.querySelectorAll('.opt');
+  buttons.forEach((b, i) => {
+    b.disabled = true;
+    if (i === q.a) b.classList.add('correct');
+    else if (i === oIdx) b.classList.add('wrong');
+  });
+  btn.closest('.card').querySelector('.explanation').classList.add('show');
+  if (oIdx === q.a) score++;
+  answered++;
+  document.getElementById('scoreLive').textContent = score;
+  document.getElementById('qnum').textContent = Math.min(answered + 1, total);
+  document.getElementById('fill').style.width = (answered / total * 100) + '%';
+  if (answered === total) showResult();
+  else {
+    const next = document.querySelectorAll('.card')[answered];
+    if (next) setTimeout(() => next.scrollIntoView({behavior:'smooth', block:'center'}), 400);
+  }
+}
+function showResult() {
+  const r = document.getElementById('result');
+  r.classList.add('show');
+  document.getElementById('scoreFinal').textContent = score;
+  const pct = Math.round(score / total * 100);
+  let msg;
+  if (pct === 100) msg = "🏆 Perfect score!";
+  else if (pct >= 80) msg = "🌪️ Impressive.";
+  else if (pct >= 60) msg = "🌤️ Solid.";
+  else if (pct >= 40) msg = "🌫️ Not bad.";
+  else msg = "🌧️ Room to grow.";
+  document.getElementById('verdict').textContent = msg;
+  setTimeout(() => r.scrollIntoView({behavior:'smooth', block:'center'}), 300);
+}
+function shareResult() {
+  const pct = Math.round(score / total * 100);
+  const text = `I scored ${score}/${total} (${pct}%) on ${document.title.split(' — ')[0]}!\n\ntornadosimulator.net/weather-trivia/weather-around-the-world/`;
+  if (navigator.share) navigator.share({ text }).catch(() => copyText(text));
+  else copyText(text);
+}
+function copyText(t) {
+  if (navigator.clipboard) navigator.clipboard.writeText(t).then(() => alert('Copied!'));
+}
+</script>
+</body>
+</html>

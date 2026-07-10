@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cloud Identification Game — Guess the Cloud Type</title>
+<meta name="description" content="A free interactive game to test your cloud identification skills. See a drawn cloud, pick the type from four options. Learn cumulus from cumulonimbus, cirrus from cirrostratus, and mammatus from lenticular. Great for weather nerds, students and future storm spotters." />
+<meta name="keywords" content="cloud identification game, cloud type quiz, learn cloud types, cumulus cumulonimbus, cirrus stratus, cloud gallery, weather quiz for kids" />
+<meta property="og:title" content="Cloud Identification Game" />
+<meta property="og:description" content="See the cloud, guess the type. 15 rounds. Free and educational." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.tornadosimulator.net/cloud-id-game/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/cloud-id-game/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☁️</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Game","name":"Cloud Identification Game","genre":"Educational quiz","publisher":{"@type":"Organization","name":"Tornado Hub"}}
+</script>
+<style>
+:root { --bg:#e8eef6; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#d4d9e2; --border-strong:#b6c0cf; --accent:#4a6fa5; --accent-hover:#3d5c8a; --link:#1e3a5f; --correct:#2d6a4f; --wrong:#a02818; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text);text-decoration:none}
+.nav-links a.cta{background:#a02818;color:white;font-weight:600}
+.hero{padding:36px 20px 16px;text-align:center;max-width:700px;margin:0 auto}
+.hero .eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.hero h1{font-family:var(--serif);font-size:clamp(28px,4vw,40px);font-weight:700;line-height:1.1;letter-spacing:-0.02em;margin-bottom:10px}
+.hero h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.hero p{color:var(--text-secondary);font-size:15px;max-width:560px;margin:0 auto}
+.game{max-width:640px;margin:20px auto 40px;padding:0 20px}
+.hud{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 20px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;font-size:13px}
+.hud b{color:var(--accent);font-family:var(--serif);font-size:18px;font-weight:700}
+.progress-bar{height:6px;background:var(--bg);border-radius:3px;overflow:hidden;flex:1;margin:0 14px}
+.fill{height:100%;background:var(--accent);transition:width 0.3s;width:0}
+.round-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.06)}
+.cloud-frame{background:linear-gradient(180deg,#c8d6ea 0%,#e6ecf5 100%);border-radius:10px;padding:20px;margin-bottom:16px;text-align:center;min-height:220px;display:flex;align-items:center;justify-content:center}
+.cloud-frame svg{max-width:100%;height:auto}
+.round-q{font-family:var(--serif);font-size:20px;font-weight:600;text-align:center;margin-bottom:14px;letter-spacing:-0.01em}
+.opts{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+@media (max-width:400px){.opts{grid-template-columns:1fr}}
+.opt{padding:14px 16px;background:var(--bg-alt);border:1.5px solid var(--border);border-radius:10px;cursor:pointer;text-align:left;font-family:var(--sans);font-size:14px;font-weight:600;color:var(--text);transition:all 0.15s}
+.opt:hover{background:#f0e8d8;border-color:var(--accent)}
+.opt.correct{background:rgba(45,106,79,0.15);border-color:var(--correct);color:var(--correct)}
+.opt.wrong{background:rgba(160,40,24,0.14);border-color:var(--wrong);color:var(--wrong)}
+.opt:disabled{cursor:default;opacity:0.85}
+.explanation{margin-top:14px;padding:14px 16px;background:var(--bg);border-left:3px solid var(--accent);border-radius:6px;font-size:13px;color:var(--text-secondary);display:none;line-height:1.55}
+.explanation.show{display:block}
+.explanation strong{color:var(--accent);font-family:var(--serif);font-size:15px}
+.next-btn{width:100%;margin-top:14px;padding:14px;background:var(--accent);color:white;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--sans);display:none}
+.next-btn.show{display:block}
+.next-btn:hover{background:var(--accent-hover)}
+.result{background:var(--surface);border:2px solid var(--accent);border-radius:14px;padding:32px 26px;text-align:center;display:none;box-shadow:0 12px 40px rgba(74,111,165,0.2)}
+.result.show{display:block}
+.result h2{font-family:var(--serif);font-size:32px;margin-bottom:8px}
+.result .score-big{font-family:var(--serif);font-size:64px;font-weight:700;color:var(--accent);line-height:1;margin:12px 0}
+.result .verdict{font-size:16px;color:var(--text-secondary);margin-bottom:20px}
+.result-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.btn{padding:12px 22px;font-size:14px;font-weight:700;border-radius:8px;cursor:pointer;border:1.5px solid var(--border-strong);background:transparent;color:var(--text);font-family:var(--sans);text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.btn.primary{background:var(--accent);color:white;border-color:var(--accent)}
+.btn.primary:hover{background:var(--accent-hover);color:white}
+.footer{text-align:center;padding:24px;border-top:1px solid var(--border);background:var(--surface);color:var(--text-muted);font-size:13px}
+.inline-ad{text-align:center;margin:20px auto;max-width:728px;overflow:hidden}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/quiz/">Quizzes</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/supercell-simulator/">Supercell Sim</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="eyebrow">☁️ 15-round game</div>
+  <h1>Guess the <em>cloud</em></h1>
+  <p>Look at the drawing. Pick the cloud type from four options. Learn something new after every round.</p>
+</section>
+
+<div class="game">
+  <div class="hud">
+    <div>Round <b id="rnum">1</b>/15</div>
+    <div class="progress-bar"><div class="fill" id="fill"></div></div>
+    <div><b id="score">0</b>correct</div>
+  </div>
+
+  <div id="round-container"></div>
+
+  <div id="result" class="result">
+    <h2>You're done!</h2>
+    <div class="score-big"><span id="final-score">0</span>/15</div>
+    <div class="verdict" id="verdict"></div>
+    <div class="result-btns">
+      <button class="btn primary" onclick="share()">📋 Share your score</button>
+      <button class="btn" onclick="restart()">↻ Play again</button>
+      <a class="btn" href="/weather-trivia/clouds-and-sky/">More cloud trivia →</a>
+    </div>
+  </div>
+
+  <div class="inline-ad">
+    <script type="text/javascript">atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};</script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
+  </div>
+</div>
+
+<footer class="footer">
+  Part of <a href="/">Tornado Hub</a>. Try the <a href="/how-to-spot-a-supercell/">supercell spotter guide</a>.
+</footer>
+
+<script>
+// SVG cloud drawings — inline so the page has no image dependencies
+const CLOUDS = {
+  cumulus: {
+    name: 'Cumulus',
+    fact: 'Cumulus are the classic "fair-weather" puffy white clouds. Base around 3,000-5,000 ft. If they grow tall enough they become cumulonimbus.',
+    svg: `<svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg"><rect width="400" height="220" fill="none"/><g fill="#fff" stroke="#a0b0c8" stroke-width="1"><ellipse cx="150" cy="140" rx="55" ry="42"/><ellipse cx="210" cy="120" rx="70" ry="55"/><ellipse cx="270" cy="145" rx="50" ry="40"/><ellipse cx="180" cy="155" rx="80" ry="30"/></g><line x1="0" y1="200" x2="400" y2="200" stroke="#8caa5c" stroke-width="4"/></svg>`,
+  },
+  cumulonimbus: {
+    name: 'Cumulonimbus',
+    fact: 'Cumulonimbus is the storm cloud — it produces thunderstorms, hail and tornadoes. The flat top forms an "anvil" when it hits the tropopause.',
+    svg: `<svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg"><g fill="#dfe4ec" stroke="#7a86a0" stroke-width="1"><ellipse cx="200" cy="45" rx="150" ry="24"/><path d="M100,60 Q90,120 130,170 Q200,190 270,170 Q310,120 300,60 Z" fill="#9aa5be"/><ellipse cx="200" cy="30" rx="45" ry="16" fill="#b4bfd6"/></g><g stroke="#4a5871" stroke-width="0.6" opacity="0.6"><line x1="140" y1="175" x2="145" y2="205"/><line x1="170" y1="175" x2="175" y2="205"/><line x1="200" y1="175" x2="205" y2="205"/><line x1="230" y1="175" x2="235" y2="205"/><line x1="260" y1="175" x2="265" y2="205"/></g><line x1="0" y1="200" x2="400" y2="200" stroke="#8caa5c" stroke-width="4"/></svg>`,
+  },
+  cirrus: {
+    name: 'Cirrus',
+    fact: 'Cirrus clouds are thin and wispy, made entirely of ice crystals above 20,000 ft. Often called "mare\'s tails."',
+    svg: `<svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg"><g stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round" opacity="0.95"><path d="M30,60 Q90,50 170,65"/><path d="M50,90 Q140,75 230,90 Q280,95 320,85"/><path d="M100,120 Q180,105 280,120"/><path d="M180,45 Q220,42 260,50"/><path d="M240,75 Q290,68 340,75"/></g><line x1="0" y1="200" x2="400" y2="200" stroke="#8caa5c" stroke-width="4"/></svg>`,
+  },
+  stratus: {
+    name: 'Stratus',
+    fact: 'Stratus is a low, flat, grey blanket of cloud. Often produces light drizzle. Fog is essentially stratus at ground level.',
+    svg: `<svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg"><g fill="#c0c9d6"><rect x="0" y="60" width="400" height="90" rx="6"/></g><g fill="#a8b3c5" opacity="0.5"><rect x="0" y="90" width="400" height="4"/><rect x="0" y="110" width="400" height="4"/></g><line x1="0" y1="200" x2="400" y2="200" stroke="#8caa5c" stroke-width="4"/></svg>`,
+  },
+  altocumulus: {
+    name: 'Altocumulus',
+    fact: 'Mid-level puffy clouds in patches or rolls, at about 6,500-20,000 ft. Sometimes called "mackerel sky" from the pattern.',
+    svg: `<svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg"><g fill="#dde4ee" stroke="#7c88a4" stroke-width="0.8">
+      <ellipse cx="50" cy="90" rx="22" ry="12"/><ellipse cx="100" cy="90" rx="22" ry="12"/><ellipse cx="150" cy="90" rx="22" ry="12"/><ellipse cx="200" cy="90" rx="22" ry="12"/><ellipse cx="250" cy="90" rx="22" ry="12"/><ellipse cx="300" cy="90" rx="22" ry="12"/><ellipse cx="350" cy="90" rx="22" ry="12"/>
+      <ellipse cx="70" cy="115" rx="22" ry="12"/><ellipse cx="120" cy="115" rx="22" ry="12"/><ellipse cx="170" cy="115" rx="22" ry="12"/><ellipse cx="220" cy="115" rx="22" ry="12"/><ellipse cx="270" cy="115" rx="22" ry="12"/><ellipse cx="320" cy="115" rx="22" ry="12"/>
+    </g><line x1="0" y1="200" x2="400" y2="200" stroke="#8caa5c" stroke-width="4"/></svg>`,
+  },
+  mammatus: {
+    name: 'Mammatus',
+    fact: 'Pouch-like clouds hanging beneath the anvil of a strong thunderstorm. They appear after severe weather has passed and are famously beautiful.',
+    svg: `<svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg"><g fill="#b3bed0"><rect x="0" y="40" width="400" height="55"/></g><g fill="#95a1ba">
+      <ellipse cx="40" cy="105" rx="24" ry="18"/><ellipse cx="90" cy="110" rx="26" ry="20"/><ellipse cx="140" cy="105" rx="22" ry="16"/><ellipse cx="190" cy="112" rx="28" ry="22"/><ellipse cx="240" cy="105" rx="24" ry="18"/><ellipse cx="290" cy="110" rx="26" ry="20"/><ellipse cx="340" cy="105" rx="22" ry="16"/><ellipse cx="380" cy="108" rx="20" ry="16"/>
+    </g><line x1="0" y1="200" x2="400" y2="200" stroke="#8caa5c" stroke-width="4"/></svg>`,
+  },
+  lenticular: {
+    name: 'Lenticular',
+    fact: 'Lens-shaped stationary clouds formed by standing waves of air over mountains. Often mistaken for UFOs.',
+    svg: `<svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg"><g fill="#dde4ee" stroke="#7c88a4" stroke-width="0.8">
+      <ellipse cx="200" cy="70" rx="130" ry="18"/><ellipse cx="200" cy="90" rx="105" ry="14"/><ellipse cx="200" cy="107" rx="80" ry="11"/>
+    </g><g fill="#6a7a5a"><polygon points="30,200 130,90 230,200"/><polygon points="230,200 300,120 370,200"/></g><line x1="0" y1="200" x2="400" y2="200" stroke="#8caa5c" stroke-width="4"/></svg>`,
+  },
+  cirrostratus: {
+    name: 'Cirrostratus',
+    fact: 'A thin, milky veil of ice-crystal cloud that covers the whole sky. Creates the classic halo around the sun or moon.',
+    svg: `<svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="30" width="400" height="130" fill="#eef2f8" opacity="0.85"/><g fill="#fff" opacity="0.55"><ellipse cx="200" cy="90" rx="180" ry="24"/><ellipse cx="200" cy="120" rx="170" ry="20"/></g><circle cx="200" cy="80" r="18" fill="#fff4c9"/><circle cx="200" cy="80" r="45" fill="none" stroke="#fff4c9" stroke-width="1.5" opacity="0.6"/><line x1="0" y1="200" x2="400" y2="200" stroke="#8caa5c" stroke-width="4"/></svg>`,
+  },
+  nimbostratus: {
+    name: 'Nimbostratus',
+    fact: 'A thick, dark grey rain cloud with continuous precipitation. Not associated with lightning like cumulonimbus.',
+    svg: `<svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="30" width="400" height="105" fill="#7c88a0"/><g stroke="#4a5871" stroke-width="1" opacity="0.85">
+      <line x1="40" y1="140" x2="35" y2="190"/><line x1="70" y1="140" x2="66" y2="190"/><line x1="100" y1="140" x2="95" y2="190"/><line x1="130" y1="140" x2="125" y2="190"/><line x1="160" y1="140" x2="155" y2="190"/><line x1="190" y1="140" x2="186" y2="190"/><line x1="220" y1="140" x2="215" y2="190"/><line x1="250" y1="140" x2="245" y2="190"/><line x1="280" y1="140" x2="275" y2="190"/><line x1="310" y1="140" x2="305" y2="190"/><line x1="340" y1="140" x2="336" y2="190"/><line x1="370" y1="140" x2="365" y2="190"/>
+    </g><line x1="0" y1="200" x2="400" y2="200" stroke="#8caa5c" stroke-width="4"/></svg>`,
+  },
+  shelf: {
+    name: 'Shelf cloud',
+    fact: 'A long horizontal wedge-shaped cloud attached to the leading edge of a thunderstorm\'s outflow. Signals damaging straight-line winds are coming.',
+    svg: `<svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg"><g fill="#8c98b0"><path d="M0,60 L400,60 L400,110 L200,140 L0,105 Z"/></g><g fill="#6a7591"><path d="M0,105 L200,140 L400,110 L400,155 L0,145 Z"/></g><line x1="0" y1="200" x2="400" y2="200" stroke="#8caa5c" stroke-width="4"/></svg>`,
+  },
+  wall: {
+    name: 'Wall cloud',
+    fact: 'A localized, persistent lowering of a rain-free thunderstorm base. A rotating wall cloud is one of the strongest signs a tornado could be about to drop.',
+    svg: `<svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg"><g fill="#7c88a0"><rect x="0" y="40" width="400" height="70"/></g><g fill="#5c6885"><ellipse cx="200" cy="130" rx="60" ry="22"/><rect x="140" y="110" width="120" height="30"/></g><line x1="0" y1="200" x2="400" y2="200" stroke="#8caa5c" stroke-width="4"/></svg>`,
+  },
+  fog: {
+    name: 'Fog',
+    fact: 'Fog is a stratus cloud that touches the ground. Reduces visibility to less than 1 km. Common in valleys at dawn.',
+    svg: `<svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="400" height="200" fill="#e1e6ee"/><g fill="#fff" opacity="0.75"><rect x="0" y="80" width="400" height="10"/><rect x="0" y="110" width="400" height="14"/><rect x="0" y="140" width="400" height="18"/><rect x="0" y="170" width="400" height="24"/></g><line x1="0" y1="200" x2="400" y2="200" stroke="#8caa5c" stroke-width="3" opacity="0.55"/></svg>`,
+  },
+};
+
+const KEYS = Object.keys(CLOUDS);
+
+// Build 15 rounds (with repeats allowed but not adjacent)
+function buildRounds() {
+  const rounds = [];
+  let last = null;
+  while (rounds.length < 15) {
+    const k = KEYS[Math.floor(Math.random() * KEYS.length)];
+    if (k === last) continue;
+    // Pick 3 distractors
+    const others = KEYS.filter(x => x !== k);
+    const distractors = [];
+    while (distractors.length < 3) {
+      const d = others[Math.floor(Math.random() * others.length)];
+      if (!distractors.includes(d)) distractors.push(d);
+    }
+    const opts = [k, ...distractors];
+    // Shuffle
+    for (let i = opts.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [opts[i], opts[j]] = [opts[j], opts[i]];
+    }
+    rounds.push({ answer: k, options: opts });
+    last = k;
+  }
+  return rounds;
+}
+
+let rounds = buildRounds();
+let currentRound = 0;
+let score = 0;
+
+function renderRound() {
+  if (currentRound >= 15) return finish();
+  const R = rounds[currentRound];
+  const container = document.getElementById('round-container');
+  container.innerHTML = `
+    <div class="round-card">
+      <div class="cloud-frame">${CLOUDS[R.answer].svg}</div>
+      <div class="round-q">What kind of cloud is this?</div>
+      <div class="opts">
+        ${R.options.map((k, i) => `<button class="opt" data-key="${k}">${CLOUDS[k].name}</button>`).join('')}
+      </div>
+      <div class="explanation" id="expl"></div>
+      <button class="next-btn" id="next">Next round →</button>
+    </div>
+  `;
+  container.querySelectorAll('.opt').forEach(b => {
+    b.addEventListener('click', () => choose(b.dataset.key, b));
+  });
+  document.getElementById('rnum').textContent = currentRound + 1;
+  document.getElementById('fill').style.width = (currentRound / 15 * 100) + '%';
+}
+
+function choose(key, btn) {
+  const R = rounds[currentRound];
+  const buttons = document.querySelectorAll('.opt');
+  buttons.forEach(b => {
+    b.disabled = true;
+    if (b.dataset.key === R.answer) b.classList.add('correct');
+    else if (b.dataset.key === key) b.classList.add('wrong');
+  });
+  if (key === R.answer) score++;
+  document.getElementById('score').textContent = score;
+  const expl = document.getElementById('expl');
+  expl.innerHTML = `<strong>${CLOUDS[R.answer].name}.</strong> ${CLOUDS[R.answer].fact}`;
+  expl.classList.add('show');
+  const next = document.getElementById('next');
+  next.classList.add('show');
+  next.addEventListener('click', () => {
+    currentRound++;
+    renderRound();
+    window.scrollTo({top:0,behavior:'smooth'});
+  }, { once: true });
+}
+
+function finish() {
+  document.getElementById('round-container').style.display = 'none';
+  document.getElementById('result').classList.add('show');
+  document.getElementById('final-score').textContent = score;
+  document.getElementById('fill').style.width = '100%';
+  const pct = Math.round(score / 15 * 100);
+  let msg;
+  if (pct === 100) msg = "☁️ Perfect! You could pass an amateur spotter exam.";
+  else if (pct >= 80) msg = "🌤️ Impressive cloud-spotting eye.";
+  else if (pct >= 60) msg = "🌥️ Solid — a few tricky ones got you.";
+  else if (pct >= 40) msg = "🌦️ Not bad. Cloud ID is a real skill; come back and try again.";
+  else msg = "☁️ Cloud identification takes practice. Bookmark this and try again.";
+  document.getElementById('verdict').textContent = msg;
+}
+
+window.share = () => {
+  const pct = Math.round(score / 15 * 100);
+  const text = `I scored ${score}/15 (${pct}%) on the Cloud Identification Game!\n\ntornadosimulator.net/cloud-id-game/`;
+  if (navigator.share) navigator.share({ text }).catch(() => copy(text));
+  else copy(text);
+};
+window.restart = () => {
+  rounds = buildRounds();
+  currentRound = 0;
+  score = 0;
+  document.getElementById('score').textContent = '0';
+  document.getElementById('rnum').textContent = '1';
+  document.getElementById('result').classList.remove('show');
+  document.getElementById('round-container').style.display = 'block';
+  renderRound();
+  window.scrollTo({top:0,behavior:'smooth'});
+};
+function copy(t) {
+  if (navigator.clipboard) navigator.clipboard.writeText(t).then(() => alert('Copied!'));
+  else { const ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); alert('Copied!'); }
+}
+renderRound();
+</script>
+</body>
+</html>

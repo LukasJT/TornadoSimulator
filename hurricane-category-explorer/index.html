@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Saffir-Simpson Hurricane Scale Explorer — Category 1 to 5</title>
+<meta name="description" content="Interactive explorer for the Saffir-Simpson Hurricane Wind Scale. Click any category from tropical storm through Category 5 to see wind speeds, storm surge estimates, damage examples, and historic Atlantic and Pacific hurricanes at that intensity." />
+<meta name="keywords" content="Saffir Simpson scale, hurricane categories, category 5 hurricane, category 3 hurricane, hurricane wind speeds, hurricane categories explained" />
+<meta property="og:title" content="Hurricane Category Explorer" />
+<meta property="og:description" content="Click through Cat 1-5 to see wind speeds, damage and historic examples." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.tornadosimulator.net/hurricane-category-explorer/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/hurricane-category-explorer/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌀</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --accent:#0d4b8f; --link:#0d4b8f; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; --mono:"JetBrains Mono",monospace; --c1:#5ba9e3; --c2:#5b8ee3; --c3:#af5be3; --c4:#e35b8e; --c5:#e35b5b; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text)}
+.nav-links a.cta{background:#a02818;color:white;font-weight:600}
+.hero{padding:40px 20px 26px;text-align:center;max-width:720px;margin:0 auto}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h1{font-family:var(--serif);font-size:clamp(30px,4.5vw,44px);font-weight:700;letter-spacing:-0.02em;margin-bottom:12px}
+h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.hero p{color:var(--text-secondary);font-size:16px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px 60px}
+.strip{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:22px}
+@media (max-width:600px){.strip{grid-template-columns:repeat(5,1fr)}}
+.cat-btn{padding:18px 6px 14px;border:none;border-radius:10px;cursor:pointer;font-family:var(--serif);font-weight:700;color:white;text-align:center;transition:transform 0.15s;position:relative}
+.cat-btn:hover{transform:translateY(-4px)}
+.cat-btn.active{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.2);outline:3px solid var(--text)}
+.cat-btn.c1{background:var(--c1)}
+.cat-btn.c2{background:var(--c2)}
+.cat-btn.c3{background:var(--c3)}
+.cat-btn.c4{background:var(--c4)}
+.cat-btn.c5{background:var(--c5)}
+.cat-btn .rank{font-size:clamp(22px,4vw,32px);letter-spacing:-0.02em}
+.cat-btn .name{font-family:var(--sans);font-size:11px;letter-spacing:0.05em;text-transform:uppercase;opacity:0.92;margin-top:3px;font-weight:600}
+.detail{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 30px}
+.detail-head{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.detail-title{font-family:var(--serif);font-size:32px;font-weight:700;letter-spacing:-0.02em}
+.detail-sub{font-size:14px;color:var(--text-muted);font-style:italic}
+.detail-wind{font-family:var(--mono);font-size:15px;font-weight:700;color:var(--accent);background:rgba(13,75,143,0.09);padding:6px 12px;border-radius:6px;margin-left:auto}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-bottom:20px}
+.stat{background:var(--bg-alt);border-radius:8px;padding:12px 14px;text-align:center}
+.stat-val{font-family:var(--serif);font-size:20px;font-weight:700;color:var(--accent);line-height:1.1}
+.stat-lbl{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px;font-weight:600}
+.damage{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:16px 18px;margin:14px 0 18px;display:flex;gap:14px;align-items:center}
+.damage .icon{font-size:32px;flex-shrink:0}
+.damage strong{color:var(--text);font-family:var(--serif);font-size:15px;display:block}
+.damage .desc{color:var(--text-secondary);font-size:14px;line-height:1.5}
+.detail h3{font-family:var(--serif);font-size:19px;margin:18px 0 8px}
+.detail p{font-size:14px;color:var(--text-secondary);margin-bottom:8px}
+.examples{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.ex{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:10px 12px}
+.ex-name{font-family:var(--serif);font-weight:600;font-size:14px}
+.ex-meta{font-size:12px;color:var(--text-muted);margin-top:2px}
+.footer{text-align:center;padding:24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px;margin-top:32px}
+.inline-ad{text-align:center;margin:24px auto;max-width:728px;overflow:hidden}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/quiz/">Quizzes</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/supercell-simulator/">Supercell Sim</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="eyebrow">🌀 Interactive scale</div>
+  <h1>The Saffir–Simpson <em>hurricane scale</em></h1>
+  <p>Click any category to see wind speed range, storm surge, damage examples, and famous hurricanes at that intensity.</p>
+</section>
+
+<div class="wrap">
+
+  <div class="strip" id="strip"></div>
+
+  <div id="detail" class="detail"></div>
+
+  <div class="inline-ad">
+    <script type="text/javascript">atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};</script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
+  </div>
+
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 26px;margin-top:22px">
+    <h3 style="font-family:var(--serif);font-size:20px;margin-bottom:10px">About the scale</h3>
+    <p style="color:var(--text-secondary);font-size:14px;margin-bottom:10px">The Saffir–Simpson Hurricane Wind Scale was developed in 1971 by civil engineer Herbert Saffir and meteorologist Robert Simpson. Categories are based on 1-minute sustained wind speed. Storm surge was originally included but was removed in 2010 because it depends heavily on local geography.</p>
+    <p style="color:var(--text-secondary);font-size:14px;margin:0">Note: hurricane category doesn't tell the whole story. Storm surge, rainfall totals, and forward speed can make a Category 2 more destructive than a Category 4. Harvey (2017) was a Cat 4 at landfall but killed most people with rain, not wind.</p>
+  </div>
+</div>
+
+<footer class="footer">
+  Data from NOAA National Hurricane Center. Part of <a href="/">Tornado Hub</a>. See also the <a href="/ef-scale-explorer/">EF scale explorer</a>.
+</footer>
+
+<script>
+const CATS = {
+  1: {
+    name:'Category 1', sub:'Some damage',
+    wind:'74-95 mph', surge:'4-5 ft',
+    pressure:'≥980 mbar',
+    icon:'🌬️',
+    damageHead:'Well-constructed homes could suffer roof damage',
+    damage:'Shingles, siding and gutters damaged. Large branches snapped. Extensive damage to power lines can cause outages that last days.',
+    strategy:'Board up windows. Secure loose outdoor objects. Stay indoors.',
+    examples:[
+      {n:'Sandy (2012)', m:'Cat 1 at NJ landfall, but $70B in damage from surge'},
+      {n:'Isaac (2012)', m:'Cat 1 in Louisiana'},
+      {n:'Barry (2019)', m:'Cat 1 in Louisiana'},
+    ],
+  },
+  2: {
+    name:'Category 2', sub:'Extensive damage',
+    wind:'96-110 mph', surge:'6-8 ft',
+    pressure:'965-979 mbar',
+    icon:'🌪️',
+    damageHead:'Major roof and siding damage',
+    damage:'Well-built homes could sustain major roof and siding damage. Trees uprooted; many roads blocked. Near-total power loss for days to weeks.',
+    strategy:'Evacuate low-lying and coastal areas. Storm surge is dangerous.',
+    examples:[
+      {n:'Frances (2004)', m:'Cat 2 at Florida landfall'},
+      {n:'Ian (2022)', m:'Cat 2 in South Carolina after Florida landfall'},
+      {n:'Arthur (1996)', m:'Cat 2 in North Carolina'},
+    ],
+  },
+  3: {
+    name:'Category 3', sub:'Devastating damage — MAJOR',
+    wind:'111-129 mph', surge:'9-12 ft',
+    pressure:'945-964 mbar',
+    icon:'⚠️',
+    damageHead:'Well-built framed homes have major damage',
+    damage:'Well-built homes may lose their entire roof deck. Electricity and water unavailable for several days to weeks after the storm.',
+    strategy:'Category 3+ is officially a "major" hurricane. Mandatory evacuation of coastal zones.',
+    examples:[
+      {n:'Katrina (2005)', m:'Cat 3 at landfall, $190B damage'},
+      {n:'Ivan (2004)', m:'Cat 3 in Alabama'},
+      {n:'Fran (1996)', m:'Cat 3 in NC'},
+      {n:'Isabel (2003)', m:'Cat 2 at landfall, but Cat 5 offshore'},
+    ],
+  },
+  4: {
+    name:'Category 4', sub:'Catastrophic damage',
+    wind:'130-156 mph', surge:'13-18 ft',
+    pressure:'920-944 mbar',
+    icon:'🚨',
+    damageHead:'Severe damage — most of the coast uninhabitable',
+    damage:'Well-built homes suffer severe damage; loss of most roof structure and exterior walls. Most trees snapped or uprooted. Power outages last weeks to months.',
+    strategy:'Wide-area evacuation. Airports and hospitals in the path close.',
+    examples:[
+      {n:'Harvey (2017)', m:'Cat 4 in Texas, $125B damage'},
+      {n:'Irma (2017)', m:'Cat 4 at Florida landfall'},
+      {n:'Ian (2022)', m:'Cat 4 in Florida'},
+      {n:'Charley (2004)', m:'Cat 4 in Florida'},
+      {n:'Michael (2018)', m:'Officially Cat 5 after reanalysis'},
+    ],
+  },
+  5: {
+    name:'Category 5', sub:'Catastrophic — areas uninhabitable',
+    wind:'157+ mph', surge:'18+ ft',
+    pressure:'<920 mbar',
+    icon:'💀',
+    damageHead:'A high percentage of framed homes destroyed',
+    damage:'Total roof failure and wall collapse in most homes. Fallen trees and power poles isolate entire communities. Areas uninhabitable for weeks or months.',
+    strategy:'The strongest possible rating. Full evacuation of the entire coast in the storm\'s track.',
+    examples:[
+      {n:'Michael (2018)', m:'Cat 5 at Florida landfall (upgraded 2019)'},
+      {n:'Andrew (1992)', m:'Cat 5 in South Florida, $26.5B'},
+      {n:'Camille (1969)', m:'Cat 5 in Mississippi'},
+      {n:'Labor Day (1935)', m:'First measured Cat 5 US landfall'},
+      {n:'Wilma (2005)', m:'Cat 5 with lowest Atlantic pressure ever (882 mb)'},
+      {n:'Dorian (2019)', m:'Cat 5 in the Bahamas, 185 mph'},
+      {n:'Maria (2017)', m:'Cat 5 that devastated Puerto Rico'},
+    ],
+  },
+};
+
+function render(c) {
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.toggle('active', parseInt(b.dataset.c) === c));
+  const d = CATS[c];
+  const el = document.getElementById('detail');
+  el.innerHTML = `
+    <div class="detail-head">
+      <div>
+        <div class="detail-title">${d.name}</div>
+        <div class="detail-sub">${d.sub}</div>
+      </div>
+      <div class="detail-wind">${d.wind}</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat"><div class="stat-val">${d.wind}</div><div class="stat-lbl">Wind speed</div></div>
+      <div class="stat"><div class="stat-val">${d.surge}</div><div class="stat-lbl">Storm surge</div></div>
+      <div class="stat"><div class="stat-val">${d.pressure}</div><div class="stat-lbl">Central pressure</div></div>
+    </div>
+    <div class="damage">
+      <div class="icon">${d.icon}</div>
+      <div><strong>${d.damageHead}</strong><div class="desc">${d.damage}</div></div>
+    </div>
+    <h3>What to do</h3>
+    <p>${d.strategy}</p>
+    <h3>Historic ${d.name} hurricanes</h3>
+    <div class="examples">
+      ${d.examples.map(e => `<div class="ex"><div class="ex-name">${e.n}</div><div class="ex-meta">${e.m}</div></div>`).join('')}
+    </div>
+  `;
+}
+
+const strip = document.getElementById('strip');
+[1,2,3,4,5].forEach(c => {
+  const d = CATS[c];
+  const b = document.createElement('button');
+  b.className = `cat-btn c${c}`;
+  b.dataset.c = c;
+  b.innerHTML = `<div class="rank">Cat ${c}</div><div class="name">${d.wind}</div>`;
+  b.addEventListener('click', () => render(c));
+  strip.appendChild(b);
+});
+
+const init = parseInt((location.hash.match(/#cat(\d)/)||[])[1]) || 3;
+render(Math.min(5, Math.max(1, init)));
+</script>
+</body>
+</html>
