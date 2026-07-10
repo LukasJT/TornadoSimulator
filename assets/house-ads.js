@@ -39,6 +39,26 @@
         bg: 'linear-gradient(135deg,#0f0524 0%,#ac1eb1 50%,#ff6b9d 100%)',
         color: '#ffe8f0', accent: '#ffe8f0', icon: '🍿' },
     ]},
+    { domain: 'playmabble', variants: [
+      { href: 'https://playmabble.com', title: 'Scrabble for math nerds',
+        sub: 'Free online competitive math game — play head to head',
+        bg: 'linear-gradient(135deg,#0d2544 0%,#1a4d8f 50%,#28a3f5 100%)',
+        color: '#e0f0ff', accent: '#e0f0ff', icon: '🔢' },
+      { href: 'https://playmabble.com', title: 'Online competitive math',
+        sub: 'Race real opponents in the math version of Scrabble',
+        bg: 'linear-gradient(135deg,#1a2456 0%,#3a5db9 50%,#5db8ff 100%)',
+        color: '#e0f0ff', accent: '#e0f0ff', icon: '➗' },
+    ]},
+    { domain: 'homelesshelp', variants: [
+      { href: 'https://homelesshelp.net', title: 'Volunteer today',
+        sub: 'Find shelters, food banks, and outreach in your city',
+        bg: 'linear-gradient(135deg,#132c1a 0%,#2d6a4f 50%,#95d5b2 100%)',
+        color: '#e8f8ee', accent: '#e8f8ee', icon: '🤝' },
+      { href: 'https://homelesshelp.net', title: 'Learn how to help',
+        sub: 'A directory of local shelters, food banks, and outreach programs',
+        bg: 'linear-gradient(135deg,#1e3f2b 0%,#3a8862 50%,#a0dcbb 100%)',
+        color: '#e8f8ee', accent: '#e8f8ee', icon: '❤️' },
+    ]},
   ];
 
   function pickTwo() {
