@@ -84,16 +84,27 @@
   const CLEAN = WORDS.filter(w => /^[A-Z]{3,12}$/.test(w[0]));
 
   // ─── DAILY SELECTION ──────────────────────────────────────────────────────
-  // Epoch: 2026-01-01 = Puzzle #1
+  // Epoch: 2026-01-01 in US Eastern time = Puzzle #1
+  // Puzzle resets at midnight Eastern (EST 05:00 UTC / EDT 04:00 UTC — auto-handled)
   const EPOCH = Date.UTC(2026, 0, 1);
   const DAY_MS = 86400000;
 
-  function todayUTC() {
-    const now = new Date();
-    return Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+  function todayEastern() {
+    // Get the current calendar date in America/New_York (handles EDT/EST automatically)
+    const parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/New_York',
+      year: 'numeric', month: '2-digit', day: '2-digit',
+    }).formatToParts(new Date());
+    let y=0, m=0, d=0;
+    parts.forEach(p => {
+      if (p.type === 'year') y = parseInt(p.value);
+      else if (p.type === 'month') m = parseInt(p.value);
+      else if (p.type === 'day') d = parseInt(p.value);
+    });
+    return Date.UTC(y, m - 1, d);
   }
   function puzzleNumber() {
-    return Math.floor((todayUTC() - EPOCH) / DAY_MS) + 1;
+    return Math.floor((todayEastern() - EPOCH) / DAY_MS) + 1;
   }
   function dailyIndex(n) {
     // Deterministic scramble so consecutive days aren't neighbors in the list

@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Tornadle — Daily Tornado Wordle Game (Free, No Login)</title>
-<meta name="description" content="Play Tornadle — the daily Wordle-style word game with tornado names. Guess today's famous tornado town, historic outbreak, or storm-chaser term in six tries. Variable word length (4-12 letters), share your emoji grid, streak tracker, no signup. New puzzle every day at midnight UTC." />
+<meta name="description" content="Play Tornadle — the daily Wordle-style word game with tornado names. Guess today's famous tornado town, historic outbreak, or storm-chaser term in six tries. Variable word length (4-12 letters), share your emoji grid, streak tracker, no signup. New puzzle every day at midnight Eastern." />
 <meta name="keywords" content="tornadle, tornado wordle, tornado word game, weather wordle, storm wordle, daily tornado game, tornado quiz, tornado puzzle, wordle alternative, daily word game, weather nerds game, meteorology wordle, tornado game online free" />
 <meta name="author" content="Tornado Hub" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -78,7 +78,7 @@
   "mainEntity":[
     {"@type":"Question","name":"What is Tornadle?","acceptedAnswer":{"@type":"Answer","text":"Tornadle is a free daily Wordle-style word game where the secret word is always tornado-themed — a famous tornado town, a historic outbreak, a storm-chaser term, or a severe-weather word. You get six guesses; colored tiles show which letters are correct, misplaced, or absent."}},
     {"@type":"Question","name":"Is the answer the same length every day?","acceptedAnswer":{"@type":"Answer","text":"No — Tornadle answers vary in length from 4 to 12 letters. Some days you'll guess a 4-letter town like ELIE, other days a 10-letter word like TUSCALOOSA. The grid resizes automatically."}},
-    {"@type":"Question","name":"How often does the word change?","acceptedAnswer":{"@type":"Answer","text":"A new Tornadle drops every day at midnight UTC. Come back tomorrow for a fresh puzzle and to keep your streak going."}},
+    {"@type":"Question","name":"How often does the word change?","acceptedAnswer":{"@type":"Answer","text":"A new Tornadle drops every day at midnight Eastern. Come back tomorrow for a fresh puzzle and to keep your streak going."}},
     {"@type":"Question","name":"Where do the answers come from?","acceptedAnswer":{"@type":"Answer","text":"Every answer is drawn from the Tornado Hub database — real historic tornado locations (Jarrell, Joplin, Moore, Xenia, Elie), storm-chaser terminology (mesocyclone, supercell, wedge, wall cloud), and severe-weather vocabulary."}},
     {"@type":"Question","name":"Is Tornadle free?","acceptedAnswer":{"@type":"Answer","text":"Yes — completely free, no login, no signup, no paywall. Play once a day forever."}},
     {"@type":"Question","name":"How is Tornadle different from Wordle?","acceptedAnswer":{"@type":"Answer","text":"Three key differences: (1) All answers are tornado-related, (2) word length varies daily instead of being fixed at 5 letters, (3) each puzzle includes a category hint above the grid telling you if today's word is a town, term, or outbreak name."}},
@@ -160,36 +160,63 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 /* Header */
 .game-header {
   text-align: center;
-  padding: 28px 20px 16px;
+  padding: 34px 20px 18px;
   border-bottom: 1px solid var(--border);
-  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+  background:
+    radial-gradient(1000px 250px at 50% -50px, rgba(160,40,24,0.06), transparent),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+  position: relative;
+}
+.game-header::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: -1px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
 }
 .game-header h1 {
   font-family: var(--serif);
-  font-size: clamp(32px, 5vw, 48px);
-  letter-spacing: -0.02em;
-  margin-bottom: 4px;
+  font-size: clamp(38px, 6vw, 58px);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  margin-bottom: 6px;
   color: var(--text);
+  line-height: 1;
 }
-.game-header h1 .accent { color: var(--accent); font-style: italic; }
+.game-header h1 .accent {
+  color: var(--accent);
+  font-style: italic;
+  font-weight: 400;
+  font-variation-settings: "opsz" 144;
+}
 .game-header p {
   color: var(--text-secondary);
   font-size: 15px;
-  max-width: 560px; margin: 0 auto;
+  max-width: 560px;
+  margin: 6px auto 0;
+  font-weight: 400;
 }
 .game-meta {
-  display: inline-flex; align-items: center; gap: 12px;
-  margin-top: 12px; font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  padding: 5px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 11px;
   color: var(--text-muted);
-  text-transform: uppercase; letter-spacing: 0.08em;
-  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
 }
-.game-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); }
+.game-meta .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--text-muted); }
 
 /* Toolbar */
 .toolbar {
-  display: flex; justify-content: center; gap: 8px;
-  padding: 12px 16px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 14px 16px;
   border-bottom: 1px solid var(--border);
   background: var(--surface);
 }
@@ -197,14 +224,21 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
   background: transparent;
   border: 1px solid var(--border-strong);
   color: var(--text-secondary);
-  padding: 6px 14px;
-  font-size: 13px; font-weight: 500;
-  border-radius: 6px;
+  padding: 7px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 8px;
   cursor: pointer;
   font-family: var(--sans);
   transition: all 0.15s;
 }
-.tool-btn:hover { background: var(--bg-alt); color: var(--text); }
+.tool-btn:hover {
+  background: var(--bg-alt);
+  color: var(--text);
+  border-color: var(--text-secondary);
+  transform: translateY(-1px);
+}
 
 /* Board */
 .board-wrap {
@@ -214,14 +248,24 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
   gap: 16px;
 }
 .category-hint {
-  font-size: 13px; color: var(--text-secondary);
+  font-size: 13px;
+  color: var(--text-secondary);
   text-align: center;
-  padding: 6px 14px;
+  padding: 8px 18px;
   background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 20px;
+  border: 1px solid var(--border-strong);
+  border-radius: 22px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+  font-weight: 500;
 }
-.category-hint strong { color: var(--accent); }
+.category-hint strong {
+  color: var(--accent);
+  font-family: var(--serif);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
 .board {
   display: grid; gap: 5px;
   padding: 8px;
@@ -480,7 +524,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 
 <header class="game-header">
   <h1>Torn<span class="accent">adle</span></h1>
-  <p>Guess today's tornado in six tries. New puzzle every day at midnight UTC.</p>
+  <p>Guess today's tornado in six tries. New puzzle every day at midnight Eastern.</p>
   <div class="game-meta">
     <span id="puzzle-number">Puzzle #—</span>
     <span class="dot"></span>
@@ -499,6 +543,33 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 </div>
 
 <div class="keyboard" id="keyboard"></div>
+
+<!-- Below-keyboard banner -->
+<div style="text-align:center;margin:14px auto;max-width:728px;overflow:hidden">
+<script type="text/javascript">
+atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};
+</script>
+<script type="text/javascript" src="//www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
+</div>
+
+<!-- Right-side rail (desktop only) -->
+<aside id="adsterra-side" style="position:fixed;right:8px;top:50%;transform:translateY(-50%);width:160px;height:600px;z-index:100;display:none">
+  <script type="text/javascript">
+    atOptions = {'key':'da8c75671b236383c52eb13078c2a148','format':'iframe','height':600,'width':160,'params':{}};
+  </script>
+  <script type="text/javascript" src="//www.highperformanceformat.com/da8c75671b236383c52eb13078c2a148/invoke.js"></script>
+</aside>
+<aside id="adsterra-left" style="position:fixed;left:8px;top:50%;transform:translateY(-50%);width:160px;height:300px;z-index:100;display:none">
+  <script type="text/javascript">
+    atOptions = {'key':'ff3f3758b896daf1842b3be893ed46f2','format':'iframe','height':300,'width':160,'params':{}};
+  </script>
+  <script type="text/javascript" src="//www.highperformanceformat.com/ff3f3758b896daf1842b3be893ed46f2/invoke.js"></script>
+</aside>
+<style>
+  @media (min-width:1200px) {
+    #adsterra-side, #adsterra-left { display: block !important; }
+  }
+</style>
 
 <div id="toast" class="toast"></div>
 
@@ -520,7 +591,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
     <div class="example"><div class="tile-mini">M</div><div class="tile-mini">O</div><div class="tile-mini absent">O</div><div class="tile-mini">R</div><div class="tile-mini">E</div></div>
     <p><strong>O</strong> is not in the word anywhere.</p>
     <h3>New puzzle daily</h3>
-    <p>The word changes at midnight UTC — one puzzle per day, no cheating with a re-roll.</p>
+    <p>The word changes at midnight Eastern — one puzzle per day, no cheating with a re-roll.</p>
   </div>
 </div>
 
@@ -544,16 +615,36 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
 
 <!-- SEO content below the fold -->
 <section class="about-section">
-  <h2>What is Tornadle?</h2>
-  <p>Tornadle is a daily word-guessing game inspired by Wordle, built specifically for weather nerds, storm chasers and tornado history buffs. Every answer is drawn from the Tornado Hub database — famous twister towns like <a href="/jarrell-1997/">Jarrell</a>, <a href="/moore-tornadoes/">Moore</a> and <a href="/tuscaloosa-2011/">Tuscaloosa</a>, storm-chaser terminology like <em>mesocyclone</em> and <em>wedge</em>, and severe-weather vocabulary you'll recognize if you've ever watched a supercell roll across the plains.</p>
-  <p>Unlike Wordle, Tornadle answers vary in length. Some days it's a compact four-letter town, other days a mouthful like <em>tuscaloosa</em>. The grid automatically adjusts. You get six guesses, colored feedback after each one, and a shareable result card at the end.</p>
+  <h2>Play Tornadle — the daily tornado Wordle</h2>
+  <p><strong>Tornadle</strong> is a free daily word game inspired by <em>Wordle</em>, built specifically for weather nerds, storm chasers and tornado history buffs. If you searched for "Tornadle," "tornado wordle," or "weather wordle" — you're in the right place. Every answer is drawn from the Tornado Hub database — famous twister towns like <a href="/jarrell-1997/">Jarrell</a>, <a href="/moore-tornadoes/">Moore</a>, <a href="/joplin-2011/">Joplin</a> and <a href="/tuscaloosa-2011/">Tuscaloosa</a>; storm-chaser terminology like <em>mesocyclone</em>, <em>supercell</em> and <em>wedge</em>; and severe-weather vocabulary you'll recognize if you've ever watched a storm roll across the plains.</p>
+  <p>Unlike Wordle, Tornadle answers vary in length. Some days it's a compact four-letter town, other days a mouthful like <em>tuscaloosa</em> or <em>mesocyclone</em>. The grid automatically adjusts. You get six guesses, colored feedback after each one, and a shareable emoji-grid result at the end. A new puzzle drops every day at midnight Eastern.</p>
+
+  <h3>How to play Tornadle</h3>
+  <ol>
+    <li><strong>Read the hint above the grid.</strong> It tells you the category — town, term, or outbreak name.</li>
+    <li><strong>Type any real weather word</strong> of the same letter count as today's grid.</li>
+    <li><strong>Press Enter</strong> to submit your guess.</li>
+    <li><strong>Read the colored tiles:</strong> <span style="background:#2d6a4f;color:#fff;padding:1px 4px;border-radius:3px">green</span> = correct letter in correct position; <span style="background:#b8860b;color:#fff;padding:1px 4px;border-radius:3px">yellow</span> = correct letter, wrong position; <span style="background:#6c757d;color:#fff;padding:1px 4px;border-radius:3px">grey</span> = letter not in word.</li>
+    <li><strong>Refine your guesses</strong> using the feedback. You have 6 total.</li>
+    <li><strong>Share your emoji grid</strong> when you solve.</li>
+  </ol>
 
   <h3>How Tornadle is different from Wordle</h3>
   <ul>
-    <li><strong>Variable word length.</strong> The grid resizes to match today's answer.</li>
-    <li><strong>Themed vocabulary.</strong> Every answer is tornado-related and appears in a real article you can read.</li>
-    <li><strong>Category hint.</strong> A small tag above the board tells you whether today's word is a town, a term or an outbreak name.</li>
-    <li><strong>Free forever.</strong> No paywall, no subscription, no account. Just the puzzle.</li>
+    <li><strong>Variable word length.</strong> The grid resizes to match today's answer, from 4 to 12 letters. Regular Wordle is fixed at 5.</li>
+    <li><strong>Themed tornado vocabulary.</strong> Every answer is tornado-related and appears in a real article you can read to learn more.</li>
+    <li><strong>Category hint.</strong> A small tag above the board tells you whether today's word is a town, a term, or an outbreak name — a slight helping hand.</li>
+    <li><strong>Free forever.</strong> No paywall, no subscription, no account. Play once a day, keep a streak.</li>
+    <li><strong>Midnight Eastern reset.</strong> Puzzle changes at 00:00 US Eastern time (auto-adjusts for EDT/EST).</li>
+  </ul>
+
+  <h3>Tornadle tips &amp; strategy</h3>
+  <ul>
+    <li><strong>Start with a vowel-heavy tornado word</strong> like <em>alley</em>, <em>anvil</em>, <em>rope</em>, or <em>elie</em>. Locking down vowels early narrows the field fast.</li>
+    <li><strong>The category hint is your friend.</strong> If it says "F5 town," you can skip most non-town vocabulary.</li>
+    <li><strong>Common tornado town names</strong> include: Moore, Elie, Jarrell, Joplin, Xenia, Waco, Flint, Tupelo, Udall, Andover, Mayfield, Greensburg, Hackleburg.</li>
+    <li><strong>Common chaser terms</strong>: wedge, rope, cone, funnel, vortex, shear, supercell, mesocyclone, wall cloud, hook echo.</li>
+    <li><strong>Bookmark our <a href="/weather-glossary/">Weather Glossary A-Z</a></strong> for a fast lookup when you're stuck.</li>
   </ul>
 
   <h3>Explore more tornado tools</h3>
@@ -577,7 +668,7 @@ a:hover { color: var(--link-hover); text-decoration: underline; }
   </div>
 
   <h3>Come back tomorrow</h3>
-  <p>A fresh Tornadle drops every day at midnight UTC. Bookmark <a href="https://www.tornadosimulator.net/tornadle/">tornadosimulator.net/tornadle</a> and don't miss a streak.</p>
+  <p>A fresh Tornadle drops every day at midnight Eastern. Bookmark <a href="https://www.tornadosimulator.net/tornadle/">tornadosimulator.net/tornadle</a> and don't miss a streak.</p>
 </section>
 
 <footer class="footer">
