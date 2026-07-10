@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Storm Deploy — Drop a Supercell on a Real City and See What Happens</title>
+<meta name="description" content="Build a supercell thunderstorm from atmospheric ingredients (CAPE, wind shear, helicity), deploy it over any real US location on a map, and see whether it spawns tornadoes and how much damage they cause. Combines meteorology with real-world impact estimation." />
+<meta name="keywords" content="supercell simulator, storm deploy, tornado damage simulator, drop tornado on city, atmospheric simulator, storm ingredients simulator" />
+<meta property="og:title" content="Storm Deploy — Supercell to Damage Simulator" />
+<meta property="og:description" content="Build a storm from CAPE and shear, deploy it over any city, see the damage." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.tornadosimulator.net/storm-deploy/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/storm-deploy/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛈️</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Storm Deploy","applicationCategory":"EducationalApplication","description":"Combined supercell atmospheric simulator with real-location tornado damage estimation.","operatingSystem":"Web browser","url":"https://www.tornadosimulator.net/storm-deploy/","publisher":{"@type":"Organization","name":"Tornado Hub"}}
+</script>
+<style>
+:root { --bg:#0d1219; --bg-alt:#131a25; --surface:#1a2231; --surface-alt:#212a3d; --text:#f0f4fb; --text-secondary:#a8b3c7; --text-muted:#6b7690; --border:#2a3448; --border-strong:#3a465e; --accent:#ff6b47; --accent-hover:#ff8560; --link:#7ec4ff; --green:#6bcf7f; --yellow:#ffd166; --orange:#ff9f43; --red:#ef4444; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; --mono:"JetBrains Mono",monospace; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased;height:100vh;display:flex;flex-direction:column;overflow:hidden}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent)}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);flex-shrink:0}
+.nav-inner{max-width:1600px;margin:0 auto;padding:10px 16px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:18px;color:var(--text);text-decoration:none}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:6px 12px;font-size:13px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--surface-alt);color:var(--text);text-decoration:none}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+
+.hero{background:linear-gradient(180deg,var(--bg) 0%,var(--bg-alt) 100%);border-bottom:1px solid var(--border);padding:14px 20px;text-align:center;flex-shrink:0}
+.eyebrow{font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.hero h1{font-family:var(--serif);font-size:22px;font-weight:700;letter-spacing:-0.01em;line-height:1.2}
+.hero h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.hero p{color:var(--text-secondary);font-size:12px;max-width:700px;margin:4px auto 0}
+
+.workspace{flex:1;display:grid;grid-template-columns:320px 1fr 320px;gap:8px;padding:8px;overflow:hidden;min-height:500px}
+@media (max-width:1100px){.workspace{grid-template-columns:1fr;grid-template-rows:auto auto auto;overflow:auto}}
+
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;overflow-y:auto;display:flex;flex-direction:column;gap:12px}
+.panel h3{font-family:var(--serif);font-size:14px;font-weight:700;color:var(--text-secondary);letter-spacing:0.02em;padding-bottom:6px;border-bottom:1px solid var(--border);margin-bottom:2px}
+.presets{display:flex;flex-wrap:wrap;gap:4px}
+.preset-btn{padding:4px 8px;font-size:10px;font-weight:600;background:var(--surface-alt);border:1px solid var(--border);color:var(--text-secondary);border-radius:5px;cursor:pointer;font-family:var(--sans)}
+.preset-btn:hover{background:rgba(255,107,71,0.15);color:var(--accent);border-color:var(--accent)}
+
+.slider-group{margin-bottom:6px}
+.slider-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px}
+.slider-label{font-size:11px;font-weight:600}
+.slider-value{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--accent)}
+.slider-value .unit{color:var(--text-muted);font-size:10px;margin-left:2px}
+.slider{width:100%;height:4px;background:var(--surface-alt);border-radius:2px;-webkit-appearance:none;appearance:none;outline:none;cursor:pointer}
+.slider::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:var(--accent);border:2px solid var(--surface);cursor:pointer}
+.slider::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--accent);border:2px solid var(--surface);cursor:pointer}
+.slider-help{font-size:10px;color:var(--text-muted);margin-top:3px;line-height:1.35}
+
+.map-container{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;position:relative;min-height:400px}
+#map{width:100%;height:100%;min-height:400px;background:#1a2027}
+.leaflet-container{background:#1a2027}
+.map-overlay{position:absolute;top:10px;left:10px;background:rgba(26,34,49,0.94);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:11px;color:var(--text-secondary);max-width:280px;z-index:1000;pointer-events:none}
+.map-overlay strong{color:var(--accent);font-family:var(--serif);font-size:13px;display:block;margin-bottom:3px}
+.deploy-btn{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);z-index:1000;background:var(--accent);color:white;border:none;padding:10px 22px;font-size:14px;font-weight:700;border-radius:8px;cursor:pointer;font-family:var(--sans);letter-spacing:0.02em;box-shadow:0 4px 14px rgba(255,107,71,0.35)}
+.deploy-btn:hover{background:var(--accent-hover)}
+.deploy-btn:disabled{background:var(--text-muted);cursor:not-allowed;box-shadow:none}
+
+.verdict-box{background:linear-gradient(135deg,var(--surface-alt) 0%,var(--surface) 100%);border:2px solid var(--border-strong);border-radius:8px;padding:12px 14px;transition:all 0.3s}
+.verdict-box.tier-low{border-color:var(--green)}
+.verdict-box.tier-mod{border-color:var(--yellow)}
+.verdict-box.tier-enh{border-color:var(--orange);box-shadow:0 0 20px rgba(255,159,67,0.15)}
+.verdict-box.tier-high{border-color:var(--red);box-shadow:0 0 24px rgba(239,68,68,0.25)}
+.verdict-tag{font-size:10px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;padding:2px 8px;background:var(--surface);color:var(--text-secondary);border-radius:12px;margin-bottom:6px;display:inline-block}
+.tier-low .verdict-tag{background:rgba(107,207,127,0.2);color:var(--green)}
+.tier-mod .verdict-tag{background:rgba(255,209,102,0.2);color:var(--yellow)}
+.tier-enh .verdict-tag{background:rgba(255,159,67,0.2);color:var(--orange)}
+.tier-high .verdict-tag{background:var(--red);color:white}
+.verdict-headline{font-family:var(--serif);font-size:16px;font-weight:700;line-height:1.2;margin-bottom:4px}
+.verdict-body{font-size:11px;color:var(--text-secondary);line-height:1.5}
+
+.metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.metric{background:var(--surface-alt);border:1px solid var(--border);border-radius:6px;padding:8px;text-align:center}
+.metric-lbl{font-size:9px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;font-weight:600}
+.metric-val{font-family:var(--mono);font-size:14px;font-weight:700;color:var(--accent);line-height:1.1;margin-top:2px}
+
+.impact-list{background:var(--surface-alt);border-radius:6px;padding:8px}
+.impact-item{display:flex;justify-content:space-between;padding:3px 0;font-size:11px;border-bottom:1px dashed rgba(74,88,110,0.3)}
+.impact-item:last-child{border-bottom:none}
+.impact-item .label{color:var(--text-secondary)}
+.impact-item .val{font-family:var(--mono);color:var(--text);font-weight:600}
+.impact-item .val.danger{color:var(--red)}
+
+.searchbox{display:flex;gap:4px;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:4px}
+.searchbox input{flex:1;background:transparent;border:none;padding:6px 8px;font-size:12px;color:var(--text);font-family:var(--sans);outline:none}
+.searchbox button{padding:4px 10px;font-size:11px;font-weight:600;background:var(--accent);border:none;color:white;border-radius:4px;cursor:pointer}
+
+.footer{background:var(--surface);border-top:1px solid var(--border);padding:8px;text-align:center;font-size:10px;color:var(--text-muted);flex-shrink:0}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/supercell-simulator/">Supercell Sim</a>
+      <a href="/tornado-namer/">Namer</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/simulator/" class="cta">Full Damage Sim →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="eyebrow">⛈️ Storm-to-damage simulator</div>
+  <h1>Deploy a <em>supercell</em> over a real city</h1>
+  <p>Build an atmosphere. Click the map to place the storm. See if it spawns a tornado — and what damage it does.</p>
+</div>
+
+<div class="workspace">
+
+  <!-- LEFT: Atmospheric ingredients -->
+  <div class="panel">
+    <h3>1. ATMOSPHERE</h3>
+
+    <div>
+      <div class="presets" id="presets"></div>
+    </div>
+
+    <div class="slider-group">
+      <div class="slider-head"><div class="slider-label">CAPE</div><div class="slider-value"><span id="v-cape">2500</span><span class="unit">J/kg</span></div></div>
+      <input type="range" min="0" max="6000" step="50" value="2500" class="slider" id="s-cape">
+    </div>
+    <div class="slider-group">
+      <div class="slider-head"><div class="slider-label">CIN (the cap)</div><div class="slider-value"><span id="v-cin">-50</span><span class="unit">J/kg</span></div></div>
+      <input type="range" min="-400" max="0" step="5" value="-50" class="slider" id="s-cin">
+    </div>
+    <div class="slider-group">
+      <div class="slider-head"><div class="slider-label">0-6 km bulk shear</div><div class="slider-value"><span id="v-shear">45</span><span class="unit">kt</span></div></div>
+      <input type="range" min="0" max="100" step="1" value="45" class="slider" id="s-shear">
+    </div>
+    <div class="slider-group">
+      <div class="slider-head"><div class="slider-label">0-1 km SRH</div><div class="slider-value"><span id="v-srh">150</span><span class="unit">m²/s²</span></div></div>
+      <input type="range" min="0" max="500" step="5" value="150" class="slider" id="s-srh">
+    </div>
+    <div class="slider-group">
+      <div class="slider-head"><div class="slider-label">LCL height</div><div class="slider-value"><span id="v-lcl">1000</span><span class="unit">m</span></div></div>
+      <input type="range" min="300" max="3000" step="50" value="1000" class="slider" id="s-lcl">
+    </div>
+    <div class="slider-group">
+      <div class="slider-head"><div class="slider-label">Dewpoint</div><div class="slider-value"><span id="v-td">68</span><span class="unit">°F</span></div></div>
+      <input type="range" min="30" max="80" step="1" value="68" class="slider" id="s-td">
+    </div>
+    <div class="slider-group">
+      <div class="slider-head"><div class="slider-label">Storm forward speed</div><div class="slider-value"><span id="v-speed">35</span><span class="unit">mph</span></div></div>
+      <input type="range" min="10" max="60" step="1" value="35" class="slider" id="s-speed">
+    </div>
+    <div class="slider-group">
+      <div class="slider-head"><div class="slider-label">Direction (°)</div><div class="slider-value"><span id="v-dir">225</span><span class="unit">°</span></div></div>
+      <input type="range" min="0" max="360" step="5" value="225" class="slider" id="s-dir">
+    </div>
+
+    <div class="verdict-box tier-mod" id="verdict">
+      <div class="verdict-tag" id="verdict-tag">Storm assessment</div>
+      <div class="verdict-headline" id="verdict-headline">Adjust the sliders</div>
+      <div class="verdict-body" id="verdict-body">Move the sliders to build an atmosphere.</div>
+    </div>
+
+    <div class="metric-grid">
+      <div class="metric"><div class="metric-lbl">STP</div><div class="metric-val" id="m-stp">—</div></div>
+      <div class="metric"><div class="metric-lbl">Max EF</div><div class="metric-val" id="m-ef">—</div></div>
+    </div>
+  </div>
+
+  <!-- CENTER: Map -->
+  <div class="map-container">
+    <div id="map"></div>
+    <div class="map-overlay" id="map-overlay">
+      <strong>Click the map</strong>
+      Place the storm's origin. Search a city, or click anywhere in North America.
+      <div style="margin-top:6px" class="searchbox">
+        <input type="text" id="search" placeholder="City name..." />
+        <button onclick="searchCity()">Find</button>
+      </div>
+    </div>
+    <button class="deploy-btn" id="deploy-btn" disabled>🌪️ Deploy storm</button>
+  </div>
+
+  <!-- RIGHT: Impact -->
+  <div class="panel">
+    <h3>2. IMPACT</h3>
+
+    <div class="verdict-box tier-low" id="impact-verdict">
+      <div class="verdict-tag">Waiting</div>
+      <div class="verdict-headline">No storm deployed</div>
+      <div class="verdict-body">Build an atmosphere and click the map to place your storm's origin, then hit Deploy.</div>
+    </div>
+
+    <div>
+      <h3 style="margin-top:8px">Track</h3>
+      <div class="impact-list" id="track-info">
+        <div class="impact-item"><span class="label">Storm mode</span><span class="val" id="i-mode">—</span></div>
+        <div class="impact-item"><span class="label">Tornado formed</span><span class="val" id="i-formed">—</span></div>
+        <div class="impact-item"><span class="label">EF rating</span><span class="val" id="i-ef">—</span></div>
+        <div class="impact-item"><span class="label">Path length</span><span class="val" id="i-length">—</span></div>
+        <div class="impact-item"><span class="label">Path width</span><span class="val" id="i-width">—</span></div>
+      </div>
+    </div>
+
+    <div>
+      <h3 style="margin-top:8px">Impact</h3>
+      <div class="impact-list">
+        <div class="impact-item"><span class="label">Homes destroyed</span><span class="val danger" id="i-homes">—</span></div>
+        <div class="impact-item"><span class="label">Est. injuries</span><span class="val" id="i-inj">—</span></div>
+        <div class="impact-item"><span class="label">Est. fatalities</span><span class="val danger" id="i-fat">—</span></div>
+        <div class="impact-item"><span class="label">Total damage</span><span class="val danger" id="i-dmg">—</span></div>
+      </div>
+    </div>
+
+    <button class="deploy-btn" style="position:static;transform:none;margin-top:auto;background:var(--surface-alt);color:var(--text);box-shadow:none" id="reset-btn">↻ Reset simulation</button>
+  </div>
+
+</div>
+
+<footer class="footer">
+  Educational model. Not a forecast. Real tornado forecasting uses far more variables. See <a href="/simulator/">full damage simulator</a> for census-accurate impact modeling.
+</footer>
+
+<script>
+// ─── PRESETS ───────────────────────────────────────────────────────
+const PRESETS = {
+  'Classic Plains': { cape:3500, cin:-40, shear:55, srh:300, lcl:900, td:68, speed:35, dir:225 },
+  'Dixie HP': { cape:2200, cin:-30, shear:60, srh:380, lcl:600, td:72, speed:45, dir:60 },
+  'PDS setup': { cape:4200, cin:-20, shear:70, srh:450, lcl:800, td:70, speed:40, dir:230 },
+  'Landspout': { cape:1500, cin:-10, shear:15, srh:40, lcl:1800, td:55, speed:20, dir:270 },
+  'Cap bust': { cape:3200, cin:-220, shear:45, srh:200, lcl:1400, td:65, speed:30, dir:225 },
+  'QLCS': { cape:500, cin:-20, shear:65, srh:280, lcl:500, td:60, speed:55, dir:90 },
+};
+
+const KEYS = ['cape','cin','shear','srh','lcl','td','speed','dir'];
+const state = { cape:2500, cin:-50, shear:45, srh:150, lcl:1000, td:68, speed:35, dir:225, deploy:null };
+
+// ─── PRESET BUTTONS ───────────────────────────────────────────────
+const presetsEl = document.getElementById('presets');
+Object.entries(PRESETS).forEach(([name, p]) => {
+  const b = document.createElement('button');
+  b.className = 'preset-btn';
+  b.textContent = name;
+  b.onclick = () => {
+    KEYS.forEach(k => {
+      state[k] = p[k];
+      document.getElementById('s-' + k).value = p[k];
+    });
+    update();
+  };
+  presetsEl.appendChild(b);
+});
+
+KEYS.forEach(k => {
+  document.getElementById('s-' + k).addEventListener('input', (e) => {
+    state[k] = parseFloat(e.target.value);
+    update();
+  });
+});
+
+// ─── SCIENCE ──────────────────────────────────────────────────────
+function computeSTP(s) {
+  if (s.cape < 200 || s.cin < -180) return 0;
+  const capeTerm = Math.max(0, s.cape / 1500);
+  const lclTerm = s.lcl < 1000 ? 1 : Math.max(0, (2000 - s.lcl) / 1000);
+  const srhTerm = s.srh / 150;
+  const shearNorm = s.shear < 12.5 ? 0 : Math.min(s.shear / 20, 1.5);
+  const cinNorm = s.cin > -50 ? 1 : Math.max(0, (200 + s.cin) / 150);
+  return capeTerm * lclTerm * srhTerm * shearNorm * cinNorm;
+}
+
+function stormMode(s) {
+  if (s.cape < 200) return { m:'No storms', c:'green' };
+  if (s.cin < -180) return { m:'Capped', c:'green' };
+  if (s.shear < 20) return { m:'Pulse storms', c:'green' };
+  if (s.shear < 35) return { m:'Multicell', c:'yellow' };
+  if (s.shear < 45) return { m:'Organized multicell', c:'yellow' };
+  if (s.srh < 100) return { m:'Splitting supercell', c:'orange' };
+  if (s.srh < 200) return { m:'Supercell', c:'orange' };
+  return { m:'Tornadic supercell', c:'red' };
+}
+
+function verdictFor(stp, mode) {
+  if (mode.m === 'No storms' || mode.m === 'Capped')
+    return { tier:'low', tag:'No threat', head:mode.m, body:'The atmosphere cannot fire storms with these parameters.' };
+  if (stp < 0.25) return { tier:'low', tag:'Marginal', head:'Storms possible, tornadoes unlikely', body:'STP under 0.25 rarely produces tornadoes.' };
+  if (stp < 1) return { tier:'mod', tag:'Slight', head:'Isolated tornado possible', body:'STP under 1 supports brief tornadoes (usually EF0-EF1).' };
+  if (stp < 3) return { tier:'enh', tag:'Enhanced', head:'Strong tornadoes possible', body:'STP 1-3 typically produces significant EF2+ tornadoes.' };
+  if (stp < 6) return { tier:'high', tag:'Moderate → High', head:'Violent tornadoes possible', body:'STP 3-6 aligns with days like May 3, 1999. Expect EF3-EF4.' };
+  return { tier:'high', tag:'HIGH RISK', head:'PDS-level environment', body:'STP over 6 is Particularly Dangerous. EF4-EF5 possible.' };
+}
+
+function maxEFfromSTP(stp, s) {
+  if (s.cape < 200 || s.cin < -180) return null;
+  if (stp < 0.25) return 0;
+  if (stp < 1) return 1;
+  if (stp < 2) return 2;
+  if (stp < 4) return 3;
+  if (stp < 7) return 4;
+  return 5;
+}
+
+function tornadoProbFromSTP(stp) {
+  if (stp <= 0) return 0;
+  return Math.min(0.85, 0.1 + stp * 0.15);
+}
+
+// ─── UPDATE UI ────────────────────────────────────────────────────
+function update() {
+  KEYS.forEach(k => { document.getElementById('v-' + k).textContent = state[k]; });
+  const stp = computeSTP(state);
+  const mode = stormMode(state);
+  const verdict = verdictFor(stp, mode);
+  const ef = maxEFfromSTP(stp, state);
+  document.getElementById('m-stp').textContent = stp.toFixed(2);
+  document.getElementById('m-ef').textContent = ef == null ? '—' : 'EF' + ef;
+  const box = document.getElementById('verdict');
+  box.className = 'verdict-box tier-' + verdict.tier;
+  document.getElementById('verdict-tag').textContent = verdict.tag;
+  document.getElementById('verdict-headline').textContent = verdict.head;
+  document.getElementById('verdict-body').textContent = verdict.body;
+  // Enable deploy only if storms possible and a location has been placed
+  document.getElementById('deploy-btn').disabled = ef == null || !state.deploy;
+}
+
+// ─── MAP ──────────────────────────────────────────────────────────
+const map = L.map('map', { zoomControl:true }).setView([39, -95], 4);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; OpenStreetMap &copy; CARTO',
+  subdomains: 'abcd', maxZoom: 19,
+}).addTo(map);
+
+let deployMarker = null, trackLine = null, trackSwath = null;
+map.on('click', (e) => {
+  placeStorm(e.latlng.lat, e.latlng.lng);
+});
+
+function placeStorm(lat, lng) {
+  if (deployMarker) map.removeLayer(deployMarker);
+  const icon = L.divIcon({
+    className: '',
+    html: '<div style="width:20px;height:20px;background:#ff6b47;border:3px solid #fff;border-radius:50%;box-shadow:0 0 10px rgba(255,107,71,0.8)"></div>',
+    iconSize:[20,20], iconAnchor:[10,10],
+  });
+  deployMarker = L.marker([lat, lng], { icon }).addTo(map);
+  deployMarker.bindTooltip('Storm origin — click Deploy', { permanent: true, direction: 'top', offset: [0, -12] }).openTooltip();
+  state.deploy = { lat, lng };
+  update();
+}
+
+async function searchCity() {
+  const q = document.getElementById('search').value.trim();
+  if (!q) return;
+  try {
+    const r = await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(q)}&format=json&limit=1`);
+    const data = await r.json();
+    if (data.length) {
+      const lat = parseFloat(data[0].lat), lng = parseFloat(data[0].lon);
+      map.setView([lat, lng], 8);
+      placeStorm(lat, lng);
+    } else {
+      alert('City not found');
+    }
+  } catch (e) { alert('Search failed. Click the map instead.'); }
+}
+window.searchCity = searchCity;
+document.getElementById('search').addEventListener('keydown', e => { if (e.key === 'Enter') searchCity(); });
+
+// ─── DEPLOY / SIMULATE ────────────────────────────────────────────
+function bearingOffset(lat, lng, distMi, bearingDeg) {
+  const R = 3959; // miles
+  const brng = bearingDeg * Math.PI / 180;
+  const lat1 = lat * Math.PI / 180;
+  const lng1 = lng * Math.PI / 180;
+  const lat2 = Math.asin(Math.sin(lat1) * Math.cos(distMi / R) + Math.cos(lat1) * Math.sin(distMi / R) * Math.cos(brng));
+  const lng2 = lng1 + Math.atan2(Math.sin(brng) * Math.sin(distMi / R) * Math.cos(lat1), Math.cos(distMi / R) - Math.sin(lat1) * Math.sin(lat2));
+  return [lat2 * 180 / Math.PI, lng2 * 180 / Math.PI];
+}
+
+function estimateImpact(ef, pathLenMi, pathWidYd) {
+  // Simplified damage estimation calibrated against real EF5 events
+  // (Joplin 2011: 22 mi, ~1600 yd peak width, 158 dead, 3,000 homes, $2.8B)
+  // Factors are per (mile × 100-yd-width), assuming moderate suburban density.
+  const factors = {
+    0: { homes:0.03, injPerMi:0.02, fatPerMi:0.0005, dmgPerMi:0.05 },
+    1: { homes:0.4,  injPerMi:0.15, fatPerMi:0.005,  dmgPerMi:0.3 },
+    2: { homes:2.5,  injPerMi:0.8,  fatPerMi:0.02,   dmgPerMi:1.5 },
+    3: { homes:9,    injPerMi:3,    fatPerMi:0.15,   dmgPerMi:5 },
+    4: { homes:22,   injPerMi:8,    fatPerMi:0.6,    dmgPerMi:14 },
+    5: { homes:45,   injPerMi:22,   fatPerMi:1.6,    dmgPerMi:35 },
+  }[ef];
+  const widthScale = pathWidYd / 100;
+  return {
+    homes: Math.round(factors.homes * pathLenMi * widthScale),
+    injuries: Math.round(factors.injPerMi * pathLenMi * widthScale),
+    fatalities: Math.round(factors.fatPerMi * pathLenMi * widthScale),
+    damage: Math.round(factors.dmgPerMi * pathLenMi * widthScale),
+  };
+}
+
+function fmtDmg(m) {
+  if (m >= 1000) return '$' + (m/1000).toFixed(1) + 'B';
+  return '$' + m + 'M';
+}
+
+document.getElementById('deploy-btn').addEventListener('click', () => {
+  const stp = computeSTP(state);
+  const ef = maxEFfromSTP(stp, state);
+  if (ef == null || !state.deploy) return;
+  const mode = stormMode(state);
+
+  // Decide if tornado forms
+  const tornadoProb = tornadoProbFromSTP(stp);
+  const roll = Math.random();
+  const tornadoFormed = roll < tornadoProb;
+
+  // Path length depends on EF
+  const avgPathByEF = { 0: 0.9, 1: 2.4, 2: 5.5, 3: 11.5, 4: 20, 5: 29 };
+  const avgWidthByEF = { 0: 35, 1: 85, 2: 210, 3: 440, 4: 700, 5: 1200 };
+  const pathLen = tornadoFormed ? Math.max(0.5, avgPathByEF[ef] * (0.7 + Math.random() * 0.6)) : 0;
+  const pathWid = tornadoFormed ? Math.max(20, avgWidthByEF[ef] * (0.7 + Math.random() * 0.6)) : 0;
+
+  // Clear old track
+  if (trackLine) map.removeLayer(trackLine);
+  if (trackSwath) map.removeLayer(trackSwath);
+
+  if (tornadoFormed) {
+    const [endLat, endLng] = bearingOffset(state.deploy.lat, state.deploy.lng, pathLen, state.dir);
+    trackLine = L.polyline([[state.deploy.lat, state.deploy.lng], [endLat, endLng]], {
+      color: '#ff6b47', weight: Math.max(3, pathWid / 100), opacity: 0.75, dashArray: '4 4',
+    }).addTo(map);
+    // Damage swath
+    const swathMi = pathWid / 1760;
+    const perpBearing = (state.dir + 90) % 360;
+    const [swL_start, swLng_start] = bearingOffset(state.deploy.lat, state.deploy.lng, swathMi/2, perpBearing);
+    const [swR_start, swRng_start] = bearingOffset(state.deploy.lat, state.deploy.lng, swathMi/2, (perpBearing + 180) % 360);
+    const [swL_end, swLng_end] = bearingOffset(endLat, endLng, swathMi/2, perpBearing);
+    const [swR_end, swRng_end] = bearingOffset(endLat, endLng, swathMi/2, (perpBearing + 180) % 360);
+    trackSwath = L.polygon([
+      [swL_start, swLng_start], [swR_start, swRng_start],
+      [swR_end, swRng_end], [swL_end, swLng_end],
+    ], { color: '#ff6b47', fillColor: '#ff6b47', fillOpacity: 0.15, weight: 1 }).addTo(map);
+    map.fitBounds(trackSwath.getBounds(), { padding: [40, 40] });
+  }
+
+  // Update impact panel
+  const iv = document.getElementById('impact-verdict');
+  if (!tornadoFormed) {
+    iv.className = 'verdict-box tier-low';
+    iv.querySelector('.verdict-tag').textContent = 'No tornado';
+    iv.querySelector('.verdict-headline').textContent = 'Storm did not produce a tornado';
+    iv.querySelector('.verdict-body').textContent = `The supercell fired but no tornado. Probability was ${Math.round(tornadoProb*100)}%. Try again or increase SRH/CAPE.`;
+    ['i-mode','i-formed','i-ef','i-length','i-width','i-homes','i-inj','i-fat','i-dmg'].forEach(id => document.getElementById(id).textContent = id === 'i-mode' ? mode.m : id === 'i-formed' ? 'No' : '—');
+    return;
+  }
+  const impact = estimateImpact(ef, pathLen, pathWid);
+  iv.className = 'verdict-box tier-' + (ef >= 4 ? 'high' : ef >= 3 ? 'enh' : ef >= 2 ? 'mod' : 'low');
+  iv.querySelector('.verdict-tag').textContent = 'EF' + ef + ' tornado';
+  iv.querySelector('.verdict-headline').textContent = `EF${ef} — ${impact.homes} homes destroyed`;
+  iv.querySelector('.verdict-body').textContent = `Path ${pathLen.toFixed(1)} mi long, ${Math.round(pathWid)} yd wide. Estimated ${impact.fatalities} fatalities and $${impact.damage}M in damage.`;
+  document.getElementById('i-mode').textContent = mode.m;
+  document.getElementById('i-formed').textContent = `Yes (${Math.round(tornadoProb*100)}% prob)`;
+  document.getElementById('i-ef').textContent = 'EF' + ef;
+  document.getElementById('i-length').textContent = pathLen.toFixed(1) + ' mi';
+  document.getElementById('i-width').textContent = Math.round(pathWid) + ' yd';
+  document.getElementById('i-homes').textContent = impact.homes.toLocaleString();
+  document.getElementById('i-inj').textContent = impact.injuries.toLocaleString();
+  document.getElementById('i-fat').textContent = impact.fatalities.toLocaleString();
+  document.getElementById('i-dmg').textContent = fmtDmg(impact.damage);
+});
+
+document.getElementById('reset-btn').addEventListener('click', () => {
+  if (trackLine) { map.removeLayer(trackLine); trackLine = null; }
+  if (trackSwath) { map.removeLayer(trackSwath); trackSwath = null; }
+  if (deployMarker) { map.removeLayer(deployMarker); deployMarker = null; }
+  state.deploy = null;
+  const iv = document.getElementById('impact-verdict');
+  iv.className = 'verdict-box tier-low';
+  iv.querySelector('.verdict-tag').textContent = 'Waiting';
+  iv.querySelector('.verdict-headline').textContent = 'No storm deployed';
+  iv.querySelector('.verdict-body').textContent = 'Build an atmosphere and click the map to place your storm.';
+  ['i-mode','i-formed','i-ef','i-length','i-width','i-homes','i-inj','i-fat','i-dmg'].forEach(id => document.getElementById(id).textContent = '—');
+  update();
+});
+
+update();
+</script>
+</body>
+</html>
