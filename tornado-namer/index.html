@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tornado Namer — Map Quiz Game (US, Canada, Worldwide)</title>
+<meta name="description" content="Type the names of famous tornadoes on a real map. Empty US, US+Canada, Canada, or Worldwide map — type city names and correct guesses appear as pins. Timed and untimed modes. Free online tornado map quiz game inspired by City Quiz." />
+<meta name="keywords" content="tornado map quiz, tornado name game, famous tornado quiz, city quiz tornado, tornado geography quiz, tornado locations game, storm namer" />
+<meta property="og:title" content="Tornado Namer — Map Quiz Game" />
+<meta property="og:description" content="Type the names of famous tornadoes on a real map. US, Canada, worldwide modes." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.tornadosimulator.net/tornado-namer/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/tornado-namer/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗺️</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Game","name":"Tornado Namer","genre":"Map Quiz","description":"Type the names of famous tornadoes on a real map. Multiple region modes.","url":"https://www.tornadosimulator.net/tornado-namer/","publisher":{"@type":"Organization","name":"Tornado Hub"},"playMode":"SinglePlayer","gamePlatform":"Web browser"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"How do you play Tornado Namer?","acceptedAnswer":{"@type":"Answer","text":"Type the town or location of a famous tornado into the input box. If it matches a tornado in the database, a pin appears on the map. Try to find as many as possible before time runs out."}},
+  {"@type":"Question","name":"What tornadoes are in the game?","acceptedAnswer":{"@type":"Answer","text":"Every US F5/EF5, plus other notable events (Tri-State 1925, Xenia 1974, Joplin 2011, Moore 2013), plus international events like Elie Manitoba 2007 and Daulatpur-Saturia Bangladesh 1989."}},
+  {"@type":"Question","name":"What regions can I play?","acceptedAnswer":{"@type":"Answer","text":"United States only, US + Canada, Canada only, or Worldwide. Difficulty scales with region."}}
+]}
+</script>
+<style>
+:root { --bg:#0d1117; --bg-alt:#161b22; --surface:#1c232f; --surface-alt:#242c3b; --text:#e6edf3; --text-secondary:#8b949e; --text-muted:#6b7280; --border:#30363d; --border-strong:#484f58; --accent:#4a9eff; --correct:#3fb950; --wrong:#f85149; --link:#7ec4ff; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; --mono:"JetBrains Mono",monospace; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.55;min-height:100vh;display:flex;flex-direction:column}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000}
+.nav-inner{max-width:1400px;margin:0 auto;padding:12px 20px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;color:var(--text);text-decoration:none}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:6px 12px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--surface-alt);color:var(--text);text-decoration:none}
+.nav-links a.cta{background:#a02818;color:white;font-weight:600}
+
+.header{background:linear-gradient(180deg,var(--bg) 0%,var(--bg-alt) 100%);border-bottom:1px solid var(--border);padding:24px 20px 18px;text-align:center}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.header h1{font-family:var(--serif);font-size:clamp(24px,3.8vw,36px);font-weight:700;letter-spacing:-0.02em;margin-bottom:8px}
+.header h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.header p{color:var(--text-secondary);font-size:14px;max-width:600px;margin:0 auto}
+
+.controls{background:var(--surface);border-bottom:1px solid var(--border);padding:14px 20px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap;align-items:center;position:sticky;top:56px;z-index:900}
+.control-group{display:flex;gap:4px;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:3px}
+.control-btn{padding:6px 12px;font-size:13px;font-weight:600;color:var(--text-secondary);background:transparent;border:none;cursor:pointer;border-radius:5px;font-family:var(--sans);white-space:nowrap}
+.control-btn.active{background:var(--accent);color:white}
+.control-btn:not(.active):hover{color:var(--text)}
+.time-btn{background:var(--surface-alt);border:1px solid var(--border-strong);color:var(--text);padding:6px 14px;font-size:13px;font-weight:600;border-radius:6px;cursor:pointer;font-family:var(--sans);white-space:nowrap}
+.time-btn:hover{border-color:var(--accent)}
+.time-btn.primary{background:var(--accent);border-color:var(--accent);color:white}
+
+.game-area{flex:1;display:grid;grid-template-columns:1fr 320px;gap:12px;padding:12px;overflow:hidden;min-height:600px}
+@media (max-width:900px){.game-area{grid-template-columns:1fr;grid-template-rows:auto auto}}
+.map-panel{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;min-height:500px;position:relative}
+#map{width:100%;height:100%;min-height:500px;background:#1a2027}
+.leaflet-container{background:#1a2027}
+
+.side-panel{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:14px;overflow-y:auto;max-height:calc(100vh - 200px)}
+.stats-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.stat{background:var(--surface-alt);border-radius:8px;padding:10px 14px;text-align:center}
+.stat-val{font-family:var(--mono);font-size:22px;font-weight:700;color:var(--accent);line-height:1.1}
+.stat-lbl{font-size:10px;color:var(--text-muted);font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-top:2px}
+
+.input-wrap{position:relative}
+.input-wrap input{width:100%;padding:14px 18px;font-size:16px;font-weight:600;background:var(--bg-alt);border:2px solid var(--border);border-radius:10px;color:var(--text);font-family:var(--sans);outline:none;transition:border-color 0.15s}
+.input-wrap input:focus{border-color:var(--accent)}
+.input-wrap input:disabled{opacity:0.5}
+.hint{font-size:11px;color:var(--text-muted);margin-top:6px;text-align:center}
+
+.found-list{flex:1;overflow-y:auto;min-height:100px;background:var(--bg-alt);border-radius:8px;padding:10px}
+.found-list h4{font-family:var(--serif);font-size:14px;color:var(--text-secondary);margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.found-item{padding:6px 10px;font-size:13px;color:var(--text);background:var(--surface);border-radius:5px;margin-bottom:4px;display:flex;justify-content:space-between;align-items:center;animation:pop 0.3s ease-out}
+.found-item .rating{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--correct);background:rgba(63,185,80,0.15);padding:2px 6px;border-radius:4px}
+@keyframes pop{0%{transform:translateX(-10px);opacity:0}100%{transform:translateX(0);opacity:1}}
+.empty-list{color:var(--text-muted);font-size:12px;text-align:center;padding:20px 10px;font-style:italic}
+
+.result-modal{position:fixed;inset:0;background:rgba(0,0,0,0.7);display:none;align-items:center;justify-content:center;z-index:2000;padding:20px}
+.result-modal.show{display:flex}
+.result-content{background:var(--surface);border:2px solid var(--accent);border-radius:14px;padding:32px;max-width:480px;width:100%;max-height:88vh;overflow-y:auto;text-align:center}
+.result-content h2{font-family:var(--serif);font-size:28px;margin-bottom:10px}
+.big-score{font-family:var(--serif);font-size:56px;font-weight:700;color:var(--accent);line-height:1;margin:16px 0}
+.result-content .msg{color:var(--text-secondary);margin-bottom:20px;font-size:15px}
+.missed-list{background:var(--bg-alt);border-radius:8px;padding:12px;margin:16px 0;max-height:200px;overflow-y:auto;text-align:left}
+.missed-list h4{font-family:var(--serif);font-size:14px;color:var(--wrong);margin-bottom:8px}
+.missed-item{font-size:13px;padding:4px 0;color:var(--text-secondary)}
+.result-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.btn{padding:10px 20px;font-size:14px;font-weight:700;border-radius:8px;border:1.5px solid var(--border-strong);background:transparent;color:var(--text);cursor:pointer;font-family:var(--sans);text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.btn.primary{background:var(--accent);color:white;border-color:var(--accent)}
+.btn:hover{background:var(--surface-alt);text-decoration:none}
+.btn.primary:hover{background:#3a8eef}
+
+.custom-pin{width:12px;height:12px;background:var(--accent);border:2px solid #fff;border-radius:50%;box-shadow:0 2px 6px rgba(0,0,0,0.5)}
+.custom-pin.reveal{background:var(--wrong);border-color:#fff}
+
+.footer{text-align:center;padding:16px;background:var(--surface);color:var(--text-muted);font-size:12px;border-top:1px solid var(--border)}
+.inline-ad{text-align:center;margin:12px auto;max-width:728px}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/tornado-namer/">Namer</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<header class="header">
+  <div class="eyebrow">🗺️ Map quiz</div>
+  <h1>Tornado <em>Namer</em></h1>
+  <p>Type famous tornado town names — correct guesses appear as pins on the map. Inspired by City Quiz.</p>
+</header>
+
+<div class="controls">
+  <div class="control-group" id="region-group">
+    <button class="control-btn active" data-region="us">🇺🇸 US</button>
+    <button class="control-btn" data-region="us-canada">🇺🇸🇨🇦 US+Canada</button>
+    <button class="control-btn" data-region="canada">🇨🇦 Canada</button>
+    <button class="control-btn" data-region="world">🌍 World</button>
+  </div>
+  <div class="control-group" id="mode-group">
+    <button class="control-btn active" data-mode="timed">⏱️ 5 min</button>
+    <button class="control-btn" data-mode="timed-10">⏱️ 10 min</button>
+    <button class="control-btn" data-mode="untimed">∞ Untimed</button>
+  </div>
+  <button class="time-btn primary" id="start-btn">Start game</button>
+  <button class="time-btn" id="reveal-btn" disabled>Give up / Reveal</button>
+</div>
+
+<div class="game-area">
+  <div class="map-panel">
+    <div id="map"></div>
+  </div>
+  <div class="side-panel">
+    <div class="stats-row">
+      <div class="stat"><div class="stat-val" id="score">0</div><div class="stat-lbl">Found</div></div>
+      <div class="stat"><div class="stat-val" id="total">0</div><div class="stat-lbl">Total</div></div>
+      <div class="stat"><div class="stat-val" id="time">5:00</div><div class="stat-lbl">Time</div></div>
+      <div class="stat"><div class="stat-val" id="pct">0%</div><div class="stat-lbl">Complete</div></div>
+    </div>
+    <div class="input-wrap">
+      <input type="text" id="input" placeholder="Type a tornado town or event..." autocomplete="off" spellcheck="false" disabled />
+    </div>
+    <div class="hint">Try: "Jarrell", "Joplin", "Moore", "Tri-State", "Elie", "Xenia"...</div>
+    <div class="found-list">
+      <h4>Found tornadoes <span id="found-count" style="float:right;color:var(--accent)">0</span></h4>
+      <div id="found-items"><div class="empty-list">Type a tornado name to start!</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="inline-ad">
+  <script type="text/javascript">atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};</script>
+  <script type="text/javascript" src="//www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
+</div>
+
+<div class="result-modal" id="result-modal">
+  <div class="result-content">
+    <h2 id="result-title">Time's up!</h2>
+    <div class="big-score"><span id="final-score">0</span>/<span id="final-total">0</span></div>
+    <div class="msg" id="result-msg"></div>
+    <div class="missed-list">
+      <h4>You missed <span id="missed-count" style="float:right">0</span></h4>
+      <div id="missed-items"></div>
+    </div>
+    <div class="result-btns">
+      <button class="btn primary" onclick="share()">📋 Share score</button>
+      <button class="btn" onclick="closeResult()">Try again</button>
+      <a class="btn" href="/tornadle/">Play Tornadle →</a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  Part of <a href="/">Tornado Hub</a>. Free tornado map quiz — no signup, no login.
+</footer>
+
+<script>
+// ─── TORNADO DATABASE ─────────────────────────────────────────────
+// Format: [names[], lat, lon, year, ef, deaths, region]
+const TORNADOES = [
+  // US - F5/EF5s and famous events
+  { names:['tri-state','tri state','tristate','1925 tri-state'], lat:37.55, lon:-89.34, year:1925, ef:'F5', dead:695, region:'us', display:'Tri-State 1925 (MO/IL/IN)' },
+  { names:['jarrell'], lat:30.82, lon:-97.60, year:1997, ef:'F5', dead:27, region:'us', display:'Jarrell, TX 1997' },
+  { names:['joplin'], lat:37.07, lon:-94.51, year:2011, ef:'EF5', dead:158, region:'us', display:'Joplin, MO 2011' },
+  { names:['moore','moore ok','moore oklahoma','moore 2013','bridge creek','bridge-creek','bridge creek-moore'], lat:35.34, lon:-97.49, year:2013, ef:'EF5', dead:24, region:'us', display:'Moore, OK 2013' },
+  { names:['moore 1999','bridge creek 1999','moore oklahoma 1999'], lat:35.34, lon:-97.49, year:1999, ef:'F5', dead:36, region:'us', display:'Bridge Creek-Moore, OK 1999' },
+  { names:['xenia'], lat:39.68, lon:-83.93, year:1974, ef:'F5', dead:32, region:'us', display:'Xenia, OH 1974' },
+  { names:['tuscaloosa','tuscaloosa birmingham','tuscaloosa-birmingham'], lat:33.21, lon:-87.57, year:2011, ef:'EF4', dead:64, region:'us', display:'Tuscaloosa-Birmingham 2011' },
+  { names:['hackleburg','hackleburg-phil campbell','phil campbell'], lat:34.28, lon:-87.83, year:2011, ef:'EF5', dead:72, region:'us', display:'Hackleburg-Phil Campbell 2011' },
+  { names:['greensburg'], lat:37.60, lon:-99.29, year:2007, ef:'EF5', dead:11, region:'us', display:'Greensburg, KS 2007' },
+  { names:['andover','andover ks','andover kansas','andover 1991'], lat:37.71, lon:-97.14, year:1991, ef:'F5', dead:17, region:'us', display:'Andover, KS 1991' },
+  { names:['andover 2022'], lat:37.71, lon:-97.14, year:2022, ef:'EF3', dead:0, region:'us', display:'Andover, KS 2022' },
+  { names:['plainfield'], lat:41.62, lon:-88.20, year:1990, ef:'F5', dead:29, region:'us', display:'Plainfield, IL 1990' },
+  { names:['hesston'], lat:38.14, lon:-97.43, year:1990, ef:'F5', dead:2, region:'us', display:'Hesston, KS 1990' },
+  { names:['smithville'], lat:34.07, lon:-88.40, year:2011, ef:'EF5', dead:23, region:'us', display:'Smithville, MS 2011' },
+  { names:['parkersburg','parkersburg iowa','parkersburg ia'], lat:42.58, lon:-92.79, year:2008, ef:'EF5', dead:8, region:'us', display:'Parkersburg, IA 2008' },
+  { names:['udall'], lat:37.39, lon:-97.12, year:1955, ef:'F5', dead:80, region:'us', display:'Udall, KS 1955' },
+  { names:['waco'], lat:31.55, lon:-97.15, year:1953, ef:'F5', dead:114, region:'us', display:'Waco, TX 1953' },
+  { names:['flint','flint michigan','flint mi','flint-beecher','beecher'], lat:43.01, lon:-83.69, year:1953, ef:'F5', dead:116, region:'us', display:'Flint-Beecher, MI 1953' },
+  { names:['worcester'], lat:42.26, lon:-71.80, year:1953, ef:'F4', dead:94, region:'us', display:'Worcester, MA 1953' },
+  { names:['lubbock'], lat:33.58, lon:-101.86, year:1970, ef:'F5', dead:26, region:'us', display:'Lubbock, TX 1970' },
+  { names:['tupelo'], lat:34.26, lon:-88.70, year:1936, ef:'F5', dead:216, region:'us', display:'Tupelo, MS 1936' },
+  { names:['gainesville','gainesville ga','gainesville georgia'], lat:34.30, lon:-83.83, year:1936, ef:'F4', dead:203, region:'us', display:'Gainesville, GA 1936' },
+  { names:['fargo'], lat:46.88, lon:-96.79, year:1957, ef:'F5', dead:10, region:'us', display:'Fargo, ND 1957' },
+  { names:['topeka'], lat:39.05, lon:-95.68, year:1966, ef:'F5', dead:16, region:'us', display:'Topeka, KS 1966' },
+  { names:['woodward'], lat:36.43, lon:-99.39, year:1947, ef:'F5', dead:181, region:'us', display:'Woodward, OK 1947' },
+  { names:['el reno','el-reno','el reno 2013'], lat:35.53, lon:-98.01, year:2013, ef:'EF3', dead:8, region:'us', display:'El Reno, OK 2013' },
+  { names:['mayfield'], lat:36.74, lon:-88.64, year:2021, ef:'EF4', dead:57, region:'us', display:'Mayfield, KY 2021' },
+  { names:['rolling fork'], lat:32.91, lon:-90.88, year:2023, ef:'EF4', dead:26, region:'us', display:'Rolling Fork, MS 2023' },
+  { names:['nashville','nashville cookeville','cookeville'], lat:36.16, lon:-86.78, year:2020, ef:'EF4', dead:25, region:'us', display:'Nashville-Cookeville 2020' },
+  { names:['wichita falls','wichita-falls'], lat:33.91, lon:-98.49, year:1979, ef:'F4', dead:42, region:'us', display:'Wichita Falls, TX 1979' },
+  { names:['jackson','jackson ms','jackson mississippi','candlestick park'], lat:32.30, lon:-90.18, year:1966, ef:'F5', dead:57, region:'us', display:'Jackson, MS 1966' },
+  { names:['omaha'], lat:41.26, lon:-95.94, year:1913, ef:'F4', dead:103, region:'us', display:'Omaha, NE 1913' },
+  { names:['regina'], lat:50.45, lon:-104.62, year:1912, ef:'F4', dead:28, region:'canada', display:'Regina, SK 1912' },
+  { names:['barneveld'], lat:43.02, lon:-89.90, year:1984, ef:'F5', dead:9, region:'us', display:'Barneveld, WI 1984' },
+  { names:['wheatland'], lat:41.12, lon:-80.51, year:1985, ef:'F5', dead:16, region:'us', display:'Wheatland, PA 1985' },
+  { names:['guin'], lat:33.97, lon:-87.91, year:1974, ef:'F5', dead:23, region:'us', display:'Guin, AL 1974' },
+  { names:['brandenburg'], lat:37.99, lon:-86.16, year:1974, ef:'F5', dead:31, region:'us', display:'Brandenburg, KY 1974' },
+  { names:['tanner'], lat:34.76, lon:-86.90, year:1974, ef:'F5', dead:28, region:'us', display:'Tanner, AL 1974' },
+  { names:['charles city'], lat:43.07, lon:-92.67, year:1968, ef:'F5', dead:13, region:'us', display:'Charles City, IA 1968' },
+  { names:['spencer'], lat:43.72, lon:-97.60, year:1998, ef:'F4', dead:6, region:'us', display:'Spencer, SD 1998' },
+  { names:['manchester','manchester sd'], lat:44.20, lon:-97.85, year:2003, ef:'F4', dead:0, region:'us', display:'Manchester, SD 2003' },
+  { names:['dimmitt'], lat:34.55, lon:-102.31, year:1995, ef:'F4', dead:0, region:'us', display:'Dimmitt, TX 1995' },
+  // Canada
+  { names:['elie'], lat:49.90, lon:-97.76, year:2007, ef:'F5', dead:0, region:'canada', display:'Elie, MB 2007 (only non-US F5)' },
+  { names:['edmonton'], lat:53.55, lon:-113.49, year:1987, ef:'F4', dead:27, region:'canada', display:'Edmonton, AB 1987 (Black Friday)' },
+  { names:['pine lake'], lat:52.11, lon:-113.44, year:2000, ef:'F3', dead:12, region:'canada', display:'Pine Lake, AB 2000' },
+  // World
+  { names:['daulatpur','daulatpur-saturia','bangladesh','saturia'], lat:24.19, lon:90.19, year:1989, ef:'—', dead:1300, region:'world', display:'Daulatpur-Saturia, Bangladesh 1989' },
+  { names:['ivanovo'], lat:57.00, lon:40.97, year:1984, ef:'F4', dead:400, region:'world', display:'Ivanovo, USSR 1984' },
+  { names:['canberra'], lat:-35.28, lon:149.13, year:2003, ef:'F3', dead:0, region:'world', display:'Canberra fire tornado 2003' },
+  { names:['moravia','moravia czechia','czechia','czech'], lat:48.86, lon:17.13, year:2021, ef:'F4', dead:6, region:'world', display:'Moravia, Czech Republic 2021' },
+  { names:['birmingham uk','birmingham england'], lat:52.48, lon:-1.90, year:2005, ef:'T5', dead:0, region:'world', display:'Birmingham UK 2005' },
+  { names:['london 1091','london tornado'], lat:51.51, lon:-0.09, year:1091, ef:'T8', dead:2, region:'world', display:'London 1091 tornado' },
+  { names:['dolores','dolores argentina'], lat:-36.31, lon:-57.68, year:2015, ef:'F3', dead:4, region:'world', display:'Dolores, Argentina 2015' },
+  { names:['nobeoka','nobeoka japan'], lat:32.58, lon:131.66, year:2006, ef:'F3', dead:3, region:'world', display:'Nobeoka, Japan 2006' },
+];
+
+// Region filters
+function getRegionSet(r) {
+  if (r === 'us') return TORNADOES.filter(t => t.region === 'us');
+  if (r === 'canada') return TORNADOES.filter(t => t.region === 'canada');
+  if (r === 'us-canada') return TORNADOES.filter(t => t.region === 'us' || t.region === 'canada');
+  return TORNADOES;
+}
+
+// State
+let state = {
+  region: 'us',
+  mode: 'timed',
+  duration: 300, // seconds
+  timeLeft: 300,
+  running: false,
+  ended: false,
+  targets: [],
+  found: new Set(),
+  timerId: null,
+};
+let map, markers = [];
+
+// ─── MAP SETUP ────────────────────────────────────────────────────
+function initMap() {
+  map = L.map('map', {
+    zoomControl: true,
+    attributionControl: true,
+    worldCopyJump: true,
+  }).setView([39.5, -98.35], 4);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; OpenStreetMap &copy; CARTO',
+    subdomains: 'abcd',
+    maxZoom: 19,
+  }).addTo(map);
+}
+
+function fitMapToRegion() {
+  if (!map) return;
+  const bounds = {
+    'us': [[24, -125], [50, -66]],
+    'canada': [[42, -140], [70, -52]],
+    'us-canada': [[24, -140], [70, -52]],
+    'world': [[-55, -170], [70, 170]],
+  }[state.region];
+  map.fitBounds(bounds, { padding: [20, 20] });
+}
+
+function clearMarkers() {
+  markers.forEach(m => map.removeLayer(m));
+  markers = [];
+}
+
+function addPin(t, revealed=false) {
+  const icon = L.divIcon({
+    className: '',
+    html: `<div class="custom-pin ${revealed ? 'reveal' : ''}"></div>`,
+    iconSize: [12, 12],
+    iconAnchor: [6, 6],
+  });
+  const m = L.marker([t.lat, t.lon], { icon }).addTo(map);
+  m.bindTooltip(`<b>${t.display}</b><br>${t.ef} · ${t.dead} dead`, { direction: 'top', offset: [0, -8] });
+  markers.push(m);
+}
+
+// ─── GAME LOOP ────────────────────────────────────────────────────
+function startGame() {
+  state.targets = getRegionSet(state.region);
+  state.found = new Set();
+  state.timeLeft = state.duration;
+  state.running = true;
+  state.ended = false;
+  clearMarkers();
+  fitMapToRegion();
+  updateStats();
+  renderFoundList();
+  document.getElementById('input').disabled = false;
+  document.getElementById('input').value = '';
+  document.getElementById('input').focus();
+  document.getElementById('start-btn').textContent = 'Restart';
+  document.getElementById('reveal-btn').disabled = false;
+  if (state.mode !== 'untimed') {
+    state.timerId = setInterval(tick, 1000);
+  }
+}
+
+function tick() {
+  state.timeLeft--;
+  if (state.timeLeft <= 0) {
+    endGame(false);
+  }
+  updateStats();
+}
+
+function updateStats() {
+  document.getElementById('score').textContent = state.found.size;
+  document.getElementById('total').textContent = state.targets.length;
+  const min = Math.floor(state.timeLeft / 60), sec = state.timeLeft % 60;
+  document.getElementById('time').textContent = state.mode === 'untimed' ? '∞' : `${min}:${sec.toString().padStart(2, '0')}`;
+  const pct = state.targets.length ? Math.round(state.found.size / state.targets.length * 100) : 0;
+  document.getElementById('pct').textContent = pct + '%';
+  document.getElementById('found-count').textContent = state.found.size;
+}
+
+function normalize(s) {
+  return s.trim().toLowerCase().replace(/[.,'"!]/g, '').replace(/\s+/g, ' ');
+}
+
+function checkInput(text) {
+  const q = normalize(text);
+  if (q.length < 2) return null;
+  for (const t of state.targets) {
+    if (state.found.has(t.display)) continue;
+    for (const name of t.names) {
+      if (q === name || q === normalize(name)) return t;
+    }
+  }
+  return null;
+}
+
+function handleInput(e) {
+  if (!state.running || state.ended) return;
+  const text = e.target.value;
+  const match = checkInput(text);
+  if (match) {
+    state.found.add(match.display);
+    addPin(match, false);
+    e.target.value = '';
+    e.target.style.background = 'rgba(63,185,80,0.15)';
+    setTimeout(() => { e.target.style.background = ''; }, 300);
+    map.setView([match.lat, match.lon], Math.max(map.getZoom(), 6), { animate: true });
+    setTimeout(() => fitMapToRegion(), 1500);
+    updateStats();
+    renderFoundList();
+    if (state.found.size === state.targets.length) endGame(true);
+  }
+}
+
+function renderFoundList() {
+  const c = document.getElementById('found-items');
+  if (state.found.size === 0) {
+    c.innerHTML = '<div class="empty-list">Type a tornado name to start!</div>';
+    return;
+  }
+  const items = state.targets.filter(t => state.found.has(t.display));
+  c.innerHTML = items.map(t => `
+    <div class="found-item"><span>${t.display}</span><span class="rating">${t.ef}</span></div>
+  `).join('');
+}
+
+function endGame(won) {
+  state.running = false;
+  state.ended = true;
+  if (state.timerId) clearInterval(state.timerId);
+  document.getElementById('input').disabled = true;
+  document.getElementById('reveal-btn').disabled = true;
+  // Reveal missed
+  state.targets.forEach(t => {
+    if (!state.found.has(t.display)) addPin(t, true);
+  });
+  // Show result
+  document.getElementById('result-title').textContent = won ? 'You got them all!' : (state.mode === 'untimed' ? 'Game ended' : "Time's up!");
+  document.getElementById('final-score').textContent = state.found.size;
+  document.getElementById('final-total').textContent = state.targets.length;
+  const pct = Math.round(state.found.size / state.targets.length * 100);
+  let msg;
+  if (won) msg = '🏆 Perfect! You know your tornado history.';
+  else if (pct >= 80) msg = '🌪️ Impressive — you know most of the classics.';
+  else if (pct >= 50) msg = '🌤️ Solid effort. Study up and try again.';
+  else msg = '📖 Time to hit the tornado history books.';
+  document.getElementById('result-msg').textContent = msg;
+  const missed = state.targets.filter(t => !state.found.has(t.display));
+  document.getElementById('missed-count').textContent = missed.length;
+  document.getElementById('missed-items').innerHTML = missed.map(t =>
+    `<div class="missed-item">• ${t.display} — ${t.ef}, ${t.dead} dead</div>`
+  ).join('') || '<div class="missed-item" style="color:var(--correct)">You got them all!</div>';
+  document.getElementById('result-modal').classList.add('show');
+}
+
+function closeResult() {
+  document.getElementById('result-modal').classList.remove('show');
+}
+
+window.share = () => {
+  const pct = Math.round(state.found.size / state.targets.length * 100);
+  const regionName = {us:'US', 'us-canada':'US+Canada', canada:'Canada', world:'World'}[state.region];
+  const text = `I found ${state.found.size}/${state.targets.length} tornadoes (${pct}%) on ${regionName} mode of Tornado Namer!\n\ntornadosimulator.net/tornado-namer/`;
+  if (navigator.share) navigator.share({ text }).catch(() => copyText(text));
+  else copyText(text);
+};
+function copyText(t) {
+  if (navigator.clipboard) navigator.clipboard.writeText(t).then(() => alert('Copied to clipboard!'));
+  else { const ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta); alert('Copied!'); }
+}
+window.closeResult = closeResult;
+
+// ─── EVENT BINDING ────────────────────────────────────────────────
+document.querySelectorAll('#region-group .control-btn').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('#region-group .control-btn').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    state.region = b.dataset.region;
+    if (!state.running) {
+      state.targets = getRegionSet(state.region);
+      updateStats();
+      fitMapToRegion();
+    }
+  });
+});
+document.querySelectorAll('#mode-group .control-btn').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('#mode-group .control-btn').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    state.mode = b.dataset.mode;
+    if (state.mode === 'timed') state.duration = 300;
+    else if (state.mode === 'timed-10') state.duration = 600;
+    else state.duration = 0;
+    if (!state.running) {
+      state.timeLeft = state.duration;
+      updateStats();
+    }
+  });
+});
+document.getElementById('start-btn').addEventListener('click', startGame);
+document.getElementById('reveal-btn').addEventListener('click', () => endGame(false));
+document.getElementById('input').addEventListener('input', handleInput);
+
+// ─── INIT ─────────────────────────────────────────────────────────
+initMap();
+state.targets = getRegionSet(state.region);
+updateStats();
+setTimeout(fitMapToRegion, 200);
+</script>
+</body>
+</html>
