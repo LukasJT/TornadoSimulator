@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Which Storm Chaser Are You? — Personality Quiz</title>
+<meta name="description" content="Take our 10-question personality quiz and find out which real-life storm chaser matches your style. Reed Timmer, Skip Talbot, Sean Casey, Josh Wurman, Ryan Hall or Chuck Doswell — which chaser is you?" />
+<meta name="keywords" content="which storm chaser are you, storm chaser quiz, reed timmer quiz, storm chaser personality" />
+<meta property="og:title" content="Which Storm Chaser Are You?" />
+<meta property="og:description" content="10 questions decide your chaser archetype. Free and shareable." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.tornadosimulator.net/which-storm-chaser-are-you/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/which-storm-chaser-are-you/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚙</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Quiz","name":"Which Storm Chaser Are You?","numberOfQuestions":10}
+</script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --border-strong:#d4cfc3; --accent:#a02818; --accent-hover:#7d1f13; --link:#1e3a5f; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent)}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text)}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.hero{padding:44px 24px 20px;text-align:center;max-width:700px;margin:0 auto}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+h1{font-family:var(--serif);font-size:clamp(30px,4.5vw,44px);font-weight:700;line-height:1.15;letter-spacing:-0.02em;margin-bottom:14px}
+h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.hero p{font-size:16px;color:var(--text-secondary);max-width:560px;margin:0 auto}
+.quiz{max-width:640px;margin:24px auto 40px;padding:0 20px}
+.progress{position:sticky;top:66px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin-bottom:22px;display:flex;justify-content:space-between;align-items:center;z-index:50}
+.progress-count{font-size:13px;font-weight:600;color:var(--text-secondary)}
+.progress-count b{color:var(--accent)}
+.track{flex:1;height:6px;background:var(--bg-alt);border-radius:3px;margin:0 14px;overflow:hidden}
+.fill{height:100%;background:var(--accent);width:0;transition:width 0.3s}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:26px}
+.qn{font-size:11px;color:var(--text-muted);font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px}
+.qt{font-family:var(--serif);font-size:22px;line-height:1.3;letter-spacing:-0.01em;margin-bottom:20px;font-weight:600}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{padding:14px 18px;background:var(--bg);border:1.5px solid var(--border);border-radius:8px;cursor:pointer;text-align:left;font-family:var(--sans);font-size:15px;color:var(--text);transition:all 0.15s;line-height:1.4}
+.opt:hover{background:var(--bg-alt);border-color:var(--accent);transform:translateX(4px)}
+.result{background:linear-gradient(135deg,var(--surface) 0%,var(--bg-alt) 100%);border:2px solid var(--accent);border-radius:16px;padding:36px 30px;text-align:center;display:none;box-shadow:0 12px 40px rgba(160,40,24,0.14)}
+.result.show{display:block;animation:pop 0.4s ease-out}
+@keyframes pop{0%{transform:scale(0.9);opacity:0}100%{transform:scale(1);opacity:1}}
+.result .emoji{font-size:60px;line-height:1;margin-bottom:14px}
+.result .tag{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.result h2{font-family:var(--serif);font-size:32px;line-height:1.1;letter-spacing:-0.02em;margin-bottom:6px}
+.result .subtitle{font-size:14px;color:var(--text-muted);margin-bottom:20px;font-style:italic}
+.result p.desc{font-size:16px;color:var(--text-secondary);margin-bottom:22px;text-align:left;line-height:1.6}
+.strengths{background:var(--surface);border-radius:10px;padding:14px 18px;margin-bottom:20px;text-align:left}
+.strengths h4{font-family:var(--serif);font-size:15px;margin-bottom:8px}
+.strengths span{display:inline-block;background:var(--bg-alt);color:var(--text-secondary);padding:3px 10px;border-radius:12px;font-size:12px;font-weight:600;margin:2px}
+.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.btn{padding:12px 22px;font-size:14px;font-weight:600;border-radius:8px;text-decoration:none;cursor:pointer;font-family:var(--sans);border:1.5px solid var(--border-strong);background:transparent;color:var(--text)}
+.btn.primary{background:var(--accent);color:white;border-color:var(--accent)}
+.btn.primary:hover{background:var(--accent-hover);color:white;text-decoration:none}
+.btn:hover{background:var(--bg-alt);text-decoration:none}
+.footer{text-align:center;padding:26px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px}
+.inline-ad{text-align:center;margin:20px auto;max-width:728px;overflow:hidden}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/quiz/">Quizzes</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/supercell-simulator/">Supercell Sim</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="eyebrow">🚙 Personality quiz</div>
+  <h1>Which <em>storm chaser</em> are you?</h1>
+  <p>Ten questions decide whether you'd chase like Reed Timmer, calculate like Chuck Doswell, film like Sean Casey, or research like Josh Wurman.</p>
+</section>
+
+<div class="quiz">
+  <div class="progress">
+    <div class="progress-count">Question <b id="qnum">1</b> of 10</div>
+    <div class="track"><div class="fill" id="fill"></div></div>
+  </div>
+  <div id="cards"></div>
+  <div id="result" class="result">
+    <div class="emoji" id="r-emoji">🚙</div>
+    <div class="tag">You'd chase like…</div>
+    <h2 id="r-name">—</h2>
+    <div class="subtitle" id="r-subtitle">—</div>
+    <p class="desc" id="r-desc">—</p>
+    <div class="strengths">
+      <h4>Your strengths</h4>
+      <div id="r-strengths"></div>
+    </div>
+    <div class="actions">
+      <button class="btn primary" onclick="share()">📋 Share your result</button>
+      <a class="btn" href="/storm-chaser-beginner-guide/">Storm chaser guide →</a>
+      <button class="btn" onclick="restart()">Retake quiz</button>
+    </div>
+  </div>
+  <div class="inline-ad">
+    <script type="text/javascript">atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};</script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
+  </div>
+</div>
+
+<footer class="footer">For entertainment. See <a href="/storm-chaser-beginner-guide/">the real beginner guide</a>.</footer>
+
+<script>
+// 6 archetypes with 6 personality axes: adrenaline, calc, camera, science, showman, safety
+const RESULTS = {
+  reed: { emoji:'⚡', name:'Reed Timmer', subtitle:'Adrenaline-first, camera on, intercepting anything',
+    desc: "You chase for the shot and for the science, roughly in that order. You'll punch a core if it means being inside a tornado. You have opinions about tornado tanks. Your videos get retweeted before they finish uploading.",
+    strengths: ['Adrenaline', 'Live-streaming', 'Extreme intercept', 'Field research'],
+    traits: { adrenaline:3, calc:1, camera:3, science:2, showman:3, safety:0 } },
+  chuck: { emoji:'📚', name:'Chuck Doswell', subtitle:'The theorist. Chase with a printout.',
+    desc: "You've read every SPC mesoanalysis paper twice. You'll bail on a chase day because 'the trigger isn't there.' You have strong opinions about the Enhanced Fujita Scale's damage-indicator methodology.",
+    strengths: ['Meteorology', 'Judgment', 'Discipline', 'Teaching'],
+    traits: { adrenaline:0, calc:3, camera:0, science:3, showman:0, safety:3 } },
+  skip: { emoji:'📊', name:'Skip Talbot', subtitle:'Data scientist with a Nikon',
+    desc: "You approach chasing like a systematic study. You'd rather log a storm's exact structure than get the closest video. Your Twitter thread on a chase includes a 30-panel storm-mode analysis.",
+    strengths: ['Analytics', 'Structure photography', 'Documentation', 'Radar reading'],
+    traits: { adrenaline:1, calc:3, camera:2, science:3, showman:0, safety:2 } },
+  sean: { emoji:'🎥', name:'Sean Casey', subtitle:'The tank driver',
+    desc: "You want the tornado on IMAX film — literally. You build purpose-engineered vehicles to survive tornado interception, then spend years chasing to get the one shot you want. Discovery Channel loves you.",
+    strengths: ['Engineering', 'Cinematography', 'Patience', 'Storytelling'],
+    traits: { adrenaline:2, calc:2, camera:3, science:1, showman:2, safety:1 } },
+  wurman: { emoji:'🔬', name:'Josh Wurman', subtitle:'The mobile radar researcher',
+    desc: "You chase to advance the science, not to post the video. You'd rather deploy a mobile Doppler radar at 300 meters from a violent tornado and publish the resulting paper than get any camera footage at all.",
+    strengths: ['Doppler radar', 'Field science', 'Mesocyclone data', 'Publication'],
+    traits: { adrenaline:1, calc:3, camera:0, science:3, showman:0, safety:1 } },
+  ryan: { emoji:'📺', name:'Ryan Hall', subtitle:'The live-stream forecaster',
+    desc: "You don't have to be on the road to be part of the chase. You forecast, break down radar in real time, coordinate spotter reports, and grow a massive YouTube audience by explaining the science while it happens.",
+    strengths: ['Live broadcasting', 'Real-time analysis', 'Audience building', 'Education'],
+    traits: { adrenaline:0, calc:2, camera:2, science:2, showman:3, safety:3 } },
+};
+
+const QUESTIONS = [
+  { q:"You've cleared a whole day for chasing. The morning outlook downgrades to Slight. You:",
+    opts:[
+      {t:"Chase anyway — a Slight can still surprise", w:{adrenaline:2,camera:1}},
+      {t:"Bail. If the atmosphere isn't there, don't burn the miles.", w:{calc:2,safety:2,science:1}},
+      {t:"Reposition to a secondary target that models like better", w:{calc:3,science:2}},
+      {t:"Set up at home, live-stream the analysis, and cover chasers in the field", w:{showman:3,science:2}},
+    ]},
+  { q:"Your ideal chase vehicle is:",
+    opts:[
+      {t:"An armored tank-like vehicle rated for direct hits", w:{camera:2,adrenaline:2}},
+      {t:"A regular SUV with excellent tires and mobile data", w:{calc:2,safety:2}},
+      {t:"A rig with a mobile Doppler radar dish mounted on top", w:{science:3,calc:1}},
+      {t:"A dashcam-heavy sedan set up for filming from every angle", w:{camera:3,showman:1}},
+    ]},
+  { q:"On a chase day, your most important tool is:",
+    opts:[
+      {t:"RadarScope open in one hand, live-stream in the other", w:{adrenaline:1,showman:2,camera:1}},
+      {t:"A mesoanalysis printout from that morning's 12Z run", w:{calc:3,science:2}},
+      {t:"My camera and tripod", w:{camera:3}},
+      {t:"A ham radio for spotter network coordination", w:{safety:2,science:1}},
+    ]},
+  { q:"You see a tornado on the ground 3 miles NW. Your instinct is to:",
+    opts:[
+      {t:"Punch in for the closest shot possible", w:{adrenaline:3,camera:2}},
+      {t:"Hold position with a safe bail-out road east", w:{calc:2,safety:3}},
+      {t:"Deploy the mesonet / radar unit immediately", w:{science:3}},
+      {t:"Start narrating live for the audience", w:{showman:3,camera:1}},
+    ]},
+  { q:"You'd rather come back with:",
+    opts:[
+      {t:"The most dramatic dashcam clip of the year", w:{adrenaline:2,camera:2}},
+      {t:"A dataset that changes tornado forecasting", w:{science:3,calc:2}},
+      {t:"A cinematic feature-length reel", w:{camera:3,showman:1}},
+      {t:"An analysis thread that gets 50,000 views", w:{showman:2,science:2}},
+    ]},
+  { q:"Someone in the group wants to core-punch. You:",
+    opts:[
+      {t:"You're the one suggesting it", w:{adrenaline:3}},
+      {t:"Ask what the plan is if a tornado is embedded — then say no", w:{calc:2,safety:3}},
+      {t:"Delegate: they can go, you'll set up a data-collection point south", w:{science:2,calc:1}},
+      {t:"Refuse and set up a broadcast position instead", w:{showman:2,safety:2}},
+    ]},
+  { q:"Your training background is closest to:",
+    opts:[
+      {t:"On-the-job — I learned by chasing", w:{adrenaline:2,camera:1}},
+      {t:"Advanced degree in atmospheric science", w:{science:3,calc:2}},
+      {t:"Photography or film", w:{camera:3}},
+      {t:"Broadcast journalism / meteorology", w:{showman:3,science:1}},
+    ]},
+  { q:"When you get home from a chase, first thing you do is:",
+    opts:[
+      {t:"Cut and upload the highlight reel", w:{camera:2,showman:2}},
+      {t:"Import and QC the data", w:{science:3,calc:1}},
+      {t:"Write a post-chase report analyzing what worked", w:{calc:3}},
+      {t:"Sleep — then post one perfect Twitter thread tomorrow", w:{showman:2,camera:1}},
+    ]},
+  { q:"Which of these would bother you most?",
+    opts:[
+      {t:"Missing the best tornado of the day by 10 minutes", w:{adrenaline:2,camera:2}},
+      {t:"Making a bad forecast call and busting", w:{calc:3,science:2}},
+      {t:"Coming back with unusable footage", w:{camera:3}},
+      {t:"Not being able to explain what happened live", w:{showman:2,science:1}},
+    ]},
+  { q:"Long term, chasing is:",
+    opts:[
+      {t:"A calling — I'll chase until my body gives out", w:{adrenaline:2,camera:1}},
+      {t:"A research method — a way to advance the field", w:{science:3,calc:2}},
+      {t:"A creative career — chasing pays for the films", w:{camera:3,showman:1}},
+      {t:"A platform — chasing feeds a bigger conversation", w:{showman:3}},
+    ]},
+];
+
+let scores = {};
+Object.keys(RESULTS).forEach(k => scores[k] = 0);
+let current = 0;
+
+function renderQuestion() {
+  const c = document.getElementById('cards');
+  c.innerHTML = '';
+  if (current >= QUESTIONS.length) return finish();
+  const Q = QUESTIONS[current];
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.innerHTML = `
+    <div class="qn">Question ${current + 1} of 10</div>
+    <div class="qt">${Q.q}</div>
+    <div class="opts">
+      ${Q.opts.map((o, i) => `<button class="opt" data-i="${i}">${o.t}</button>`).join('')}
+    </div>
+  `;
+  c.appendChild(card);
+  card.querySelectorAll('.opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const i = parseInt(btn.dataset.i);
+      applyWeights(Q.opts[i].w);
+      current++;
+      updateProgress();
+      renderQuestion();
+      window.scrollTo({top:0,behavior:'smooth'});
+    });
+  });
+}
+
+function applyWeights(w) {
+  Object.entries(RESULTS).forEach(([k, r]) => {
+    let sum = 0;
+    Object.entries(w).forEach(([trait, val]) => {
+      sum += (r.traits[trait] || 0) * val;
+    });
+    scores[k] += sum;
+  });
+}
+
+function updateProgress() {
+  document.getElementById('qnum').textContent = Math.min(current+1, QUESTIONS.length);
+  document.getElementById('fill').style.width = (current/QUESTIONS.length*100) + '%';
+}
+
+function finish() {
+  const winnerKey = Object.entries(scores).sort((a,b)=>b[1]-a[1])[0][0];
+  const r = RESULTS[winnerKey];
+  document.getElementById('r-emoji').textContent = r.emoji;
+  document.getElementById('r-name').textContent = r.name;
+  document.getElementById('r-subtitle').textContent = r.subtitle;
+  document.getElementById('r-desc').textContent = r.desc;
+  document.getElementById('r-strengths').innerHTML = r.strengths.map(s => `<span>${s}</span>`).join('');
+  document.getElementById('result').classList.add('show');
+  document.getElementById('fill').style.width = '100%';
+  window._winner = r;
+  setTimeout(() => document.getElementById('result').scrollIntoView({behavior:'smooth', block:'center'}), 300);
+}
+
+function share() {
+  const r = window._winner;
+  if (!r) return;
+  const text = `I chase like ${r.name} — "${r.subtitle}"\n\nWhich storm chaser are you? tornadosimulator.net/which-storm-chaser-are-you/`;
+  if (navigator.share) navigator.share({ text }).catch(() => copy(text));
+  else copy(text);
+}
+function copy(t) { if (navigator.clipboard) navigator.clipboard.writeText(t).then(() => alert('Copied!')); }
+function restart() {
+  scores = {}; Object.keys(RESULTS).forEach(k => scores[k] = 0);
+  current = 0;
+  document.getElementById('result').classList.remove('show');
+  updateProgress();
+  renderQuestion();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+renderQuestion();
+</script>
+</body>
+</html>

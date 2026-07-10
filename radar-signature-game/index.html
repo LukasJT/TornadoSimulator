@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Radar Signature Game — Spot the Hook Echo, TDS, Bow Echo</title>
+<meta name="description" content="A 10-round game where you identify radar signatures — hook echo, tornado debris signature, bow echo, BWER, mesocyclone couplet — from simulated radar images. Great practice for storm spotters." />
+<meta name="keywords" content="radar signature game, hook echo spotter, TDS radar, radar identification game, spotter training, doppler radar quiz" />
+<meta property="og:title" content="Radar Signature Game" />
+<meta property="og:description" content="Identify hook echoes, TDS, bow echoes, BWER in 10 rounds." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.tornadosimulator.net/radar-signature-game/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/radar-signature-game/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<style>
+:root { --bg:#0d1117; --bg-alt:#161b22; --surface:#1c232f; --surface-alt:#242c3b; --text:#e6edf3; --text-secondary:#8b949e; --text-muted:#6b7280; --border:#30363d; --accent:#4a9eff; --correct:#3fb950; --wrong:#f85149; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:var(--accent);text-decoration:none}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;color:var(--text);text-decoration:none}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--surface-alt);color:var(--text)}
+.nav-links a.cta{background:#a02818;color:white;font-weight:600}
+.hero{padding:36px 20px 16px;text-align:center;max-width:700px;margin:0 auto}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h1{font-family:var(--serif);font-size:clamp(28px,4vw,40px);font-weight:700;letter-spacing:-0.02em;margin-bottom:10px}
+h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.hero p{color:var(--text-secondary);font-size:15px;max-width:560px;margin:0 auto}
+.game{max-width:720px;margin:20px auto 40px;padding:0 20px}
+.hud{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 20px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;font-size:13px}
+.hud b{color:var(--accent);font-family:var(--serif);font-size:18px;font-weight:700}
+.progress-bar{height:6px;background:var(--bg);border-radius:3px;overflow:hidden;flex:1;margin:0 14px}
+.fill{height:100%;background:var(--accent);transition:width 0.3s;width:0}
+.round-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px}
+.radar-frame{background:#000;border-radius:10px;padding:12px;margin-bottom:16px;text-align:center;position:relative}
+.radar-frame svg{width:100%;max-width:400px;height:auto;display:block;margin:0 auto}
+.radar-label{position:absolute;top:16px;left:16px;font-family:var(--mono);font-size:10px;color:#6b7280;letter-spacing:0.05em}
+.round-q{font-family:var(--serif);font-size:20px;font-weight:600;text-align:center;margin-bottom:14px}
+.opts{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.opt{padding:14px 16px;background:var(--surface-alt);border:1.5px solid var(--border);border-radius:10px;cursor:pointer;font-family:var(--sans);font-size:14px;font-weight:600;color:var(--text);transition:all 0.15s}
+.opt:hover{background:#2f3a4d;border-color:var(--accent)}
+.opt.correct{background:rgba(63,185,80,0.15);border-color:var(--correct);color:var(--correct)}
+.opt.wrong{background:rgba(248,81,73,0.14);border-color:var(--wrong);color:var(--wrong)}
+.opt:disabled{cursor:default}
+.explanation{margin-top:14px;padding:14px 16px;background:var(--bg);border-left:3px solid var(--accent);border-radius:6px;font-size:13px;color:var(--text-secondary);display:none;line-height:1.55}
+.explanation.show{display:block}
+.explanation strong{color:var(--accent);font-family:var(--serif);font-size:15px}
+.next-btn{width:100%;margin-top:14px;padding:14px;background:var(--accent);color:white;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;display:none}
+.next-btn.show{display:block}
+.result{background:var(--surface);border:2px solid var(--accent);border-radius:14px;padding:32px;text-align:center;display:none}
+.result.show{display:block}
+.result h2{font-family:var(--serif);font-size:32px;margin-bottom:8px}
+.result .score-big{font-family:var(--serif);font-size:64px;font-weight:700;color:var(--accent);line-height:1;margin:12px 0}
+.result .verdict{font-size:16px;color:var(--text-secondary);margin-bottom:20px}
+.result-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.btn{padding:12px 22px;font-size:14px;font-weight:700;border-radius:8px;cursor:pointer;border:1.5px solid var(--border);background:transparent;color:var(--text);font-family:var(--sans);text-decoration:none}
+.btn.primary{background:var(--accent);color:white;border-color:var(--accent)}
+.footer{text-align:center;padding:24px;border-top:1px solid var(--border);background:var(--surface);color:var(--text-muted);font-size:13px}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/quiz/">Quizzes</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/supercell-simulator/">Supercell Sim</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="eyebrow">📡 Spotter training</div>
+  <h1>Spot the <em>radar signature</em></h1>
+  <p>Ten rounds. Identify hook echoes, TDS, bow echoes, BWER, and mesocyclone couplets. Every round explains why.</p>
+</section>
+
+<div class="game">
+  <div class="hud">
+    <div>Round <b id="rnum">1</b>/10</div>
+    <div class="progress-bar"><div class="fill" id="fill"></div></div>
+    <div><b id="score">0</b>correct</div>
+  </div>
+  <div id="round-container"></div>
+  <div id="result" class="result">
+    <h2>Round complete!</h2>
+    <div class="score-big"><span id="final-score">0</span>/10</div>
+    <div class="verdict" id="verdict"></div>
+    <div class="result-btns">
+      <button class="btn primary" onclick="restart()">↻ Play again</button>
+      <a class="btn" href="/how-to-spot-a-supercell/">Supercell field guide →</a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">Part of <a href="/">Tornado Hub</a>. See also the <a href="/hook-echo/">hook echo explainer</a>.</footer>
+
+<script>
+const REFL_COLORS = ['#0000c0', '#0080ff', '#00c0ff', '#00c000', '#00ff40', '#ffff00', '#ff8000', '#ff0000', '#c00000', '#800080'];
+function reflColor(intensity) {
+  const idx = Math.max(0, Math.min(REFL_COLORS.length-1, Math.floor(intensity * REFL_COLORS.length)));
+  return REFL_COLORS[idx];
+}
+
+const SIGNATURES = {
+  hook: {
+    name: 'Hook echo',
+    fact: 'A hook-shaped extension of the reflectivity, curled around the mesocyclone. Historically the strongest single indicator of a tornado-producing supercell.',
+    svg: () => `<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="background:#000">
+      <g><ellipse cx="180" cy="140" rx="70" ry="55" fill="#ff8000"/><ellipse cx="175" cy="140" rx="55" ry="42" fill="#ffff00"/><ellipse cx="170" cy="145" rx="35" ry="26" fill="#00ff40"/>
+      <path d="M130,195 Q110,220 130,240 Q160,245 165,215" fill="#ff8000" stroke="#c00000" stroke-width="2"/>
+      <path d="M135,205 Q120,225 140,238" fill="#c00000"/></g>
+      <text x="15" y="20" fill="#6b7280" font-size="10" font-family="monospace">KTLX 0.5° reflectivity</text>
+    </svg>`,
+  },
+  tds: {
+    name: 'TDS (debris ball)',
+    fact: 'A round, isolated area of high reflectivity co-located with the tornado circulation. Confirms lofted debris = tornado on the ground.',
+    svg: () => `<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="background:#000">
+      <g><ellipse cx="170" cy="150" rx="80" ry="62" fill="#00c000"/><ellipse cx="170" cy="150" rx="55" ry="42" fill="#ffff00"/>
+      <circle cx="150" cy="170" r="18" fill="#800080"/><circle cx="150" cy="170" r="12" fill="#c00000"/></g>
+      <text x="15" y="20" fill="#6b7280" font-size="10" font-family="monospace">KTLX 0.5° reflectivity + TDS</text>
+    </svg>`,
+  },
+  bow: {
+    name: 'Bow echo',
+    fact: 'A bow-shaped line of storms, curved outward in the direction of motion. Indicates damaging straight-line winds and possible spin-up tornadoes at the ends.',
+    svg: () => `<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="background:#000">
+      <path d="M60,80 Q40,150 60,220 Q140,235 220,220 Q240,150 220,80 Q140,65 60,80" fill="#00ff40" stroke="none"/>
+      <path d="M75,95 Q60,150 75,205 Q140,215 205,205 Q220,150 205,95 Q140,85 75,95" fill="#ffff00"/>
+      <path d="M95,110 Q85,150 95,190 Q140,195 185,190 Q195,150 185,110 Q140,105 95,110" fill="#ff8000"/>
+      <path d="M115,125 Q108,150 115,175 Q140,180 165,175 Q172,150 165,125 Q140,120 115,125" fill="#ff0000"/>
+      <text x="15" y="20" fill="#6b7280" font-size="10" font-family="monospace">KILN 0.5° reflectivity</text>
+    </svg>`,
+  },
+  couplet: {
+    name: 'Mesocyclone couplet',
+    fact: 'On velocity products: two adjacent color patches — one green (toward radar) and one red (away). Indicates a rotating updraft.',
+    svg: () => `<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="background:#000">
+      <g><rect x="0" y="0" width="300" height="300" fill="#1a1a1a"/>
+      <circle cx="130" cy="150" r="42" fill="#00c000"/><circle cx="130" cy="150" r="24" fill="#00ff00"/>
+      <circle cx="180" cy="150" r="42" fill="#c00000"/><circle cx="180" cy="150" r="24" fill="#ff4040"/></g>
+      <text x="15" y="20" fill="#6b7280" font-size="10" font-family="monospace">KTLX 0.5° velocity</text>
+    </svg>`,
+  },
+  bwer: {
+    name: 'BWER (bounded weak echo)',
+    fact: 'A vertical cross-section shows a "vault" of low reflectivity capped by high reflectivity. The updraft is so strong it suspends precipitation aloft. Classic supercell.',
+    svg: () => `<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="background:#000">
+      <path d="M40,240 L40,120 Q40,60 130,50 L200,50 Q260,55 260,110 L260,240 Z" fill="#00ff40"/>
+      <path d="M60,240 L60,130 Q60,80 130,70 L200,70 Q240,75 240,120 L240,240 Z" fill="#ffff00"/>
+      <path d="M80,240 L80,140 Q80,100 130,95 L200,95 Q220,100 220,130 L220,240 Z" fill="#ff8000"/>
+      <ellipse cx="145" cy="180" rx="40" ry="60" fill="#00c0ff"/>
+      <ellipse cx="145" cy="180" rx="26" ry="42" fill="#0080ff"/>
+      <text x="15" y="20" fill="#6b7280" font-size="10" font-family="monospace">Cross-section reflectivity</text>
+    </svg>`,
+  },
+  squall: {
+    name: 'Squall line',
+    fact: 'A long, roughly-linear band of thunderstorms. Widespread severe weather but usually less tornado potential per storm than discrete supercells.',
+    svg: () => `<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="background:#000">
+      <path d="M40,90 L60,80 L80,100 L100,85 L120,95 L140,80 L160,90 L180,80 L200,95 L220,85 L240,95 L260,90 L260,190 L240,200 L220,185 L200,195 L180,180 L160,195 L140,185 L120,195 L100,180 L80,195 L60,185 L40,190 Z" fill="#00ff40"/>
+      <path d="M60,110 L80,120 L100,105 L120,115 L140,105 L160,115 L180,105 L200,115 L220,105 L240,115 L240,180 L220,175 L200,180 L180,170 L160,180 L140,170 L120,180 L100,170 L80,180 L60,175 Z" fill="#ffff00"/>
+      <text x="15" y="20" fill="#6b7280" font-size="10" font-family="monospace">KEAX 0.5° reflectivity</text>
+    </svg>`,
+  },
+  discrete: {
+    name: 'Discrete supercell (no signature)',
+    fact: 'A well-organized isolated cell with high reflectivity core but no visible hook, TDS or BWER. Watch it — signatures can develop quickly.',
+    svg: () => `<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="background:#000">
+      <ellipse cx="150" cy="150" rx="85" ry="70" fill="#00c000"/>
+      <ellipse cx="150" cy="150" rx="65" ry="52" fill="#00ff40"/>
+      <ellipse cx="150" cy="145" rx="45" ry="35" fill="#ffff00"/>
+      <ellipse cx="150" cy="140" rx="25" ry="20" fill="#ff8000"/>
+      <text x="15" y="20" fill="#6b7280" font-size="10" font-family="monospace">KEWX 0.5° reflectivity</text>
+    </svg>`,
+  },
+  pulse: {
+    name: 'Pulse thunderstorm',
+    fact: 'A small, roughly circular cell with no organization. Short-lived, popcorn thunderstorm — no tornado threat, minor severe threat.',
+    svg: () => `<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" style="background:#000">
+      <circle cx="150" cy="150" r="55" fill="#00c000"/>
+      <circle cx="150" cy="150" r="40" fill="#00ff40"/>
+      <circle cx="150" cy="150" r="26" fill="#ffff00"/>
+      <text x="15" y="20" fill="#6b7280" font-size="10" font-family="monospace">KMPX 0.5° reflectivity</text>
+    </svg>`,
+  },
+};
+
+const ALL = Object.keys(SIGNATURES);
+
+function buildRounds() {
+  const rounds = [];
+  let last = null;
+  while (rounds.length < 10) {
+    const k = ALL[Math.floor(Math.random() * ALL.length)];
+    if (k === last) continue;
+    const others = ALL.filter(x => x !== k);
+    const distractors = [];
+    while (distractors.length < 3) {
+      const d = others[Math.floor(Math.random() * others.length)];
+      if (!distractors.includes(d)) distractors.push(d);
+    }
+    const opts = [k, ...distractors];
+    for (let i = opts.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [opts[i], opts[j]] = [opts[j], opts[i]];
+    }
+    rounds.push({ answer: k, options: opts });
+    last = k;
+  }
+  return rounds;
+}
+
+let rounds = buildRounds();
+let current = 0;
+let score = 0;
+
+function renderRound() {
+  if (current >= 10) return finish();
+  const R = rounds[current];
+  const container = document.getElementById('round-container');
+  container.innerHTML = `
+    <div class="round-card">
+      <div class="radar-frame">${SIGNATURES[R.answer].svg()}</div>
+      <div class="round-q">What radar signature is this?</div>
+      <div class="opts">
+        ${R.options.map(k => `<button class="opt" data-k="${k}">${SIGNATURES[k].name}</button>`).join('')}
+      </div>
+      <div class="explanation" id="expl"></div>
+      <button class="next-btn" id="next">Next round →</button>
+    </div>
+  `;
+  container.querySelectorAll('.opt').forEach(b => {
+    b.addEventListener('click', () => choose(b.dataset.k, b));
+  });
+  document.getElementById('rnum').textContent = current + 1;
+  document.getElementById('fill').style.width = (current / 10 * 100) + '%';
+}
+
+function choose(k, btn) {
+  const R = rounds[current];
+  document.querySelectorAll('.opt').forEach(b => {
+    b.disabled = true;
+    if (b.dataset.k === R.answer) b.classList.add('correct');
+    else if (b.dataset.k === k) b.classList.add('wrong');
+  });
+  if (k === R.answer) score++;
+  document.getElementById('score').textContent = score;
+  const expl = document.getElementById('expl');
+  expl.innerHTML = `<strong>${SIGNATURES[R.answer].name}.</strong> ${SIGNATURES[R.answer].fact}`;
+  expl.classList.add('show');
+  const nextBtn = document.getElementById('next');
+  nextBtn.classList.add('show');
+  nextBtn.addEventListener('click', () => {
+    current++;
+    renderRound();
+    window.scrollTo({top:0, behavior:'smooth'});
+  }, { once: true });
+}
+
+function finish() {
+  document.getElementById('round-container').style.display = 'none';
+  document.getElementById('result').classList.add('show');
+  document.getElementById('final-score').textContent = score;
+  document.getElementById('fill').style.width = '100%';
+  const pct = Math.round(score / 10 * 100);
+  let msg;
+  if (pct === 100) msg = "📡 Perfect. You could work an NWS radar console.";
+  else if (pct >= 80) msg = "🎯 Excellent spotter eye.";
+  else if (pct >= 60) msg = "🌩️ Solid.";
+  else if (pct >= 40) msg = "📻 Some more study needed.";
+  else msg = "📖 Bookmark the supercell field guide and come back.";
+  document.getElementById('verdict').textContent = msg;
+}
+
+window.restart = () => {
+  rounds = buildRounds();
+  current = 0;
+  score = 0;
+  document.getElementById('score').textContent = '0';
+  document.getElementById('rnum').textContent = '1';
+  document.getElementById('result').classList.remove('show');
+  document.getElementById('round-container').style.display = 'block';
+  renderRound();
+  window.scrollTo({top:0, behavior:'smooth'});
+};
+
+renderRound();
+</script>
+</body>
+</html>

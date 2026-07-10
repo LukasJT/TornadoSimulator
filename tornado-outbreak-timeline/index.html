@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Historic Tornado Outbreak Timeline — 1925 to Present</title>
+<meta name="description" content="An interactive vertical timeline of every major US tornado outbreak from the 1925 Tri-State Tornado to the 2011 Super Outbreak. Filter by decade and fatality count, click any outbreak for details." />
+<meta name="keywords" content="tornado outbreak timeline, tornado history, Super Outbreak, Tri-State Tornado, tornado history timeline, deadliest tornado outbreaks" />
+<meta property="og:title" content="Historic Tornado Outbreak Timeline" />
+<meta property="og:description" content="Every major US tornado outbreak from 1925 to present." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tornadosimulator.net/tornado-outbreak-timeline/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/tornado-outbreak-timeline/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📅</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --accent:#a02818; --link:#1e3a5f; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; --mono:"JetBrains Mono",monospace; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text)}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.hero{padding:40px 20px 20px;text-align:center;max-width:700px;margin:0 auto}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h1{font-family:var(--serif);font-size:clamp(30px,4.5vw,42px);font-weight:700;letter-spacing:-0.02em;margin-bottom:12px}
+h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.hero p{color:var(--text-secondary);font-size:16px}
+.filters{max-width:800px;margin:16px auto;padding:0 20px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.filter{padding:6px 14px;font-size:12px;font-weight:600;background:var(--surface);border:1.5px solid var(--border);border-radius:20px;cursor:pointer;color:var(--text-secondary);font-family:var(--sans)}
+.filter:hover{border-color:var(--accent);color:var(--text)}
+.filter.active{background:var(--accent);color:white;border-color:var(--accent)}
+.timeline{max-width:820px;margin:0 auto;padding:0 20px 60px;position:relative}
+.timeline::before{content:"";position:absolute;left:80px;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--accent) 0%,#7d1f13 100%);border-radius:2px}
+.event{display:grid;grid-template-columns:64px 20px 1fr;gap:14px;align-items:flex-start;margin-bottom:24px;position:relative}
+.event.hidden{display:none}
+.event-year{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--accent);text-align:right;line-height:1;padding-top:12px}
+.event-dot{width:16px;height:16px;background:var(--accent);border-radius:50%;margin:16px auto 0;box-shadow:0 0 0 4px var(--surface),0 0 0 5px var(--accent);position:relative;z-index:1}
+.event-body{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 22px;transition:border-color 0.2s}
+.event-body:hover{border-color:var(--accent)}
+.event-title{font-family:var(--serif);font-size:20px;font-weight:700;letter-spacing:-0.01em;margin-bottom:4px;line-height:1.2}
+.event-title a{color:var(--text)}
+.event-date{font-size:12px;color:var(--text-muted);font-family:var(--mono);margin-bottom:8px;letter-spacing:0.02em}
+.event-summary{font-size:14px;color:var(--text-secondary);line-height:1.55;margin-bottom:8px}
+.event-stats{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;font-family:var(--mono)}
+.event-stats span{background:var(--bg-alt);padding:4px 10px;border-radius:5px;font-weight:600}
+.event-stats span.deadly{background:rgba(160,40,24,0.1);color:var(--accent)}
+.footer{text-align:center;padding:24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px}
+.inline-ad{text-align:center;margin:24px auto;max-width:728px;overflow:hidden}
+@media (max-width:600px){.timeline::before{left:40px}.event{grid-template-columns:40px 16px 1fr}.event-year{font-size:18px}.event-dot{width:12px;height:12px;box-shadow:0 0 0 3px var(--surface),0 0 0 4px var(--accent)}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/quiz/">Quizzes</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/supercell-simulator/">Supercell Sim</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="eyebrow">📅 Interactive history</div>
+  <h1>US <em>tornado outbreak</em> timeline</h1>
+  <p>Every major outbreak from the 1925 Tri-State Tornado to the present. Filter by decade or by lethality.</p>
+</section>
+
+<div class="filters" id="filters">
+  <button class="filter active" data-f="all">All</button>
+  <button class="filter" data-f="1920s">1920s</button>
+  <button class="filter" data-f="1930s">1930s</button>
+  <button class="filter" data-f="1940s">1940s</button>
+  <button class="filter" data-f="1950s">1950s</button>
+  <button class="filter" data-f="1960s">1960s</button>
+  <button class="filter" data-f="1970s">1970s</button>
+  <button class="filter" data-f="1980s">1980s</button>
+  <button class="filter" data-f="1990s">1990s</button>
+  <button class="filter" data-f="2000s">2000s</button>
+  <button class="filter" data-f="2010s">2010s</button>
+  <button class="filter" data-f="2020s">2020s</button>
+  <button class="filter" data-f="100plus">100+ killed</button>
+</div>
+
+<div class="timeline" id="timeline"></div>
+
+<div class="inline-ad">
+  <script type="text/javascript">atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};</script>
+  <script type="text/javascript" src="//www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
+</div>
+
+<footer class="footer">Part of <a href="/">Tornado Hub</a>. Data from NOAA SPC and post-storm surveys.</footer>
+
+<script>
+const EVENTS = [
+  { year:1925, date:'March 18', title:'Tri-State Tornado', summary:'The deadliest single tornado in US history — a single F5 tracked 219 miles across Missouri, Illinois and Indiana.', dead:695, injured:2027, tornadoes:1, href:'/1925-tri-state-tornado/' },
+  { year:1932, date:'March 21', title:'Deep South tornado outbreak', summary:'33 tornadoes across the Southeast. Alabama took the brunt with 268 dead.', dead:330, tornadoes:33 },
+  { year:1936, date:'April 5-6', title:'Tupelo-Gainesville outbreak', summary:'Two F5 tornadoes on consecutive days — Tupelo, Mississippi (216 dead) and Gainesville, Georgia (203 dead).', dead:454, tornadoes:12, href:'/1936-tornado-outbreak/' },
+  { year:1947, date:'April 9', title:'Woodward outbreak', summary:'An F5 tornado killed 181 in Woodward, Oklahoma — the deadliest tornado in state history.', dead:181, tornadoes:6 },
+  { year:1953, date:'May 11', title:'Waco, TX F5', summary:'F5 tornado ripped through downtown Waco, killing 114.', dead:114, tornadoes:1 },
+  { year:1953, date:'June 8', title:'Flint-Beecher outbreak', summary:'F5 tornado struck Flint, Michigan, killing 116.', dead:139, tornadoes:8 },
+  { year:1953, date:'June 9', title:'Worcester, MA F4', summary:'A massive F4 tornado carved through central Massachusetts.', dead:94, tornadoes:1 },
+  { year:1955, date:'May 25', title:'Udall, KS F5', summary:'An F5 wiped out most of Udall — 80 dead in a town of about 600.', dead:80, tornadoes:5 },
+  { year:1957, date:'June 20', title:'Fargo, ND F5', summary:'An F5 tore through Fargo, killing 10. Dr. Ted Fujita\'s study of this tornado helped inspire the Fujita Scale.', dead:10, tornadoes:5 },
+  { year:1965, date:'April 11', title:'Palm Sunday outbreak', summary:'47 tornadoes across the Midwest on Palm Sunday. Led to major tornado warning reforms.', dead:271, tornadoes:47, href:'/1965-palm-sunday/' },
+  { year:1966, date:'March 3', title:'Candlestick Park outbreak', summary:'An F5 tornado struck Jackson, Mississippi.', dead:57, tornadoes:11 },
+  { year:1970, date:'May 11', title:'Lubbock, TX F5', summary:'A rare F5 tornado hit Lubbock, Texas.', dead:26, tornadoes:1 },
+  { year:1974, date:'April 3-4', title:'Super Outbreak', summary:'148 tornadoes in 18 hours across 13 states. Six F5 tornadoes on the same day. Xenia, Ohio, was hit worst.', dead:335, tornadoes:148, href:'/1974-super-outbreak/' },
+  { year:1979, date:'April 10', title:'Red River outbreak', summary:'The Wichita Falls, TX F4 killed 42.', dead:59, tornadoes:30 },
+  { year:1984, date:'June 8', title:'Barneveld, WI F5', summary:'A late-night F5 killed 9 in Barneveld, Wisconsin.', dead:9, tornadoes:5 },
+  { year:1985, date:'May 31', title:'US-Canadian outbreak', summary:'F5 in Wheatland, PA. Also produced F4 tornadoes in Ontario.', dead:88, tornadoes:44 },
+  { year:1990, date:'March 13', title:'Hesston, KS F5', summary:'F5 tornado tracked 67 miles through Kansas.', dead:2, tornadoes:59, href:'/hesston-1990/' },
+  { year:1990, date:'August 28', title:'Plainfield, IL F5', summary:'A rare late-summer F5 that no one saw coming — no warning issued.', dead:29, tornadoes:1, href:'/plainfield-1990/' },
+  { year:1991, date:'April 26', title:'Andover, KS F5', summary:'F5 hit the Golden Spur Mobile Home Park, killing 17.', dead:21, tornadoes:55, href:'/andover-1991/' },
+  { year:1997, date:'May 27', title:'Jarrell, TX F5', summary:'A slow-moving F5 ground through Jarrell — one of the most complete tornadoes ever documented.', dead:27, tornadoes:20, href:'/jarrell-1997/' },
+  { year:1998, date:'April 8', title:'Birmingham, AL F5', summary:'An F5 killed 32 near Birmingham.', dead:41, tornadoes:14 },
+  { year:1999, date:'May 3', title:'Bridge Creek-Moore F5', summary:'The 1999 Oklahoma outbreak — 74 tornadoes including an F5 with 301 mph winds, the highest ever measured.', dead:50, tornadoes:74, href:'/moore-1999/' },
+  { year:2007, date:'May 4', title:'Greensburg, KS EF5', summary:'An EF5 destroyed 95 percent of Greensburg, Kansas. The town was rebuilt with sustainable construction.', dead:11, tornadoes:37, href:'/greensburg-2007/' },
+  { year:2007, date:'June 22', title:'Elie, Manitoba F5', summary:'The only F5 tornado ever confirmed outside the United States.', dead:0, tornadoes:1, href:'/elie-2007/' },
+  { year:2008, date:'May 25', title:'Parkersburg, IA EF5', summary:'The first EF5 rating in the US since the scale was adopted in 2007.', dead:8, tornadoes:14, href:'/parkersburg-2008/' },
+  { year:2011, date:'April 27', title:'April 2011 Super Outbreak', summary:'The largest tornado outbreak in US history — 360 tornadoes in three days. 316 killed on April 27 alone.', dead:324, tornadoes:360, href:'/2011-super-outbreak/' },
+  { year:2011, date:'May 22', title:'Joplin, MO EF5', summary:'The deadliest single US tornado since 1947 — an EF5 struck Joplin, Missouri.', dead:158, tornadoes:1, href:'/joplin-2011/' },
+  { year:2013, date:'May 20', title:'Moore, OK EF5', summary:'A second EF5 hit Moore, Oklahoma, killing 24.', dead:24, tornadoes:1 },
+  { year:2013, date:'May 31', title:'El Reno, OK EF3', summary:'The widest tornado ever recorded at 2.6 miles. Killed three professional storm chasers.', dead:8, tornadoes:1, href:'/el-reno-2013/' },
+  { year:2021, date:'Dec 10-11', title:'Mayfield, KY EF4', summary:'A rare December outbreak. An EF4 traveled 165 miles through Kentucky, killing 57 in Mayfield.', dead:89, tornadoes:66, href:'/mayfield-2021/' },
+  { year:2023, date:'March 24-25', title:'Rolling Fork, MS EF4', summary:'An EF4 devastated Rolling Fork, Mississippi.', dead:26, tornadoes:15 },
+  { year:2024, date:'May 26-27', title:'Memorial Day weekend outbreak', summary:'Multiple long-track EF3 and EF4 tornadoes across the Plains.', dead:26, tornadoes:98 },
+];
+
+const timeline = document.getElementById('timeline');
+function render(filter) {
+  timeline.innerHTML = '';
+  EVENTS.forEach(e => {
+    let show = true;
+    if (filter === '100plus') show = e.dead >= 100;
+    else if (filter !== 'all') {
+      const decade = Math.floor(e.year / 10) * 10 + 's';
+      show = decade === filter;
+    }
+    if (!show) return;
+    const el = document.createElement('div');
+    el.className = 'event';
+    el.innerHTML = `
+      <div class="event-year">${e.year}</div>
+      <div class="event-dot"></div>
+      <div class="event-body">
+        <div class="event-title">${e.href ? `<a href="${e.href}">${e.title}</a>` : e.title}</div>
+        <div class="event-date">${e.date}, ${e.year}</div>
+        <div class="event-summary">${e.summary}</div>
+        <div class="event-stats">
+          <span class="deadly">${e.dead} killed</span>
+          ${e.injured ? `<span>${e.injured} injured</span>` : ''}
+          ${e.tornadoes ? `<span>${e.tornadoes} tornado${e.tornadoes>1?'es':''}</span>` : ''}
+        </div>
+      </div>
+    `;
+    timeline.appendChild(el);
+  });
+  if (!timeline.children.length) {
+    timeline.innerHTML = '<div style="text-align:center;color:var(--text-muted);padding:40px">No outbreaks match this filter.</div>';
+  }
+}
+
+document.querySelectorAll('.filter').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.filter').forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    render(b.dataset.f);
+  });
+});
+
+render('all');
+</script>
+</body>
+</html>
