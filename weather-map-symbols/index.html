@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Weather Map Symbols — Fronts, Station Plots, Radar Codes Explained</title>
+<meta name="description" content="A visual reference guide to weather map symbols — cold fronts, warm fronts, occluded and stationary fronts, high/low pressure symbols, station-model plots, radar reflectivity codes, and severe weather icons. Learn to read a surface analysis in 10 minutes." />
+<meta name="keywords" content="weather map symbols, weather symbols, cold front symbol, warm front symbol, weather chart symbols, station model, radar symbols" />
+<meta property="og:title" content="Weather Map Symbols Reference" />
+<meta property="og:description" content="Fronts, pressure symbols, station plots, radar codes — visual reference." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tornadosimulator.net/weather-map-symbols/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/weather-map-symbols/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗺️</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --accent:#a02818; --link:#1e3a5f; --cold:#0d4b8f; --warm:#c02929; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; --mono:"JetBrains Mono",monospace; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text)}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.hero{padding:40px 20px 24px;text-align:center;max-width:720px;margin:0 auto}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h1{font-family:var(--serif);font-size:clamp(30px,4.5vw,42px);font-weight:700;letter-spacing:-0.02em;margin-bottom:12px}
+h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.hero p{color:var(--text-secondary);font-size:16px}
+.wrap{max-width:900px;margin:0 auto 60px;padding:0 20px}
+.section{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:16px}
+.section h2{font-family:var(--serif);font-size:24px;margin-bottom:16px;letter-spacing:-0.01em;padding-bottom:8px;border-bottom:2px solid var(--border)}
+.symbol-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.sym{background:var(--bg-alt);border-radius:10px;padding:16px 18px;display:flex;gap:14px;align-items:center}
+.sym-vis{flex-shrink:0;width:80px;height:60px;display:flex;align-items:center;justify-content:center;background:var(--surface);border-radius:8px;border:1px solid var(--border)}
+.sym-vis svg{max-width:100%;max-height:100%}
+.sym-name{font-family:var(--serif);font-weight:700;font-size:14px;margin-bottom:2px}
+.sym-desc{font-size:12px;color:var(--text-secondary);line-height:1.4}
+.footer{text-align:center;padding:24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px}
+.inline-ad{text-align:center;margin:24px auto;max-width:728px;overflow:hidden}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/quiz/">Quizzes</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/supercell-simulator/">Supercell Sim</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="eyebrow">🗺️ Visual reference</div>
+  <h1>Weather <em>map</em> symbols</h1>
+  <p>Cold fronts, warm fronts, station-model plots, radar codes and severe weather icons — the visual language of surface analysis.</p>
+</section>
+
+<div class="wrap">
+
+<div class="section">
+  <h2>Fronts</h2>
+  <div class="symbol-grid">
+    <div class="sym"><div class="sym-vis"><svg viewBox="0 0 80 30"><line x1="0" y1="15" x2="80" y2="15" stroke="#0d4b8f" stroke-width="3"/><polygon points="10,15 15,7 20,15" fill="#0d4b8f"/><polygon points="30,15 35,7 40,15" fill="#0d4b8f"/><polygon points="50,15 55,7 60,15" fill="#0d4b8f"/></svg></div><div><div class="sym-name">Cold front</div><div class="sym-desc">Blue line with triangles pointing in direction of motion. Cold air replacing warm.</div></div></div>
+    <div class="sym"><div class="sym-vis"><svg viewBox="0 0 80 30"><line x1="0" y1="15" x2="80" y2="15" stroke="#c02929" stroke-width="3"/><path d="M10,15 Q15,7 20,15" fill="#c02929"/><path d="M30,15 Q35,7 40,15" fill="#c02929"/><path d="M50,15 Q55,7 60,15" fill="#c02929"/></svg></div><div><div class="sym-name">Warm front</div><div class="sym-desc">Red line with semicircles pointing in direction of motion. Warm air replacing cold.</div></div></div>
+    <div class="sym"><div class="sym-vis"><svg viewBox="0 0 80 30"><line x1="0" y1="15" x2="80" y2="15" stroke="#8f2fc0" stroke-width="3"/><polygon points="10,15 15,7 20,15" fill="#8f2fc0"/><path d="M25,15 Q30,7 35,15" fill="#8f2fc0"/><polygon points="42,15 47,7 52,15" fill="#8f2fc0"/><path d="M57,15 Q62,7 67,15" fill="#8f2fc0"/></svg></div><div><div class="sym-name">Occluded front</div><div class="sym-desc">Purple line with alternating triangles and semicircles. Cold front catching up to warm.</div></div></div>
+    <div class="sym"><div class="sym-vis"><svg viewBox="0 0 80 30"><line x1="0" y1="15" x2="80" y2="15" stroke="#0d4b8f" stroke-width="3"/><polygon points="10,15 15,7 20,15" fill="#0d4b8f"/><path d="M30,15 Q35,23 40,15" fill="#c02929"/><polygon points="50,15 55,7 60,15" fill="#0d4b8f"/><path d="M65,15 Q70,23 75,15" fill="#c02929"/></svg></div><div><div class="sym-name">Stationary front</div><div class="sym-desc">Alternating blue triangles (north side) and red semicircles (south side). Little motion.</div></div></div>
+    <div class="sym"><div class="sym-vis"><svg viewBox="0 0 80 30"><path d="M5,25 Q20,5 40,15 T75,25" stroke="#8b6608" stroke-width="2" stroke-dasharray="6,4" fill="none"/></svg></div><div><div class="sym-name">Dryline</div><div class="sym-desc">Brown scalloped line marking boundary between moist and dry air. Common tornado trigger.</div></div></div>
+    <div class="sym"><div class="sym-vis"><svg viewBox="0 0 80 30"><line x1="0" y1="15" x2="80" y2="15" stroke="#333" stroke-width="1.5" stroke-dasharray="3,3"/></svg></div><div><div class="sym-name">Trough</div><div class="sym-desc">Dashed line marking elongated low-pressure axis. Often trigger for storms.</div></div></div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Pressure systems</h2>
+  <div class="symbol-grid">
+    <div class="sym"><div class="sym-vis"><svg viewBox="0 0 60 40"><text x="30" y="30" text-anchor="middle" font-family="serif" font-size="26" font-weight="700" fill="#c02929">H</text></svg></div><div><div class="sym-name">High pressure</div><div class="sym-desc">Red "H." Center of anticyclone. Fair weather, clockwise flow (N. Hem.).</div></div></div>
+    <div class="sym"><div class="sym-vis"><svg viewBox="0 0 60 40"><text x="30" y="30" text-anchor="middle" font-family="serif" font-size="26" font-weight="700" fill="#0d4b8f">L</text></svg></div><div><div class="sym-name">Low pressure</div><div class="sym-desc">Blue "L." Center of cyclone. Stormy weather, counterclockwise flow (N. Hem.).</div></div></div>
+    <div class="sym"><div class="sym-vis"><svg viewBox="0 0 60 40"><ellipse cx="30" cy="20" rx="24" ry="14" fill="none" stroke="#333" stroke-width="1"/></svg></div><div><div class="sym-name">Isobar</div><div class="sym-desc">Curved line connecting points of equal pressure. Tight spacing = strong winds.</div></div></div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Station-model plot</h2>
+  <p style="color:var(--text-secondary);font-size:14px;margin-bottom:12px">One weather station's data in a single symbol. Wind barb points from where the wind is coming, temperature and dew point on left, pressure top-right.</p>
+  <div class="symbol-grid">
+    <div class="sym"><div class="sym-vis"><svg viewBox="0 0 80 60"><circle cx="40" cy="35" r="6" fill="none" stroke="#333" stroke-width="1"/><line x1="40" y1="29" x2="40" y2="5" stroke="#333" stroke-width="1.5"/><line x1="40" y1="10" x2="52" y2="7" stroke="#333" stroke-width="1.5"/><text x="18" y="30" font-family="monospace" font-size="10" fill="#c02929">75</text><text x="18" y="45" font-family="monospace" font-size="10" fill="#2d6a4f">68</text><text x="58" y="30" font-family="monospace" font-size="10" fill="#333">052</text></svg></div><div><div class="sym-name">Full station plot</div><div class="sym-desc">Circle = cloud cover. Line = wind direction. Barbs = wind speed (10 kt each). Numbers = T / Td / pressure.</div></div></div>
+    <div class="sym"><div class="sym-vis"><svg viewBox="0 0 80 60"><line x1="40" y1="30" x2="40" y2="5" stroke="#333" stroke-width="2"/><line x1="40" y1="10" x2="52" y2="7" stroke="#333" stroke-width="1.8"/><line x1="40" y1="16" x2="52" y2="13" stroke="#333" stroke-width="1.8"/><line x1="40" y1="22" x2="46" y2="20.5" stroke="#333" stroke-width="1.8"/></svg></div><div><div class="sym-name">Wind barbs — 25 kt</div><div class="sym-desc">Each full barb = 10 kt. Half barb = 5 kt. Filled triangle = 50 kt. Add them up.</div></div></div>
+    <div class="sym"><div class="sym-vis"><svg viewBox="0 0 80 60"><line x1="40" y1="30" x2="40" y2="5" stroke="#333" stroke-width="2"/><polygon points="40,10 52,10 40,16" fill="#333"/></svg></div><div><div class="sym-name">Wind barbs — 50 kt</div><div class="sym-desc">A filled triangle (pennant) represents 50 knots. Add remaining barbs.</div></div></div>
+    <div class="sym"><div class="sym-vis"><svg viewBox="0 0 80 60"><circle cx="40" cy="30" r="10" fill="none" stroke="#333" stroke-width="2"/></svg></div><div><div class="sym-name">Cloud cover — clear</div><div class="sym-desc">Empty circle = clear sky.</div></div></div>
+    <div class="sym"><div class="sym-vis"><svg viewBox="0 0 80 60"><circle cx="40" cy="30" r="10" fill="#333" stroke="#333" stroke-width="2"/></svg></div><div><div class="sym-name">Cloud cover — overcast</div><div class="sym-desc">Fully filled = overcast. Half-filled = partly cloudy.</div></div></div>
+  </div>
+</div>
+
+<div class="inline-ad">
+  <script type="text/javascript">atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};</script>
+  <script type="text/javascript" src="//www.highperformanceformat.com/b7d63c1973b41722e34dd6f314916ba/invoke.js"></script>
+</div>
+
+<div class="section">
+  <h2>Radar reflectivity</h2>
+  <p style="color:var(--text-secondary);font-size:14px;margin-bottom:12px">The classic scale from clear air (blue) to strong storms (magenta) measures how much energy a radar beam gets back.</p>
+  <div class="symbol-grid">
+    <div class="sym"><div class="sym-vis"><rect x="10" y="15" width="60" height="30" fill="#0000c0"/></div><div><div class="sym-name">5-15 dBZ</div><div class="sym-desc">Light drizzle, clear air return, dust. Not weather-significant.</div></div></div>
+    <div class="sym"><div class="sym-vis"><rect x="10" y="15" width="60" height="30" fill="#00c000"/></div><div><div class="sym-name">20-30 dBZ</div><div class="sym-desc">Light rain. Typical stratiform cloud precipitation.</div></div></div>
+    <div class="sym"><div class="sym-vis"><rect x="10" y="15" width="60" height="30" fill="#ffff00"/></div><div><div class="sym-name">40-50 dBZ</div><div class="sym-desc">Heavy rain, marginal severe. Thunderstorm territory.</div></div></div>
+    <div class="sym"><div class="sym-vis"><rect x="10" y="15" width="60" height="30" fill="#ff0000"/></div><div><div class="sym-name">55-65 dBZ</div><div class="sym-desc">Severe thunderstorm core. Likely hail.</div></div></div>
+    <div class="sym"><div class="sym-vis"><rect x="10" y="15" width="60" height="30" fill="#800080"/></div><div><div class="sym-name">70+ dBZ</div><div class="sym-desc">Very large hail or lofted tornado debris (TDS).</div></div></div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Severe weather icons</h2>
+  <div class="symbol-grid">
+    <div class="sym"><div class="sym-vis" style="font-size:32px">🌪️</div><div><div class="sym-name">Tornado warning</div><div class="sym-desc">Red polygon on radar. Take shelter immediately.</div></div></div>
+    <div class="sym"><div class="sym-vis" style="font-size:32px">⛈️</div><div><div class="sym-name">Severe thunderstorm</div><div class="sym-desc">Yellow polygon. Hail ≥1" or winds ≥58 mph.</div></div></div>
+    <div class="sym"><div class="sym-vis" style="font-size:32px">💧</div><div><div class="sym-name">Flash flood</div><div class="sym-desc">Green polygon. Life-threatening flooding imminent.</div></div></div>
+    <div class="sym"><div class="sym-vis" style="font-size:32px">❄️</div><div><div class="sym-name">Winter storm</div><div class="sym-desc">Purple polygon. Significant snow / ice.</div></div></div>
+  </div>
+</div>
+
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 26px;margin-top:16px">
+  <h3 style="font-family:var(--serif);font-size:20px;margin-bottom:10px">Related tools</h3>
+  <ul style="margin-left:22px">
+    <li><a href="/radar-signature-game/">Radar signature identification game</a></li>
+    <li><a href="/weather-glossary/">Weather glossary A-Z</a></li>
+    <li><a href="/how-to-spot-a-supercell/">How to spot a supercell</a></li>
+    <li><a href="/hook-echo/">Hook echo explainer</a></li>
+  </ul>
+</div>
+
+</div>
+
+<footer class="footer">Part of <a href="/">Tornado Hub</a>.</footer>
+
+</body>
+</html>
