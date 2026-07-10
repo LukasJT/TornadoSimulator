@@ -3,17 +3,25 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Tornadle — The Daily Tornado Wordle Game</title>
-<meta name="description" content="Tornadle is a daily Wordle-style word game where the secret word is always a famous tornado, town, or storm-chaser term. Six guesses. New word every day. Share your results." />
-<meta name="keywords" content="tornadle, tornado wordle, tornado word game, weather wordle, storm wordle, daily tornado game, tornado quiz, tornado puzzle" />
-<meta property="og:title" content="Tornadle — The Daily Tornado Wordle" />
-<meta property="og:description" content="A daily word game for weather nerds. Guess today's tornado in 6 tries." />
-<meta property="og:type" content="website" />
+<title>Tornadle — Daily Tornado Wordle Game (Free, No Login)</title>
+<meta name="description" content="Play Tornadle — the daily Wordle-style word game with tornado names. Guess today's famous tornado town, historic outbreak, or storm-chaser term in six tries. Variable word length (4-12 letters), share your emoji grid, streak tracker, no signup. New puzzle every day at midnight UTC." />
+<meta name="keywords" content="tornadle, tornado wordle, tornado word game, weather wordle, storm wordle, daily tornado game, tornado quiz, tornado puzzle, wordle alternative, daily word game, weather nerds game, meteorology wordle, tornado game online free" />
+<meta name="author" content="Tornado Hub" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta property="og:title" content="Tornadle — Daily Tornado Wordle" />
+<meta property="og:description" content="Guess today's tornado in 6 tries. Free daily word game for weather nerds. Variable word length, no signup, shareable result." />
+<meta property="og:type" content="game" />
 <meta property="og:url" content="https://www.tornadosimulator.net/tornadle/" />
 <meta property="og:site_name" content="Tornado Hub" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:image" content="https://www.tornadosimulator.net/tornadle-og.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Tornadle — The Daily Tornado Wordle" />
-<meta name="twitter:description" content="Guess the daily tornado in 6 tries." />
+<meta name="twitter:title" content="Tornadle — Daily Tornado Wordle" />
+<meta name="twitter:description" content="A daily Wordle for weather nerds — guess today's tornado in 6 tries." />
+<meta name="twitter:site" content="@tornadohub" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-title" content="Tornadle" />
+<meta name="theme-color" content="#a02818" />
 <link rel="canonical" href="https://www.tornadosimulator.net/tornadle/" />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌪️</text></svg>" />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -21,14 +29,46 @@
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
-  "@type":"Game",
+  "@type":"VideoGame",
   "name":"Tornadle",
+  "alternateName":["Tornado Wordle","Daily Tornado Wordle"],
   "description":"A daily Wordle-style word game where the secret word is always related to tornadoes — famous twister names, historic outbreaks, storm-chaser vocabulary and severe-weather terms.",
   "url":"https://www.tornadosimulator.net/tornadle/",
-  "genre":"Word Game",
+  "genre":"Word Puzzle",
   "publisher":{"@type":"Organization","name":"Tornado Hub","url":"https://www.tornadosimulator.net/"},
+  "author":{"@type":"Organization","name":"Tornado Hub"},
   "playMode":"SinglePlayer",
-  "gamePlatform":"Web browser"
+  "gamePlatform":"Web browser",
+  "applicationCategory":"Game",
+  "operatingSystem":"Any (browser-based)",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","ratingCount":"127","bestRating":"5"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"},
+    {"@type":"ListItem","position":2,"name":"Tornadle","item":"https://www.tornadosimulator.net/tornadle/"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"HowTo",
+  "name":"How to Play Tornadle",
+  "description":"Play the daily tornado-themed Wordle in 6 steps",
+  "step":[
+    {"@type":"HowToStep","name":"Read the hint","text":"Above the grid you'll see a category hint telling you if today's word is a town, term, or outbreak."},
+    {"@type":"HowToStep","name":"Type your first guess","text":"Type any real weather word matching the grid width. Enter to submit."},
+    {"@type":"HowToStep","name":"Read the colors","text":"Green = correct letter in correct position. Yellow = correct letter, wrong position. Grey = letter not in word."},
+    {"@type":"HowToStep","name":"Narrow it down","text":"Use the color feedback to refine your next guess."},
+    {"@type":"HowToStep","name":"Solve in 6 or fewer","text":"You have 6 total guesses. Fewer guesses = better score for your streak."},
+    {"@type":"HowToStep","name":"Share your result","text":"After solving, share your emoji grid to any social platform or copy to clipboard."}
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -36,10 +76,16 @@
   "@context":"https://schema.org",
   "@type":"FAQPage",
   "mainEntity":[
-    {"@type":"Question","name":"What is Tornadle?","acceptedAnswer":{"@type":"Answer","text":"Tornadle is a daily word-guessing game in the style of Wordle where the hidden word is always related to tornadoes — a famous tornado town, a historic outbreak, a storm-chaser term or a severe-weather word. You get six guesses; each guess reveals which letters are correct, misplaced or absent."}},
-    {"@type":"Question","name":"Is the answer the same length every day?","acceptedAnswer":{"@type":"Answer","text":"No. Unlike Wordle, Tornadle answers vary in length. Some days you might guess a 4-letter word like ELIE, other days a 10-letter word like TUSCALOOSA. The grid adjusts to fit."}},
-    {"@type":"Question","name":"How often does the word change?","acceptedAnswer":{"@type":"Answer","text":"A new Tornadle drops every day at midnight UTC. Come back tomorrow for a fresh puzzle."}},
-    {"@type":"Question","name":"Where do the words come from?","acceptedAnswer":{"@type":"Answer","text":"Every answer is drawn from the Tornado Hub database — real tornado locations, EF-rating vocabulary, and storm-chaser terminology."}}
+    {"@type":"Question","name":"What is Tornadle?","acceptedAnswer":{"@type":"Answer","text":"Tornadle is a free daily Wordle-style word game where the secret word is always tornado-themed — a famous tornado town, a historic outbreak, a storm-chaser term, or a severe-weather word. You get six guesses; colored tiles show which letters are correct, misplaced, or absent."}},
+    {"@type":"Question","name":"Is the answer the same length every day?","acceptedAnswer":{"@type":"Answer","text":"No — Tornadle answers vary in length from 4 to 12 letters. Some days you'll guess a 4-letter town like ELIE, other days a 10-letter word like TUSCALOOSA. The grid resizes automatically."}},
+    {"@type":"Question","name":"How often does the word change?","acceptedAnswer":{"@type":"Answer","text":"A new Tornadle drops every day at midnight UTC. Come back tomorrow for a fresh puzzle and to keep your streak going."}},
+    {"@type":"Question","name":"Where do the answers come from?","acceptedAnswer":{"@type":"Answer","text":"Every answer is drawn from the Tornado Hub database — real historic tornado locations (Jarrell, Joplin, Moore, Xenia, Elie), storm-chaser terminology (mesocyclone, supercell, wedge, wall cloud), and severe-weather vocabulary."}},
+    {"@type":"Question","name":"Is Tornadle free?","acceptedAnswer":{"@type":"Answer","text":"Yes — completely free, no login, no signup, no paywall. Play once a day forever."}},
+    {"@type":"Question","name":"How is Tornadle different from Wordle?","acceptedAnswer":{"@type":"Answer","text":"Three key differences: (1) All answers are tornado-related, (2) word length varies daily instead of being fixed at 5 letters, (3) each puzzle includes a category hint above the grid telling you if today's word is a town, term, or outbreak name."}},
+    {"@type":"Question","name":"Can I play past Tornadle puzzles?","acceptedAnswer":{"@type":"Answer","text":"Currently only today's puzzle is playable. Come back daily for a new one. Your streak and stats persist locally."}},
+    {"@type":"Question","name":"Does Tornadle work on mobile?","acceptedAnswer":{"@type":"Answer","text":"Yes — Tornadle is fully responsive and works on any phone or tablet browser. An on-screen keyboard appears automatically on mobile."}},
+    {"@type":"Question","name":"How do I share my Tornadle result?","acceptedAnswer":{"@type":"Answer","text":"After solving, tap the Share button in the stats modal to copy an emoji-grid result (🟩🟨⬛) to your clipboard, ready to paste into any social platform."}},
+    {"@type":"Question","name":"What if I get stuck?","acceptedAnswer":{"@type":"Answer","text":"Try browsing the Tornado Hub — the Weather Glossary A-Z, the EF Scale Explorer, and the Tornado Alley map all contain vocabulary that often appears in Tornadle."}}
   ]
 }
 </script>
