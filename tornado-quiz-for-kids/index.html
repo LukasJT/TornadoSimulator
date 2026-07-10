@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tornado Quiz for Kids — Free Fun Weather Quiz (Grades 2-6)</title>
+<meta name="description" content="Free interactive tornado quiz for kids. Twelve friendly multiple-choice questions about tornadoes — what they are, how they form, safety rules, and cool facts. Perfect for grades 2-6, classroom use, or curious kids at home. Big buttons, colorful design, instant feedback, and a printable certificate at the end." />
+<meta name="keywords" content="tornado quiz for kids, weather quiz for kids, kids tornado game, elementary tornado quiz, tornado quiz elementary, weather quiz elementary" />
+<meta property="og:title" content="Tornado Quiz for Kids" />
+<meta property="og:description" content="A fun 12-question tornado quiz for elementary schoolers." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.tornadosimulator.net/tornado-quiz-for-kids/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/tornado-quiz-for-kids/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌈</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Quiz","name":"Tornado Quiz for Kids","about":"Kid-friendly quiz about tornadoes","educationalLevel":"Elementary","numberOfQuestions":12,"publisher":{"@type":"Organization","name":"Tornado Hub"}}
+</script>
+<style>
+:root {
+  --bg:#fff8ef; --bg-alt:#ffefd8; --surface:#fff;
+  --text:#14161c; --text-secondary:#4a5061;
+  --border:#ffdca8;
+  --accent:#e35b1c;
+  --link:#0d4b8f;
+  --correct:#2d6a4f; --correct-soft:#c6f0d3;
+  --wrong:#c94a1a; --wrong-soft:#ffdac5;
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Inter",-apple-system,sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.6; }
+a { color: var(--link); }
+a:hover { color: var(--accent); }
+.nav { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+.nav-inner { max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+.nav-brand { font-family: var(--serif); font-weight: 700; font-size: 20px; color: var(--text); text-decoration: none; }
+.nav-links { display: flex; gap: 4px; flex-wrap: wrap; }
+.nav-links a { color: var(--text-secondary); padding: 8px 14px; font-size: 14px; font-weight: 500; border-radius: 8px; text-decoration: none; }
+.nav-links a:hover { background: var(--bg-alt); color: var(--text); }
+.nav-links a.cta { background: var(--accent); color: white; font-weight: 700; }
+
+.hero { text-align: center; padding: 30px 24px 20px; max-width: 700px; margin: 0 auto; }
+.hero-emoji { font-size: 60px; line-height: 1; margin-bottom: 14px; }
+.hero h1 { font-family: var(--serif); font-size: clamp(30px, 4.5vw, 44px); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 12px; line-height: 1.1; }
+.hero h1 em { color: var(--accent); font-style: italic; }
+.hero p { color: var(--text-secondary); font-size: 17px; max-width: 560px; margin: 0 auto; }
+
+.quiz-wrap { max-width: 680px; margin: 24px auto 60px; padding: 0 20px; }
+
+.progress-bar {
+  position: sticky; top: 66px;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 18px;
+  margin-bottom: 20px;
+  display: flex; justify-content: space-between; align-items: center;
+  z-index: 50;
+  box-shadow: 0 2px 8px rgba(227,91,28,0.05);
+}
+.progress-count { font-size: 14px; color: var(--text-secondary); font-weight: 700; }
+.progress-count .score { color: var(--accent); }
+.progress-track { flex: 1; margin: 0 16px; height: 8px; background: var(--bg-alt); border-radius: 4px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--accent); width: 0; transition: width 0.35s; border-radius: 4px; }
+
+.card {
+  background: var(--surface);
+  border: 3px solid var(--border);
+  border-radius: 16px;
+  padding: 26px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 12px rgba(227,91,28,0.06);
+}
+.q-num {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.q-text {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 18px;
+  letter-spacing: -0.01em;
+}
+.options { display: flex; flex-direction: column; gap: 10px; }
+.opt {
+  padding: 16px 20px;
+  background: var(--bg);
+  border: 2.5px solid var(--border);
+  border-radius: 14px;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.opt:hover:not(:disabled) { background: var(--bg-alt); border-color: var(--accent); transform: translateX(3px); }
+.opt .letter {
+  width: 32px; height: 32px;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800;
+  font-size: 14px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.opt.correct {
+  background: var(--correct-soft);
+  border-color: var(--correct);
+  color: var(--correct);
+}
+.opt.correct .letter { background: var(--correct); color: white; border-color: var(--correct); }
+.opt.wrong {
+  background: var(--wrong-soft);
+  border-color: var(--wrong);
+  color: var(--wrong);
+}
+.opt.wrong .letter { background: var(--wrong); color: white; border-color: var(--wrong); }
+.opt:disabled { cursor: default; }
+
+.explanation {
+  margin-top: 16px;
+  padding: 14px 18px;
+  background: var(--bg-alt);
+  border-left: 4px solid var(--accent);
+  border-radius: 10px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  display: none;
+}
+.explanation.show { display: block; }
+.explanation strong { color: var(--accent); font-family: var(--serif); }
+
+.result {
+  background: var(--surface);
+  border: 3px solid var(--accent);
+  border-radius: 20px;
+  padding: 32px;
+  margin-top: 24px;
+  text-align: center;
+  display: none;
+  box-shadow: 0 12px 30px rgba(227,91,28,0.15);
+}
+.result.show { display: block; }
+.result-emoji { font-size: 68px; line-height: 1; margin-bottom: 10px; }
+.result h2 { font-family: var(--serif); font-size: 34px; margin-bottom: 10px; letter-spacing: -0.01em; }
+.result .score-big {
+  font-family: var(--serif);
+  font-size: 76px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  margin: 14px 0;
+  letter-spacing: -0.03em;
+}
+.result .verdict { font-size: 18px; color: var(--text-secondary); margin-bottom: 20px; font-weight: 500; }
+
+.certificate {
+  background: linear-gradient(135deg, #fff9ec 0%, #ffe8bd 100%);
+  border: 3px dashed var(--accent);
+  border-radius: 14px;
+  padding: 20px;
+  margin: 18px 0;
+  text-align: center;
+}
+.cert-title { font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--accent); margin-bottom: 6px; }
+.cert-body { font-size: 14px; color: var(--text-secondary); margin-bottom: 8px; }
+.cert-name {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+  padding: 4px 20px 2px;
+  margin: 6px 0;
+  min-width: 200px;
+}
+.cert-name-input {
+  width: 240px;
+  padding: 8px 12px;
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+}
+.cert-name-input:focus { outline: none; border-color: var(--accent); }
+
+.result-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
+.btn {
+  padding: 12px 22px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 10px;
+  border: 2px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font-family: var(--sans);
+  text-decoration: none;
+}
+.btn.primary { background: var(--accent); color: white; border-color: var(--accent); }
+.btn.primary:hover { background: #c94a1a; color: white; }
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+
+.footer { text-align: center; padding: 24px; border-top: 1px solid var(--border); background: var(--bg-alt); color: var(--text-secondary); font-size: 13px; margin-top: 20px; }
+.inline-ad { text-align: center; margin: 20px auto; max-width: 728px; overflow: hidden; }
+
+@media print {
+  .nav, .progress-bar, .card, .result-btns, .inline-ad, .footer { display: none !important; }
+  .certificate { border: 3px dashed var(--accent); page-break-inside: avoid; }
+  body { background: white; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/tornadoes-for-kids/">Kids page</a>
+      <a href="/tornado-coloring-pages/">Coloring pages</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/simulator/" class="cta">Play →</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-emoji">🌪️</div>
+  <h1>Tornado <em>quiz</em> for kids</h1>
+  <p>Twelve quick questions about tornadoes. Perfect for grades 2 through 6, or curious kids at home. Get a printable certificate at the end!</p>
+</section>
+
+<div class="quiz-wrap">
+
+  <div class="progress-bar">
+    <div class="progress-count">Question <span id="qnum">1</span>/12</div>
+    <div class="progress-track"><div class="progress-fill" id="fill"></div></div>
+    <div class="progress-count"><span class="score" id="scoreLive">0</span> correct</div>
+  </div>
+
+  <div id="questions"></div>
+
+  <div class="inline-ad">
+    <script type="text/javascript">atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};</script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
+  </div>
+
+  <div id="result" class="result">
+    <div class="result-emoji" id="result-emoji">🏆</div>
+    <h2 id="result-title">Great job!</h2>
+    <div class="score-big"><span id="scoreFinal">0</span>/12</div>
+    <div class="verdict" id="verdict"></div>
+
+    <div class="certificate">
+      <div class="cert-title">🏅 Tornado Expert Certificate</div>
+      <div class="cert-body">This certifies that</div>
+      <input type="text" class="cert-name-input" id="cert-name" placeholder="Your name" maxlength="30" />
+      <div class="cert-body" style="margin-top:8px">is officially a tornado expert!</div>
+      <div class="cert-body" style="margin-top:10px;font-size:12px">— Tornado Hub, <span id="cert-date"></span></div>
+    </div>
+
+    <div class="result-btns">
+      <button class="btn primary" onclick="window.print()">🖨️ Print certificate</button>
+      <button class="btn" onclick="restart()">↻ Try again</button>
+      <a class="btn" href="/tornadoes-for-kids/">Learn more →</a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  For teachers &amp; parents: this quiz is free for classroom or home use. Part of <a href="/">Tornado Hub</a>.
+</footer>
+
+<script>
+const QUESTIONS = [
+  {
+    q: "What is a tornado?",
+    opts: ["A big fluffy cloud", "A very strong spinning wind that reaches the ground", "A giant snowstorm", "A rainbow"],
+    a: 1,
+    exp: "A tornado is a very strong wind that spins really fast and reaches from a cloud down to the ground."
+  },
+  {
+    q: "What kind of storm cloud makes tornadoes?",
+    opts: ["Cirrus (thin wispy cloud)", "Stratus (flat grey cloud)", "Cumulonimbus (tall thunderstorm cloud)", "Fog"],
+    a: 2,
+    exp: "Cumulonimbus clouds are the tall thunderstorm clouds — the only kind that make tornadoes."
+  },
+  {
+    q: "What shape are most tornadoes?",
+    opts: ["A square", "A cone or funnel", "A pancake", "A circle"],
+    a: 1,
+    exp: "Most tornadoes look like a cone or funnel — wide at the top and narrow at the bottom!"
+  },
+  {
+    q: "Where do most tornadoes happen?",
+    opts: ["Antarctica", "The United States", "The North Pole", "The moon"],
+    a: 1,
+    exp: "The United States gets about 3 out of every 4 tornadoes on Earth. That's more than 1,200 a year!"
+  },
+  {
+    q: "What's the strongest tornado rating?",
+    opts: ["EF0", "EF3", "EF5", "EF10"],
+    a: 2,
+    exp: "The Enhanced Fujita Scale goes from EF0 (weakest) to EF5 (strongest). There is no EF6!"
+  },
+  {
+    q: "What should you do if a tornado is coming?",
+    opts: ["Go outside to watch", "Go to the basement or a small interior room", "Open all the windows", "Hide under a tree"],
+    a: 1,
+    exp: "Always go to the lowest floor of the building and find a small room in the middle — like a bathroom or closet."
+  },
+  {
+    q: "What does 'Tornado WARNING' mean?",
+    opts: ["A tornado might happen someday", "There is a big rainstorm", "A tornado has been seen — take cover NOW", "The tornado is over"],
+    a: 2,
+    exp: "A Tornado WARNING means a tornado has been spotted or is showing on radar. Go to your safe spot right away!"
+  },
+  {
+    q: "How wide was the widest tornado ever?",
+    opts: ["1 foot wide", "1 mile wide", "2.6 miles wide (El Reno, Oklahoma 2013)", "10 miles wide"],
+    a: 2,
+    exp: "The El Reno tornado in 2013 was 2.6 miles wide — as wide as 40 football fields side by side!"
+  },
+  {
+    q: "What sound do tornadoes often make?",
+    opts: ["A tiny whistle", "A loud freight train sound", "Silence", "Musical bells"],
+    a: 1,
+    exp: "People who have survived tornadoes often say they sound like a huge freight train getting closer and closer."
+  },
+  {
+    q: "What is a tornado over water called?",
+    opts: ["A rainspout", "A waterspout", "A splash tornado", "A wet tornado"],
+    a: 1,
+    exp: "A tornado over water is called a waterspout. If it moves onto land it can become a regular tornado!"
+  },
+  {
+    q: "Which US region is called 'Tornado Alley'?",
+    opts: ["Alaska and Hawaii", "The northeast (New York, Boston)", "The central Plains (Texas, Oklahoma, Kansas)", "The west coast (California)"],
+    a: 2,
+    exp: "Tornado Alley is the big region from Texas up through Oklahoma, Kansas, and Nebraska — where lots of tornadoes happen every year!"
+  },
+  {
+    q: "Should you try to outrun a tornado in a car?",
+    opts: ["Yes, cars are super fast", "No, get to a strong building or lie flat in a low place", "Only on the highway", "Only at night"],
+    a: 1,
+    exp: "Never try to outrun a tornado in a car! Get to a strong building. If there is no building, lie flat in a low ditch away from trees and cars."
+  },
+];
+
+let answered = 0, score = 0;
+const total = QUESTIONS.length;
+const container = document.getElementById('questions');
+
+QUESTIONS.forEach((q, i) => {
+  const letters = ['A', 'B', 'C', 'D'];
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.innerHTML = `
+    <div class="q-num">Question ${i + 1} of ${total}</div>
+    <div class="q-text">${q.q}</div>
+    <div class="options">
+      ${q.opts.map((o, j) => `<button class="opt" data-i="${i}" data-j="${j}"><span class="letter">${letters[j]}</span><span>${o}</span></button>`).join('')}
+    </div>
+    <div class="explanation"><strong>${q.a === undefined ? '' : '✨ '}</strong>${q.exp}</div>
+  `;
+  container.appendChild(card);
+});
+
+container.addEventListener('click', (e) => {
+  const btn = e.target.closest('.opt');
+  if (!btn) return;
+  const parent = btn.parentElement;
+  if (parent.dataset.done) return;
+  parent.dataset.done = '1';
+  const qi = parseInt(btn.dataset.i);
+  const oi = parseInt(btn.dataset.j);
+  const q = QUESTIONS[qi];
+  parent.querySelectorAll('.opt').forEach((b, i) => {
+    b.disabled = true;
+    if (i === q.a) b.classList.add('correct');
+    else if (i === oi) b.classList.add('wrong');
+  });
+  btn.closest('.card').querySelector('.explanation').classList.add('show');
+  if (oi === q.a) score++;
+  answered++;
+  document.getElementById('scoreLive').textContent = score;
+  document.getElementById('qnum').textContent = Math.min(answered + 1, total);
+  document.getElementById('fill').style.width = (answered / total * 100) + '%';
+  if (answered === total) showResult();
+  else {
+    const next = document.querySelectorAll('.card')[answered];
+    if (next) setTimeout(() => next.scrollIntoView({ behavior: 'smooth', block: 'center' }), 400);
+  }
+});
+
+function showResult() {
+  const r = document.getElementById('result');
+  r.classList.add('show');
+  document.getElementById('scoreFinal').textContent = score;
+  const pct = Math.round(score / total * 100);
+  const emojiEl = document.getElementById('result-emoji');
+  const titleEl = document.getElementById('result-title');
+  const verdictEl = document.getElementById('verdict');
+  if (pct === 100) { emojiEl.textContent = '🏆'; titleEl.textContent = 'Perfect score!'; verdictEl.textContent = 'You are a tornado expert! Amazing job!'; }
+  else if (pct >= 75) { emojiEl.textContent = '🌟'; titleEl.textContent = 'Great job!'; verdictEl.textContent = 'You know a lot about tornadoes!'; }
+  else if (pct >= 50) { emojiEl.textContent = '⛅'; titleEl.textContent = 'Nice work!'; verdictEl.textContent = "You're learning! Try again to get more right."; }
+  else { emojiEl.textContent = '📚'; titleEl.textContent = 'Keep learning!'; verdictEl.textContent = 'Read the Tornadoes for Kids page and try again!'; }
+  const now = new Date();
+  document.getElementById('cert-date').textContent = now.toLocaleDateString(undefined, { month: 'long', day: 'numeric', year: 'numeric' });
+  setTimeout(() => r.scrollIntoView({ behavior: 'smooth', block: 'center' }), 300);
+}
+
+function restart() {
+  location.reload();
+}
+window.restart = restart;
+</script>
+<script src="/assets/house-ads.js" defer></script>
+</body>
+</html>
