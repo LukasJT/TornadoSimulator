@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Storm Chase Log — Free Chase Tracking Tool for Chasers</title>
+<meta name="description" content="A free, privacy-first storm chase log. Track your chases with date, target, storm mode, tornado observations, mileage, and photos. Data stored locally on your device only. Export to CSV for your records." />
+<meta name="keywords" content="storm chase log, chase tracker, chase journal, storm chasing tracker, tornado chase log, chaser statistics" />
+<meta property="og:title" content="Storm Chase Log" />
+<meta property="og:description" content="Free, private chase tracker for storm chasers." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.tornadosimulator.net/chase-log/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/chase-log/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📓</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --border-strong:#d4cfc3; --accent:#a02818; --accent-hover:#7d1f13; --link:#1e3a5f; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; --mono:"JetBrains Mono",monospace; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text)}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.hero{padding:36px 20px 20px;text-align:center;max-width:700px;margin:0 auto}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h1{font-family:var(--serif);font-size:clamp(28px,4vw,40px);font-weight:700;letter-spacing:-0.02em;margin-bottom:10px}
+h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.hero p{color:var(--text-secondary);font-size:15px}
+.wrap{max-width:1000px;margin:20px auto 40px;padding:0 20px}
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:16px}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;text-align:center}
+.stat-val{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--accent);line-height:1}
+.stat-lbl{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px;font-weight:600}
+.actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:16px}
+.btn{padding:10px 18px;font-size:14px;font-weight:600;border-radius:8px;border:1.5px solid var(--border-strong);background:var(--surface);color:var(--text);cursor:pointer;font-family:var(--sans)}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn.primary{background:var(--accent);color:white;border-color:var(--accent)}
+.btn.primary:hover{background:var(--accent-hover);color:white}
+.form-panel{background:var(--surface);border:2px dashed var(--accent);border-radius:12px;padding:22px 26px;margin-bottom:20px;display:none}
+.form-panel.show{display:block}
+.form-panel h3{font-family:var(--serif);font-size:20px;margin-bottom:14px}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:11px;font-weight:700;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px}
+.field input,.field select,.field textarea{width:100%;padding:10px 14px;font-size:14px;border:1.5px solid var(--border);border-radius:8px;font-family:var(--sans);background:var(--bg-alt)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);background:var(--surface)}
+.field textarea{min-height:60px;resize:vertical}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:500px){.grid2{grid-template-columns:1fr}}
+.chase-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 22px;margin-bottom:12px;transition:border-color 0.15s}
+.chase-card:hover{border-color:var(--accent)}
+.chase-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;flex-wrap:wrap;gap:6px}
+.chase-date{font-family:var(--mono);font-size:14px;color:var(--accent);font-weight:700}
+.chase-loc{font-family:var(--serif);font-size:18px;font-weight:700}
+.chase-rating{background:rgba(160,40,24,0.09);color:var(--accent);padding:3px 10px;font-family:monospace;font-size:12px;font-weight:700;border-radius:5px}
+.chase-details{display:flex;gap:14px;font-size:13px;color:var(--text-secondary);flex-wrap:wrap;margin-bottom:6px}
+.chase-details span{background:var(--bg-alt);padding:2px 8px;border-radius:5px}
+.chase-notes{font-size:13px;color:var(--text-secondary);font-style:italic;line-height:1.5;margin-top:6px}
+.chase-actions{display:flex;gap:8px;margin-top:10px}
+.chase-actions button{font-size:12px;padding:4px 10px;background:transparent;border:1px solid var(--border-strong);border-radius:5px;color:var(--text-secondary);cursor:pointer;font-family:var(--sans)}
+.chase-actions button:hover{border-color:var(--accent);color:var(--accent)}
+.empty{background:var(--surface);border:2px dashed var(--border-strong);border-radius:12px;padding:40px 24px;text-align:center;color:var(--text-muted)}
+.empty h3{font-family:var(--serif);font-size:20px;color:var(--text);margin-bottom:6px}
+.footer{text-align:center;padding:24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px;margin-top:32px}
+.inline-ad{text-align:center;margin:24px auto;max-width:728px;overflow:hidden}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/quiz/">Quizzes</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="eyebrow">📓 Free chase tracker</div>
+  <h1>Storm chase <em>log</em></h1>
+  <p>Track every chase — date, target, storm mode, tornadoes seen, miles driven. Data stays on your device (localStorage). Export to CSV anytime.</p>
+</section>
+
+<div class="wrap">
+
+  <div class="stats-row" id="stats"></div>
+
+  <div class="actions">
+    <button class="btn primary" onclick="showForm()">+ Add chase</button>
+    <button class="btn" onclick="exportCSV()">📄 Export CSV</button>
+    <button class="btn" onclick="importCSV()">📥 Import CSV</button>
+    <button class="btn" onclick="resetAll()">🗑️ Reset all</button>
+    <input type="file" id="import-file" style="display:none" accept=".csv" onchange="handleImport(this)">
+  </div>
+
+  <div class="form-panel" id="form">
+    <h3 id="form-title">Add a chase</h3>
+    <input type="hidden" id="edit-id">
+    <div class="grid2">
+      <div class="field">
+        <label>Date</label>
+        <input type="date" id="f-date">
+      </div>
+      <div class="field">
+        <label>Target state / region</label>
+        <input type="text" id="f-target" placeholder="e.g., Oklahoma dryline">
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="field">
+        <label>Miles driven</label>
+        <input type="number" id="f-miles" min="0">
+      </div>
+      <div class="field">
+        <label>Storm mode</label>
+        <select id="f-mode">
+          <option>Discrete supercell</option>
+          <option>HP supercell</option>
+          <option>Multicell / cluster</option>
+          <option>QLCS / squall line</option>
+          <option>Pulse storms</option>
+          <option>Landspout day</option>
+          <option>Bust</option>
+        </select>
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="field">
+        <label>Tornadoes seen</label>
+        <input type="number" id="f-torn" min="0" value="0">
+      </div>
+      <div class="field">
+        <label>Highest EF rating</label>
+        <select id="f-ef">
+          <option value="">—</option>
+          <option>EF0</option><option>EF1</option><option>EF2</option><option>EF3</option><option>EF4</option><option>EF5</option>
+        </select>
+      </div>
+    </div>
+    <div class="field">
+      <label>Chase notes</label>
+      <textarea id="f-notes" placeholder="Best structure, close calls, positioning issues, what you learned…"></textarea>
+    </div>
+    <div class="actions" style="justify-content:flex-start;margin-bottom:0">
+      <button class="btn primary" onclick="save()">Save chase</button>
+      <button class="btn" onclick="hideForm()">Cancel</button>
+    </div>
+  </div>
+
+  <div id="chase-list"></div>
+
+  <div class="inline-ad">
+    <script type="text/javascript">atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};</script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
+  </div>
+
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 26px;margin-top:16px">
+    <h3 style="font-family:var(--serif);font-size:20px;margin-bottom:10px">Privacy</h3>
+    <p style="color:var(--text-secondary);font-size:14px;margin-bottom:8px">Your chase log lives only in this browser's localStorage. Nothing is sent to any server. Clearing site data will erase your log — use the CSV export button for backup.</p>
+    <p style="color:var(--text-secondary);font-size:14px;margin:0">Related: <a href="/storm-chaser-beginner-guide/">Storm chaser beginner guide</a> · <a href="/storm-chaser-game/">Text-adventure chase game</a> · <a href="/how-to-spot-a-supercell/">Supercell spotter field guide</a>.</p>
+  </div>
+
+</div>
+
+<footer class="footer">Part of <a href="/">Tornado Hub</a>. All data stored locally.</footer>
+
+<script>
+const KEY = 'chase-log-v1';
+let chases = JSON.parse(localStorage.getItem(KEY) || '[]');
+
+function save() {
+  const id = document.getElementById('edit-id').value;
+  const rec = {
+    id: id || Date.now(),
+    date: document.getElementById('f-date').value,
+    target: document.getElementById('f-target').value.trim(),
+    miles: parseInt(document.getElementById('f-miles').value) || 0,
+    mode: document.getElementById('f-mode').value,
+    tornadoes: parseInt(document.getElementById('f-torn').value) || 0,
+    ef: document.getElementById('f-ef').value,
+    notes: document.getElementById('f-notes').value.trim(),
+  };
+  if (!rec.date) { alert('Add a date'); return; }
+  if (id) {
+    const idx = chases.findIndex(c => c.id == id);
+    if (idx >= 0) chases[idx] = rec;
+  } else {
+    chases.push(rec);
+  }
+  localStorage.setItem(KEY, JSON.stringify(chases));
+  hideForm();
+  render();
+}
+
+function edit(id) {
+  const rec = chases.find(c => c.id == id);
+  if (!rec) return;
+  document.getElementById('edit-id').value = rec.id;
+  document.getElementById('f-date').value = rec.date;
+  document.getElementById('f-target').value = rec.target;
+  document.getElementById('f-miles').value = rec.miles;
+  document.getElementById('f-mode').value = rec.mode;
+  document.getElementById('f-torn').value = rec.tornadoes;
+  document.getElementById('f-ef').value = rec.ef;
+  document.getElementById('f-notes').value = rec.notes;
+  document.getElementById('form-title').textContent = 'Edit chase';
+  document.getElementById('form').classList.add('show');
+  document.getElementById('form').scrollIntoView({behavior:'smooth'});
+}
+
+function del(id) {
+  if (!confirm('Delete this chase?')) return;
+  chases = chases.filter(c => c.id != id);
+  localStorage.setItem(KEY, JSON.stringify(chases));
+  render();
+}
+
+function showForm() {
+  document.getElementById('edit-id').value = '';
+  document.getElementById('form-title').textContent = 'Add a chase';
+  document.getElementById('f-date').value = new Date().toISOString().slice(0,10);
+  document.getElementById('f-target').value = '';
+  document.getElementById('f-miles').value = '';
+  document.getElementById('f-torn').value = '0';
+  document.getElementById('f-ef').value = '';
+  document.getElementById('f-notes').value = '';
+  document.getElementById('form').classList.add('show');
+}
+function hideForm() { document.getElementById('form').classList.remove('show'); }
+
+function renderStats() {
+  const total = chases.length;
+  const totalMiles = chases.reduce((s,c) => s + c.miles, 0);
+  const totalTorn = chases.reduce((s,c) => s + c.tornadoes, 0);
+  const busts = chases.filter(c => c.mode === 'Bust').length;
+  document.getElementById('stats').innerHTML = `
+    <div class="stat"><div class="stat-val">${total}</div><div class="stat-lbl">Chases</div></div>
+    <div class="stat"><div class="stat-val">${totalMiles.toLocaleString()}</div><div class="stat-lbl">Miles</div></div>
+    <div class="stat"><div class="stat-val">${totalTorn}</div><div class="stat-lbl">Tornadoes seen</div></div>
+    <div class="stat"><div class="stat-val">${busts}</div><div class="stat-lbl">Busts</div></div>
+  `;
+}
+
+function render() {
+  renderStats();
+  const list = document.getElementById('chase-list');
+  if (!chases.length) {
+    list.innerHTML = '<div class="empty"><h3>No chases logged yet</h3><p>Click "+ Add chase" to log your first one.</p></div>';
+    return;
+  }
+  list.innerHTML = [...chases].sort((a,b)=>b.date.localeCompare(a.date)).map(c => `
+    <div class="chase-card">
+      <div class="chase-head">
+        <div><div class="chase-date">${c.date}</div><div class="chase-loc">${escapeHTML(c.target || 'Unnamed target')}</div></div>
+        ${c.ef ? `<div class="chase-rating">${escapeHTML(c.ef)}</div>` : ''}
+      </div>
+      <div class="chase-details">
+        <span>${escapeHTML(c.mode)}</span>
+        <span>${c.miles} mi</span>
+        <span>${c.tornadoes} tornado${c.tornadoes !== 1 ? 'es' : ''}</span>
+      </div>
+      ${c.notes ? `<div class="chase-notes">"${escapeHTML(c.notes)}"</div>` : ''}
+      <div class="chase-actions">
+        <button onclick="edit(${c.id})">Edit</button>
+        <button onclick="del(${c.id})">Delete</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function escapeHTML(s) {
+  return String(s || '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+}
+
+function exportCSV() {
+  if (!chases.length) { alert('No chases to export'); return; }
+  const headers = ['Date','Target','Miles','Storm mode','Tornadoes','EF','Notes'];
+  const rows = chases.map(c => [c.date, c.target, c.miles, c.mode, c.tornadoes, c.ef, c.notes]);
+  const csv = [headers, ...rows].map(r => r.map(cell => `"${String(cell||'').replace(/"/g,'""')}"`).join(',')).join('\n');
+  const blob = new Blob([csv], {type:'text/csv'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'chase-log.csv';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+function importCSV() { document.getElementById('import-file').click(); }
+function handleImport(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    const lines = e.target.result.split(/\r?\n/).filter(l => l.trim());
+    if (lines.length < 2) return;
+    const parsed = lines.slice(1).map((line, i) => {
+      const cells = line.match(/(?:^|,)("(?:[^"]|"")*"|[^,]*)/g).map(c => c.replace(/^,/, '').replace(/^"|"$/g,'').replace(/""/g,'"'));
+      return {
+        id: Date.now() + i,
+        date: cells[0] || '',
+        target: cells[1] || '',
+        miles: parseInt(cells[2]) || 0,
+        mode: cells[3] || 'Discrete supercell',
+        tornadoes: parseInt(cells[4]) || 0,
+        ef: cells[5] || '',
+        notes: cells[6] || '',
+      };
+    });
+    chases = chases.concat(parsed);
+    localStorage.setItem(KEY, JSON.stringify(chases));
+    render();
+    alert('Imported ' + parsed.length + ' chases');
+  };
+  reader.readAsText(file);
+}
+
+function resetAll() {
+  if (!confirm('Delete ALL chases? This cannot be undone.')) return;
+  chases = [];
+  localStorage.setItem(KEY, '[]');
+  render();
+}
+
+render();
+</script>
+</body>
+</html>
