@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Multi-Vortex Tornadoes — When One Tornado Contains Many</title>
+<meta name="description" content="Some tornadoes contain multiple smaller vortices rotating around a common center. Here is the physics, how to recognize them, and why they are responsible for extreme damage patterns." />
+<meta name="keywords" content="multi vortex tornado, suction vortex, multi-vortex, twin tornado, satellite tornado" />
+<meta property="og:title" content="Multi-Vortex Tornadoes — When One Tornado Contains Many" />
+<meta property="og:description" content="Some tornadoes contain multiple smaller vortices rotating around a common center. Here is the physics, how to recognize them, and why they are responsible for extreme damage patterns." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tornadosimulator.net/multi-vortex-tornadoes/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/multi-vortex-tornadoes/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌀</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --accent:#a02818; --link:#1e3a5f; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.75}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text)}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.breadcrumb{max-width:760px;margin:16px auto 0;padding:0 24px;font-size:13px;color:var(--text-muted)}
+article{max-width:760px;margin:24px auto 60px;padding:0 24px}
+.article-header{margin-bottom:36px;padding-bottom:22px;border-bottom:1px solid var(--border)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h1{font-family:var(--serif);font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.02em;margin-bottom:14px}
+h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.lede{font-size:19px;color:var(--text-secondary);max-width:640px;line-height:1.55}
+article h2{font-family:var(--serif);font-size:26px;margin:36px 0 14px;letter-spacing:-0.01em}
+article h3{font-family:var(--serif);font-size:20px;margin:24px 0 8px;color:var(--accent)}
+article p{margin-bottom:14px;font-size:17px}
+article ul,article ol{margin:8px 0 18px 22px}
+article li{margin-bottom:6px;font-size:16px}
+.callout{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:6px;padding:20px 24px;margin:26px 0}
+.callout p{margin:0;font-size:15px;color:var(--text-secondary)}
+.subtype-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin:20px 0 24px}
+.subtype{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
+.subtype-name{font-family:var(--serif);font-size:17px;font-weight:700;margin-bottom:4px;color:var(--accent)}
+.subtype-desc{font-size:13px;color:var(--text-secondary);line-height:1.55}
+.settings{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin:18px 0;overflow:hidden}
+.setting-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:14px 20px;border-bottom:1px solid var(--border);align-items:baseline}
+.setting-row:last-child{border-bottom:none}
+.setting-scene{font-family:var(--serif);font-weight:700;font-size:15px}
+.setting-desc{font-size:13px;color:var(--text-secondary)}
+.cta-box{background:linear-gradient(135deg,var(--accent) 0%,#7d1f13 100%);color:white;border-radius:14px;padding:26px 28px;margin:32px 0;display:flex;gap:18px;align-items:center;text-decoration:none;transition:transform 0.15s}
+.cta-box:hover{transform:translateY(-2px);text-decoration:none;color:white}
+.cta-emoji{font-size:40px;line-height:1}
+.cta-title{font-family:var(--serif);font-size:22px;font-weight:700;margin-bottom:4px}
+.cta-desc{opacity:0.9;font-size:14px}
+.cta-arrow{margin-left:auto;font-size:20px}
+.footer{text-align:center;padding:30px 24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px}
+.inline-ad{text-align:center;margin:28px auto;max-width:728px;overflow:hidden}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/tornado-namer/">Namer</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb"><a href="/">Home</a> · <a href="/articles/">Articles</a> · Multi-vortex</div>
+
+<article>
+  <header class="article-header">
+    <div class="eyebrow">Storm science</div>
+    <h1>Multi-vortex <em>tornadoes</em></h1>
+    <p class="lede">Some tornadoes look like several tornadoes braided together. That's because they are — smaller intense vortices dancing around a common center of rotation. Here's the science.</p>
+  </header>
+
+  <h2>The definition</h2>
+  <p>A multi-vortex tornado has 2-7 smaller vortices, called subvortices or suction vortices, rotating around a common center of rotation. The parent circulation looks like a tornado; the subvortices ride within it.</p>
+  <p>Subvortices carry the peak winds. When a subvortex sweeps across a house, damage can be EF5 within a swath just 30 feet wide, while adjacent homes have EF2 damage.</p>
+  <h2>How they form</h2>
+  <ol>
+    <li>A parent circulation (mesocyclone-derived) develops.</li>
+    <li>The parent updraft intensifies rapidly.</li>
+    <li>Rossby-like waves organize the peripheral high-wind zone into discrete cores.</li>
+    <li>Each core carries angular momentum and behaves like a mini-tornado.</li>
+    <li>Multiple cores rotate around the parent axis at 100-300 mph.</li>
+    <li>Cores form, dissipate, and reform on scales of 5-30 seconds.</li>
+  </ol>
+  <h2>Famous multi-vortex events</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">1974 Xenia, Ohio (F5)</div><div class="subtype-desc">Some of the earliest scientific observation of subvortex damage.</div></div>
+    <div class="subtype"><div class="subtype-name">1999 Bridge Creek-Moore F5</div><div class="subtype-desc">DOW measured 301 mph in a subvortex.</div></div>
+    <div class="subtype"><div class="subtype-name">2007 Greensburg, KS EF5</div><div class="subtype-desc">Wide wedge with visible subvortex structure.</div></div>
+    <div class="subtype"><div class="subtype-name">2011 El Reno EF3 (May 24)</div><div class="subtype-desc">Dramatic multi-vortex phase filmed by many chasers.</div></div>
+    <div class="subtype"><div class="subtype-name">2011 Joplin EF5</div><div class="subtype-desc">Interior of the wedge showed multiple subvortex swaths.</div></div>
+    <div class="subtype"><div class="subtype-name">2013 El Reno EF3</div><div class="subtype-desc">Chased by TWISTEX; the multiple vortex phase killed Tim Samaras and team.</div></div>
+    <div class="subtype"><div class="subtype-name">2013 Moore EF5</div><div class="subtype-desc">Damage swath variability suggests strong subvortex activity.</div></div>
+    <div class="subtype"><div class="subtype-name">2020 Nashville EF3</div><div class="subtype-desc">HP embedded multi-vortex.</div></div>
+    <div class="subtype"><div class="subtype-name">2023 Rolling Fork EF4</div><div class="subtype-desc">Multi-vortex phase caught by chasers.</div></div>
+  </div>
+  <h2>Damage patterns</h2>
+  <ul>
+    <li>Cycloidal (looping) marks in fields — signature of subvortex sweep.</li>
+    <li>Ripped houses next to intact homes in the same subdivision.</li>
+    <li>Vehicles thrown 500+ feet in specific zones.</li>
+    <li>Tree stripping vs adjacent standing trees.</li>
+    <li>Damage indicators inconsistent within the same rating zone — a puzzle for EF-scale surveys.</li>
+  </ul>
+  <h2>The physics: Fujita's "Suction Vortex" concept</h2>
+  <p>Ted Fujita proposed the suction vortex concept in the 1970s. He noticed that damage in the 1974 Xenia tornado had loops carved into fields.</p>
+  <p>He hypothesized that concentrated small-scale vortices swept along the ground within the larger parent circulation.</p>
+  <p>Later mobile radar and photography confirmed the hypothesis.</p>
+  <h2>The chaser view</h2>
+  <ul>
+    <li>Multi-vortex tornadoes look ropy, braided, "dancing."</li>
+    <li>Individual subvortices are dust plumes on the ground.</li>
+    <li>Cores can appear/disappear on video every few seconds.</li>
+    <li>Photos from directly downstream (low visibility angle) look normal — beauty shot from the side.</li>
+    <li>Multi-vortex phases can last 30 seconds to 5 minutes.</li>
+    <li>A tornado can enter and exit multi-vortex phases multiple times in its life.</li>
+  </ul>
+  <h2>Satellite tornadoes vs subvortices</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">Subvortex</div><div class="subtype-desc">Inside the parent circulation. Same rotation direction. Feeds parent.</div></div>
+    <div class="subtype"><div class="subtype-name">Satellite tornado</div><div class="subtype-desc">Independent tornado outside the main circulation. Same mesocyclone but different vortex.</div></div>
+  </div>
+  <p>Satellite tornadoes are much rarer than subvortices. Famous cases: 2011 Tuscaloosa-Birmingham (multiple satellites documented).</p>
+  <h2>Twin tornadoes</h2>
+  <p>Twin tornadoes are two independent tornadoes from the same supercell. Well-known cases:</p>
+  <ul>
+    <li>2014 Pilger NE (June 16) — twin EF4s side by side.</li>
+    <li>1965 Palm Sunday outbreak — multiple twin tornadoes.</li>
+    <li>2004 Roanoke, IL — filmed twin tornado.</li>
+    <li>Twin tornadoes have historically been called "sisters" or "dyads" by observers.</li>
+  </ul>
+  <h2>Why multi-vortex tornadoes matter for safety</h2>
+  <ul>
+    <li>A tornado rated EF3 might contain EF5 subvortex swaths.</li>
+    <li>Being in the "outer" zone of a wedge does NOT guarantee lower damage.</li>
+    <li>Storm shelters even in the center of a wedge tornado footprint save lives.</li>
+    <li>Path variability makes damage surveys and warnings both harder.</li>
+    <li>Chasers should never assume distance from parent tornado equals safety.</li>
+  </ul>
+
+  <h2>Learn more</h2>
+  <ul>
+    <li><a href="/what-is-a-supercell/">What is a supercell?</a></li>
+    <li><a href="/ef-scale-explorer/">EF scale explorer</a></li>
+    <li><a href="/fujita-vs-ef-scale/">Fujita vs EF scale</a></li>
+    <li><a href="/tornado-world-records/">Tornado world records</a></li>
+  </ul>
+
+</article>
+
+<footer class="footer">
+  Part of <a href="/">Tornado Hub</a>. Educational content.
+</footer>
+
+<script src="/assets/ads-config.js" defer></script>
+<script src="/assets/ads.js" defer></script>
+<script src="/assets/house-ads.js" defer></script>
+</body>
+</html>
