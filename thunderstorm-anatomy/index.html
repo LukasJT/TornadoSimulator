@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thunderstorm Anatomy — Every Part of a Storm Explained</title>
+<meta name="description" content="A complete anatomy of a thunderstorm. Updraft, downdraft, anvil, wall cloud, rear-flank downdraft, forward-flank downdraft, gust front, and every other part of a supercell." />
+<meta name="keywords" content="thunderstorm anatomy, parts of a thunderstorm, supercell parts, storm structure explained" />
+<meta property="og:title" content="Thunderstorm Anatomy — Every Part of a Storm Explained" />
+<meta property="og:description" content="A complete anatomy of a thunderstorm. Updraft, downdraft, anvil, wall cloud, rear-flank downdraft, forward-flank downdraft, gust front, and every other part of a supercell." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tornadosimulator.net/thunderstorm-anatomy/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/thunderstorm-anatomy/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛈️</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --accent:#a02818; --link:#1e3a5f; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.75}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text)}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.breadcrumb{max-width:760px;margin:16px auto 0;padding:0 24px;font-size:13px;color:var(--text-muted)}
+article{max-width:760px;margin:24px auto 60px;padding:0 24px}
+.article-header{margin-bottom:36px;padding-bottom:22px;border-bottom:1px solid var(--border)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h1{font-family:var(--serif);font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.02em;margin-bottom:14px}
+h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.lede{font-size:19px;color:var(--text-secondary);max-width:640px;line-height:1.55}
+article h2{font-family:var(--serif);font-size:26px;margin:36px 0 14px;letter-spacing:-0.01em}
+article h3{font-family:var(--serif);font-size:20px;margin:24px 0 8px;color:var(--accent)}
+article p{margin-bottom:14px;font-size:17px}
+article ul,article ol{margin:8px 0 18px 22px}
+article li{margin-bottom:6px;font-size:16px}
+.callout{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:6px;padding:20px 24px;margin:26px 0}
+.callout p{margin:0;font-size:15px;color:var(--text-secondary)}
+.subtype-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin:20px 0 24px}
+.subtype{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
+.subtype-name{font-family:var(--serif);font-size:17px;font-weight:700;margin-bottom:4px;color:var(--accent)}
+.subtype-desc{font-size:13px;color:var(--text-secondary);line-height:1.55}
+.settings{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin:18px 0;overflow:hidden}
+.setting-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:14px 20px;border-bottom:1px solid var(--border);align-items:baseline}
+.setting-row:last-child{border-bottom:none}
+.setting-scene{font-family:var(--serif);font-weight:700;font-size:15px}
+.setting-desc{font-size:13px;color:var(--text-secondary)}
+.cta-box{background:linear-gradient(135deg,var(--accent) 0%,#7d1f13 100%);color:white;border-radius:14px;padding:26px 28px;margin:32px 0;display:flex;gap:18px;align-items:center;text-decoration:none;transition:transform 0.15s}
+.cta-box:hover{transform:translateY(-2px);text-decoration:none;color:white}
+.cta-emoji{font-size:40px;line-height:1}
+.cta-title{font-family:var(--serif);font-size:22px;font-weight:700;margin-bottom:4px}
+.cta-desc{opacity:0.9;font-size:14px}
+.cta-arrow{margin-left:auto;font-size:20px}
+.footer{text-align:center;padding:30px 24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px}
+.inline-ad{text-align:center;margin:28px auto;max-width:728px;overflow:hidden}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/tornado-namer/">Namer</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb"><a href="/">Home</a> · <a href="/articles/">Articles</a> · Thunderstorm</div>
+
+<article>
+  <header class="article-header">
+    <div class="eyebrow">Storm science</div>
+    <h1>Thunderstorm <em>anatomy</em></h1>
+    <p class="lede">A thunderstorm is a machine of moving air. Here are every part, what each does, and how to spot them from the ground.</p>
+  </header>
+
+  <h2>The updraft</h2>
+  <p>The engine of every thunderstorm. Warm humid air rises rapidly, cooling as it goes. When it hits the dew point, water condenses into cloud droplets, releasing heat — feeding more rise.</p>
+  <ul>
+    <li>Speed: 40-180 mph in strong storms.</li>
+    <li>Diameter: 1-10 km typically.</li>
+    <li>Extends from cloud base to anvil top.</li>
+    <li>In supercells, the updraft rotates — this is what makes it a supercell.</li>
+    <li>Visible as a growing tower punching through weaker clouds.</li>
+  </ul>
+  <h2>The downdraft</h2>
+  <p>The engine of storm collapse. Cool, rain-cooled air descends.</p>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">Forward-flank downdraft (FFD)</div><div class="subtype-desc">Under the main rain area. Fed by evaporating raindrops. Not typically dangerous for storm-scale rotation.</div></div>
+    <div class="subtype"><div class="subtype-name">Rear-flank downdraft (RFD)</div><div class="subtype-desc">Behind the updraft. Fed by evaporating precipitation. Crucial for tornadogenesis in supercells. Cutting off circulation feeds the tornado.</div></div>
+    <div class="subtype"><div class="subtype-name">Microburst</div><div class="subtype-desc">Concentrated downdraft producing severe surface winds.</div></div>
+    <div class="subtype"><div class="subtype-name">Wet microburst</div><div class="subtype-desc">Downdraft with heavy rain reaching ground.</div></div>
+    <div class="subtype"><div class="subtype-name">Dry microburst</div><div class="subtype-desc">Downdraft with rain evaporating before ground. Very sudden wind onset.</div></div>
+  </div>
+  <h2>The anvil</h2>
+  <p>The flat spreading top of a mature thunderstorm.</p>
+  <ul>
+    <li>Ice crystals blown downwind by upper-level winds.</li>
+    <li>Marks the tropopause — updraft can't rise higher.</li>
+    <li>Overshooting top: dome briefly above anvil, marks strongest updraft.</li>
+    <li>Anvil crawler lightning discharges within.</li>
+    <li>Mammatus pouches often hang from the underside.</li>
+  </ul>
+  <h2>The wall cloud</h2>
+  <p>A lowered rotating cloud below the storm base — the visible mesocyclone.</p>
+  <ul>
+    <li>Forms in the updraft region.</li>
+    <li>Rotation visible from the ground within 5-10 minutes.</li>
+    <li>Not every wall cloud produces a tornado.</li>
+    <li>Best tornado predictor is a persistent, rotating, LOWERING wall cloud.</li>
+    <li>Tail cloud may extend from wall cloud toward rain area.</li>
+    <li>Beaver tail extends into inflow region.</li>
+  </ul>
+  <h2>The RFD cut</h2>
+  <p>The Rear-Flank Downdraft is invisible but crucial.</p>
+  <ol>
+    <li>Descending air behind the updraft wraps around the mesocyclone.</li>
+    <li>It cuts through the updraft base, forming a "clear slot."</li>
+    <li>Concentrating rotation into a tighter column.</li>
+    <li>This is when a tornado descends.</li>
+    <li>Chasers look for the clear slot as the "tornado imminent" signal.</li>
+  </ol>
+  <h2>The inflow region</h2>
+  <p>The area feeding the updraft.</p>
+  <ul>
+    <li>Warm humid air flows toward the storm at 15-30 mph.</li>
+    <li>Extends 5-30 miles ahead of the visible storm.</li>
+    <li>Standing in the inflow: warm, wet, calm.</li>
+    <li>This is where chasers position for storm structure shots.</li>
+    <li>Some inflow tails can be VERY steady and photogenic.</li>
+  </ul>
+  <h2>The gust front</h2>
+  <p>The leading edge of storm outflow at the surface.</p>
+  <ul>
+    <li>Cool air surging out from the downdraft base.</li>
+    <li>Marks a sudden temperature drop, wind shift, and gustiness.</li>
+    <li>Often visible as a shelf cloud or arcus cloud.</li>
+    <li>Not the tornado — but often mistaken for one.</li>
+    <li>Can produce straight-line damage.</li>
+    <li>Outflow-dominated storms are usually past their peak.</li>
+  </ul>
+  <h2>The hail shaft</h2>
+  <ul>
+    <li>Column of hail from cloud to ground.</li>
+    <li>Distinct from rain — falls faster, sounds different.</li>
+    <li>Can be white to green tinted from ice scatter.</li>
+    <li>Green sky = high hail content aloft.</li>
+    <li>The hail zone is usually near the updraft-downdraft interface.</li>
+  </ul>
+  <h2>The overshooting top</h2>
+  <p>A brief dome above the flat anvil.</p>
+  <ul>
+    <li>Marks the strongest updraft "punching" briefly above the tropopause.</li>
+    <li>Visible on satellite as a bright spot.</li>
+    <li>Indicates most severe activity.</li>
+    <li>Persistent overshooting tops = long-lived supercell.</li>
+    <li>Damage risk peaks under and near an overshooting top.</li>
+  </ul>
+  <h2>The mammatus</h2>
+  <p>Pouches hanging from the underside of the anvil.</p>
+  <ul>
+    <li>Forms from sinking air within the anvil.</li>
+    <li>Ice crystals sublimating create localized sink.</li>
+    <li>Follows severe storms — not before.</li>
+    <li>Beautiful photograph subject.</li>
+    <li>Do not indicate danger themselves.</li>
+  </ul>
+
+  <h2>Learn more</h2>
+  <ul>
+    <li><a href="/what-is-a-supercell/">What is a supercell?</a></li>
+    <li><a href="/how-tornadoes-form/">How tornadoes form</a></li>
+    <li><a href="/cloud-types-illustrated-guide/">Cloud types illustrated</a></li>
+    <li><a href="/reading-a-skew-t-diagram/">Reading a skew-T</a></li>
+  </ul>
+
+</article>
+
+<footer class="footer">
+  Part of <a href="/">Tornado Hub</a>. Educational content.
+</footer>
+
+<script src="/assets/ads-config.js" defer></script>
+<script src="/assets/ads.js" defer></script>
+<script src="/assets/house-ads.js" defer></script>
+</body>
+</html>

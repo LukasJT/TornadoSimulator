@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Urban Heat Islands — Why Cities Are 5-15°F Hotter</title>
+<meta name="description" content="Cities are dramatically hotter than surrounding countryside — sometimes 15°F warmer at night. Here is the physics, the health impact, and what cities can do about it." />
+<meta name="keywords" content="urban heat island, city heat, urban cooling, heat island effect, cool roofs" />
+<meta property="og:title" content="Urban Heat Islands — Why Cities Are 5-15°F Hotter" />
+<meta property="og:description" content="Cities are dramatically hotter than surrounding countryside — sometimes 15°F warmer at night. Here is the physics, the health impact, and what cities can do about it." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tornadosimulator.net/urban-heat-island/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/urban-heat-island/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏙️</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --accent:#a02818; --link:#1e3a5f; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.75}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text)}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.breadcrumb{max-width:760px;margin:16px auto 0;padding:0 24px;font-size:13px;color:var(--text-muted)}
+article{max-width:760px;margin:24px auto 60px;padding:0 24px}
+.article-header{margin-bottom:36px;padding-bottom:22px;border-bottom:1px solid var(--border)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h1{font-family:var(--serif);font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.02em;margin-bottom:14px}
+h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.lede{font-size:19px;color:var(--text-secondary);max-width:640px;line-height:1.55}
+article h2{font-family:var(--serif);font-size:26px;margin:36px 0 14px;letter-spacing:-0.01em}
+article h3{font-family:var(--serif);font-size:20px;margin:24px 0 8px;color:var(--accent)}
+article p{margin-bottom:14px;font-size:17px}
+article ul,article ol{margin:8px 0 18px 22px}
+article li{margin-bottom:6px;font-size:16px}
+.callout{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:6px;padding:20px 24px;margin:26px 0}
+.callout p{margin:0;font-size:15px;color:var(--text-secondary)}
+.subtype-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin:20px 0 24px}
+.subtype{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
+.subtype-name{font-family:var(--serif);font-size:17px;font-weight:700;margin-bottom:4px;color:var(--accent)}
+.subtype-desc{font-size:13px;color:var(--text-secondary);line-height:1.55}
+.settings{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin:18px 0;overflow:hidden}
+.setting-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:14px 20px;border-bottom:1px solid var(--border);align-items:baseline}
+.setting-row:last-child{border-bottom:none}
+.setting-scene{font-family:var(--serif);font-weight:700;font-size:15px}
+.setting-desc{font-size:13px;color:var(--text-secondary)}
+.cta-box{background:linear-gradient(135deg,var(--accent) 0%,#7d1f13 100%);color:white;border-radius:14px;padding:26px 28px;margin:32px 0;display:flex;gap:18px;align-items:center;text-decoration:none;transition:transform 0.15s}
+.cta-box:hover{transform:translateY(-2px);text-decoration:none;color:white}
+.cta-emoji{font-size:40px;line-height:1}
+.cta-title{font-family:var(--serif);font-size:22px;font-weight:700;margin-bottom:4px}
+.cta-desc{opacity:0.9;font-size:14px}
+.cta-arrow{margin-left:auto;font-size:20px}
+.footer{text-align:center;padding:30px 24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px}
+.inline-ad{text-align:center;margin:28px auto;max-width:728px;overflow:hidden}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/tornado-namer/">Namer</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb"><a href="/">Home</a> · <a href="/articles/">Articles</a> · Urban heat</div>
+
+<article>
+  <header class="article-header">
+    <div class="eyebrow">Climate science</div>
+    <h1>Urban heat <em>islands</em></h1>
+    <p class="lede">A city can be 15°F warmer than the countryside a few miles away — mostly at night. This kills more Americans than tornadoes annually. Here is the science.</p>
+  </header>
+
+  <h2>The mechanism</h2>
+  <p>Cities are warmer than rural surroundings because urban surfaces (concrete, asphalt, roofs) absorb solar radiation during the day and release it as heat at night. Rural surfaces (soil, vegetation, water) release moisture that cools by evaporation.</p>
+  <p>The nighttime difference is largest — sometimes 15°F. Daytime differences are smaller (3-5°F). The effect intensifies with clear skies and calm winds.</p>
+  <h2>The four factors</h2>
+  <ol>
+    <li><strong>Impervious surfaces</strong> — high thermal mass, no evaporation.</li>
+    <li><strong>Lack of vegetation</strong> — no evapotranspiration cooling.</li>
+    <li><strong>Anthropogenic heat</strong> — cars, air conditioners, industrial exhaust add BTUs.</li>
+    <li><strong>Urban canyon effect</strong> — buildings trap heat and radiation.</li>
+  </ol>
+  <h2>The measured intensity</h2>
+  <ul>
+    <li>New York City: 4°F warmer than surrounding NY average.</li>
+    <li>Phoenix: 12°F warmer at night than surrounding desert.</li>
+    <li>Beijing: 8°F warmer than surrounding rural China.</li>
+    <li>Atlanta: 8°F warmer than northern GA rural.</li>
+    <li>Chicago: 6°F warmer than surrounding IL.</li>
+    <li>London: 10°F warmer overnight.</li>
+  </ul>
+  <h2>The health impact</h2>
+  <ul>
+    <li>Deaths during heat waves concentrate in urban cores.</li>
+    <li>The 1995 Chicago heat wave killed 739 — mostly urban.</li>
+    <li>2003 European heat wave: urban centers had 3x rural death rates.</li>
+    <li>2021 Pacific NW heat dome: Portland, Seattle urban cores hit 116°F.</li>
+    <li>Low-income neighborhoods disproportionately hot — historically underinvested in trees and green space.</li>
+    <li>Redlining maps from the 1930s predict heat vulnerability today.</li>
+  </ul>
+  <h2>The cool-roof revolution</h2>
+  <ul>
+    <li>Painted-white roofs reflect 60-80% of solar radiation.</li>
+    <li>Standard asphalt roofs absorb 90%+.</li>
+    <li>A cool roof stays 50-60°F cooler than a standard roof on a hot day.</li>
+    <li>City-wide: cool roofs could reduce urban temperature 3°F.</li>
+    <li>NYC white-roof program has painted 10M+ sq ft.</li>
+    <li>California Title 24 requires cool roofs on some new construction.</li>
+  </ul>
+  <h2>Green solutions</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">Tree canopy</div><div class="subtype-desc">Every 10% increase in canopy = 1°F local cooling. Also improves air quality.</div></div>
+    <div class="subtype"><div class="subtype-name">Green roofs</div><div class="subtype-desc">Vegetation on rooftops. Cools + reduces stormwater. High upfront cost.</div></div>
+    <div class="subtype"><div class="subtype-name">Green walls</div><div class="subtype-desc">Vertical vegetation. Better than nothing for hot alleys.</div></div>
+    <div class="subtype"><div class="subtype-name">Permeable pavement</div><div class="subtype-desc">Allows water infiltration + evaporation cooling.</div></div>
+    <div class="subtype"><div class="subtype-name">Reflective pavement</div><div class="subtype-desc">Light-colored pavement reduces road heat.</div></div>
+    <div class="subtype"><div class="subtype-name">Urban parks</div><div class="subtype-desc">Strategically placed cools surrounding blocks.</div></div>
+    <div class="subtype"><div class="subtype-name">Water features</div><div class="subtype-desc">Fountains, splash pads, misters.</div></div>
+    <div class="subtype"><div class="subtype-name">Streetscape shade</div><div class="subtype-desc">Awnings, pergolas, colonnades.</div></div>
+  </div>
+  <h2>Air conditioning paradox</h2>
+  <p>AC cools individual buildings — while heating the neighborhood.</p>
+  <ul>
+    <li>Waste heat from AC compressors adds 1-2°F to urban air.</li>
+    <li>On peak days, AC-driven electricity demand adds waste heat further.</li>
+    <li>Countries with less AC (Europe) often have less summer temperature but more heat mortality.</li>
+    <li>The equity issue: not everyone has AC. Those without die during heat waves.</li>
+    <li>Public cooling centers reduce mortality in low-AC neighborhoods.</li>
+  </ul>
+  <h2>The nighttime problem</h2>
+  <p>Urban heat islands are worst at NIGHT — 8 to 15°F.</p>
+  <ul>
+    <li>Bodies recover from heat overnight.</li>
+    <li>When nighttime lows stay above 75°F, mortality rises sharply.</li>
+    <li>Elderly in un-airconditioned apartments most vulnerable.</li>
+    <li>80°F+ nighttime lows became common in Phoenix, Vegas, Miami in 2020s.</li>
+    <li>Heat dome events push nighttime lows above 85°F in some cities.</li>
+  </ul>
+  <h2>Cities leading action</h2>
+  <ul>
+    <li><strong>NYC</strong> — Cool Roofs NYC, million tree program, urban forestry plans.</li>
+    <li><strong>Los Angeles</strong> — cool pavement pilot programs, urban tree strategy.</li>
+    <li><strong>Phoenix</strong> — Office of Heat Response and Mitigation. First US city to have such.</li>
+    <li><strong>Miami</strong> — Chief Heat Officer position.</li>
+    <li><strong>Melbourne, Australia</strong> — Urban Forest Strategy.</li>
+    <li><strong>Singapore</strong> — Cooling Singapore R&D program.</li>
+  </ul>
+  <h2>At the individual level</h2>
+  <ul>
+    <li>Paint your roof white (light color, reflective).</li>
+    <li>Plant deciduous trees for summer shade + winter sun.</li>
+    <li>Attic ventilation and insulation reduce cooling load.</li>
+    <li>Cross-ventilation reduces AC dependency.</li>
+    <li>Shading south and west windows.</li>
+    <li>Cool showers before bed.</li>
+    <li>Check on elderly neighbors during heat waves.</li>
+  </ul>
+
+  <h2>Learn more</h2>
+  <ul>
+    <li><a href="/heat-wave-safety/">Heat wave safety</a></li>
+    <li><a href="/climate-change-and-tornadoes/">Climate change and severe weather</a></li>
+    <li><a href="/wind-chill-vs-heat-index/">Wind chill vs heat index</a></li>
+    <li><a href="/atmospheric-rivers-explained/">Atmospheric rivers</a></li>
+  </ul>
+
+</article>
+
+<footer class="footer">
+  Part of <a href="/">Tornado Hub</a>. Educational content.
+</footer>
+
+<script src="/assets/ads-config.js" defer></script>
+<script src="/assets/ads.js" defer></script>
+<script src="/assets/house-ads.js" defer></script>
+</body>
+</html>
