@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Landspouts — The Non-Supercell Tornado</title>
+<meta name="description" content="Landspouts are tornadoes that form without supercells — from developing thunderstorms interacting with pre-existing surface rotation. Here is how they differ from supercell tornadoes and why they matter." />
+<meta name="keywords" content="landspout, non-supercell tornado, landspout vs tornado, weak tornado, landspout formation" />
+<meta property="og:title" content="Landspouts — The Non-Supercell Tornado" />
+<meta property="og:description" content="Landspouts are tornadoes that form without supercells — from developing thunderstorms interacting with pre-existing surface rotation. Here is how they differ from supercell tornadoes and why they matter." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tornadosimulator.net/landspouts-vs-tornadoes/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/landspouts-vs-tornadoes/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌪️</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --accent:#a02818; --link:#1e3a5f; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.75}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text)}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.breadcrumb{max-width:760px;margin:16px auto 0;padding:0 24px;font-size:13px;color:var(--text-muted)}
+article{max-width:760px;margin:24px auto 60px;padding:0 24px}
+.article-header{margin-bottom:36px;padding-bottom:22px;border-bottom:1px solid var(--border)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h1{font-family:var(--serif);font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.02em;margin-bottom:14px}
+h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.lede{font-size:19px;color:var(--text-secondary);max-width:640px;line-height:1.55}
+article h2{font-family:var(--serif);font-size:26px;margin:36px 0 14px;letter-spacing:-0.01em}
+article h3{font-family:var(--serif);font-size:20px;margin:24px 0 8px;color:var(--accent)}
+article p{margin-bottom:14px;font-size:17px}
+article ul,article ol{margin:8px 0 18px 22px}
+article li{margin-bottom:6px;font-size:16px}
+.callout{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:6px;padding:20px 24px;margin:26px 0}
+.callout p{margin:0;font-size:15px;color:var(--text-secondary)}
+.subtype-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin:20px 0 24px}
+.subtype{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
+.subtype-name{font-family:var(--serif);font-size:17px;font-weight:700;margin-bottom:4px;color:var(--accent)}
+.subtype-desc{font-size:13px;color:var(--text-secondary);line-height:1.55}
+.settings{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin:18px 0;overflow:hidden}
+.setting-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:14px 20px;border-bottom:1px solid var(--border);align-items:baseline}
+.setting-row:last-child{border-bottom:none}
+.setting-scene{font-family:var(--serif);font-weight:700;font-size:15px}
+.setting-desc{font-size:13px;color:var(--text-secondary)}
+.cta-box{background:linear-gradient(135deg,var(--accent) 0%,#7d1f13 100%);color:white;border-radius:14px;padding:26px 28px;margin:32px 0;display:flex;gap:18px;align-items:center;text-decoration:none;transition:transform 0.15s}
+.cta-box:hover{transform:translateY(-2px);text-decoration:none;color:white}
+.cta-emoji{font-size:40px;line-height:1}
+.cta-title{font-family:var(--serif);font-size:22px;font-weight:700;margin-bottom:4px}
+.cta-desc{opacity:0.9;font-size:14px}
+.cta-arrow{margin-left:auto;font-size:20px}
+.footer{text-align:center;padding:30px 24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px}
+.inline-ad{text-align:center;margin:28px auto;max-width:728px;overflow:hidden}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/tornado-namer/">Namer</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb"><a href="/">Home</a> · <a href="/articles/">Articles</a> · Landspouts</div>
+
+<article>
+  <header class="article-header">
+    <div class="eyebrow">Storm science</div>
+    <h1>Landspouts <em>vs tornadoes</em></h1>
+    <p class="lede">Some tornadoes come from supercells. Others come from ordinary thunderstorms that happen to be over a spinning boundary. Meet the landspout.</p>
+  </header>
+
+  <h2>The definition</h2>
+  <p>A landspout is a tornado formed by a mechanism different from the classic supercell mesocyclone. Instead, a developing cumulus congestus or immature thunderstorm passes over pre-existing near-surface rotation, then stretches that rotation upward as the storm's updraft strengthens.</p>
+  <p>The name is a coinage of Howard Bluestein (1985), by analogy with waterspouts (which form the same way over water).</p>
+  <h2>How landspouts form</h2>
+  <ol>
+    <li>A boundary — cold front, sea breeze, outflow — creates near-surface shear and rotation.</li>
+    <li>A developing thunderstorm cell moves over the boundary.</li>
+    <li>The storm's updraft stretches the boundary's rotation upward.</li>
+    <li>A visible narrow funnel connects storm base to ground.</li>
+    <li>Tornado is on the ground for typically 1-10 minutes.</li>
+  </ol>
+  <h2>Key differences from supercell tornadoes</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">Parent storm</div><div class="subtype-desc">Landspout: ordinary cumulus / small thunderstorm. Supercell: rotating supercell.</div></div>
+    <div class="subtype"><div class="subtype-name">Formation</div><div class="subtype-desc">Landspout: bottom-up (surface rotation stretched up). Supercell: top-down (mesocyclone descends).</div></div>
+    <div class="subtype"><div class="subtype-name">Duration</div><div class="subtype-desc">Landspout: usually under 10 min. Supercell: 10 min to hours.</div></div>
+    <div class="subtype"><div class="subtype-name">Intensity</div><div class="subtype-desc">Landspout: EF0-EF1 usually, occasionally EF2. Supercell: up to EF5.</div></div>
+    <div class="subtype"><div class="subtype-name">Appearance</div><div class="subtype-desc">Landspout: narrow tube. Supercell: often wedge, cone, or rope.</div></div>
+    <div class="subtype"><div class="subtype-name">Radar signature</div><div class="subtype-desc">Landspout: often invisible on radar. Supercell: hook echo + mesocyclone.</div></div>
+    <div class="subtype"><div class="subtype-name">Location</div><div class="subtype-desc">Landspout: often front range Colorado, Florida sea breeze. Supercell: Great Plains anywhere.</div></div>
+    <div class="subtype"><div class="subtype-name">Warning</div><div class="subtype-desc">Landspout: hard to warn ahead. Supercell: usually warnable 10+ min ahead.</div></div>
+  </div>
+  <h2>Where they're common</h2>
+  <ul>
+    <li><strong>Front Range Colorado</strong> — the world capital of landspouts. Mountain-plain circulation + weak storms.</li>
+    <li><strong>Florida sea breezes</strong> — daily sea breeze produces landspouts every summer.</li>
+    <li><strong>Great Plains dryline</strong> — dryline landspouts occur ahead of main convection.</li>
+    <li><strong>High Plains (SW NE, W KS)</strong> — high LCL heights favor landspouts.</li>
+    <li><strong>Central California</strong> — Central Valley boundary tornadoes.</li>
+    <li><strong>Anywhere a boundary meets a growing cell</strong> — the mechanism is universal.</li>
+  </ul>
+  <h2>The "Denver Cyclone" case</h2>
+  <p>The Denver Cyclone is a semi-persistent low-level circulation that forms near Denver in summer. When thunderstorms grow over it, landspouts frequently spawn. This is documented in the WOPR (Weather Observations for Prediction Research) network.</p>
+  <p>Chasers targeting Denver in July are essentially targeting landspouts.</p>
+  <h2>Why they still matter</h2>
+  <ul>
+    <li>They damage property, injure people, kill livestock.</li>
+    <li>They often go unwarned.</li>
+    <li>They can persist over airports (aviation hazard).</li>
+    <li>They can rope out and reform.</li>
+    <li>They provide research value on non-supercell tornadogenesis.</li>
+    <li>They're counted in NWS tornado statistics — inflating counts in some states.</li>
+  </ul>
+  <h2>Cousins of the landspout</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">Waterspout</div><div class="subtype-desc">Same mechanism, over water.</div></div>
+    <div class="subtype"><div class="subtype-name">Gustnado</div><div class="subtype-desc">Non-tornado spin-up from gust front. Not connected to cloud base. Often mislabeled a landspout.</div></div>
+    <div class="subtype"><div class="subtype-name">Dust devil</div><div class="subtype-desc">Solar-heating vortex on land. No cloud connection.</div></div>
+    <div class="subtype"><div class="subtype-name">Steam devil</div><div class="subtype-desc">Cold air over warm water. Rare, over lakes in fall.</div></div>
+    <div class="subtype"><div class="subtype-name">Snow devil</div><div class="subtype-desc">Rare cold-weather analog.</div></div>
+  </div>
+  <h2>Chasing landspouts</h2>
+  <ul>
+    <li>Colorado in June-July.</li>
+    <li>Watch dry cumulus growing rapidly.</li>
+    <li>Position yourself where a boundary is visible on visible satellite.</li>
+    <li>The tornado appears without warning — camera ready always.</li>
+    <li>Beauty shots are common because dust makes them photogenic.</li>
+  </ul>
+
+  <h2>Learn more</h2>
+  <ul>
+    <li><a href="/waterspouts-explained/">Waterspouts explained</a></li>
+    <li><a href="/dust-devil-vs-tornado/">Dust devil vs tornado</a></li>
+    <li><a href="/what-is-a-supercell/">What is a supercell?</a></li>
+    <li><a href="/how-tornadoes-form/">How tornadoes form</a></li>
+  </ul>
+
+</article>
+
+<footer class="footer">
+  Part of <a href="/">Tornado Hub</a>. Educational content.
+</footer>
+
+<script src="/assets/ads-config.js" defer></script>
+<script src="/assets/ads.js" defer></script>
+<script src="/assets/house-ads.js" defer></script>
+</body>
+</html>

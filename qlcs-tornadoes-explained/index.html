@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>QLCS Tornadoes — The Squall-Line Spin-Ups</title>
+<meta name="description" content="QLCS (quasi-linear convective system) tornadoes form in squall lines and bow echoes — not classic supercells. They give little warning, form fast, and are disproportionately deadly. Here is the science." />
+<meta name="keywords" content="QLCS tornado, squall line tornado, quasi linear convective system, bow echo tornado, embedded circulation" />
+<meta property="og:title" content="QLCS Tornadoes — The Squall-Line Spin-Ups" />
+<meta property="og:description" content="QLCS (quasi-linear convective system) tornadoes form in squall lines and bow echoes — not classic supercells. They give little warning, form fast, and are disproportionately deadly. Here is the science." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tornadosimulator.net/qlcs-tornadoes-explained/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/qlcs-tornadoes-explained/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📏</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --accent:#a02818; --link:#1e3a5f; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.75}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text)}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.breadcrumb{max-width:760px;margin:16px auto 0;padding:0 24px;font-size:13px;color:var(--text-muted)}
+article{max-width:760px;margin:24px auto 60px;padding:0 24px}
+.article-header{margin-bottom:36px;padding-bottom:22px;border-bottom:1px solid var(--border)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h1{font-family:var(--serif);font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.02em;margin-bottom:14px}
+h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.lede{font-size:19px;color:var(--text-secondary);max-width:640px;line-height:1.55}
+article h2{font-family:var(--serif);font-size:26px;margin:36px 0 14px;letter-spacing:-0.01em}
+article h3{font-family:var(--serif);font-size:20px;margin:24px 0 8px;color:var(--accent)}
+article p{margin-bottom:14px;font-size:17px}
+article ul,article ol{margin:8px 0 18px 22px}
+article li{margin-bottom:6px;font-size:16px}
+.callout{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:6px;padding:20px 24px;margin:26px 0}
+.callout p{margin:0;font-size:15px;color:var(--text-secondary)}
+.subtype-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin:20px 0 24px}
+.subtype{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
+.subtype-name{font-family:var(--serif);font-size:17px;font-weight:700;margin-bottom:4px;color:var(--accent)}
+.subtype-desc{font-size:13px;color:var(--text-secondary);line-height:1.55}
+.settings{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin:18px 0;overflow:hidden}
+.setting-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:14px 20px;border-bottom:1px solid var(--border);align-items:baseline}
+.setting-row:last-child{border-bottom:none}
+.setting-scene{font-family:var(--serif);font-weight:700;font-size:15px}
+.setting-desc{font-size:13px;color:var(--text-secondary)}
+.cta-box{background:linear-gradient(135deg,var(--accent) 0%,#7d1f13 100%);color:white;border-radius:14px;padding:26px 28px;margin:32px 0;display:flex;gap:18px;align-items:center;text-decoration:none;transition:transform 0.15s}
+.cta-box:hover{transform:translateY(-2px);text-decoration:none;color:white}
+.cta-emoji{font-size:40px;line-height:1}
+.cta-title{font-family:var(--serif);font-size:22px;font-weight:700;margin-bottom:4px}
+.cta-desc{opacity:0.9;font-size:14px}
+.cta-arrow{margin-left:auto;font-size:20px}
+.footer{text-align:center;padding:30px 24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px}
+.inline-ad{text-align:center;margin:28px auto;max-width:728px;overflow:hidden}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/tornado-namer/">Namer</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb"><a href="/">Home</a> · <a href="/articles/">Articles</a> · QLCS tornadoes</div>
+
+<article>
+  <header class="article-header">
+    <div class="eyebrow">Storm science</div>
+    <h1>QLCS tornadoes <em>explained</em></h1>
+    <p class="lede">QLCS tornadoes are the ones you didn't see coming. Formed in fast-moving squall lines, they give minutes of warning at best — and they kill.</p>
+  </header>
+
+  <h2>What QLCS means</h2>
+  <p>QLCS = Quasi-Linear Convective System. It's the umbrella term for organized storm modes that form long lines rather than isolated cells: squall lines, bow echoes, and MCS (mesoscale convective systems).</p>
+  <p>About 30% of US tornadoes come from QLCS, not classic supercells. But QLCS tornadoes account for a disproportionate share of nighttime tornado fatalities.</p>
+  <h2>How QLCS tornadoes form</h2>
+  <ol>
+    <li>A squall line or bow echo develops with strong low-level wind shear ahead of the front.</li>
+    <li>Locally intense downdrafts create small-scale rotation near the line's leading edge.</li>
+    <li>A mesovortex — smaller and shorter-lived than a supercell mesocyclone — spins up along the line.</li>
+    <li>The mesovortex can drop a tornado within minutes.</li>
+    <li>The tornado is often rain-wrapped, hard to see, and lasts under 5 minutes.</li>
+  </ol>
+  <h2>Why they're dangerous</h2>
+  <ul>
+    <li>Warning lead time averages 5-7 minutes — half of supercell tornado lead time.</li>
+    <li>Often nighttime.</li>
+    <li>Often rain-wrapped — invisible.</li>
+    <li>Fast-moving parent line (40-60 mph) means limited time to react.</li>
+    <li>Fatality rate per warned tornado is higher than for supercell tornadoes.</li>
+    <li>Frequent in Dixie Alley (MS, AL, TN, GA).</li>
+  </ul>
+  <h2>How QLCS differs from supercell tornadoes</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">Formation environment</div><div class="subtype-desc">QLCS: linear line. Supercell: isolated cell.</div></div>
+    <div class="subtype"><div class="subtype-name">Rotation depth</div><div class="subtype-desc">QLCS: shallow (below 4 km). Supercell: deep (below 8+ km).</div></div>
+    <div class="subtype"><div class="subtype-name">Warning lead time</div><div class="subtype-desc">QLCS: 5-7 min. Supercell: 11-15 min.</div></div>
+    <div class="subtype"><div class="subtype-name">Duration</div><div class="subtype-desc">QLCS: usually under 5 min. Supercell: up to 3 hrs.</div></div>
+    <div class="subtype"><div class="subtype-name">Intensity</div><div class="subtype-desc">QLCS: usually EF0-EF2. Supercell: can reach EF5.</div></div>
+    <div class="subtype"><div class="subtype-name">Path length</div><div class="subtype-desc">QLCS: usually under 5 mi. Supercell: 30-100+ mi.</div></div>
+    <div class="subtype"><div class="subtype-name">Visibility</div><div class="subtype-desc">QLCS: often rain-wrapped. Supercell: often visible on Plains.</div></div>
+    <div class="subtype"><div class="subtype-name">Radar signature</div><div class="subtype-desc">QLCS: bookend vortex, TVS at bow apex. Supercell: hook echo, mesocyclone.</div></div>
+  </div>
+  <h2>Radar signatures</h2>
+  <ul>
+    <li><strong>Bookend vortex</strong> — rotation at one or both ends of a bow echo.</li>
+    <li><strong>Tornado Vortex Signature (TVS)</strong> — Doppler signature of tight rotation.</li>
+    <li><strong>Line Echo Wave Pattern (LEWP)</strong> — S-shape indicating mesovortices.</li>
+    <li><strong>Rear Inflow Jet</strong> — strong wind punching into back of bow.</li>
+    <li><strong>Kinks and notches</strong> in the leading edge.</li>
+  </ul>
+  <h2>Notorious QLCS events</h2>
+  <ul>
+    <li><strong>2011 Super Outbreak (April 25-28)</strong> — the second day was largely QLCS.</li>
+    <li><strong>Dec 10-11 2021 Quad State</strong> — the Mayfield-Bowling Green tornado was a long-track QLCS event.</li>
+    <li><strong>March 24-25 2023 Rolling Fork MS</strong> — QLCS + supercell hybrid, EF4.</li>
+    <li><strong>April 5 2023 QLCS</strong> — 200+ tornado reports across Southeast.</li>
+    <li><strong>Feb 15 2023 Southeast squall line</strong> — 14 tornadoes across TN, KY.</li>
+  </ul>
+  <h2>Forecasting QLCS tornadoes</h2>
+  <ul>
+    <li>Ingredient: strong low-level shear (SRH > 200 m²/s²).</li>
+    <li>Modest CAPE is fine — 500-1500 J/kg often produces QLCS tornadoes.</li>
+    <li>Low LCL heights favor tornadogenesis.</li>
+    <li>Warm sector overnight = high fatality risk.</li>
+    <li>HRRR is decent but still misses many.</li>
+    <li>Radar Warn-on-Forecast is the future for these events.</li>
+  </ul>
+  <h2>Safety notes</h2>
+  <ul>
+    <li>Take EVERY tornado warning seriously in QLCS events.</li>
+    <li>Sheltering options at night: NOAA Weather Radio with SAME + Wireless Emergency Alerts.</li>
+    <li>HP squall lines look impressive to radar — take them seriously.</li>
+    <li>Warning tags (RADAR INDICATED vs OBSERVED) matter less than they seem — TVS in a bow echo = tornado imminent.</li>
+    <li>Post-storm surveys sometimes reclassify QLCS tornadoes upward.</li>
+  </ul>
+
+  <h2>Learn more</h2>
+  <ul>
+    <li><a href="/what-is-a-supercell/">What is a supercell?</a></li>
+    <li><a href="/what-is-a-derecho/">What is a derecho?</a></li>
+    <li><a href="/tornado-alley-vs-dixie-alley/">Tornado Alley vs Dixie Alley</a></li>
+    <li><a href="/tornado-warning-lead-time-history/">Warning lead time history</a></li>
+  </ul>
+
+</article>
+
+<footer class="footer">
+  Part of <a href="/">Tornado Hub</a>. Educational content.
+</footer>
+
+<script src="/assets/ads-config.js" defer></script>
+<script src="/assets/ads.js" defer></script>
+<script src="/assets/house-ads.js" defer></script>
+</body>
+</html>
