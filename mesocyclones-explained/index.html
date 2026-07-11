@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mesocyclones — The Rotating Heart of a Supercell</title>
+<meta name="description" content="A mesocyclone is the rotating updraft that defines a supercell thunderstorm. Here is the physics of how one forms, how radar sees them, and why they matter for tornado prediction." />
+<meta name="keywords" content="mesocyclone, supercell rotation, mesocyclone radar, tornado mesocyclone, low-level mesocyclone" />
+<meta property="og:title" content="Mesocyclones — The Rotating Heart of a Supercell" />
+<meta property="og:description" content="A mesocyclone is the rotating updraft that defines a supercell thunderstorm. Here is the physics of how one forms, how radar sees them, and why they matter for tornado prediction." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tornadosimulator.net/mesocyclones-explained/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/mesocyclones-explained/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌀</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --accent:#a02818; --link:#1e3a5f; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.75}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text)}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.breadcrumb{max-width:760px;margin:16px auto 0;padding:0 24px;font-size:13px;color:var(--text-muted)}
+article{max-width:760px;margin:24px auto 60px;padding:0 24px}
+.article-header{margin-bottom:36px;padding-bottom:22px;border-bottom:1px solid var(--border)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h1{font-family:var(--serif);font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.02em;margin-bottom:14px}
+h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.lede{font-size:19px;color:var(--text-secondary);max-width:640px;line-height:1.55}
+article h2{font-family:var(--serif);font-size:26px;margin:36px 0 14px;letter-spacing:-0.01em}
+article h3{font-family:var(--serif);font-size:20px;margin:24px 0 8px;color:var(--accent)}
+article p{margin-bottom:14px;font-size:17px}
+article ul,article ol{margin:8px 0 18px 22px}
+article li{margin-bottom:6px;font-size:16px}
+.callout{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:6px;padding:20px 24px;margin:26px 0}
+.callout p{margin:0;font-size:15px;color:var(--text-secondary)}
+.subtype-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin:20px 0 24px}
+.subtype{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
+.subtype-name{font-family:var(--serif);font-size:17px;font-weight:700;margin-bottom:4px;color:var(--accent)}
+.subtype-desc{font-size:13px;color:var(--text-secondary);line-height:1.55}
+.settings{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin:18px 0;overflow:hidden}
+.setting-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:14px 20px;border-bottom:1px solid var(--border);align-items:baseline}
+.setting-row:last-child{border-bottom:none}
+.setting-scene{font-family:var(--serif);font-weight:700;font-size:15px}
+.setting-desc{font-size:13px;color:var(--text-secondary)}
+.cta-box{background:linear-gradient(135deg,var(--accent) 0%,#7d1f13 100%);color:white;border-radius:14px;padding:26px 28px;margin:32px 0;display:flex;gap:18px;align-items:center;text-decoration:none;transition:transform 0.15s}
+.cta-box:hover{transform:translateY(-2px);text-decoration:none;color:white}
+.cta-emoji{font-size:40px;line-height:1}
+.cta-title{font-family:var(--serif);font-size:22px;font-weight:700;margin-bottom:4px}
+.cta-desc{opacity:0.9;font-size:14px}
+.cta-arrow{margin-left:auto;font-size:20px}
+.footer{text-align:center;padding:30px 24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px}
+.inline-ad{text-align:center;margin:28px auto;max-width:728px;overflow:hidden}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/tornado-namer/">Namer</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb"><a href="/">Home</a> · <a href="/articles/">Articles</a> · Mesocyclones</div>
+
+<article>
+  <header class="article-header">
+    <div class="eyebrow">Storm science</div>
+    <h1>Mesocyclones <em>explained</em></h1>
+    <p class="lede">Not every rotating storm makes a tornado. But every violent tornado comes from a rotating storm. Meet the mesocyclone — the invisible engine of a supercell.</p>
+  </header>
+
+  <h2>The definition</h2>
+  <p>A mesocyclone is a persistent, rotating updraft within a supercell thunderstorm. Diameter: 2-10 km. Rotation speeds up to 100 mph at peak. Lifespan: 30 min to 3 hours.</p>
+  <p>The name means 'medium-scale cyclone' — larger than a tornado but smaller than a synoptic-scale low-pressure system.</p>
+  <h2>How mesocyclones form</h2>
+  <ol>
+    <li><strong>Wind shear</strong> — winds change direction with height (e.g., southerly at surface, westerly aloft).</li>
+    <li>This creates HORIZONTAL rotation like a rolling log.</li>
+    <li>A thunderstorm develops and the updraft ingests this horizontal spin.</li>
+    <li>The updraft TILTS the horizontal rotation into vertical rotation.</li>
+    <li>The rotating column intensifies as vertical stretching amplifies rotation (like a figure skater pulling arms in).</li>
+    <li>A mesocyclone is now spinning within the storm.</li>
+  </ol>
+  <h2>The two mesocyclone types</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">Mid-level mesocyclone</div><div class="subtype-desc">The classic. 3-8 km altitude. Forms first as storm becomes supercellular.</div></div>
+    <div class="subtype"><div class="subtype-name">Low-level mesocyclone</div><div class="subtype-desc">Below 3 km. Often forms as mid-level mesocyclone matures. This is the tornado producer.</div></div>
+    <div class="subtype"><div class="subtype-name">Descending mesocyclone</div><div class="subtype-desc">Rotation extending downward from mid-level to surface.</div></div>
+    <div class="subtype"><div class="subtype-name">Non-descending</div><div class="subtype-desc">Rotation building from surface upward. Non-supercell tornadoes.</div></div>
+  </div>
+  <h2>How radar detects mesocyclones</h2>
+  <ul>
+    <li>Doppler radar detects rotation via VELOCITY DATA — winds toward and away from radar in adjacent regions.</li>
+    <li>A mesocyclone shows as a "couplet" — adjacent bright and dark pixels on velocity display.</li>
+    <li>Rotation strength measured in units like m/s or knots.</li>
+    <li>Nominal thresholds:</li>
+    <li>  — Weak: 20-40 kt shear across couplet</li>
+    <li>  — Strong: 40-60 kt</li>
+    <li>  — Violent: 60+ kt</li>
+    <li>Mesocyclones show as vertical columns of rotation on cross-section radar.</li>
+    <li>Not all mesocyclones produce tornadoes — but almost all violent tornadoes have one.</li>
+  </ul>
+  <h2>Mesocyclone detection algorithms</h2>
+  <ul>
+    <li>MDA (Mesocyclone Detection Algorithm) — automated NEXRAD product.</li>
+    <li>TVS (Tornado Vortex Signature) — tighter, smaller rotation embedded in mesocyclone.</li>
+    <li>MESO scale, TVS scale from NSSL.</li>
+    <li>AI-augmented detection now supplementing traditional algorithms.</li>
+    <li>"Tightening" of a mesocyclone often precedes tornado touchdown by 10 minutes.</li>
+  </ul>
+  <h2>Cyclic mesocyclones</h2>
+  <p>Some supercells produce multiple mesocyclones sequentially over hours. Each occlues (dies), and the storm generates a new one to its east or northeast.</p>
+  <p>This CYCLIC tornadoproducer can drop 4-8 tornadoes in a single supercell. The 1974 Guin, AL tornado and 1965 Palm Sunday outbreak had cyclic supercells.</p>
+  <h2>Anticyclonic mesocyclones</h2>
+  <p>Rare. In supercells, some anticyclonic (clockwise, opposite of normal) rotation can develop, usually on the LEFT flank of a right-moving supercell.</p>
+  <p>Left-moving supercells with anticyclonic rotation exist but are rare. Anticyclonic tornadoes have been documented — 2013 El Reno had one.</p>
+  <h2>The occlusion process</h2>
+  <p>As a mesocyclone matures:</p>
+  <ol>
+    <li>It becomes wrapped in cool downdraft air (RFD wraps around).</li>
+    <li>The rotation cuts off from its warm inflow source.</li>
+    <li>The mesocyclone dies within 20-40 minutes.</li>
+    <li>A new mesocyclone often forms east or northeast of the old one.</li>
+    <li>This is the storm's natural cycle.</li>
+  </ol>
+  <h2>What mesocyclones tell you</h2>
+  <ul>
+    <li>A storm has become supercellular.</li>
+    <li>Damaging hail is possible.</li>
+    <li>Tornado is possible if low-level rotation intensifies.</li>
+    <li>Storm is likely to persist for 30+ min.</li>
+    <li>Warning is warranted.</li>
+    <li>On radar: mesocyclone height reduction is a red flag.</li>
+    <li>Persistent low-level rotation for 15+ min = tornado likely.</li>
+  </ul>
+  <h2>The prediction challenge</h2>
+  <p>About 25% of mesocyclones produce tornadoes. 75% don't. Why?</p>
+  <ul>
+    <li>Low-level moisture insufficient.</li>
+    <li>RFD too cold.</li>
+    <li>LCL heights too high.</li>
+    <li>Shear vector not aligned right.</li>
+    <li>Rain-cooled outflow undercuts inflow.</li>
+    <li>Storm mode not favorable.</li>
+  </ul>
+  <p>Warn-on-Forecast aims to distinguish tornado-producing mesocyclones from non-tornadoproducing ones with better lead time.</p>
+
+  <h2>Learn more</h2>
+  <ul>
+    <li><a href="/what-is-a-supercell/">What is a supercell?</a></li>
+    <li><a href="/thunderstorm-anatomy/">Thunderstorm anatomy</a></li>
+    <li><a href="/how-tornadoes-form/">How tornadoes form</a></li>
+    <li><a href="/reading-a-hodograph/">Reading a hodograph</a></li>
+  </ul>
+
+</article>
+
+<footer class="footer">
+  Part of <a href="/">Tornado Hub</a>. Educational content.
+</footer>
+
+<script src="/assets/ads-config.js" defer></script>
+<script src="/assets/ads.js" defer></script>
+<script src="/assets/house-ads.js" defer></script>
+</body>
+</html>
