@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Weather Satellites — Every Satellite and What It Does</title>
+<meta name="description" content="A guide to every US and international weather satellite. GOES, NOAA-20, JPSS, EUMETSAT, and the smaller ones. What each does and where the data goes." />
+<meta name="keywords" content="weather satellite, GOES-R, NOAA-20, JPSS, EUMETSAT, weather satellite guide" />
+<meta property="og:title" content="Weather Satellites — Every Satellite and What It Does" />
+<meta property="og:description" content="A guide to every US and international weather satellite. GOES, NOAA-20, JPSS, EUMETSAT, and the smaller ones. What each does and where the data goes." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tornadosimulator.net/weather-satellite-guide/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/weather-satellite-guide/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛰️</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --accent:#a02818; --link:#1e3a5f; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.75}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text)}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.breadcrumb{max-width:760px;margin:16px auto 0;padding:0 24px;font-size:13px;color:var(--text-muted)}
+article{max-width:760px;margin:24px auto 60px;padding:0 24px}
+.article-header{margin-bottom:36px;padding-bottom:22px;border-bottom:1px solid var(--border)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h1{font-family:var(--serif);font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.02em;margin-bottom:14px}
+h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.lede{font-size:19px;color:var(--text-secondary);max-width:640px;line-height:1.55}
+article h2{font-family:var(--serif);font-size:26px;margin:36px 0 14px;letter-spacing:-0.01em}
+article h3{font-family:var(--serif);font-size:20px;margin:24px 0 8px;color:var(--accent)}
+article p{margin-bottom:14px;font-size:17px}
+article ul,article ol{margin:8px 0 18px 22px}
+article li{margin-bottom:6px;font-size:16px}
+.callout{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:6px;padding:20px 24px;margin:26px 0}
+.callout p{margin:0;font-size:15px;color:var(--text-secondary)}
+.subtype-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin:20px 0 24px}
+.subtype{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
+.subtype-name{font-family:var(--serif);font-size:17px;font-weight:700;margin-bottom:4px;color:var(--accent)}
+.subtype-desc{font-size:13px;color:var(--text-secondary);line-height:1.55}
+.settings{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin:18px 0;overflow:hidden}
+.setting-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:14px 20px;border-bottom:1px solid var(--border);align-items:baseline}
+.setting-row:last-child{border-bottom:none}
+.setting-scene{font-family:var(--serif);font-weight:700;font-size:15px}
+.setting-desc{font-size:13px;color:var(--text-secondary)}
+.cta-box{background:linear-gradient(135deg,var(--accent) 0%,#7d1f13 100%);color:white;border-radius:14px;padding:26px 28px;margin:32px 0;display:flex;gap:18px;align-items:center;text-decoration:none;transition:transform 0.15s}
+.cta-box:hover{transform:translateY(-2px);text-decoration:none;color:white}
+.cta-emoji{font-size:40px;line-height:1}
+.cta-title{font-family:var(--serif);font-size:22px;font-weight:700;margin-bottom:4px}
+.cta-desc{opacity:0.9;font-size:14px}
+.cta-arrow{margin-left:auto;font-size:20px}
+.footer{text-align:center;padding:30px 24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px}
+.inline-ad{text-align:center;margin:28px auto;max-width:728px;overflow:hidden}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/tornado-namer/">Namer</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb"><a href="/">Home</a> · <a href="/articles/">Articles</a> · Weather satellite</div>
+
+<article>
+  <header class="article-header">
+    <div class="eyebrow">Space assets</div>
+    <h1>Weather satellite <em>guide</em></h1>
+    <p class="lede">The satellites that map every storm on Earth. Here are the major weather satellites operating in 2026, what each measures, and where the data goes.</p>
+  </header>
+
+  <h2>The two main types</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">Geostationary (GEO)</div><div class="subtype-desc">Fixed above equator at 22,236 miles altitude. Stays over same spot. Provides constant Americas / Pacific / etc coverage.</div></div>
+    <div class="subtype"><div class="subtype-name">Polar-orbiting</div><div class="subtype-desc">Circle Earth every 100 minutes at 500-800 mile altitude. Cover globe twice daily. Best for high-latitude coverage.</div></div>
+  </div>
+  <h2>US geostationary fleet</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">GOES-16 / GOES East</div><div class="subtype-desc">At 75.2°W. Covers Americas. Launched 2016.</div></div>
+    <div class="subtype"><div class="subtype-name">GOES-18 / GOES West</div><div class="subtype-desc">At 137°W. Covers Pacific/western US. Launched 2022.</div></div>
+    <div class="subtype"><div class="subtype-name">GOES-17 / on-orbit standby</div><div class="subtype-desc">Backup. Had cooling issue.</div></div>
+    <div class="subtype"><div class="subtype-name">GOES-U (future)</div><div class="subtype-desc">Fourth of GOES-R series. Launched 2024.</div></div>
+    <div class="subtype"><div class="subtype-name">GOES-R series</div><div class="subtype-desc">ABI (Advanced Baseline Imager), 16 spectral bands, 500m visible resolution.</div></div>
+    <div class="subtype"><div class="subtype-name">GOES-R lightning mapper</div><div class="subtype-desc">GLM. Continuous lightning detection.</div></div>
+  </div>
+  <h2>US polar-orbiting fleet</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">NOAA-20 / JPSS-1</div><div class="subtype-desc">Since 2017. Global coverage twice daily.</div></div>
+    <div class="subtype"><div class="subtype-name">NOAA-21 / JPSS-2</div><div class="subtype-desc">Since 2022.</div></div>
+    <div class="subtype"><div class="subtype-name">Suomi NPP</div><div class="subtype-desc">Since 2011. Preceding JPSS series.</div></div>
+    <div class="subtype"><div class="subtype-name">JPSS-3 / NOAA-22 (future)</div><div class="subtype-desc">Planned launch 2027.</div></div>
+    <div class="subtype"><div class="subtype-name">JPSS-4 / NOAA-23 (future)</div><div class="subtype-desc">Planned launch 2029.</div></div>
+    <div class="subtype"><div class="subtype-name">VIIRS sensor</div><div class="subtype-desc">Visible/Infrared Imaging Radiometer Suite. 750m resolution.</div></div>
+    <div class="subtype"><div class="subtype-name">ATMS sensor</div><div class="subtype-desc">Atmospheric temperature/humidity profiles.</div></div>
+    <div class="subtype"><div class="subtype-name">CrIS sensor</div><div class="subtype-desc">Cross-track Infrared Sounder.</div></div>
+  </div>
+  <h2>European (EUMETSAT)</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">Meteosat Second Generation</div><div class="subtype-desc">Over 0° longitude. Africa/Europe coverage.</div></div>
+    <div class="subtype"><div class="subtype-name">Meteosat Third Generation</div><div class="subtype-desc">Newest series. MTG-I1 launched 2022. High-resolution imaging + lightning.</div></div>
+    <div class="subtype"><div class="subtype-name">Metop series</div><div class="subtype-desc">Polar-orbiting European.</div></div>
+    <div class="subtype"><div class="subtype-name">EPS-SG</div><div class="subtype-desc">Next-gen polar orbiter.</div></div>
+    <div class="subtype"><div class="subtype-name">Sentinel series (ESA)</div><div class="subtype-desc">Not primarily weather but climate-relevant.</div></div>
+  </div>
+  <h2>Chinese fleet</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">FY-4 (Fengyun)</div><div class="subtype-desc">Geostationary. Modern high-res imager.</div></div>
+    <div class="subtype"><div class="subtype-name">FY-3</div><div class="subtype-desc">Polar-orbiting.</div></div>
+    <div class="subtype"><div class="subtype-name">FY-2</div><div class="subtype-desc">Older GEO series.</div></div>
+    <div class="subtype"><div class="subtype-name">CMA</div><div class="subtype-desc">China Meteorological Administration operates.</div></div>
+  </div>
+  <h2>Japanese fleet</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">Himawari-8</div><div class="subtype-desc">Geostationary over Asia-Pacific.</div></div>
+    <div class="subtype"><div class="subtype-name">Himawari-9</div><div class="subtype-desc">Backup/successor.</div></div>
+    <div class="subtype"><div class="subtype-name">Sensor</div><div class="subtype-desc">Both have modern ABI-like sensor.</div></div>
+  </div>
+  <h2>Russian fleet</h2>
+  <ul>
+    <li>Elektro-L series (geostationary).</li>
+    <li>Meteor-M series (polar).</li>
+    <li>Data shared internationally.</li>
+  </ul>
+  <h2>Indian fleet</h2>
+  <ul>
+    <li>INSAT series (geostationary).</li>
+    <li>Kalpana-1.</li>
+    <li>Increasingly important for regional forecast.</li>
+  </ul>
+  <h2>The specific instruments</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">Visible band</div><div class="subtype-desc">What you see. Only during daytime.</div></div>
+    <div class="subtype"><div class="subtype-name">Infrared bands</div><div class="subtype-desc">3-13 micron. Cloud temperature. Day and night.</div></div>
+    <div class="subtype"><div class="subtype-name">Water vapor</div><div class="subtype-desc">Sees upper atmosphere moisture.</div></div>
+    <div class="subtype"><div class="subtype-name">Near-infrared</div><div class="subtype-desc">Vegetation, snow, fires.</div></div>
+    <div class="subtype"><div class="subtype-name">Shortwave infrared</div><div class="subtype-desc">Distinguishes ice from water clouds.</div></div>
+    <div class="subtype"><div class="subtype-name">Lightning mapper (GLM)</div><div class="subtype-desc">Continuous lightning detection.</div></div>
+    <div class="subtype"><div class="subtype-name">Atmospheric sounder</div><div class="subtype-desc">Temperature/humidity profiles.</div></div>
+    <div class="subtype"><div class="subtype-name">Ocean color</div><div class="subtype-desc">Chlorophyll, sediment.</div></div>
+    <div class="subtype"><div class="subtype-name">Ultraviolet</div><div class="subtype-desc">Ozone monitoring.</div></div>
+  </div>
+  <h2>The data flow</h2>
+  <ol>
+    <li>Satellite images and profiles.</li>
+    <li>Downlinked to ground stations.</li>
+    <li>Distributed to NWS, DOD, universities.</li>
+    <li>Assimilated into weather models.</li>
+    <li>Displayed on public sites (NASA Worldview, Zoom Earth, RAMMB SLIDER).</li>
+    <li>Delivered to public via apps.</li>
+  </ol>
+  <h2>Small satellites and CubeSats</h2>
+  <ul>
+    <li>TROPICS constellation (NASA) — small sats for tropical cyclones.</li>
+    <li>PlanetIQ — commercial GPS radio occultation.</li>
+    <li>Spire Global — commercial.</li>
+    <li>Increasingly cost-effective supplementary data.</li>
+    <li>Future: constellations of hundreds of small sats.</li>
+  </ul>
+  <h2>Commercial weather satellites</h2>
+  <ul>
+    <li>Various commercial firms now sell weather data.</li>
+    <li>NOAA contracts for supplementary data.</li>
+    <li>AI companies want satellite data.</li>
+    <li>Concerns about data availability for public forecasts.</li>
+    <li>Regulation evolving.</li>
+  </ul>
+  <h2>Where to see the data</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">NASA Worldview</div><div class="subtype-desc">worldview.earthdata.nasa.gov. Free, global, historical.</div></div>
+    <div class="subtype"><div class="subtype-name">RAMMB SLIDER</div><div class="subtype-desc">CIRA. Real-time animated satellite loops.</div></div>
+    <div class="subtype"><div class="subtype-name">Zoom Earth</div><div class="subtype-desc">Clean interface for viewing GOES.</div></div>
+    <div class="subtype"><div class="subtype-name">EUMETSAT viewer</div><div class="subtype-desc">European coverage.</div></div>
+    <div class="subtype"><div class="subtype-name">CIMSS</div><div class="subtype-desc">University of Wisconsin.</div></div>
+    <div class="subtype"><div class="subtype-name">Weather apps</div><div class="subtype-desc">AccuWeather, Windy show satellite.</div></div>
+    <div class="subtype"><div class="subtype-name">Local WFO</div><div class="subtype-desc">Displays satellite in briefings.</div></div>
+  </div>
+  <h2>The 2020s advances</h2>
+  <ul>
+    <li>AI-augmented satellite interpretation.</li>
+    <li>Higher-resolution imaging.</li>
+    <li>Multi-spectral scanners.</li>
+    <li>Better nighttime imaging.</li>
+    <li>Fire hotspot detection nearly real-time.</li>
+    <li>Lightning mapping global.</li>
+    <li>Convection detection improved.</li>
+    <li>Continuous refresh rates.</li>
+  </ul>
+
+  <h2>Learn more</h2>
+  <ul>
+    <li><a href="/noaa-data-sources/">NOAA data sources</a></li>
+    <li><a href="/weather-instruments-history/">Weather instruments history</a></li>
+    <li><a href="/hurricane-hunter-aircraft/">Hurricane hunter aircraft</a></li>
+    <li><a href="/ai-weather-forecasting/">AI weather forecasting</a></li>
+  </ul>
+
+</article>
+
+<footer class="footer">
+  Part of <a href="/">Tornado Hub</a>. Educational content.
+</footer>
+
+<script src="/assets/ads-config.js" defer></script>
+<script src="/assets/ads.js" defer></script>
+<script src="/assets/house-ads.js" defer></script>
+</body>
+</html>
