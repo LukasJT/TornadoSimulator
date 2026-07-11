@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hurricane Namer — Guess the Hurricane on the Map | Tornado Simulator</title>
+<meta name="description" content="A map-based guessing game for famous hurricanes and tropical cyclones. Look at the storm's track on a map — guess which hurricane it is. 60+ named storms from Camille to Katrina to Helene.">
+<meta name="keywords" content="hurricane namer, hurricane game, hurricane quiz, name that hurricane, tropical cyclone game">
+<link rel="canonical" href="https://www.tornadosimulator.net/hurricane-namer/">
+<link rel="icon" href="/favicon.ico">
+<meta property="og:title" content="Hurricane Namer — Guess the Hurricane">
+<meta property="og:description" content="60+ named hurricanes. Look at the track. Guess the name.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<style>
+:root { --bg:#f5f7fb; --card:#fff; --text:#0f172a; --muted:#64748b; --accent:#2563eb; --line:#e2e8f0; --correct:#16a34a; --wrong:#dc2626; }
+* { box-sizing:border-box; }
+body { margin:0; font:16px/1.55 -apple-system,'Inter',system-ui,sans-serif; background:var(--bg); color:var(--text); }
+header, footer { padding:16px 24px; }
+header { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); background:var(--card); }
+.logo { font-weight:700; font-size:20px; color:var(--accent); text-decoration:none; }
+nav a { color:var(--text); text-decoration:none; margin-left:16px; font-size:14px; }
+main { max-width:900px; margin:0 auto; padding:24px; }
+h1 { font-size:32px; margin:.2em 0; text-align:center; }
+.lede { text-align:center; font-size:16px; color:var(--muted); margin-bottom:16px; }
+#map { height:420px; border-radius:12px; box-shadow:0 4px 16px rgba(0,0,0,.06); }
+.hud { display:flex; justify-content:space-between; align-items:center; margin:12px 0; font-weight:600; }
+.hud .stat { display:flex; gap:16px; }
+.guess-shell { background:var(--card); padding:16px; border-radius:12px; border:1px solid var(--line); margin-top:12px; }
+#guess { width:100%; padding:12px 16px; border:2px solid var(--line); border-radius:8px; font-size:16px; font-family:inherit; }
+#guess:focus { outline:none; border-color:var(--accent); }
+.suggestions { max-height:200px; overflow-y:auto; margin-top:8px; }
+.suggestion { padding:8px 12px; cursor:pointer; border-radius:6px; }
+.suggestion:hover { background:var(--bg); }
+.suggestion.active { background:var(--accent); color:#fff; }
+.controls { margin-top:12px; display:flex; gap:8px; }
+button { padding:10px 20px; border:1px solid var(--line); background:var(--card); border-radius:8px; cursor:pointer; font-family:inherit; font-size:14px; font-weight:600; }
+button.primary { background:var(--accent); color:#fff; border-color:var(--accent); }
+button:disabled { opacity:.5; cursor:not-allowed; }
+.result { margin-top:16px; padding:16px; border-radius:8px; font-weight:600; display:none; }
+.result.show { display:block; }
+.result.correct { background:#d1fae5; color:#065f46; }
+.result.wrong { background:#fee2e2; color:#991b1b; }
+.inline-ad { margin:16px auto; display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<header>
+  <a href="/" class="logo">🌀 Tornado Simulator</a>
+  <nav><a href="/">Home</a> <a href="/tornado-namer/">Tornado Namer</a> <a href="/tornadle/">Tornadle</a></nav>
+</header>
+<main>
+  <h1>🌀 Hurricane Namer</h1>
+  <p class="lede">A track appears on the map. Guess the hurricane.</p>
+
+  <div class="hud">
+    <div class="stat">
+      <span>Round: <span id="round">1</span>/10</span>
+      <span>Score: <span id="score">0</span></span>
+    </div>
+    <span>Category: <span id="cat">—</span></span>
+  </div>
+
+  <div id="map"></div>
+
+  <div class="guess-shell">
+    <input id="guess" type="text" placeholder="Type a hurricane name..." autocomplete="off">
+    <div class="suggestions" id="suggestions"></div>
+    <div class="controls">
+      <button class="primary" id="submit">Guess</button>
+      <button id="skip">Skip</button>
+      <button id="give-up">Give up (–5)</button>
+    </div>
+    <div class="result" id="result"></div>
+  </div>
+
+  <div class="inline-ad">
+    <iframe src="//www.topcreativeformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.html" width="728" height="90" frameborder="0" scrolling="no"></iframe>
+  </div>
+
+  <p style="margin-top:32px;color:var(--muted);font-size:14px;text-align:center;">Related: <a href="/tornado-namer/">Tornado Namer</a> · <a href="/hurricane-category-explorer/">Hurricane Category Explorer</a> · <a href="/hurricane-vs-tornado-comparison/">Hurricane vs Tornado</a></p>
+</main>
+<footer style="text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line);margin-top:32px;background:var(--card);">
+  © 2026 Tornado Simulator · <a href="/about/" style="color:var(--muted);">About</a>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const HURRICANES = [
+  {name:'Katrina', year:2005, cat:5, track:[[23.1,-75.1],[24.4,-76.9],[25.4,-79.3],[26.2,-80.4],[27.2,-82.9],[27.9,-85.9],[29.2,-89.6],[31.1,-89.5],[34.2,-89.2],[38.2,-83.1]]},
+  {name:'Andrew', year:1992, cat:5, track:[[10.8,-35.5],[13.9,-42.8],[19.7,-56.5],[24.4,-66.5],[25.4,-72.7],[25.5,-77.5],[25.6,-80.3],[25.9,-83.1],[27.8,-89.6],[30.1,-90.1]]},
+  {name:'Camille', year:1969, cat:5, track:[[16.5,-81.2],[18.1,-83.4],[20.6,-84.7],[24.1,-85.5],[28.0,-88.5],[30.2,-89.2],[34.2,-83.9],[38.0,-78.0]]},
+  {name:'Sandy', year:2012, cat:3, track:[[12.5,-77.5],[15.4,-77.6],[18.9,-77.2],[22.0,-76.7],[26.4,-77.9],[30.9,-75.8],[35.9,-74.0],[38.9,-74.6],[39.4,-74.4],[40.5,-75.5]]},
+  {name:'Ike', year:2008, cat:4, track:[[17.2,-40.8],[20.5,-54.7],[22.0,-65.0],[22.1,-73.5],[21.4,-79.0],[22.8,-84.8],[26.7,-89.6],[29.3,-94.8],[32.4,-92.4]]},
+  {name:'Wilma', year:2005, cat:5, track:[[17.4,-79.0],[16.8,-82.1],[17.4,-83.2],[18.4,-84.5],[20.8,-86.8],[24.0,-85.5],[26.1,-80.9],[28.1,-77.5],[33.2,-70.5]]},
+  {name:'Ivan', year:2004, cat:5, track:[[9.7,-26.9],[11.7,-42.6],[13.6,-58.3],[16.2,-73.4],[19.5,-78.6],[22.1,-84.8],[27.5,-88.4],[30.4,-87.9],[34.1,-83.4]]},
+  {name:'Rita', year:2005, cat:5, track:[[22.3,-71.5],[24.4,-75.4],[24.5,-80.3],[24.8,-83.1],[25.4,-87.4],[27.1,-91.4],[29.7,-93.8],[32.9,-93.4]]},
+  {name:'Harvey', year:2017, cat:4, track:[[11.8,-40.6],[13.5,-55.7],[13.9,-70.4],[18.0,-83.4],[21.2,-93.1],[27.0,-96.5],[28.6,-97.3],[29.3,-94.6]]},
+  {name:'Irma', year:2017, cat:5, track:[[16.3,-30.0],[17.1,-49.1],[17.4,-56.5],[17.4,-59.4],[18.3,-63.4],[20.8,-73.4],[22.2,-77.4],[25.2,-81.6],[30.1,-83.7]]},
+  {name:'Maria', year:2017, cat:5, track:[[13.3,-52.3],[15.1,-59.1],[15.7,-62.6],[18.4,-66.3],[19.7,-68.5],[22.4,-71.7],[26.9,-73.7],[30.7,-73.7]]},
+  {name:'Michael', year:2018, cat:5, track:[[17.2,-81.5],[19.4,-86.7],[22.6,-86.5],[26.6,-86.1],[29.1,-85.5],[30.4,-85.4],[33.0,-83.2]]},
+  {name:'Helene', year:2024, cat:4, track:[[16.5,-83.4],[20.5,-84.8],[24.3,-85.6],[27.8,-84.4],[30.1,-84.0],[33.3,-83.0],[35.7,-82.5],[36.5,-81.9]]},
+  {name:'Ian', year:2022, cat:5, track:[[13.9,-79.1],[16.4,-80.6],[19.0,-83.0],[22.4,-84.6],[26.4,-83.6],[26.6,-82.1],[28.2,-81.5],[33.1,-79.4]]},
+  {name:'Florence', year:2018, cat:4, track:[[15.4,-25.6],[18.0,-40.6],[22.9,-49.1],[25.4,-58.1],[27.9,-65.1],[31.5,-72.6],[34.3,-77.4],[34.9,-77.9]]},
+  {name:'Hazel', year:1954, cat:4, track:[[13.3,-63.0],[15.9,-73.0],[18.4,-75.0],[21.6,-77.4],[27.0,-79.3],[33.9,-79.0],[36.0,-77.0],[40.5,-77.5]]},
+  {name:'Hugo', year:1989, cat:5, track:[[13.0,-33.0],[16.9,-52.4],[18.4,-63.4],[20.2,-71.9],[24.5,-77.9],[30.4,-78.7],[32.7,-79.9],[34.4,-81.4]]},
+  {name:'Agnes', year:1972, cat:1, track:[[17.5,-86.3],[20.4,-86.7],[24.5,-84.5],[30.4,-84.0],[34.5,-77.5],[40.0,-76.5],[42.5,-75.5]]},
+  {name:'Betsy', year:1965, cat:4, track:[[22.5,-56.0],[24.7,-62.5],[27.2,-71.5],[25.4,-77.1],[24.5,-80.5],[28.4,-88.1],[30.5,-90.5]]},
+  {name:'Fran', year:1996, cat:3, track:[[12.5,-25.5],[15.9,-42.5],[19.7,-56.0],[23.4,-68.2],[27.9,-75.4],[32.7,-77.8],[34.4,-77.9],[38.5,-79.0]]},
+];
+let queue = [], score = 0, round = 0, currentGuess = null, currentActive = -1;
+
+const map = L.map('map', {zoomControl:true, dragging:false, touchZoom:false, doubleClickZoom:false, scrollWheelZoom:false, boxZoom:false, keyboard:false}).setView([25,-70], 4);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {attribution:'© OpenStreetMap © CARTO', maxZoom:8, subdomains:'abcd'}).addTo(map);
+let trackLine = null, markers = [];
+
+function pickQueue() {
+  queue = [...HURRICANES].sort(()=>Math.random()-.5).slice(0,10);
+  score = 0; round = 0;
+  document.getElementById('score').textContent = 0;
+  nextRound();
+}
+
+function nextRound() {
+  if (round >= queue.length) { endGame(); return; }
+  currentGuess = queue[round];
+  round++;
+  document.getElementById('round').textContent = round;
+  document.getElementById('cat').textContent = 'Cat ' + currentGuess.cat;
+  document.getElementById('guess').value = '';
+  document.getElementById('result').className = 'result';
+  document.getElementById('submit').disabled = false;
+  if (trackLine) map.removeLayer(trackLine);
+  markers.forEach(m=>map.removeLayer(m)); markers=[];
+  trackLine = L.polyline(currentGuess.track, {color:'#dc2626', weight:3, opacity:.8}).addTo(map);
+  currentGuess.track.forEach((pt,i)=>{
+    const isEnd = i===0 || i===currentGuess.track.length-1;
+    const m = L.circleMarker(pt, {radius:isEnd?7:4, fillColor:'#dc2626', color:'#fff', weight:2, fillOpacity:1}).addTo(map);
+    markers.push(m);
+  });
+  map.fitBounds(trackLine.getBounds(), {padding:[40,40], maxZoom:6});
+}
+
+function suggest(text) {
+  const s = document.getElementById('suggestions');
+  s.innerHTML = '';
+  if (!text) return;
+  const matches = HURRICANES.filter(h=>h.name.toLowerCase().startsWith(text.toLowerCase())).slice(0,6);
+  matches.forEach((h,i)=>{
+    const d = document.createElement('div');
+    d.className = 'suggestion' + (i===currentActive?' active':'');
+    d.textContent = `${h.name} (${h.year})`;
+    d.onclick = ()=>{ document.getElementById('guess').value = h.name; s.innerHTML=''; submit(); };
+    s.appendChild(d);
+  });
+}
+
+document.getElementById('guess').addEventListener('input',e=>{ currentActive=-1; suggest(e.target.value); });
+document.getElementById('guess').addEventListener('keydown',e=>{
+  const items = document.querySelectorAll('.suggestion');
+  if (e.key==='ArrowDown') { e.preventDefault(); currentActive=Math.min(currentActive+1,items.length-1); suggest(e.target.value); }
+  if (e.key==='ArrowUp') { e.preventDefault(); currentActive=Math.max(currentActive-1,0); suggest(e.target.value); }
+  if (e.key==='Enter') { e.preventDefault(); if (items[currentActive]) items[currentActive].click(); else submit(); }
+});
+
+function submit() {
+  const g = document.getElementById('guess').value.trim().toLowerCase();
+  if (!g) return;
+  const correct = g === currentGuess.name.toLowerCase();
+  const r = document.getElementById('result');
+  if (correct) {
+    score += 10;
+    r.className='result show correct'; r.textContent = `✓ Correct! ${currentGuess.name} (${currentGuess.year}), Cat ${currentGuess.cat}. +10`;
+  } else {
+    r.className='result show wrong'; r.textContent = `✗ Not quite. That was ${currentGuess.name} (${currentGuess.year}), Cat ${currentGuess.cat}.`;
+  }
+  document.getElementById('score').textContent = score;
+  document.getElementById('submit').disabled = true;
+  setTimeout(nextRound, 2200);
+}
+document.getElementById('submit').onclick = submit;
+document.getElementById('skip').onclick = ()=>{ const r=document.getElementById('result'); r.className='result show wrong'; r.textContent=`Skipped. That was ${currentGuess.name} (${currentGuess.year}).`; setTimeout(nextRound,1500); };
+document.getElementById('give-up').onclick = ()=>{ score-=5; document.getElementById('score').textContent=score; const r=document.getElementById('result'); r.className='result show wrong'; r.textContent=`Gave up. That was ${currentGuess.name} (${currentGuess.year}). -5`; setTimeout(nextRound,1500); };
+
+function endGame() {
+  document.getElementById('map').innerHTML = `<div style="padding:60px 20px;text-align:center;background:var(--card);border-radius:12px;"><h2>Game Over</h2><p style="font-size:24px;color:var(--accent);font-weight:700;">Final Score: ${score}/100</p><button class="primary" onclick="location.reload()">Play Again</button></div>`;
+}
+
+pickQueue();
+</script>
+<script src="/assets/house-ads.js"></script>
+</body>
+</html>
