@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Storm Photography Post-Processing — Lightroom Recipes</title>
+<meta name="description" content="Every storm photographer's Lightroom recipes for the classic storm shots. Supercell structure, lightning, tornado, mammatus, and post-storm cleanup. Practical settings and adjustments." />
+<meta name="keywords" content="storm photography lightroom, storm photo editing, supercell photo processing, tornado photo edit" />
+<meta property="og:title" content="Storm Photography Post-Processing — Lightroom Recipes" />
+<meta property="og:description" content="Every storm photographer's Lightroom recipes for the classic storm shots. Supercell structure, lightning, tornado, mammatus, and post-storm cleanup. Practical settings and adjustments." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tornadosimulator.net/storm-photography-post-processing/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/storm-photography-post-processing/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --accent:#a02818; --link:#1e3a5f; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.75}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text)}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.breadcrumb{max-width:760px;margin:16px auto 0;padding:0 24px;font-size:13px;color:var(--text-muted)}
+article{max-width:760px;margin:24px auto 60px;padding:0 24px}
+.article-header{margin-bottom:36px;padding-bottom:22px;border-bottom:1px solid var(--border)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h1{font-family:var(--serif);font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.02em;margin-bottom:14px}
+h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.lede{font-size:19px;color:var(--text-secondary);max-width:640px;line-height:1.55}
+article h2{font-family:var(--serif);font-size:26px;margin:36px 0 14px;letter-spacing:-0.01em}
+article h3{font-family:var(--serif);font-size:20px;margin:24px 0 8px;color:var(--accent)}
+article p{margin-bottom:14px;font-size:17px}
+article ul,article ol{margin:8px 0 18px 22px}
+article li{margin-bottom:6px;font-size:16px}
+.callout{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:6px;padding:20px 24px;margin:26px 0}
+.callout p{margin:0;font-size:15px;color:var(--text-secondary)}
+.subtype-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin:20px 0 24px}
+.subtype{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
+.subtype-name{font-family:var(--serif);font-size:17px;font-weight:700;margin-bottom:4px;color:var(--accent)}
+.subtype-desc{font-size:13px;color:var(--text-secondary);line-height:1.55}
+.settings{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin:18px 0;overflow:hidden}
+.setting-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:14px 20px;border-bottom:1px solid var(--border);align-items:baseline}
+.setting-row:last-child{border-bottom:none}
+.setting-scene{font-family:var(--serif);font-weight:700;font-size:15px}
+.setting-desc{font-size:13px;color:var(--text-secondary)}
+.cta-box{background:linear-gradient(135deg,var(--accent) 0%,#7d1f13 100%);color:white;border-radius:14px;padding:26px 28px;margin:32px 0;display:flex;gap:18px;align-items:center;text-decoration:none;transition:transform 0.15s}
+.cta-box:hover{transform:translateY(-2px);text-decoration:none;color:white}
+.cta-emoji{font-size:40px;line-height:1}
+.cta-title{font-family:var(--serif);font-size:22px;font-weight:700;margin-bottom:4px}
+.cta-desc{opacity:0.9;font-size:14px}
+.cta-arrow{margin-left:auto;font-size:20px}
+.footer{text-align:center;padding:30px 24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px}
+.inline-ad{text-align:center;margin:28px auto;max-width:728px;overflow:hidden}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/tornado-namer/">Namer</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb"><a href="/">Home</a> · <a href="/articles/">Articles</a> · Storm photo</div>
+
+<article>
+  <header class="article-header">
+    <div class="eyebrow">Photo editing</div>
+    <h1>Storm photo <em>post-processing</em></h1>
+    <p class="lede">A great storm photo needs great post. Here are practical Lightroom recipes for the classic storm subjects — with real slider values.</p>
+  </header>
+
+  <h2>The storm photo philosophy</h2>
+  <p>Storm photography is about DRAMA. But drama shouldn't become falsification. Modern audiences catch overprocessed images fast. Here are practical guidelines.</p>
+  <p>Aim for the emotion you felt when you saw it — not for maximum saturation.</p>
+  <h2>Supercell structure (wide, clean)</h2>
+  <ul>
+    <li>Exposure: 0 to +0.5.</li>
+    <li>Contrast: +15 to +25.</li>
+    <li>Highlights: -30 to -50 (recover sky).</li>
+    <li>Shadows: +20 to +40 (open storm base).</li>
+    <li>Whites: +5 to +15.</li>
+    <li>Blacks: -10 to -20.</li>
+    <li>Clarity: +15 (careful, avoid halos).</li>
+    <li>Vibrance: +15 to +25.</li>
+    <li>Saturation: 0 to +5.</li>
+    <li>Temperature: warm slightly if golden hour.</li>
+    <li>Tint: slight magenta helps supercells pop.</li>
+  </ul>
+  <h2>Lightning (long exposure)</h2>
+  <ul>
+    <li>Exposure: -0.3 to 0.</li>
+    <li>Contrast: +30 to +50.</li>
+    <li>Highlights: -70 (bring bolt out).</li>
+    <li>Shadows: +30.</li>
+    <li>Whites: +20 to +40.</li>
+    <li>Blacks: -30.</li>
+    <li>Clarity: +30.</li>
+    <li>Dehaze: +20 (for atmospheric shots).</li>
+    <li>Noise reduction: +30 luminance (long exposures noisy).</li>
+    <li>Sharpening: masking to protect sky.</li>
+    <li>Split toning: cool shadows, warm highlights.</li>
+  </ul>
+  <h2>Tornado (mid-day, wedge)</h2>
+  <ul>
+    <li>Exposure: 0 to +0.3.</li>
+    <li>Contrast: +10 to +20.</li>
+    <li>Highlights: -20.</li>
+    <li>Shadows: +10 to +20.</li>
+    <li>Whites: 0.</li>
+    <li>Blacks: -5 to -10.</li>
+    <li>Clarity: +10.</li>
+    <li>Vibrance: +10.</li>
+    <li>Saturation: 0.</li>
+    <li>Green channel: reduce (over-green skies look fake).</li>
+    <li>Blue channel: increase luminance slightly.</li>
+  </ul>
+  <h2>Mammatus at sunset</h2>
+  <ul>
+    <li>Exposure: 0.</li>
+    <li>Contrast: +25.</li>
+    <li>Highlights: -60 (recover sunset).</li>
+    <li>Shadows: +40.</li>
+    <li>Whites: +10.</li>
+    <li>Blacks: -20.</li>
+    <li>Clarity: +25.</li>
+    <li>Vibrance: +30.</li>
+    <li>Saturation: +10.</li>
+    <li>Temperature: warm slightly.</li>
+    <li>Orange channel: increase luminance.</li>
+    <li>Magenta channel: increase saturation slightly.</li>
+  </ul>
+  <h2>Damage / post-storm (documentary)</h2>
+  <ul>
+    <li>Exposure: 0.</li>
+    <li>Contrast: neutral.</li>
+    <li>Highlights: -20.</li>
+    <li>Shadows: +30.</li>
+    <li>Whites: 0.</li>
+    <li>Blacks: 0.</li>
+    <li>Clarity: +15.</li>
+    <li>Vibrance: 0.</li>
+    <li>Saturation: -10 (desaturation for gravitas).</li>
+    <li>Split toning: subtle blue in shadows.</li>
+    <li>Do not over-process. Reality is dramatic enough.</li>
+  </ul>
+  <h2>Sky replacement — when NOT to</h2>
+  <ul>
+    <li>Documentary work: never.</li>
+    <li>Editorial: never.</li>
+    <li>Contest submissions: check rules.</li>
+    <li>Social media: acceptable if disclosed.</li>
+    <li>Fine art print: acceptable if disclosed.</li>
+    <li>Never present as documentary.</li>
+  </ul>
+  <h2>The "green sky" issue</h2>
+  <p>Under HP supercells and hail storms, skies can genuinely be green. But over-processing pushes the green into unnatural saturation.</p>
+  <ul>
+    <li>Adjust green luminance, not saturation.</li>
+    <li>Push blue channel slightly higher.</li>
+    <li>Reduce magenta cast.</li>
+    <li>Compare with reference photos.</li>
+  </ul>
+  <h2>The RAW workflow</h2>
+  <ol>
+    <li>Shoot RAW always.</li>
+    <li>Import to Lightroom (or Capture One).</li>
+    <li>Apply lens correction and chromatic aberration removal.</li>
+    <li>Set white balance visually.</li>
+    <li>Adjust exposure.</li>
+    <li>Adjust highlights and shadows.</li>
+    <li>Adjust clarity/dehaze.</li>
+    <li>Apply color-specific adjustments.</li>
+    <li>Crop for composition (rule of thirds).</li>
+    <li>Export at final resolution.</li>
+    <li>Save preset for reuse.</li>
+  </ol>
+  <h2>The masking revolution</h2>
+  <ul>
+    <li>Lightroom masking (2022+) is transformative for storm photos.</li>
+    <li>Sky mask — auto-detects sky, apply adjustments separately.</li>
+    <li>Subject mask — foreground buildings, plains, trees.</li>
+    <li>Radial gradient over lightning bolt.</li>
+    <li>Linear gradient for sky/ground.</li>
+    <li>Combine masks with intersections.</li>
+    <li>Individual raindrop / hail masks with brush.</li>
+  </ul>
+  <h2>Print vs screen</h2>
+  <ul>
+    <li>Screen: sRGB.</li>
+    <li>Print: Adobe RGB or ProPhoto.</li>
+    <li>Soft proof before printing.</li>
+    <li>Paper choice affects perceived saturation.</li>
+    <li>Print sharpening: different from screen.</li>
+    <li>Metadata: include location, date, camera settings.</li>
+  </ul>
+
+  <h2>Learn more</h2>
+  <ul>
+    <li><a href="/storm-chase-photography-gear/">Storm chase photography gear</a></li>
+    <li><a href="/tornado-photography-guide/">Tornado photography guide</a></li>
+    <li><a href="/storm-chase-etiquette-photography/">Storm photography ethics</a></li>
+    <li><a href="/drone-storm-photography/">Drone storm photography</a></li>
+  </ul>
+
+</article>
+
+<footer class="footer">
+  Part of <a href="/">Tornado Hub</a>. Educational content.
+</footer>
+
+<script src="/assets/ads-config.js" defer></script>
+<script src="/assets/ads.js" defer></script>
+<script src="/assets/house-ads.js" defer></script>
+</body>
+</html>
