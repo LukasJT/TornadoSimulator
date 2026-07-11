@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weather Memory Match — Free Interactive Weather Card Game | Tornado Simulator</title>
+<meta name="description" content="A weather-themed memory match card game. Match pairs of weather symbols — tornadoes, hurricanes, hail, and more. Three difficulty levels. Free to play in browser.">
+<meta name="keywords" content="weather memory game, weather match game, weather concentration game, weather card game, weather kids game">
+<link rel="canonical" href="https://www.tornadosimulator.net/weather-memory-match/">
+<link rel="icon" href="/favicon.ico">
+<meta property="og:title" content="Weather Memory Match — Free Card Game">
+<meta property="og:description" content="Match pairs of weather symbols against the clock.">
+<meta property="og:type" content="website">
+<style>
+:root { --bg:#f5f7fb; --card:#fff; --text:#0f172a; --muted:#64748b; --accent:#2563eb; --line:#e2e8f0; --flip:#fef3c7; --match:#c6e4c4; }
+* { box-sizing:border-box; }
+body { margin:0; font:16px/1.55 -apple-system,'Inter',system-ui,sans-serif; background:var(--bg); color:var(--text); }
+header, footer { padding:16px 24px; }
+header { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); background:var(--card); }
+.logo { font-weight:700; font-size:20px; color:var(--accent); text-decoration:none; }
+nav a { color:var(--text); text-decoration:none; margin-left:16px; font-size:14px; }
+main { max-width:800px; margin:0 auto; padding:24px; }
+h1 { font-size:32px; margin:.2em 0; text-align:center; }
+.lede { text-align:center; font-size:16px; color:var(--muted); margin-bottom:24px; }
+.hud { display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; font-weight:600; background:var(--card); padding:12px 20px; border-radius:8px; border:1px solid var(--line); }
+.hud select, .hud button { padding:6px 12px; border:1px solid var(--line); border-radius:6px; font-family:inherit; background:var(--card); }
+.hud button.primary { background:var(--accent); color:#fff; border-color:var(--accent); cursor:pointer; }
+#board { display:grid; gap:8px; }
+.card { aspect-ratio:1; background:var(--accent); color:#fff; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:clamp(24px,6vw,48px); cursor:pointer; transition:transform .2s; user-select:none; }
+.card:hover { transform:scale(1.02); }
+.card.flipped { background:var(--flip); color:#000; }
+.card.matched { background:var(--match); color:#000; cursor:default; }
+.card:not(.flipped) .icon { visibility:hidden; }
+.won { margin-top:16px; padding:16px; background:var(--match); border-radius:8px; text-align:center; font-weight:600; display:none; }
+.won.show { display:block; }
+.inline-ad { margin:24px auto; display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<header>
+  <a href="/" class="logo">🌪 Tornado Simulator</a>
+  <nav><a href="/">Home</a> <a href="/tornado-namer/">Tornado Namer</a> <a href="/tornadle/">Tornadle</a></nav>
+</header>
+<main>
+  <h1>🃏 Weather Memory Match</h1>
+  <p class="lede">Flip pairs of weather symbols. Match all pairs to win.</p>
+
+  <div class="hud">
+    <span>Moves: <span id="moves">0</span> · Matches: <span id="matches">0</span>/<span id="total">8</span></span>
+    <span>Time: <span id="time">0</span>s</span>
+    <span>
+      <select id="difficulty">
+        <option value="8">Easy (16 cards)</option>
+        <option value="12">Medium (24 cards)</option>
+        <option value="18">Hard (36 cards)</option>
+      </select>
+      <button class="primary" id="new">New Game</button>
+    </span>
+  </div>
+
+  <div id="board"></div>
+
+  <div class="won" id="won"></div>
+
+  <div class="inline-ad">
+    <iframe src="//www.topcreativeformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.html" width="728" height="90" frameborder="0" scrolling="no"></iframe>
+  </div>
+
+  <p style="margin-top:32px;color:var(--muted);font-size:14px;text-align:center;">Related: <a href="/weather-word-search/">Word Search</a> · <a href="/weather-crossword/">Crossword</a> · <a href="/weather-trivia/">Trivia</a> · <a href="/tornado-namer/">Tornado Namer</a></p>
+</main>
+<footer style="text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line);margin-top:32px;background:var(--card);">
+  © 2026 Tornado Simulator · <a href="/about/" style="color:var(--muted);">About</a>
+</footer>
+
+<script>
+const ICONS = ['🌪️','🌀','⛈️','🌩️','🌨️','🌫️','🌊','☁️','🌥️','⛅','🌤️','🌈','☀️','🌡️','💨','❄️','🌧️','🥶','🌦️','⚡','🏔️','🌬️','🔥','🌵'];
+let cards = [], flipped = [], moves = 0, matches = 0, startTime = 0, timer = null, locked = false;
+
+function init() {
+  const n = +document.getElementById('difficulty').value;
+  const pool = [...ICONS].sort(()=>Math.random()-.5).slice(0,n);
+  cards = [...pool,...pool].sort(()=>Math.random()-.5).map((icon,i)=>({icon, id:i, matched:false, flipped:false}));
+  moves = 0; matches = 0; flipped = []; locked = false;
+  document.getElementById('moves').textContent = 0;
+  document.getElementById('matches').textContent = 0;
+  document.getElementById('total').textContent = n;
+  document.getElementById('won').classList.remove('show');
+  startTime = Date.now();
+  if (timer) clearInterval(timer);
+  timer = setInterval(()=>document.getElementById('time').textContent = Math.floor((Date.now()-startTime)/1000), 1000);
+  render();
+}
+
+function render() {
+  const b = document.getElementById('board');
+  const cols = cards.length === 16 ? 4 : cards.length === 24 ? 6 : 6;
+  b.style.gridTemplateColumns = `repeat(${cols},1fr)`;
+  b.innerHTML = '';
+  cards.forEach((c,i)=>{
+    const d = document.createElement('div');
+    d.className = 'card' + (c.flipped?' flipped':'') + (c.matched?' matched':'');
+    d.innerHTML = `<span class="icon">${c.icon}</span>`;
+    d.onclick = ()=>flip(i);
+    b.appendChild(d);
+  });
+}
+
+function flip(i) {
+  if (locked || cards[i].matched || cards[i].flipped) return;
+  cards[i].flipped = true;
+  flipped.push(i);
+  render();
+  if (flipped.length === 2) {
+    moves++;
+    document.getElementById('moves').textContent = moves;
+    locked = true;
+    setTimeout(()=>{
+      if (cards[flipped[0]].icon === cards[flipped[1]].icon) {
+        cards[flipped[0]].matched = true;
+        cards[flipped[1]].matched = true;
+        matches++;
+        document.getElementById('matches').textContent = matches;
+        if (matches === cards.length/2) {
+          clearInterval(timer);
+          const won = document.getElementById('won');
+          won.textContent = `🎉 Won in ${moves} moves and ${Math.floor((Date.now()-startTime)/1000)}s!`;
+          won.classList.add('show');
+        }
+      } else {
+        cards[flipped[0]].flipped = false;
+        cards[flipped[1]].flipped = false;
+      }
+      flipped = [];
+      locked = false;
+      render();
+    }, 700);
+  }
+}
+
+document.getElementById('new').onclick = init;
+document.getElementById('difficulty').onchange = init;
+init();
+</script>
+<script src="/assets/house-ads.js"></script>
+</body>
+</html>
