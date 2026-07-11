@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dew Point Calculator — Convert Temperature and Humidity to Dew Point | Tornado Simulator</title>
+<meta name="description" content="A free dew point calculator. Enter temperature and relative humidity (or wet bulb) to get exact dew point. Includes chart, comfort description, and severe weather relevance.">
+<meta name="keywords" content="dew point calculator, humidity calculator, dew point formula, wet bulb calculator, dew point chart">
+<link rel="canonical" href="https://www.tornadosimulator.net/dew-point-calculator/">
+<link rel="icon" href="/favicon.ico">
+<meta property="og:title" content="Dew Point Calculator — Convert T and RH to Dew Point">
+<meta property="og:description" content="Free dew point calculator with comfort chart.">
+<meta property="og:type" content="website">
+<style>
+:root { --bg:#f7f5ef; --card:#fffdf7; --text:#221; --muted:#5b5548; --accent:#a02818; --line:#e6dfd0; }
+* { box-sizing:border-box; }
+body { margin:0; font:16px/1.55 -apple-system,'Inter',system-ui,sans-serif; background:var(--bg); color:var(--text); }
+header, footer { padding:16px 24px; }
+header { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); }
+.logo { font-family:'Fraunces',Georgia,serif; font-weight:700; font-size:20px; color:var(--accent); text-decoration:none; }
+nav a { color:var(--text); text-decoration:none; margin-left:16px; font-size:14px; }
+main { max-width:800px; margin:0 auto; padding:24px; }
+h1 { font-family:'Fraunces',Georgia,serif; font-size:36px; margin:.2em 0; }
+.lede { font-size:18px; color:var(--muted); margin-bottom:24px; }
+.calc { background:var(--card); padding:24px; border-radius:12px; border:1px solid var(--line); box-shadow:0 2px 8px rgba(0,0,0,.04); }
+.row { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
+label { display:block; font-weight:600; margin-bottom:6px; font-size:14px; }
+input, select { width:100%; padding:10px 14px; border:1px solid var(--line); border-radius:6px; font-family:inherit; font-size:16px; background:#fff; }
+input:focus, select:focus { outline:none; border-color:var(--accent); }
+.result { margin-top:20px; padding:20px; background:linear-gradient(135deg,var(--accent),#7a1c10); color:#fff; border-radius:8px; }
+.result .big { font-size:48px; font-family:'Fraunces',serif; font-weight:700; line-height:1; }
+.result .label { font-size:14px; opacity:.8; }
+.result .comfort { margin-top:12px; font-size:14px; }
+h2 { font-family:'Fraunces',serif; font-size:24px; margin-top:32px; }
+table { width:100%; border-collapse:collapse; margin-top:8px; font-size:14px; }
+th, td { padding:8px 12px; text-align:left; border-bottom:1px solid var(--line); }
+th { background:var(--card); }
+.inline-ad { margin:24px auto; display:flex; justify-content:center; }
+p.note { color:var(--muted); font-size:14px; }
+</style>
+</head>
+<body>
+<header>
+  <a href="/" class="logo">🌪 Tornado Simulator</a>
+  <nav><a href="/">Home</a> <a href="/articles/">Articles</a> <a href="/simulator/">Simulator</a></nav>
+</header>
+<main>
+  <h1>Dew Point Calculator</h1>
+  <p class="lede">Enter temperature and humidity. Get exact dew point and human-comfort description. Uses the Magnus formula, accurate to within 0.5°C.</p>
+
+  <div class="calc">
+    <div class="row">
+      <div>
+        <label>Temperature</label>
+        <input id="temp" type="number" value="75" step="0.1">
+      </div>
+      <div>
+        <label>Units</label>
+        <select id="units">
+          <option value="F">°F</option>
+          <option value="C">°C</option>
+        </select>
+      </div>
+    </div>
+    <div>
+      <label>Relative Humidity (%)</label>
+      <input id="rh" type="number" value="60" min="0" max="100" step="0.1">
+    </div>
+    <div class="result">
+      <div class="label">Dew Point</div>
+      <div class="big" id="dp-value">60.7°F</div>
+      <div class="comfort" id="comfort">Comfortable to slightly humid.</div>
+    </div>
+  </div>
+
+  <h2>Dew Point Comfort Chart</h2>
+  <table>
+    <tr><th>Dew Point</th><th>How it feels</th><th>Severe weather relevance</th></tr>
+    <tr><td>< 50°F</td><td>Dry, comfortable</td><td>Low tornado risk</td></tr>
+    <tr><td>50-55°F</td><td>Comfortable</td><td>Marginal moisture</td></tr>
+    <tr><td>55-60°F</td><td>Comfortable</td><td>Enough moisture for storms</td></tr>
+    <tr><td>60-65°F</td><td>Slightly humid</td><td>Supercells possible</td></tr>
+    <tr><td>65-70°F</td><td>Humid, sticky</td><td>Tornado favored</td></tr>
+    <tr><td>70-75°F</td><td>Very humid, oppressive</td><td>Tornado risk high with shear</td></tr>
+    <tr><td>75°F+</td><td>Miserable</td><td>Rare in Plains; common Deep South</td></tr>
+  </table>
+
+  <div class="inline-ad">
+    <iframe src="//www.topcreativeformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.html" width="728" height="90" frameborder="0" scrolling="no"></iframe>
+  </div>
+
+  <h2>Why dew point matters for severe weather</h2>
+  <p>Dew point measures actual moisture content in the air — unlike relative humidity, which changes with temperature. A dew point of 68°F contains a lot of moisture whether the air is 75° or 95°.</p>
+  <p>For a supercell tornado, forecasters look for dew points in the 60s Fahrenheit. Below 55°F, the air is usually too dry to sustain the strong low-level circulation that produces tornadoes. Above 70°F, moisture is plentiful but instability often becomes explosive.</p>
+  <p class="note">The Magnus formula used here: γ = ln(RH/100) + a·T/(b+T); Td = b·γ/(a-γ), where a = 17.625, b = 243.04°C.</p>
+
+  <p style="margin-top:24px;color:var(--muted);font-size:14px;">Related: <a href="/thunder-distance-calculator/">Thunder Distance</a> · <a href="/wind-speed-converter/">Wind Speed Converter</a> · <a href="/reading-a-skew-t-diagram/">Reading a Skew-T</a></p>
+</main>
+<footer style="text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line);margin-top:32px;">
+  © 2026 Tornado Simulator · <a href="/about/" style="color:var(--muted);">About</a>
+</footer>
+
+<script>
+const A = 17.625, B = 243.04;
+function calc() {
+  const units = document.getElementById('units').value;
+  let T = parseFloat(document.getElementById('temp').value);
+  const RH = parseFloat(document.getElementById('rh').value);
+  if (isNaN(T) || isNaN(RH) || RH<=0 || RH>100) return;
+  const TC = units==='F' ? (T-32)*5/9 : T;
+  const gamma = Math.log(RH/100) + (A*TC)/(B+TC);
+  const DpC = (B*gamma)/(A-gamma);
+  const Dp = units==='F' ? DpC*9/5 + 32 : DpC;
+  document.getElementById('dp-value').textContent = Dp.toFixed(1) + '°' + units;
+  document.getElementById('comfort').textContent = comfortDesc(units==='F' ? Dp : Dp*9/5+32);
+}
+function comfortDesc(dpF) {
+  if (dpF < 50) return 'Dry — comfortable.';
+  if (dpF < 55) return 'Comfortable. Marginal moisture for storms.';
+  if (dpF < 60) return 'Slightly humid. Enough moisture for thunderstorms.';
+  if (dpF < 65) return 'Humid. Supercell environments possible.';
+  if (dpF < 70) return 'Very humid. Tornado risk elevated with shear.';
+  if (dpF < 75) return 'Oppressive. High tornado risk with strong shear.';
+  return 'Extreme moisture. Rare outside Deep South and Gulf.';
+}
+document.getElementById('temp').addEventListener('input', calc);
+document.getElementById('rh').addEventListener('input', calc);
+document.getElementById('units').addEventListener('change', calc);
+calc();
+</script>
+<script src="/assets/ads-config.js" defer></script>
+<script src="/assets/ads.js" defer></script>
+<script src="/assets/house-ads.js" defer></script>
+</body>
+</html>
