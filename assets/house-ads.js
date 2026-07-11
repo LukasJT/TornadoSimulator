@@ -5,12 +5,12 @@
   'use strict';
 
   var SITES = [
-    { domain: 'celestialviewer', variants: [
-      { href: 'https://celestialviewer.com', title: 'See the Milky Way tonight',
+    { domain: 'celestialvisibility', variants: [
+      { href: 'https://celestialvisibility.com', title: 'See the Milky Way tonight',
         sub: 'Real-time night-sky visibility forecast for your city',
         bg: 'linear-gradient(135deg,#0a1128 0%,#1a2456 45%,#4a1a6e 100%)',
         color: '#e8ecff', accent: '#a3d5ff', icon: '🌌' },
-      { href: 'https://celestialviewer.com', title: 'Northern lights forecast',
+      { href: 'https://celestialvisibility.com', title: 'Northern lights forecast',
         sub: 'Know exactly when the aurora is visible near you',
         bg: 'linear-gradient(135deg,#052922 0%,#0e5e4e 45%,#3ac598 100%)',
         color: '#f0fff8', accent: '#c8f7e0', icon: '✨' },
