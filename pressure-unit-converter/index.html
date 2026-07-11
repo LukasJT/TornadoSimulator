@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barometric Pressure Converter — mb, inHg, hPa, kPa, mmHg, psi | Tornado Simulator</title>
+<meta name="description" content="Free barometric pressure converter. Convert between millibars, inches of mercury, hectopascals, kilopascals, mmHg, and psi. Includes context for tornado, hurricane, and everyday pressures.">
+<meta name="keywords" content="pressure converter, barometric pressure converter, mb to inHg, hPa to mb, mercury inches to millibars, weather pressure converter">
+<link rel="canonical" href="https://www.tornadosimulator.net/pressure-unit-converter/">
+<link rel="icon" href="/favicon.ico">
+<meta property="og:title" content="Barometric Pressure Converter">
+<meta property="og:description" content="Convert between all common weather pressure units.">
+<meta property="og:type" content="website">
+<style>
+:root { --bg:#f7f5ef; --card:#fffdf7; --text:#221; --muted:#5b5548; --accent:#a02818; --line:#e6dfd0; }
+* { box-sizing:border-box; }
+body { margin:0; font:16px/1.55 -apple-system,'Inter',system-ui,sans-serif; background:var(--bg); color:var(--text); }
+header, footer { padding:16px 24px; }
+header { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); }
+.logo { font-family:'Fraunces',Georgia,serif; font-weight:700; font-size:20px; color:var(--accent); text-decoration:none; }
+nav a { color:var(--text); text-decoration:none; margin-left:16px; font-size:14px; }
+main { max-width:800px; margin:0 auto; padding:24px; }
+h1 { font-family:'Fraunces',Georgia,serif; font-size:36px; margin:.2em 0; }
+.lede { font-size:18px; color:var(--muted); margin-bottom:24px; }
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; background:var(--card); padding:20px; border-radius:12px; border:1px solid var(--line); }
+.field label { display:block; font-weight:600; font-size:13px; color:var(--muted); margin-bottom:4px; }
+.field input { width:100%; padding:10px 14px; border:1px solid var(--line); border-radius:6px; font-size:18px; font-family:'Fraunces',serif; font-weight:700; }
+.field input:focus { outline:none; border-color:var(--accent); }
+.category { margin-top:24px; background:var(--card); padding:16px 20px; border-radius:12px; border:1px solid var(--line); }
+h2 { font-family:'Fraunces',serif; font-size:24px; margin:16px 0 8px; }
+table { width:100%; border-collapse:collapse; font-size:14px; }
+th, td { text-align:left; padding:8px 12px; border-bottom:1px solid var(--line); }
+.chip { display:inline-block; padding:2px 8px; border-radius:12px; font-size:12px; font-weight:600; }
+.chip.norm { background:#c6e4c4; color:#065f46; }
+.chip.high { background:#dbeafe; color:#1e40af; }
+.chip.low { background:#fef3c7; color:#92400e; }
+.chip.tor { background:#fee2e2; color:#991b1b; }
+.inline-ad { margin:24px auto; display:flex; justify-content:center; }
+</style>
+</head>
+<body>
+<header>
+  <a href="/" class="logo">🌪 Tornado Simulator</a>
+  <nav><a href="/">Home</a> <a href="/articles/">Articles</a> <a href="/simulator/">Simulator</a></nav>
+</header>
+<main>
+  <h1>Barometric Pressure Converter</h1>
+  <p class="lede">Type into any field — the others update instantly. Standard sea-level pressure is 1013.25 mb / 29.92 inHg.</p>
+
+  <div class="grid">
+    <div class="field">
+      <label>Millibars (mb / hPa)</label>
+      <input id="mb" type="number" step="0.01" value="1013.25">
+    </div>
+    <div class="field">
+      <label>Inches of Mercury (inHg)</label>
+      <input id="inhg" type="number" step="0.01" value="29.92">
+    </div>
+    <div class="field">
+      <label>Kilopascals (kPa)</label>
+      <input id="kpa" type="number" step="0.01" value="101.325">
+    </div>
+    <div class="field">
+      <label>Millimeters of Mercury (mmHg / Torr)</label>
+      <input id="mmhg" type="number" step="0.01" value="760">
+    </div>
+    <div class="field">
+      <label>Pounds per Square Inch (psi)</label>
+      <input id="psi" type="number" step="0.001" value="14.696">
+    </div>
+    <div class="field">
+      <label>Atmospheres (atm)</label>
+      <input id="atm" type="number" step="0.0001" value="1.0000">
+    </div>
+  </div>
+
+  <div class="inline-ad">
+    <iframe src="//www.topcreativeformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.html" width="728" height="90" frameborder="0" scrolling="no"></iframe>
+  </div>
+
+  <h2>Pressure Reference Chart</h2>
+  <table>
+    <tr><th>Pressure (mb)</th><th>inHg</th><th>Context</th><th>Category</th></tr>
+    <tr><td>1084</td><td>32.01</td><td>Highest recorded sea-level (Siberia, 1968)</td><td><span class="chip high">Record high</span></td></tr>
+    <tr><td>1030</td><td>30.42</td><td>Strong high-pressure system</td><td><span class="chip high">High</span></td></tr>
+    <tr><td>1013.25</td><td>29.92</td><td>Standard sea-level pressure</td><td><span class="chip norm">Normal</span></td></tr>
+    <tr><td>1000</td><td>29.53</td><td>Approaching low pressure</td><td><span class="chip norm">Normal</span></td></tr>
+    <tr><td>985</td><td>29.08</td><td>Modest cyclone / winter storm</td><td><span class="chip low">Low</span></td></tr>
+    <tr><td>975</td><td>28.79</td><td>Nor'easter / strong midlatitude storm</td><td><span class="chip low">Low</span></td></tr>
+    <tr><td>960</td><td>28.35</td><td>Cat 2 hurricane / bomb cyclone</td><td><span class="chip low">Very low</span></td></tr>
+    <tr><td>945</td><td>27.90</td><td>Cat 3 hurricane center</td><td><span class="chip low">Extreme low</span></td></tr>
+    <tr><td>920</td><td>27.17</td><td>Cat 4 hurricane center</td><td><span class="chip low">Extreme low</span></td></tr>
+    <tr><td>882</td><td>26.05</td><td>Hurricane Wilma (2005) — Atlantic record</td><td><span class="chip tor">Record</span></td></tr>
+    <tr><td>870</td><td>25.69</td><td>Typhoon Tip (1979) — world record</td><td><span class="chip tor">World record</span></td></tr>
+    <tr><td>~850</td><td>~25.10</td><td>Estimated inside violent tornadoes</td><td><span class="chip tor">Tornado core</span></td></tr>
+  </table>
+
+  <h2>Why pressure matters for weather</h2>
+  <p>Air flows from high pressure to low pressure. Big pressure differences (steep gradients) produce strong winds. Storm intensity is often measured by central pressure — the deeper the low, the stronger the storm.</p>
+  <p>Inside violent tornadoes, pressure drops of 100 mb or more have been indirectly measured. This creates the explosive pressure differential responsible for structural damage even at the edge of the vortex.</p>
+
+  <p style="margin-top:24px;color:var(--muted);font-size:14px;">Related: <a href="/dew-point-calculator/">Dew Point Calculator</a> · <a href="/wind-speed-converter/">Wind Speed Converter</a> · <a href="/hurricane-category-explorer/">Hurricane Category Explorer</a></p>
+</main>
+<footer style="text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--line);margin-top:32px;">
+  © 2026 Tornado Simulator · <a href="/about/" style="color:var(--muted);">About</a>
+</footer>
+
+<script>
+const F = { mb:1, inhg:0.02952998, kpa:0.1, mmhg:0.7500617, psi:0.01450377, atm:0.0009869233 };
+let updating = false;
+function setAll(fromMb) {
+  updating = true;
+  document.getElementById('mb').value = fromMb.toFixed(2);
+  document.getElementById('inhg').value = (fromMb*F.inhg).toFixed(2);
+  document.getElementById('kpa').value = (fromMb*F.kpa).toFixed(2);
+  document.getElementById('mmhg').value = (fromMb*F.mmhg).toFixed(2);
+  document.getElementById('psi').value = (fromMb*F.psi).toFixed(3);
+  document.getElementById('atm').value = (fromMb*F.atm).toFixed(4);
+  updating = false;
+}
+['mb','inhg','kpa','mmhg','psi','atm'].forEach(id=>{
+  document.getElementById(id).addEventListener('input', e=>{
+    if (updating) return;
+    const v = parseFloat(e.target.value);
+    if (isNaN(v)) return;
+    setAll(v / F[id]);
+  });
+});
+</script>
+<script src="/assets/ads-config.js" defer></script>
+<script src="/assets/ads.js" defer></script>
+<script src="/assets/house-ads.js" defer></script>
+</body>
+</html>
