@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>How to Read a Skew-T Diagram — Beginner's Guide</title>
+<meta name="description" content="Skew-T log-P diagrams are the standard way meteorologists visualize the vertical atmosphere. This guide walks through the axes, plotting temperature and dew point, identifying LCL, LFC and EL, reading CAPE and CIN, and using hodographs." />
+<meta name="keywords" content="skew-t diagram, how to read skew-t, atmospheric sounding, skew t log p, CAPE, LCL, hodograph, weather balloon" />
+<meta property="og:title" content="How to Read a Skew-T Diagram — Beginner's Guide" />
+<meta property="og:description" content="Skew-T log-P diagrams are the standard way meteorologists visualize the vertical atmosphere. This guide walks through the axes, plotting temperature and dew point, identifying LCL, LFC and EL, reading CAPE and CIN, and using hodographs." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tornadosimulator.net/reading-a-skew-t-diagram/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/reading-a-skew-t-diagram/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --accent:#a02818; --link:#1e3a5f; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.75}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text)}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.breadcrumb{max-width:760px;margin:16px auto 0;padding:0 24px;font-size:13px;color:var(--text-muted)}
+article{max-width:760px;margin:24px auto 60px;padding:0 24px}
+.article-header{margin-bottom:36px;padding-bottom:22px;border-bottom:1px solid var(--border)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h1{font-family:var(--serif);font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.02em;margin-bottom:14px}
+h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.lede{font-size:19px;color:var(--text-secondary);max-width:640px;line-height:1.55}
+article h2{font-family:var(--serif);font-size:26px;margin:36px 0 14px;letter-spacing:-0.01em}
+article h3{font-family:var(--serif);font-size:20px;margin:24px 0 8px;color:var(--accent)}
+article p{margin-bottom:14px;font-size:17px}
+article ul,article ol{margin:8px 0 18px 22px}
+article li{margin-bottom:6px;font-size:16px}
+.callout{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:6px;padding:20px 24px;margin:26px 0}
+.callout p{margin:0;font-size:15px;color:var(--text-secondary)}
+.subtype-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin:20px 0 24px}
+.subtype{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
+.subtype-name{font-family:var(--serif);font-size:17px;font-weight:700;margin-bottom:4px;color:var(--accent)}
+.subtype-desc{font-size:13px;color:var(--text-secondary);line-height:1.55}
+.settings{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin:18px 0;overflow:hidden}
+.setting-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:14px 20px;border-bottom:1px solid var(--border);align-items:baseline}
+.setting-row:last-child{border-bottom:none}
+.setting-scene{font-family:var(--serif);font-weight:700;font-size:15px}
+.setting-desc{font-size:13px;color:var(--text-secondary)}
+.cta-box{background:linear-gradient(135deg,var(--accent) 0%,#7d1f13 100%);color:white;border-radius:14px;padding:26px 28px;margin:32px 0;display:flex;gap:18px;align-items:center;text-decoration:none;transition:transform 0.15s}
+.cta-box:hover{transform:translateY(-2px);text-decoration:none;color:white}
+.cta-emoji{font-size:40px;line-height:1}
+.cta-title{font-family:var(--serif);font-size:22px;font-weight:700;margin-bottom:4px}
+.cta-desc{opacity:0.9;font-size:14px}
+.cta-arrow{margin-left:auto;font-size:20px}
+.footer{text-align:center;padding:30px 24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px}
+.inline-ad{text-align:center;margin:28px auto;max-width:728px;overflow:hidden}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/tornado-namer/">Namer</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb"><a href="/">Home</a> · <a href="/articles/">Articles</a> · How to read a</div>
+
+<article>
+  <header class="article-header">
+    <div class="eyebrow">Technical guide</div>
+    <h1>How to read a <em>skew-T diagram</em></h1>
+    <p class="lede">Skew-T log-P diagrams are how meteorologists visualize the atmosphere in the vertical. They look intimidating. They aren't — once you understand the four lines that matter.</p>
+  </header>
+
+  <h2>The four line types</h2>
+  <p>A skew-T has four families of lines that never change:</p>
+  <ul>
+    <li><strong>Isobars</strong> — horizontal lines. Pressure decreases upward. 1000 mb at the surface, 100 mb near the tropopause.</li>
+    <li><strong>Isotherms</strong> — diagonal lines skewed 45° right. Warmer to the right, colder to the left. "Skewed" is what puts the T in "skew-T."</li>
+    <li><strong>Dry adiabats</strong> — curved lines showing how an unsaturated parcel cools as it rises.</li>
+    <li><strong>Moist adiabats</strong> — curved lines showing how a saturated parcel cools as it rises. Cools slower than dry because condensation releases latent heat.</li>
+  </ul>
+  <h2>The two lines that get plotted</h2>
+  <p>A weather balloon sends back two continuous curves — one for temperature, one for dew point.</p>
+  <ul>
+    <li><strong>Temperature (T)</strong> — always the rightward curve.</li>
+    <li><strong>Dew point (Td)</strong> — always the leftward curve.</li>
+    <li>The gap between them indicates humidity. Touching = saturated (cloud). Wide apart = dry.</li>
+  </ul>
+  <h2>The critical levels</h2>
+  <ul>
+    <li><strong>LCL — Lifted Condensation Level.</strong> Where the parcel becomes saturated if lifted. Marks cloud base.</li>
+    <li><strong>LFC — Level of Free Convection.</strong> Where a lifted parcel becomes warmer than its environment and starts accelerating upward on its own.</li>
+    <li><strong>EL — Equilibrium Level.</strong> Where the rising parcel is finally cooler than its surroundings. Approximate storm top.</li>
+  </ul>
+  <h2>Reading CAPE and CIN</h2>
+  <p>CAPE (Convective Available Potential Energy) is the area between the parcel path and the environmental temperature <em>above</em> the LFC — literally an area on the diagram. Bigger area = more instability.</p>
+  <p>CIN (Convective Inhibition) is the small area <em>below</em> the LFC where the parcel is <em>cooler</em> than its environment — the "cap" that must be broken.</p>
+  <div class="callout"><p>Rough visual test: if the parcel path stays far to the right of the environmental temperature for most of the mid-troposphere, you have big CAPE. If the parcel dips just left of the environment near 850-700 mb, you have a cap.</p></div>
+  <h2>The hodograph</h2>
+  <p>Attached to most skew-T displays is a hodograph — a plot of wind vector tips at different heights. Straight hodograph = splitting supercells. Curved (clockwise in the Northern Hemisphere) = right-moving supercells favored. Sickle-shaped low-level curve = high tornado potential.</p>
+  <h2>Practice reading real soundings</h2>
+  <ul>
+    <li>SPC soundings page — spc.noaa.gov/exper/soundings/</li>
+    <li>University of Wyoming atmospheric soundings — weather.uwyo.edu/upperair/sounding.html</li>
+    <li>Iowa State Environmental Mesonet</li>
+  </ul>
+
+  <h2>Learn more</h2>
+  <ul>
+    <li><a href="/what-makes-a-tornado/">What makes a tornado — six ingredients</a></li>
+    <li><a href="/supercell-simulator/">Interactive supercell simulator</a></li>
+    <li><a href="/how-tornadoes-form/">How tornadoes form step by step</a></li>
+    <li><a href="/weather-glossary/">Weather glossary A-Z</a></li>
+    <li><a href="/what-is-a-supercell/">What is a supercell?</a></li>
+  </ul>
+
+</article>
+
+<footer class="footer">
+  Part of <a href="/">Tornado Hub</a>. Educational content.
+</footer>
+
+<script src="/assets/house-ads.js" defer></script>
+</body>
+</html>
