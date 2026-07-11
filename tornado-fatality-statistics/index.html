@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tornado Fatality Statistics — Who Dies and Why</title>
+<meta name="description" content="A data-driven look at tornado fatalities in the US. Who dies, where, in what structures, at what age, and why. Trends since 1875 and what has changed." />
+<meta name="keywords" content="tornado fatalities, tornado death statistics, tornado fatality data, who dies in tornado, mobile home tornado deaths" />
+<meta property="og:title" content="Tornado Fatality Statistics — Who Dies and Why" />
+<meta property="og:description" content="A data-driven look at tornado fatalities in the US. Who dies, where, in what structures, at what age, and why. Trends since 1875 and what has changed." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tornadosimulator.net/tornado-fatality-statistics/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/tornado-fatality-statistics/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --accent:#a02818; --link:#1e3a5f; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.75}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text)}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.breadcrumb{max-width:760px;margin:16px auto 0;padding:0 24px;font-size:13px;color:var(--text-muted)}
+article{max-width:760px;margin:24px auto 60px;padding:0 24px}
+.article-header{margin-bottom:36px;padding-bottom:22px;border-bottom:1px solid var(--border)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h1{font-family:var(--serif);font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.02em;margin-bottom:14px}
+h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.lede{font-size:19px;color:var(--text-secondary);max-width:640px;line-height:1.55}
+article h2{font-family:var(--serif);font-size:26px;margin:36px 0 14px;letter-spacing:-0.01em}
+article h3{font-family:var(--serif);font-size:20px;margin:24px 0 8px;color:var(--accent)}
+article p{margin-bottom:14px;font-size:17px}
+article ul,article ol{margin:8px 0 18px 22px}
+article li{margin-bottom:6px;font-size:16px}
+.callout{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:6px;padding:20px 24px;margin:26px 0}
+.callout p{margin:0;font-size:15px;color:var(--text-secondary)}
+.subtype-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin:20px 0 24px}
+.subtype{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
+.subtype-name{font-family:var(--serif);font-size:17px;font-weight:700;margin-bottom:4px;color:var(--accent)}
+.subtype-desc{font-size:13px;color:var(--text-secondary);line-height:1.55}
+.settings{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin:18px 0;overflow:hidden}
+.setting-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:14px 20px;border-bottom:1px solid var(--border);align-items:baseline}
+.setting-row:last-child{border-bottom:none}
+.setting-scene{font-family:var(--serif);font-weight:700;font-size:15px}
+.setting-desc{font-size:13px;color:var(--text-secondary)}
+.cta-box{background:linear-gradient(135deg,var(--accent) 0%,#7d1f13 100%);color:white;border-radius:14px;padding:26px 28px;margin:32px 0;display:flex;gap:18px;align-items:center;text-decoration:none;transition:transform 0.15s}
+.cta-box:hover{transform:translateY(-2px);text-decoration:none;color:white}
+.cta-emoji{font-size:40px;line-height:1}
+.cta-title{font-family:var(--serif);font-size:22px;font-weight:700;margin-bottom:4px}
+.cta-desc{opacity:0.9;font-size:14px}
+.cta-arrow{margin-left:auto;font-size:20px}
+.footer{text-align:center;padding:30px 24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px}
+.inline-ad{text-align:center;margin:28px auto;max-width:728px;overflow:hidden}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/tornado-namer/">Namer</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb"><a href="/">Home</a> · <a href="/articles/">Articles</a> · Tornado fatality</div>
+
+<article>
+  <header class="article-header">
+    <div class="eyebrow">Data analysis</div>
+    <h1>Tornado fatality <em>statistics</em></h1>
+    <p class="lede">Tornado deaths are not random. Certain locations, structures, ages, and situations produce disproportionate fatalities. Here is the data.</p>
+  </header>
+
+  <h2>The big picture</h2>
+  <ul>
+    <li>US average: 71 tornado deaths per year (1990-2020).</li>
+    <li>Range: 15 to 553 depending on year.</li>
+    <li>Worst year: 2011 (553 dead, mostly Super Outbreak).</li>
+    <li>Best year: 1988 (32 dead).</li>
+    <li>Fatality rate per tornado has decreased over decades — thanks to warnings.</li>
+    <li>Total tornadoes has increased due to better detection.</li>
+  </ul>
+  <h2>Fatalities by structure</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">Mobile / manufactured home</div><div class="subtype-desc">43% of deaths despite <8% of housing. 15-20x death rate of site-built.</div></div>
+    <div class="subtype"><div class="subtype-name">Vehicles</div><div class="subtype-desc">11% of deaths. Higher risk overnight and rural.</div></div>
+    <div class="subtype"><div class="subtype-name">Outdoors</div><div class="subtype-desc">10% of deaths. Often people who tried to observe the tornado.</div></div>
+    <div class="subtype"><div class="subtype-name">Site-built home</div><div class="subtype-desc">32% of deaths.</div></div>
+    <div class="subtype"><div class="subtype-name">Business / commercial</div><div class="subtype-desc">4% of deaths.</div></div>
+    <div class="subtype"><div class="subtype-name">Community shelter</div><div class="subtype-desc"><1% of deaths.</div></div>
+  </div>
+  <h2>Fatalities by time of day</h2>
+  <ul>
+    <li>Nighttime (7 PM - 7 AM): ~40% of tornadoes, but ~65% of fatalities.</li>
+    <li>Peak fatal hour: 9-11 PM.</li>
+    <li>Dawn (5-7 AM): 15% of fatalities.</li>
+    <li>Daylight tornadoes: relatively fewer fatalities per warned event.</li>
+    <li>People asleep or without visual cues die at 2.5x the rate.</li>
+  </ul>
+  <h2>Fatalities by region</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">Dixie Alley (MS/AL/AR/TN)</div><div class="subtype-desc">40% of all US tornado deaths despite <20% of tornadoes.</div></div>
+    <div class="subtype"><div class="subtype-name">Great Plains (KS/OK/NE/TX Panhandle)</div><div class="subtype-desc">25% of deaths.</div></div>
+    <div class="subtype"><div class="subtype-name">Southeast (GA/SC/NC/FL)</div><div class="subtype-desc">15% of deaths.</div></div>
+    <div class="subtype"><div class="subtype-name">Midwest (IL/IN/MO/IA)</div><div class="subtype-desc">15% of deaths.</div></div>
+    <div class="subtype"><div class="subtype-name">Northeast</div><div class="subtype-desc"><5% of deaths.</div></div>
+    <div class="subtype"><div class="subtype-name">West of Rockies</div><div class="subtype-desc"><1% of deaths.</div></div>
+  </div>
+  <h2>Fatalities by age</h2>
+  <ul>
+    <li>Under 5: elevated risk (relies on adults for protection).</li>
+    <li>65+: highest death rate (mobility, isolation, older housing).</li>
+    <li>75+: 3x death rate of adults 25-64.</li>
+    <li>Working-age adults: lower death rate but higher raw count.</li>
+    <li>Children in vehicles or mobile homes: extreme risk.</li>
+  </ul>
+  <h2>Fatalities by tornado intensity</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">EF0</div><div class="subtype-desc"><1% of tornado deaths — but many injuries.</div></div>
+    <div class="subtype"><div class="subtype-name">EF1</div><div class="subtype-desc">5% of deaths.</div></div>
+    <div class="subtype"><div class="subtype-name">EF2</div><div class="subtype-desc">10% of deaths.</div></div>
+    <div class="subtype"><div class="subtype-name">EF3</div><div class="subtype-desc">25% of deaths.</div></div>
+    <div class="subtype"><div class="subtype-name">EF4</div><div class="subtype-desc">35% of deaths.</div></div>
+    <div class="subtype"><div class="subtype-name">EF5</div><div class="subtype-desc">25% of deaths.</div></div>
+  </div>
+  <p>EF4-EF5 tornadoes are rare (<1% of all tornadoes) but produce 60% of fatalities. This is why targeting these events matters.</p>
+  <h2>The deadliest tornadoes in US history</h2>
+  <ol>
+    <li><strong>1925 Tri-State</strong> — 695 dead. Deadliest ever.</li>
+    <li><strong>1840 Natchez, MS</strong> — 317 dead.</li>
+    <li><strong>1896 St. Louis</strong> — 255 dead.</li>
+    <li><strong>1936 Tupelo, MS</strong> — 216 dead.</li>
+    <li><strong>1936 Gainesville, GA</strong> — 203 dead.</li>
+    <li><strong>1947 Woodward, OK</strong> — 181 dead.</li>
+    <li><strong>1908 Amite, LA</strong> — 143 dead.</li>
+    <li><strong>1899 New Richmond, WI</strong> — 117 dead.</li>
+    <li><strong>2011 Joplin, MO</strong> — 158 dead. Deadliest US tornado since 1947.</li>
+    <li><strong>1953 Flint, MI</strong> — 116 dead.</li>
+    <li><strong>1953 Waco, TX</strong> — 114 dead.</li>
+    <li><strong>1902 Goliad, TX</strong> — 114 dead.</li>
+  </ol>
+  <h2>What has changed since 1875</h2>
+  <ul>
+    <li><strong>1875-1900:</strong> No warnings existed. Fatalities were catastrophic.</li>
+    <li><strong>1900-1950:</strong> Weather Bureau prohibited tornado warnings — feared panic. Deaths accumulated.</li>
+    <li><strong>1950s:</strong> Public warnings began. Deaths dropped modestly.</li>
+    <li><strong>1970s:</strong> Radar era. Warning lead time grew from 0 to 5 min.</li>
+    <li><strong>1980s-1990s:</strong> Doppler radar. Lead time 11-13 min. Deaths dropped further.</li>
+    <li><strong>2000s:</strong> Cell alerts began. WEA in 2012.</li>
+    <li><strong>2010s-2020s:</strong> Impact-based warnings. Some recent years buck the trend (2011, 2021).</li>
+  </ul>
+  <h2>Preventable deaths</h2>
+  <p>Most tornado fatalities in the modern era are preventable. Common patterns:</p>
+  <ul>
+    <li>Person in mobile home who didn't have alternate shelter.</li>
+    <li>Person in vehicle trying to outrun tornado.</li>
+    <li>Person outside recording video.</li>
+    <li>Person didn't receive warning (WEA off, sleeping, hearing impaired).</li>
+    <li>Person believed the warning was false (warning fatigue).</li>
+    <li>Person believed the tornado wouldn't hit their specific location.</li>
+    <li>Person had no shelter plan.</li>
+    <li>Person's "shelter" was actually a poor choice (attic, bathroom on 2nd floor).</li>
+  </ul>
+  <h2>The equity dimension</h2>
+  <ul>
+    <li>Mobile home fatality rate 15-20x site-built homes.</li>
+    <li>Mobile home density is higher in low-income and rural areas.</li>
+    <li>Non-native English speakers face warning language barriers.</li>
+    <li>Overnight-shift workers face different warning exposure.</li>
+    <li>Historically, warnings were only in English.</li>
+    <li>NWS has expanded Spanish-language warnings.</li>
+    <li>Community shelter access disparities.</li>
+    <li>Insurance coverage disparities post-storm.</li>
+  </ul>
+  <h2>What continues to save lives</h2>
+  <ul>
+    <li>NOAA Weather Radio with SAME.</li>
+    <li>Wireless Emergency Alerts (WEA).</li>
+    <li>Storm shelters and safe rooms.</li>
+    <li>Skywarn spotter network.</li>
+    <li>Broadcast meteorology continuity.</li>
+    <li>Impact-based warnings.</li>
+    <li>Community shelter programs.</li>
+    <li>Family communication plans.</li>
+  </ul>
+
+  <h2>Learn more</h2>
+  <ul>
+    <li><a href="/tornado-warning-lead-time-history/">Warning lead time history</a></li>
+    <li><a href="/tornado-alley-vs-dixie-alley/">Tornado Alley vs Dixie Alley</a></li>
+    <li><a href="/mobile-home-tornado-safety/">Mobile home tornado safety</a></li>
+    <li><a href="/deadly-storms-of-each-decade/">Deadliest storms by decade</a></li>
+  </ul>
+
+</article>
+
+<footer class="footer">
+  Part of <a href="/">Tornado Hub</a>. Educational content.
+</footer>
+
+<script src="/assets/ads-config.js" defer></script>
+<script src="/assets/ads.js" defer></script>
+<script src="/assets/house-ads.js" defer></script>
+</body>
+</html>

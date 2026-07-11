@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Weather Forecasting — GraphCast, Pangu, Aurora Explained</title>
+<meta name="description" content="Machine learning weather models are catching up to physics-based forecasts — and running 1000x faster. Here is what GraphCast, Pangu, and Aurora are, how they work, and what they can (and cannot) do." />
+<meta name="keywords" content="AI weather forecasting, GraphCast, Pangu weather, Aurora Microsoft, machine learning weather" />
+<meta property="og:title" content="AI Weather Forecasting — GraphCast, Pangu, Aurora Explained" />
+<meta property="og:description" content="Machine learning weather models are catching up to physics-based forecasts — and running 1000x faster. Here is what GraphCast, Pangu, and Aurora are, how they work, and what they can (and cannot) do." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tornadosimulator.net/ai-weather-forecasting/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/ai-weather-forecasting/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --accent:#a02818; --link:#1e3a5f; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.75}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text)}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.breadcrumb{max-width:760px;margin:16px auto 0;padding:0 24px;font-size:13px;color:var(--text-muted)}
+article{max-width:760px;margin:24px auto 60px;padding:0 24px}
+.article-header{margin-bottom:36px;padding-bottom:22px;border-bottom:1px solid var(--border)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h1{font-family:var(--serif);font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.02em;margin-bottom:14px}
+h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.lede{font-size:19px;color:var(--text-secondary);max-width:640px;line-height:1.55}
+article h2{font-family:var(--serif);font-size:26px;margin:36px 0 14px;letter-spacing:-0.01em}
+article h3{font-family:var(--serif);font-size:20px;margin:24px 0 8px;color:var(--accent)}
+article p{margin-bottom:14px;font-size:17px}
+article ul,article ol{margin:8px 0 18px 22px}
+article li{margin-bottom:6px;font-size:16px}
+.callout{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:6px;padding:20px 24px;margin:26px 0}
+.callout p{margin:0;font-size:15px;color:var(--text-secondary)}
+.subtype-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin:20px 0 24px}
+.subtype{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
+.subtype-name{font-family:var(--serif);font-size:17px;font-weight:700;margin-bottom:4px;color:var(--accent)}
+.subtype-desc{font-size:13px;color:var(--text-secondary);line-height:1.55}
+.settings{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin:18px 0;overflow:hidden}
+.setting-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:14px 20px;border-bottom:1px solid var(--border);align-items:baseline}
+.setting-row:last-child{border-bottom:none}
+.setting-scene{font-family:var(--serif);font-weight:700;font-size:15px}
+.setting-desc{font-size:13px;color:var(--text-secondary)}
+.cta-box{background:linear-gradient(135deg,var(--accent) 0%,#7d1f13 100%);color:white;border-radius:14px;padding:26px 28px;margin:32px 0;display:flex;gap:18px;align-items:center;text-decoration:none;transition:transform 0.15s}
+.cta-box:hover{transform:translateY(-2px);text-decoration:none;color:white}
+.cta-emoji{font-size:40px;line-height:1}
+.cta-title{font-family:var(--serif);font-size:22px;font-weight:700;margin-bottom:4px}
+.cta-desc{opacity:0.9;font-size:14px}
+.cta-arrow{margin-left:auto;font-size:20px}
+.footer{text-align:center;padding:30px 24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px}
+.inline-ad{text-align:center;margin:28px auto;max-width:728px;overflow:hidden}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/tornado-namer/">Namer</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb"><a href="/">Home</a> · <a href="/articles/">Articles</a> · AI weather</div>
+
+<article>
+  <header class="article-header">
+    <div class="eyebrow">Forecasting science</div>
+    <h1>AI weather <em>forecasting</em></h1>
+    <p class="lede">In 2023-24, machine learning models started beating traditional physics-based weather models. Here is what they are, why they work, and what they still get wrong.</p>
+  </header>
+
+  <h2>The paradigm shift</h2>
+  <p>For 70 years, weather forecasting has meant solving the equations of atmospheric physics on supercomputers. Slow, expensive, effective.</p>
+  <p>In 2023, Google DeepMind's GraphCast beat the industry standard ECMWF model on many metrics. In 2023, Huawei's Pangu did too. In 2024, Microsoft's Aurora. All run on GPUs in seconds instead of hours on CPUs.</p>
+  <p>This isn't incremental improvement. It's a new paradigm.</p>
+  <h2>How AI weather models work</h2>
+  <ol>
+    <li>Start with 40+ years of past weather data (ERA5 reanalysis dataset).</li>
+    <li>Train a neural network to predict future weather from past weather.</li>
+    <li>Not physics — pattern learning.</li>
+    <li>Model learns implicit physics from data.</li>
+    <li>Result: given current atmospheric state, predict state 6 hours later.</li>
+    <li>Chain 6-hour steps to get 10-day forecasts.</li>
+    <li>GPU inference: seconds per forecast.</li>
+  </ol>
+  <h2>The three main systems</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">GraphCast (Google DeepMind, 2023)</div><div class="subtype-desc">Graph neural network. 0.25° global resolution. 10-day forecasts.</div></div>
+    <div class="subtype"><div class="subtype-name">Pangu-Weather (Huawei, 2023)</div><div class="subtype-desc">3D neural network. 0.25° global. Beats ECMWF on 6 of 8 metrics.</div></div>
+    <div class="subtype"><div class="subtype-name">Aurora (Microsoft, 2024)</div><div class="subtype-desc">Foundation model. Fine-tunable for specific tasks (air quality, waves).</div></div>
+    <div class="subtype"><div class="subtype-name">FourCastNet (NVIDIA, 2022)</div><div class="subtype-desc">Fourier neural operator. Earlier system, foundational.</div></div>
+    <div class="subtype"><div class="subtype-name">Fuxi (Fudan, 2023)</div><div class="subtype-desc">Chinese-developed. Competitive on medium range.</div></div>
+    <div class="subtype"><div class="subtype-name">AIFS (ECMWF, 2024)</div><div class="subtype-desc">Official European ML model. Operational since 2024.</div></div>
+  </div>
+  <h2>What they're good at</h2>
+  <ul>
+    <li>Medium-range forecasts (3-10 days).</li>
+    <li>Storm track prediction.</li>
+    <li>Temperature and pressure forecasting.</li>
+    <li>Global-scale patterns.</li>
+    <li>Running in seconds instead of hours.</li>
+    <li>Being trained on cheaper hardware.</li>
+    <li>Ensembling — running many variations quickly.</li>
+  </ul>
+  <h2>What they're still bad at</h2>
+  <ul>
+    <li>Extreme events they haven't seen before.</li>
+    <li>Fine-scale convection (like individual thunderstorms).</li>
+    <li>Precipitation exact amounts and timing.</li>
+    <li>Tornado prediction (not enough training data on tornado details).</li>
+    <li>Climate-change-driven trends outside training distribution.</li>
+    <li>Small-scale wind features.</li>
+    <li>Fog.</li>
+    <li>Ocean-atmosphere coupling for hurricane intensity.</li>
+  </ul>
+  <h2>Why they matter for chasers and safety</h2>
+  <ul>
+    <li>AI models will supplement, not replace, HRRR for chase-day decisions.</li>
+    <li>Better medium-range means better multi-day chase planning.</li>
+    <li>AI ensemble outputs will show forecast confidence.</li>
+    <li>AI-augmented radar for tornado detection is in development.</li>
+    <li>Warn-on-Forecast with AI acceleration coming.</li>
+    <li>Personal AI weather assistants for individual users.</li>
+  </ul>
+  <h2>What NWS does with them</h2>
+  <ul>
+    <li>As of 2026, NWS uses AI models as inputs to human forecast decisions.</li>
+    <li>Not as final forecast product.</li>
+    <li>Ensemble includes GFS + AI outputs.</li>
+    <li>National Blend of Models (NBM) increasingly incorporates AI.</li>
+    <li>Human forecaster still makes the call for warnings and outlooks.</li>
+  </ul>
+  <h2>The training data problem</h2>
+  <ul>
+    <li>AI models trained on 1979-present data.</li>
+    <li>Extreme events (EF5 tornadoes, Cat 5 hurricanes) are RARE in training.</li>
+    <li>Result: AI models underforecast extreme events.</li>
+    <li>Climate change is producing conditions not in training.</li>
+    <li>Training data quality varies globally — poor for developing world.</li>
+    <li>Bias toward "average" outcomes.</li>
+  </ul>
+  <h2>The interpretability problem</h2>
+  <p>Traditional models: we know why they output what they do (equations).</p>
+  <p>AI models: we don't. It's a black box.</p>
+  <ul>
+    <li>Meteorologists can't always trust an AI forecast for a specific event.</li>
+    <li>When AI and physics disagree, which is right?</li>
+    <li>Verification against ground truth is important.</li>
+    <li>AI models can hallucinate — produce physically impossible states.</li>
+    <li>This limits how much you can rely on them in operational settings.</li>
+  </ul>
+  <h2>The future</h2>
+  <ul>
+    <li>Hybrid models: physics + ML. Best of both.</li>
+    <li>Fine-tuned regional models.</li>
+    <li>Convection-allowing AI models.</li>
+    <li>Continuous learning: models updated with new events.</li>
+    <li>Ensemble AI for uncertainty quantification.</li>
+    <li>AI for radar interpretation.</li>
+    <li>AI for satellite interpretation.</li>
+    <li>AI-generated forecast text for public consumption.</li>
+    <li>AI for warning coordination.</li>
+  </ul>
+
+  <h2>Learn more</h2>
+  <ul>
+    <li><a href="/how-forecast-accuracy-improved/">How forecast accuracy improved</a></li>
+    <li><a href="/reading-spc-mesoanalysis/">Reading SPC mesoanalysis</a></li>
+    <li><a href="/noaa-data-sources/">NOAA data sources</a></li>
+    <li><a href="/tornado-warning-lead-time-history/">Warning lead time history</a></li>
+  </ul>
+
+</article>
+
+<footer class="footer">
+  Part of <a href="/">Tornado Hub</a>. Educational content.
+</footer>
+
+<script src="/assets/ads-config.js" defer></script>
+<script src="/assets/ads.js" defer></script>
+<script src="/assets/house-ads.js" defer></script>
+</body>
+</html>

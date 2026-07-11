@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Weather Station Installation — DIY Guide</title>
+<meta name="description" content="A step-by-step guide to installing a personal weather station properly. Sensor placement, wiring, feeding to Weather Underground, and common mistakes that ruin data." />
+<meta name="keywords" content="weather station installation, install weather station, weather station DIY, wxobs standards, weather station placement" />
+<meta property="og:title" content="Weather Station Installation — DIY Guide" />
+<meta property="og:description" content="A step-by-step guide to installing a personal weather station properly. Sensor placement, wiring, feeding to Weather Underground, and common mistakes that ruin data." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tornadosimulator.net/weather-station-installation/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/weather-station-installation/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌡️</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --accent:#a02818; --link:#1e3a5f; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.75}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text)}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.breadcrumb{max-width:760px;margin:16px auto 0;padding:0 24px;font-size:13px;color:var(--text-muted)}
+article{max-width:760px;margin:24px auto 60px;padding:0 24px}
+.article-header{margin-bottom:36px;padding-bottom:22px;border-bottom:1px solid var(--border)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h1{font-family:var(--serif);font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.02em;margin-bottom:14px}
+h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.lede{font-size:19px;color:var(--text-secondary);max-width:640px;line-height:1.55}
+article h2{font-family:var(--serif);font-size:26px;margin:36px 0 14px;letter-spacing:-0.01em}
+article h3{font-family:var(--serif);font-size:20px;margin:24px 0 8px;color:var(--accent)}
+article p{margin-bottom:14px;font-size:17px}
+article ul,article ol{margin:8px 0 18px 22px}
+article li{margin-bottom:6px;font-size:16px}
+.callout{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:6px;padding:20px 24px;margin:26px 0}
+.callout p{margin:0;font-size:15px;color:var(--text-secondary)}
+.subtype-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin:20px 0 24px}
+.subtype{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
+.subtype-name{font-family:var(--serif);font-size:17px;font-weight:700;margin-bottom:4px;color:var(--accent)}
+.subtype-desc{font-size:13px;color:var(--text-secondary);line-height:1.55}
+.settings{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin:18px 0;overflow:hidden}
+.setting-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:14px 20px;border-bottom:1px solid var(--border);align-items:baseline}
+.setting-row:last-child{border-bottom:none}
+.setting-scene{font-family:var(--serif);font-weight:700;font-size:15px}
+.setting-desc{font-size:13px;color:var(--text-secondary)}
+.cta-box{background:linear-gradient(135deg,var(--accent) 0%,#7d1f13 100%);color:white;border-radius:14px;padding:26px 28px;margin:32px 0;display:flex;gap:18px;align-items:center;text-decoration:none;transition:transform 0.15s}
+.cta-box:hover{transform:translateY(-2px);text-decoration:none;color:white}
+.cta-emoji{font-size:40px;line-height:1}
+.cta-title{font-family:var(--serif);font-size:22px;font-weight:700;margin-bottom:4px}
+.cta-desc{opacity:0.9;font-size:14px}
+.cta-arrow{margin-left:auto;font-size:20px}
+.footer{text-align:center;padding:30px 24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px}
+.inline-ad{text-align:center;margin:28px auto;max-width:728px;overflow:hidden}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/tornado-namer/">Namer</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb"><a href="/">Home</a> · <a href="/articles/">Articles</a> · Weather station</div>
+
+<article>
+  <header class="article-header">
+    <div class="eyebrow">DIY guide</div>
+    <h1>Weather station <em>installation</em></h1>
+    <p class="lede">A perfectly placed cheap weather station beats a poorly placed pro-grade one. Here is how to install yours so the data is useful.</p>
+  </header>
+
+  <h2>The site survey</h2>
+  <ol>
+    <li>Choose a location as far from buildings, trees, pavement as possible.</li>
+    <li>Ideal: at least 10 ft from nearest structure, further is better.</li>
+    <li>Ground should be short grass — not concrete, gravel, or bare soil.</li>
+    <li>Height above ground: 4-6 ft for temperature/humidity, 33 ft for wind.</li>
+    <li>Level ground.</li>
+    <li>Consider the ground below rain gauge — must be level.</li>
+    <li>Access for battery changes.</li>
+    <li>RF range to your indoor console (usually 100-300 ft line of sight).</li>
+  </ol>
+  <h2>Mounting the anemometer</h2>
+  <ul>
+    <li>Ideal: 33 ft above ground on dedicated mast.</li>
+    <li>Reality for backyard: on top of the roof, 10 ft above roof peak.</li>
+    <li>Alternative: 20 ft dedicated pole at edge of yard.</li>
+    <li>Wind direction sensor must point true north when installed.</li>
+    <li>Use compass or GPS to verify true north (not magnetic).</li>
+    <li>Grounding rod at mast base for lightning.</li>
+    <li>Guy wires if pole exceeds 15 ft.</li>
+  </ul>
+  <h2>Mounting the temperature / humidity sensor</h2>
+  <ul>
+    <li>Must be in a radiation shield (typically included).</li>
+    <li>Must NOT be in direct sun.</li>
+    <li>Must NOT be near AC condenser, dryer vent, roof heat.</li>
+    <li>Should be above short grass.</li>
+    <li>4-6 ft above ground.</li>
+    <li>Aspirated radiation shield if you can afford it — cheap plastic shields overheat in sun.</li>
+    <li>North-facing side of mounting pole reduces sun exposure.</li>
+  </ul>
+  <h2>Mounting the rain gauge</h2>
+  <ul>
+    <li>Level with the ground (use bubble level).</li>
+    <li>Minimum 2× height of nearest obstruction from rain gauge base.</li>
+    <li>Above short grass, not bare dirt.</li>
+    <li>Check quarterly for spider webs, leaves clogging.</li>
+    <li>Wipe clean before season starts.</li>
+    <li>Heated rain gauge if in freezing climate — otherwise snow won't register until it melts.</li>
+  </ul>
+  <h2>Console placement (indoor)</h2>
+  <ul>
+    <li>Direct RF line of sight to outdoor unit.</li>
+    <li>Near a window is fine.</li>
+    <li>Away from electronics (WiFi, TV) that can interfere.</li>
+    <li>Plug in AC power — battery backup only.</li>
+    <li>Ethernet connection preferred over WiFi for cloud upload.</li>
+  </ul>
+  <h2>Feeding data to services</h2>
+  <ol>
+    <li>Enable local Wi-Fi upload on your console (most modern stations).</li>
+    <li>Create a free Weather Underground account.</li>
+    <li>Get a station ID (looks like KILDECATER123).</li>
+    <li>Enter station ID and key into console.</li>
+    <li>Also register for CWOP (Citizen Weather Observer Program) — feeds NWS models.</li>
+    <li>Also register for PWSweather.com — commercial network.</li>
+    <li>MADIS ingest is via CWOP.</li>
+    <li>Verify data appears on Weather Underground within 1 hour.</li>
+  </ol>
+  <h2>Calibration</h2>
+  <ul>
+    <li>Compare temperature reading with nearest METAR or ASOS station.</li>
+    <li>A difference of 2-3°F is normal — you're measuring different air.</li>
+    <li>Calibrate barometer against sea-level pressure at nearest ASOS.</li>
+    <li>Rain gauge test: pour 1 cup water — verify reading matches expected.</li>
+    <li>Anemometer calibration is difficult DIY — trust manufacturer.</li>
+    <li>Log calibration adjustments.</li>
+  </ul>
+  <h2>Common mistakes</h2>
+  <ul>
+    <li>Roof mount for temperature sensor — always too hot.</li>
+    <li>Deck mount for temperature — heat from deck warms shield.</li>
+    <li>Rain gauge under tree — captures partial rain.</li>
+    <li>Rain gauge on roof — updrafts underestimate rain.</li>
+    <li>Anemometer next to house — turbulent wind readings.</li>
+    <li>Not leveling rain gauge — 5° off = 5-10% error.</li>
+    <li>Not aligning wind vane true north.</li>
+    <li>Cheap battery in outdoor sensor — dies mid-winter.</li>
+    <li>Not cleaning rain gauge annually.</li>
+    <li>Not updating firmware.</li>
+  </ul>
+  <h2>Maintenance schedule</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">Weekly</div><div class="subtype-desc">Check console for signal/battery warnings.</div></div>
+    <div class="subtype"><div class="subtype-name">Monthly</div><div class="subtype-desc">Rain gauge visual check for debris.</div></div>
+    <div class="subtype"><div class="subtype-name">Quarterly</div><div class="subtype-desc">Wipe temperature sensor shield. Verify anemometer spins.</div></div>
+    <div class="subtype"><div class="subtype-name">Semi-annually</div><div class="subtype-desc">Clean rain gauge internally. Replace outdoor batteries.</div></div>
+    <div class="subtype"><div class="subtype-name">Annually</div><div class="subtype-desc">Full recalibration.</div></div>
+    <div class="subtype"><div class="subtype-name">After storm</div><div class="subtype-desc">Verify orientation, mounting, connections.</div></div>
+  </div>
+  <h2>Winter considerations</h2>
+  <ul>
+    <li>Batteries last less time in cold — replace before winter.</li>
+    <li>Rain gauge freezes — heated gauge or store snowfall separately.</li>
+    <li>Ice accretion on anemometer freezes it.</li>
+    <li>Ice on solar panel reduces charging.</li>
+    <li>Some stations have "winter mode" — enable it.</li>
+  </ul>
+
+  <h2>Learn more</h2>
+  <ul>
+    <li><a href="/home-weather-station-buying-guide/">Home weather station buying guide</a></li>
+    <li><a href="/weather-radio-buying-guide/">Weather radio buying guide</a></li>
+    <li><a href="/best-free-weather-apps/">Best free weather apps</a></li>
+    <li><a href="/noaa-data-sources/">NOAA data sources</a></li>
+  </ul>
+
+</article>
+
+<footer class="footer">
+  Part of <a href="/">Tornado Hub</a>. Educational content.
+</footer>
+
+<script src="/assets/ads-config.js" defer></script>
+<script src="/assets/ads.js" defer></script>
+<script src="/assets/house-ads.js" defer></script>
+</body>
+</html>
