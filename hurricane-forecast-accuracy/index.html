@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hurricane Forecast Accuracy — Track vs Intensity</title>
+<meta name="description" content="Hurricane track forecasts have dramatically improved since 1990. Intensity forecasts are still lagging. Here is what the data shows and why." />
+<meta name="keywords" content="hurricane forecast accuracy, hurricane track error, hurricane intensity forecast, NHC forecast improvement" />
+<meta property="og:title" content="Hurricane Forecast Accuracy — Track vs Intensity" />
+<meta property="og:description" content="Hurricane track forecasts have dramatically improved since 1990. Intensity forecasts are still lagging. Here is what the data shows and why." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tornadosimulator.net/hurricane-forecast-accuracy/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/hurricane-forecast-accuracy/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌀</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --accent:#a02818; --link:#1e3a5f; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.75}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text)}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.breadcrumb{max-width:760px;margin:16px auto 0;padding:0 24px;font-size:13px;color:var(--text-muted)}
+article{max-width:760px;margin:24px auto 60px;padding:0 24px}
+.article-header{margin-bottom:36px;padding-bottom:22px;border-bottom:1px solid var(--border)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h1{font-family:var(--serif);font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.02em;margin-bottom:14px}
+h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.lede{font-size:19px;color:var(--text-secondary);max-width:640px;line-height:1.55}
+article h2{font-family:var(--serif);font-size:26px;margin:36px 0 14px;letter-spacing:-0.01em}
+article h3{font-family:var(--serif);font-size:20px;margin:24px 0 8px;color:var(--accent)}
+article p{margin-bottom:14px;font-size:17px}
+article ul,article ol{margin:8px 0 18px 22px}
+article li{margin-bottom:6px;font-size:16px}
+.callout{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:6px;padding:20px 24px;margin:26px 0}
+.callout p{margin:0;font-size:15px;color:var(--text-secondary)}
+.subtype-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin:20px 0 24px}
+.subtype{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
+.subtype-name{font-family:var(--serif);font-size:17px;font-weight:700;margin-bottom:4px;color:var(--accent)}
+.subtype-desc{font-size:13px;color:var(--text-secondary);line-height:1.55}
+.settings{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin:18px 0;overflow:hidden}
+.setting-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:14px 20px;border-bottom:1px solid var(--border);align-items:baseline}
+.setting-row:last-child{border-bottom:none}
+.setting-scene{font-family:var(--serif);font-weight:700;font-size:15px}
+.setting-desc{font-size:13px;color:var(--text-secondary)}
+.cta-box{background:linear-gradient(135deg,var(--accent) 0%,#7d1f13 100%);color:white;border-radius:14px;padding:26px 28px;margin:32px 0;display:flex;gap:18px;align-items:center;text-decoration:none;transition:transform 0.15s}
+.cta-box:hover{transform:translateY(-2px);text-decoration:none;color:white}
+.cta-emoji{font-size:40px;line-height:1}
+.cta-title{font-family:var(--serif);font-size:22px;font-weight:700;margin-bottom:4px}
+.cta-desc{opacity:0.9;font-size:14px}
+.cta-arrow{margin-left:auto;font-size:20px}
+.footer{text-align:center;padding:30px 24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px}
+.inline-ad{text-align:center;margin:28px auto;max-width:728px;overflow:hidden}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/tornado-namer/">Namer</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb"><a href="/">Home</a> · <a href="/articles/">Articles</a> · Hurricane forecast</div>
+
+<article>
+  <header class="article-header">
+    <div class="eyebrow">Hurricane science</div>
+    <h1>Hurricane forecast <em>accuracy</em></h1>
+    <p class="lede">Hurricane track forecasts are now 4-5 times more accurate than 1990. But intensity forecasts have barely improved. Here is why.</p>
+  </header>
+
+  <h2>The metrics</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">Track error</div><div class="subtype-desc">How far off the forecast center-position is from actual. Measured in miles.</div></div>
+    <div class="subtype"><div class="subtype-name">Intensity error</div><div class="subtype-desc">How wrong the forecast wind speed was. Measured in knots.</div></div>
+    <div class="subtype"><div class="subtype-name">Cross-track error</div><div class="subtype-desc">Perpendicular to the storm's motion.</div></div>
+    <div class="subtype"><div class="subtype-name">Along-track error</div><div class="subtype-desc">In the direction of motion (timing).</div></div>
+    <div class="subtype"><div class="subtype-name">Rapid intensification (RI) detection</div><div class="subtype-desc">Did the model predict a jump in intensity?</div></div>
+  </div>
+  <h2>The track improvement story</h2>
+  <ul>
+    <li>1990: 24-hour forecast error 100 miles average.</li>
+    <li>2000: 24-hour forecast error 60 miles.</li>
+    <li>2010: 24-hour forecast error 40 miles.</li>
+    <li>2020: 24-hour forecast error 30 miles.</li>
+    <li>2025: 24-hour forecast error 25 miles.</li>
+    <li>5-day track forecasts today are as accurate as 2-day forecasts were in 1990.</li>
+    <li>Improvement rate: 1% per year.</li>
+  </ul>
+  <h2>What drove track improvement</h2>
+  <ol>
+    <li>Better initial conditions from Hurricane Hunter dropsondes.</li>
+    <li>Higher-resolution models (HWRF, HAFS).</li>
+    <li>Better data assimilation.</li>
+    <li>Ensemble forecasting.</li>
+    <li>Satellite advances (GOES-R series).</li>
+    <li>AI-augmented forecasts (increasing).</li>
+    <li>Better representation of steering flow.</li>
+  </ol>
+  <h2>The intensity problem</h2>
+  <ul>
+    <li>Intensity error has barely improved since 1990.</li>
+    <li>2025 24-hour intensity error still 10-15 knots.</li>
+    <li>5-day intensity error still 25+ knots.</li>
+    <li>Rapid intensification detection: significantly harder.</li>
+    <li>Rapid weakening similarly.</li>
+    <li>The physics of eyewall replacement, rapid intensification, and inner-core convection remain challenging.</li>
+  </ul>
+  <h2>Rapid intensification</h2>
+  <p>A hurricane that gains 35+ mph of wind speed in 24 hours is undergoing rapid intensification (RI).</p>
+  <ul>
+    <li>Increasingly frequent since 2017.</li>
+    <li>Katrina (2005), Michael (2018), Harvey (2017), Ian (2022), Otis (2023), Milton (2024) all underwent RI near landfall.</li>
+    <li>RI near landfall gives less evacuation time.</li>
+    <li>Predicting RI 24-48 hours out is the frontier.</li>
+    <li>HRRR, HWRF, HAFS all trying to solve this.</li>
+    <li>AI-augmented forecasts show promise.</li>
+    <li>Ocean warmth is a driver.</li>
+  </ul>
+  <h2>The Cone of Uncertainty</h2>
+  <p>NHC issues track forecasts with a 'cone of uncertainty' — the area within which the storm center is expected to fall 2/3 of the time.</p>
+  <ul>
+    <li>Cone widens with forecast time (more uncertainty).</li>
+    <li>Cone width has SHRUNK over decades as track forecasts improved.</li>
+    <li>Cone is misunderstood — does NOT bound impact area.</li>
+    <li>Hurricane winds and rain extend far outside cone.</li>
+    <li>Storm surge extends farther than the eye.</li>
+    <li>Deaths often outside the cone track center.</li>
+  </ul>
+  <h2>The cone of uncertainty problem</h2>
+  <ul>
+    <li>Public thinks: "if I'm outside the cone I'm safe."</li>
+    <li>Reality: hurricane impacts extend 100-300 miles from center.</li>
+    <li>Wind field, rain field, storm surge zone are separate maps.</li>
+    <li>NHC has explored replacing/supplementing the cone.</li>
+    <li>Some communities have added "wind swath" and "surge inundation" maps.</li>
+    <li>Still: the cone is what most people see.</li>
+  </ul>
+  <h2>The models</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">GFS</div><div class="subtype-desc">Global. Reasonable track. Weaker on intensity.</div></div>
+    <div class="subtype"><div class="subtype-name">ECMWF</div><div class="subtype-desc">European. Excellent track for medium-range.</div></div>
+    <div class="subtype"><div class="subtype-name">HWRF</div><div class="subtype-desc">Hurricane-specific US model. Good intensity forecasts.</div></div>
+    <div class="subtype"><div class="subtype-name">HAFS</div><div class="subtype-desc">Newer US hurricane model, replacing HWRF.</div></div>
+    <div class="subtype"><div class="subtype-name">HRRR</div><div class="subtype-desc">High-resolution for landfall specifics.</div></div>
+    <div class="subtype"><div class="subtype-name">CMC/GEM</div><div class="subtype-desc">Canadian.</div></div>
+    <div class="subtype"><div class="subtype-name">UKMet</div><div class="subtype-desc">British.</div></div>
+    <div class="subtype"><div class="subtype-name">AI models (GraphCast, Aurora, Pangu)</div><div class="subtype-desc">Increasingly considered.</div></div>
+  </div>
+  <h2>The specific improvements needed</h2>
+  <ul>
+    <li>Better ocean coupling.</li>
+    <li>Better representation of moist processes in inner core.</li>
+    <li>Ensemble intensity forecasting.</li>
+    <li>AI acceleration of hurricane physics.</li>
+    <li>Multi-model consensus.</li>
+    <li>Real-time dropsonde integration.</li>
+    <li>Better representation of asymmetric storm structure.</li>
+  </ul>
+  <h2>For emergency managers</h2>
+  <ul>
+    <li>Track improvements have enabled better evacuation planning.</li>
+    <li>Intensity uncertainty means evacuation for weaker forecast is often prudent.</li>
+    <li>The 2018 Michael forecast underestimated the Cat 5 landfall.</li>
+    <li>The 2022 Ian forecast underestimated the strengthening.</li>
+    <li>Modern practice: plan for Cat +1 for forecast Cat 3.</li>
+    <li>Storm surge planning must consider intensity uncertainty.</li>
+  </ul>
+  <h2>For public safety</h2>
+  <ul>
+    <li>Do not focus on Category — total impact matters.</li>
+    <li>Watch NHC updates (every 6 hours during hurricane season).</li>
+    <li>Public advisory + track map + wind field map.</li>
+    <li>Storm surge maps for coastal.</li>
+    <li>Local emergency management app.</li>
+    <li>WEA alerts.</li>
+    <li>Assume storm may be worse than forecast.</li>
+  </ul>
+
+  <h2>Learn more</h2>
+  <ul>
+    <li><a href="/hurricane-hunter-aircraft/">Hurricane hunter aircraft</a></li>
+    <li><a href="/hurricanes-in-us-history/">Hurricanes in US history</a></li>
+    <li><a href="/hurricane-season-preparedness/">Hurricane season preparedness</a></li>
+    <li><a href="/how-forecast-accuracy-improved/">How forecast accuracy improved</a></li>
+  </ul>
+
+</article>
+
+<footer class="footer">
+  Part of <a href="/">Tornado Hub</a>. Educational content.
+</footer>
+
+<script src="/assets/ads-config.js" defer></script>
+<script src="/assets/ads.js" defer></script>
+<script src="/assets/house-ads.js" defer></script>
+</body>
+</html>
