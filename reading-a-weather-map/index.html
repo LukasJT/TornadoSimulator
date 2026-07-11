@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>How to Read a Weather Map — Every Symbol Explained</title>
+<meta name="description" content="Weather maps have their own language. Here is what every isobar, front, station symbol, and pressure system means, with real examples." />
+<meta name="keywords" content="reading a weather map, weather map symbols, isobars, weather fronts, station model" />
+<meta property="og:title" content="How to Read a Weather Map — Every Symbol Explained" />
+<meta property="og:description" content="Weather maps have their own language. Here is what every isobar, front, station symbol, and pressure system means, with real examples." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tornadosimulator.net/reading-a-weather-map/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/reading-a-weather-map/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗺️</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --accent:#a02818; --link:#1e3a5f; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.75}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text)}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.breadcrumb{max-width:760px;margin:16px auto 0;padding:0 24px;font-size:13px;color:var(--text-muted)}
+article{max-width:760px;margin:24px auto 60px;padding:0 24px}
+.article-header{margin-bottom:36px;padding-bottom:22px;border-bottom:1px solid var(--border)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h1{font-family:var(--serif);font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.02em;margin-bottom:14px}
+h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.lede{font-size:19px;color:var(--text-secondary);max-width:640px;line-height:1.55}
+article h2{font-family:var(--serif);font-size:26px;margin:36px 0 14px;letter-spacing:-0.01em}
+article h3{font-family:var(--serif);font-size:20px;margin:24px 0 8px;color:var(--accent)}
+article p{margin-bottom:14px;font-size:17px}
+article ul,article ol{margin:8px 0 18px 22px}
+article li{margin-bottom:6px;font-size:16px}
+.callout{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:6px;padding:20px 24px;margin:26px 0}
+.callout p{margin:0;font-size:15px;color:var(--text-secondary)}
+.subtype-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin:20px 0 24px}
+.subtype{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
+.subtype-name{font-family:var(--serif);font-size:17px;font-weight:700;margin-bottom:4px;color:var(--accent)}
+.subtype-desc{font-size:13px;color:var(--text-secondary);line-height:1.55}
+.settings{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin:18px 0;overflow:hidden}
+.setting-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:14px 20px;border-bottom:1px solid var(--border);align-items:baseline}
+.setting-row:last-child{border-bottom:none}
+.setting-scene{font-family:var(--serif);font-weight:700;font-size:15px}
+.setting-desc{font-size:13px;color:var(--text-secondary)}
+.cta-box{background:linear-gradient(135deg,var(--accent) 0%,#7d1f13 100%);color:white;border-radius:14px;padding:26px 28px;margin:32px 0;display:flex;gap:18px;align-items:center;text-decoration:none;transition:transform 0.15s}
+.cta-box:hover{transform:translateY(-2px);text-decoration:none;color:white}
+.cta-emoji{font-size:40px;line-height:1}
+.cta-title{font-family:var(--serif);font-size:22px;font-weight:700;margin-bottom:4px}
+.cta-desc{opacity:0.9;font-size:14px}
+.cta-arrow{margin-left:auto;font-size:20px}
+.footer{text-align:center;padding:30px 24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px}
+.inline-ad{text-align:center;margin:28px auto;max-width:728px;overflow:hidden}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/tornado-namer/">Namer</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb"><a href="/">Home</a> · <a href="/articles/">Articles</a> · How to read a</div>
+
+<article>
+  <header class="article-header">
+    <div class="eyebrow">Forecasting basics</div>
+    <h1>How to read a <em>weather map</em></h1>
+    <p class="lede">Weather maps look intimidating. Once you know the symbols, they tell a clear story. Here is what every mark means.</p>
+  </header>
+
+  <h2>The three main map types</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">Surface map</div><div class="subtype-desc">Weather at ground level. Fronts, pressure systems, station observations.</div></div>
+    <div class="subtype"><div class="subtype-name">Upper air map</div><div class="subtype-desc">Weather at higher altitudes. Usually 500 hPa (about 18,000 ft).</div></div>
+    <div class="subtype"><div class="subtype-name">Model forecast</div><div class="subtype-desc">What weather is expected. Same conventions.</div></div>
+    <div class="subtype"><div class="subtype-name">Radar composite</div><div class="subtype-desc">Precipitation returns.</div></div>
+    <div class="subtype"><div class="subtype-name">Satellite loop</div><div class="subtype-desc">Cloud animation.</div></div>
+  </div>
+  <h2>Pressure systems</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">H — High pressure</div><div class="subtype-desc">Cool, dry, sinking air. Usually fair weather. Winds clockwise (Northern Hemisphere).</div></div>
+    <div class="subtype"><div class="subtype-name">L — Low pressure</div><div class="subtype-desc">Warm, moist, rising air. Storms. Winds counterclockwise.</div></div>
+    <div class="subtype"><div class="subtype-name">Central pressure number</div><div class="subtype-desc">Given in millibars (e.g., 1010 mb).</div></div>
+    <div class="subtype"><div class="subtype-name">mb / hPa</div><div class="subtype-desc">Same unit. hPa is the SI version.</div></div>
+    <div class="subtype"><div class="subtype-name">30.0 / 29.92 / 30.5</div><div class="subtype-desc">Inches of mercury, older US convention.</div></div>
+  </div>
+  <h2>Isobars</h2>
+  <ul>
+    <li>Lines connecting equal pressure.</li>
+    <li>Typically drawn every 4 mb (1000, 1004, 1008, 1012...).</li>
+    <li>Closer together = tighter pressure gradient = stronger winds.</li>
+    <li>Wider apart = light winds.</li>
+    <li>Winds flow along isobars, slightly across toward low pressure.</li>
+    <li>Circular isobars = well-defined high or low.</li>
+    <li>Ridge = elongated high.</li>
+    <li>Trough = elongated low.</li>
+  </ul>
+  <h2>Fronts</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">Cold front (blue triangles)</div><div class="subtype-desc">Cold air pushing under warm air. Line of thunderstorms possible. Wind shift + temperature drop.</div></div>
+    <div class="subtype"><div class="subtype-name">Warm front (red half-circles)</div><div class="subtype-desc">Warm air rising over cold air. Overrunning precipitation. Widespread rain.</div></div>
+    <div class="subtype"><div class="subtype-name">Stationary front (alternating)</div><div class="subtype-desc">Neither moves. Rain persists on cold side.</div></div>
+    <div class="subtype"><div class="subtype-name">Occluded front (purple)</div><div class="subtype-desc">Cold front catches warm front. Complex, often mature low.</div></div>
+    <div class="subtype"><div class="subtype-name">Dryline (orange)</div><div class="subtype-desc">Moisture boundary. Not officially a front. Common springtime severe setup.</div></div>
+    <div class="subtype"><div class="subtype-name">Trough of low pressure</div><div class="subtype-desc">Elongated low without frontal character.</div></div>
+    <div class="subtype"><div class="subtype-name">Squall line</div><div class="subtype-desc">Narrow line of severe thunderstorms. Not a front.</div></div>
+    <div class="subtype"><div class="subtype-name">Outflow boundary</div><div class="subtype-desc">Cool downdraft air from a dying storm complex.</div></div>
+  </div>
+  <h2>Station observations</h2>
+  <p>Each weather station has a "station model" showing multiple parameters:</p>
+  <ul>
+    <li>Temperature (upper left).</li>
+    <li>Dewpoint (lower left).</li>
+    <li>Pressure or altimeter (upper right).</li>
+    <li>Wind arrow (barb from station).</li>
+    <li>Cloud cover (circle: empty=clear, filled=overcast).</li>
+    <li>Current weather (icon).</li>
+    <li>Visibility (may be given).</li>
+    <li>Present pressure change (small tag).</li>
+  </ul>
+  <h2>Wind barbs</h2>
+  <ul>
+    <li>Line points UPWIND (wind comes from that direction).</li>
+    <li>Small feather = 5 knots.</li>
+    <li>Full feather = 10 knots.</li>
+    <li>Pennant (triangle) = 50 knots.</li>
+    <li>Multiple feathers add up.</li>
+    <li>North = up, East = right (standard orientation).</li>
+  </ul>
+  <h2>Radar interpretation</h2>
+  <ul>
+    <li><strong>Reflectivity</strong> — precipitation intensity.</li>
+    <li>Green: light rain. Yellow: moderate. Red: heavy. Purple/pink: hail or intense.</li>
+    <li>dBZ scale: 20 dBZ = light rain, 40 dBZ = heavy, 60 dBZ+ = severe / hail.</li>
+    <li><strong>Velocity</strong> — winds toward and away.</li>
+    <li>Green: winds toward radar. Red: away from radar.</li>
+    <li>Couplet: adjacent green+red = rotation (mesocyclone).</li>
+  </ul>
+  <h2>Satellite imagery</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">Visible (VIS)</div><div class="subtype-desc">Cloud reflection. Only during daylight.</div></div>
+    <div class="subtype"><div class="subtype-name">Infrared (IR)</div><div class="subtype-desc">Temperature. Colder = higher clouds = often more severe.</div></div>
+    <div class="subtype"><div class="subtype-name">Water vapor</div><div class="subtype-desc">Upper-atmosphere moisture. Jet stream visible.</div></div>
+    <div class="subtype"><div class="subtype-name">Enhanced IR</div><div class="subtype-desc">Color-coded to show cloud top temperature intensities.</div></div>
+    <div class="subtype"><div class="subtype-name">Cloud microphysics</div><div class="subtype-desc">Multi-spectral. Identifies fog, ice, snow.</div></div>
+    <div class="subtype"><div class="subtype-name">True color</div><div class="subtype-desc">Composited to look like human eye view.</div></div>
+  </div>
+  <h2>Common upper-air maps</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">850 hPa (~5,000 ft)</div><div class="subtype-desc">Low-level warm air advection. Where moisture flows.</div></div>
+    <div class="subtype"><div class="subtype-name">700 hPa (~10,000 ft)</div><div class="subtype-desc">Mid-level flow. Storm steering.</div></div>
+    <div class="subtype"><div class="subtype-name">500 hPa (~18,000 ft)</div><div class="subtype-desc">Mid-level. THE map for weather patterns.</div></div>
+    <div class="subtype"><div class="subtype-name">300 hPa (~30,000 ft)</div><div class="subtype-desc">Jet stream. Divergence patterns.</div></div>
+    <div class="subtype"><div class="subtype-name">250 hPa (~35,000 ft)</div><div class="subtype-desc">Peak jet stream height.</div></div>
+    <div class="subtype"><div class="subtype-name">200 hPa (~40,000 ft)</div><div class="subtype-desc">Upper divergence.</div></div>
+  </div>
+  <h2>The severe weather map to watch</h2>
+  <p>SPC Day 1 Outlook is the master weather map for severe risk.</p>
+  <ul>
+    <li>Categorical risk levels: General Thunder → Marginal → Slight → Enhanced → Moderate → High.</li>
+    <li>Individual hazard maps for tornado, hail, wind.</li>
+    <li>Percentage probabilities.</li>
+    <li>Updated multiple times daily.</li>
+    <li>Read left to right, top to bottom.</li>
+    <li>Bold hazards get boxes around them.</li>
+  </ul>
+  <h2>The everyday weather map to watch</h2>
+  <ul>
+    <li>Weather.gov: home page.</li>
+    <li>Weather Underground: PWS integration.</li>
+    <li>AccuWeather Ultimate: subscription features.</li>
+    <li>Windy: elegant global visualization.</li>
+    <li>Pivotal Weather: chase-oriented model views.</li>
+    <li>RAP mesoanalysis: SPC operational tool.</li>
+  </ul>
+
+  <h2>Learn more</h2>
+  <ul>
+    <li><a href="/reading-a-skew-t-diagram/">Reading a skew-T</a></li>
+    <li><a href="/reading-spc-mesoanalysis/">Reading SPC mesoanalysis</a></li>
+    <li><a href="/reading-a-hodograph/">Reading a hodograph</a></li>
+    <li><a href="/weather-symbols-reference/">Weather symbols reference</a></li>
+  </ul>
+
+</article>
+
+<footer class="footer">
+  Part of <a href="/">Tornado Hub</a>. Educational content.
+</footer>
+
+<script src="/assets/ads-config.js" defer></script>
+<script src="/assets/ads.js" defer></script>
+<script src="/assets/house-ads.js" defer></script>
+</body>
+</html>
