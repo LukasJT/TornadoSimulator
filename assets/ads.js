@@ -12,6 +12,25 @@
   'use strict';
   var CFG = window.ADSTERRA || {};
 
+  // --- 0. Global responsive CSS -------------------------------------------
+  // Prevents 728x90 leaderboards from causing horizontal scroll on mobile
+  // and keeps sticky Social Bar / native ads from clipping.
+  function injectResponsiveCSS() {
+    if (document.getElementById('ads-responsive-css')) return;
+    var s = document.createElement('style');
+    s.id = 'ads-responsive-css';
+    s.textContent = [
+      'html,body{overflow-x:hidden;max-width:100vw}',
+      '.inline-ad{max-width:100vw;box-sizing:border-box}',
+      '.inline-ad iframe{max-width:100%}',
+      // Hide 728x90 desktop leaderboard on mobile — user can add 320x50 mobile key later
+      '@media (max-width:767px){.inline-ad iframe[width="728"]{display:none!important}}',
+      // Skyscrapers (160x600) already have desktop-only visibility in the simulator
+      '@media (max-width:1024px){.side-ad{display:none!important}}'
+    ].join('\n');
+    document.head.appendChild(s);
+  }
+
   // --- 1. Lazy-load .inline-ad iframes ------------------------------------
   function lazyLoadBanners() {
     var frames = document.querySelectorAll('.inline-ad iframe, .side-ad iframe');
@@ -121,6 +140,7 @@
 
   // --- run ---
   function run() {
+    injectResponsiveCSS();
     lazyLoadBanners();
     injectSocialBar();
     injectNativeBanners();
