@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tornado vs Hurricane Safety — When Each Requires Different Response</title>
+<meta name="description" content="Tornado safety and hurricane safety are completely different despite similar-looking storms. Here is what each requires." />
+<meta name="keywords" content="tornado vs hurricane safety, hurricane vs tornado response, storm safety comparison" />
+<meta property="og:title" content="Tornado vs Hurricane Safety — When Each Requires Different Response" />
+<meta property="og:description" content="Tornado safety and hurricane safety are completely different despite similar-looking storms. Here is what each requires." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tornadosimulator.net/tornado-vs-hurricane-safety/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/tornado-vs-hurricane-safety/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌀</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --accent:#a02818; --link:#1e3a5f; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.75}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text)}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.breadcrumb{max-width:760px;margin:16px auto 0;padding:0 24px;font-size:13px;color:var(--text-muted)}
+article{max-width:760px;margin:24px auto 60px;padding:0 24px}
+.article-header{margin-bottom:36px;padding-bottom:22px;border-bottom:1px solid var(--border)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h1{font-family:var(--serif);font-size:clamp(30px,4vw,44px);line-height:1.15;letter-spacing:-0.02em;margin-bottom:14px}
+h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.lede{font-size:19px;color:var(--text-secondary);max-width:640px;line-height:1.55}
+article h2{font-family:var(--serif);font-size:26px;margin:36px 0 14px;letter-spacing:-0.01em}
+article h3{font-family:var(--serif);font-size:20px;margin:24px 0 8px;color:var(--accent)}
+article p{margin-bottom:14px;font-size:17px}
+article ul,article ol{margin:8px 0 18px 22px}
+article li{margin-bottom:6px;font-size:16px}
+.callout{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:6px;padding:20px 24px;margin:26px 0}
+.callout p{margin:0;font-size:15px;color:var(--text-secondary)}
+.subtype-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin:20px 0 24px}
+.subtype{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 20px}
+.subtype-name{font-family:var(--serif);font-size:17px;font-weight:700;margin-bottom:4px;color:var(--accent)}
+.subtype-desc{font-size:13px;color:var(--text-secondary);line-height:1.55}
+.settings{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin:18px 0;overflow:hidden}
+.setting-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:14px 20px;border-bottom:1px solid var(--border);align-items:baseline}
+.setting-row:last-child{border-bottom:none}
+.setting-scene{font-family:var(--serif);font-weight:700;font-size:15px}
+.setting-desc{font-size:13px;color:var(--text-secondary)}
+.cta-box{background:linear-gradient(135deg,var(--accent) 0%,#7d1f13 100%);color:white;border-radius:14px;padding:26px 28px;margin:32px 0;display:flex;gap:18px;align-items:center;text-decoration:none;transition:transform 0.15s}
+.cta-box:hover{transform:translateY(-2px);text-decoration:none;color:white}
+.cta-emoji{font-size:40px;line-height:1}
+.cta-title{font-family:var(--serif);font-size:22px;font-weight:700;margin-bottom:4px}
+.cta-desc{opacity:0.9;font-size:14px}
+.cta-arrow{margin-left:auto;font-size:20px}
+.footer{text-align:center;padding:30px 24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px}
+.inline-ad{text-align:center;margin:28px auto;max-width:728px;overflow:hidden}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/tornado-namer/">Namer</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/simulator/" class="cta">Damage Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb"><a href="/">Home</a> · <a href="/articles/">Articles</a> · Tornado vs hurricane</div>
+
+<article>
+  <header class="article-header">
+    <div class="eyebrow">Comparative safety</div>
+    <h1>Tornado vs hurricane <em>safety</em></h1>
+    <p class="lede">Both are rotating storms. But safety response for each is completely different. Here is what changes.</p>
+  </header>
+
+  <h2>The fundamental difference</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">Tornado</div><div class="subtype-desc">Warning window: seconds to minutes. Response: immediate shelter.</div></div>
+    <div class="subtype"><div class="subtype-name">Hurricane</div><div class="subtype-desc">Warning window: days. Response: preparation + evacuation.</div></div>
+  </div>
+  <p>Different physics, different geography, completely different survival strategies.</p>
+  <h2>The warning timelines</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">Tornado</div><div class="subtype-desc">Watch: hours ahead. Warning: 15 min average.</div></div>
+    <div class="subtype"><div class="subtype-name">Hurricane</div><div class="subtype-desc">Watch: 48 hrs. Warning: 36 hrs.</div></div>
+    <div class="subtype"><div class="subtype-name">Tornado</div><div class="subtype-desc">Evacuation impossible in most cases.</div></div>
+    <div class="subtype"><div class="subtype-name">Hurricane</div><div class="subtype-desc">Evacuation is standard response.</div></div>
+  </div>
+  <h2>The shelter differences</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">Tornado</div><div class="subtype-desc">Interior lowest floor. Away from windows. Small.</div></div>
+    <div class="subtype"><div class="subtype-name">Hurricane</div><div class="subtype-desc">Interior, away from windows. But same building.</div></div>
+    <div class="subtype"><div class="subtype-name">Tornado</div><div class="subtype-desc">Basement ideal.</div></div>
+    <div class="subtype"><div class="subtype-name">Hurricane</div><div class="subtype-desc">Storm surge = evacuate coastal.</div></div>
+  </div>
+  <h2>The evacuation decision</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">Tornado</div><div class="subtype-desc">Do NOT try to outrun. Shelter in place.</div></div>
+    <div class="subtype"><div class="subtype-name">Hurricane</div><div class="subtype-desc">Consider evacuation. Coastal often mandatory.</div></div>
+    <div class="subtype"><div class="subtype-name">Tornado</div><div class="subtype-desc">Vehicle is dangerous.</div></div>
+    <div class="subtype"><div class="subtype-name">Hurricane</div><div class="subtype-desc">Evacuate 72 hrs ahead.</div></div>
+  </div>
+  <h2>The kit differences</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">Tornado kit</div><div class="subtype-desc">5-min ready. Small. Emergency.</div></div>
+    <div class="subtype"><div class="subtype-name">Hurricane kit</div><div class="subtype-desc">14-day supplies. Extensive. Preparation.</div></div>
+    <div class="subtype"><div class="subtype-name">Tornado supplies</div><div class="subtype-desc">Basic first aid, radio, water.</div></div>
+    <div class="subtype"><div class="subtype-name">Hurricane supplies</div><div class="subtype-desc">Food, water, medications, cash for weeks.</div></div>
+  </div>
+  <h2>The building considerations</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">Tornado</div><div class="subtype-desc">Hurricane clips help.</div></div>
+    <div class="subtype"><div class="subtype-name">Hurricane</div><div class="subtype-desc">Storm shutters mandatory.</div></div>
+    <div class="subtype"><div class="subtype-name">Tornado</div><div class="subtype-desc">Any building fails at EF4+.</div></div>
+    <div class="subtype"><div class="subtype-name">Hurricane</div><div class="subtype-desc">Cat 5 can destroy modern homes.</div></div>
+    <div class="subtype"><div class="subtype-name">Tornado</div><div class="subtype-desc">Mobile homes deadly.</div></div>
+    <div class="subtype"><div class="subtype-name">Hurricane</div><div class="subtype-desc">Mobile homes deadly.</div></div>
+  </div>
+  <h2>The insurance differences</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">Tornado</div><div class="subtype-desc">Standard homeowners covers.</div></div>
+    <div class="subtype"><div class="subtype-name">Hurricane</div><div class="subtype-desc">Wind separate deductible.</div></div>
+    <div class="subtype"><div class="subtype-name">Hurricane surge</div><div class="subtype-desc">NFIP flood policy required.</div></div>
+    <div class="subtype"><div class="subtype-name">Both</div><div class="subtype-desc">Documentation matters.</div></div>
+  </div>
+  <h2>The recovery differences</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">Tornado</div><div class="subtype-desc">Days to weeks. Isolated damage.</div></div>
+    <div class="subtype"><div class="subtype-name">Hurricane</div><div class="subtype-desc">Weeks to years. Wide area.</div></div>
+    <div class="subtype"><div class="subtype-name">Tornado</div><div class="subtype-desc">Insurance responds fast.</div></div>
+    <div class="subtype"><div class="subtype-name">Hurricane</div><div class="subtype-desc">Insurance flooded with claims.</div></div>
+    <div class="subtype"><div class="subtype-name">Tornado</div><div class="subtype-desc">FEMA sometimes.</div></div>
+    <div class="subtype"><div class="subtype-name">Hurricane</div><div class="subtype-desc">FEMA regular participant.</div></div>
+  </div>
+  <h2>For coastal residents</h2>
+  <ul>
+    <li>Both tornadoes and hurricanes are risks.</li>
+    <li>Hurricane season: May-Nov.</li>
+    <li>Tornado season year-round.</li>
+    <li>Hurricane-spawned tornadoes: fall.</li>
+    <li>Preparedness for both.</li>
+    <li>Different evacuation plans.</li>
+    <li>Different shelter locations.</li>
+  </ul>
+  <h2>For inland residents</h2>
+  <ul>
+    <li>Tornado more common risk.</li>
+    <li>Hurricane rare except for tropical systems.</li>
+    <li>Focus preparedness on tornado.</li>
+    <li>But watch tropical remnants.</li>
+    <li>Flood risk from tropical remnants.</li>
+    <li>Tornado-spawned by inland tropical systems.</li>
+  </ul>
+  <h2>For workplaces</h2>
+  <ul>
+    <li>Both need emergency action plans.</li>
+    <li>Tornado: rapid shelter.</li>
+    <li>Hurricane: evacuation/preparation.</li>
+    <li>Communication systems for both.</li>
+    <li>Employee training different.</li>
+    <li>Business continuity plans.</li>
+  </ul>
+  <h2>For schools</h2>
+  <ul>
+    <li>Tornado drills required in tornado zones.</li>
+    <li>Hurricane preparation for coastal.</li>
+    <li>Different training.</li>
+    <li>Both taken seriously.</li>
+    <li>Family reunification plans for both.</li>
+  </ul>
+  <h2>The specific overlap</h2>
+  <ul>
+    <li>Hurricane-spawned tornadoes.</li>
+    <li>Cat 4-5 hurricanes may spawn 10-50 tornadoes.</li>
+    <li>Focus on right-front quadrant.</li>
+    <li>Emergency response challenging.</li>
+    <li>Chase operations continue during hurricane spawn events.</li>
+  </ul>
+  <h2>The mental preparation</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">Tornado</div><div class="subtype-desc">Fast, sudden, adrenaline.</div></div>
+    <div class="subtype"><div class="subtype-name">Hurricane</div><div class="subtype-desc">Slow, extended, endurance.</div></div>
+    <div class="subtype"><div class="subtype-name">Tornado</div><div class="subtype-desc">Sheltering in place.</div></div>
+    <div class="subtype"><div class="subtype-name">Hurricane</div><div class="subtype-desc">Life disruption weeks.</div></div>
+    <div class="subtype"><div class="subtype-name">Tornado</div><div class="subtype-desc">Aftermath: local community mobilizes.</div></div>
+    <div class="subtype"><div class="subtype-name">Hurricane</div><div class="subtype-desc">Aftermath: federal response required.</div></div>
+  </div>
+  <h2>The communication differences</h2>
+  <div class="subtype-grid">
+    <div class="subtype"><div class="subtype-name">Tornado warnings</div><div class="subtype-desc">WEA, NOAA radio, sirens.</div></div>
+    <div class="subtype"><div class="subtype-name">Hurricane warnings</div><div class="subtype-desc">NHC advisories, local media, evacuation orders.</div></div>
+    <div class="subtype"><div class="subtype-name">Tornado</div><div class="subtype-desc">Minutes matter.</div></div>
+    <div class="subtype"><div class="subtype-name">Hurricane</div><div class="subtype-desc">Days matter.</div></div>
+    <div class="subtype"><div class="subtype-name">Both</div><div class="subtype-desc">Weather radio essential.</div></div>
+    <div class="subtype"><div class="subtype-name">Both</div><div class="subtype-desc">Family communication plan.</div></div>
+  </div>
+  <h2>The bottom line</h2>
+  <ul>
+    <li>Preparedness for both essential in vulnerable areas.</li>
+    <li>Different mindsets required.</li>
+    <li>Different resources.</li>
+    <li>Different actions.</li>
+    <li>Don't confuse them.</li>
+    <li>Understand which you actually face.</li>
+    <li>Plan specifically for your risks.</li>
+    <li>Update plans annually.</li>
+    <li>Practice matters.</li>
+  </ul>
+
+  <h2>Learn more</h2>
+  <ul>
+    <li><a href="/hurricane-vs-tornado-comparison/">Hurricane vs tornado comparison</a></li>
+    <li><a href="/hurricane-season-preparedness/">Hurricane season preparedness</a></li>
+    <li><a href="/tornado-safety-checklist/">Tornado safety checklist</a></li>
+    <li><a href="/tornado-vs-earthquake-preparedness/">Tornado vs earthquake preparedness</a></li>
+  </ul>
+
+</article>
+
+<footer class="footer">
+  Part of <a href="/">Tornado Hub</a>. Educational content.
+</footer>
+
+<script src="/assets/ads-config.js" defer></script>
+<script src="/assets/ads.js" defer></script>
+<script src="/assets/house-ads.js" defer></script>
+</body>
+</html>
