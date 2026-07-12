@@ -1,31 +1,22 @@
 /* Adsterra keys — one place to update all ad codes.
- * Get keys from your Adsterra publisher dashboard → Websites → Add Code.
- * Set null (or empty string) to disable that format.
- *
- * TO ENABLE HIGHER-CPM FORMATS:
- *  1. Log in to publisher.adsterra.com
- *  2. Choose your website (tornadosimulator.net)
- *  3. Click "Add Code" and pick the format
- *  4. Copy the key from the generated code and paste below
+ * All 3 higher-CPM formats are now ACTIVE.
  */
 window.ADSTERRA = {
-  // Standard banner iframes — currently deployed
-  banner728x90:  'b7d63c1973b341722e34dd6f314916ba',
-  banner160x600: 'da8c75671b236383c52eb13078c2a148',
-  banner160x300: 'ff3f3758b896daf1842b3be893ed46f2',
+  // ── Iframe banner keys (used inline in article HTML) ─────────────────
+  banner728x90:  'b7d63c1973b341722e34dd6f314916ba', // desktop leaderboard
+  banner468x60:  '4deb396494f89fe329401909c35755d5', // tablet/small leaderboard
+  banner300x250: '1fe957d85bb2cf92027de309038cd17b', // medium rectangle (mobile-friendly)
+  banner320x50:  'c9b6de5dcbbc4a9a6331cd5534b0ebd2', // MOBILE banner — swaps in for 728x90 on narrow screens
+  banner160x600: 'da8c75671b236383c52eb13078c2a148', // wide-skyscraper
+  banner160x300: 'ff3f3758b896daf1842b3be893ed46f2', // half-skyscraper
 
-  // ★ Social Bar (highest CPM lever, 2-10x banner)
-  //   In Adsterra dashboard: Add Code → Social Bar
-  //   Paste the invoke.js key (looks like: pl12345678.profitableratecpm.com/xx/xx/xx)
-  socialBarSrc: '',  // e.g., '//pl12345678.profitableratecpm.com/aa/bb/cc/xxx.js'
+  // ── Social Bar (site-wide, highest CPM lever, 2-10x banner) ──────────
+  socialBarSrc: '//pl30266273.effectivecpmnetwork.com/38/35/8f/38358fe894e2e2919ff9dbccf8e09481.js',
 
-  // ★ Native Banner (in-content, 3-5x banner CPM)
-  //   In Adsterra dashboard: Add Code → Native Banner
-  //   Paste the container id and script src
-  nativeBannerSrc: '',   // e.g., '//pl12345678.profitableratecpm.com/xxxxxxxx/invoke.js'
-  nativeBannerContainerId: '',  // e.g., 'container-xxxxxxxx'
+  // ── Native Banner (in-content, 3-5x banner CPM) ──────────────────────
+  nativeBannerSrc:         '//pl30266272.effectivecpmnetwork.com/e6d44dd184e6e948eb9c1a7c57155196/invoke.js',
+  nativeBannerContainerId: 'container-e6d44dd184e6e948eb9c1a7c57155196',
 
-  // ★ In-Page Push (for interactive/game pages)
-  //   In Adsterra dashboard: Add Code → In-Page Push
-  inPagePushSrc: '',  // e.g., '//groleegni.net/xxxx/xxxx.js'
+  // ── In-Page Push (game pages only, non-intrusive) ────────────────────
+  inPagePushSrc: '//pl30266280.effectivecpmnetwork.com/e9/48/12/e948122feaa7bd58b18c5ad800302247.js',
 };

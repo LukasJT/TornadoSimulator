@@ -13,8 +13,9 @@
   var CFG = window.ADSTERRA || {};
 
   // --- 0. Global responsive CSS -------------------------------------------
-  // Prevents 728x90 leaderboards from causing horizontal scroll on mobile
-  // and keeps sticky Social Bar / native ads from clipping.
+  // Prevents 728x90 leaderboards from causing horizontal scroll on mobile.
+  // The 728x90 is HIDDEN on mobile and a 320x50 is swapped IN by JS below,
+  // so mobile traffic still earns.
   function injectResponsiveCSS() {
     if (document.getElementById('ads-responsive-css')) return;
     var s = document.createElement('style');
@@ -23,12 +24,35 @@
       'html,body{overflow-x:hidden;max-width:100vw}',
       '.inline-ad{max-width:100vw;box-sizing:border-box}',
       '.inline-ad iframe{max-width:100%}',
-      // Hide 728x90 desktop leaderboard on mobile — user can add 320x50 mobile key later
       '@media (max-width:767px){.inline-ad iframe[width="728"]{display:none!important}}',
-      // Skyscrapers (160x600) already have desktop-only visibility in the simulator
-      '@media (max-width:1024px){.side-ad{display:none!important}}'
+      '@media (max-width:767px){.inline-ad iframe[width="468"]{display:none!important}}',
+      '@media (max-width:1024px){.side-ad{display:none!important}}',
+      '.mobile-ad-swap{display:none;justify-content:center;margin:12px auto;width:100%}',
+      '@media (max-width:767px){.mobile-ad-swap{display:flex}}'
     ].join('\n');
     document.head.appendChild(s);
+  }
+
+  // --- 0b. Mobile 320x50 swap ---------------------------------------------
+  // Every .inline-ad container gets a 320x50 iframe injected so mobile
+  // still earns even though the desktop 728x90 / 468x60 is hidden.
+  function injectMobileBanners() {
+    if (!CFG.banner320x50) return;
+    var slots = document.querySelectorAll('.inline-ad');
+    slots.forEach(function (slot) {
+      if (slot.querySelector('.mobile-ad-swap')) return;
+      var wrap = document.createElement('div');
+      wrap.className = 'mobile-ad-swap';
+      var f = document.createElement('iframe');
+      f.setAttribute('src', '//www.topcreativeformat.com/' + CFG.banner320x50 + '/invoke.html');
+      f.setAttribute('width', '320');
+      f.setAttribute('height', '50');
+      f.setAttribute('frameborder', '0');
+      f.setAttribute('scrolling', 'no');
+      f.style.cssText = 'border:0;max-width:100%';
+      wrap.appendChild(f);
+      slot.appendChild(wrap);
+    });
   }
 
   // --- 1. Lazy-load .inline-ad iframes ------------------------------------
@@ -141,6 +165,7 @@
   // --- run ---
   function run() {
     injectResponsiveCSS();
+    injectMobileBanners();
     lazyLoadBanners();
     injectSocialBar();
     injectNativeBanners();
