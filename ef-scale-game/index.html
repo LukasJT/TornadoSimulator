@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EF Scale Guessing Game — Rate the Tornado Damage | Tornado Simulator</title>
+<meta name="description" content="A guessing game based on the Enhanced Fujita scale. Read a real damage description — guess the EF rating. Learn how NWS surveyors actually assign tornado ratings.">
+<meta name="keywords" content="EF scale game, tornado rating game, guess ef scale, enhanced fujita game, damage rating game">
+<link rel="canonical" href="https://www.tornadosimulator.net/ef-scale-game/">
+<link rel="icon" href="/favicon.ico">
+<meta property="og:title" content="EF Scale Guessing Game — Rate the Damage">
+<meta property="og:description" content="Read real damage descriptions. Guess the Enhanced Fujita rating.">
+<meta property="og:type" content="website">
+<style>
+:root {
+  --bg:#f5f7fb; --card:#fff; --text:#0f172a; --muted:#64748b;
+  --accent:#a02818; --line:#e2e8f0;
+  --ef0:#a3e635; --ef1:#facc15; --ef2:#fb923c; --ef3:#f97316; --ef4:#dc2626; --ef5:#7c1d1d;
+  --correct:#16a34a; --wrong:#dc2626;
+  --serif:'Fraunces',Georgia,serif;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font:16px/1.55 -apple-system,'Inter',system-ui,sans-serif; background:var(--bg); color:var(--text); }
+header, footer { padding:16px 24px; }
+header { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); background:var(--card); }
+.logo { font-family:var(--serif); font-weight:700; font-size:20px; color:var(--accent); text-decoration:none; }
+nav a { color:var(--text); text-decoration:none; margin-left:16px; font-size:14px; }
+main { max-width:820px; margin:0 auto; padding:32px 20px; }
+h1 { font-family:var(--serif); font-size:clamp(28px,4vw,42px); text-align:center; margin-bottom:8px; }
+h1 em { color:var(--accent); font-style:italic; font-weight:400; }
+.lede { text-align:center; color:var(--muted); margin-bottom:24px; font-size:16px; }
+
+.hud { display:flex; justify-content:space-between; align-items:center; background:var(--card); padding:14px 20px; border-radius:10px; border:1px solid var(--line); margin-bottom:20px; font-weight:600; flex-wrap:wrap; gap:10px; }
+.hud .stat { display:flex; gap:20px; font-size:14px; }
+.hud .stat span span { color:var(--accent); }
+
+.damage-card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:28px; margin-bottom:20px; box-shadow:0 2px 10px rgba(0,0,0,.04); }
+.damage-card .prompt { font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-weight:700; margin-bottom:12px; }
+.damage-card .description { font-family:var(--serif); font-size:22px; line-height:1.45; margin-bottom:16px; }
+.damage-card .location { color:var(--muted); font-size:14px; font-style:italic; }
+
+.choices { display:grid; grid-template-columns:repeat(6,1fr); gap:8px; margin-bottom:16px; }
+.choice { padding:18px 8px; border:2px solid var(--line); border-radius:10px; background:var(--card); cursor:pointer; font-family:var(--serif); font-weight:700; font-size:20px; text-align:center; transition:all .15s; color:var(--text); }
+.choice:hover:not(:disabled) { transform:translateY(-2px); box-shadow:0 4px 12px rgba(0,0,0,.08); }
+.choice[data-ef="0"]:hover:not(:disabled) { border-color:var(--ef0); }
+.choice[data-ef="1"]:hover:not(:disabled) { border-color:var(--ef1); }
+.choice[data-ef="2"]:hover:not(:disabled) { border-color:var(--ef2); }
+.choice[data-ef="3"]:hover:not(:disabled) { border-color:var(--ef3); }
+.choice[data-ef="4"]:hover:not(:disabled) { border-color:var(--ef4); }
+.choice[data-ef="5"]:hover:not(:disabled) { border-color:var(--ef5); }
+.choice:disabled { cursor:not-allowed; opacity:.6; }
+.choice.correct { background:var(--correct); color:#fff; border-color:var(--correct); }
+.choice.wrong { background:var(--wrong); color:#fff; border-color:var(--wrong); }
+.choice.reveal { border-width:3px; }
+
+.feedback { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:20px; margin-bottom:16px; display:none; }
+.feedback.show { display:block; }
+.feedback.correct { border-left:6px solid var(--correct); }
+.feedback.wrong { border-left:6px solid var(--wrong); }
+.feedback h3 { font-family:var(--serif); font-size:20px; margin-bottom:8px; }
+.feedback h3.correct { color:var(--correct); }
+.feedback h3.wrong { color:var(--wrong); }
+.feedback .details { color:var(--muted); font-size:14px; line-height:1.55; }
+.feedback .wind { display:inline-block; background:var(--accent); color:#fff; padding:3px 10px; border-radius:6px; font-weight:700; font-size:14px; margin-right:8px; }
+
+.controls { display:flex; gap:10px; justify-content:center; }
+.controls button { padding:12px 24px; border:none; border-radius:8px; font-size:15px; font-weight:600; cursor:pointer; font-family:inherit; }
+.controls .primary { background:var(--accent); color:#fff; }
+.controls .primary:hover { background:#7d1f13; }
+.controls .secondary { background:var(--card); color:var(--text); border:1.5px solid var(--line); }
+
+.game-over { display:none; background:linear-gradient(135deg,var(--accent) 0%,#7d1f13 100%); color:#fff; padding:40px 28px; border-radius:14px; text-align:center; margin-bottom:20px; }
+.game-over.show { display:block; }
+.game-over h2 { font-family:var(--serif); font-size:36px; margin-bottom:8px; }
+.game-over .score-line { font-size:22px; margin-bottom:12px; opacity:.95; }
+.game-over .grade { font-size:16px; margin-bottom:24px; opacity:.85; }
+
+.inline-ad { text-align:center; margin:24px auto; max-width:728px; overflow:hidden; }
+
+@media (max-width:600px) {
+  .choices { grid-template-columns:repeat(3,1fr); }
+  .damage-card .description { font-size:18px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">🌪 Tornado Hub</a>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/ef-scale-explorer/">EF Explorer</a>
+    <a href="/tornadle/">Tornadle</a>
+    <a href="/tornado-namer/">Namer</a>
+  </nav>
+</header>
+
+<main>
+  <h1>EF Scale <em>guessing game</em></h1>
+  <p class="lede">Read the damage description. Guess the Enhanced Fujita rating from EF0 to EF5. Ten rounds.</p>
+
+  <div class="hud">
+    <div class="stat">
+      <span>Round: <span id="round">1</span>/10</span>
+      <span>Score: <span id="score">0</span></span>
+      <span>Streak: <span id="streak">0</span></span>
+    </div>
+    <span id="acc" style="font-size:13px;color:var(--muted);">—</span>
+  </div>
+
+  <div class="damage-card" id="prompt-card">
+    <div class="prompt">Damage description</div>
+    <div class="description" id="description">—</div>
+    <div class="location" id="location">—</div>
+  </div>
+
+  <div class="choices" id="choices">
+    <button class="choice" data-ef="0">EF0</button>
+    <button class="choice" data-ef="1">EF1</button>
+    <button class="choice" data-ef="2">EF2</button>
+    <button class="choice" data-ef="3">EF3</button>
+    <button class="choice" data-ef="4">EF4</button>
+    <button class="choice" data-ef="5">EF5</button>
+  </div>
+
+  <div class="feedback" id="feedback">
+    <h3 id="feedback-headline"></h3>
+    <div class="details" id="feedback-details"></div>
+  </div>
+
+  <div class="controls">
+    <button class="primary" id="next-btn" style="display:none;">Next round →</button>
+  </div>
+
+  <div class="game-over" id="game-over">
+    <h2>Game Over</h2>
+    <div class="score-line">Score: <span id="final-score">0</span> / 10</div>
+    <div class="grade" id="grade">—</div>
+    <div class="controls">
+      <button class="secondary" onclick="location.reload()">Play again</button>
+    </div>
+  </div>
+
+  <div class="inline-ad">
+    <iframe src="//www.topcreativeformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.html" width="728" height="90" frameborder="0" scrolling="no"></iframe>
+  </div>
+
+  <p style="margin-top:24px;color:var(--muted);font-size:14px;text-align:center;">Related: <a href="/ef-scale-explorer/">EF Scale Explorer</a> · <a href="/fujita-vs-ef-scale/">Fujita vs EF Scale</a> · <a href="/ef5-tornado-list/">Every US EF5</a> · <a href="/tornadle/">Tornadle</a></p>
+</main>
+
+<footer style="border-top:1px solid var(--line);background:var(--card);color:var(--muted);font-size:13px;text-align:center;">
+  © 2026 Tornado Simulator · <a href="/about/" style="color:var(--muted);">About</a>
+</footer>
+
+<script>
+const SCENARIOS = [
+  { ef:0, description: "Shingles peeled from a roof. A few small tree branches broken. Loose garden furniture blown across yard. A carport partially damaged.", location: "Anywhere, USA — typical weak tornado", winds:"65–85 mph" },
+  { ef:0, description: "A wood-frame chicken coop overturned. Several trees uprooted. A few gutters torn from an old barn. Vinyl siding missing on one side of a house.", location: "Rural farm damage", winds:"65–85 mph" },
+  { ef:1, description: "Mobile home overturned but frame remained intact. Garage doors of several houses bowed inward. Numerous large tree limbs snapped. A car pushed off a road.", location: "Suburban development", winds:"86–110 mph" },
+  { ef:1, description: "Chimney knocked off a house. A metal shed rolled 50 feet. Windows in multiple homes broken. Small trees uprooted.", location: "Residential neighborhood", winds:"86–110 mph" },
+  { ef:2, description: "Roof torn off a well-constructed frame house, though walls remained standing. A mobile home completely destroyed. Large trees snapped or uprooted. Rail cars pushed over.", location: "Small town — significant tornado", winds:"111–135 mph" },
+  { ef:2, description: "Second story of a wood-frame house heavily damaged; first floor mostly intact. Small church steeple collapsed. School playground equipment thrown 100 yards. Cars flipped onto their roofs.", location: "Suburban Dixie Alley community", winds:"111–135 mph" },
+  { ef:3, description: "Entire top floor of a well-built brick house destroyed. Trees debarked and only trunks left standing. A pickup truck lifted and thrown 200 yards. Steel-frame warehouse partially collapsed.", location: "Rural Kansas farm town", winds:"136–165 mph" },
+  { ef:3, description: "Every wall of a two-story frame house collapsed inward. Cars thrown hundreds of yards and mangled. Multiple trees debarked. A concrete-block gas station demolished.", location: "Small Tennessee town", winds:"136–165 mph" },
+  { ef:4, description: "Well-constructed houses leveled to their foundations. Cars thrown and reduced to unrecognizable metal. A church with reinforced concrete construction severely damaged. Trees debarked and stripped of branches.", location: "Suburb of a mid-sized city", winds:"166–200 mph" },
+  { ef:4, description: "Rows of subdivision houses swept clean off their slabs, leaving only bare foundations. Trees debarked. Large vehicles hurled hundreds of yards. Grass scoured from ground in narrow bands.", location: "Populated suburban area", winds:"166–200 mph" },
+  { ef:5, description: "Well-built frame houses swept completely away; even foundation slabs cracked and displaced. Vehicles thrown over a mile from where they had been parked. Steel-reinforced concrete structures heavily damaged. Trees debarked and stripped down to trunks with no branches.", location: "Direct hit on a small Oklahoma community", winds:"200+ mph" },
+  { ef:5, description: "A high school gymnasium — steel-reinforced concrete — collapsed. Asphalt lifted from parking lots. Concrete storm shelters cracked. Vehicles thrown miles and unrecognizable. Every tree in a wide swath debarked to bare trunks.", location: "Populated area — historic violent event", winds:"200+ mph" },
+  { ef:0, description: "A carport bent on one side. Half the shingles of one house detached. A single small tree uprooted from wet ground. Fence panels blown down.", location: "Neighborhood after a brief weak tornado", winds:"65–85 mph" },
+  { ef:1, description: "A mobile home was rolled off its blocks but remained largely intact. A wood porch torn from a house. Many large tree branches snapped. Some outbuildings pushed off foundations.", location: "Rural community after nighttime storm", winds:"86–110 mph" },
+  { ef:2, description: "A single-wide mobile home destroyed. Roof torn completely from a frame house. Cars flipped. Large trees uprooted. Barns collapsed.", location: "Mid-South rural strip", winds:"111–135 mph" },
+];
+
+let queue = [];
+let round = 0;
+let score = 0;
+let streak = 0;
+let bestStreak = 0;
+let awaitingNext = false;
+
+function shuffle(arr) {
+  const copy = [...arr];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+function startGame() {
+  queue = shuffle(SCENARIOS).slice(0, 10);
+  round = 0;
+  score = 0;
+  streak = 0;
+  document.getElementById('score').textContent = 0;
+  document.getElementById('streak').textContent = 0;
+  document.getElementById('game-over').classList.remove('show');
+  showRound();
+}
+
+function showRound() {
+  if (round >= queue.length) {
+    endGame();
+    return;
+  }
+  const s = queue[round];
+  document.getElementById('round').textContent = round + 1;
+  document.getElementById('description').textContent = s.description;
+  document.getElementById('location').textContent = s.location;
+  document.getElementById('feedback').classList.remove('show', 'correct', 'wrong');
+  document.getElementById('next-btn').style.display = 'none';
+  awaitingNext = false;
+
+  document.querySelectorAll('.choice').forEach(c => {
+    c.disabled = false;
+    c.classList.remove('correct', 'wrong', 'reveal');
+  });
+}
+
+function submit(guess) {
+  if (awaitingNext) return;
+  const s = queue[round];
+  const correct = guess === s.ef;
+  const diff = Math.abs(guess - s.ef);
+
+  document.querySelectorAll('.choice').forEach(c => {
+    c.disabled = true;
+    const cEf = parseInt(c.dataset.ef);
+    if (cEf === s.ef) c.classList.add('correct', 'reveal');
+    else if (cEf === guess) c.classList.add('wrong');
+  });
+
+  // Scoring: 2 pts exact, 1 pt within 1, 0 otherwise
+  let points = 0;
+  if (diff === 0) { points = 2; streak++; }
+  else if (diff === 1) { points = 1; streak = 0; }
+  else { points = 0; streak = 0; }
+
+  bestStreak = Math.max(bestStreak, streak);
+  score += points;
+  document.getElementById('score').textContent = score;
+  document.getElementById('streak').textContent = streak;
+
+  const acc = Math.round((score / ((round+1) * 2)) * 100);
+  document.getElementById('acc').textContent = `Accuracy: ${acc}%`;
+
+  const fb = document.getElementById('feedback');
+  const fbHead = document.getElementById('feedback-headline');
+  const fbDetails = document.getElementById('feedback-details');
+  fb.classList.remove('correct', 'wrong');
+
+  if (correct) {
+    fb.classList.add('show', 'correct');
+    fbHead.textContent = `✓ Correct! EF${s.ef}`;
+    fbHead.className = 'correct';
+    fbDetails.innerHTML = `<span class="wind">${s.winds}</span> This was rated EF${s.ef}. +2 points.`;
+  } else if (diff === 1) {
+    fb.classList.add('show', 'wrong');
+    fbHead.textContent = `Close — EF${s.ef}, you guessed EF${guess}`;
+    fbHead.className = 'wrong';
+    fbDetails.innerHTML = `<span class="wind">${s.winds}</span> One rating off. +1 point.`;
+  } else {
+    fb.classList.add('show', 'wrong');
+    fbHead.textContent = `Miss — the answer was EF${s.ef}`;
+    fbHead.className = 'wrong';
+    fbDetails.innerHTML = `<span class="wind">${s.winds}</span> You guessed EF${guess}. 0 points.`;
+  }
+
+  document.getElementById('next-btn').style.display = 'inline-block';
+  awaitingNext = true;
+}
+
+function endGame() {
+  document.getElementById('prompt-card').style.display = 'none';
+  document.getElementById('choices').style.display = 'none';
+  document.getElementById('feedback').style.display = 'none';
+  document.getElementById('next-btn').style.display = 'none';
+  const go = document.getElementById('game-over');
+  go.classList.add('show');
+  document.getElementById('final-score').textContent = score;
+  const maxScore = queue.length * 2;
+  const pct = score / maxScore;
+  let grade;
+  if (pct >= 0.9) grade = 'Damage surveyor tier. NWS-ready.';
+  else if (pct >= 0.75) grade = 'Skywarn-grade. Excellent instincts.';
+  else if (pct >= 0.6) grade = 'Solid — weekend chaser level.';
+  else if (pct >= 0.4) grade = 'You get the general idea. Read up on EF-scale damage indicators.';
+  else grade = 'Rough round. Study up — check the EF Scale Explorer.';
+  document.getElementById('grade').textContent = grade;
+}
+
+document.querySelectorAll('.choice').forEach(c => {
+  c.addEventListener('click', () => submit(parseInt(c.dataset.ef)));
+});
+document.getElementById('next-btn').addEventListener('click', () => {
+  round++;
+  showRound();
+});
+
+startGame();
+</script>
+<script src="/assets/ads-config.js" defer></script>
+<script src="/assets/ads.js" defer></script>
+<script src="/assets/house-ads.js" defer></script>
+</body>
+</html>
