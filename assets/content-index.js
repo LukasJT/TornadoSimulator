@@ -231,6 +231,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Basement Flooding During Rainstorms: Sump Pumps, Gutters, Drains, and Safety Why basements flood during heavy rain, what to check before storms, and how to stay safer around water, electricity, mold, and cleanup. basement flooding rainstorm guide"
   },
   {
+    "title": "Beach Weather Safety Guide: Rip Currents, Lightning, Heat, UV, and Water Quality",
+    "path": "/beach-weather-safety-guide/",
+    "description": "How to check beach weather for rip currents, lightning, heat, UV, water quality, wind, waves, and sudden storms.",
+    "category": "Marine Weather",
+    "keywords": "Beach Weather Safety Guide: Rip Currents, Lightning, Heat, UV, and Water Quality How to check beach weather for rip currents, lightning, heat, UV, water quality, wind, waves, and sudden storms. beach weather safety guide"
+  },
+  {
     "title": "Beaufort Wind Scale — Force 0 to 12 Explained",
     "path": "/beaufort-scale/",
     "description": "Interactive Beaufort wind scale from Force 0 (calm) to Force 12 (hurricane force). See wind speed thresholds, effects on land and sea, and modern hurricane category equivalents. Devised by Admiral Beaufort in 1805 and still in use.",
@@ -889,6 +896,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Ensemble Forecast Explained: Why Meteorologists Run Many Forecasts at Once What ensemble forecasts are, why they show uncertainty, and how probabilities can be more useful than a single deterministic weather model run. ensemble forecast explained"
   },
   {
+    "title": "Event Weather Planning Guides: Weddings, Festivals, Field Trips, Graduations, Parades, and Sports",
+    "path": "/event-weather-planning-guides/",
+    "description": "A hub for event weather planning guides covering outdoor weddings, festivals, field trips, graduations, parades, sports, heat, wind, and lightning.",
+    "category": "Event Weather",
+    "keywords": "Event Weather Planning Guides: Weddings, Festivals, Field Trips, Graduations, Parades, and Sports A hub for event weather planning guides covering outdoor weddings, festivals, field trips, graduations, parades, sports, heat, wind, and lightning. event weather planning guides"
+  },
+  {
     "title": "Every EF5 Tornado in US History — Complete List (2007–Present)",
     "path": "/every-ef5-tornado/",
     "description": "Every EF5 tornado ever officially rated in the United States. All 9 EF5 events since the Enhanced Fujita Scale went into effect in 2007, plus notable F5 tornadoes of the Fujita era (1953–2007).",
@@ -908,6 +922,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "F5 (Fujita Scale, 1971-2007) required 261+ mph winds. EF5 (Enhanced Fujita, 2007+) requires 200+ mph. The scales differ in wind speed thresholds but not damage descriptions.",
     "category": "Guide",
     "keywords": "F5 vs. EF5 — The Difference Between the Two Top Tornado Ratings F5 (Fujita Scale, 1971-2007) required 261+ mph winds. EF5 (Enhanced Fujita, 2007+) requires 200+ mph. The scales differ in wind speed thresholds but not damage descriptions. f5 vs ef5"
+  },
+  {
+    "title": "Fall Weather Safety Guide: Cold Fronts, Wind, Fog, Frost, and Severe Storms",
+    "path": "/fall-weather-safety-guide/",
+    "description": "A fall weather guide covering cold fronts, fog, frost, wind, early snow, severe storms, and changing daylight for travel and outdoor plans.",
+    "category": "Seasonal Weather",
+    "keywords": "Fall Weather Safety Guide: Cold Fronts, Wind, Fog, Frost, and Severe Storms A fall weather guide covering cold fronts, fog, frost, wind, early snow, severe storms, and changing daylight for travel and outdoor plans. fall weather safety guide"
   },
   {
     "title": "Family Weather Drill Guide: Practice Tornado, Fire, Flood, and Outage Plans",
@@ -931,6 +952,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Fargo, North Dakota Tornado of 1957 - F5 That Inspired Fujita The Fargo, North Dakota tornado of June 20, 1957 was an F5 that killed 12 people. Ted Fujita studied it in detail - the event that helped inspire the Fujita Scale. fargo 1957"
   },
   {
+    "title": "Farm Weather Safety Guide: Lightning, Heat, Wind, Dust, Hail, and Machinery",
+    "path": "/farm-weather-safety-guide/",
+    "description": "Weather safety for farms and ranches, including lightning, heat, high wind, dust, hail, flooding, livestock, and equipment decisions.",
+    "category": "Agriculture Weather",
+    "keywords": "Farm Weather Safety Guide: Lightning, Heat, Wind, Dust, Hail, and Machinery Weather safety for farms and ranches, including lightning, heat, high wind, dust, hail, flooding, livestock, and equipment decisions. farm weather safety guide"
+  },
+  {
     "title": "The Super Tuesday 2008 Tornado Outbreak - 57 Killed in February",
     "path": "/february-2008-super-tuesday/",
     "description": "The Super Tuesday tornado outbreak of February 5-6, 2008 produced 87 tornadoes across the Southeast, killing 57 people. Unusually deadly February event.",
@@ -943,6 +971,20 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "February averages 40 US tornadoes. The Super Tuesday 2008 outbreak (57 killed) shows February can produce major outbreaks. Focus in Southern states.",
     "category": "Guide",
     "keywords": "February Tornadoes - Winter Outbreaks in Dixie Alley February averages 40 US tornadoes. The Super Tuesday 2008 outbreak (57 killed) shows February can produce major outbreaks. Focus in Southern states. february tornadoes"
+  },
+  {
+    "title": "Festival Weather Safety Plan: Heat, Lightning, Wind, Crowds, and Shelter",
+    "path": "/festival-weather-safety-plan/",
+    "description": "Weather safety planning for festivals, fairs, and public events, including heat, lightning, wind, evacuation, shelter capacity, and communication.",
+    "category": "Event Weather",
+    "keywords": "Festival Weather Safety Plan: Heat, Lightning, Wind, Crowds, and Shelter Weather safety planning for festivals, fairs, and public events, including heat, lightning, wind, evacuation, shelter capacity, and communication. festival weather safety plan"
+  },
+  {
+    "title": "Field Trip Weather Safety: Lightning, Heat, Buses, Shelters, and Cancellation Decisions",
+    "path": "/field-trip-weather-safety/",
+    "description": "How schools and groups can plan field trips around lightning, heat, severe storms, flooding, bus routes, and shelter options.",
+    "category": "School Weather",
+    "keywords": "Field Trip Weather Safety: Lightning, Heat, Buses, Shelters, and Cancellation Decisions How schools and groups can plan field trips around lightning, heat, severe storms, flooding, bus routes, and shelter options. field trip weather safety"
   },
   {
     "title": "Fire Tornadoes — The Science of Pyrocumulonimbus Rotation",
@@ -1064,6 +1106,20 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Gale Warning Explained: When Marine Winds Become Dangerous What a gale warning means for boaters, coastal areas, and rough seas, plus how gales differ from storm warnings and small craft advisories. gale warning explained"
   },
   {
+    "title": "Garage Storm Safety Guide: Doors, Tools, Fuel, Cars, and Wind",
+    "path": "/garage-storm-safety-guide/",
+    "description": "How garages become vulnerable during storms, including garage doors, stored fuel, tools, vehicles, flooding, and using garages safely during outages.",
+    "category": "Home Weather Prep",
+    "keywords": "Garage Storm Safety Guide: Doors, Tools, Fuel, Cars, and Wind How garages become vulnerable during storms, including garage doors, stored fuel, tools, vehicles, flooding, and using garages safely during outages. garage storm safety guide"
+  },
+  {
+    "title": "Garden Weather Protection Guide: Frost, Heat, Hail, Wind, and Heavy Rain",
+    "path": "/garden-weather-protection-guide/",
+    "description": "How gardeners can protect plants from frost, heat, hail, wind, heavy rain, drought, and sudden temperature swings.",
+    "category": "Garden Weather",
+    "keywords": "Garden Weather Protection Guide: Frost, Heat, Hail, Wind, and Heavy Rain How gardeners can protect plants from frost, heat, hail, wind, heavy rain, drought, and sudden temperature swings. garden weather protection guide"
+  },
+  {
     "title": "Gaylord, Michigan Tornado of May 20, 2022",
     "path": "/gaylord-2022-tornado/",
     "description": "The May 20, 2022 Gaylord EF3 tornado struck Northern Michigan. 2 killed, extensive damage - first major tornado in Northern Michigan in years.",
@@ -1090,6 +1146,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Are tornadoes getting worse due to climate change? Here is what the current research shows about warming's effect on tornado frequency, geography, and intensity.",
     "category": "Climate science",
     "keywords": "Global Warming and Tornadoes — What the Science Actually Shows Are tornadoes getting worse due to climate change? Here is what the current research shows about warming's effect on tornado frequency, geography, and intensity. global warming and tornadoes"
+  },
+  {
+    "title": "Graduation Weather Plan: Heat, Lightning, Wind, Rain, and Crowd Communication",
+    "path": "/graduation-weather-plan/",
+    "description": "Weather planning for graduation ceremonies, including heat, lightning delays, wind, rain locations, medical support, and guest communication.",
+    "category": "Event Weather",
+    "keywords": "Graduation Weather Plan: Heat, Lightning, Wind, Rain, and Crowd Communication Weather planning for graduation ceremonies, including heat, lightning delays, wind, rain locations, medical support, and guest communication. graduation weather plan"
   },
   {
     "title": "Grand Island, Nebraska Tornadoes of 1980 — Night of the Twisters",
@@ -1232,6 +1295,20 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Hodograph Shapes — Every Type Explained Straight hodographs, curved hodographs, S-shaped hodographs — each shape has meteorological meaning. Here is a full field guide with implications for storm mode. hodograph shapes guide"
   },
   {
+    "title": "Holiday Decoration Wind Safety: Lights, Inflatables, Ladders, and Storms",
+    "path": "/holiday-decoration-wind-safety/",
+    "description": "How to secure outdoor holiday decorations before wind, rain, snow, and storms, plus ladder safety and electrical weather concerns.",
+    "category": "Home Weather Prep",
+    "keywords": "Holiday Decoration Wind Safety: Lights, Inflatables, Ladders, and Storms How to secure outdoor holiday decorations before wind, rain, snow, and storms, plus ladder safety and electrical weather concerns. holiday decoration wind safety"
+  },
+  {
+    "title": "Holiday Travel Weather Checklist: Flights, Roads, Snow, Storms, and Delays",
+    "path": "/holiday-travel-weather-checklist/",
+    "description": "A holiday travel weather checklist for winter storms, severe storms, airport delays, road trips, packing, timing, and backup plans.",
+    "category": "Travel Weather",
+    "keywords": "Holiday Travel Weather Checklist: Flights, Roads, Snow, Storms, and Delays A holiday travel weather checklist for winter storms, severe storms, airport delays, road trips, packing, timing, and backup plans. holiday travel weather checklist"
+  },
+  {
     "title": "Home Anemometer Guide: Measuring Wind Speed Without Fooling Yourself",
     "path": "/home-anemometer-guide/",
     "description": "How home wind sensors work, where to place them, and why roofs, trees, fences, and buildings can distort wind readings.",
@@ -1244,6 +1321,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Retrofit your house to survive a tornado. What roofing, wall bracing, garage door, and window techniques actually work — and what is snake oil.",
     "category": "Home resilience",
     "keywords": "Home Hardening for Tornadoes — What Actually Works Retrofit your house to survive a tornado. What roofing, wall bracing, garage door, and window techniques actually work — and what is snake oil. home hardening for tornadoes"
+  },
+  {
+    "title": "Home and Outdoor Weather Guides: Yard Prep, Roofs, Garages, Pools, Gardens, and Drainage",
+    "path": "/home-outdoor-weather-guides/",
+    "description": "A hub for home and outdoor weather preparation, including yard storm prep, roof and gutters, garages, pools, gardens, lawn drainage, and decorations.",
+    "category": "Home and Outdoor Weather",
+    "keywords": "Home and Outdoor Weather Guides: Yard Prep, Roofs, Garages, Pools, Gardens, and Drainage A hub for home and outdoor weather preparation, including yard storm prep, roof and gutters, garages, pools, gardens, lawn drainage, and decorations. home outdoor weather guides"
   },
   {
     "title": "Home Rain Gauge Guide: Placement, Reading, and Common Mistakes",
@@ -1650,6 +1734,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Landspouts are tornadoes that form without supercells — from developing thunderstorms interacting with pre-existing surface rotation. Here is how they differ from supercell tornadoes and why they matter.",
     "category": "Storm science",
     "keywords": "Landspouts — The Non-Supercell Tornado Landspouts are tornadoes that form without supercells — from developing thunderstorms interacting with pre-existing surface rotation. Here is how they differ from supercell tornadoes and why they matter. landspouts vs tornadoes"
+  },
+  {
+    "title": "Lawn Drainage Heavy Rain Guide: Standing Water, Soil, Slopes, and Yard Flooding",
+    "path": "/lawn-drainage-heavy-rain-guide/",
+    "description": "Why lawns hold water during heavy rain, how soil, slopes, drains, and grading matter, and when standing water points to a bigger drainage issue.",
+    "category": "Home Weather Prep",
+    "keywords": "Lawn Drainage Heavy Rain Guide: Standing Water, Soil, Slopes, and Yard Flooding Why lawns hold water during heavy rain, how soil, slopes, drains, and grading matter, and when standing water points to a bigger drainage issue. lawn drainage heavy rain guide"
   },
   {
     "title": "Learn — Tornado Hub",
@@ -2156,6 +2247,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Palm Sunday Tornado Outbreak of 1965 - 47 Tornadoes, 271 Killed The Palm Sunday tornado outbreak of April 11, 1965 produced 47 tornadoes in a single afternoon across 6 states, killing 271. palm sunday 1965"
   },
   {
+    "title": "Parade Weather Safety Plan: Lightning, Heat, Wind, Floats, and Crowd Routes",
+    "path": "/parade-weather-safety-plan/",
+    "description": "How parade organizers can plan for weather hazards, including lightning, heat, wind, float safety, crowd routes, and cancellation decisions.",
+    "category": "Event Weather",
+    "keywords": "Parade Weather Safety Plan: Lightning, Heat, Wind, Floats, and Crowd Routes How parade organizers can plan for weather hazards, including lightning, heat, wind, float safety, crowd routes, and cancellation decisions. parade weather safety plan"
+  },
+  {
     "title": "Parkersburg–New Hartford Tornado of 2008 — EF5, 9 Killed in Iowa",
     "path": "/parkersburg-2008/",
     "description": "The Parkersburg, Iowa tornado of May 25, 2008 was an EF5 with 205 mph winds that destroyed most of Parkersburg on Memorial Day weekend. 9 killed, 70 injured across a 43-mile path.",
@@ -2212,6 +2310,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Phoenix Tornadoes - Rare Arizona Monsoon Events Phoenix tornadoes: rare monsoon-season events in Arizona desert. Understanding tornado risk in Southwest US. phoenix tornadoes"
   },
   {
+    "title": "Picnic Weather Planning Guide: Heat, Rain, Wind, Bugs, and Food Safety",
+    "path": "/picnic-weather-planning-guide/",
+    "description": "How to plan a picnic around heat, thunderstorms, wind, rain, food safety, shade, hydration, and backup shelter.",
+    "category": "Outdoor Weather",
+    "keywords": "Picnic Weather Planning Guide: Heat, Rain, Wind, Bugs, and Food Safety How to plan a picnic around heat, thunderstorms, wind, rain, food safety, shade, hydration, and backup shelter. picnic weather planning guide"
+  },
+  {
     "title": "Pilger, Nebraska Twin EF4 Tornadoes of 2014 - Rare Double Event",
     "path": "/pilger-2014/",
     "description": "The Pilger, Nebraska tornado of June 16, 2014 was a rare twin EF4 tornado event. Two simultaneous EF4 tornadoes struck the same town within minutes. 2 killed.",
@@ -2238,6 +2343,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "The polar vortex is often blamed for cold snaps. Learn what it actually is, how disruptions can affect winter weather, and why not every cold day is a polar vortex event.",
     "category": "Winter Weather",
     "keywords": "Polar Vortex Explained: What It Is and What It Is Not The polar vortex is often blamed for cold snaps. Learn what it actually is, how disruptions can affect winter weather, and why not every cold day is a polar vortex event. polar vortex explained"
+  },
+  {
+    "title": "Pool Weather Safety Guide: Lightning, Wind, Heat, Chemicals, and Storm Cleanup",
+    "path": "/pool-weather-safety-guide/",
+    "description": "A pool weather safety guide for lightning, thunderstorm wind, heat, pool chemicals, flooding, debris, and when swimmers should get out.",
+    "category": "Outdoor Weather",
+    "keywords": "Pool Weather Safety Guide: Lightning, Wind, Heat, Chemicals, and Storm Cleanup A pool weather safety guide for lightning, thunderstorm wind, heat, pool chemicals, flooding, debris, and when swimmers should get out. pool weather safety guide"
   },
   {
     "title": "Pressure Gradient Explained: Why Tight Isobars Mean Stronger Wind",
@@ -3073,6 +3185,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Rolling Fork, Mississippi Tornado of 2023 — EF4, 21 Killed, Town Destroyed The Rolling Fork, Mississippi tornado of March 24, 2023 was an EF4 with 195 mph winds that nearly destroyed the town of Rolling Fork. 21 killed, 165 injured across a 59-mile path. rolling fork 2023"
   },
   {
+    "title": "Roof and Gutter Storm Season Checklist: Leaks, Drains, Flashing, and Debris",
+    "path": "/roof-gutter-storm-season-checklist/",
+    "description": "A roof and gutter checklist before storm season, including shingles, flashing, gutters, downspouts, attic leaks, debris, and safe inspection habits.",
+    "category": "Home Weather Prep",
+    "keywords": "Roof and Gutter Storm Season Checklist: Leaks, Drains, Flashing, and Debris A roof and gutter checklist before storm season, including shingles, flashing, gutters, downspouts, attic leaks, debris, and safe inspection habits. roof gutter storm season checklist"
+  },
+  {
     "title": "Roof Leak After Storm: What to Check Safely and What to Document",
     "path": "/roof-leak-after-storm-guide/",
     "description": "What to do after a roof leak from wind, hail, heavy rain, or debris, including safe inspection, photos, temporary protection, and warning signs.",
@@ -3155,6 +3274,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "How seasonal outlooks work, what above and below normal categories mean, and why long-range outlooks are probabilities rather than day-by-day forecasts.",
     "category": "Forecasting",
     "keywords": "Seasonal Outlook Explained: What Long-Range Temperature and Precipitation Maps Mean How seasonal outlooks work, what above and below normal categories mean, and why long-range outlooks are probabilities rather than day-by-day forecasts. seasonal outlook explained"
+  },
+  {
+    "title": "Seasonal Weather Safety Guides: Spring, Summer, Fall, Winter, and Travel Planning",
+    "path": "/seasonal-weather-safety-guides/",
+    "description": "A hub for seasonal weather safety guides covering spring storms, summer heat, fall fronts, winter travel, holidays, and outdoor plans.",
+    "category": "Seasonal Weather",
+    "keywords": "Seasonal Weather Safety Guides: Spring, Summer, Fall, Winter, and Travel Planning A hub for seasonal weather safety guides covering spring storms, summer heat, fall fronts, winter travel, holidays, and outdoor plans. seasonal weather safety guides"
   },
   {
     "title": "Severe Thunderstorm Watch vs Warning: What Each Alert Means",
@@ -3267,6 +3393,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A practical lightning safety guide for coaches, parents, referees, and outdoor sports organizers, including delay timing and shelter choices.",
     "category": "Sports Weather",
     "keywords": "Sports Lightning Delay Guide: When Games Should Stop and Restart A practical lightning safety guide for coaches, parents, referees, and outdoor sports organizers, including delay timing and shelter choices. sports lightning delay guide"
+  },
+  {
+    "title": "Spring Weather Safety Guide: Tornadoes, Hail, Flooding, Wind, and Lightning",
+    "path": "/spring-weather-safety-guide/",
+    "description": "A practical spring weather safety guide covering severe thunderstorms, tornadoes, hail, flash flooding, lightning, outdoor plans, and alert readiness.",
+    "category": "Seasonal Weather",
+    "keywords": "Spring Weather Safety Guide: Tornadoes, Hail, Flooding, Wind, and Lightning A practical spring weather safety guide covering severe thunderstorms, tornadoes, hail, flash flooding, lightning, outdoor plans, and alert readiness. spring weather safety guide"
   },
   {
     "title": "Squall Line Explained: Fast-Moving Thunderstorm Lines and Damaging Wind Risk",
@@ -3680,6 +3813,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Should you book a storm chase tour or plan your own trip? Here is a full comparison of cost, learning curve, safety, and photography opportunities.",
     "category": "Chase planning",
     "keywords": "Storm Chase Tours vs DIY Storm Chasing — Cost, Safety, and Experience Should you book a storm chase tour or plan your own trip? Here is a full comparison of cost, learning curve, safety, and photography opportunities. storm vs storm chase tours"
+  },
+  {
+    "title": "Summer Weather Safety Guide: Heat, Thunderstorms, Air Quality, and Flash Floods",
+    "path": "/summer-weather-safety-guide/",
+    "description": "How to handle summer weather hazards including heat waves, lightning, poor air quality, flash flooding, severe thunderstorms, and outdoor events.",
+    "category": "Seasonal Weather",
+    "keywords": "Summer Weather Safety Guide: Heat, Thunderstorms, Air Quality, and Flash Floods How to handle summer weather hazards including heat waves, lightning, poor air quality, flash flooding, severe thunderstorms, and outdoor events. summer weather safety guide"
   },
   {
     "title": "Sump Pump Backup Guide: Battery Backup, Water Alarms, and Heavy Rain Prep",
@@ -5803,6 +5943,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Weather Radio vs Phone Alerts: Why Redundant Warning Systems Matter Compare NOAA weather radio, Wireless Emergency Alerts, weather apps, sirens, and local media for tornadoes, floods, hurricanes, and severe storms. weather radio vs phone alerts"
   },
   {
+    "title": "Weather Safety for Coaches: Lightning, Heat, Air Quality, and Field Conditions",
+    "path": "/weather-safety-for-coaches/",
+    "description": "A practical weather safety guide for coaches handling lightning delays, heat illness, smoke, air quality, wet fields, and severe storm timing.",
+    "category": "Sports Weather",
+    "keywords": "Weather Safety for Coaches: Lightning, Heat, Air Quality, and Field Conditions A practical weather safety guide for coaches handling lightning delays, heat illness, smoke, air quality, wet fields, and severe storm timing. weather safety for coaches"
+  },
+  {
     "title": "Weather Safety for Large Families: Roles, Supplies, Shelter Space, and Alerts",
     "path": "/weather-safety-for-large-families/",
     "description": "How larger households can plan for severe weather with roles, shelter space, pet handling, supplies, reunification, and multiple alert sources.",
@@ -6237,6 +6384,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Winter Storm Watch vs Warning: Snow, Ice, Wind, and Travel Risk What winter storm watches and warnings mean, how they differ from advisories, and why ice and wind can be more disruptive than snowfall totals alone. winter storm watch vs warning"
   },
   {
+    "title": "Winter Travel Weather Guide: Snow, Ice, Wind, Visibility, and Road Closures",
+    "path": "/winter-travel-weather-guide/",
+    "description": "A winter travel guide for snow, ice, freezing rain, wind, whiteouts, mountain roads, road closures, and emergency car supplies.",
+    "category": "Winter Weather",
+    "keywords": "Winter Travel Weather Guide: Snow, Ice, Wind, Visibility, and Road Closures A winter travel guide for snow, ice, freezing rain, wind, whiteouts, mountain roads, road closures, and emergency car supplies. winter travel weather guide"
+  },
+  {
     "title": "Wireless Emergency Alerts for Tornadoes - Complete Guide",
     "path": "/wireless-emergency-alert-tornado/",
     "description": "Wireless Emergency Alerts (WEA) for tornado warnings: how they work, how to enable, iPhone and Android setup, effectiveness.",
@@ -6291,5 +6445,12 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "The Xenia, Ohio tornado of April 3, 1974 was an F5 that killed 32 people and destroyed half the town. The signature event of the 1974 Super Outbreak — 148 tornadoes in a single day.",
     "category": "Guide",
     "keywords": "Xenia, Ohio Tornado of 1974 — F5, 32 Killed, Super Outbreak The Xenia, Ohio tornado of April 3, 1974 was an F5 that killed 32 people and destroyed half the town. The signature event of the 1974 Super Outbreak — 148 tornadoes in a single day. xenia 1974"
+  },
+  {
+    "title": "Yard Storm Prep Guide: Patio Furniture, Trees, Trampolines, Grills, and Drainage",
+    "path": "/yard-storm-prep-guide/",
+    "description": "How to prepare a yard before severe storms, wind, hail, heavy rain, and tropical systems, including patio furniture, trees, grills, drains, and loose objects.",
+    "category": "Home Weather Prep",
+    "keywords": "Yard Storm Prep Guide: Patio Furniture, Trees, Trampolines, Grills, and Drainage How to prepare a yard before severe storms, wind, hail, heavy rain, and tropical systems, including patio furniture, trees, grills, drains, and loose objects. yard storm prep guide"
   }
 ];
