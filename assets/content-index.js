@@ -154,6 +154,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Andover, Kansas Tornado of April 29, 2022 The April 29, 2022 Andover EF3 tornado hit Kansas suburbs. Same town devastated in 1991. Recent Kansas tornado history. andover 2022"
   },
   {
+    "title": "Hurricane Andrew History: Wind Damage, Building Codes, Forecasting, and South Florida Recovery",
+    "path": "/andrew-hurricane-history/",
+    "description": "What Hurricane Andrew changed, including extreme wind damage, building codes, insurance, evacuation, and hurricane preparedness.",
+    "category": "Hurricane History",
+    "keywords": "Hurricane Andrew History: Wind Damage, Building Codes, Forecasting, and South Florida Recovery What Hurricane Andrew changed, including extreme wind damage, building codes, insurance, evacuation, and hurricane preparedness. andrew hurricane history"
+  },
+  {
     "title": "Anemometer Placement Guide: Why Backyard Wind Readings Are Hard",
     "path": "/anemometer-placement-guide/",
     "description": "How to place an anemometer, why trees and buildings distort wind, and why official wind measurements may differ from backyard readings.",
@@ -453,6 +460,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "How black ice forms, where it is most common, and why bridges, shaded roads, and early mornings are risky after winter precipitation.",
     "category": "Winter Weather",
     "keywords": "Black Ice Weather Guide: Why Roads Freeze When They Look Wet How black ice forms, where it is most common, and why bridges, shaded roads, and early mornings are risky after winter precipitation. black ice weather guide"
+  },
+  {
+    "title": "Blizzard of 1978 Explained: Snow, Wind, Coastal Flooding, and Travel Shutdowns",
+    "path": "/blizzard-1978-explained/",
+    "description": "Why the Blizzard of 1978 is remembered, including heavy snow, wind, coastal flooding, stranded vehicles, and forecast lessons.",
+    "category": "Winter Weather History",
+    "keywords": "Blizzard of 1978 Explained: Snow, Wind, Coastal Flooding, and Travel Shutdowns Why the Blizzard of 1978 is remembered, including heavy snow, wind, coastal flooding, stranded vehicles, and forecast lessons. blizzard 1978 explained"
   },
   {
     "title": "Blizzard Records Explained: Snow, Wind, Visibility, Duration, and Drifts",
@@ -1001,6 +1015,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Denver Tornadoes - Front Range Metro Tornado History Denver tornadoes: history including 1988 airport EF3, 2008 Windsor, and Front Range storms. Colorado metro tornado safety guide. denver tornadoes"
   },
   {
+    "title": "Derecho History Timeline: Long-Lived Wind Storms, Power Outages, and Crop Damage",
+    "path": "/derecho-history-timeline/",
+    "description": "A derecho history timeline covering long-lived damaging wind storms, bow echoes, power outages, crop damage, and severe thunderstorm warning lessons.",
+    "category": "Wind Storm History",
+    "keywords": "Derecho History Timeline: Long-Lived Wind Storms, Power Outages, and Crop Damage A derecho history timeline covering long-lived damaging wind storms, bow echoes, power outages, crop damage, and severe thunderstorm warning lessons. derecho history timeline"
+  },
+  {
     "title": "Derecho Records Explained: Long-Lived Wind Storms, Damage Paths, and Extreme Gusts",
     "path": "/derecho-records-explained/",
     "description": "What derecho records measure, why some wind storms travel hundreds of miles, and how damage swaths are documented.",
@@ -1104,6 +1125,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "How dual-polarization radar works, what extra data it provides, and why it helps meteorologists identify precipitation and debris.",
     "category": "Radar",
     "keywords": "Dual-Pol Radar Explained: How Radar Sees Raindrops, Hail, Snow, and Debris How dual-polarization radar works, what extra data it provides, and why it helps meteorologists identify precipitation and debris. dual pol radar explained"
+  },
+  {
+    "title": "Dust Bowl Weather History: Drought, Wind, Soil, Heat, and Plains Lessons",
+    "path": "/dust-bowl-weather-history/",
+    "description": "How weather contributed to the Dust Bowl, including drought, heat, wind, soil erosion, land use, and long-term climate lessons.",
+    "category": "Climate History",
+    "keywords": "Dust Bowl Weather History: Drought, Wind, Soil, Heat, and Plains Lessons How weather contributed to the Dust Bowl, including drought, heat, wind, soil erosion, land use, and long-term climate lessons. dust bowl weather history"
   },
   {
     "title": "Dust Devil vs. Tornado — What's the Difference?",
@@ -1274,6 +1302,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Famous Storm Chasers - The Legends of Tornado Research and Documentation Famous storm chasers: Tim Samaras, Reed Timmer, Josh Wurman, Warren Faidley, Sean Casey, and other legends of tornado research and documentation. famous storm chasers"
   },
   {
+    "title": "Famous Weather Events Guides: Historic Storms, Tornadoes, Floods, Hurricanes, and Blizzards",
+    "path": "/famous-weather-events-guides/",
+    "description": "A hub for famous weather event explainers, including historic tornadoes, hurricanes, floods, blizzards, dust storms, and landmark disasters.",
+    "category": "Weather History",
+    "keywords": "Famous Weather Events Guides: Historic Storms, Tornadoes, Floods, Hurricanes, and Blizzards A hub for famous weather event explainers, including historic tornadoes, hurricanes, floods, blizzards, dust storms, and landmark disasters. famous weather events guides"
+  },
+  {
     "title": "Fargo, North Dakota Tornado of 1957 - F5 That Inspired Fujita",
     "path": "/fargo-1957/",
     "description": "The Fargo, North Dakota tornado of June 20, 1957 was an F5 that killed 12 people. Ted Fujita studied it in detail - the event that helped inspire the Fujita Scale.",
@@ -1377,6 +1412,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "The Flint–Beecher, Michigan tornado of June 8, 1953 was an F5 that killed 116 people. Deadliest US tornado of the second half of the 20th century until Joplin 2011.",
     "category": "Guide",
     "keywords": "Flint–Beecher Tornado of 1953 — F5, 116 Killed in Michigan The Flint–Beecher, Michigan tornado of June 8, 1953 was an F5 that killed 116 people. Deadliest US tornado of the second half of the 20th century until Joplin 2011. flint beecher 1953"
+  },
+  {
+    "title": "Flood History Timeline: River Floods, Flash Floods, Coastal Floods, and Rainfall Disasters",
+    "path": "/flood-history-timeline/",
+    "description": "A flood history timeline explaining river floods, flash floods, coastal flooding, rainfall disasters, warning changes, and floodplain lessons.",
+    "category": "Flood History",
+    "keywords": "Flood History Timeline: River Floods, Flash Floods, Coastal Floods, and Rainfall Disasters A flood history timeline explaining river floods, flash floods, coastal flooding, rainfall disasters, warning changes, and floodplain lessons. flood history timeline"
   },
   {
     "title": "Florida Tornado Season Guide: Sea Breezes, Squall Lines, Waterspouts, and Tropical Systems",
@@ -1512,6 +1554,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Gale Warning Explained: When Marine Winds Become Dangerous What a gale warning means for boaters, coastal areas, and rough seas, plus how gales differ from storm warnings and small craft advisories. gale warning explained"
   },
   {
+    "title": "Galveston Hurricane History: Storm Surge, Forecast Limits, and the Deadliest U.S. Hurricane",
+    "path": "/galveston-hurricane-history/",
+    "description": "Why the 1900 Galveston hurricane remains one of the most important U.S. weather disasters, including surge, warning limits, and rebuilding.",
+    "category": "Hurricane History",
+    "keywords": "Galveston Hurricane History: Storm Surge, Forecast Limits, and the Deadliest U.S. Hurricane Why the 1900 Galveston hurricane remains one of the most important U.S. weather disasters, including surge, warning limits, and rebuilding. galveston hurricane history"
+  },
+  {
     "title": "Garage Storm Safety Guide: Doors, Tools, Fuel, Cars, and Wind",
     "path": "/garage-storm-safety-guide/",
     "description": "How garages become vulnerable during storms, including garage doors, stored fuel, tools, vehicles, flooding, and using garages safely during outages.",
@@ -1596,6 +1645,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Graupel Explained: Soft Hail, Snow Pellets, and Convective Showers What graupel is, how it differs from hail and sleet, and why it often appears in showery cold-season weather. graupel explained"
   },
   {
+    "title": "Great Flood of 1993 Explained: Midwest Rain, Rivers, Levees, and Long-Duration Flooding",
+    "path": "/great-flood-1993-explained/",
+    "description": "Why the Great Flood of 1993 was historic, including persistent rain, saturated soils, river flooding, levees, and Midwest impacts.",
+    "category": "Flood History",
+    "keywords": "Great Flood of 1993 Explained: Midwest Rain, Rivers, Levees, and Long-Duration Flooding Why the Great Flood of 1993 was historic, including persistent rain, saturated soils, river flooding, levees, and Midwest impacts. great flood 1993 explained"
+  },
+  {
     "title": "Great Lakes Severe Weather Guide: Lake Breezes, Derechos, Snow Squalls, and Waterspouts",
     "path": "/great-lakes-severe-weather-guide/",
     "description": "How the Great Lakes shape severe weather, including lake breezes, storm boundaries, derechos, snow squalls, lake-effect snow, and waterspouts.",
@@ -1636,6 +1692,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "The Greensburg, KS tornado of May 4, 2007 was the first-ever EF5-rated tornado, with 205 mph winds. 95% of the town was destroyed in a single night. The town rebuilt as a national model for sustainable design.",
     "category": "Guide",
     "keywords": "Greensburg, Kansas Tornado of 2007 — First-Ever EF5, Town Destroyed The Greensburg, KS tornado of May 4, 2007 was the first-ever EF5-rated tornado, with 205 mph winds. 95% of the town was destroyed in a single night. The town rebuilt as a national model for sustainable design. greensburg 2007"
+  },
+  {
+    "title": "Greensburg Kansas Tornado History: EF5 Damage, Warning, and Rebuilding After Disaster",
+    "path": "/greensburg-kansas-tornado-history/",
+    "description": "A guide to the Greensburg, Kansas tornado, including EF5 damage, warning action, small-town recovery, and rebuilding choices.",
+    "category": "Tornado History",
+    "keywords": "Greensburg Kansas Tornado History: EF5 Damage, Warning, and Rebuilding After Disaster A guide to the Greensburg, Kansas tornado, including EF5 damage, warning action, small-town recovery, and rebuilding choices. greensburg kansas tornado history"
   },
   {
     "title": "Guin, Alabama Tornado of April 3, 1974 - Super Outbreak F5",
@@ -1715,6 +1778,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Hail Size Scale — Pea to Softball, Every Size Compared Interactive hail size scale showing hail from pea to softball with actual diameters, common household comparisons, damage descriptions, and record-holding stones. Learn when hail becomes officially 'severe' and when it starts denting cars, breaking windows and killing livestock. hail size scale"
   },
   {
+    "title": "Hailstorm History Timeline: Giant Hail, Costly Damage, Supercells, and Insurance Losses",
+    "path": "/hailstorm-history-timeline/",
+    "description": "A hailstorm history timeline explaining giant hail, supercell hail cores, crop losses, roof damage, vehicle damage, and costly outbreaks.",
+    "category": "Hail History",
+    "keywords": "Hailstorm History Timeline: Giant Hail, Costly Damage, Supercells, and Insurance Losses A hailstorm history timeline explaining giant hail, supercell hail cores, crop losses, roof damage, vehicle damage, and costly outbreaks. hailstorm history timeline"
+  },
+  {
     "title": "Hallam, Nebraska Tornado of 2004 - Previous Widest Tornado Ever",
     "path": "/hallam-2004/",
     "description": "The Hallam, Nebraska tornado of May 22, 2004 was an F4 that reached 2.5 miles wide - the widest tornado ever recorded until El Reno 2013. Killed 1 person.",
@@ -1727,6 +1797,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Amateur radio is the backbone of Skywarn spotter networks. This guide walks through getting your Technician license (the easiest ham license), which frequencies matter for storm spotting, essential equipment, and how to check into a Skywarn net.",
     "category": "Get on the air",
     "keywords": "HAM Radio for Storm Spotters — Getting Licensed and On the Air Amateur radio is the backbone of Skywarn spotter networks. This guide walks through getting your Technician license (the easiest ham license), which frequencies matter for storm spotting, essential equipment, and how to check into a Skywarn net. ham radio for storm spotters"
+  },
+  {
+    "title": "Hurricane Harvey Flooding Lessons: Extreme Rain, Urban Flooding, Reservoirs, and Recovery",
+    "path": "/harvey-flooding-lessons/",
+    "description": "Lessons from Hurricane Harvey rainfall flooding, including stalled storms, urban flooding, reservoirs, flood maps, and long recovery.",
+    "category": "Flood History",
+    "keywords": "Hurricane Harvey Flooding Lessons: Extreme Rain, Urban Flooding, Reservoirs, and Recovery Lessons from Hurricane Harvey rainfall flooding, including stalled storms, urban flooding, reservoirs, flood maps, and long recovery. harvey flooding lessons"
   },
   {
     "title": "Hawaii Tornadoes - Rarest US State for Tornadoes",
@@ -1764,6 +1841,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Heat Lightning Explained: Why Distant Lightning Looks Silent What people call heat lightning, why it is usually distant thunderstorm lightning, and why it still means storms are somewhere nearby. heat lightning myth explained"
   },
   {
+    "title": "Heat Wave History Timeline: Deadly Heat, Urban Risk, Power Demand, and Nighttime Temperatures",
+    "path": "/heat-wave-history-timeline/",
+    "description": "A heat wave history timeline covering deadly heat events, nighttime heat, humidity, city heat islands, power demand, and public health lessons.",
+    "category": "Heat History",
+    "keywords": "Heat Wave History Timeline: Deadly Heat, Urban Risk, Power Demand, and Nighttime Temperatures A heat wave history timeline covering deadly heat events, nighttime heat, humidity, city heat islands, power demand, and public health lessons. heat wave history timeline"
+  },
+  {
     "title": "Heat Wave Records Explained: Duration, Nighttime Heat, Humidity, and Health Risk",
     "path": "/heat-wave-records-explained/",
     "description": "How heat wave records are measured, why hot nights matter, and why humidity and duration can be more dangerous than one hot afternoon.",
@@ -1790,6 +1874,20 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Lightning safety for hikers, including when to turn around, what terrain to avoid, and why storms can move faster than expected.",
     "category": "Outdoor Weather",
     "keywords": "Hiking Lightning Safety Guide: Ridges, Summits, Trees, and Turnaround Times Lightning safety for hikers, including when to turn around, what terrain to avoid, and why storms can move faster than expected. hiking lightning safety guide"
+  },
+  {
+    "title": "Historic Storm Lessons Hub: Tornado, Hurricane, Flood, Blizzard, Surge, and Warning Lessons",
+    "path": "/historic-storm-lessons-hub/",
+    "description": "A hub for historic weather event lessons, including tornado warnings, storm surge, flood recovery, blizzards, dust storms, and rebuilding.",
+    "category": "Weather History",
+    "keywords": "Historic Storm Lessons Hub: Tornado, Hurricane, Flood, Blizzard, Surge, and Warning Lessons A hub for historic weather event lessons, including tornado warnings, storm surge, flood recovery, blizzards, dust storms, and rebuilding. historic storm lessons hub"
+  },
+  {
+    "title": "U.S. Weather Disaster History Hub: Famous Tornadoes, Hurricanes, Floods, Blizzards, and Dust Storms",
+    "path": "/historic-us-weather-disaster-hub/",
+    "description": "A hub for U.S. weather disaster history, including famous tornadoes, hurricanes, floods, blizzards, dust storms, and recovery lessons.",
+    "category": "Weather History",
+    "keywords": "U.S. Weather Disaster History Hub: Famous Tornadoes, Hurricanes, Floods, Blizzards, and Dust Storms A hub for U.S. weather disaster history, including famous tornadoes, hurricanes, floods, blizzards, dust storms, and recovery lessons. historic us weather disaster hub"
   },
   {
     "title": "Hodograph Shapes — Every Type Explained",
@@ -2128,6 +2226,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Hurricane Guides: Storm Surge, Forecasts, Evacuation, and Tropical Alerts A hub for Tornado Hub hurricane and tropical cyclone guides, including storm surge, spaghetti models, evacuation zones, typhoons, and hurricane safety. hurricane guides"
   },
   {
+    "title": "Hurricane History Timeline: Famous U.S. Landfalls, Surge, Wind, Rain, and Forecast Changes",
+    "path": "/hurricane-history-timeline/",
+    "description": "A hurricane history timeline covering famous landfalls, storm surge, rainfall floods, wind damage, evacuation, and forecast improvements.",
+    "category": "Hurricane History",
+    "keywords": "Hurricane History Timeline: Famous U.S. Landfalls, Surge, Wind, Rain, and Forecast Changes A hurricane history timeline covering famous landfalls, storm surge, rainfall floods, wind damage, evacuation, and forecast improvements. hurricane history timeline"
+  },
+  {
     "title": "Hurricane Hunter Aircraft — Inside the WC-130J and P-3",
     "path": "/hurricane-hunter-aircraft/",
     "description": "The Air Force Reserve's Hurricane Hunters and NOAA's WP-3D Orions fly directly into hurricanes to measure them. Here is what they fly, what they measure, and how they survive.",
@@ -2303,11 +2408,32 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Jarrell, Texas Tornado of 1997 — F5, Slowest Movement, Most Extreme Damage The Jarrell, Texas tornado of May 27, 1997 was an F5 that produced possibly the most extreme tornado damage ever documented. 27 killed in the Double Creek Estates subdivision. jarrell 1997"
   },
   {
+    "title": "Jarrell Texas Tornado History: Slow Movement, Extreme Damage, and Tornado Safety Lessons",
+    "path": "/jarrell-texas-tornado-history/",
+    "description": "Why the Jarrell tornado is remembered, including slow movement, extreme damage, unusual storm motion, and sheltering lessons.",
+    "category": "Tornado History",
+    "keywords": "Jarrell Texas Tornado History: Slow Movement, Extreme Damage, and Tornado Safety Lessons Why the Jarrell tornado is remembered, including slow movement, extreme damage, unusual storm motion, and sheltering lessons. jarrell texas tornado history"
+  },
+  {
+    "title": "Johnstown Flood Weather History: Heavy Rain, Dam Failure, and Disaster Lessons",
+    "path": "/johnstown-flood-weather-history/",
+    "description": "The weather and infrastructure story behind the Johnstown Flood, including heavy rain, dam failure, flood wave, and disaster lessons.",
+    "category": "Flood History",
+    "keywords": "Johnstown Flood Weather History: Heavy Rain, Dam Failure, and Disaster Lessons The weather and infrastructure story behind the Johnstown Flood, including heavy rain, dam failure, flood wave, and disaster lessons. johnstown flood weather history"
+  },
+  {
     "title": "Joplin Tornado of 2011 — EF5, 158 Killed, $2.8B in Damage",
     "path": "/joplin-2011/",
     "description": "The Joplin, Missouri tornado of May 22, 2011 was an EF5 with 200+ mph winds that killed 158 people — the deadliest single US tornado since 1947. Full facts, path, damage, and simulator.",
     "category": "Guide",
     "keywords": "Joplin Tornado of 2011 — EF5, 158 Killed, $2.8B in Damage The Joplin, Missouri tornado of May 22, 2011 was an EF5 with 200+ mph winds that killed 158 people — the deadliest single US tornado since 1947. Full facts, path, damage, and simulator. joplin 2011"
+  },
+  {
+    "title": "Joplin Tornado Lessons: Warning Response, Hospital Impact, EF5 Damage, and Community Recovery",
+    "path": "/joplin-tornado-lessons/",
+    "description": "Lessons from the Joplin tornado, including warning response, hospital damage, EF5 intensity, shelter decisions, and long recovery.",
+    "category": "Tornado History",
+    "keywords": "Joplin Tornado Lessons: Warning Response, Hospital Impact, EF5 Damage, and Community Recovery Lessons from the Joplin tornado, including warning response, hospital damage, EF5 intensity, shelter decisions, and long recovery. joplin tornado lessons"
   },
   {
     "title": "July Tornadoes - Northern Plains Peak Continues",
@@ -2343,6 +2469,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Kansas averages 95 tornadoes per year and has the highest tornado density per square mile of any US state. Home of Greensburg 2007 (first-ever EF5) and Andover 1991 F5.",
     "category": "Guide",
     "keywords": "Kansas Tornadoes — Highest Tornado Density in the US Kansas averages 95 tornadoes per year and has the highest tornado density per square mile of any US state. Home of Greensburg 2007 (first-ever EF5) and Andover 1991 F5. kansas tornadoes"
+  },
+  {
+    "title": "Hurricane Katrina Lessons: Levees, Surge, Evacuation, Flooding, and Long Recovery",
+    "path": "/katrina-hurricane-lessons/",
+    "description": "Key lessons from Hurricane Katrina, including storm surge, levee failures, evacuation, flooding, communication, displacement, and recovery.",
+    "category": "Hurricane History",
+    "keywords": "Hurricane Katrina Lessons: Levees, Surge, Evacuation, Flooding, and Long Recovery Key lessons from Hurricane Katrina, including storm surge, levee failures, evacuation, flooding, communication, displacement, and recovery. katrina hurricane lessons"
   },
   {
     "title": "Kentucky Tornadoes - Mayfield and the Growing Dixie Alley Risk",
@@ -2742,6 +2875,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "The Moore, Oklahoma tornado of May 20, 2013 was an EF5 with 210 mph winds. 24 killed including 7 children at Plaza Towers Elementary. Full facts, path, and damage overview.",
     "category": "Guide",
     "keywords": "Moore, Oklahoma Tornado of 2013 — EF5, 210 mph Winds The Moore, Oklahoma tornado of May 20, 2013 was an EF5 with 210 mph winds. 24 killed including 7 children at Plaza Towers Elementary. Full facts, path, and damage overview. moore 2013"
+  },
+  {
+    "title": "Moore Oklahoma Tornado History: Repeated Tornado Risk, Safe Rooms, and School Safety",
+    "path": "/moore-oklahoma-tornado-history/",
+    "description": "Why Moore, Oklahoma is central to tornado history, including repeated violent tornadoes, safe rooms, school sheltering, and community resilience.",
+    "category": "Tornado History",
+    "keywords": "Moore Oklahoma Tornado History: Repeated Tornado Risk, Safe Rooms, and School Safety Why Moore, Oklahoma is central to tornado history, including repeated violent tornadoes, safe rooms, school sheltering, and community resilience. moore oklahoma tornado history"
   },
   {
     "title": "Moore, Oklahoma Tornadoes - The City Struck Five Times Since 1999",
@@ -3155,6 +3295,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "The Plainfield, Illinois tornado of August 28, 1990 was an F5 with 29 killed. The only US F5 for which no tornado warning was ever issued — leading to fundamental changes in NWS warning protocols.",
     "category": "Guide",
     "keywords": "Plainfield, Illinois Tornado of 1990 — F5 With No Warning The Plainfield, Illinois tornado of August 28, 1990 was an F5 with 29 killed. The only US F5 for which no tornado warning was ever issued — leading to fundamental changes in NWS warning protocols. plainfield 1990"
+  },
+  {
+    "title": "Plainfield Illinois Tornado History: Warning Gaps, School Safety, and Midwest Tornado Lessons",
+    "path": "/plainfield-illinois-tornado-history/",
+    "description": "Why the Plainfield tornado is historically important, including warning gaps, school safety, radar limitations, and Midwest tornado risk.",
+    "category": "Tornado History",
+    "keywords": "Plainfield Illinois Tornado History: Warning Gaps, School Safety, and Midwest Tornado Lessons Why the Plainfield tornado is historically important, including warning gaps, school safety, radar limitations, and Midwest tornado risk. plainfield illinois tornado history"
   },
   {
     "title": "Plains Dryline Severe Weather Guide: Supercells, Hail, Tornadoes, and Storm Initiation",
@@ -4200,6 +4347,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Safety Guides — Tornado Hub Tornado safety, by scenario. Where you are when a warning is issued determines what you should do. Guides for home, mobile home, car, apartment, high-rise, school, workplace, hospital, and more. safety"
   },
   {
+    "title": "Sandy Storm Surge Lessons: Coastal Flooding, Power Outages, Transit, and Evacuation",
+    "path": "/sandy-storm-surge-lessons/",
+    "description": "Lessons from Sandy, including storm surge, coastal flooding, power outages, transit disruption, evacuation, and Northeast vulnerability.",
+    "category": "Coastal Flood History",
+    "keywords": "Sandy Storm Surge Lessons: Coastal Flooding, Power Outages, Transit, and Evacuation Lessons from Sandy, including storm surge, coastal flooding, power outages, transit disruption, evacuation, and Northeast vulnerability. sandy storm surge lessons"
+  },
+  {
     "title": "Santa Ana Winds Explained: Fire Weather, Dry Air, and Mountain Gaps",
     "path": "/santa-ana-winds-explained/",
     "description": "What Santa Ana winds are, why they are dry and gusty, and how they increase wildfire danger, travel issues, and power concerns in Southern California.",
@@ -4254,6 +4408,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Why schools close, delay, or dismiss early for weather, including buses, sidewalks, wind chill, heat, flooding, power outages, and warning timing.",
     "category": "School Weather",
     "keywords": "School Weather Closure Factors: Snow, Heat, Wind, Flooding, and Severe Storms Why schools close, delay, or dismiss early for weather, including buses, sidewalks, wind chill, heat, flooding, power outages, and warning timing. school weather closure factors"
+  },
+  {
+    "title": "Schoolhouse Blizzard History: Sudden Cold, Children, Plains Weather, and Warning Lessons",
+    "path": "/schoolhouse-blizzard-history/",
+    "description": "A guide to the Schoolhouse Blizzard, including sudden temperature drops, Plains exposure, children, travel, and warning limitations.",
+    "category": "Winter Weather History",
+    "keywords": "Schoolhouse Blizzard History: Sudden Cold, Children, Plains Weather, and Warning Lessons A guide to the Schoolhouse Blizzard, including sudden temperature drops, Plains exposure, children, travel, and warning limitations. schoolhouse blizzard history"
   },
   {
     "title": "Sea Breeze Thunderstorms Explained: Coastline Boundaries and Afternoon Storms",
@@ -4940,6 +5101,20 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "How sump pumps fail during storms, why battery backups and water alarms matter, and what homeowners can check before heavy rain.",
     "category": "Flooding",
     "keywords": "Sump Pump Backup Guide: Battery Backup, Water Alarms, and Heavy Rain Prep How sump pumps fail during storms, why battery backups and water alarms matter, and what homeowners can check before heavy rain. sump pump backup guide"
+  },
+  {
+    "title": "1974 Super Outbreak Explained: Tornado Families, Forecasting, and Warning Lessons",
+    "path": "/super-outbreak-1974-explained/",
+    "description": "What happened during the 1974 Super Outbreak, why it was historic, and how it influenced tornado forecasting and warning awareness.",
+    "category": "Tornado History",
+    "keywords": "1974 Super Outbreak Explained: Tornado Families, Forecasting, and Warning Lessons What happened during the 1974 Super Outbreak, why it was historic, and how it influenced tornado forecasting and warning awareness. super outbreak 1974 explained"
+  },
+  {
+    "title": "2011 Super Outbreak Explained: Modern Warnings, Long-Track Tornadoes, and Dixie Alley Risk",
+    "path": "/super-outbreak-2011-explained/",
+    "description": "A guide to the 2011 Super Outbreak, including Dixie Alley vulnerability, long-track tornadoes, warning challenges, and recovery lessons.",
+    "category": "Tornado History",
+    "keywords": "2011 Super Outbreak Explained: Modern Warnings, Long-Track Tornadoes, and Dixie Alley Risk A guide to the 2011 Super Outbreak, including Dixie Alley vulnerability, long-track tornadoes, warning challenges, and recovery lessons. super outbreak 2011 explained"
   },
   {
     "title": "Super Typhoon Explained: What Makes a Typhoon Super?",
@@ -6734,6 +6909,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Tri-State Tornado of 1925 — Deadliest US Tornado in History The Tri-State tornado of March 18, 1925 killed 695 people across Missouri, Illinois, and Indiana over a 219-mile path — the deadliest single tornado in US history. tri state 1925"
   },
   {
+    "title": "Tri-State Tornado Legacy Guide: Why the 1925 Tornado Still Matters",
+    "path": "/tri-state-tornado-legacy-guide/",
+    "description": "Why the 1925 Tri-State Tornado remains central to tornado history, including path length, speed, deaths, warning limitations, and modern lessons.",
+    "category": "Tornado History",
+    "keywords": "Tri-State Tornado Legacy Guide: Why the 1925 Tornado Still Matters Why the 1925 Tri-State Tornado remains central to tornado history, including path length, speed, deaths, warning limitations, and modern lessons. tri state tornado legacy guide"
+  },
+  {
     "title": "Tropical Storm Watch vs Warning: What Each Alert Means",
     "path": "/tropical-storm-watch-vs-warning/",
     "description": "The difference between a tropical storm watch and warning, what actions to take, and how these alerts relate to hurricane watches and warnings.",
@@ -6823,6 +7005,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A hub for U.S. severe weather region explainers, covering state tornado seasons, drylines, Great Lakes storms, Gulf Coast hazards, and regional flood threats.",
     "category": "Regional Severe Weather",
     "keywords": "U.S. Severe Weather Region Guides: Hail, Wind, Floods, Tornadoes, Monsoon Storms, and Coastal Hazards A hub for U.S. severe weather region explainers, covering state tornado seasons, drylines, Great Lakes storms, Gulf Coast hazards, and regional flood threats. us severe weather region guides"
+  },
+  {
+    "title": "U.S. Weather Disaster History Guides: Tornadoes, Hurricanes, Floods, Blizzards, Heat, and Wind",
+    "path": "/us-weather-disaster-history-guides/",
+    "description": "A hub for U.S. weather disaster history pages covering tornadoes, hurricanes, floods, blizzards, heat waves, hail, derechos, and dust storms.",
+    "category": "Weather History",
+    "keywords": "U.S. Weather Disaster History Guides: Tornadoes, Hurricanes, Floods, Blizzards, Heat, and Wind A hub for U.S. weather disaster history pages covering tornadoes, hurricanes, floods, blizzards, heat waves, hail, derechos, and dust storms. us weather disaster history guides"
   },
   {
     "title": "Utah Tornadoes - Rare Great Basin Events",
@@ -7110,6 +7299,20 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A free A-to-Z weather glossary with 190+ meteorology terms defined in plain English. Covers tornadoes, hurricanes, clouds, radar, forecasting, and atmospheric science. Great for students, forecasters, teachers and weather nerds.",
     "category": "📖 Reference",
     "keywords": "Weather Glossary — 190+ Terms Defined A to Z A free A-to-Z weather glossary with 190+ meteorology terms defined in plain English. Covers tornadoes, hurricanes, clouds, radar, forecasting, and atmospheric science. Great for students, forecasters, teachers and weather nerds. weather glossary"
+  },
+  {
+    "title": "Weather History Guides: Timelines for Tornadoes, Hurricanes, Floods, Heat, Winter Storms, Hail, and Derechos",
+    "path": "/weather-history-guides/",
+    "description": "A hub for weather history timelines and famous event explainers across tornadoes, hurricanes, floods, winter storms, heat waves, hail, and derechos.",
+    "category": "Weather History",
+    "keywords": "Weather History Guides: Timelines for Tornadoes, Hurricanes, Floods, Heat, Winter Storms, Hail, and Derechos A hub for weather history timelines and famous event explainers across tornadoes, hurricanes, floods, winter storms, heat waves, hail, and derechos. weather history guides"
+  },
+  {
+    "title": "Weather History Timeline: Tornadoes, Hurricanes, Floods, Heat Waves, and Winter Storms",
+    "path": "/weather-history-timeline/",
+    "description": "A broad weather history timeline connecting major tornadoes, hurricanes, floods, droughts, heat waves, blizzards, and warning improvements.",
+    "category": "Weather History",
+    "keywords": "Weather History Timeline: Tornadoes, Hurricanes, Floods, Heat Waves, and Winter Storms A broad weather history timeline connecting major tornadoes, hurricanes, floods, droughts, heat waves, blizzards, and warning improvements. weather history timeline"
   },
   {
     "title": "Weather in Famous Paintings — What Artists Got Right (and Wrong)",
@@ -7770,6 +7973,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Winter Storm Emergency Kit: Home and Car Supplies for Snow, Ice, and Cold What to keep ready for winter storms, including home outage supplies, car kits, blankets, ice melt, medications, and battery backups. winter storm emergency kit"
   },
   {
+    "title": "Winter Storm History Timeline: Blizzards, Ice Storms, Snowstorms, and Cold Waves",
+    "path": "/winter-storm-history-timeline/",
+    "description": "A winter storm history timeline covering blizzards, ice storms, snowstorms, cold waves, travel disruption, power outages, and forecast lessons.",
+    "category": "Winter Weather History",
+    "keywords": "Winter Storm History Timeline: Blizzards, Ice Storms, Snowstorms, and Cold Waves A winter storm history timeline covering blizzards, ice storms, snowstorms, cold waves, travel disruption, power outages, and forecast lessons. winter storm history timeline"
+  },
+  {
     "title": "Winter Storm Watch vs Warning: Snow, Ice, Wind, and Travel Risk",
     "path": "/winter-storm-watch-vs-warning/",
     "description": "What winter storm watches and warnings mean, how they differ from advisories, and why ice and wind can be more disruptive than snowfall totals alone.",
@@ -7852,6 +8062,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "The Xenia, Ohio tornado of April 3, 1974 was an F5 that killed 32 people and destroyed half the town. The signature event of the 1974 Super Outbreak — 148 tornadoes in a single day.",
     "category": "Guide",
     "keywords": "Xenia, Ohio Tornado of 1974 — F5, 32 Killed, Super Outbreak The Xenia, Ohio tornado of April 3, 1974 was an F5 that killed 32 people and destroyed half the town. The signature event of the 1974 Super Outbreak — 148 tornadoes in a single day. xenia 1974"
+  },
+  {
+    "title": "Xenia Ohio Tornado History: 1974 Super Outbreak Damage and Community Memory",
+    "path": "/xenia-ohio-tornado-history/",
+    "description": "A guide to the Xenia tornado during the 1974 Super Outbreak, including violent damage, community memory, and warning lessons.",
+    "category": "Tornado History",
+    "keywords": "Xenia Ohio Tornado History: 1974 Super Outbreak Damage and Community Memory A guide to the Xenia tornado during the 1974 Super Outbreak, including violent damage, community memory, and warning lessons. xenia ohio tornado history"
   },
   {
     "title": "Yard Storm Prep Guide: Patio Furniture, Trees, Trampolines, Grills, and Drainage",
