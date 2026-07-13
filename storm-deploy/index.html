@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Storm Deploy — Drop a Supercell on a Real City and See What Happens</title>
 <meta name="description" content="Build a supercell thunderstorm from atmospheric ingredients (CAPE, wind shear, helicity), deploy it over any real US location on a map, and see whether it spawns tornadoes and how much damage they cause. Combines meteorology with real-world impact estimation." />
+<meta name="twitter:description" content="Build a supercell thunderstorm from atmospheric ingredients (CAPE, wind shear, helicity), deploy it over any real US location on a map, and see whether it spawns tornadoes and how much damage they cause. Combines meteorology with real-world impact estimation." />
+<meta name="twitter:title" content="Storm Deploy — Drop a Supercell on a Real City and See What Happens" />
+<meta name="twitter:card" content="summary" />
+<meta property="og:site_name" content="Tornado Hub" />
 <meta name="keywords" content="supercell simulator, storm deploy, tornado damage simulator, drop tornado on city, atmospheric simulator, storm ingredients simulator" />
-<meta property="og:title" content="Storm Deploy — Supercell to Damage Simulator" />
-<meta property="og:description" content="Build a storm from CAPE and shear, deploy it over any city, see the damage." />
-<meta property="og:type" content="website" />
+<meta property="og:title" content="Storm Deploy — Drop a Supercell on a Real City and See What Happens" />
+<meta property="og:description" content="Build a supercell thunderstorm from atmospheric ingredients (CAPE, wind shear, helicity), deploy it over any real US location on a map, and see whether it spawns tornadoes and how much damage they cause. Combines meteorology with real-world impact estimation." />
+<meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.tornadosimulator.net/storm-deploy/" />
 <link rel="canonical" href="https://www.tornadosimulator.net/storm-deploy/" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛈️</text></svg>" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%AA%EF%B8%8F%3C/text%3E%3C/svg%3E" />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" />@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebApplication","name":"Storm Deploy","applicationCategory":"EducationalApplication","description":"Combined supercell atmospheric simulator with real-location tornado damage estimation.","operatingSystem":"Web browser","url":"https://www.tornadosimulator.net/storm-deploy/","publisher":{"@type":"Organization","name":"Tornado Hub"}}
+</script>
+<script type="application/ld+json" data-seo="page">
+{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.tornadosimulator.net/storm-deploy/#webpage","url":"https://www.tornadosimulator.net/storm-deploy/","name":"Storm Deploy — Drop a Supercell on a Real City and See What Happens","description":"Build a supercell thunderstorm from atmospheric ingredients (CAPE, wind shear, helicity), deploy it over any real US location on a map, and see whether it spawns tornadoes and how much damage they cause. Combines meteorology with real-world impact estimation.","isPartOf":{"@id":"https://www.tornadosimulator.net/#website"},"publisher":{"@id":"https://www.tornadosimulator.net/#organization"},"inLanguage":"en"},{"@type":"BreadcrumbList","@id":"https://www.tornadosimulator.net/storm-deploy/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"},{"@type":"ListItem","position":2,"name":"Storm Deploy — Drop a Supercell on a Real City and See What Happens","item":"https://www.tornadosimulator.net/storm-deploy/"}]}]}
 </script>
 <style>
 :root { --bg:#0d1219; --bg-alt:#131a25; --surface:#1a2231; --surface-alt:#212a3d; --text:#f0f4fb; --text-secondary:#a8b3c7; --text-muted:#6b7690; --border:#2a3448; --border-strong:#3a465e; --accent:#ff6b47; --accent-hover:#ff8560; --link:#7ec4ff; --green:#6bcf7f; --yellow:#ffd166; --orange:#ff9f43; --red:#ef4444; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; --mono:"JetBrains Mono",monospace; }
