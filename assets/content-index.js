@@ -42,6 +42,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "The 2011 Super Outbreak — 360 Tornadoes, 4 EF5s, 324 Killed The 2011 Super Outbreak (April 25–28) produced 360 tornadoes and killed 324 people — the deadliest US tornado outbreak since 1974. Full breakdown of the four EF5s, casualties, and timeline. 2011 super outbreak"
   },
   {
+    "title": "About Us",
+    "path": "/about-us/",
+    "description": "About Tornado Hub: an independent educational weather site with a tornado simulator, safety guides, historical case files, quizzes, and weather explainers.",
+    "category": "About Us",
+    "keywords": "About Us About Tornado Hub: an independent educational weather site with a tornado simulator, safety guides, historical case files, quizzes, and weather explainers. about us"
+  },
+  {
     "title": "About — Tornado Hub",
     "path": "/about/",
     "description": "About Tornado Hub — an educational resource for understanding tornadoes. Our data sources, editorial approach, and why we built this.",
@@ -908,6 +915,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "How wind affects construction sites, including cranes, scaffolding, ladders, roof work, dust, and unsecured materials.",
     "category": "Work Weather",
     "keywords": "Construction Site Wind Safety: Cranes, Scaffolds, Ladders, Dust, and Loose Materials How wind affects construction sites, including cranes, scaffolding, ladders, roof work, dust, and unsecured materials. construction site wind safety"
+  },
+  {
+    "title": "Contact Tornado Hub",
+    "path": "/contact/",
+    "description": "Contact Tornado Hub for corrections, source questions, privacy questions, technical issues, or feedback about the simulator and weather guides.",
+    "category": "Contact",
+    "keywords": "Contact Tornado Hub Contact Tornado Hub for corrections, source questions, privacy questions, technical issues, or feedback about the simulator and weather guides. contact"
   },
   {
     "title": "SPC Convective Outlook Categories: Marginal to High Risk Explained",
@@ -3360,6 +3374,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Barometric Pressure Converter — mb, inHg, hPa, kPa, mmHg, psi | Tornado Simulator Free barometric pressure converter. Convert between millibars, inches of mercury, hectopascals, kilopascals, mmHg, and psi. Includes context for tornado, hurricane, and everyday pressures. pressure unit converter"
   },
   {
+    "title": "Privacy Policy",
+    "path": "/privacy-policy/",
+    "description": "How Tornado Hub handles analytics, advertising cookies, third-party ad networks, affiliate links, contact messages, and privacy choices.",
+    "category": "Privacy",
+    "keywords": "Privacy Policy How Tornado Hub handles analytics, advertising cookies, third-party ad networks, affiliate links, contact messages, and privacy choices. privacy policy"
+  },
+  {
     "title": "Probability of Precipitation Explained: What a 40 Percent Chance of Rain Means",
     "path": "/probability-of-precipitation-explained/",
     "description": "What PoP means in weather forecasts, why it is not simply how much of the day it will rain, and how to use rain chances correctly.",
@@ -5173,6 +5194,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Tennessee Tornadoes - Nashville, Cookeville, and the Dixie Alley Threat Tennessee tornado history: Nashville 2020 (25 killed), the 2011 Super Outbreak's Tennessee track, and the state's growing role as Dixie Alley's northern edge. tennessee tornadoes"
   },
   {
+    "title": "Terms and Conditions",
+    "path": "/terms-and-conditions/",
+    "description": "The rules for using Tornado Hub, including educational use, emergency disclaimers, intellectual property, ads, affiliate links, and acceptable use.",
+    "category": "Terms",
+    "keywords": "Terms and Conditions The rules for using Tornado Hub, including educational use, emergency disclaimers, intellectual property, ads, affiliate links, and acceptable use. terms and conditions"
+  },
+  {
     "title": "Texas Severe Weather Season Guide: Drylines, Hail, Tornadoes, Floods, Heat, and Hurricanes",
     "path": "/texas-severe-weather-season-guide/",
     "description": "A Texas weather risk guide covering dryline storms, hail, tornadoes, flash flooding, heat, winter outbreaks, and Gulf tropical threats.",
@@ -6814,7 +6842,7 @@ window.TORNADO_CONTENT_INDEX = [
     "title": "Tornado Weather Terms Glossary - CAPE, SRH, and More",
     "path": "/tornado-weather-terms/",
     "description": "Tornado weather terms glossary: CAPE, SRH, dry line, mesocyclone, and other meteorology terminology explained.",
-    "category": "Guide",
+    "category": "Site information",
     "keywords": "Tornado Weather Terms Glossary - CAPE, SRH, and More Tornado weather terms glossary: CAPE, SRH, dry line, mesocyclone, and other meteorology terminology explained. tornado weather terms"
   },
   {
