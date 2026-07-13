@@ -63,6 +63,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "AI Weather Forecasting — GraphCast, Pangu, Aurora Explained Machine learning weather models are catching up to physics-based forecasts — and running 1000x faster. Here is what GraphCast, Pangu, and Aurora are, how they work, and what they can (and cannot) do. ai weather forecasting"
   },
   {
+    "title": "Air Quality and Wildfire Smoke Weather Guide",
+    "path": "/air-quality-smoke-weather-guide/",
+    "description": "How weather moves wildfire smoke, what AQI means, why smoke can travel far from fires, and practical steps for indoor and outdoor safety.",
+    "category": "Air Quality",
+    "keywords": "Air Quality and Wildfire Smoke Weather Guide How weather moves wildfire smoke, what AQI means, why smoke can travel far from fires, and practical steps for indoor and outdoor safety. air quality smoke weather guide"
+  },
+  {
     "title": "Alabama Tornadoes — Deadliest State for Modern Tornado Deaths",
     "path": "/alabama-tornadoes/",
     "description": "Alabama has been struck by more significant tornadoes and had more tornado deaths than any state in recent decades. Home to the 2011 Super Outbreak that killed 244 in Alabama alone.",
@@ -159,6 +166,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A glossary of aviation weather terms — from METAR and TAF to microburst, virga, and mountain wave. What each means, when it matters, and how to read them in briefings.",
     "category": "Glossary",
     "keywords": "Aviation Weather Glossary — Terms Every Pilot Should Know A glossary of aviation weather terms — from METAR and TAF to microburst, virga, and mountain wave. What each means, when it matters, and how to read them in briefings. aviation weather glossary"
+  },
+  {
+    "title": "Barometric Pressure Weather Guide: What Rising and Falling Pressure Means",
+    "path": "/barometric-pressure-weather-guide/",
+    "description": "How barometric pressure relates to storms, wind, clouds, clear weather, headaches, altimeters, and home weather stations.",
+    "category": "Weather Science",
+    "keywords": "Barometric Pressure Weather Guide: What Rising and Falling Pressure Means How barometric pressure relates to storms, wind, clouds, clear weather, headaches, altimeters, and home weather stations. barometric pressure weather guide"
   },
   {
     "title": "Barrie Tornado (May 31, 1985) — F4, 12 Dead, Ontario's Deadliest Modern Tornado",
@@ -264,6 +278,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Birmingham has been struck by multiple major tornadoes: 2011 Tuscaloosa-Birmingham EF4, plus historical events. Alabama's largest metro is at high tornado risk.",
     "category": "Guide",
     "keywords": "Birmingham, Alabama Tornadoes - The Tornado-Vulnerable Metro Birmingham has been struck by multiple major tornadoes: 2011 Tuscaloosa-Birmingham EF4, plus historical events. Alabama's largest metro is at high tornado risk. birmingham tornadoes"
+  },
+  {
+    "title": "Blizzard and Whiteout Driving Safety: When Roads Disappear",
+    "path": "/blizzard-whiteout-driving-safety/",
+    "description": "How blizzards and whiteouts reduce visibility, why pileups happen, and what to do if you are caught on the road during sudden blowing snow.",
+    "category": "Winter Weather",
+    "keywords": "Blizzard and Whiteout Driving Safety: When Roads Disappear How blizzards and whiteouts reduce visibility, why pileups happen, and what to do if you are caught on the road during sudden blowing snow. blizzard whiteout driving safety"
   },
   {
     "title": "Building Codes and Tornadoes — What Actually Improved",
@@ -728,6 +749,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Flash Flood Safety — Turn Around Don't Drown Flash floods kill more Americans than any other severe weather event. Here is how to recognize the risk, what to do, and why \"turn around don't drown\" saves lives. flash flood safety"
   },
   {
+    "title": "Flash Flood Watch vs Warning: What to Do When Water Rises Fast",
+    "path": "/flash-flood-watch-vs-warning/",
+    "description": "The difference between flash flood watches and warnings, why water can rise faster than expected, and how to avoid the most common deadly mistake.",
+    "category": "Flooding",
+    "keywords": "Flash Flood Watch vs Warning: What to Do When Water Rises Fast The difference between flash flood watches and warnings, why water can rise faster than expected, and how to avoid the most common deadly mistake. flash flood watch vs warning"
+  },
+  {
     "title": "Flint–Beecher Tornado of 1953 — F5, 116 Killed in Michigan",
     "path": "/flint-beecher-1953/",
     "description": "The Flint–Beecher, Michigan tornado of June 8, 1953 was an F5 that killed 116 people. Deadliest US tornado of the second half of the 20th century until Joplin 2011.",
@@ -833,6 +861,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Hackleburg–Phil Campbell Tornado of 2011 — EF5, 72 Killed The Hackleburg–Phil Campbell tornado of April 27, 2011 was an EF5 with 210 mph winds and a 132-mile path across Alabama and Tennessee. 72 killed — the deadliest tornado of the 2011 Super Outbreak. hackleburg 2011"
   },
   {
+    "title": "Hail Damage Guide: Cars, Roofs, Windows, and Insurance Notes",
+    "path": "/hail-damage-car-roof-guide/",
+    "description": "What hail can damage, how hail size relates to impacts, what to check after a storm, and how to document damage safely.",
+    "category": "Hail",
+    "keywords": "Hail Damage Guide: Cars, Roofs, Windows, and Insurance Notes What hail can damage, how hail size relates to impacts, what to check after a storm, and how to document damage safely. hail damage car roof guide"
+  },
+  {
     "title": "Hail Size Scale — Pea to Softball, Every Size Compared",
     "path": "/hail-size-scale/",
     "description": "Interactive hail size scale showing hail from pea to softball with actual diameters, common household comparisons, damage descriptions, and record-holding stones. Learn when hail becomes officially 'severe' and when it starts denting cars, breaking windows and killing livestock.",
@@ -859,6 +894,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Hawaii averages under 1 tornado per year - the rarest US state. Waterspouts and rare small tornadoes do occur during winter storms.",
     "category": "Guide",
     "keywords": "Hawaii Tornadoes - Rarest US State for Tornadoes Hawaii averages under 1 tornado per year - the rarest US state. Waterspouts and rare small tornadoes do occur during winter storms. hawaii tornadoes"
+  },
+  {
+    "title": "Heat Index Danger Levels: Why Humidity Makes Heat More Dangerous",
+    "path": "/heat-index-danger-levels/",
+    "description": "How heat index works, why humid heat stresses the body, warning signs of heat illness, and practical steps to stay safer during heat waves.",
+    "category": "Heat",
+    "keywords": "Heat Index Danger Levels: Why Humidity Makes Heat More Dangerous How heat index works, why humid heat stresses the body, warning signs of heat illness, and practical steps to stay safer during heat waves. heat index danger levels"
   },
   {
     "title": "Heat Wave Safety — Recognizing, Preventing, and Treating Heat Illness",
@@ -1064,6 +1106,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Saffir-Simpson Hurricane Scale Explorer — Category 1 to 5 Interactive explorer for the Saffir-Simpson Hurricane Wind Scale. Click any category from tropical storm through Category 5 to see wind speeds, storm surge estimates, damage examples, and historic Atlantic and Pacific hurricanes at that intensity. hurricane category explorer"
   },
   {
+    "title": "Hurricane Evacuation Zone vs Flood Zone: What Is the Difference?",
+    "path": "/hurricane-evacuation-zone-vs-flood-zone/",
+    "description": "Evacuation zones and flood zones are often confused. Learn what each one means, how officials use them, and why you should know both before hurricane season.",
+    "category": "Hurricanes",
+    "keywords": "Hurricane Evacuation Zone vs Flood Zone: What Is the Difference? Evacuation zones and flood zones are often confused. Learn what each one means, how officials use them, and why you should know both before hurricane season. hurricane evacuation zone vs flood zone"
+  },
+  {
     "title": "Hurricane Forecast Accuracy — Track vs Intensity",
     "path": "/hurricane-forecast-accuracy/",
     "description": "Hurricane track forecasts have dramatically improved since 1990. Intensity forecasts are still lagging. Here is what the data shows and why.",
@@ -1104,6 +1153,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Preparing for hurricane season is a year-round project. Here is a month-by-month timeline for hurricane preparedness, from January through November.",
     "category": "Seasonal preparation",
     "keywords": "Hurricane Season Preparedness — A Month-by-Month Guide Preparing for hurricane season is a year-round project. Here is a month-by-month timeline for hurricane preparedness, from January through November. hurricane season preparedness"
+  },
+  {
+    "title": "Hurricane Spaghetti Models Explained: How to Read the Lines",
+    "path": "/hurricane-spaghetti-models-explained/",
+    "description": "What hurricane spaghetti models show, what they do not show, why tracks spread out, and how to avoid common forecast mistakes.",
+    "category": "Forecasting",
+    "keywords": "Hurricane Spaghetti Models Explained: How to Read the Lines What hurricane spaghetti models show, what they do not show, why tracks spread out, and how to avoid common forecast mistakes. hurricane spaghetti models explained"
   },
   {
     "title": "Hurricane-Spawned Tornadoes - The Silent Killers of Landfall",
@@ -1244,6 +1300,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Profiles of the most famous storm chasers past and present — from Roger Jensen (the first chaser) to Ted Fujita (the scientist) to Reed Timmer, Sean Casey and the Twistex team that lost their lives at El Reno 2013.",
     "category": "🎥 Profiles",
     "keywords": "Legendary Storm Chasers — The People Who Chase Tornadoes Profiles of the most famous storm chasers past and present — from Roger Jensen (the first chaser) to Ted Fujita (the scientist) to Reed Timmer, Sean Casey and the Twistex team that lost their lives at El Reno 2013. legendary storm chasers"
+  },
+  {
+    "title": "Lightning Safety at Home: What to Avoid Indoors During Thunderstorms",
+    "path": "/lightning-at-home-safety/",
+    "description": "Indoor lightning safety tips: plumbing, corded electronics, windows, porches, garages, pets, and when it is safe to resume normal activity.",
+    "category": "Lightning",
+    "keywords": "Lightning Safety at Home: What to Avoid Indoors During Thunderstorms Indoor lightning safety tips: plumbing, corded electronics, windows, porches, garages, pets, and when it is safe to resume normal activity. lightning at home safety"
   },
   {
     "title": "Lightning Safety Guide — Rules, Myths, and What to Do",
@@ -1412,6 +1475,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A monsoon is not a storm but a seasonal wind shift. Here is what monsoons actually are, where they occur, and why they matter for global food production.",
     "category": "Weather science",
     "keywords": "Monsoon Explained — The Wind Shift That Feeds Half the World A monsoon is not a storm but a seasonal wind shift. Here is what monsoons actually are, where they occur, and why they matter for global food production. monsoon explained"
+  },
+  {
+    "title": "Monsoon Season Explained: Wind Shift, Moisture, Storms, and Flooding",
+    "path": "/monsoon-season-explained/",
+    "description": "A beginner-friendly explanation of monsoon season, why it is more than just rain, and how monsoon storms can create flash flooding, dust, lightning, and heat relief.",
+    "category": "Weather Science",
+    "keywords": "Monsoon Season Explained: Wind Shift, Moisture, Storms, and Flooding A beginner-friendly explanation of monsoon season, why it is more than just rain, and how monsoon storms can create flash flooding, dust, lightning, and heat relief. monsoon season explained"
   },
   {
     "title": "Montana Tornadoes - Rare Northern Plains Events",
@@ -2457,6 +2527,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Rhode Island Tornadoes - Smallest State, Rarest Events Rhode Island averages under 1 tornado per year. Small state size and coastal position make tornadoes extremely rare. rhode island tornadoes"
   },
   {
+    "title": "Rip Current Weather Safety: Why Calm-Looking Beaches Can Be Dangerous",
+    "path": "/rip-current-weather-safety/",
+    "description": "How rip currents form, weather patterns that increase risk, warning signs at the beach, and what to do if you are caught in one.",
+    "category": "Marine Weather",
+    "keywords": "Rip Current Weather Safety: Why Calm-Looking Beaches Can Be Dangerous How rip currents form, weather patterns that increase risk, warning signs at the beach, and what to do if you are caught in one. rip current weather safety"
+  },
+  {
     "title": "Rip Current Safety — What Actually Kills at the Beach",
     "path": "/rip-currents-safety/",
     "description": "Rip currents kill more Americans at beaches than sharks and lightning combined. Here is how to spot them, escape them, and never be caught in one.",
@@ -2954,11 +3031,25 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Skywarn — The Volunteer Network That Reports Storms Skywarn is the NWS network of 350,000+ trained storm spotters. Here is its history, how it operates, and how to join. storm spotter network history"
   },
   {
+    "title": "Storm Surge Explained: Why Hurricane Water Can Be Deadlier Than Wind",
+    "path": "/storm-surge-explained/",
+    "description": "A plain-English guide to storm surge, why it rises before and during hurricanes, how it differs from waves and flooding, and why evacuation zones matter.",
+    "category": "Hurricanes",
+    "keywords": "Storm Surge Explained: Why Hurricane Water Can Be Deadlier Than Wind A plain-English guide to storm surge, why it rises before and during hurricanes, how it differs from waves and flooding, and why evacuation zones matter. storm surge explained"
+  },
+  {
     "title": "Storm Chase Tours vs DIY Storm Chasing — Cost, Safety, and Experience",
     "path": "/storm-vs-storm-chase-tours/",
     "description": "Should you book a storm chase tour or plan your own trip? Here is a full comparison of cost, learning curve, safety, and photography opportunities.",
     "category": "Chase planning",
     "keywords": "Storm Chase Tours vs DIY Storm Chasing — Cost, Safety, and Experience Should you book a storm chase tour or plan your own trip? Here is a full comparison of cost, learning curve, safety, and photography opportunities. storm vs storm chase tours"
+  },
+  {
+    "title": "Super Typhoon Explained: What Makes a Typhoon Super?",
+    "path": "/super-typhoon-explained/",
+    "description": "What a super typhoon is, how it compares with major hurricanes, why terminology varies, and what impacts people should prepare for.",
+    "category": "Typhoons",
+    "keywords": "Super Typhoon Explained: What Makes a Typhoon Super? What a super typhoon is, how it compares with major hurricanes, why terminology varies, and what impacts people should prepare for. super typhoon explained"
   },
   {
     "title": "Supercell Simulator — Model the Atmosphere That Makes Tornadoes",
@@ -4648,6 +4739,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Tri-State Tornado of 1925 — Deadliest US Tornado in History The Tri-State tornado of March 18, 1925 killed 695 people across Missouri, Illinois, and Indiana over a 219-mile path — the deadliest single tornado in US history. tri state 1925"
   },
   {
+    "title": "Tropical Storm Watch vs Warning: What Each Alert Means",
+    "path": "/tropical-storm-watch-vs-warning/",
+    "description": "The difference between a tropical storm watch and warning, what actions to take, and how these alerts relate to hurricane watches and warnings.",
+    "category": "Hurricanes",
+    "keywords": "Tropical Storm Watch vs Warning: What Each Alert Means The difference between a tropical storm watch and warning, what actions to take, and how these alerts relate to hurricane watches and warnings. tropical storm watch vs warning"
+  },
+  {
     "title": "Tupelo, Mississippi Tornado of 1936 — F5, 216 Killed",
     "path": "/tupelo-1936/",
     "description": "The Tupelo, Mississippi tornado of April 5, 1936 was an F5 that killed 216 people — the 4th deadliest US tornado ever. Struck at night, destroyed 48 city blocks. A young Elvis Presley survived it at 15 months old.",
@@ -4786,6 +4884,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Weather forecasters get it wrong sometimes. Here are 10 famous forecast failures — from the 1900 Galveston Hurricane to modern busts.",
     "category": "Forecast history",
     "keywords": "Famous Weather Forecast Failures — 10 Notorious Busts Weather forecasters get it wrong sometimes. Here are 10 famous forecast failures — from the 1900 Galveston Hurricane to modern busts. weather forecasting mistakes history"
+  },
+  {
+    "title": "Weather Fronts Explained: Cold, Warm, Stationary, and Occluded Fronts",
+    "path": "/weather-fronts-explained/",
+    "description": "What weather fronts are, why they create clouds and storms, and how to read cold, warm, stationary, and occluded fronts on a weather map.",
+    "category": "Weather Science",
+    "keywords": "Weather Fronts Explained: Cold, Warm, Stationary, and Occluded Fronts What weather fronts are, why they create clouds and storms, and how to read cold, warm, stationary, and occluded fronts on a weather map. weather fronts explained"
   },
   {
     "title": "Weather Glossary — 190+ Terms Defined A to Z",
@@ -5089,6 +5194,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "West Virginia Tornadoes - Rare But Deadly Appalachian Events West Virginia averages 2 tornadoes per year - the lowest in the East. But when they occur, they can be deadly. History includes 1944 Shinnston F4. west virginia tornadoes"
   },
   {
+    "title": "Western Pacific Typhoon Season: Why It Can Last So Long",
+    "path": "/western-pacific-typhoon-season/",
+    "description": "Why the western North Pacific can produce typhoons across much of the year, what peak season means, and how residents should think about readiness.",
+    "category": "Typhoons",
+    "keywords": "Western Pacific Typhoon Season: Why It Can Last So Long Why the western North Pacific can produce typhoons across much of the year, what peak season means, and how residents should think about readiness. western pacific typhoon season"
+  },
+  {
     "title": "What Does a Tornado Look Like? Shapes, Colors, and Warning Signs",
     "path": "/what-does-a-tornado-look-like/",
     "description": "Tornadoes come in many shapes: rope, cone, wedge, stovepipe, multi-vortex. Colors vary from white to gray to black. Here's how to visually identify a tornado.",
@@ -5213,6 +5325,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Convert wind speed between mph, km/h, knots, m/s, and feet per second. See the Beaufort scale rating, EF-scale equivalent, hurricane category, and a real-world comparison for any speed. Free, no signup, mobile friendly.",
     "category": "💨 Interactive tool",
     "keywords": "Wind Speed Converter — mph, km/h, knots, m/s, Beaufort, EF, Hurricane Convert wind speed between mph, km/h, knots, m/s, and feet per second. See the Beaufort scale rating, EF-scale equivalent, hurricane category, and a real-world comparison for any speed. Free, no signup, mobile friendly. wind speed converter"
+  },
+  {
+    "title": "Winter Storm Watch vs Warning: Snow, Ice, Wind, and Travel Risk",
+    "path": "/winter-storm-watch-vs-warning/",
+    "description": "What winter storm watches and warnings mean, how they differ from advisories, and why ice and wind can be more disruptive than snowfall totals alone.",
+    "category": "Winter Weather",
+    "keywords": "Winter Storm Watch vs Warning: Snow, Ice, Wind, and Travel Risk What winter storm watches and warnings mean, how they differ from advisories, and why ice and wind can be more disruptive than snowfall totals alone. winter storm watch vs warning"
   },
   {
     "title": "Wireless Emergency Alerts for Tornadoes - Complete Guide",
