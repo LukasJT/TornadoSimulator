@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Search Tornado Hub</title>
+<meta name="description" content="Search Tornado Hub's tornado simulator, safety guides, historical case files, weather games, quizzes, radar explainers, and state tornado pages." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Search Tornado Hub" />
+<meta name="twitter:description" content="Search Tornado Hub's tornado simulator, safety guides, historical case files, weather games, quizzes, radar explainers, and state tornado pages." />
+<meta property="og:title" content="Search Tornado Hub" />
+<meta property="og:description" content="Search Tornado Hub's tornado simulator, safety guides, historical case files, weather games, quizzes, radar explainers, and state tornado pages." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tornadosimulator.net/search/" />
+<meta property="og:site_name" content="Tornado Hub" />
+<link rel="canonical" href="https://www.tornadosimulator.net/search/" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%AA%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --accent:#a02818; --accent-hover:#7d1f13; --link:#1e3a5f; --serif:"Fraunces",Georgia,serif; --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:var(--sans); background:var(--bg); color:var(--text); line-height:1.6; }
+a { color:var(--link); text-decoration:none; }
+a:hover { color:var(--accent); }
+.nav { background:var(--surface); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:10; }
+.nav-inner { max-width:1200px; margin:0 auto; padding:14px 24px; display:flex; justify-content:space-between; gap:20px; align-items:center; }
+.nav-brand { font-family:var(--serif); font-weight:700; font-size:20px; color:var(--text); }
+.nav-links { display:flex; gap:4px; flex-wrap:wrap; align-items:center; }
+.nav-links a { color:var(--text-secondary); padding:8px 12px; border-radius:6px; font-size:14px; font-weight:600; }
+.nav-links a:hover { background:var(--bg-alt); color:var(--text); }
+.nav-links .cta { background:var(--accent); color:white; }
+.hero { border-bottom:1px solid var(--border); background:linear-gradient(180deg,var(--bg),var(--bg-alt)); padding:64px 24px 42px; }
+.hero-inner { max-width:1000px; margin:0 auto; }
+.eyebrow { font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin-bottom:14px; }
+h1 { font-family:var(--serif); font-size:clamp(34px,5vw,54px); line-height:1.08; margin-bottom:14px; }
+.lede { max-width:720px; color:var(--text-secondary); font-size:18px; }
+.search-box { max-width:1000px; margin:28px auto 0; display:flex; gap:10px; align-items:center; background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:10px 14px; }
+.search-box input { width:100%; border:0; outline:0; font:600 18px var(--sans); color:var(--text); background:transparent; padding:10px 4px; }
+.main { max-width:1200px; margin:0 auto; padding:34px 24px 70px; }
+.toolbar { display:flex; justify-content:space-between; gap:18px; align-items:center; flex-wrap:wrap; margin-bottom:22px; }
+.chips { display:flex; gap:8px; flex-wrap:wrap; }
+.chips button { border:1px solid var(--border); background:var(--surface); color:var(--text-secondary); border-radius:999px; padding:8px 12px; font-weight:700; cursor:pointer; }
+.chips button.active, .chips button:hover { border-color:var(--accent); color:var(--accent); }
+.result-count { color:var(--text-muted); font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; }
+.search-results { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:14px; }
+.search-result { display:flex; flex-direction:column; gap:7px; background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:16px; color:var(--text); min-height:150px; }
+.search-result:hover { border-color:var(--accent); text-decoration:none; }
+.search-result span { color:var(--accent); font-size:11px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+.search-result strong { font-family:var(--serif); font-size:21px; line-height:1.18; }
+.search-result small { color:var(--text-secondary); font-size:13px; line-height:1.45; }
+.search-empty { color:var(--text-muted); background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:18px; }
+.footer { background:#14161c; color:#94a3b8; padding:34px 24px; text-align:center; font-size:13px; border-top:4px solid var(--accent); }
+@media (max-width:700px) { .nav-inner { align-items:flex-start; flex-direction:column; } .search-box input { font-size:16px; } }
+</style>
+<script type="application/ld+json" data-seo="page">
+{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.tornadosimulator.net/search/#webpage","url":"https://www.tornadosimulator.net/search/","name":"Search Tornado Hub","description":"Search Tornado Hub's tornado simulator, safety guides, historical case files, weather games, quizzes, radar explainers, and state tornado pages.","isPartOf":{"@id":"https://www.tornadosimulator.net/#website"},"publisher":{"@id":"https://www.tornadosimulator.net/#organization"},"inLanguage":"en"},{"@type":"BreadcrumbList","@id":"https://www.tornadosimulator.net/search/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"},{"@type":"ListItem","position":2,"name":"Search Tornado Hub","item":"https://www.tornadosimulator.net/search/"}]}]}
+</script>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/search/">Search</a>
+      <a href="/quiz/">Quizzes</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/safety/">Safety</a>
+      <a href="/simulator/" class="cta">Launch Simulator</a>
+    </div>
+  </div>
+</nav>
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Site Search</div>
+    <h1>Find any tornado guide, game, case file, or simulator tool.</h1>
+    <p class="lede">Search the full Tornado Hub library instantly. Try warning polygon, EF5, Joplin, mobile home, radar, tornado alley, insurance, or quiz.</p>
+    <label class="search-box">
+      <input data-site-search-input type="search" placeholder="Search Tornado Hub..." autofocus />
+    </label>
+  </div>
+</header>
+<main class="main">
+  <div class="toolbar">
+    <div class="chips" aria-label="Search categories">
+      <button class="active" data-search-chip="All">All</button>
+      <button data-search-chip="Safety">Safety</button>
+      <button data-search-chip="History">History</button>
+      <button data-search-chip="Science">Science</button>
+      <button data-search-chip="Location">Location</button>
+      <button data-search-chip="Interactive">Interactive</button>
+      <button data-search-chip="Quiz">Quiz</button>
+    </div>
+    <div class="result-count" data-site-search-count></div>
+  </div>
+  <div class="search-results" data-site-search-results></div>
+</main>
+<footer class="footer">Not a real-time warning system. In an emergency, follow NOAA Weather Radio and NWS warnings.</footer>
+<script src="/assets/content-index.js" defer></script>
+<script src="/assets/site-search.js" defer></script>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js" defer></script>
+<script src="/assets/ads.js" defer></script>
+<script src="/assets/house-ads.js" defer></script>
+</body>
+</html>

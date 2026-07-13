@@ -8,11 +8,11 @@
 <title>Tornado Hub — Tornado News, Simulator, Safety Guides & Games</title>
 <meta name="description" content="Tornado Hub is a tornado news-style resource with a worldwide damage simulator, trending guides, safety explainers, historical case files, quizzes, and weather games." />
 <meta name="twitter:description" content="Tornado Hub is a tornado news-style resource with a worldwide damage simulator, trending guides, safety explainers, historical case files, quizzes, and weather games." />
-<meta name="twitter:title" content="Tornado Hub — Tornado News, Simulator, Safety Guides & Games" />
+<meta name="twitter:title" content="Tornado Hub — Tornado News, Simulator, Safety Guides &amp; Games" />
 <meta name="twitter:card" content="summary" />
 <meta property="og:site_name" content="Tornado Hub" />
 <meta name="keywords" content="tornado, tornado simulator, tornado safety, EF scale, EF5 tornadoes, tornado alley, Dixie Alley, tornado history, tornado science, tornado education" />
-<meta property="og:title" content="Tornado Hub — Tornado News, Simulator, Safety Guides & Games" />
+<meta property="og:title" content="Tornado Hub — Tornado News, Simulator, Safety Guides &amp; Games" />
 <meta property="og:description" content="Tornado Hub is a tornado news-style resource with a worldwide damage simulator, trending guides, safety explainers, historical case files, quizzes, and weather games." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.tornadosimulator.net/" />
@@ -430,6 +430,90 @@ img { max-width: 100%; display: block; }
   text-decoration: none;
 }
 .live-strip a:hover { color: white; text-decoration: underline; }
+.home-search {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 36px 24px;
+}
+.home-search-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(260px, .7fr) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+.home-search h2 {
+  font-family: var(--serif);
+  font-size: 30px;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+.home-search p {
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+.home-search-box {
+  display: flex;
+  align-items: center;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+}
+.home-search-box input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text);
+  font: 600 16px var(--sans);
+  padding: 8px;
+}
+.home-search-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+.search-result {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-height: 132px;
+  padding: 14px;
+  text-decoration: none;
+}
+.search-result:hover {
+  border-color: var(--accent);
+  color: var(--text);
+  text-decoration: none;
+}
+.search-result span {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.search-result strong {
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.18;
+}
+.search-result small {
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.35;
+}
+.search-empty {
+  color: var(--text-muted);
+  font-size: 14px;
+}
 
 /* Resource grid (Learn) */
 .resource-grid {
@@ -547,6 +631,7 @@ img { max-width: 100%; display: block; }
 @media (max-width: 900px) {
   .newsroom-grid { grid-template-columns: 1fr; }
   .briefing-grid { grid-template-columns: 1fr; }
+  .home-search-inner { grid-template-columns: 1fr; }
 }
 @media (max-width: 700px) {
   .footer-inner { grid-template-columns: 1fr 1fr; }
@@ -581,6 +666,7 @@ img { max-width: 100%; display: block; }
     <div class="nav-links">
       <a href="/">Home</a>
       <a href="/articles/">Articles</a>
+      <a href="/search/">Search</a>
       <a href="/quiz/">Quizzes</a>
       <a href="/tornadle/">Tornadle</a>
       <a href="/tornado-namer/">Namer</a>
@@ -626,6 +712,26 @@ img { max-width: 100%; display: block; }
     <div><div class="stat-number">173</div><div class="stat-label">Countries covered</div></div>
     <div><div class="stat-number">50</div><div class="stat-label">US state guides</div></div>
     <div><div class="stat-number">Live</div><div class="stat-label">Local trend tracking</div></div>
+  </div>
+</section>
+
+<!-- ============ SITE SEARCH ============ -->
+<section class="home-search">
+  <div class="home-search-inner">
+    <div>
+      <div class="section-eyebrow">Find It Fast</div>
+      <h2>Search every guide, game, and case file.</h2>
+      <p>Jump straight to safety plans, EF scale explainers, historic tornadoes, state pages, quizzes, or simulator tools.</p>
+    </div>
+    <div>
+      <label class="home-search-box">
+        <input data-site-search-input type="search" placeholder="Try EF5, shelter, Joplin, radar, quiz..." />
+      </label>
+      <div class="home-search-results" data-site-search-results data-result-limit="6"></div>
+      <div style="margin-top:14px;">
+        <a href="/search/" style="color:var(--accent);font-size:14px;font-weight:700;">Open full search page â†’</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -986,6 +1092,8 @@ img { max-width: 100%; display: block; }
 <script type="text/javascript" src="//www.highperformanceformat.com/ff3f3758b896daf1842b3be893ed46f2/invoke.js"></script>
 </aside>
 <style>@media (min-width:1200px){#adsterra-left{display:block!important;}}</style>
+<script src="/assets/content-index.js" defer></script>
+<script src="/assets/site-search.js" defer></script>
 <script src="/assets/article-tracker.js" defer></script>
 <script src="/assets/ads-config.js" defer></script>
 <script src="/assets/ads.js" defer></script>
