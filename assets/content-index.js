@@ -175,6 +175,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Apartment Tornado Shelter Plan: Interior Rooms, Hallways, and Stairs How apartment residents can choose safer tornado shelter options, especially on upper floors or in buildings without basements. apartment interior room tornado"
   },
   {
+    "title": "Apartment Severe Weather Safety: Tornadoes, Hail, Flooding, Fire Alarms, and Power Outages",
+    "path": "/apartment-severe-weather-safety/",
+    "description": "How apartment residents can plan for severe weather, including shelter rooms, upper floors, elevators, parking, pets, and building communication.",
+    "category": "Apartment Safety",
+    "keywords": "Apartment Severe Weather Safety: Tornadoes, Hail, Flooding, Fire Alarms, and Power Outages How apartment residents can plan for severe weather, including shelter rooms, upper floors, elevators, parking, pets, and building communication. apartment severe weather safety"
+  },
+  {
     "title": "Apartment Weather Preparedness Kit: Storms, Outages, Heat, Flooding, and Alerts",
     "path": "/apartment-weather-preparedness-kit/",
     "description": "A practical apartment weather kit for renters, including small-space supplies, alerts, power, water, pets, insurance photos, and building shelter questions.",
@@ -306,6 +313,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Why basements flood during heavy rain, what to check before storms, and how to stay safer around water, electricity, mold, and cleanup.",
     "category": "Flooding",
     "keywords": "Basement Flooding During Rainstorms: Sump Pumps, Gutters, Drains, and Safety Why basements flood during heavy rain, what to check before storms, and how to stay safer around water, electricity, mold, and cleanup. basement flooding rainstorm guide"
+  },
+  {
+    "title": "Basement Storm Shelter Setup: Safer Corners, Supplies, Helmets, and Debris Protection",
+    "path": "/basement-storm-shelter-setup/",
+    "description": "How to set up a basement shelter area for tornado warnings, including safer spots, helmets, shoes, supplies, and overhead debris concerns.",
+    "category": "Tornado Safety",
+    "keywords": "Basement Storm Shelter Setup: Safer Corners, Supplies, Helmets, and Debris Protection How to set up a basement shelter area for tornado warnings, including safer spots, helmets, shoes, supplies, and overhead debris concerns. basement storm shelter setup"
   },
   {
     "title": "Beach Flag Warning Guide: Red, Yellow, Purple, Double Red, and Water Hazards",
@@ -826,6 +840,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Community Storm Recovery Guides: Neighbors, Cooling Centers, Donations, Mold, and Renters A hub for community storm recovery and support guides, including neighborhood preparedness, cooling centers, donations, renters, mold, and shelter planning. community storm recovery guides"
   },
   {
+    "title": "Community Storm Shelter Guide: Finding, Using, and Planning Around Public Shelters",
+    "path": "/community-storm-shelter-guide/",
+    "description": "How public storm shelters work, what to ask before severe weather, and why shelter access, hours, pets, transportation, and capacity matter.",
+    "category": "Community Safety",
+    "keywords": "Community Storm Shelter Guide: Finding, Using, and Planning Around Public Shelters How public storm shelters work, what to ask before severe weather, and why shelter access, hours, pets, transportation, and capacity matter. community storm shelter guide"
+  },
+  {
     "title": "Connecticut Tornadoes - Rare But Deadly New England Events",
     "path": "/connecticut-tornadoes/",
     "description": "Connecticut averages 1 tornado per year. History includes 1878 Wallingford, 1979 Windsor Locks, and other rare but significant New England tornado events.",
@@ -1015,6 +1036,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Downburst Explained: Destructive Thunderstorm Wind Without a Tornado What downbursts are, how microbursts and macrobursts differ, and why straight-line wind damage can be severe even when no tornado occurred. downburst explained"
   },
   {
+    "title": "Downed Power Line Safety: What to Do After Wind, Ice, Tornadoes, or Flooding",
+    "path": "/downed-power-line-safety/",
+    "description": "A downed power line safety guide covering distance, vehicles, floodwater, trees, generators, and utility reporting.",
+    "category": "Outage Safety",
+    "keywords": "Downed Power Line Safety: What to Do After Wind, Ice, Tornadoes, or Flooding A downed power line safety guide covering distance, vehicles, floodwater, trees, generators, and utility reporting. downed power line safety"
+  },
+  {
     "title": "Drone Storm Photography — Rules, Gear, and Techniques",
     "path": "/drone-storm-photography/",
     "description": "Flying a drone to photograph storms is legal, dangerous, and heavily regulated. Here is what drone to buy, when to fly, what rules apply, and how to get shots that don't crash.",
@@ -1141,6 +1169,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Elkhart-Dunlap, Indiana Tornado of 1965 - Palm Sunday F4, 47 Killed The Elkhart-Dunlap, Indiana tornado of April 11, 1965 was an F4 that killed 47 people. One of the deadliest tornadoes of the Palm Sunday outbreak. elkhart 1965"
   },
   {
+    "title": "Emergency Alerts Family Plan: Phones, Weather Radio, Sirens, and Backup Contacts",
+    "path": "/emergency-alerts-family-plan/",
+    "description": "How to build a family alert plan using phone alerts, weather radio, backup contacts, sirens, school alerts, and travel location settings.",
+    "category": "Preparedness",
+    "keywords": "Emergency Alerts Family Plan: Phones, Weather Radio, Sirens, and Backup Contacts How to build a family alert plan using phone alerts, weather radio, backup contacts, sirens, school alerts, and travel location settings. emergency alerts family plan"
+  },
+  {
     "title": "Ensemble Forecast Explained: Why Meteorologists Run Many Forecasts at Once",
     "path": "/ensemble-forecast-explained/",
     "description": "What ensemble forecasts are, why they show uncertainty, and how probabilities can be more useful than a single deterministic weather model run.",
@@ -1258,6 +1293,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "The difference between a fire weather watch and red flag warning, plus what homeowners, campers, and outdoor workers should do.",
     "category": "Fire Weather",
     "keywords": "Fire Weather Watch vs Red Flag Warning: What Is the Difference? The difference between a fire weather watch and red flag warning, plus what homeowners, campers, and outdoor workers should do. fire weather watch vs red flag warning"
+  },
+  {
+    "title": "Flash Flood Emergency Kit: Go-Bag Items for Fast Water and Evacuations",
+    "path": "/flash-flood-emergency-kit/",
+    "description": "A flash flood emergency kit guide for evacuation, waterproof documents, medications, chargers, shoes, water, and vehicle safety.",
+    "category": "Flood Safety",
+    "keywords": "Flash Flood Emergency Kit: Go-Bag Items for Fast Water and Evacuations A flash flood emergency kit guide for evacuation, waterproof documents, medications, chargers, shoes, water, and vehicle safety. flash flood emergency kit"
   },
   {
     "title": "Flash Flood Records Explained: Extreme Rain, Terrain, Burn Scars, and Fast Water",
@@ -1482,6 +1524,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Are tornadoes getting worse due to climate change? Here is what the current research shows about warming's effect on tornado frequency, geography, and intensity.",
     "category": "Climate science",
     "keywords": "Global Warming and Tornadoes — What the Science Actually Shows Are tornadoes getting worse due to climate change? Here is what the current research shows about warming's effect on tornado frequency, geography, and intensity. global warming and tornadoes"
+  },
+  {
+    "title": "Weather Disaster Go-Bag: What to Pack for Evacuation or Fast Shelter Moves",
+    "path": "/go-bag-weather-disaster/",
+    "description": "A weather disaster go-bag guide for evacuations, flash floods, hurricanes, wildfires, tornado shelter moves, and overnight displacement.",
+    "category": "Preparedness",
+    "keywords": "Weather Disaster Go-Bag: What to Pack for Evacuation or Fast Shelter Moves A weather disaster go-bag guide for evacuations, flash floods, hurricanes, wildfires, tornado shelter moves, and overnight displacement. go bag weather disaster"
   },
   {
     "title": "Graduation Weather Plan: Heat, Lightning, Wind, Rain, and Crowd Communication",
@@ -1799,6 +1848,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Hotel Tornado Safety: What to Do When You Are Away From Home How travelers can find safer tornado shelter areas in hotels, motels, resorts, and roadside lodging before severe weather arrives. hotel tornado safety"
   },
   {
+    "title": "Household Weather Safety Guides: Kits, Pets, Seniors, Apartments, Mobile Homes, and Safe Rooms",
+    "path": "/household-weather-safety-guides/",
+    "description": "A hub for household weather safety, including emergency kits, pets, seniors, apartments, mobile homes, basement shelters, safe rooms, and go-bags.",
+    "category": "Household Safety",
+    "keywords": "Household Weather Safety Guides: Kits, Pets, Seniors, Apartments, Mobile Homes, and Safe Rooms A hub for household weather safety, including emergency kits, pets, seniors, apartments, mobile homes, basement shelters, safe rooms, and go-bags. household weather safety guides"
+  },
+  {
     "title": "Houston Tornadoes - Texas Gulf Coast Tornado History",
     "path": "/houston-tornadoes/",
     "description": "Houston tornadoes: hurricane-spawned events, coastal storms, and 2024 May tornado outbreak. Texas Gulf Coast tornado safety.",
@@ -1967,6 +2023,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Saffir-Simpson Hurricane Scale Explorer — Category 1 to 5 Interactive explorer for the Saffir-Simpson Hurricane Wind Scale. Click any category from tropical storm through Category 5 to see wind speeds, storm surge estimates, damage examples, and historic Atlantic and Pacific hurricanes at that intensity. hurricane category explorer"
   },
   {
+    "title": "Hurricane Emergency Kit Checklist: Supplies for Wind, Flooding, Surge, and Outages",
+    "path": "/hurricane-emergency-kit-checklist/",
+    "description": "A hurricane kit checklist for water, food, medicine, documents, evacuation, generators, pets, and long power outages.",
+    "category": "Hurricane Safety",
+    "keywords": "Hurricane Emergency Kit Checklist: Supplies for Wind, Flooding, Surge, and Outages A hurricane kit checklist for water, food, medicine, documents, evacuation, generators, pets, and long power outages. hurricane emergency kit checklist"
+  },
+  {
     "title": "Hurricane Evacuation Zone vs Flood Zone: What Is the Difference?",
     "path": "/hurricane-evacuation-zone-vs-flood-zone/",
     "description": "Evacuation zones and flood zones are often confused. Learn what each one means, how officials use them, and why you should know both before hurricane season.",
@@ -2112,6 +2175,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "How infrared satellite imagery works at night, why colder cloud tops matter, and how meteorologists use it for storms and tropical cyclones.",
     "category": "Satellite",
     "keywords": "Infrared Satellite Explained: Cloud-Top Temperatures and Nighttime Weather How infrared satellite imagery works at night, why colder cloud tops matter, and how meteorologists use it for storms and tropical cyclones. infrared satellite explained"
+  },
+  {
+    "title": "Insurance Photo Inventory for Weather Damage: What to Photograph Before and After Storms",
+    "path": "/insurance-photo-inventory-weather/",
+    "description": "How to make a photo inventory for weather damage claims, including rooms, receipts, serial numbers, roof damage, flooding, and cleanup records.",
+    "category": "Storm Recovery",
+    "keywords": "Insurance Photo Inventory for Weather Damage: What to Photograph Before and After Storms How to make a photo inventory for weather damage claims, including rooms, receipts, serial numbers, roof damage, flooding, and cleanup records. insurance photo inventory weather"
   },
   {
     "title": "International Tornado Records — Every Country's Worst",
@@ -2499,6 +2569,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Mobile Home Night Tornado Plan: What to Decide Before Bed A nighttime tornado plan for mobile home residents, including alert layers, relocation choices, pets, medications, and when to leave early. mobile home night tornado plan"
   },
   {
+    "title": "Mobile Home Storm Shelter Plan: Where to Go Before Tornado Warnings",
+    "path": "/mobile-home-storm-shelter-plan/",
+    "description": "A mobile-home tornado shelter planning guide, including nearby sturdy buildings, community shelters, timing, transportation, and night alerts.",
+    "category": "Tornado Safety",
+    "keywords": "Mobile Home Storm Shelter Plan: Where to Go Before Tornado Warnings A mobile-home tornado shelter planning guide, including nearby sturdy buildings, community shelters, timing, transportation, and night alerts. mobile home storm shelter plan"
+  },
+  {
     "title": "Mobile Home Tornado Safety - Why You MUST Leave, and Where to Go",
     "path": "/mobile-home-tornado-safety/",
     "description": "Mobile homes are death traps in EF2+ tornadoes. Half of all US tornado deaths occur in manufactured housing. If a warning sounds, leave. Here's where to go.",
@@ -2511,6 +2588,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A practical mold-after-flooding guide covering drying time, porous materials, protective gear, ventilation, and when professional help may be needed.",
     "category": "Flood Recovery",
     "keywords": "Mold After Flooding: Drying, Removal, Protective Gear, and When to Get Help A practical mold-after-flooding guide covering drying time, porous materials, protective gear, ventilation, and when professional help may be needed. mold after flooding guide"
+  },
+  {
+    "title": "Mold Prevention After Flooding: Drying, Removal, Ventilation, and When to Get Help",
+    "path": "/mold-prevention-after-flood/",
+    "description": "How to reduce mold risk after flooding, including drying time, damaged materials, ventilation, protective gear, and professional cleanup.",
+    "category": "Flood Recovery",
+    "keywords": "Mold Prevention After Flooding: Drying, Removal, Ventilation, and When to Get Help How to reduce mold risk after flooding, including drying time, damaged materials, ventilation, protective gear, and professional cleanup. mold prevention after flood"
   },
   {
     "title": "Monsoon Explained — The Wind Shift That Feeds Half the World",
@@ -2912,6 +2996,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Pet Winter Weather Safety: Cold, Ice, Paws, Antifreeze, and Storm Outages How to protect pets during winter storms, including cold exposure, paw ice, salt, antifreeze, power outages, and emergency kits. pet winter weather safety"
   },
   {
+    "title": "Pet Severe Weather Safety: Tornadoes, Floods, Heat, Winter Storms, and Evacuation",
+    "path": "/pets-severe-weather-safety/",
+    "description": "A pet severe-weather safety guide covering carriers, leashes, medication, sheltering, evacuation, heat, cold, and post-storm hazards.",
+    "category": "Pet Safety",
+    "keywords": "Pet Severe Weather Safety: Tornadoes, Floods, Heat, Winter Storms, and Evacuation A pet severe-weather safety guide covering carriers, leashes, medication, sheltering, evacuation, heat, cold, and post-storm hazards. pets severe weather safety"
+  },
+  {
     "title": "Philadelphia, Mississippi Tornado of 2011 - EF5 Long-Track Rural",
     "path": "/philadelphia-ms-2011/",
     "description": "The Philadelphia, Mississippi tornado of April 27, 2011 was an EF5 with 205 mph winds. Long-track through rural Neshoba County. Only 3 killed due to sparse population.",
@@ -2980,6 +3071,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A pool weather safety guide for lightning, thunderstorm wind, heat, pool chemicals, flooding, debris, and when swimmers should get out.",
     "category": "Outdoor Weather",
     "keywords": "Pool Weather Safety Guide: Lightning, Wind, Heat, Chemicals, and Storm Cleanup A pool weather safety guide for lightning, thunderstorm wind, heat, pool chemicals, flooding, debris, and when swimmers should get out. pool weather safety guide"
+  },
+  {
+    "title": "Power Outage Emergency Kit: Lights, Batteries, Food, Phones, Heat, and Cooling",
+    "path": "/power-outage-emergency-kit/",
+    "description": "A power outage kit checklist for storms, heat, winter weather, generators, refrigerated food, phone charging, and medical devices.",
+    "category": "Outage Safety",
+    "keywords": "Power Outage Emergency Kit: Lights, Batteries, Food, Phones, Heat, and Cooling A power outage kit checklist for storms, heat, winter weather, generators, refrigerated food, phone charging, and medical devices. power outage emergency kit"
   },
   {
     "title": "Pressure Falling Before a Storm: What It Means and What It Does Not Mean",
@@ -3850,6 +3948,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Regional Weather Pattern Guides: Santa Ana, Chinook, Foehn, Lake Breeze, Fog, and Mountain Waves A hub for regional weather pattern explainers, including downslope winds, lake breezes, fog types, sea fog, and mountain waves. regional weather pattern guides"
   },
   {
+    "title": "Renters Weather Damage Guide: Leaks, Flooding, Belongings, Insurance, and Landlord Communication",
+    "path": "/renters-weather-damage-guide/",
+    "description": "Weather damage guidance for renters, including documenting leaks, protecting belongings, renters insurance, landlord messages, and unsafe conditions.",
+    "category": "Storm Recovery",
+    "keywords": "Renters Weather Damage Guide: Leaks, Flooding, Belongings, Insurance, and Landlord Communication Weather damage guidance for renters, including documenting leaks, protecting belongings, renters insurance, landlord messages, and unsafe conditions. renters weather damage guide"
+  },
+  {
     "title": "Return Period Weather Explained: 10-Year, 50-Year, and 100-Year Events",
     "path": "/return-period-weather-explained/",
     "description": "What return periods mean in weather risk, why a 100-year event can happen more than once, and why changing conditions complicate the math.",
@@ -3927,6 +4032,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Rolling Fork, Mississippi Tornado of 2023 — EF4, 21 Killed, Town Destroyed The Rolling Fork, Mississippi tornado of March 24, 2023 was an EF4 with 195 mph winds that nearly destroyed the town of Rolling Fork. 21 killed, 165 injured across a 59-mile path. rolling fork 2023"
   },
   {
+    "title": "Roof Damage After a Storm: Leaks, Hail, Wind, Tarps, Photos, and Contractor Caution",
+    "path": "/roof-damage-after-storm/",
+    "description": "What to check after roof damage from hail, wind, or falling branches, and how to document leaks, tarps, and contractor decisions safely.",
+    "category": "Storm Recovery",
+    "keywords": "Roof Damage After a Storm: Leaks, Hail, Wind, Tarps, Photos, and Contractor Caution What to check after roof damage from hail, wind, or falling branches, and how to document leaks, tarps, and contractor decisions safely. roof damage after storm"
+  },
+  {
     "title": "Roof and Gutter Storm Season Checklist: Leaks, Drains, Flashing, and Debris",
     "path": "/roof-gutter-storm-season-checklist/",
     "description": "A roof and gutter checklist before storm season, including shingles, flashing, gutters, downspouts, attic leaks, debris, and safe inspection habits.",
@@ -3948,11 +4060,25 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Rope Tornadoes: The Thin Twisting Stage Explained Rope tornadoes are narrow, twisting tornadoes often seen late in a tornado life cycle. Learn why they form, whether they are dangerous, and how they differ from cone and wedge shapes. rope tornado"
   },
   {
+    "title": "Rural Storm Preparedness Guide: Long Driveways, Wells, Livestock, Roads, and Power Outages",
+    "path": "/rural-storm-preparedness-guide/",
+    "description": "Storm preparedness for rural homes, farms, and properties, including wells, generators, livestock, long driveways, gravel roads, and sparse alerts.",
+    "category": "Rural Safety",
+    "keywords": "Rural Storm Preparedness Guide: Long Driveways, Wells, Livestock, Roads, and Power Outages Storm preparedness for rural homes, farms, and properties, including wells, generators, livestock, long driveways, gravel roads, and sparse alerts. rural storm preparedness guide"
+  },
+  {
     "title": "RV and Camping Storm Safety — Tornadoes, Lightning, Hail",
     "path": "/rv-and-camping-storm-safety/",
     "description": "RVs are dangerous places to be during severe weather. Learn where to shelter if a tornado warning is issued in your campground, what to do about lightning, how to protect against hail, and specific pre-trip weather planning.",
     "category": "Outdoor safety",
     "keywords": "RV and Camping Storm Safety — Tornadoes, Lightning, Hail RVs are dangerous places to be during severe weather. Learn where to shelter if a tornado warning is issued in your campground, what to do about lightning, how to protect against hail, and specific pre-trip weather planning. rv and camping storm safety"
+  },
+  {
+    "title": "Safe Room Supplies Checklist: What to Store in a Storm Shelter",
+    "path": "/safe-room-supplies-checklist/",
+    "description": "A safe room supply checklist for tornado shelters, including helmets, lights, communication, documents, tools, pets, and medical needs.",
+    "category": "Tornado Safety",
+    "keywords": "Safe Room Supplies Checklist: What to Store in a Storm Shelter A safe room supply checklist for tornado shelters, including helmets, lights, communication, documents, tools, pets, and medical needs. safe room supplies checklist"
   },
   {
     "title": "Safety Guides — Tornado Hub",
@@ -3988,6 +4114,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Weather safety considerations for school buses, including tornado warnings, lightning, icy roads, flooded roads, and heat.",
     "category": "School Weather",
     "keywords": "School Bus Weather Safety: Tornadoes, Lightning, Ice, Flooding, and Heat Weather safety considerations for school buses, including tornado warnings, lightning, icy roads, flooded roads, and heat. school bus weather safety"
+  },
+  {
+    "title": "School Severe Weather Drill Guide: Tornado, Lightning, Heat, and Dismissal Decisions",
+    "path": "/school-severe-weather-drill-guide/",
+    "description": "A school severe-weather drill guide covering tornado sheltering, lightning delays, heat, buses, dismissal timing, and parent communication.",
+    "category": "School Weather",
+    "keywords": "School Severe Weather Drill Guide: Tornado, Lightning, Heat, and Dismissal Decisions A school severe-weather drill guide covering tornado sheltering, lightning delays, heat, buses, dismissal timing, and parent communication. school severe weather drill guide"
   },
   {
     "title": "School Tornado Drills — What Actually Works",
@@ -4046,6 +4179,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Seasonal Weather Safety Guides: Spring, Summer, Fall, Winter, and Travel Planning A hub for seasonal weather safety guides covering spring storms, summer heat, fall fronts, winter travel, holidays, and outdoor plans. seasonal weather safety guides"
   },
   {
+    "title": "Senior Severe Weather Safety: Alerts, Medication, Mobility, Heat, Cold, and Check-Ins",
+    "path": "/senior-severe-weather-safety/",
+    "description": "Weather safety planning for older adults, including alerts, mobility, medication, backup power, transportation, heat, cold, and support networks.",
+    "category": "Preparedness",
+    "keywords": "Senior Severe Weather Safety: Alerts, Medication, Mobility, Heat, Cold, and Check-Ins Weather safety planning for older adults, including alerts, mobility, medication, backup power, transportation, heat, cold, and support networks. senior severe weather safety"
+  },
+  {
     "title": "Severe Thunderstorm Watch vs Warning: What Each Alert Means",
     "path": "/severe-thunderstorm-watch-vs-warning/",
     "description": "The difference between a severe thunderstorm watch and warning, what hazards to expect, and when damaging wind or hail deserves shelter-like action.",
@@ -4058,6 +4198,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Hands-on classroom activities for teaching severe weather with radar loops, cloud photos, safety decisions, alert cards, and weather map symbols.",
     "category": "Classroom Weather",
     "keywords": "Severe Weather Classroom Activities: Maps, Radar, Clouds, and Safety Scenarios Hands-on classroom activities for teaching severe weather with radar loops, cloud photos, safety decisions, alert cards, and weather map symbols. severe weather classroom activities"
+  },
+  {
+    "title": "Severe Weather Emergency Kit: What to Keep Ready Before Storms",
+    "path": "/severe-weather-emergency-kit/",
+    "description": "A practical severe weather emergency kit guide covering water, food, flashlights, chargers, documents, medicine, pets, and shelter supplies.",
+    "category": "Preparedness",
+    "keywords": "Severe Weather Emergency Kit: What to Keep Ready Before Storms A practical severe weather emergency kit guide covering water, food, flashlights, chargers, documents, medicine, pets, and shelter supplies. severe weather emergency kit"
   },
   {
     "title": "Severe Weather Outlook Categories: Marginal, Slight, Enhanced, Moderate, and High Risk",
@@ -4093,6 +4240,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Skywarn is the National Weather Service severe-weather spotter network. Training is free, runs 2-3 hours, and gets you an official spotter ID. Here is what the class covers, how to find one near you, and how to report to your local NWS office.",
     "category": "Getting trained",
     "keywords": "Skywarn Spotter Training — What to Expect and How to Sign Up Skywarn is the National Weather Service severe-weather spotter network. Training is free, runs 2-3 hours, and gets you an official spotter ID. Here is what the class covers, how to find one near you, and how to report to your local NWS office. skywarn spotter training guide"
+  },
+  {
+    "title": "Small Business Storm Prep Guide: Power, Inventory, Employees, Customers, and Reopening",
+    "path": "/small-business-storm-prep-guide/",
+    "description": "A small business storm preparedness guide covering inventory, data backups, employee communication, power outages, insurance, and reopening.",
+    "category": "Business Weather",
+    "keywords": "Small Business Storm Prep Guide: Power, Inventory, Employees, Customers, and Reopening A small business storm preparedness guide covering inventory, data backups, employee communication, power outages, insurance, and reopening. small business storm prep guide"
   },
   {
     "title": "Small Business Weather Prep: Staff, Customers, Power, Deliveries, and Storm Closures",
@@ -4508,6 +4662,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Storm Chasing Safety — What Professionals Do (and What Kills Them) Storm chasing safety: the lessons of the 2013 El Reno TWISTEX deaths, minimum standoff distances, escape route planning, and why amateur chasing kills people. storm chasing safety"
   },
   {
+    "title": "Storm Cleanup Safety Checklist: Debris, Chainsaws, Generators, Mold, Heat, and Insurance",
+    "path": "/storm-cleanup-safety-checklist/",
+    "description": "A storm cleanup safety checklist covering debris, power lines, generators, chainsaws, mold, heat, photos, and protective gear.",
+    "category": "Storm Recovery",
+    "keywords": "Storm Cleanup Safety Checklist: Debris, Chainsaws, Generators, Mold, Heat, and Insurance A storm cleanup safety checklist covering debris, power lines, generators, chainsaws, mold, heat, photos, and protective gear. storm cleanup safety checklist"
+  },
+  {
     "title": "Storm Damage Guides: Hail, Roof Leaks, Trees, Basement Flooding, and Cleanup Safety",
     "path": "/storm-damage-guides/",
     "description": "A hub for practical storm-damage guides covering hail on cars, roof leaks, tree damage, basement flooding, and documentation after severe weather.",
@@ -4548,6 +4709,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Every storm photographer's Lightroom recipes for the classic storm shots. Supercell structure, lightning, tornado, mammatus, and post-storm cleanup. Practical settings and adjustments.",
     "category": "Photo editing",
     "keywords": "Storm Photography Post-Processing — Lightroom Recipes Every storm photographer's Lightroom recipes for the classic storm shots. Supercell structure, lightning, tornado, mammatus, and post-storm cleanup. Practical settings and adjustments. storm photography post processing"
+  },
+  {
+    "title": "Storm Recovery Guides: Cleanup, Roof Damage, Floodwater, Mold, Power Lines, Insurance, and Renters",
+    "path": "/storm-recovery-guides/",
+    "description": "A hub for storm recovery pages covering cleanup safety, roof damage, trees, floodwater, mold, power lines, insurance photos, and renters.",
+    "category": "Storm Recovery",
+    "keywords": "Storm Recovery Guides: Cleanup, Roof Damage, Floodwater, Mold, Power Lines, Insurance, and Renters A hub for storm recovery pages covering cleanup safety, roof damage, trees, floodwater, mold, power lines, insurance photos, and renters. storm recovery guides"
   },
   {
     "title": "Storm Report Database Guide: Hail, Wind, Tornado, Flood, and Damage Reports",
@@ -4975,6 +5143,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "In a disaster, families get separated. Cell towers fail. Here is how to build a communication plan that works even when everything else fails.",
     "category": "Preparedness",
     "keywords": "Family Emergency Communication Plan — For Tornadoes and Beyond In a disaster, families get separated. Cell towers fail. Here is how to build a communication plan that works even when everything else fails. tornado emergency communication"
+  },
+  {
+    "title": "Tornado Emergency Kit Checklist: Shelter Supplies for Warnings and Aftermath",
+    "path": "/tornado-emergency-kit-checklist/",
+    "description": "What to keep in a tornado shelter area, including helmets, shoes, flashlights, weather radio, documents, pet supplies, and cleanup basics.",
+    "category": "Tornado Safety",
+    "keywords": "Tornado Emergency Kit Checklist: Shelter Supplies for Warnings and Aftermath What to keep in a tornado shelter area, including helmets, shoes, flashlights, weather radio, documents, pet supplies, and cleanup basics. tornado emergency kit checklist"
   },
   {
     "title": "Tornado Emergency Kit - Complete Supply List and Buyer's Guide 2026",
@@ -6412,6 +6587,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Travel Weather Guides: Flights, Road Trips, Delays, Turbulence, and Winter Driving A hub for travel weather planning, including airport delays, turbulence, road trips, black ice, bridge icing, whiteouts, and dust storms. travel weather guides"
   },
   {
+    "title": "Tree Damage After a Storm: Hanging Limbs, Split Trunks, Power Lines, and Cleanup",
+    "path": "/tree-damage-after-storm/",
+    "description": "How to handle tree damage after wind, ice, or tornadoes, including hanging limbs, split trunks, power lines, and when to call professionals.",
+    "category": "Storm Recovery",
+    "keywords": "Tree Damage After a Storm: Hanging Limbs, Split Trunks, Power Lines, and Cleanup How to handle tree damage after wind, ice, or tornadoes, including hanging limbs, split trunks, power lines, and when to call professionals. tree damage after storm"
+  },
+  {
     "title": "Tree Damage After Windstorm: Limbs, Power Lines, Roofs, and Cleanup Safety",
     "path": "/tree-damage-windstorm-guide/",
     "description": "How to handle tree damage after high wind, severe thunderstorms, ice storms, or tropical systems, including power lines and cleanup hazards.",
@@ -6606,6 +6788,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Tornado watch vs tornado warning: the critical difference explained in plain English. What each alert means, what to do, how to receive them, and why the distinction can save your life. Same for severe thunderstorm watch vs warning.",
     "category": "⚠️ Quick reference",
     "keywords": "Tornado Watch vs Warning — What's the Difference? Tornado watch vs tornado warning: the critical difference explained in plain English. What each alert means, what to do, how to receive them, and why the distinction can save your life. Same for severe thunderstorm watch vs warning. watch vs warning"
+  },
+  {
+    "title": "Water Safety After a Flood: Boil Advisories, Wells, Cleanup, and Contamination",
+    "path": "/water-safety-after-flood/",
+    "description": "What to know about water safety after flooding, including boil advisories, private wells, bottled water, cleanup, and contamination risks.",
+    "category": "Flood Recovery",
+    "keywords": "Water Safety After a Flood: Boil Advisories, Wells, Cleanup, and Contamination What to know about water safety after flooding, including boil advisories, private wells, bottled water, cleanup, and contamination risks. water safety after flood"
   },
   {
     "title": "Water Vapor Satellite Explained: Dry Air, Jet Streams, and Storm Energy",
@@ -7378,6 +7567,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Winter Precipitation Guides: Sleet, Freezing Rain, Graupel, Black Ice, and Fog A hub for winter precipitation explainers covering freezing rain, sleet, graupel, black ice, freezing fog, lake-effect snow, and winter alerts. winter precipitation guides"
   },
   {
+    "title": "Winter Storm Emergency Kit: Home and Car Supplies for Snow, Ice, and Cold",
+    "path": "/winter-storm-emergency-kit/",
+    "description": "What to keep ready for winter storms, including home outage supplies, car kits, blankets, ice melt, medications, and battery backups.",
+    "category": "Winter Weather",
+    "keywords": "Winter Storm Emergency Kit: Home and Car Supplies for Snow, Ice, and Cold What to keep ready for winter storms, including home outage supplies, car kits, blankets, ice melt, medications, and battery backups. winter storm emergency kit"
+  },
+  {
     "title": "Winter Storm Watch vs Warning: Snow, Ice, Wind, and Travel Risk",
     "path": "/winter-storm-watch-vs-warning/",
     "description": "What winter storm watches and warnings mean, how they differ from advisories, and why ice and wind can be more disruptive than snowfall totals alone.",
@@ -7418,6 +7614,20 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "The Worcester, Massachusetts tornado of June 9, 1953 was an F4 that killed 94 people. Deadliest tornado in New England history. Occurred one day after Flint-Beecher F5.",
     "category": "Guide",
     "keywords": "Worcester, Massachusetts Tornado of 1953 - New England's Deadliest The Worcester, Massachusetts tornado of June 9, 1953 was an F4 that killed 94 people. Deadliest tornado in New England history. Occurred one day after Flint-Beecher F5. worcester 1953"
+  },
+  {
+    "title": "Work, School, and Community Weather Guides: Drills, Shelters, Small Businesses, Rural Homes, and Alert Plans",
+    "path": "/work-school-community-weather-guides/",
+    "description": "A hub for community and organization preparedness, including school drills, workplace plans, public shelters, small businesses, rural homes, and family alerts.",
+    "category": "Community Preparedness",
+    "keywords": "Work, School, and Community Weather Guides: Drills, Shelters, Small Businesses, Rural Homes, and Alert Plans A hub for community and organization preparedness, including school drills, workplace plans, public shelters, small businesses, rural homes, and family alerts. work school community weather guides"
+  },
+  {
+    "title": "Workplace Severe Weather Plan: Employees, Customers, Warehouses, Offices, and Outdoor Crews",
+    "path": "/workplace-severe-weather-plan/",
+    "description": "How workplaces can plan for severe weather, including shelter areas, alerts, shift changes, customers, warehouses, outdoor crews, and power outages.",
+    "category": "Work Weather",
+    "keywords": "Workplace Severe Weather Plan: Employees, Customers, Warehouses, Offices, and Outdoor Crews How workplaces can plan for severe weather, including shelter areas, alerts, shift changes, customers, warehouses, outdoor crews, and power outages. workplace severe weather plan"
   },
   {
     "title": "Worst Tornado in History - The 1989 Bangladesh Disaster",
