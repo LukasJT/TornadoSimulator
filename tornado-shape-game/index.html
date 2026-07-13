@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tornado Shape Identification Game — Wedge, Rope, Cone or Multi-Vortex? | Tornado Simulator</title>
+<meta name="description" content="A free game that teaches you to identify tornado shapes from silhouettes and descriptions: wedge, cone, rope, stovepipe, multi-vortex, and elephant trunk. 10 rounds, instant scoring.">
+<meta name="keywords" content="tornado shape game, wedge tornado, rope tornado, cone tornado, tornado identification, tornado types game">
+<link rel="canonical" href="https://www.tornadosimulator.net/tornado-shape-game/">
+<link rel="icon" href="/favicon.ico">
+<meta property="og:title" content="Tornado Shape ID Game — Wedge, Rope, or Cone?">
+<meta property="og:description" content="Identify tornado shapes from silhouettes. 10 rounds.">
+<meta property="og:type" content="website">
+<style>
+:root {
+  --bg:#f5f7fb; --card:#fff; --text:#0f172a; --muted:#64748b;
+  --accent:#a02818; --line:#e2e8f0; --correct:#16a34a; --wrong:#dc2626;
+  --serif:'Fraunces',Georgia,serif;
+  --sky1:#94a3b8; --sky2:#475569; --funnel:#1e293b;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font:16px/1.55 -apple-system,'Inter',system-ui,sans-serif; background:var(--bg); color:var(--text); }
+header, footer { padding:16px 24px; }
+header { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--line); background:var(--card); }
+.logo { font-family:var(--serif); font-weight:700; font-size:20px; color:var(--accent); text-decoration:none; }
+nav a { color:var(--text); text-decoration:none; margin-left:16px; font-size:14px; }
+main { max-width:820px; margin:0 auto; padding:32px 20px; }
+h1 { font-family:var(--serif); font-size:clamp(28px,4vw,42px); text-align:center; margin-bottom:8px; }
+h1 em { color:var(--accent); font-style:italic; font-weight:400; }
+.lede { text-align:center; color:var(--muted); margin-bottom:24px; }
+
+.hud { display:flex; justify-content:space-between; align-items:center; background:var(--card); padding:14px 20px; border-radius:10px; border:1px solid var(--line); margin-bottom:20px; font-weight:600; }
+.hud .stat { display:flex; gap:20px; font-size:14px; }
+.hud .stat span span { color:var(--accent); }
+
+.scene { background:linear-gradient(180deg,var(--sky1) 0%,var(--sky2) 70%,#334155 100%); border-radius:14px; padding:0; margin-bottom:16px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,.12); }
+.scene svg { display:block; width:100%; height:auto; }
+.scene-caption { background:var(--card); padding:14px 20px; font-size:14px; color:var(--muted); font-style:italic; border-top:1px solid var(--line); }
+
+.choices { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-bottom:16px; }
+.choice { padding:14px 10px; border:2px solid var(--line); border-radius:10px; background:var(--card); cursor:pointer; font-weight:600; font-size:15px; text-align:center; transition:all .15s; color:var(--text); font-family:inherit; }
+.choice:hover:not(:disabled) { border-color:var(--accent); transform:translateY(-2px); }
+.choice:disabled { cursor:not-allowed; opacity:.7; }
+.choice.correct { background:var(--correct); color:#fff; border-color:var(--correct); }
+.choice.wrong { background:var(--wrong); color:#fff; border-color:var(--wrong); }
+
+.feedback { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px; margin-bottom:16px; display:none; }
+.feedback.show { display:block; }
+.feedback h3 { font-family:var(--serif); font-size:19px; margin-bottom:6px; }
+.feedback h3.good { color:var(--correct); }
+.feedback h3.bad { color:var(--wrong); }
+.feedback p { font-size:14px; color:var(--muted); }
+
+.controls { text-align:center; }
+.controls button { padding:12px 26px; border:none; border-radius:8px; background:var(--accent); color:#fff; font-size:15px; font-weight:600; cursor:pointer; font-family:inherit; display:none; }
+.controls button:hover { background:#7d1f13; }
+
+.game-over { display:none; background:linear-gradient(135deg,var(--accent) 0%,#7d1f13 100%); color:#fff; padding:36px 24px; border-radius:14px; text-align:center; margin-bottom:16px; }
+.game-over.show { display:block; }
+.game-over h2 { font-family:var(--serif); font-size:34px; margin-bottom:8px; }
+.game-over .grade { opacity:.9; margin-bottom:20px; }
+.game-over button { padding:12px 26px; border:1.5px solid #fff; border-radius:8px; background:transparent; color:#fff; font-size:15px; font-weight:600; cursor:pointer; font-family:inherit; }
+
+.inline-ad { text-align:center; margin:24px auto; max-width:728px; overflow:hidden; }
+@media (max-width:600px) { .choices { grid-template-columns:repeat(2,1fr); } }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="logo">🌪 Tornado Hub</a>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/ef-scale-game/">EF Game</a>
+    <a href="/tornadle/">Tornadle</a>
+    <a href="/tornado-namer/">Namer</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Tornado shape <em>ID game</em></h1>
+  <p class="lede">A silhouette appears against the storm. Name the tornado shape. Ten rounds.</p>
+
+  <div class="hud">
+    <div class="stat">
+      <span>Round: <span id="round">1</span>/10</span>
+      <span>Score: <span id="score">0</span></span>
+    </div>
+    <span id="acc" style="font-size:13px;color:var(--muted);">—</span>
+  </div>
+
+  <div class="scene">
+    <svg id="scene-svg" viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tornado silhouette">
+      <!-- cloud base -->
+      <rect x="0" y="0" width="800" height="80" fill="#1e293b" opacity="0.85"/>
+      <ellipse cx="400" cy="80" rx="450" ry="42" fill="#1e293b" opacity="0.85"/>
+      <!-- ground -->
+      <rect x="0" y="345" width="800" height="35" fill="#26221c"/>
+      <!-- funnel gets injected here -->
+      <g id="funnel"></g>
+      <!-- debris cloud -->
+      <g id="debris"></g>
+    </svg>
+    <div class="scene-caption" id="caption">—</div>
+  </div>
+
+  <div class="choices" id="choices"></div>
+
+  <div class="feedback" id="feedback">
+    <h3 id="fb-head"></h3>
+    <p id="fb-body"></p>
+  </div>
+
+  <div class="controls">
+    <button id="next-btn">Next round →</button>
+  </div>
+
+  <div class="game-over" id="game-over">
+    <h2>Game Over</h2>
+    <div class="grade"><span id="final">0</span>/10 — <span id="grade-msg"></span></div>
+    <button onclick="location.reload()">Play again</button>
+  </div>
+
+  <div class="inline-ad">
+    <iframe src="//www.topcreativeformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.html" width="728" height="90" frameborder="0" scrolling="no"></iframe>
+  </div>
+
+  <p style="margin-top:24px;color:var(--muted);font-size:14px;text-align:center;">Related: <a href="/tornado-shapes/">Tornado shapes explained</a> · <a href="/ef-scale-game/">EF Scale Game</a> · <a href="/cloud-identification-game/">Cloud ID Game</a> · <a href="/rare-tornado-types/">Rare tornado types</a></p>
+</main>
+
+<footer style="border-top:1px solid var(--line);background:var(--card);color:var(--muted);font-size:13px;text-align:center;">
+  © 2026 Tornado Simulator · <a href="/about/" style="color:var(--muted);">About</a>
+</footer>
+
+<script>
+// Each shape drawn as an SVG path silhouette from cloud base (y=90) to ground (y=345)
+const SHAPES = {
+  wedge: {
+    name: "Wedge",
+    draw: () => `<path d="M 180 90 L 620 90 L 560 345 L 240 345 Z" fill="#1e293b" opacity="0.92"/>`,
+    caption: "Wider than it is tall — a massive bulk filling the horizon.",
+    fact: "Wedge tornadoes are wider than their height and usually rate EF3+. The 2013 El Reno wedge reached 2.6 miles wide — the widest ever recorded."
+  },
+  cone: {
+    name: "Cone",
+    draw: () => `<path d="M 330 90 L 470 90 L 415 345 L 385 345 Z" fill="#1e293b" opacity="0.92"/>`,
+    caption: "The classic funnel — broad at the cloud base, narrowing smoothly to the ground.",
+    fact: "The cone is the textbook tornado silhouette — the shape most people picture. Cones span the full EF0–EF5 range."
+  },
+  rope: {
+    name: "Rope",
+    draw: () => `<path d="M 390 90 C 370 160, 450 200, 420 260 C 400 300, 445 320, 435 345 L 425 345 C 432 322, 388 302, 407 262 C 436 204, 356 162, 378 90 Z" fill="#1e293b" opacity="0.92"/>`,
+    caption: "A thin, sinuous tube snaking from cloud to ground.",
+    fact: "Rope tornadoes are often in their dissipating 'rope-out' stage — but a rope can still pack EF3 winds in a very narrow core."
+  },
+  stovepipe: {
+    name: "Stovepipe",
+    draw: () => `<path d="M 355 90 L 445 90 L 440 345 L 360 345 Z" fill="#1e293b" opacity="0.92"/>`,
+    caption: "Nearly uniform width from cloud base to ground — a straight cylinder.",
+    fact: "Stovepipes hold a constant diameter top to bottom. They're often steady, mature tornadoes in the EF2–EF3 range and a chaser photography favorite."
+  },
+  elephant: {
+    name: "Elephant Trunk",
+    draw: () => `<path d="M 350 90 L 450 90 C 445 170, 400 190, 395 240 C 391 285, 420 310, 415 345 L 385 345 C 390 312, 362 288, 366 240 C 371 188, 352 168, 350 90 Z" fill="#1e293b" opacity="0.92"/>`,
+    caption: "A curved, tapering tube with a gentle bend — like a trunk reaching down.",
+    fact: "The elephant trunk is a graceful curved condensation funnel — between cone and rope in width, often tilted by storm-relative winds."
+  },
+  multivortex: {
+    name: "Multi-Vortex",
+    draw: () => `
+      <path d="M 300 90 L 500 90 L 470 345 L 330 345 Z" fill="#1e293b" opacity="0.55"/>
+      <path d="M 345 130 C 335 200, 365 260, 355 340 L 340 340 C 350 262, 322 202, 330 130 Z" fill="#0f172a" opacity="0.95"/>
+      <path d="M 415 120 C 428 190, 398 265, 412 342 L 428 342 C 414 267, 443 192, 430 120 Z" fill="#0f172a" opacity="0.95"/>
+      <path d="M 465 150 C 455 215, 478 280, 465 338 L 452 338 C 465 282, 442 217, 452 150 Z" fill="#0f172a" opacity="0.85"/>`,
+    caption: "Several distinct smaller funnels dancing inside a broader translucent circulation.",
+    fact: "Multi-vortex tornadoes contain 2-7 subvortices rotating around a common center. The subvortices carry the peak winds — one house destroyed, the neighbor's intact."
+  }
+};
+
+const KEYS = Object.keys(SHAPES);
+let queue = [], round = 0, score = 0, awaiting = false;
+
+function shuffle(a){const c=[...a];for(let i=c.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[c[i],c[j]]=[c[j],c[i]];}return c;}
+
+function startGame() {
+  // 10 rounds: shuffle keys, repeat to fill
+  queue = [];
+  while (queue.length < 10) queue = queue.concat(shuffle(KEYS));
+  queue = queue.slice(0, 10);
+  round = 0; score = 0;
+  document.getElementById('score').textContent = 0;
+  showRound();
+}
+
+function debris() {
+  let g = '';
+  for (let i = 0; i < 14; i++) {
+    const x = 300 + Math.random()*200;
+    const y = 320 + Math.random()*24;
+    const r = 2 + Math.random()*5;
+    g += `<circle cx="${x}" cy="${y}" r="${r}" fill="#3f3a31" opacity="${0.4+Math.random()*0.4}"/>`;
+  }
+  return g;
+}
+
+function showRound() {
+  if (round >= queue.length) return endGame();
+  const key = queue[round];
+  const s = SHAPES[key];
+  document.getElementById('round').textContent = round + 1;
+  document.getElementById('funnel').innerHTML = s.draw();
+  document.getElementById('debris').innerHTML = debris();
+  document.getElementById('caption').textContent = s.caption;
+  document.getElementById('feedback').classList.remove('show');
+  document.getElementById('next-btn').style.display = 'none';
+  awaiting = false;
+
+  // Build shuffled choice buttons
+  const wrap = document.getElementById('choices');
+  wrap.innerHTML = '';
+  shuffle(KEYS).forEach(k => {
+    const b = document.createElement('button');
+    b.className = 'choice';
+    b.textContent = SHAPES[k].name;
+    b.dataset.key = k;
+    b.onclick = () => submit(k, b);
+    wrap.appendChild(b);
+  });
+}
+
+function submit(guess, btn) {
+  if (awaiting) return;
+  awaiting = true;
+  const key = queue[round];
+  const s = SHAPES[key];
+  document.querySelectorAll('.choice').forEach(c => {
+    c.disabled = true;
+    if (c.dataset.key === key) c.classList.add('correct');
+    else if (c === btn) c.classList.add('wrong');
+  });
+  const ok = guess === key;
+  if (ok) score++;
+  document.getElementById('score').textContent = score;
+  document.getElementById('acc').textContent = `Accuracy: ${Math.round(score/(round+1)*100)}%`;
+
+  const fb = document.getElementById('feedback');
+  fb.classList.add('show');
+  const h = document.getElementById('fb-head');
+  h.textContent = ok ? `✓ Correct — ${s.name}` : `✗ That was a ${s.name}`;
+  h.className = ok ? 'good' : 'bad';
+  document.getElementById('fb-body').textContent = s.fact;
+  document.getElementById('next-btn').style.display = 'inline-block';
+}
+
+function endGame() {
+  document.querySelector('.scene').style.display = 'none';
+  document.getElementById('choices').style.display = 'none';
+  document.getElementById('feedback').style.display = 'none';
+  document.getElementById('next-btn').style.display = 'none';
+  const go = document.getElementById('game-over');
+  go.classList.add('show');
+  document.getElementById('final').textContent = score;
+  let msg;
+  if (score >= 9) msg = 'Chaser-grade eye. You could call these on a livestream.';
+  else if (score >= 7) msg = 'Solid. You know your funnels.';
+  else if (score >= 5) msg = 'Decent — the rope/elephant-trunk line trips everyone up.';
+  else msg = 'Time to study — check the tornado shapes guide.';
+  document.getElementById('grade-msg').textContent = msg;
+}
+
+document.getElementById('next-btn').addEventListener('click', () => { round++; showRound(); });
+startGame();
+</script>
+<script src="/assets/ads-config.js" defer></script>
+<script src="/assets/ads.js" defer></script>
+<script src="/assets/house-ads.js" defer></script>
+</body>
+</html>

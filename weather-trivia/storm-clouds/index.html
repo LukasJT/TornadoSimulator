@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Storm Clouds Trivia Quiz — Free Interactive Weather Trivia</title>
+<meta name="description" content="Wall clouds, shelf clouds, mammatus, anvils — how well do you know the clouds that mean severe weather?" />
+<meta name="keywords" content="weather trivia, weather quiz, storm-clouds trivia, weather questions and answers" />
+<meta property="og:title" content="Storm Clouds Trivia Quiz" />
+<meta property="og:description" content="Wall clouds, shelf clouds, mammatus, anvils — how well do you know the clouds that mean severe weather?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tornadosimulator.net/weather-trivia/storm-clouds/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/weather-trivia/storm-clouds/" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛈️</text></svg>" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Quiz","name":"Storm Clouds Trivia Quiz","about":"Weather trivia","educationalLevel":"General","numberOfQuestions":15,"publisher":{"@type":"Organization","name":"Tornado Hub","url":"https://www.tornadosimulator.net/"} }
+</script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --border-strong:#d4cfc3; --accent:#a02818; --accent-hover:#7d1f13; --link:#1e3a5f; --correct:#2d6a4f; --wrong:#a02818; --serif:"Fraunces",Georgia,serif; --sans:"Inter",-apple-system,sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--link);text-decoration:none}
+a:hover{color:var(--accent);text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text);text-decoration:none}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.breadcrumb{max-width:800px;margin:20px auto 0;padding:0 24px;font-size:13px;color:var(--text-muted)}
+.hero{padding:40px 24px 20px;max-width:800px;margin:0 auto;text-align:center}
+.hero .emoji{font-size:56px;line-height:1;margin-bottom:16px}
+.hero h1{font-family:var(--serif);font-size:clamp(28px,4vw,42px);font-weight:700;line-height:1.15;letter-spacing:-0.02em;margin-bottom:14px}
+.hero p{color:var(--text-secondary);font-size:17px;max-width:600px;margin:0 auto}
+.quiz-wrap{max-width:720px;margin:20px auto;padding:0 20px 60px}
+.progress-bar{position:sticky;top:66px;background:var(--surface);border-radius:8px;padding:12px 18px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,0.04);display:flex;justify-content:space-between;align-items:center;z-index:50;border:1px solid var(--border)}
+.progress-count{font-size:13px;color:var(--text-secondary);font-weight:600}
+.progress-count .score{color:var(--accent)}
+.progress-track{flex:1;margin:0 16px;height:6px;background:var(--bg-alt);border-radius:3px;overflow:hidden}
+.progress-fill{height:100%;background:var(--accent);width:0;transition:width 0.3s}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:16px;transition:box-shadow 0.15s}
+.card.answered{opacity:0.85}
+.q-num{font-size:11px;color:var(--text-muted);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px}
+.q-text{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.35;margin-bottom:16px;letter-spacing:-0.01em}
+.options{display:flex;flex-direction:column;gap:8px}
+.opt{padding:12px 16px;background:var(--bg);border:1.5px solid var(--border);border-radius:8px;cursor:pointer;text-align:left;font-family:var(--sans);font-size:15px;color:var(--text);transition:background 0.15s,border-color 0.15s;display:flex;align-items:center;gap:10px}
+.opt:hover:not(:disabled){background:var(--bg-alt);border-color:var(--border-strong)}
+.opt .letter{width:24px;height:24px;background:var(--surface);border:1.5px solid var(--border-strong);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;flex-shrink:0}
+.opt.correct{background:#e0f2e9;border-color:var(--correct);color:var(--correct)}
+.opt.correct .letter{background:var(--correct);color:white;border-color:var(--correct)}
+.opt.wrong{background:#fbe0dc;border-color:var(--wrong);color:var(--wrong)}
+.opt.wrong .letter{background:var(--wrong);color:white;border-color:var(--wrong)}
+.opt:disabled{cursor:default}
+.explanation{margin-top:14px;padding:12px 14px;background:var(--bg-alt);border-left:3px solid var(--accent);border-radius:4px;font-size:14px;color:var(--text-secondary);display:none}
+.explanation.show{display:block}
+.explanation strong{color:var(--accent)}
+.result{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:32px;margin-top:20px;text-align:center;display:none}
+.result.show{display:block}
+.result h2{font-family:var(--serif);font-size:32px;margin-bottom:12px}
+.result .score-big{font-family:var(--serif);font-size:72px;font-weight:700;color:var(--accent);line-height:1;margin:20px 0}
+.result .verdict{font-size:17px;color:var(--text-secondary);margin-bottom:20px}
+.result-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;font-size:14px;font-weight:600;border-radius:8px;border:1px solid var(--border-strong);background:transparent;color:var(--text);cursor:pointer;font-family:var(--sans);text-decoration:none}
+.btn.primary{background:var(--accent);color:white;border-color:var(--accent)}
+.btn.primary:hover{background:var(--accent-hover);color:white}
+.btn:hover{background:var(--bg-alt);text-decoration:none}
+.footer{text-align:center;padding:24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px;margin-top:40px}
+.inline-ad{text-align:center;margin:24px auto;max-width:728px;overflow:hidden}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"},
+  {"@type":"ListItem","position":2,"name":"Weather Trivia","item":"https://www.tornadosimulator.net/weather-trivia/"},
+  {"@type":"ListItem","position":3,"name":"Storm Clouds Trivia Quiz","item":"https://www.tornadosimulator.net/weather-trivia/storm-clouds/"}
+]}
+</script>
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#a02818" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/quiz/">Quizzes</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/tornado-namer/">Namer</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/supercell-simulator/">Supercell Sim</a>
+      <a href="/tornadoes/">Index</a>
+      <a href="/simulator/" class="cta">Launch Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb"><a href="/">Home</a> · <a href="/weather-trivia/">Weather Trivia</a> · Storm Clouds Trivia Quiz</div>
+
+<section class="hero">
+  <div class="emoji">⛈️</div>
+  <h1>Storm Clouds Trivia Quiz</h1>
+  <p>Wall clouds, shelf clouds, mammatus, anvils — how well do you know the clouds that mean severe weather?</p>
+</section>
+
+<div class="quiz-wrap">
+
+  <div class="progress-bar">
+    <div class="progress-count">Question <span id="qnum">1</span>/15</div>
+    <div class="progress-track"><div class="progress-fill" id="fill"></div></div>
+    <div class="progress-count"><span class="score" id="scoreLive">0</span> correct</div>
+  </div>
+
+  <div id="questions">
+    <div class="card" id="q0">
+      <div class="q-num">Question 1 of 15</div>
+      <div class="q-text">Which cloud feature most directly precedes tornado formation?</div>
+      <div class="options"><button class="opt" onclick="pick(0,0,this)"><span class="letter">A</span><span>Shelf cloud</span></button><button class="opt" onclick="pick(0,1,this)"><span class="letter">B</span><span>Rotating wall cloud</span></button><button class="opt" onclick="pick(0,2,this)"><span class="letter">C</span><span>Mammatus</span></button><button class="opt" onclick="pick(0,3,this)"><span class="letter">D</span><span>Roll cloud</span></button></div>
+      <div class="explanation"><strong>Why:</strong> A persistent, rotating, lowering wall cloud marks the mesocyclone&#x27;s strongest low-level rotation.</div>
+    </div>
+    <div class="card" id="q1">
+      <div class="q-num">Question 2 of 15</div>
+      <div class="q-text">A shelf cloud marks the leading edge of what?</div>
+      <div class="options"><button class="opt" onclick="pick(1,0,this)"><span class="letter">A</span><span>The inflow</span></button><button class="opt" onclick="pick(1,1,this)"><span class="letter">B</span><span>The storm&#x27;s cold outflow (gust front)</span></button><button class="opt" onclick="pick(1,2,this)"><span class="letter">C</span><span>The anvil</span></button><button class="opt" onclick="pick(1,3,this)"><span class="letter">D</span><span>The updraft</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Cool air surging out from the downdraft lifts warm air, condensing into the low wedge-shaped shelf.</div>
+    </div>
+    <div class="card" id="q2">
+      <div class="q-num">Question 3 of 15</div>
+      <div class="q-text">Mammatus clouds usually indicate what?</div>
+      <div class="options"><button class="opt" onclick="pick(2,0,this)"><span class="letter">A</span><span>A tornado is forming</span></button><button class="opt" onclick="pick(2,1,this)"><span class="letter">B</span><span>Severe weather has recently occurred or is nearby</span></button><button class="opt" onclick="pick(2,2,this)"><span class="letter">C</span><span>Rain is impossible</span></button><button class="opt" onclick="pick(2,3,this)"><span class="letter">D</span><span>The storm is strengthening</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Mammatus hang beneath a storm&#x27;s anvil — dramatic but not themselves dangerous.</div>
+    </div>
+    <div class="card" id="q3">
+      <div class="q-num">Question 4 of 15</div>
+      <div class="q-text">What is the &#x27;flanking line&#x27;?</div>
+      <div class="options"><button class="opt" onclick="pick(3,0,this)"><span class="letter">A</span><span>A row of shelf clouds</span></button><button class="opt" onclick="pick(3,1,this)"><span class="letter">B</span><span>A stair-step line of growing towers feeding the main storm</span></button><button class="opt" onclick="pick(3,2,this)"><span class="letter">C</span><span>Anvil edge</span></button><button class="opt" onclick="pick(3,3,this)"><span class="letter">D</span><span>Outflow boundary</span></button></div>
+      <div class="explanation"><strong>Why:</strong> The flanking line of cumulus towers along the storm&#x27;s southwest side feeds the main updraft.</div>
+    </div>
+    <div class="card" id="q4">
+      <div class="q-num">Question 5 of 15</div>
+      <div class="q-text">An &#x27;overshooting top&#x27; punching above the anvil signals what?</div>
+      <div class="options"><button class="opt" onclick="pick(4,0,this)"><span class="letter">A</span><span>Storm collapse</span></button><button class="opt" onclick="pick(4,1,this)"><span class="letter">B</span><span>A very strong updraft</span></button><button class="opt" onclick="pick(4,2,this)"><span class="letter">C</span><span>Weak rotation</span></button><button class="opt" onclick="pick(4,3,this)"><span class="letter">D</span><span>Snow aloft</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Persistent overshooting tops mark updrafts strong enough to punch through the tropopause — a severe-weather red flag.</div>
+    </div>
+    <div class="card" id="q5">
+      <div class="q-num">Question 6 of 15</div>
+      <div class="q-text">What color often tints the sky under a hail-loaded storm?</div>
+      <div class="options"><button class="opt" onclick="pick(5,0,this)"><span class="letter">A</span><span>Purple</span></button><button class="opt" onclick="pick(5,1,this)"><span class="letter">B</span><span>Green</span></button><button class="opt" onclick="pick(5,2,this)"><span class="letter">C</span><span>Orange</span></button><button class="opt" onclick="pick(5,3,this)"><span class="letter">D</span><span>Pink</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Sunlight scattered through dense water and ice in a deep storm gives the classic ominous green.</div>
+    </div>
+    <div class="card" id="q6">
+      <div class="q-num">Question 7 of 15</div>
+      <div class="q-text">What is &#x27;scud&#x27;?</div>
+      <div class="options"><button class="opt" onclick="pick(6,0,this)"><span class="letter">A</span><span>Rotating cloud fragments</span></button><button class="opt" onclick="pick(6,1,this)"><span class="letter">B</span><span>Ragged, harmless low cloud fragments moving under a storm</span></button><button class="opt" onclick="pick(6,2,this)"><span class="letter">C</span><span>A type of hail</span></button><button class="opt" onclick="pick(6,3,this)"><span class="letter">D</span><span>Frozen rain bands</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Scud (cumulus fractus) is often mistaken for funnel clouds, but it doesn&#x27;t rotate and isn&#x27;t attached.</div>
+    </div>
+    <div class="card" id="q7">
+      <div class="q-num">Question 8 of 15</div>
+      <div class="q-text">The &#x27;beaver tail&#x27; cloud band points toward what?</div>
+      <div class="options"><button class="opt" onclick="pick(7,0,this)"><span class="letter">A</span><span>The storm&#x27;s inflow region</span></button><button class="opt" onclick="pick(7,1,this)"><span class="letter">B</span><span>The gust front</span></button><button class="opt" onclick="pick(7,2,this)"><span class="letter">C</span><span>The anvil</span></button><button class="opt" onclick="pick(7,3,this)"><span class="letter">D</span><span>The rain core</span></button></div>
+      <div class="explanation"><strong>Why:</strong> A beaver tail is a flat inflow band feeding into the mesocyclone from the east or southeast.</div>
+    </div>
+    <div class="card" id="q8">
+      <div class="q-num">Question 9 of 15</div>
+      <div class="q-text">What distinguishes a roll cloud from a shelf cloud?</div>
+      <div class="options"><button class="opt" onclick="pick(8,0,this)"><span class="letter">A</span><span>Color</span></button><button class="opt" onclick="pick(8,1,this)"><span class="letter">B</span><span>A roll cloud is completely detached from the storm</span></button><button class="opt" onclick="pick(8,2,this)"><span class="letter">C</span><span>Height</span></button><button class="opt" onclick="pick(8,3,this)"><span class="letter">D</span><span>Rotation direction</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Roll clouds are horizontal tubes detached from the parent storm; shelf clouds stay attached.</div>
+    </div>
+    <div class="card" id="q9">
+      <div class="q-num">Question 10 of 15</div>
+      <div class="q-text">A lowering that does NOT rotate is most likely what?</div>
+      <div class="options"><button class="opt" onclick="pick(9,0,this)"><span class="letter">A</span><span>A wall cloud</span></button><button class="opt" onclick="pick(9,1,this)"><span class="letter">B</span><span>Scud or a shelf remnant</span></button><button class="opt" onclick="pick(9,2,this)"><span class="letter">C</span><span>A tornado</span></button><button class="opt" onclick="pick(9,3,this)"><span class="letter">D</span><span>A funnel</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Rotation is the key discriminator — spotters watch a lowering for minutes before calling it a wall cloud.</div>
+    </div>
+    <div class="card" id="q10">
+      <div class="q-num">Question 11 of 15</div>
+      <div class="q-text">What is a &#x27;rain-free base&#x27;?</div>
+      <div class="options"><button class="opt" onclick="pick(10,0,this)"><span class="letter">A</span><span>A dying storm</span></button><button class="opt" onclick="pick(10,1,this)"><span class="letter">B</span><span>The dark, rainless cloud base under the updraft</span></button><button class="opt" onclick="pick(10,2,this)"><span class="letter">C</span><span>A cloudless region</span></button><button class="opt" onclick="pick(10,3,this)"><span class="letter">D</span><span>The anvil&#x27;s shadow</span></button></div>
+      <div class="explanation"><strong>Why:</strong> The rain-free base marks the updraft region — where wall clouds and tornadoes form.</div>
+    </div>
+    <div class="card" id="q11">
+      <div class="q-num">Question 12 of 15</div>
+      <div class="q-text">In an HP (high-precipitation) supercell, why is the tornado often invisible?</div>
+      <div class="options"><button class="opt" onclick="pick(11,0,this)"><span class="letter">A</span><span>It&#x27;s too small</span></button><button class="opt" onclick="pick(11,1,this)"><span class="letter">B</span><span>It&#x27;s wrapped in heavy rain</span></button><button class="opt" onclick="pick(11,2,this)"><span class="letter">C</span><span>It&#x27;s above cloud base</span></button><button class="opt" onclick="pick(11,3,this)"><span class="letter">D</span><span>It moves too fast</span></button></div>
+      <div class="explanation"><strong>Why:</strong> HP storms wrap precipitation around the mesocyclone — the reason Dixie Alley tornadoes are so dangerous.</div>
+    </div>
+    <div class="card" id="q12">
+      <div class="q-num">Question 13 of 15</div>
+      <div class="q-text">The &#x27;clear slot&#x27; cutting into a storm base signals what?</div>
+      <div class="options"><button class="opt" onclick="pick(12,0,this)"><span class="letter">A</span><span>Storm death</span></button><button class="opt" onclick="pick(12,1,this)"><span class="letter">B</span><span>The rear-flank downdraft wrapping in — tornado potential rising</span></button><button class="opt" onclick="pick(12,2,this)"><span class="letter">C</span><span>Hail ending</span></button><button class="opt" onclick="pick(12,3,this)"><span class="letter">D</span><span>New storm forming</span></button></div>
+      <div class="explanation"><strong>Why:</strong> The RFD&#x27;s drying slot often appears minutes before tornadogenesis.</div>
+    </div>
+    <div class="card" id="q13">
+      <div class="q-num">Question 14 of 15</div>
+      <div class="q-text">What does a &#x27;striated&#x27; or &#x27;barber pole&#x27; updraft indicate?</div>
+      <div class="options"><button class="opt" onclick="pick(13,0,this)"><span class="letter">A</span><span>Weak storm</span></button><button class="opt" onclick="pick(13,1,this)"><span class="letter">B</span><span>Strong rotation in the storm&#x27;s mid-levels</span></button><button class="opt" onclick="pick(13,2,this)"><span class="letter">C</span><span>Snow</span></button><button class="opt" onclick="pick(13,3,this)"><span class="letter">D</span><span>Storm splitting</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Corkscrew striations show the whole updraft is rotating — the visual signature of a supercell.</div>
+    </div>
+    <div class="card" id="q14">
+      <div class="q-num">Question 15 of 15</div>
+      <div class="q-text">Anvil &#x27;knuckles&#x27; (lumpy protrusions under the anvil edge) suggest what?</div>
+      <div class="options"><button class="opt" onclick="pick(14,0,this)"><span class="letter">A</span><span>Storm weakening</span></button><button class="opt" onclick="pick(14,1,this)"><span class="letter">B</span><span>A very intense updraft</span></button><button class="opt" onclick="pick(14,2,this)"><span class="letter">C</span><span>Fog forming</span></button><button class="opt" onclick="pick(14,3,this)"><span class="letter">D</span><span>Rotation ending</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Knuckles (reverse mammatus) mark vigorous overturning at the anvil — chasers read them as a strength cue.</div>
+    </div>
+  </div>
+
+  <div class="inline-ad">
+    <script type="text/javascript">atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};</script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
+  </div>
+
+  <div id="result" class="result">
+    <h2>You're done!</h2>
+    <div class="score-big"><span id="scoreFinal">0</span>/15</div>
+    <div class="verdict" id="verdict"></div>
+    <div class="result-btns">
+      <button class="btn primary" onclick="shareResult()">📋 Share your score</button>
+      <a class="btn" href="/weather-trivia/">More trivia →</a>
+      <a class="btn" href="/tornadle/">Try Tornadle</a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  Part of <a href="/">Tornado Hub</a> — free weather trivia.
+</footer>
+
+<script>
+const QUESTIONS = [{"q": "Which cloud feature most directly precedes tornado formation?", "options": ["Shelf cloud", "Rotating wall cloud", "Mammatus", "Roll cloud"], "a": 1, "exp": "A persistent, rotating, lowering wall cloud marks the mesocyclone's strongest low-level rotation."}, {"q": "A shelf cloud marks the leading edge of what?", "options": ["The inflow", "The storm's cold outflow (gust front)", "The anvil", "The updraft"], "a": 1, "exp": "Cool air surging out from the downdraft lifts warm air, condensing into the low wedge-shaped shelf."}, {"q": "Mammatus clouds usually indicate what?", "options": ["A tornado is forming", "Severe weather has recently occurred or is nearby", "Rain is impossible", "The storm is strengthening"], "a": 1, "exp": "Mammatus hang beneath a storm's anvil \u2014 dramatic but not themselves dangerous."}, {"q": "What is the 'flanking line'?", "options": ["A row of shelf clouds", "A stair-step line of growing towers feeding the main storm", "Anvil edge", "Outflow boundary"], "a": 1, "exp": "The flanking line of cumulus towers along the storm's southwest side feeds the main updraft."}, {"q": "An 'overshooting top' punching above the anvil signals what?", "options": ["Storm collapse", "A very strong updraft", "Weak rotation", "Snow aloft"], "a": 1, "exp": "Persistent overshooting tops mark updrafts strong enough to punch through the tropopause \u2014 a severe-weather red flag."}, {"q": "What color often tints the sky under a hail-loaded storm?", "options": ["Purple", "Green", "Orange", "Pink"], "a": 1, "exp": "Sunlight scattered through dense water and ice in a deep storm gives the classic ominous green."}, {"q": "What is 'scud'?", "options": ["Rotating cloud fragments", "Ragged, harmless low cloud fragments moving under a storm", "A type of hail", "Frozen rain bands"], "a": 1, "exp": "Scud (cumulus fractus) is often mistaken for funnel clouds, but it doesn't rotate and isn't attached."}, {"q": "The 'beaver tail' cloud band points toward what?", "options": ["The storm's inflow region", "The gust front", "The anvil", "The rain core"], "a": 0, "exp": "A beaver tail is a flat inflow band feeding into the mesocyclone from the east or southeast."}, {"q": "What distinguishes a roll cloud from a shelf cloud?", "options": ["Color", "A roll cloud is completely detached from the storm", "Height", "Rotation direction"], "a": 1, "exp": "Roll clouds are horizontal tubes detached from the parent storm; shelf clouds stay attached."}, {"q": "A lowering that does NOT rotate is most likely what?", "options": ["A wall cloud", "Scud or a shelf remnant", "A tornado", "A funnel"], "a": 1, "exp": "Rotation is the key discriminator \u2014 spotters watch a lowering for minutes before calling it a wall cloud."}, {"q": "What is a 'rain-free base'?", "options": ["A dying storm", "The dark, rainless cloud base under the updraft", "A cloudless region", "The anvil's shadow"], "a": 1, "exp": "The rain-free base marks the updraft region \u2014 where wall clouds and tornadoes form."}, {"q": "In an HP (high-precipitation) supercell, why is the tornado often invisible?", "options": ["It's too small", "It's wrapped in heavy rain", "It's above cloud base", "It moves too fast"], "a": 1, "exp": "HP storms wrap precipitation around the mesocyclone \u2014 the reason Dixie Alley tornadoes are so dangerous."}, {"q": "The 'clear slot' cutting into a storm base signals what?", "options": ["Storm death", "The rear-flank downdraft wrapping in \u2014 tornado potential rising", "Hail ending", "New storm forming"], "a": 1, "exp": "The RFD's drying slot often appears minutes before tornadogenesis."}, {"q": "What does a 'striated' or 'barber pole' updraft indicate?", "options": ["Weak storm", "Strong rotation in the storm's mid-levels", "Snow", "Storm splitting"], "a": 1, "exp": "Corkscrew striations show the whole updraft is rotating \u2014 the visual signature of a supercell."}, {"q": "Anvil 'knuckles' (lumpy protrusions under the anvil edge) suggest what?", "options": ["Storm weakening", "A very intense updraft", "Fog forming", "Rotation ending"], "a": 1, "exp": "Knuckles (reverse mammatus) mark vigorous overturning at the anvil \u2014 chasers read them as a strength cue."}];
+let answered = 0, score = 0;
+const total = QUESTIONS.length;
+
+function pick(qIdx, oIdx, btn) {
+  const q = QUESTIONS[qIdx];
+  if (btn.parentElement.dataset.done) return;
+  btn.parentElement.dataset.done = '1';
+  const buttons = btn.parentElement.querySelectorAll('.opt');
+  buttons.forEach((b, i) => {
+    b.disabled = true;
+    if (i === q.a) b.classList.add('correct');
+    else if (i === oIdx) b.classList.add('wrong');
+  });
+  const card = btn.closest('.card');
+  card.classList.add('answered');
+  card.querySelector('.explanation').classList.add('show');
+  if (oIdx === q.a) score++;
+  answered++;
+  document.getElementById('scoreLive').textContent = score;
+  document.getElementById('qnum').textContent = Math.min(answered + 1, total);
+  document.getElementById('fill').style.width = (answered / total * 100) + '%';
+  if (answered === total) showResult();
+  else {
+    const next = document.querySelectorAll('.card')[answered];
+    if (next) setTimeout(() => next.scrollIntoView({behavior:'smooth', block:'center'}), 400);
+  }
+}
+
+function showResult() {
+  const r = document.getElementById('result');
+  r.classList.add('show');
+  document.getElementById('scoreFinal').textContent = score;
+  const pct = Math.round(score / total * 100);
+  let msg;
+  if (pct === 100) msg = "🏆 Perfect score! You're a weather encyclopedia.";
+  else if (pct >= 80) msg = "🌪️ Impressive. Nearly a professional forecaster.";
+  else if (pct >= 60) msg = "🌤️ Solid — better than most casual weather watchers.";
+  else if (pct >= 40) msg = "🌫️ Not bad. Brush up and come back for another round.";
+  else msg = "🌧️ Room to grow — check out our articles and try again.";
+  document.getElementById('verdict').textContent = msg;
+  setTimeout(() => r.scrollIntoView({behavior:'smooth', block:'center'}), 300);
+}
+
+function shareResult() {
+  const pct = Math.round(score / total * 100);
+  const text = `I scored ${score}/${total} (${pct}%) on the ${document.title.split(' — ')[0]}!\n\nTry it at tornadosimulator.net/weather-trivia/storm-clouds/`;
+  if (navigator.share) navigator.share({ text }).catch(() => copyText(text));
+  else copyText(text);
+}
+function copyText(t) {
+  if (navigator.clipboard) navigator.clipboard.writeText(t).then(() => alert('Copied to clipboard!'));
+  else {
+    const ta = document.createElement('textarea');
+    ta.value = t; document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); document.body.removeChild(ta);
+    alert('Copied to clipboard!');
+  }
+}
+</script>
+<script src="/assets/ads-config.js" defer></script>
+<script src="/assets/ads.js" defer></script>
+<script src="/assets/house-ads.js" defer></script>
+</body>
+</html>

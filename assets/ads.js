@@ -144,7 +144,8 @@
     '/cloud-identification-game/', '/radar-signature-game/',
     '/lightning-distance-game/', '/tornado-quiz-for-kids/',
     '/which-tornado-are-you/', '/which-chaser-are-you/',
-    '/storm-chaser-adventure/'];
+    '/storm-chaser-adventure/', '/ef-scale-game/', '/tornado-shape-game/',
+    '/tornado-risk-calculator/', '/weather-trivia/'];
   function isGamePage() {
     if (document.querySelector('[data-page-push]')) return true;
     var p = location.pathname;
