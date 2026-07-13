@@ -6,7 +6,9 @@ window.ADSTERRA = {
   // Iframe banner keys (used inline in article HTML)
   banner728x90: 'b7d63c1973b341722e34dd6f314916ba', // desktop leaderboard
   banner468x60: null, // legacy size; lower demand and disabled for new injection
-  banner300x250: '1fe957d85bb2cf92027de309038cd17b', // medium rectangle
+  banner300x250: '1fe957d85bb2cf92027de309038cd17b', // medium rectangle, best current CPM placement: 300x250_1 / 30165777
+  preferredContentAd: 'banner300x250',
+  maxAutoMediumRectangles: 3,
   banner320x50: 'c9b6de5dcbbc4a9a6331cd5534b0ebd2', // mobile banner
   banner160x600: 'da8c75671b236383c52eb13078c2a148', // wide skyscraper
   banner160x300: 'ff3f3758b896daf1842b3be893ed46f2', // half skyscraper

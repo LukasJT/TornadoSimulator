@@ -14,6 +14,8 @@
       '.inline-ad{max-width:100vw;box-sizing:border-box}',
       '.inline-ad iframe{max-width:100%}',
       '.inline-ad,.native-ad-wrap{clear:both}',
+      '.medium-rectangle-ad{text-align:center;margin:30px auto;min-height:250px;max-width:336px}',
+      '.medium-rectangle-ad .ad-label{font:10px/1.2 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#8b8f9c;text-align:center;margin-bottom:6px}',
       '@media (max-width:767px){.inline-ad iframe[width="728"]{display:none!important}}',
       '@media (max-width:767px){.inline-ad iframe[width="468"]{display:none!important}}',
       '.ad-rail{display:none;position:fixed;top:96px;z-index:40;width:160px;min-height:300px;pointer-events:auto}',
@@ -228,6 +230,59 @@
     return frame;
   }
 
+  function makeMediumRectangleSlot(source) {
+    if (!CFG.banner300x250) return null;
+    var slot = document.createElement('div');
+    slot.className = 'inline-ad medium-rectangle-ad';
+    slot.setAttribute('data-auto-medium-rectangle', source || 'auto');
+    slot.setAttribute('aria-label', 'Advertisement');
+
+    var label = document.createElement('div');
+    label.className = 'ad-label';
+    label.textContent = 'Ad';
+    slot.appendChild(label);
+    slot.appendChild(makeAdFrame(CFG.banner300x250, 300, 250));
+    return slot;
+  }
+
+  function autoPlaceMediumRectangles() {
+    if (!isArticleLikePage()) return;
+    if (!CFG.banner300x250) return;
+
+    var host = document.querySelector('article') || document.querySelector('main');
+    if (!host) return;
+
+    var maxSlots = parseInt(CFG.maxAutoMediumRectangles, 10);
+    if (!maxSlots || maxSlots < 1) maxSlots = 3;
+
+    var existing = document.querySelectorAll('[data-auto-medium-rectangle], .inline-ad iframe[width="300"][height="250"]').length;
+    var remaining = Math.max(0, maxSlots - existing);
+    if (!remaining) return;
+
+    var candidates = Array.prototype.slice.call(host.querySelectorAll('h2, h3'));
+    if (candidates.length < 2) return;
+
+    var indexes = [];
+    if (candidates.length >= 2) indexes.push(1);
+    if (candidates.length >= 5) indexes.push(Math.floor(candidates.length / 2));
+    if (candidates.length >= 8) indexes.push(Math.max(2, candidates.length - 3));
+
+    indexes = indexes.filter(function (value, index, list) {
+      return list.indexOf(value) === index && candidates[value];
+    }).slice(0, remaining);
+
+    indexes.forEach(function (index, count) {
+      var anchor = candidates[index];
+      if (!anchor || !anchor.parentNode) return;
+      var previous = anchor.previousElementSibling;
+      var next = anchor.nextElementSibling;
+      if ((previous && previous.classList && previous.classList.contains('inline-ad')) ||
+          (next && next.classList && next.classList.contains('inline-ad'))) return;
+      var slot = makeMediumRectangleSlot('content-' + (count + 1));
+      if (slot) anchor.parentNode.insertBefore(slot, anchor);
+    });
+  }
+
   function injectSideRailAds() {
     if (!isArticleLikePage()) return;
     if (!CFG.banner160x600 && !CFG.banner160x300) return;
@@ -345,8 +400,9 @@
     injectResponsiveCSS();
     installClickHijackGuard();
     injectMobileBanners();
-    lazyLoadBanners();
     injectSideRailAds();
+    autoPlaceMediumRectangles();
+    lazyLoadBanners();
     injectSocialBar();
     injectNativeBanners();
     injectInPagePush();
