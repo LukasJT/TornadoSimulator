@@ -133,6 +133,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Arctic Oscillation and NAO Explained: Winter Pattern Clues How the Arctic Oscillation and North Atlantic Oscillation relate to cold air outbreaks, storm tracks, blocking, and winter forecast uncertainty. arctic oscillation nao explained"
   },
   {
+    "title": "Area Forecast Discussion Explained: How to Read the Meteorologist Notes",
+    "path": "/area-forecast-discussion-explained/",
+    "description": "What an Area Forecast Discussion is, why meteorologists write it, and how to use it for confidence, timing, hazards, and uncertainty.",
+    "category": "Forecasting",
+    "keywords": "Area Forecast Discussion Explained: How to Read the Meteorologist Notes What an Area Forecast Discussion is, why meteorologists write it, and how to use it for confidence, timing, hazards, and uncertainty. area forecast discussion explained"
+  },
+  {
     "title": "Arizona Tornadoes - Rare Southwestern Events",
     "path": "/arizona-tornadoes/",
     "description": "Arizona averages 4 tornadoes per year. Monsoon season occasionally produces weak tornadoes. Mountain and desert terrain limit formation.",
@@ -187,6 +194,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A glossary of aviation weather terms — from METAR and TAF to microburst, virga, and mountain wave. What each means, when it matters, and how to read them in briefings.",
     "category": "Glossary",
     "keywords": "Aviation Weather Glossary — Terms Every Pilot Should Know A glossary of aviation weather terms — from METAR and TAF to microburst, virga, and mountain wave. What each means, when it matters, and how to read them in briefings. aviation weather glossary"
+  },
+  {
+    "title": "Aviation Weather Guides: METAR, TAF, Ceiling, Visibility, and Travel Weather",
+    "path": "/aviation-weather-guides/",
+    "description": "A hub for beginner-friendly aviation weather guides that also help travelers understand fog, low clouds, airport observations, and changing local conditions.",
+    "category": "Aviation Weather",
+    "keywords": "Aviation Weather Guides: METAR, TAF, Ceiling, Visibility, and Travel Weather A hub for beginner-friendly aviation weather guides that also help travelers understand fog, low clouds, airport observations, and changing local conditions. aviation weather guides"
   },
   {
     "title": "Barometric Pressure Weather Guide: What Rising and Falling Pressure Means",
@@ -537,6 +551,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A visual guide to every recognized cloud type — from stratus and cumulus to rare noctilucent and Kelvin-Helmholtz clouds. Each cloud gets an SVG illustration, altitude range, formation mechanism, and what weather it forecasts.",
     "category": "Visual reference",
     "keywords": "Cloud Atlas — Every Cloud Type Illustrated A visual guide to every recognized cloud type — from stratus and cumulus to rare noctilucent and Kelvin-Helmholtz clouds. Each cloud gets an SVG illustration, altitude range, formation mechanism, and what weather it forecasts. cloud atlas gallery"
+  },
+  {
+    "title": "Cloud Ceiling Explained: Why Low Clouds Matter for Aviation and Travel",
+    "path": "/cloud-ceiling-explained/",
+    "description": "What cloud ceiling means, how it differs from cloud cover, and why low ceilings affect aviation, mountain travel, and gloomy weather days.",
+    "category": "Aviation Weather",
+    "keywords": "Cloud Ceiling Explained: Why Low Clouds Matter for Aviation and Travel What cloud ceiling means, how it differs from cloud cover, and why low ceilings affect aviation, mountain travel, and gloomy weather days. cloud ceiling explained"
   },
   {
     "title": "Cloud Identification Game — Guess the Cloud Type",
@@ -1120,11 +1141,25 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Hodograph Shapes — Every Type Explained Straight hodographs, curved hodographs, S-shaped hodographs — each shape has meteorological meaning. Here is a full field guide with implications for storm mode. hodograph shapes guide"
   },
   {
+    "title": "Home Anemometer Guide: Measuring Wind Speed Without Fooling Yourself",
+    "path": "/home-anemometer-guide/",
+    "description": "How home wind sensors work, where to place them, and why roofs, trees, fences, and buildings can distort wind readings.",
+    "category": "Weather Instruments",
+    "keywords": "Home Anemometer Guide: Measuring Wind Speed Without Fooling Yourself How home wind sensors work, where to place them, and why roofs, trees, fences, and buildings can distort wind readings. home anemometer guide"
+  },
+  {
     "title": "Home Hardening for Tornadoes — What Actually Works",
     "path": "/home-hardening-for-tornadoes/",
     "description": "Retrofit your house to survive a tornado. What roofing, wall bracing, garage door, and window techniques actually work — and what is snake oil.",
     "category": "Home resilience",
     "keywords": "Home Hardening for Tornadoes — What Actually Works Retrofit your house to survive a tornado. What roofing, wall bracing, garage door, and window techniques actually work — and what is snake oil. home hardening for tornadoes"
+  },
+  {
+    "title": "Home Rain Gauge Guide: Placement, Reading, and Common Mistakes",
+    "path": "/home-rain-gauge-guide/",
+    "description": "How to place and read a home rain gauge, why siting matters, and what causes bad rainfall measurements.",
+    "category": "Weather Instruments",
+    "keywords": "Home Rain Gauge Guide: Placement, Reading, and Common Mistakes How to place and read a home rain gauge, why siting matters, and what causes bad rainfall measurements. home rain gauge guide"
   },
   {
     "title": "Home Weather Station Buying Guide — 2026 Comparison",
@@ -1547,6 +1582,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Livestock Tornado Safety — Cattle, Horses, and Farm Animals How to prepare cattle, horses, sheep, goats, and poultry for tornado season. What actually protects animals in barns, what pastures work best, and what to do if a tornado is approaching your farm. livestock tornado safety"
   },
   {
+    "title": "Local Climate Zone Explained: Why Neighborhood Weather Can Differ",
+    "path": "/local-climate-zone-explained/",
+    "description": "Why temperatures and wind can vary across neighborhoods, including urban heat, elevation, water, trees, pavement, and local exposure.",
+    "category": "Climate Data",
+    "keywords": "Local Climate Zone Explained: Why Neighborhood Weather Can Differ Why temperatures and wind can vary across neighborhoods, including urban heat, elevation, water, trees, pavement, and local exposure. local climate zone explained"
+  },
+  {
     "title": "Louisiana Tornadoes - New Orleans, Baton Rouge, and Bayou Country",
     "path": "/louisiana-tornadoes/",
     "description": "Louisiana averages 30 tornadoes per year. History includes 2005 Katrina outbreak, 2017 New Orleans East EF3, and multiple violent hurricane-spawned events.",
@@ -1664,6 +1706,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "SPC mesoscale discussions (MDs) are how the Storm Prediction Center communicates near-term convective concerns. Here is how to read one, what the phrases mean, and how they translate into watches.",
     "category": "Forecasting",
     "keywords": "SPC Mesoscale Discussions — How to Read Them SPC mesoscale discussions (MDs) are how the Storm Prediction Center communicates near-term convective concerns. Here is how to read one, what the phrases mean, and how they translate into watches. mesoscale discussions explained"
+  },
+  {
+    "title": "METAR Report Explained: Reading Airport Weather Observations",
+    "path": "/metar-report-explained/",
+    "description": "A beginner-friendly guide to METAR reports, including wind, visibility, clouds, temperature, dew point, pressure, and present weather codes.",
+    "category": "Aviation Weather",
+    "keywords": "METAR Report Explained: Reading Airport Weather Observations A beginner-friendly guide to METAR reports, including wind, visibility, clouds, temperature, dew point, pressure, and present weather codes. metar report explained"
   },
   {
     "title": "Miami Tornadoes - South Florida Hurricane-Spawned History",
@@ -2058,11 +2107,25 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Barometric Pressure Converter — mb, inHg, hPa, kPa, mmHg, psi | Tornado Simulator Free barometric pressure converter. Convert between millibars, inches of mercury, hectopascals, kilopascals, mmHg, and psi. Includes context for tornado, hurricane, and everyday pressures. pressure unit converter"
   },
   {
+    "title": "Probability of Precipitation Explained: What a 40 Percent Chance of Rain Means",
+    "path": "/probability-of-precipitation-explained/",
+    "description": "What PoP means in weather forecasts, why it is not simply how much of the day it will rain, and how to use rain chances correctly.",
+    "category": "Forecasting",
+    "keywords": "Probability of Precipitation Explained: What a 40 Percent Chance of Rain Means What PoP means in weather forecasts, why it is not simply how much of the day it will rain, and how to use rain chances correctly. probability of precipitation explained"
+  },
+  {
     "title": "QLCS Tornadoes — The Squall-Line Spin-Ups",
     "path": "/qlcs-tornadoes-explained/",
     "description": "QLCS (quasi-linear convective system) tornadoes form in squall lines and bow echoes — not classic supercells. They give little warning, form fast, and are disproportionately deadly. Here is the science.",
     "category": "Storm science",
     "keywords": "QLCS Tornadoes — The Squall-Line Spin-Ups QLCS (quasi-linear convective system) tornadoes form in squall lines and bow echoes — not classic supercells. They give little warning, form fast, and are disproportionately deadly. Here is the science. qlcs tornadoes explained"
+  },
+  {
+    "title": "QPF Weather Forecast Explained: How Much Rain or Snow Water Is Expected",
+    "path": "/qpf-weather-forecast-explained/",
+    "description": "What quantitative precipitation forecast means, how QPF differs from rain chance, and why snow totals depend on more than QPF alone.",
+    "category": "Forecasting",
+    "keywords": "QPF Weather Forecast Explained: How Much Rain or Snow Water Is Expected What quantitative precipitation forecast means, how QPF differs from rain chance, and why snow totals depend on more than QPF alone. qpf weather forecast explained"
   },
   {
     "title": "Tornado Quizzes — Tornado Hub",
@@ -2709,6 +2772,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "The Xenia 1974 F5 Quiz The signature F5 of the 1974 Super Outbreak. quiz/xenia 1974 quiz"
   },
   {
+    "title": "How to Read a Weather Radar Loop Without Getting Fooled",
+    "path": "/radar-loop-how-to-read/",
+    "description": "How to use radar loops for storm movement, intensity trends, training storms, gaps, and common mistakes like relying on one old frame.",
+    "category": "Radar",
+    "keywords": "How to Read a Weather Radar Loop Without Getting Fooled How to use radar loops for storm movement, intensity trends, training storms, gaps, and common mistakes like relying on one old frame. radar loop how to read"
+  },
+  {
     "title": "Radar Reflectivity Explained: What the Colors on Weather Radar Mean",
     "path": "/radar-reflectivity-explained/",
     "description": "Understand radar reflectivity colors, rain and hail intensity, bright banding, ground clutter, and why radar colors are not a perfect severe weather scale.",
@@ -2919,6 +2989,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Search Tornado Hub Search Tornado Hub's tornado simulator, safety guides, historical case files, weather games, quizzes, radar explainers, and state tornado pages. search"
   },
   {
+    "title": "Seasonal Outlook Explained: What Long-Range Temperature and Precipitation Maps Mean",
+    "path": "/seasonal-outlook-explained/",
+    "description": "How seasonal outlooks work, what above and below normal categories mean, and why long-range outlooks are probabilities rather than day-by-day forecasts.",
+    "category": "Forecasting",
+    "keywords": "Seasonal Outlook Explained: What Long-Range Temperature and Precipitation Maps Mean How seasonal outlooks work, what above and below normal categories mean, and why long-range outlooks are probabilities rather than day-by-day forecasts. seasonal outlook explained"
+  },
+  {
     "title": "Severe Thunderstorm Watch vs Warning: What Each Alert Means",
     "path": "/severe-thunderstorm-watch-vs-warning/",
     "description": "The difference between a severe thunderstorm watch and warning, what hazards to expect, and when damaging wind or hail deserves shelter-like action.",
@@ -2966,6 +3043,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "No two snowflakes are alike — but they follow patterns. Here is every snow crystal shape, how each forms, and how temperature determines the outcome.",
     "category": "Precipitation science",
     "keywords": "Snow Crystal Guide — Every Shape and Why No two snowflakes are alike — but they follow patterns. Here is every snow crystal shape, how each forms, and how temperature determines the outcome. snow crystal guide"
+  },
+  {
+    "title": "Snow-to-Liquid Ratio Explained: Why One Inch of Water Can Make Different Snow Totals",
+    "path": "/snow-to-liquid-ratio-explained/",
+    "description": "Why snow ratios vary, what 10-to-1 means, and how temperature, wind, and snow crystal type change snowfall totals.",
+    "category": "Winter Weather",
+    "keywords": "Snow-to-Liquid Ratio Explained: Why One Inch of Water Can Make Different Snow Totals Why snow ratios vary, what 10-to-1 means, and how temperature, wind, and snow crystal type change snowfall totals. snow to liquid ratio explained"
   },
   {
     "title": "How Snow Forecasts Work — Amount, Timing, and the \"Bust\"",
@@ -3407,6 +3491,20 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "An interactive supercell and storm-conditions simulator based on real meteorology. Adjust CAPE, wind shear, storm-relative helicity, LCL height, temperature and dewpoint — and see live estimates of storm mode, the Significant Tornado Parameter, and the maximum expected tornado strength. Presets for classic Plains supercells, Dixie Alley HP storms, capped days, and landspout setups.",
     "category": "⛈️ Storm-Conditions Simulator",
     "keywords": "Supercell Simulator — Model the Atmosphere That Makes Tornadoes An interactive supercell and storm-conditions simulator based on real meteorology. Adjust CAPE, wind shear, storm-relative helicity, LCL height, temperature and dewpoint — and see live estimates of storm mode, the Significant Tornado Parameter, and the maximum expected tornado strength. Presets for classic Plains supercells, Dixie Alley HP storms, capped days, and landspout setups. supercell simulator"
+  },
+  {
+    "title": "Surface Analysis Map Explained: Fronts, Pressure, Isobars, and Weather Symbols",
+    "path": "/surface-analysis-map-explained/",
+    "description": "How to read a surface analysis map, including highs, lows, fronts, drylines, troughs, isobars, and station observations.",
+    "category": "Weather Maps",
+    "keywords": "Surface Analysis Map Explained: Fronts, Pressure, Isobars, and Weather Symbols How to read a surface analysis map, including highs, lows, fronts, drylines, troughs, isobars, and station observations. surface analysis map explained"
+  },
+  {
+    "title": "TAF Forecast Explained: How Airport Forecasts Describe Changing Weather",
+    "path": "/taf-forecast-explained/",
+    "description": "What a TAF is, how it differs from a METAR, and how aviation forecasts communicate wind, visibility, clouds, and timing changes.",
+    "category": "Aviation Weather",
+    "keywords": "TAF Forecast Explained: How Airport Forecasts Describe Changing Weather What a TAF is, how it differs from a METAR, and how aviation forecasts communicate wind, visibility, clouds, and timing changes. taf forecast explained"
   },
   {
     "title": "Temperature Inversion Explained: Why Air Gets Trapped Near the Ground",
@@ -5131,6 +5229,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Udall Tornado (May 25, 1955) — F5, 80 Dead, Deadliest in Kansas History The 1955 Udall F5 tornado struck the sleeping Kansas town at 10:35 PM, killing 80 people — over half the town's population was killed or injured. It remains the deadliest tornado in Kansas history. udall 1955"
   },
   {
+    "title": "Upper-Air Weather Maps Explained: 500 mb, 700 mb, 850 mb, and Jet-Level Charts",
+    "path": "/upper-air-weather-map-explained/",
+    "description": "What upper-air maps show, why meteorologists use pressure levels, and how upper-level patterns guide storms, temperatures, and precipitation.",
+    "category": "Forecasting",
+    "keywords": "Upper-Air Weather Maps Explained: 500 mb, 700 mb, 850 mb, and Jet-Level Charts What upper-air maps show, why meteorologists use pressure levels, and how upper-level patterns guide storms, temperatures, and precipitation. upper air weather map explained"
+  },
+  {
     "title": "Upslope Snow Explained: Why Wind Against Terrain Makes Snow Heavier",
     "path": "/upslope-snow-explained/",
     "description": "How upslope flow creates clouds and snow, why mountains and foothills can get enhanced precipitation, and why wind direction matters.",
@@ -5264,6 +5369,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Best Weather Apps 2026 — Complete Comparison Every major weather app compared for 2026. AccuWeather, Weather Channel, Windy, RadarScope, Weather Underground, and more. weather app comparison 2026"
   },
   {
+    "title": "Weather App Radar Delay: Why Radar Images Are Not Truly Live",
+    "path": "/weather-app-radar-delay/",
+    "description": "Why weather radar in apps can be delayed, how scan times and processing work, and why fast storms may be closer than they appear.",
+    "category": "Weather Apps",
+    "keywords": "Weather App Radar Delay: Why Radar Images Are Not Truly Live Why weather radar in apps can be delayed, how scan times and processing work, and why fast storms may be closer than they appear. weather app radar delay"
+  },
+  {
     "title": "Weather Balloon Sounding Explained: Skew-T Charts Without the Headache",
     "path": "/weather-balloon-sounding-explained/",
     "description": "What weather balloon soundings measure, why they matter for storms and winter weather, and how Skew-T charts help meteorologists see the atmosphere vertically.",
@@ -5320,6 +5432,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Weather in Poetry — Poems That Understand Storms A curated collection of the greatest weather-themed poetry. From Emily Dickinson to Ted Kooser to modern voices, poems that capture what storms feel like. weather in poetry"
   },
   {
+    "title": "Weather Instrument Guides: Rain Gauges, Anemometers, Home Stations, and Local Climate",
+    "path": "/weather-instrument-guides/",
+    "description": "A hub for home weather measurement and local climate context, including rain gauges, wind sensors, weather stations, normals, records, and app radar delays.",
+    "category": "Weather Instruments",
+    "keywords": "Weather Instrument Guides: Rain Gauges, Anemometers, Home Stations, and Local Climate A hub for home weather measurement and local climate context, including rain gauges, wind sensors, weather stations, normals, records, and app radar delays. weather instrument guides"
+  },
+  {
     "title": "Weather Instruments — A History of Measurement",
     "path": "/weather-instruments-history/",
     "description": "From the mercury barometer to modern weather satellites, here is the history of every instrument used to measure weather. Who invented what, when, and what it changed.",
@@ -5341,6 +5460,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Weather Lore vs Science — Which Old Sayings Actually Work? Red sky at night, sailor's delight? Cows lying down mean rain? Groundhog Day? A science-first fact-check of 20 weather sayings — which ones hold up under modern meteorology, and which are pure folklore. weather lore and science"
   },
   {
+    "title": "Weather Map Reading Guides: Radar, Surface Maps, Station Models, and Upper-Air Charts",
+    "path": "/weather-map-reading-guides/",
+    "description": "A hub for practical weather map reading guides, including radar loops, station models, surface analysis, upper-air maps, QPF, and forecast discussions.",
+    "category": "Weather Map Reading",
+    "keywords": "Weather Map Reading Guides: Radar, Surface Maps, Station Models, and Upper-Air Charts A hub for practical weather map reading guides, including radar loops, station models, surface analysis, upper-air maps, QPF, and forecast discussions. weather map reading guides"
+  },
+  {
     "title": "Weather Map Symbols — Fronts, Station Plots, Radar Codes Explained",
     "path": "/weather-map-symbols/",
     "description": "A visual reference guide to weather map symbols — cold fronts, warm fronts, occluded and stationary fronts, high/low pressure symbols, station-model plots, radar reflectivity codes, and severe weather icons. Learn to read a surface analysis in 10 minutes.",
@@ -5355,11 +5481,25 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Weather Memory Match — Free Interactive Weather Card Game | Tornado Simulator A weather-themed memory match card game. Match pairs of weather symbols — tornadoes, hurricanes, hail, and more. Three difficulty levels. Free to play in browser. weather memory match"
   },
   {
+    "title": "Weather Model Run Timing: Why Forecast Maps Update Several Times a Day",
+    "path": "/weather-model-run-timing/",
+    "description": "Why weather models run on schedules, what model initialization means, and why one new run should not be treated as a guaranteed forecast change.",
+    "category": "Forecasting",
+    "keywords": "Weather Model Run Timing: Why Forecast Maps Update Several Times a Day Why weather models run on schedules, what model initialization means, and why one new run should not be treated as a guaranteed forecast change. weather model run timing"
+  },
+  {
     "title": "GFS vs European Model: Why Weather Models Disagree",
     "path": "/weather-models-gfs-vs-euro/",
     "description": "Why the GFS and European model can show different storm tracks, snow totals, hurricane paths, or temperatures, and how forecasters weigh model guidance.",
     "category": "Forecasting",
     "keywords": "GFS vs European Model: Why Weather Models Disagree Why the GFS and European model can show different storm tracks, snow totals, hurricane paths, or temperatures, and how forecasters weigh model guidance. weather models gfs vs euro"
+  },
+  {
+    "title": "Weather Normal vs Record: What Climate Numbers Really Mean",
+    "path": "/weather-normal-vs-record/",
+    "description": "The difference between normals, averages, records, daily climate data, and why a warm day does not mean the same thing as a long-term trend.",
+    "category": "Climate Data",
+    "keywords": "Weather Normal vs Record: What Climate Numbers Really Mean The difference between normals, averages, records, daily climate data, and why a warm day does not mean the same thing as a long-term trend. weather normal vs record"
   },
   {
     "title": "Best Weather Podcasts and YouTube Channels — 2026 Guide",
@@ -5402,6 +5542,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A step-by-step guide to installing a personal weather station properly. Sensor placement, wiring, feeding to Weather Underground, and common mistakes that ruin data.",
     "category": "DIY guide",
     "keywords": "Weather Station Installation — DIY Guide A step-by-step guide to installing a personal weather station properly. Sensor placement, wiring, feeding to Weather Underground, and common mistakes that ruin data. weather station installation"
+  },
+  {
+    "title": "Weather Station Model Explained: How to Read the Little Weather Map Symbols",
+    "path": "/weather-station-model-explained/",
+    "description": "How station models show temperature, dew point, pressure, wind, cloud cover, and weather using compact symbols on surface maps.",
+    "category": "Weather Maps",
+    "keywords": "Weather Station Model Explained: How to Read the Little Weather Map Symbols How station models show temperature, dew point, pressure, wind, cloud cover, and weather using compact symbols on surface maps. weather station model explained"
   },
   {
     "title": "220+ Weather Trivia Questions and Answers (Bar Trivia Ready)",

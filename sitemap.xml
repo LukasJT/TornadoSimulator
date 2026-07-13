@@ -115,6 +115,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.tornadosimulator.net/area-forecast-discussion-explained/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.tornadosimulator.net/arizona-tornadoes/</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -161,6 +167,12 @@
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tornadosimulator.net/aviation-weather-guides/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.tornadosimulator.net/barometric-pressure-weather-guide/</loc>
@@ -458,6 +470,12 @@
   </url>
   <url>
     <loc>https://www.tornadosimulator.net/cloud-atlas-gallery/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tornadosimulator.net/cloud-ceiling-explained/</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -961,7 +979,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.tornadosimulator.net/home-anemometer-guide/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.tornadosimulator.net/home-hardening-for-tornadoes/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tornadosimulator.net/home-rain-gauge-guide/</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1327,6 +1357,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.tornadosimulator.net/local-climate-zone-explained/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.tornadosimulator.net/louisiana-tornadoes/</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -1424,6 +1460,12 @@
   </url>
   <url>
     <loc>https://www.tornadosimulator.net/mesoscale-discussions-explained/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tornadosimulator.net/metar-report-explained/</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1765,7 +1807,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.tornadosimulator.net/probability-of-precipitation-explained/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.tornadosimulator.net/qlcs-tornadoes-explained/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tornadosimulator.net/qpf-weather-forecast-explained/</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -2323,6 +2377,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.tornadosimulator.net/radar-loop-how-to-read/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.tornadosimulator.net/radar-reflectivity-explained/</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -2503,6 +2563,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.tornadosimulator.net/seasonal-outlook-explained/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.tornadosimulator.net/severe-thunderstorm-watch-vs-warning/</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -2540,6 +2606,12 @@
   </url>
   <url>
     <loc>https://www.tornadosimulator.net/snow-crystal-guide/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tornadosimulator.net/snow-to-liquid-ratio-explained/</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -2918,6 +2990,18 @@
   </url>
   <url>
     <loc>https://www.tornadosimulator.net/supercell-simulator/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tornadosimulator.net/surface-analysis-map-explained/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tornadosimulator.net/taf-forecast-explained/</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -4399,6 +4483,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.tornadosimulator.net/upper-air-weather-map-explained/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.tornadosimulator.net/upslope-snow-explained/</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -4513,6 +4603,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.tornadosimulator.net/weather-app-radar-delay/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.tornadosimulator.net/weather-balloon-sounding-explained/</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -4561,6 +4657,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.tornadosimulator.net/weather-instrument-guides/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.tornadosimulator.net/weather-instruments-history/</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -4579,6 +4681,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.tornadosimulator.net/weather-map-reading-guides/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.tornadosimulator.net/weather-map-symbols/</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
@@ -4591,7 +4699,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.tornadosimulator.net/weather-model-run-timing/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.tornadosimulator.net/weather-models-gfs-vs-euro/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tornadosimulator.net/weather-normal-vs-record/</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -4628,6 +4748,12 @@
   </url>
   <url>
     <loc>https://www.tornadosimulator.net/weather-station-installation/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tornadosimulator.net/weather-station-model-explained/</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
