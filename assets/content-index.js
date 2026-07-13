@@ -70,6 +70,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Air Quality and Wildfire Smoke Weather Guide How weather moves wildfire smoke, what AQI means, why smoke can travel far from fires, and practical steps for indoor and outdoor safety. air quality smoke weather guide"
   },
   {
+    "title": "Air Stagnation Advisory Explained: Why Pollution Gets Trapped",
+    "path": "/air-stagnation-advisory-explained/",
+    "description": "What an air stagnation advisory means, how weather traps pollution, and why inversions can worsen smoke, haze, and winter air quality.",
+    "category": "Air Quality",
+    "keywords": "Air Stagnation Advisory Explained: Why Pollution Gets Trapped What an air stagnation advisory means, how weather traps pollution, and why inversions can worsen smoke, haze, and winter air quality. air stagnation advisory explained"
+  },
+  {
     "title": "Alabama Tornadoes — Deadliest State for Modern Tornado Deaths",
     "path": "/alabama-tornadoes/",
     "description": "Alabama has been struck by more significant tornadoes and had more tornado deaths than any state in recent decades. Home to the 2011 Super Outbreak that killed 244 in Alabama alone.",
@@ -364,6 +371,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Can You Outrun a Tornado in a Car? Why It's Almost Always a Bad Idea Can you outrun a tornado in a car? Sometimes yes with clear path, but usually NO. Why driving away is often dangerous, when it might work, and what to do instead. can you outrun a tornado"
   },
   {
+    "title": "CAPE and CIN Explained: Storm Fuel and Storm Cap",
+    "path": "/cape-and-cin-explained/",
+    "description": "What CAPE and CIN mean in severe weather forecasting, why storm fuel needs a trigger, and why too much cap can stop storms from forming.",
+    "category": "Severe Storms",
+    "keywords": "CAPE and CIN Explained: Storm Fuel and Storm Cap What CAPE and CIN mean in severe weather forecasting, why storm fuel needs a trigger, and why too much cap can stop storms from forming. cape and cin explained"
+  },
+  {
     "title": "Chase Day Cell Service — Rural Coverage Reality",
     "path": "/chase-cell-service-strategy/",
     "description": "Rural chase corridor has cell service gaps. Here is what to actually expect from each carrier and how to prepare.",
@@ -490,6 +504,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Cloud Types — An Illustrated Field Guide Every cloud type in the WMO Cloud Atlas — from cirrus to cumulonimbus. Height, formation, weather it means, and how to identify each in the sky. cloud types illustrated guide"
   },
   {
+    "title": "Coastal Flood Advisory vs Warning: Tides, Surge, and Shoreline Impacts",
+    "path": "/coastal-flood-advisory-vs-warning/",
+    "description": "The difference between coastal flood advisories and warnings, why tides and wind matter, and how coastal flooding differs from storm surge.",
+    "category": "Coastal Weather",
+    "keywords": "Coastal Flood Advisory vs Warning: Tides, Surge, and Shoreline Impacts The difference between coastal flood advisories and warnings, why tides and wind matter, and how coastal flooding differs from storm surge. coastal flood advisory vs warning"
+  },
+  {
     "title": "Colorado Tornadoes - Eastern Plains and Front Range Events",
     "path": "/colorado-tornadoes/",
     "description": "Colorado averages 45 tornadoes per year - most in the eastern plains. History includes 2008 Windsor EF3, 1990 Limon F3, and multiple significant events.",
@@ -502,6 +523,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Connecticut averages 1 tornado per year. History includes 1878 Wallingford, 1979 Windsor Locks, and other rare but significant New England tornado events.",
     "category": "Guide",
     "keywords": "Connecticut Tornadoes - Rare But Deadly New England Events Connecticut averages 1 tornado per year. History includes 1878 Wallingford, 1979 Windsor Locks, and other rare but significant New England tornado events. connecticut tornadoes"
+  },
+  {
+    "title": "SPC Convective Outlook Categories: Marginal to High Risk Explained",
+    "path": "/convective-outlook-categories/",
+    "description": "A guide to severe weather outlook categories, including marginal, slight, enhanced, moderate, and high risk, and what they mean for storm planning.",
+    "category": "Forecasting",
+    "keywords": "SPC Convective Outlook Categories: Marginal to High Risk Explained A guide to severe weather outlook categories, including marginal, slight, enhanced, moderate, and high risk, and what they mean for storm planning. convective outlook categories"
   },
   {
     "title": "Costliest US Tornadoes — Ranked by Insured Damage",
@@ -560,6 +588,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Delaware Tornadoes - Very Rare Small State Events Delaware averages 3 tornadoes per year. Small state size and coastal position make Delaware tornadoes rare but do occur. delaware tornadoes"
   },
   {
+    "title": "Dense Fog Advisory Explained: Visibility, Driving, and Freezing Fog",
+    "path": "/dense-fog-advisory-explained/",
+    "description": "What a dense fog advisory means, why fog can form quickly, and how to drive more safely when visibility drops.",
+    "category": "Travel Weather",
+    "keywords": "Dense Fog Advisory Explained: Visibility, Driving, and Freezing Fog What a dense fog advisory means, why fog can form quickly, and how to drive more safely when visibility drops. dense fog advisory explained"
+  },
+  {
     "title": "Denver Tornadoes - Front Range Metro Tornado History",
     "path": "/denver-tornadoes/",
     "description": "Denver tornadoes: history including 1988 airport EF3, 2008 Windsor, and Front Range storms. Colorado metro tornado safety guide.",
@@ -607,6 +642,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Flying a drone to photograph storms is legal, dangerous, and heavily regulated. Here is what drone to buy, when to fly, what rules apply, and how to get shots that don't crash.",
     "category": "Photography",
     "keywords": "Drone Storm Photography — Rules, Gear, and Techniques Flying a drone to photograph storms is legal, dangerous, and heavily regulated. Here is what drone to buy, when to fly, what rules apply, and how to get shots that don't crash. drone storm photography"
+  },
+  {
+    "title": "Dryline Explained: The Boundary Behind Many Plains Severe Storms",
+    "path": "/dryline-explained/",
+    "description": "What a dryline is, why it separates dry and moist air, and how it can trigger severe thunderstorms in the Plains.",
+    "category": "Severe Storms",
+    "keywords": "Dryline Explained: The Boundary Behind Many Plains Severe Storms What a dryline is, why it separates dry and moist air, and how it can trigger severe thunderstorms in the Plains. dryline explained"
   },
   {
     "title": "Dust Devil vs. Tornado — What's the Difference?",
@@ -714,6 +756,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Every EF5 Tornado in US History — Complete List (2007–Present) Every EF5 tornado ever officially rated in the United States. All 9 EF5 events since the Enhanced Fujita Scale went into effect in 2007, plus notable F5 tornadoes of the Fujita era (1953–2007). every ef5 tornado"
   },
   {
+    "title": "Excessive Rainfall Outlook Explained: Marginal, Slight, Moderate, and High Risk",
+    "path": "/excessive-rainfall-outlook-explained/",
+    "description": "How excessive rainfall outlooks describe flash flood potential, what the risk categories mean, and how to use them before heavy rain starts.",
+    "category": "Flooding",
+    "keywords": "Excessive Rainfall Outlook Explained: Marginal, Slight, Moderate, and High Risk How excessive rainfall outlooks describe flash flood potential, what the risk categories mean, and how to use them before heavy rain starts. excessive rainfall outlook explained"
+  },
+  {
     "title": "F5 vs. EF5 — The Difference Between the Two Top Tornado Ratings",
     "path": "/f5-vs-ef5/",
     "description": "F5 (Fujita Scale, 1971-2007) required 261+ mph winds. EF5 (Enhanced Fujita, 2007+) requires 200+ mph. The scales differ in wind speed thresholds but not damage descriptions.",
@@ -761,6 +810,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A fire tornado — also called a firenado or fire whirl — is a real phenomenon, and some are true tornadoes generated by wildfires. Learn the difference between a fire whirl, a firenado, and a pyrotornado, with documented examples from Carr Fire, Canberra, and Camp Fire.",
     "category": "Extreme wildfire behavior",
     "keywords": "Fire Tornadoes — The Real Science of Firenadoes and Pyrocumulonimbus A fire tornado — also called a firenado or fire whirl — is a real phenomenon, and some are true tornadoes generated by wildfires. Learn the difference between a fire whirl, a firenado, and a pyrotornado, with documented examples from Carr Fire, Canberra, and Camp Fire. fire tornado"
+  },
+  {
+    "title": "Fire Weather Watch vs Red Flag Warning: What Is the Difference?",
+    "path": "/fire-weather-watch-vs-red-flag-warning/",
+    "description": "The difference between a fire weather watch and red flag warning, plus what homeowners, campers, and outdoor workers should do.",
+    "category": "Fire Weather",
+    "keywords": "Fire Weather Watch vs Red Flag Warning: What Is the Difference? The difference between a fire weather watch and red flag warning, plus what homeowners, campers, and outdoor workers should do. fire weather watch vs red flag warning"
   },
   {
     "title": "Flash Flood Safety — Turn Around Don't Drown",
@@ -824,6 +880,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "The Gainesville, Georgia tornado of April 6, 1936 was an F4 that killed 203 people — 70 of them in the Cooper Pants Factory alone. One of the deadliest tornado events in US history.",
     "category": "Guide",
     "keywords": "Gainesville, Georgia Tornado of 1936 — F4, 203 Killed The Gainesville, Georgia tornado of April 6, 1936 was an F4 that killed 203 people — 70 of them in the Cooper Pants Factory alone. One of the deadliest tornado events in US history. gainesville 1936"
+  },
+  {
+    "title": "Gale Warning Explained: When Marine Winds Become Dangerous",
+    "path": "/gale-warning-explained/",
+    "description": "What a gale warning means for boaters, coastal areas, and rough seas, plus how gales differ from storm warnings and small craft advisories.",
+    "category": "Marine Weather",
+    "keywords": "Gale Warning Explained: When Marine Winds Become Dangerous What a gale warning means for boaters, coastal areas, and rough seas, plus how gales differ from storm warnings and small craft advisories. gale warning explained"
   },
   {
     "title": "Gaylord, Michigan Tornado of May 20, 2022",
@@ -1267,6 +1330,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Indiana Tornadoes - Palm Sunday, Super Outbreak, and Modern Events Indiana averages 20 tornadoes per year. History includes 1965 Palm Sunday, 1974 Super Outbreak, 2005 Van Wert, and 2012 Henryville EF4. indiana tornadoes"
   },
   {
+    "title": "Infrared Satellite Explained: Cloud-Top Temperatures and Nighttime Weather",
+    "path": "/infrared-satellite-explained/",
+    "description": "How infrared satellite imagery works at night, why colder cloud tops matter, and how meteorologists use it for storms and tropical cyclones.",
+    "category": "Satellite",
+    "keywords": "Infrared Satellite Explained: Cloud-Top Temperatures and Nighttime Weather How infrared satellite imagery works at night, why colder cloud tops matter, and how meteorologists use it for storms and tropical cyclones. infrared satellite explained"
+  },
+  {
     "title": "International Tornado Records — Every Country's Worst",
     "path": "/international-tornado-records/",
     "description": "Tornadoes happen worldwide. Here are the deadliest, largest, and most historic tornadoes from every country that has had them documented — from Bangladesh to Argentina to New Zealand.",
@@ -1412,6 +1482,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "March averages 85 US tornadoes. Peak activity concentrates in Dixie Alley - the Deep South. First major month of tornado activity each year.",
     "category": "Guide",
     "keywords": "March Tornadoes - Early Spring Peak in Dixie Alley March averages 85 US tornadoes. Peak activity concentrates in Dixie Alley - the Deep South. First major month of tornado activity each year. march tornadoes"
+  },
+  {
+    "title": "Marine and Coastal Weather Guides: Rip Currents, Gales, Small Craft, Surge, and Coastal Flooding",
+    "path": "/marine-coastal-weather-guides/",
+    "description": "A hub for marine and coastal weather safety, including rip currents, small craft advisories, gale warnings, storm surge, and coastal flooding.",
+    "category": "Marine and Coastal Weather",
+    "keywords": "Marine and Coastal Weather Guides: Rip Currents, Gales, Small Craft, Surge, and Coastal Flooding A hub for marine and coastal weather safety, including rip currents, small craft advisories, gale warnings, storm surge, and coastal flooding. marine coastal weather guides"
   },
   {
     "title": "Marine Weather Explained — Buoy Data, Sea States, Coastal Warnings",
@@ -2604,6 +2681,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "How to Read the SPC Mesoanalysis Page The SPC Mesoanalysis page is updated hourly with dozens of atmospheric parameters overlaid on maps. Here is which panels actually matter, how to interpret STP, EHI, MLCAPE, and how to build a chase forecast from mesoanalysis. reading spc mesoanalysis"
   },
   {
+    "title": "Red Flag Warning Explained: Wind, Humidity, and Fast Fire Spread",
+    "path": "/red-flag-warning-explained/",
+    "description": "What a red flag warning means, why wind and low humidity matter, and how to reduce wildfire risk during dangerous fire weather.",
+    "category": "Fire Weather",
+    "keywords": "Red Flag Warning Explained: Wind, Humidity, and Fast Fire Spread What a red flag warning means, why wind and low humidity matter, and how to reduce wildfire risk during dangerous fire weather. red flag warning explained"
+  },
+  {
     "title": "Regina Cyclone (June 30, 1912) — F4, 28 Dead, Canada's Deadliest Tornado",
     "path": "/regina-1912-tornado/",
     "description": "The 1912 Regina Cyclone killed 28 people in Saskatchewan's capital — still the deadliest tornado in Canadian history, 110+ years later.",
@@ -2630,6 +2714,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Rip currents kill more Americans at beaches than sharks and lightning combined. Here is how to spot them, escape them, and never be caught in one.",
     "category": "Water safety",
     "keywords": "Rip Current Safety — What Actually Kills at the Beach Rip currents kill more Americans at beaches than sharks and lightning combined. Here is how to spot them, escape them, and never be caught in one. rip currents safety"
+  },
+  {
+    "title": "River Flood Warning Explained: Crest, Gauge, and Flood Stage",
+    "path": "/river-flood-warning-explained/",
+    "description": "How river flood warnings work, what flood stage and crest mean, and why rivers can keep rising after rain ends.",
+    "category": "Flooding",
+    "keywords": "River Flood Warning Explained: Crest, Gauge, and Flood Stage How river flood warnings work, what flood stage and crest mean, and why rivers can keep rising after rain ends. river flood warning explained"
   },
   {
     "title": "Rochelle-Fairdale, Illinois Tornado of April 9, 2015",
@@ -2667,6 +2758,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Safety Guides — Tornado Hub Tornado safety, by scenario. Where you are when a warning is issued determines what you should do. Guides for home, mobile home, car, apartment, high-rise, school, workplace, hospital, and more. safety"
   },
   {
+    "title": "Satellite Weather Guides: Visible, Infrared, Water Vapor, Smoke, and Storms",
+    "path": "/satellite-weather-guides/",
+    "description": "A hub for satellite weather explainers, including visible imagery, infrared imagery, water vapor loops, smoke, clouds, and tropical cyclone monitoring.",
+    "category": "Satellite Weather Guides",
+    "keywords": "Satellite Weather Guides: Visible, Infrared, Water Vapor, Smoke, and Storms A hub for satellite weather explainers, including visible imagery, infrared imagery, water vapor loops, smoke, clouds, and tropical cyclone monitoring. satellite weather guides"
+  },
+  {
     "title": "School Bus Tornado Safety: Drivers, Routes, and Shelter Decisions",
     "path": "/school-bus-tornado-safety/",
     "description": "What schools and bus drivers should consider when severe weather threatens during routes, field trips, arrivals, and dismissals.",
@@ -2695,6 +2793,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Search Tornado Hub Search Tornado Hub's tornado simulator, safety guides, historical case files, weather games, quizzes, radar explainers, and state tornado pages. search"
   },
   {
+    "title": "Severe Thunderstorm Watch vs Warning: What Each Alert Means",
+    "path": "/severe-thunderstorm-watch-vs-warning/",
+    "description": "The difference between a severe thunderstorm watch and warning, what hazards to expect, and when damaging wind or hail deserves shelter-like action.",
+    "category": "Severe Storms",
+    "keywords": "Severe Thunderstorm Watch vs Warning: What Each Alert Means The difference between a severe thunderstorm watch and warning, what hazards to expect, and when damaging wind or hail deserves shelter-like action. severe thunderstorm watch vs warning"
+  },
+  {
     "title": "Shelf Cloud vs Wall Cloud: How to Tell the Difference",
     "path": "/shelf-cloud-vs-wall-cloud/",
     "description": "Shelf clouds and wall clouds are often confused. Learn where each forms, what they mean, and why one is linked more closely with tornado potential.",
@@ -2714,6 +2819,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Skywarn is the National Weather Service severe-weather spotter network. Training is free, runs 2-3 hours, and gets you an official spotter ID. Here is what the class covers, how to find one near you, and how to report to your local NWS office.",
     "category": "Getting trained",
     "keywords": "Skywarn Spotter Training — What to Expect and How to Sign Up Skywarn is the National Weather Service severe-weather spotter network. Training is free, runs 2-3 hours, and gets you an official spotter ID. Here is what the class covers, how to find one near you, and how to report to your local NWS office. skywarn spotter training guide"
+  },
+  {
+    "title": "Small Craft Advisory Explained: Wind, Waves, and Boating Decisions",
+    "path": "/small-craft-advisory-explained/",
+    "description": "What a small craft advisory means, why boat size and operator experience matter, and how wind and waves combine to create dangerous marine conditions.",
+    "category": "Marine Weather",
+    "keywords": "Small Craft Advisory Explained: Wind, Waves, and Boating Decisions What a small craft advisory means, why boat size and operator experience matter, and how wind and waves combine to create dangerous marine conditions. small craft advisory explained"
   },
   {
     "title": "Smithville, Mississippi Tornado of 2011 — EF5, 23 Killed",
@@ -4921,6 +5033,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Virginia Tornadoes - Coastal Plain, Piedmont, and Mountain Events Virginia averages 20 tornadoes per year. History includes 2011 Pulaski EF3, 2016 Waverly outbreak, and multiple hurricane-spawned events. virginia tornadoes"
   },
   {
+    "title": "Visible Satellite Explained: Clouds, Shadows, Smoke, and Daylight Limits",
+    "path": "/visible-satellite-explained/",
+    "description": "How visible satellite imagery works, what it can reveal during daylight, and why it is useful for clouds, smoke, snow cover, and storm structure.",
+    "category": "Satellite",
+    "keywords": "Visible Satellite Explained: Clouds, Shadows, Smoke, and Daylight Limits How visible satellite imagery works, what it can reveal during daylight, and why it is useful for clouds, smoke, snow cover, and storm structure. visible satellite explained"
+  },
+  {
     "title": "Volcanic Eruptions and Weather — How Volcanoes Change Global Climate",
     "path": "/volcanic-eruptions-and-weather/",
     "description": "Large volcanic eruptions inject sulfate aerosols into the stratosphere, cooling global climate for years. Here is the science, the historical events, and what it might mean for future geoengineering.",
@@ -4956,6 +5075,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Tornado Watch vs Warning — What's the Difference? Tornado watch vs tornado warning: the critical difference explained in plain English. What each alert means, what to do, how to receive them, and why the distinction can save your life. Same for severe thunderstorm watch vs warning. watch vs warning"
   },
   {
+    "title": "Water Vapor Satellite Explained: Dry Air, Jet Streams, and Storm Energy",
+    "path": "/water-vapor-satellite-explained/",
+    "description": "What water vapor satellite imagery shows, why it is not a simple humidity map, and how it helps reveal storm systems and upper-level energy.",
+    "category": "Satellite",
+    "keywords": "Water Vapor Satellite Explained: Dry Air, Jet Streams, and Storm Energy What water vapor satellite imagery shows, why it is not a simple humidity map, and how it helps reveal storm systems and upper-level energy. water vapor satellite explained"
+  },
+  {
     "title": "Waterspout vs. Tornado — Difference, Danger, and How They Form",
     "path": "/waterspout-vs-tornado/",
     "description": "Waterspouts vs. tornadoes: waterspouts form over water, are usually weaker, and rarely cross onto land. But tornadic waterspouts are real tornadoes over water. Full comparison.",
@@ -4970,11 +5096,25 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Waterspouts — The Ocean's Tornadoes Waterspouts are tornadoes over water. Some are true tornadoes; some are weaker \"fair weather\" spouts. Here is how they form, where they occur, and why they matter to mariners. waterspouts explained"
   },
   {
+    "title": "Weather Alert Guides: Watches, Warnings, Advisories, and Outlooks",
+    "path": "/weather-alert-guides/",
+    "description": "A hub for weather alert explainers covering severe thunderstorms, flooding, fire weather, wind, fog, marine alerts, and coastal hazards.",
+    "category": "Weather Alert Guides",
+    "keywords": "Weather Alert Guides: Watches, Warnings, Advisories, and Outlooks A hub for weather alert explainers covering severe thunderstorms, flooding, fire weather, wind, fog, marine alerts, and coastal hazards. weather alert guides"
+  },
+  {
     "title": "Best Weather Apps 2026 — Complete Comparison",
     "path": "/weather-app-comparison-2026/",
     "description": "Every major weather app compared for 2026. AccuWeather, Weather Channel, Windy, RadarScope, Weather Underground, and more.",
     "category": "App reviews",
     "keywords": "Best Weather Apps 2026 — Complete Comparison Every major weather app compared for 2026. AccuWeather, Weather Channel, Windy, RadarScope, Weather Underground, and more. weather app comparison 2026"
+  },
+  {
+    "title": "Weather Balloon Sounding Explained: Skew-T Charts Without the Headache",
+    "path": "/weather-balloon-sounding-explained/",
+    "description": "What weather balloon soundings measure, why they matter for storms and winter weather, and how Skew-T charts help meteorologists see the atmosphere vertically.",
+    "category": "Forecasting",
+    "keywords": "Weather Balloon Sounding Explained: Skew-T Charts Without the Headache What weather balloon soundings measure, why they matter for storms and winter weather, and how Skew-T charts help meteorologists see the atmosphere vertically. weather balloon sounding explained"
   },
   {
     "title": "Weather Balloons and Radiosondes — How Atmospheric Data Gets Collected",
@@ -5453,11 +5593,25 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Will My House Be Destroyed By a Tornado? Damage Probability Explained What are the odds my house will be destroyed by a tornado? Understand tornado intensity distribution, home construction, geography, and realistic risk assessment. will my house be destroyed by a tornado"
   },
   {
+    "title": "Wind Advisory vs High Wind Warning: Gusts, Damage, and Travel Risk",
+    "path": "/wind-advisory-vs-high-wind-warning/",
+    "description": "What wind advisories and high wind warnings mean, how gusts cause damage, and why high-profile vehicles, trees, and power lines are vulnerable.",
+    "category": "Wind",
+    "keywords": "Wind Advisory vs High Wind Warning: Gusts, Damage, and Travel Risk What wind advisories and high wind warnings mean, how gusts cause damage, and why high-profile vehicles, trees, and power lines are vulnerable. wind advisory vs high wind warning"
+  },
+  {
     "title": "Wind Chill vs Heat Index — What Each Measures and When",
     "path": "/wind-chill-vs-heat-index/",
     "description": "Wind chill and heat index both estimate what temperature \"feels like\" — but they measure very different physical effects. Here is what each is, when to use it, and why the numbers can be misleading.",
     "category": "Weather science",
     "keywords": "Wind Chill vs Heat Index — What Each Measures and When Wind chill and heat index both estimate what temperature \"feels like\" — but they measure very different physical effects. Here is what each is, when to use it, and why the numbers can be misleading. wind chill vs heat index"
+  },
+  {
+    "title": "Wind Shear Explained: Why Changing Wind With Height Shapes Severe Storms",
+    "path": "/wind-shear-explained/",
+    "description": "How wind shear helps organize thunderstorms, supercells, squall lines, and tornado potential, plus why speed and direction changes both matter.",
+    "category": "Severe Storms",
+    "keywords": "Wind Shear Explained: Why Changing Wind With Height Shapes Severe Storms How wind shear helps organize thunderstorms, supercells, squall lines, and tornado potential, plus why speed and direction changes both matter. wind shear explained"
   },
   {
     "title": "Wind Speed Converter — mph, km/h, knots, m/s, Beaufort, EF, Hurricane",
