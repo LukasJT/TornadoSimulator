@@ -16,7 +16,12 @@
       '.inline-ad,.native-ad-wrap{clear:both}',
       '@media (max-width:767px){.inline-ad iframe[width="728"]{display:none!important}}',
       '@media (max-width:767px){.inline-ad iframe[width="468"]{display:none!important}}',
-      '@media (max-width:1319px){.side-ad,#adsterra-side,#adsterra-left{display:none!important}}',
+      '.ad-rail{display:none;position:fixed;top:96px;z-index:40;width:160px;min-height:300px;pointer-events:auto}',
+      '.ad-rail iframe{border:0;display:block;max-width:160px;background:transparent}',
+      '.ad-rail-label{font:10px/1.2 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#8b8f9c;text-align:center;margin-bottom:6px}',
+      '.ad-rail-left{left:10px}.ad-rail-right{right:10px}',
+      '@media (min-width:1240px){.ad-rail{display:block}}',
+      '@media (max-width:1239px){.side-ad,#adsterra-side,#adsterra-left,.ad-rail{display:none!important}}',
       '.mobile-ad-swap{display:none;justify-content:center;margin:12px auto;width:100%;min-height:50px}',
       '@media (max-width:767px){.mobile-ad-swap{display:flex}}'
     ].join('\n');
@@ -99,6 +104,55 @@
     s.setAttribute('data-cfasync', 'false');
     s.src = CFG.socialBarSrc.indexOf('//') === 0 ? CFG.socialBarSrc : '//' + CFG.socialBarSrc;
     document.body.appendChild(s);
+  }
+
+  function isArticleLikePage() {
+    if (document.body && document.body.hasAttribute('data-no-side-ads')) return false;
+    if (isGamePage()) return false;
+    if (document.querySelector('article')) return true;
+    return location.pathname === '/articles/' || location.pathname.indexOf('/articles/') === 0;
+  }
+
+  function makeAdFrame(key, width, height) {
+    var frame = document.createElement('iframe');
+    frame.width = String(width);
+    frame.height = String(height);
+    frame.setAttribute('frameborder', '0');
+    frame.setAttribute('scrolling', 'no');
+    frame.style.cssText = 'width:' + width + 'px;height:' + height + 'px;border:0;overflow:hidden;';
+    frame.srcdoc = [
+      '<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1">',
+      '<style>html,body{margin:0;padding:0;overflow:hidden;background:transparent}</style></head><body>',
+      '<script>var atOptions={key:"' + key + '",format:"iframe",height:' + height + ',width:' + width + ',params:{}};<\/script>',
+      '<script src="https://www.highperformanceformat.com/' + key + '/invoke.js"><\/script>',
+      '</body></html>'
+    ].join('');
+    return frame;
+  }
+
+  function injectSideRailAds() {
+    if (!isArticleLikePage()) return;
+    if (!CFG.banner160x600 && !CFG.banner160x300) return;
+    var hasLeftRail = !!document.querySelector('.ad-rail-left,#adsterra-left');
+    var hasRightRail = !!document.querySelector('.ad-rail-right,#adsterra-side');
+
+    if (CFG.banner160x300 && !hasLeftRail) {
+      var left = document.createElement('aside');
+      left.className = 'ad-rail ad-rail-left';
+      left.setAttribute('aria-label', 'Advertisement');
+      left.innerHTML = '<div class="ad-rail-label">Ad</div>';
+      left.appendChild(makeAdFrame(CFG.banner160x300, 160, 300));
+      document.body.appendChild(left);
+    }
+
+    if (CFG.banner160x600 && !hasRightRail) {
+      var right = document.createElement('aside');
+      right.className = 'ad-rail ad-rail-right';
+      right.setAttribute('aria-label', 'Advertisement');
+      right.innerHTML = '<div class="ad-rail-label">Ad</div>';
+      right.appendChild(makeAdFrame(CFG.banner160x600, 160, 600));
+      document.body.appendChild(right);
+    }
   }
 
   function hasExistingNativeBanner() {
@@ -194,6 +248,7 @@
     removeUnsafeClickAds();
     injectMobileBanners();
     lazyLoadBanners();
+    injectSideRailAds();
     injectSocialBar();
     injectNativeBanners();
     injectInPagePush();

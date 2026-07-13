@@ -23,8 +23,8 @@
 <link rel="canonical" href="https://www.tornadosimulator.net/tornado-namer/" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%AA%EF%B8%8F%3C/text%3E%3C/svg%3E" />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="https://unpkg.com/leaflet
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" />@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"VideoGame","name":"Tornado Naming Quiz","alternateName":["Tornado Namer","Tornado Name Game","Tornado Map Quiz"],"genre":"Map Quiz","description":"Type the names of famous tornadoes on a real map. 200+ documented events across US, Canada, and Worldwide regions.","url":"https://www.tornadosimulator.net/tornado-namer/","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"},"playMode":"SinglePlayer","gamePlatform":"Web browser","applicationCategory":"Game","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","ratingCount":"142","bestRating":"5"}}
@@ -49,29 +49,29 @@
 </script>
 <style>
 :root {
-  --bg: #f5f7fb;
-  --bg-alt: #eef1f7;
+  --bg: #f7f7f4;
+  --bg-alt: #eeeeea;
   --surface: #ffffff;
-  --surface-hover: #f8fafc;
-  --text: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #94a3b8;
-  --border: #e2e8f0;
-  --border-strong: #cbd5e1;
+  --surface-hover: #fafafa;
+  --text: #171717;
+  --text-secondary: #525252;
+  --text-muted: #8a8a8a;
+  --border: #deded8;
+  --border-strong: #c7c7bd;
   --accent: #2563eb;
   --accent-hover: #1d4ed8;
   --accent-soft: #dbeafe;
-  --correct: #16a34a;
+  --correct: #15803d;
   --correct-soft: #dcfce7;
   --wrong: #dc2626;
   --wrong-soft: #fee2e2;
   --link: #2563eb;
   --serif: "Fraunces", Georgia, serif;
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --shadow-sm: 0 1px 2px rgba(15,23,42,0.04);
-  --shadow: 0 1px 3px rgba(15,23,42,0.06), 0 1px 2px rgba(15,23,42,0.04);
-  --shadow-md: 0 4px 12px rgba(15,23,42,0.08), 0 2px 4px rgba(15,23,42,0.04);
-  --shadow-lg: 0 12px 24px rgba(15,23,42,0.08), 0 4px 8px rgba(15,23,42,0.04);
+  --shadow-sm: none;
+  --shadow: none;
+  --shadow-md: none;
+  --shadow-lg: 0 18px 40px rgba(15,23,42,0.18);
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.5; -webkit-font-smoothing: antialiased; min-height: 100vh; display: flex; flex-direction: column; }
@@ -113,14 +113,14 @@ a:hover { text-decoration: underline; }
 .header {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
-  padding: 22px 20px 16px;
+  padding: 42px 20px 24px;
   text-align: center;
 }
 .header h1 {
-  font-family: var(--serif);
-  font-size: clamp(24px, 3.6vw, 34px);
-  font-weight: 700; letter-spacing: -0.02em;
-  margin-bottom: 4px;
+  font-family: var(--sans);
+  font-size: clamp(34px, 5vw, 56px);
+  font-weight: 800; letter-spacing: -0.01em;
+  margin-bottom: 8px;
   color: var(--text);
   line-height: 1.1;
 }
@@ -129,37 +129,61 @@ a:hover { text-decoration: underline; }
 }
 .header p {
   color: var(--text-secondary);
-  font-size: 14px;
+  font-size: 17px;
   max-width: 640px; margin: 0 auto;
+}
+.play-counts {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px auto 0;
+  max-width: 860px;
+}
+.play-pill {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text);
+  background: var(--bg);
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.play-pill span {
+  color: var(--text-muted);
+  font-weight: 600;
 }
 
 /* Controls bar */
 .controls {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
-  padding: 14px 20px;
+  padding: 16px 20px;
   display: flex; justify-content: center; gap: 12px;
   flex-wrap: wrap; align-items: center;
 }
 .control-group {
-  display: flex; gap: 2px;
-  background: var(--bg-alt);
-  border-radius: 10px; padding: 3px;
+  display: flex; gap: 8px;
+  background: transparent;
+  border-radius: 0; padding: 0;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .control-btn {
-  padding: 7px 14px;
-  font-size: 13px; font-weight: 600;
+  padding: 9px 14px;
+  font-size: 14px; font-weight: 700;
   color: var(--text-secondary);
-  background: transparent; border: none;
-  cursor: pointer; border-radius: 7px;
+  background: var(--surface); border: 1px solid var(--border);
+  cursor: pointer; border-radius: 999px;
   font-family: var(--sans); white-space: nowrap;
   transition: all 0.15s;
 }
 .control-btn.active {
-  background: var(--surface); color: var(--accent);
-  box-shadow: var(--shadow-sm);
+  background: #111827; color: white;
+  border-color: #111827;
+  box-shadow: none;
 }
-.control-btn:not(.active):hover { color: var(--text); }
+.control-btn:not(.active):hover { color: var(--text); border-color: var(--border-strong); }
 
 .btn {
   padding: 8px 18px;
@@ -181,9 +205,9 @@ a:hover { text-decoration: underline; }
 .game-area {
   flex: 1;
   display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 14px;
-  padding: 14px;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  gap: 12px;
+  padding: 12px;
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
@@ -197,24 +221,24 @@ a:hover { text-decoration: underline; }
 .map-panel {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
   min-height: 560px;
-  box-shadow: var(--shadow);
   position: relative;
 }
-#map { width: 100%; height: 100%; min-height: 560px; background: #eef2f7; }
-.leaflet-container { background: #eef2f7; font-family: var(--sans) !important; }
+#map { width: 100%; height: 100%; min-height: 560px; background: #e9ecef; }
+.leaflet-container { background: #e9ecef; font-family: var(--sans) !important; }
+.leaflet-container .leaflet-control-attribution { font-size: 10px; }
+.leaflet-control-zoom a { color: #111827 !important; text-decoration: none !important; }
 
 .side-panel {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 20px;
   display: flex; flex-direction: column; gap: 14px;
   overflow-y: auto;
   max-height: calc(100vh - 210px);
-  box-shadow: var(--shadow);
 }
 
 .stats-row {
@@ -251,8 +275,8 @@ a:hover { text-decoration: underline; }
   padding: 13px 18px;
   font-size: 15px; font-weight: 600;
   background: var(--surface);
-  border: 2px solid var(--border-strong);
-  border-radius: 10px;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
   color: var(--text);
   font-family: var(--sans);
   outline: none;
@@ -279,7 +303,7 @@ a:hover { text-decoration: underline; }
   min-height: 120px;
   background: var(--bg-alt);
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 10px;
 }
 .found-list h4 {
@@ -403,11 +427,11 @@ a:hover { text-decoration: underline; }
 
 /* Custom map pins */
 .custom-pin {
-  width: 14px; height: 14px;
-  background: var(--correct);
+  width: 12px; height: 12px;
+  background: #2563eb;
   border: 3px solid #fff;
   border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+  box-shadow: 0 1px 5px rgba(0,0,0,0.35);
 }
 .custom-pin.reveal {
   background: var(--wrong);
@@ -473,8 +497,14 @@ a:hover { text-decoration: underline; }
 </nav>
 
 <header class="header">
-  <h1>Tornado <em>Naming Quiz</em></h1>
-  <p>Type famous tornado names — correct guesses drop on the map. <strong id="db-count">208</strong> tornadoes documented.</p>
+  <h1>How many tornadoes can you name?</h1>
+  <p>Type famous tornadoes. Correct guesses appear on the map. <strong id="db-count">208</strong> documented events.</p>
+  <div class="play-counts" aria-label="Game modes">
+    <span class="play-pill">United States <span>175+ tornadoes</span></span>
+    <span class="play-pill">US + Canada <span>185+ tornadoes</span></span>
+    <span class="play-pill">World <span>200+ tornadoes</span></span>
+    <span class="play-pill">Free to play <span>no signup</span></span>
+  </div>
 </header>
 
 <div class="controls">
@@ -835,10 +865,13 @@ function initMap() {
     subdomains: 'abcd',
     maxZoom: 19,
   }).addTo(map);
+  setTimeout(() => map.invalidateSize(), 100);
+  window.addEventListener('resize', () => map.invalidateSize());
 }
 
 function fitMapToRegion() {
   if (!map) return;
+  map.invalidateSize();
   const bounds = {
     'us': [[24, -125], [50, -66]],
     'canada': [[42, -140], [70, -52]],
