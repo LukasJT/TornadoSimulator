@@ -287,6 +287,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Blizzard and Whiteout Driving Safety: When Roads Disappear How blizzards and whiteouts reduce visibility, why pileups happen, and what to do if you are caught on the road during sudden blowing snow. blizzard whiteout driving safety"
   },
   {
+    "title": "Bomb Cyclone Explained: Rapidly Strengthening Storms and Big Weather Impacts",
+    "path": "/bomb-cyclone-explained/",
+    "description": "What bomb cyclone means, why pressure can fall quickly, and how rapidly intensifying storms can create wind, snow, rain, coastal flooding, and travel disruptions.",
+    "category": "Storm Systems",
+    "keywords": "Bomb Cyclone Explained: Rapidly Strengthening Storms and Big Weather Impacts What bomb cyclone means, why pressure can fall quickly, and how rapidly intensifying storms can create wind, snow, rain, coastal flooding, and travel disruptions. bomb cyclone explained"
+  },
+  {
     "title": "Building Codes and Tornadoes — What Actually Improved",
     "path": "/building-code-tornado-improvements/",
     "description": "Building codes improved dramatically after certain tornado outbreaks. Here is what changed, when, and what still needs improvement.",
@@ -574,6 +581,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Dew Point Calculator — Convert Temperature and Humidity to Dew Point | Tornado Simulator A free dew point calculator. Enter temperature and relative humidity (or wet bulb) to get exact dew point. Includes chart, comfort description, and severe weather relevance. dew point calculator"
   },
   {
+    "title": "Dew Point vs Humidity: Which One Tells You How Sticky It Feels?",
+    "path": "/dew-point-vs-humidity/",
+    "description": "Dew point and relative humidity both describe moisture, but dew point is often better for understanding comfort, storms, fog, and oppressive summer air.",
+    "category": "Weather Science",
+    "keywords": "Dew Point vs Humidity: Which One Tells You How Sticky It Feels? Dew point and relative humidity both describe moisture, but dew point is often better for understanding comfort, storms, fog, and oppressive summer air. dew point vs humidity"
+  },
+  {
     "title": "Dixie Alley Specific Safety — What Southern Chasers and Residents Should Know",
     "path": "/dixie-alley-specific-safety/",
     "description": "Living in the Dixie Alley states requires different tornado safety than the Plains. Here is what changes when your tornadoes are HP, nighttime, tree-covered, and rain-wrapped.",
@@ -686,6 +700,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Elkhart-Dunlap, Indiana Tornado of 1965 - Palm Sunday F4, 47 Killed The Elkhart-Dunlap, Indiana tornado of April 11, 1965 was an F4 that killed 47 people. One of the deadliest tornadoes of the Palm Sunday outbreak. elkhart 1965"
   },
   {
+    "title": "Ensemble Forecast Explained: Why Meteorologists Run Many Forecasts at Once",
+    "path": "/ensemble-forecast-explained/",
+    "description": "What ensemble forecasts are, why they show uncertainty, and how probabilities can be more useful than a single deterministic weather model run.",
+    "category": "Forecasting",
+    "keywords": "Ensemble Forecast Explained: Why Meteorologists Run Many Forecasts at Once What ensemble forecasts are, why they show uncertainty, and how probabilities can be more useful than a single deterministic weather model run. ensemble forecast explained"
+  },
+  {
     "title": "Every EF5 Tornado in US History — Complete List (2007–Present)",
     "path": "/every-ef5-tornado/",
     "description": "Every EF5 tornado ever officially rated in the United States. All 9 EF5 events since the Enhanced Fujita Scale went into effect in 2007, plus notable F5 tornadoes of the Fujita era (1953–2007).",
@@ -775,6 +796,20 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Weather forecasts have real uncertainty. Here is how to interpret it, why it matters, and why we should communicate it better.",
     "category": "Forecasting science",
     "keywords": "Forecast Uncertainty — Why We Should Talk About It More Weather forecasts have real uncertainty. Here is how to interpret it, why it matters, and why we should communicate it better. forecast uncertainty explained"
+  },
+  {
+    "title": "Weather Forecasting Guides: Models, Ensembles, Radar, and Uncertainty",
+    "path": "/forecasting-guides/",
+    "description": "A practical forecasting hub covering weather models, ensembles, radar basics, forecast uncertainty, and how to read weather guidance without overreacting to one model run.",
+    "category": "Forecasting Guides",
+    "keywords": "Weather Forecasting Guides: Models, Ensembles, Radar, and Uncertainty A practical forecasting hub covering weather models, ensembles, radar basics, forecast uncertainty, and how to read weather guidance without overreacting to one model run. forecasting guides"
+  },
+  {
+    "title": "Frost Watch vs Freeze Warning: What Gardeners and Growers Should Know",
+    "path": "/frost-watch-vs-freeze-warning/",
+    "description": "The difference between frost advisories, freeze watches, and freeze warnings, plus practical steps for plants, pipes, pets, and outdoor water.",
+    "category": "Agriculture Weather",
+    "keywords": "Frost Watch vs Freeze Warning: What Gardeners and Growers Should Know The difference between frost advisories, freeze watches, and freeze warnings, plus practical steps for plants, pipes, pets, and outdoor water. frost watch vs freeze warning"
   },
   {
     "title": "Fujita Scale vs Enhanced Fujita Scale — What Actually Changed",
@@ -894,6 +929,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Hawaii averages under 1 tornado per year - the rarest US state. Waterspouts and rare small tornadoes do occur during winter storms.",
     "category": "Guide",
     "keywords": "Hawaii Tornadoes - Rarest US State for Tornadoes Hawaii averages under 1 tornado per year - the rarest US state. Waterspouts and rare small tornadoes do occur during winter storms. hawaii tornadoes"
+  },
+  {
+    "title": "Heat Dome Explained: Why Some Heat Waves Get Stuck",
+    "path": "/heat-dome-explained/",
+    "description": "What a heat dome is, why high pressure can trap hot air, and why long-duration heat waves are especially dangerous for people, pets, roads, and power grids.",
+    "category": "Heat",
+    "keywords": "Heat Dome Explained: Why Some Heat Waves Get Stuck What a heat dome is, why high pressure can trap hot air, and why long-duration heat waves are especially dangerous for people, pets, roads, and power grids. heat dome explained"
   },
   {
     "title": "Heat Index Danger Levels: Why Humidity Makes Heat More Dangerous",
@@ -1120,6 +1162,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Hurricane Forecast Accuracy — Track vs Intensity Hurricane track forecasts have dramatically improved since 1990. Intensity forecasts are still lagging. Here is what the data shows and why. hurricane forecast accuracy"
   },
   {
+    "title": "Hurricane Guides: Storm Surge, Forecasts, Evacuation, and Tropical Alerts",
+    "path": "/hurricane-guides/",
+    "description": "A hub for Tornado Hub hurricane and tropical cyclone guides, including storm surge, spaghetti models, evacuation zones, typhoons, and hurricane safety.",
+    "category": "Hurricane Guides",
+    "keywords": "Hurricane Guides: Storm Surge, Forecasts, Evacuation, and Tropical Alerts A hub for Tornado Hub hurricane and tropical cyclone guides, including storm surge, spaghetti models, evacuation zones, typhoons, and hurricane safety. hurricane guides"
+  },
+  {
     "title": "Hurricane Hunter Aircraft — Inside the WC-130J and P-3",
     "path": "/hurricane-hunter-aircraft/",
     "description": "The Air Force Reserve's Hurricane Hunters and NOAA's WP-3D Orions fly directly into hurricanes to measure them. Here is what they fly, what they measure, and how they survive.",
@@ -1281,6 +1330,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Kentucky Tornadoes - Mayfield and the Growing Dixie Alley Risk Kentucky averages 25 tornadoes per year. Mayfield 2021 EF4 killed 57 - Kentucky's deadliest modern event. State sits on the northern edge of Dixie Alley. kentucky tornadoes"
   },
   {
+    "title": "Lake-Effect Snow Explained: Why Narrow Snow Bands Dump So Much Snow",
+    "path": "/lake-effect-snow-explained/",
+    "description": "How lake-effect snow forms, why bands can be intense and narrow, and why one town can get buried while another nearby town sees little snow.",
+    "category": "Winter Weather",
+    "keywords": "Lake-Effect Snow Explained: Why Narrow Snow Bands Dump So Much Snow How lake-effect snow forms, why bands can be intense and narrow, and why one town can get buried while another nearby town sees little snow. lake effect snow explained"
+  },
+  {
     "title": "Landspouts — The Non-Supercell Tornado",
     "path": "/landspouts-vs-tornadoes/",
     "description": "Landspouts are tornadoes that form without supercells — from developing thunderstorms interacting with pre-existing surface rotation. Here is how they differ from supercell tornadoes and why they matter.",
@@ -1342,6 +1398,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Maine averages 2 tornadoes per year. Northern latitude, mountains, and ocean influence make tornadoes very rare.",
     "category": "Guide",
     "keywords": "Maine Tornadoes - Rare Northern New England Events Maine averages 2 tornadoes per year. Northern latitude, mountains, and ocean influence make tornadoes very rare. maine tornadoes"
+  },
+  {
+    "title": "Mammatus Clouds Explained: What Those Pouch-Shaped Clouds Mean",
+    "path": "/mammatus-clouds-explained/",
+    "description": "Mammatus clouds look ominous, but what do they actually mean? Learn how they form and why they often appear near strong thunderstorms.",
+    "category": "Clouds",
+    "keywords": "Mammatus Clouds Explained: What Those Pouch-Shaped Clouds Mean Mammatus clouds look ominous, but what do they actually mean? Learn how they form and why they often appear near strong thunderstorms. mammatus clouds explained"
   },
   {
     "title": "March Tornadoes - Early Spring Peak in Dixie Alley",
@@ -1783,6 +1846,20 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "The Plainfield, Illinois tornado of August 28, 1990 was an F5 with 29 killed. The only US F5 for which no tornado warning was ever issued — leading to fundamental changes in NWS warning protocols.",
     "category": "Guide",
     "keywords": "Plainfield, Illinois Tornado of 1990 — F5 With No Warning The Plainfield, Illinois tornado of August 28, 1990 was an F5 with 29 killed. The only US F5 for which no tornado warning was ever issued — leading to fundamental changes in NWS warning protocols. plainfield 1990"
+  },
+  {
+    "title": "Polar Vortex Explained: What It Is and What It Is Not",
+    "path": "/polar-vortex-explained/",
+    "description": "The polar vortex is often blamed for cold snaps. Learn what it actually is, how disruptions can affect winter weather, and why not every cold day is a polar vortex event.",
+    "category": "Winter Weather",
+    "keywords": "Polar Vortex Explained: What It Is and What It Is Not The polar vortex is often blamed for cold snaps. Learn what it actually is, how disruptions can affect winter weather, and why not every cold day is a polar vortex event. polar vortex explained"
+  },
+  {
+    "title": "Pressure Gradient Explained: Why Tight Isobars Mean Stronger Wind",
+    "path": "/pressure-gradient-wind-explained/",
+    "description": "How pressure differences create wind, why tight isobars signal stronger winds, and how pressure gradients shape storms, fronts, and coastal gales.",
+    "category": "Weather Science",
+    "keywords": "Pressure Gradient Explained: Why Tight Isobars Mean Stronger Wind How pressure differences create wind, why tight isobars signal stronger winds, and how pressure gradients shape storms, fronts, and coastal gales. pressure gradient wind explained"
   },
   {
     "title": "Barometric Pressure Converter — mb, inHg, hPa, kPa, mmHg, psi | Tornado Simulator",
@@ -2443,11 +2520,25 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "The Xenia 1974 F5 Quiz The signature F5 of the 1974 Super Outbreak. quiz/xenia 1974 quiz"
   },
   {
+    "title": "Radar Reflectivity Explained: What the Colors on Weather Radar Mean",
+    "path": "/radar-reflectivity-explained/",
+    "description": "Understand radar reflectivity colors, rain and hail intensity, bright banding, ground clutter, and why radar colors are not a perfect severe weather scale.",
+    "category": "Radar",
+    "keywords": "Radar Reflectivity Explained: What the Colors on Weather Radar Mean Understand radar reflectivity colors, rain and hail intensity, bright banding, ground clutter, and why radar colors are not a perfect severe weather scale. radar reflectivity explained"
+  },
+  {
     "title": "Radar Signature Game — Spot the Hook Echo, TDS, Bow Echo",
     "path": "/radar-signature-game/",
     "description": "A 10-round game where you identify radar signatures — hook echo, tornado debris signature, bow echo, BWER, mesocyclone couplet — from simulated radar images. Great practice for storm spotters.",
     "category": "📡 Spotter training",
     "keywords": "Radar Signature Game — Spot the Hook Echo, TDS, Bow Echo A 10-round game where you identify radar signatures — hook echo, tornado debris signature, bow echo, BWER, mesocyclone couplet — from simulated radar images. Great practice for storm spotters. radar signature game"
+  },
+  {
+    "title": "Radar Velocity Explained: Reading Wind on Doppler Radar",
+    "path": "/radar-velocity-explained/",
+    "description": "A plain-language guide to radar velocity, inbound and outbound winds, rotation, couplets, limitations, and why meteorologists use velocity during tornado warnings.",
+    "category": "Radar",
+    "keywords": "Radar Velocity Explained: Reading Wind on Doppler Radar A plain-language guide to radar velocity, inbound and outbound winds, rotation, couplets, limitations, and why meteorologists use velocity during tornado warnings. radar velocity explained"
   },
   {
     "title": "Rain-Wrapped Tornadoes: Why They Are So Dangerous and Hard to See",
@@ -2604,6 +2695,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Search Tornado Hub Search Tornado Hub's tornado simulator, safety guides, historical case files, weather games, quizzes, radar explainers, and state tornado pages. search"
   },
   {
+    "title": "Shelf Cloud vs Wall Cloud: How to Tell the Difference",
+    "path": "/shelf-cloud-vs-wall-cloud/",
+    "description": "Shelf clouds and wall clouds are often confused. Learn where each forms, what they mean, and why one is linked more closely with tornado potential.",
+    "category": "Storm Clouds",
+    "keywords": "Shelf Cloud vs Wall Cloud: How to Tell the Difference Shelf clouds and wall clouds are often confused. Learn where each forms, what they mean, and why one is linked more closely with tornado potential. shelf cloud vs wall cloud"
+  },
+  {
     "title": "Tornado Simulator — Multi-Variable Damage Modeler",
     "path": "/simulator/",
     "description": "Interactive tornado damage simulator — click anywhere in the world to place an EF0–EF5 tornado and model real fatalities, structural damage, and economic loss. US Census + Statistics Canada + UN population data for 173+ countries. Guides to deadliest/costliest tornadoes, every EF5 recorded, and the EF Scale.",
@@ -2665,6 +2763,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Southeast US tornadoes: MS, AL, TN, GA, LA see more tornado deaths than any region in the modern era. Nighttime tornadoes, mobile homes, and rain-wrapped supercells make Southeast tornadoes especially dangerous.",
     "category": "Guide",
     "keywords": "Southeast Tornadoes - The Deadliest Region for Modern Tornado Deaths Southeast US tornadoes: MS, AL, TN, GA, LA see more tornado deaths than any region in the modern era. Nighttime tornadoes, mobile homes, and rain-wrapped supercells make Southeast tornadoes especially dangerous. southeast tornadoes"
+  },
+  {
+    "title": "Squall Line Explained: Fast-Moving Thunderstorm Lines and Damaging Wind Risk",
+    "path": "/squall-line-explained/",
+    "description": "How squall lines form, why they can produce damaging straight-line winds, embedded tornadoes, hail, and sudden travel hazards.",
+    "category": "Thunderstorms",
+    "keywords": "Squall Line Explained: Fast-Moving Thunderstorm Lines and Damaging Wind Risk How squall lines form, why they can produce damaging straight-line winds, embedded tornadoes, hail, and sudden travel hazards. squall line explained"
   },
   {
     "title": "St. Louis Tornado of 1896 — 255 Killed, 3rd Deadliest US Tornado",
@@ -4788,6 +4893,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Utah Tornadoes - Rare Great Basin Events Utah averages 2 tornadoes per year - one of the lowest counts in the country. History includes 1999 Salt Lake City F2 tornado. utah tornadoes"
   },
   {
+    "title": "UV Index Guide: What the Numbers Mean for Sunburn and Skin Risk",
+    "path": "/uv-index-guide/",
+    "description": "A simple UV Index guide explaining low, moderate, high, very high, and extreme UV levels, plus clouds, shade, altitude, snow, water, and sunscreen timing.",
+    "category": "Sun Safety",
+    "keywords": "UV Index Guide: What the Numbers Mean for Sunburn and Skin Risk A simple UV Index guide explaining low, moderate, high, very high, and extreme UV levels, plus clouds, shade, altitude, snow, water, and sunscreen timing. uv index guide"
+  },
+  {
     "title": "Vermont Tornadoes - Extremely Rare Northern Events",
     "path": "/vermont-tornadoes/",
     "description": "Vermont averages 1-2 tornadoes per year. Green Mountains and northern position make tornadoes very rare.",
@@ -4949,6 +5061,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Weather Memory Match — Free Interactive Weather Card Game | Tornado Simulator A weather-themed memory match card game. Match pairs of weather symbols — tornadoes, hurricanes, hail, and more. Three difficulty levels. Free to play in browser. weather memory match"
   },
   {
+    "title": "GFS vs European Model: Why Weather Models Disagree",
+    "path": "/weather-models-gfs-vs-euro/",
+    "description": "Why the GFS and European model can show different storm tracks, snow totals, hurricane paths, or temperatures, and how forecasters weigh model guidance.",
+    "category": "Forecasting",
+    "keywords": "GFS vs European Model: Why Weather Models Disagree Why the GFS and European model can show different storm tracks, snow totals, hurricane paths, or temperatures, and how forecasters weigh model guidance. weather models gfs vs euro"
+  },
+  {
     "title": "Best Weather Podcasts and YouTube Channels — 2026 Guide",
     "path": "/weather-podcasts-and-youtube/",
     "description": "A curated guide to the best weather podcasts, YouTube channels, and Twitter/X accounts for hobbyists, chasers, and professional meteorologists. From Weather Geeks to Ryan Hall Y'all to the Storm Prediction Center feed.",
@@ -4963,11 +5082,25 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "NOAA Weather Radio Buying Guide — What to Get in 2026 NOAA Weather Radio is still the most reliable way to receive severe weather alerts. This guide compares Midland, Sangean, Eton, and RadioShack models — from bedside alarms to hand-cranked emergency units. weather radio buying guide"
   },
   {
+    "title": "Weather Safety Guides: Heat, Lightning, Flooding, Winter Storms, Hail, and Smoke",
+    "path": "/weather-safety-guides/",
+    "description": "Safety-focused weather guides for fast decisions during heat waves, lightning, floods, winter storms, hail, smoke, rip currents, and severe thunderstorms.",
+    "category": "Weather Safety",
+    "keywords": "Weather Safety Guides: Heat, Lightning, Flooding, Winter Storms, Hail, and Smoke Safety-focused weather guides for fast decisions during heat waves, lightning, floods, winter storms, hail, smoke, rip currents, and severe thunderstorms. weather safety guides"
+  },
+  {
     "title": "Weather Satellites — Every Satellite and What It Does",
     "path": "/weather-satellite-guide/",
     "description": "A guide to every US and international weather satellite. GOES, NOAA-20, JPSS, EUMETSAT, and the smaller ones. What each does and where the data goes.",
     "category": "Space assets",
     "keywords": "Weather Satellites — Every Satellite and What It Does A guide to every US and international weather satellite. GOES, NOAA-20, JPSS, EUMETSAT, and the smaller ones. What each does and where the data goes. weather satellite guide"
+  },
+  {
+    "title": "Weather Science Guides: Dew Point, Pressure, Fronts, Clouds, and Storm Systems",
+    "path": "/weather-science-guides/",
+    "description": "Beginner-friendly weather science explainers about humidity, pressure, fronts, clouds, heat domes, polar vortex events, bomb cyclones, and squall lines.",
+    "category": "Weather Science",
+    "keywords": "Weather Science Guides: Dew Point, Pressure, Fronts, Clouds, and Storm Systems Beginner-friendly weather science explainers about humidity, pressure, fronts, clouds, heat domes, polar vortex events, bomb cyclones, and squall lines. weather science guides"
   },
   {
     "title": "Weather Station Installation — DIY Guide",
@@ -5199,6 +5332,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Why the western North Pacific can produce typhoons across much of the year, what peak season means, and how residents should think about readiness.",
     "category": "Typhoons",
     "keywords": "Western Pacific Typhoon Season: Why It Can Last So Long Why the western North Pacific can produce typhoons across much of the year, what peak season means, and how residents should think about readiness. western pacific typhoon season"
+  },
+  {
+    "title": "Wet-Bulb Temperature Explained: The Heat Metric That Matters for the Human Body",
+    "path": "/wet-bulb-temperature-explained/",
+    "description": "Learn what wet-bulb temperature means, why it combines heat and humidity, and why high wet-bulb values can become dangerous even in shade.",
+    "category": "Heat",
+    "keywords": "Wet-Bulb Temperature Explained: The Heat Metric That Matters for the Human Body Learn what wet-bulb temperature means, why it combines heat and humidity, and why high wet-bulb values can become dangerous even in shade. wet bulb temperature explained"
   },
   {
     "title": "What Does a Tornado Look Like? Shapes, Colors, and Warning Signs",
