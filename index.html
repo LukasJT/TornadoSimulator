@@ -5,15 +5,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Tornado Information Hub — Simulator, Safety Guides, Historical Records</title>
-<meta name="description" content="A resource for understanding tornadoes: interactive worldwide damage simulator, in-depth articles on major historical events, safety guides, science explainers, and educational projects for students and teachers." />
-<meta name="twitter:description" content="A resource for understanding tornadoes: interactive worldwide damage simulator, in-depth articles on major historical events, safety guides, science explainers, and educational projects for students and teachers." />
-<meta name="twitter:title" content="Tornado Information Hub — Simulator, Safety Guides, Historical Records" />
+<title>Tornado Hub — Tornado News, Simulator, Safety Guides & Games</title>
+<meta name="description" content="Tornado Hub is a tornado news-style resource with a worldwide damage simulator, trending guides, safety explainers, historical case files, quizzes, and weather games." />
+<meta name="twitter:description" content="Tornado Hub is a tornado news-style resource with a worldwide damage simulator, trending guides, safety explainers, historical case files, quizzes, and weather games." />
+<meta name="twitter:title" content="Tornado Hub — Tornado News, Simulator, Safety Guides & Games" />
 <meta name="twitter:card" content="summary" />
 <meta property="og:site_name" content="Tornado Hub" />
 <meta name="keywords" content="tornado, tornado simulator, tornado safety, EF scale, EF5 tornadoes, tornado alley, Dixie Alley, tornado history, tornado science, tornado education" />
-<meta property="og:title" content="Tornado Information Hub — Simulator, Safety Guides, Historical Records" />
-<meta property="og:description" content="A resource for understanding tornadoes: interactive worldwide damage simulator, in-depth articles on major historical events, safety guides, science explainers, and educational projects for students and teachers." />
+<meta property="og:title" content="Tornado Hub — Tornado News, Simulator, Safety Guides & Games" />
+<meta property="og:description" content="Tornado Hub is a tornado news-style resource with a worldwide damage simulator, trending guides, safety explainers, historical case files, quizzes, and weather games." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.tornadosimulator.net/" />
 <link rel="canonical" href="https://www.tornadosimulator.net/" />
@@ -23,7 +23,7 @@
 {"@context":"https://schema.org","@type":"WebSite","name":"Tornado Information Hub","url":"https://www.tornadosimulator.net/","potentialAction":{"@type":"SearchAction","target":"https://www.google.com/search?q=site:tornadosimulator.net+{search_term_string}","query-input":"required name=search_term_string"}}
 </script>
 <script type="application/ld+json" data-seo="page">
-{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.tornadosimulator.net/#organization","name":"Tornado Hub","url":"https://www.tornadosimulator.net/","logo":"https://www.tornadosimulator.net/favicon.ico","sameAs":[]},{"@type":"WebSite","@id":"https://www.tornadosimulator.net/#website","name":"Tornado Hub","alternateName":"Tornado Simulator","url":"https://www.tornadosimulator.net/","publisher":{"@id":"https://www.tornadosimulator.net/#organization"},"inLanguage":"en"},{"@type":"WebPage","@id":"https://www.tornadosimulator.net/#webpage","url":"https://www.tornadosimulator.net/","name":"Tornado Information Hub — Simulator, Safety Guides, Historical Records","description":"A resource for understanding tornadoes: interactive worldwide damage simulator, in-depth articles on major historical events, safety guides, science explainers, and educational projects for students and teachers.","isPartOf":{"@id":"https://www.tornadosimulator.net/#website"},"publisher":{"@id":"https://www.tornadosimulator.net/#organization"},"inLanguage":"en"},{"@type":"BreadcrumbList","@id":"https://www.tornadosimulator.net/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.tornadosimulator.net/#organization","name":"Tornado Hub","url":"https://www.tornadosimulator.net/","logo":"https://www.tornadosimulator.net/favicon.ico","sameAs":[]},{"@type":"WebSite","@id":"https://www.tornadosimulator.net/#website","name":"Tornado Hub","alternateName":"Tornado Simulator","url":"https://www.tornadosimulator.net/","publisher":{"@id":"https://www.tornadosimulator.net/#organization"},"inLanguage":"en"},{"@type":"WebPage","@id":"https://www.tornadosimulator.net/#webpage","url":"https://www.tornadosimulator.net/","name":"Tornado Hub — Tornado News, Simulator, Safety Guides & Games","description":"Tornado Hub is a tornado news-style resource with a worldwide damage simulator, trending guides, safety explainers, historical case files, quizzes, and weather games.","isPartOf":{"@id":"https://www.tornadosimulator.net/#website"},"publisher":{"@id":"https://www.tornadosimulator.net/#organization"},"inLanguage":"en"},{"@type":"BreadcrumbList","@id":"https://www.tornadosimulator.net/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"}]}]}
 </script>
 <style>
 :root {
@@ -253,6 +253,184 @@ img { max-width: 100%; display: block; }
 }
 .article-meta a { color: var(--text-secondary); font-weight: 500; }
 
+/* Newsroom layout */
+.newsroom {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.newsroom-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.75fr);
+  gap: 32px;
+  align-items: start;
+}
+.news-side {
+  display: grid;
+  gap: 16px;
+}
+.lead-story {
+  border-top: 4px solid var(--accent);
+  padding-top: 20px;
+}
+.lead-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.lead-story h2 {
+  font-family: var(--serif);
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+}
+.lead-story h2 a {
+  color: var(--text);
+  text-decoration: none;
+}
+.lead-story h2 a:hover { color: var(--accent); }
+.lead-summary {
+  color: var(--text-secondary);
+  font-size: 17px;
+  max-width: 680px;
+  margin-bottom: 22px;
+}
+.news-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.briefing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  border-top: 1px solid var(--border);
+  padding-top: 22px;
+}
+.brief-card {
+  border-left: 2px solid var(--border-strong);
+  padding-left: 14px;
+}
+.brief-card span {
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.brief-card a {
+  display: block;
+  color: var(--text);
+  font-weight: 700;
+  line-height: 1.3;
+  text-decoration: none;
+}
+.brief-card a:hover { color: var(--accent); }
+.trend-panel {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px;
+}
+.trend-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+  margin-bottom: 6px;
+}
+.trend-heading h3 {
+  font-family: var(--serif);
+  font-size: 24px;
+}
+.trend-heading span {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+.trend-row {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  text-decoration: none;
+}
+.trend-row:last-child { border-bottom: 0; }
+.trend-row:hover { text-decoration: none; }
+.trend-rank {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--accent);
+  line-height: 1;
+}
+.trend-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.trend-kicker {
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.trend-copy strong {
+  font-size: 15px;
+  line-height: 1.25;
+}
+.trend-copy span:last-child {
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.35;
+}
+.tracker-empty {
+  color: var(--text-muted);
+  font-size: 14px;
+  padding: 16px 0;
+}
+.live-strip {
+  background: #14161c;
+  color: #e5e7eb;
+  border-top: 3px solid var(--accent);
+}
+.live-strip-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.live-label {
+  background: var(--accent);
+  color: white;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.live-strip a {
+  color: #f8fafc;
+  font-size: 13px;
+  text-decoration: none;
+}
+.live-strip a:hover { color: white; text-decoration: underline; }
+
 /* Resource grid (Learn) */
 .resource-grid {
   display: grid;
@@ -366,6 +544,10 @@ img { max-width: 100%; display: block; }
   display: flex; justify-content: space-between;
   flex-wrap: wrap; gap: 12px;
 }
+@media (max-width: 900px) {
+  .newsroom-grid { grid-template-columns: 1fr; }
+  .briefing-grid { grid-template-columns: 1fr; }
+}
 @media (max-width: 700px) {
   .footer-inner { grid-template-columns: 1fr 1fr; }
 }
@@ -373,6 +555,8 @@ img { max-width: 100%; display: block; }
   .footer-inner { grid-template-columns: 1fr; }
   .nav-links { gap: 0; }
   .nav-links a { padding: 6px 10px; font-size: 13px; }
+  .lead-story h2 { font-size: 30px; }
+  .live-strip-inner { align-items: flex-start; }
 }
 
 /* Adsterra */
@@ -409,17 +593,28 @@ img { max-width: 100%; display: block; }
   </div>
 </nav>
 
+<div class="live-strip" aria-label="Tornado Hub briefing links">
+  <div class="live-strip-inner">
+    <span class="live-label">Briefing</span>
+    <a href="/tornado-warning-polygon-explained/">How to read tornado warning polygons</a>
+    <a href="/rain-wrapped-tornado/">Why rain-wrapped tornadoes are so dangerous</a>
+    <a href="/tornado-risk-calculator/">Check your local tornado risk</a>
+    <a href="/tornadle/">Play today's Tornadle</a>
+  </div>
+</div>
+
+
 <!-- ============ HERO ============ -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-eyebrow">A resource for weather enthusiasts, students & professionals</div>
-    <h1>Understanding tornadoes — <em>from science to safety.</em></h1>
+    <div class="hero-eyebrow">Tornado news, explainers, simulator & games</div>
+    <h1>The tornado site that feels alive — <em>science, safety, history, and play.</em></h1>
     <p class="lede">
-      Interactive simulator, in-depth articles on historical events, safety guides for every scenario, and educational resources for the classroom. Everything you need to understand one of nature's most powerful phenomena — grounded in NOAA data, meteorological research, and hard-earned lessons.
+      Follow the newest guides, open the worldwide damage simulator, learn from historic outbreak case files, and test your weather brain with tornado games and quizzes. Built for readers who want more than a static encyclopedia.
     </p>
     <div class="hero-actions">
       <a href="/simulator/" class="btn btn-primary">Launch the simulator</a>
-      <a href="/articles/" class="btn btn-outline">Browse articles</a>
+      <a href="/articles/" class="btn btn-outline">Browse the newsroom</a>
     </div>
   </div>
 </section>
@@ -427,10 +622,58 @@ img { max-width: 100%; display: block; }
 <!-- ============ STATS STRIP ============ -->
 <section class="stats">
   <div class="stats-inner">
-    <div><div class="stat-number">290+</div><div class="stat-label">In-depth articles</div></div>
+    <div><div class="stat-number">700+</div><div class="stat-label">Guides & articles</div></div>
     <div><div class="stat-number">173</div><div class="stat-label">Countries covered</div></div>
     <div><div class="stat-number">50</div><div class="stat-label">US state guides</div></div>
-    <div><div class="stat-number">Free</div><div class="stat-label">No signup required</div></div>
+    <div><div class="stat-number">Live</div><div class="stat-label">Local trend tracking</div></div>
+  </div>
+</section>
+
+
+<!-- ============ NEWSROOM ============ -->
+<section class="section newsroom">
+  <div class="section-inner">
+    <div class="newsroom-grid">
+      <div class="lead-story">
+        <div class="lead-label">Top Story</div>
+        <h2><a href="/tornado-warning-polygon-explained/">Tornado warning polygons are not county-wide forecasts. Here is how to read them fast.</a></h2>
+        <p class="lead-summary">A practical guide to the shape on radar apps, what it means if you are near the edge, and why the warning area is a forecast corridor rather than a confirmed tornado path.</p>
+        <div class="news-actions">
+          <a href="/tornado-warning-polygon-explained/" class="btn btn-primary">Read the guide</a>
+          <a href="/tornado-risk-calculator/" class="btn btn-outline">Check your risk</a>
+        </div>
+        <div class="briefing-grid">
+          <div class="brief-card">
+            <span>Safety</span>
+            <a href="/tornado-shelter-without-basement/">Where to shelter if your home has no basement</a>
+          </div>
+          <div class="brief-card">
+            <span>Radar</span>
+            <a href="/tornado-debris-signature/">What a tornado debris signature means on dual-pol radar</a>
+          </div>
+          <div class="brief-card">
+            <span>Game</span>
+            <a href="/ef-scale-game/">Guess the EF rating from real damage clues</a>
+          </div>
+        </div>
+      </div>
+      <aside class="news-side" aria-label="Trending and recently viewed articles">
+        <div class="trend-panel">
+          <div class="trend-heading">
+            <h3>Trending</h3>
+            <span>Local + seeded</span>
+          </div>
+          <div data-trending-articles data-limit="5"></div>
+        </div>
+        <div class="trend-panel">
+          <div class="trend-heading">
+            <h3>Recently Viewed</h3>
+            <span>This browser</span>
+          </div>
+          <div data-recently-viewed data-limit="3"></div>
+        </div>
+      </aside>
+    </div>
   </div>
 </section>
 
@@ -743,6 +986,7 @@ img { max-width: 100%; display: block; }
 <script type="text/javascript" src="//www.highperformanceformat.com/ff3f3758b896daf1842b3be893ed46f2/invoke.js"></script>
 </aside>
 <style>@media (min-width:1200px){#adsterra-left{display:block!important;}}</style>
+<script src="/assets/article-tracker.js" defer></script>
 <script src="/assets/ads-config.js" defer></script>
 <script src="/assets/ads.js" defer></script>
 <script src="/assets/house-ads.js" defer></script>
