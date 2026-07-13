@@ -63,6 +63,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "AI Weather Forecasting — GraphCast, Pangu, Aurora Explained Machine learning weather models are catching up to physics-based forecasts — and running 1000x faster. Here is what GraphCast, Pangu, and Aurora are, how they work, and what they can (and cannot) do. ai weather forecasting"
   },
   {
+    "title": "Air Masses Explained: Maritime, Continental, Tropical, and Polar Air",
+    "path": "/air-masses-explained/",
+    "description": "What air masses are, how they get their temperature and moisture traits, and why air mass boundaries create fronts and storms.",
+    "category": "Weather Science",
+    "keywords": "Air Masses Explained: Maritime, Continental, Tropical, and Polar Air What air masses are, how they get their temperature and moisture traits, and why air mass boundaries create fronts and storms. air masses explained"
+  },
+  {
     "title": "Air Quality and Wildfire Smoke Weather Guide",
     "path": "/air-quality-smoke-weather-guide/",
     "description": "How weather moves wildfire smoke, what AQI means, why smoke can travel far from fires, and practical steps for indoor and outdoor safety.",
@@ -117,6 +124,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "April averages 180 US tornadoes and has produced the deadliest tornado outbreaks in history. The 1974 Super Outbreak, 2011 Super Outbreak, and Palm Sunday 1965 all struck in April.",
     "category": "Guide",
     "keywords": "April Tornadoes - Why April Is the Deadliest US Tornado Month April averages 180 US tornadoes and has produced the deadliest tornado outbreaks in history. The 1974 Super Outbreak, 2011 Super Outbreak, and Palm Sunday 1965 all struck in April. april tornadoes"
+  },
+  {
+    "title": "Arctic Oscillation and NAO Explained: Winter Pattern Clues",
+    "path": "/arctic-oscillation-nao-explained/",
+    "description": "How the Arctic Oscillation and North Atlantic Oscillation relate to cold air outbreaks, storm tracks, blocking, and winter forecast uncertainty.",
+    "category": "Climate Patterns",
+    "keywords": "Arctic Oscillation and NAO Explained: Winter Pattern Clues How the Arctic Oscillation and North Atlantic Oscillation relate to cold air outbreaks, storm tracks, blocking, and winter forecast uncertainty. arctic oscillation nao explained"
   },
   {
     "title": "Arizona Tornadoes - Rare Southwestern Events",
@@ -287,6 +301,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Birmingham, Alabama Tornadoes - The Tornado-Vulnerable Metro Birmingham has been struck by multiple major tornadoes: 2011 Tuscaloosa-Birmingham EF4, plus historical events. Alabama's largest metro is at high tornado risk. birmingham tornadoes"
   },
   {
+    "title": "Black Ice Weather Guide: Why Roads Freeze When They Look Wet",
+    "path": "/black-ice-weather-guide/",
+    "description": "How black ice forms, where it is most common, and why bridges, shaded roads, and early mornings are risky after winter precipitation.",
+    "category": "Winter Weather",
+    "keywords": "Black Ice Weather Guide: Why Roads Freeze When They Look Wet How black ice forms, where it is most common, and why bridges, shaded roads, and early mornings are risky after winter precipitation. black ice weather guide"
+  },
+  {
     "title": "Blizzard and Whiteout Driving Safety: When Roads Disappear",
     "path": "/blizzard-whiteout-driving-safety/",
     "description": "How blizzards and whiteouts reduce visibility, why pileups happen, and what to do if you are caught on the road during sudden blowing snow.",
@@ -294,11 +315,25 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Blizzard and Whiteout Driving Safety: When Roads Disappear How blizzards and whiteouts reduce visibility, why pileups happen, and what to do if you are caught on the road during sudden blowing snow. blizzard whiteout driving safety"
   },
   {
+    "title": "Blocking High Weather Pattern Explained: Why Forecasts Get Stuck",
+    "path": "/blocking-high-weather-pattern/",
+    "description": "What a blocking high is, why it can stall heat waves, cold snaps, drought, smoke, or repeated storm tracks, and how forecasters spot blocked patterns.",
+    "category": "Weather Patterns",
+    "keywords": "Blocking High Weather Pattern Explained: Why Forecasts Get Stuck What a blocking high is, why it can stall heat waves, cold snaps, drought, smoke, or repeated storm tracks, and how forecasters spot blocked patterns. blocking high weather pattern"
+  },
+  {
     "title": "Bomb Cyclone Explained: Rapidly Strengthening Storms and Big Weather Impacts",
     "path": "/bomb-cyclone-explained/",
     "description": "What bomb cyclone means, why pressure can fall quickly, and how rapidly intensifying storms can create wind, snow, rain, coastal flooding, and travel disruptions.",
     "category": "Storm Systems",
     "keywords": "Bomb Cyclone Explained: Rapidly Strengthening Storms and Big Weather Impacts What bomb cyclone means, why pressure can fall quickly, and how rapidly intensifying storms can create wind, snow, rain, coastal flooding, and travel disruptions. bomb cyclone explained"
+  },
+  {
+    "title": "Bow Echo Radar Explained: Why Curved Storm Lines Can Mean Damaging Wind",
+    "path": "/bow-echo-radar-explained/",
+    "description": "What a bow echo looks like on radar, why it forms, and why it can signal widespread damaging wind in a squall line or derecho setup.",
+    "category": "Radar",
+    "keywords": "Bow Echo Radar Explained: Why Curved Storm Lines Can Mean Damaging Wind What a bow echo looks like on radar, why it forms, and why it can signal widespread damaging wind in a squall line or derecho setup. bow echo radar explained"
   },
   {
     "title": "Building Codes and Tornadoes — What Actually Improved",
@@ -376,6 +411,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "What CAPE and CIN mean in severe weather forecasting, why storm fuel needs a trigger, and why too much cap can stop storms from forming.",
     "category": "Severe Storms",
     "keywords": "CAPE and CIN Explained: Storm Fuel and Storm Cap What CAPE and CIN mean in severe weather forecasting, why storm fuel needs a trigger, and why too much cap can stop storms from forming. cape and cin explained"
+  },
+  {
+    "title": "Ceiling vs Visibility: What Low Clouds and Fog Mean for Travel Weather",
+    "path": "/ceiling-vs-visibility-weather/",
+    "description": "The difference between cloud ceiling and visibility, why aviation forecasts use both, and how low clouds, fog, rain, snow, and smoke affect travel.",
+    "category": "Aviation Weather",
+    "keywords": "Ceiling vs Visibility: What Low Clouds and Fog Mean for Travel Weather The difference between cloud ceiling and visibility, why aviation forecasts use both, and how low clouds, fog, rain, snow, and smoke affect travel. ceiling vs visibility weather"
   },
   {
     "title": "Chase Day Cell Service — Rural Coverage Reality",
@@ -481,6 +523,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Is climate change making tornadoes worse? The honest answer, without oversimplification or denial. What the peer-reviewed research shows about tornado frequency, geography, seasonality and outbreak clustering in a warming climate.",
     "category": "Science of climate",
     "keywords": "Climate Change and Tornadoes — What the Science Actually Says Is climate change making tornadoes worse? The honest answer, without oversimplification or denial. What the peer-reviewed research shows about tornado frequency, geography, seasonality and outbreak clustering in a warming climate. climate change and tornadoes"
+  },
+  {
+    "title": "Climate Pattern Guides: Blocking Highs, MJO, AO, NAO, Drought, and Air Masses",
+    "path": "/climate-pattern-guides/",
+    "description": "A hub for large-scale weather and climate pattern explainers, including blocking highs, drought, MJO, AO, NAO, air masses, rain shadows, and terrain effects.",
+    "category": "Climate Patterns",
+    "keywords": "Climate Pattern Guides: Blocking Highs, MJO, AO, NAO, Drought, and Air Masses A hub for large-scale weather and climate pattern explainers, including blocking highs, drought, MJO, AO, NAO, air masses, rain shadows, and terrain effects. climate pattern guides"
   },
   {
     "title": "Cloud Atlas — Every Cloud Type Illustrated",
@@ -637,11 +686,25 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "What Is Dixie Alley? The Deep South's Deadlier Tornado Region Dixie Alley covers Mississippi, Alabama, Louisiana, Arkansas, Tennessee, and Georgia. Fewer tornadoes than Tornado Alley — but deadlier. Why, when, and safety implications. dixie alley"
   },
   {
+    "title": "Downburst Explained: Destructive Thunderstorm Wind Without a Tornado",
+    "path": "/downburst-explained/",
+    "description": "What downbursts are, how microbursts and macrobursts differ, and why straight-line wind damage can be severe even when no tornado occurred.",
+    "category": "Severe Storms",
+    "keywords": "Downburst Explained: Destructive Thunderstorm Wind Without a Tornado What downbursts are, how microbursts and macrobursts differ, and why straight-line wind damage can be severe even when no tornado occurred. downburst explained"
+  },
+  {
     "title": "Drone Storm Photography — Rules, Gear, and Techniques",
     "path": "/drone-storm-photography/",
     "description": "Flying a drone to photograph storms is legal, dangerous, and heavily regulated. Here is what drone to buy, when to fly, what rules apply, and how to get shots that don't crash.",
     "category": "Photography",
     "keywords": "Drone Storm Photography — Rules, Gear, and Techniques Flying a drone to photograph storms is legal, dangerous, and heavily regulated. Here is what drone to buy, when to fly, what rules apply, and how to get shots that don't crash. drone storm photography"
+  },
+  {
+    "title": "Drought Monitor Explained: D0 to D4 Categories and What They Mean",
+    "path": "/drought-monitor-explained/",
+    "description": "How drought categories work, what D0 through D4 mean, and why drought is measured with more than just rainfall totals.",
+    "category": "Drought",
+    "keywords": "Drought Monitor Explained: D0 to D4 Categories and What They Mean How drought categories work, what D0 through D4 mean, and why drought is measured with more than just rainfall totals. drought monitor explained"
   },
   {
     "title": "Dryline Explained: The Boundary Behind Many Plains Severe Storms",
@@ -861,6 +924,27 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Weather Forecasting Guides: Models, Ensembles, Radar, and Uncertainty A practical forecasting hub covering weather models, ensembles, radar basics, forecast uncertainty, and how to read weather guidance without overreacting to one model run. forecasting guides"
   },
   {
+    "title": "Freezing Fog vs Frost: Icy Deposits, Visibility, and Slick Surfaces",
+    "path": "/freezing-fog-vs-frost/",
+    "description": "How freezing fog differs from frost, why each forms, and when roads, bridges, trees, and sidewalks can become icy.",
+    "category": "Winter Weather",
+    "keywords": "Freezing Fog vs Frost: Icy Deposits, Visibility, and Slick Surfaces How freezing fog differs from frost, why each forms, and when roads, bridges, trees, and sidewalks can become icy. freezing fog vs frost"
+  },
+  {
+    "title": "Freezing Rain vs Sleet: Why One Coats Roads and One Bounces",
+    "path": "/freezing-rain-vs-sleet/",
+    "description": "The difference between freezing rain and sleet, how warm layers aloft create each type, and why freezing rain can be so destructive.",
+    "category": "Winter Weather",
+    "keywords": "Freezing Rain vs Sleet: Why One Coats Roads and One Bounces The difference between freezing rain and sleet, how warm layers aloft create each type, and why freezing rain can be so destructive. freezing rain vs sleet"
+  },
+  {
+    "title": "Frontogenesis Explained: How Strengthening Fronts Create Bands of Weather",
+    "path": "/frontogenesis-explained/",
+    "description": "What frontogenesis means, why strengthening temperature gradients can create lift, and how it can focus snow bands, rain bands, or storms.",
+    "category": "Forecasting",
+    "keywords": "Frontogenesis Explained: How Strengthening Fronts Create Bands of Weather What frontogenesis means, why strengthening temperature gradients can create lift, and how it can focus snow bands, rain bands, or storms. frontogenesis explained"
+  },
+  {
     "title": "Frost Watch vs Freeze Warning: What Gardeners and Growers Should Know",
     "path": "/frost-watch-vs-freeze-warning/",
     "description": "The difference between frost advisories, freeze watches, and freeze warnings, plus practical steps for plants, pipes, pets, and outdoor water.",
@@ -917,6 +1001,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Grand Island, Nebraska Tornadoes of 1980 — Night of the Twisters The Grand Island, Nebraska tornado outbreak of June 3, 1980 produced 7 tornadoes over a small area in a single night — including one F4 and one F5. Basis for the book and film 'Night of the Twisters.' grand island 1980"
   },
   {
+    "title": "Graupel Explained: Soft Hail, Snow Pellets, and Convective Showers",
+    "path": "/graupel-explained/",
+    "description": "What graupel is, how it differs from hail and sleet, and why it often appears in showery cold-season weather.",
+    "category": "Winter Weather",
+    "keywords": "Graupel Explained: Soft Hail, Snow Pellets, and Convective Showers What graupel is, how it differs from hail and sleet, and why it often appears in showery cold-season weather. graupel explained"
+  },
+  {
     "title": "The Great Plains Chase Corridor — A Geographic Guide",
     "path": "/great-plains-chase-corridor/",
     "description": "A geographic guide to the Great Plains chase corridor — from the Texas Panhandle to South Dakota. Terrain, road networks, gas station spacing, and why this corridor is the world's chase capital.",
@@ -950,6 +1041,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "The April 3, 1974 Guin F5 tornado devastated Alabama during the Super Outbreak. 23 killed, complete destruction of Guin. Alabama tornado history.",
     "category": "Guide",
     "keywords": "Guin, Alabama Tornado of April 3, 1974 - Super Outbreak F5 The April 3, 1974 Guin F5 tornado devastated Alabama during the Super Outbreak. 23 killed, complete destruction of Guin. Alabama tornado history. guin alabama 1974"
+  },
+  {
+    "title": "Haboob and Dust Storm Explained: Wind Walls, Visibility, and Driving Safety",
+    "path": "/haboob-dust-storm-explained/",
+    "description": "What haboobs and dust storms are, how thunderstorm outflow can create a wall of dust, and what to do if visibility drops on the road.",
+    "category": "Dust Storms",
+    "keywords": "Haboob and Dust Storm Explained: Wind Walls, Visibility, and Driving Safety What haboobs and dust storms are, how thunderstorm outflow can create a wall of dust, and what to do if visibility drops on the road. haboob dust storm explained"
   },
   {
     "title": "Hackleburg–Phil Campbell Tornado of 2011 — EF5, 72 Killed",
@@ -1463,6 +1561,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Lubbock, Texas Tornado of 1970 — F5, 26 Killed Downtown The Lubbock, Texas tornado of May 11, 1970 was an F5 that struck downtown Lubbock at night, killing 26 people and destroying much of the downtown business district. lubbock 1970"
   },
   {
+    "title": "Madden-Julian Oscillation Explained: Tropical Waves That Influence Weather",
+    "path": "/madden-julian-oscillation-explained/",
+    "description": "What the MJO is, how it moves through the tropics, and why it can influence storms, rainfall, tropical cyclones, and winter patterns.",
+    "category": "Climate Patterns",
+    "keywords": "Madden-Julian Oscillation Explained: Tropical Waves That Influence Weather What the MJO is, how it moves through the tropics, and why it can influence storms, rainfall, tropical cyclones, and winter patterns. madden julian oscillation explained"
+  },
+  {
     "title": "Maine Tornadoes - Rare Northern New England Events",
     "path": "/maine-tornadoes/",
     "description": "Maine averages 2 tornadoes per year. Northern latitude, mountains, and ocean influence make tornadoes very rare.",
@@ -1776,6 +1881,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Nocturnal tornadoes kill 2.5x more people than daytime tornadoes. Why: people are asleep, warnings are less effective, visibility is zero. Which US regions are at highest risk.",
     "category": "Guide",
     "keywords": "Nocturnal Tornadoes — Why Nighttime Tornadoes Are 2.5x More Deadly Nocturnal tornadoes kill 2.5x more people than daytime tornadoes. Why: people are asleep, warnings are less effective, visibility is zero. Which US regions are at highest risk. nocturnal tornadoes"
+  },
+  {
+    "title": "Nor&#39;easter Explained: Coastal Storms, Wind, Snow, Rain, and Flooding",
+    "path": "/nor-easter-explained/",
+    "description": "What a nor&#39;easter is, why it affects the East Coast, and how wind direction, ocean moisture, and storm track shape impacts.",
+    "category": "Winter Storms",
+    "keywords": "Nor&#39;easter Explained: Coastal Storms, Wind, Snow, Rain, and Flooding What a nor&#39;easter is, why it affects the East Coast, and how wind direction, ocean moisture, and storm track shape impacts. nor easter explained"
   },
   {
     "title": "North Carolina Tornadoes - Coastal Plain, Piedmont, and Mountain Tornadoes",
@@ -2618,6 +2730,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Radar Velocity Explained: Reading Wind on Doppler Radar A plain-language guide to radar velocity, inbound and outbound winds, rotation, couplets, limitations, and why meteorologists use velocity during tornado warnings. radar velocity explained"
   },
   {
+    "title": "Rain Shadow Explained: Why One Side of a Mountain Is Wetter",
+    "path": "/rain-shadow-explained/",
+    "description": "How mountains create rain shadows, why air dries after crossing terrain, and how rain shadows shape deserts, forests, and local climates.",
+    "category": "Climate and Terrain",
+    "keywords": "Rain Shadow Explained: Why One Side of a Mountain Is Wetter How mountains create rain shadows, why air dries after crossing terrain, and how rain shadows shape deserts, forests, and local climates. rain shadow explained"
+  },
+  {
     "title": "Rain-Wrapped Tornadoes: Why They Are So Dangerous and Hard to See",
     "path": "/rain-wrapped-tornado/",
     "description": "Rain-wrapped tornadoes are hidden by heavy precipitation. Learn how they form, what radar clues matter, and why visual confirmation is unreliable in HP supercells.",
@@ -2784,6 +2903,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A guide for school administrators, teachers, and parents on tornado emergency planning. Shelter location selection, drill frequency, staff responsibilities, communication with parents, and specific considerations for young children and special needs students.",
     "category": "Institutional planning",
     "keywords": "School Tornado Emergency Plan — Templates and Best Practices A guide for school administrators, teachers, and parents on tornado emergency planning. Shelter location selection, drill frequency, staff responsibilities, communication with parents, and specific considerations for young children and special needs students. school tornado emergency plan"
+  },
+  {
+    "title": "Sea Breeze Thunderstorms Explained: Coastline Boundaries and Afternoon Storms",
+    "path": "/sea-breeze-thunderstorms/",
+    "description": "How sea breezes form, why they can trigger thunderstorms, and why coastal weather can change quickly during warm seasons.",
+    "category": "Local Weather",
+    "keywords": "Sea Breeze Thunderstorms Explained: Coastline Boundaries and Afternoon Storms How sea breezes form, why they can trigger thunderstorms, and why coastal weather can change quickly during warm seasons. sea breeze thunderstorms"
   },
   {
     "title": "Search Tornado Hub",
@@ -3248,6 +3374,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Skywarn — The Volunteer Network That Reports Storms Skywarn is the NWS network of 350,000+ trained storm spotters. Here is its history, how it operates, and how to join. storm spotter network history"
   },
   {
+    "title": "Storm Structure Guides: Downbursts, Bow Echoes, Drylines, CAPE, and Wind Shear",
+    "path": "/storm-structure-guides/",
+    "description": "A hub for storm structure and severe weather ingredients, including downbursts, bow echoes, drylines, CAPE, wind shear, shelf clouds, and radar signatures.",
+    "category": "Storm Structure",
+    "keywords": "Storm Structure Guides: Downbursts, Bow Echoes, Drylines, CAPE, and Wind Shear A hub for storm structure and severe weather ingredients, including downbursts, bow echoes, drylines, CAPE, wind shear, shelf clouds, and radar signatures. storm structure guides"
+  },
+  {
     "title": "Storm Surge Explained: Why Hurricane Water Can Be Deadlier Than Wind",
     "path": "/storm-surge-explained/",
     "description": "A plain-English guide to storm surge, why it rises before and during hurricanes, how it differs from waves and flooding, and why evacuation zones matter.",
@@ -3274,6 +3407,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "An interactive supercell and storm-conditions simulator based on real meteorology. Adjust CAPE, wind shear, storm-relative helicity, LCL height, temperature and dewpoint — and see live estimates of storm mode, the Significant Tornado Parameter, and the maximum expected tornado strength. Presets for classic Plains supercells, Dixie Alley HP storms, capped days, and landspout setups.",
     "category": "⛈️ Storm-Conditions Simulator",
     "keywords": "Supercell Simulator — Model the Atmosphere That Makes Tornadoes An interactive supercell and storm-conditions simulator based on real meteorology. Adjust CAPE, wind shear, storm-relative helicity, LCL height, temperature and dewpoint — and see live estimates of storm mode, the Significant Tornado Parameter, and the maximum expected tornado strength. Presets for classic Plains supercells, Dixie Alley HP storms, capped days, and landspout setups. supercell simulator"
+  },
+  {
+    "title": "Temperature Inversion Explained: Why Air Gets Trapped Near the Ground",
+    "path": "/temperature-inversion-explained/",
+    "description": "How temperature inversions form, why they trap fog, smoke, pollution, and cold air, and why valleys often feel the strongest effects.",
+    "category": "Weather Science",
+    "keywords": "Temperature Inversion Explained: Why Air Gets Trapped Near the Ground How temperature inversions form, why they trap fog, smoke, pollution, and cold air, and why valleys often feel the strongest effects. temperature inversion explained"
   },
   {
     "title": "Tennessee Tornadoes - Nashville, Cookeville, and the Dixie Alley Threat",
@@ -4991,6 +5131,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Udall Tornado (May 25, 1955) — F5, 80 Dead, Deadliest in Kansas History The 1955 Udall F5 tornado struck the sleeping Kansas town at 10:35 PM, killing 80 people — over half the town's population was killed or injured. It remains the deadliest tornado in Kansas history. udall 1955"
   },
   {
+    "title": "Upslope Snow Explained: Why Wind Against Terrain Makes Snow Heavier",
+    "path": "/upslope-snow-explained/",
+    "description": "How upslope flow creates clouds and snow, why mountains and foothills can get enhanced precipitation, and why wind direction matters.",
+    "category": "Mountain Weather",
+    "keywords": "Upslope Snow Explained: Why Wind Against Terrain Makes Snow Heavier How upslope flow creates clouds and snow, why mountains and foothills can get enhanced precipitation, and why wind direction matters. upslope snow explained"
+  },
+  {
     "title": "Urban Heat Islands — Why Cities Are 5-15°F Hotter",
     "path": "/urban-heat-island/",
     "description": "Cities are dramatically hotter than surrounding countryside — sometimes 15°F warmer at night. Here is the physics, the health impact, and what cities can do about it.",
@@ -5024,6 +5171,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "The Vicksburg, Mississippi tornado of December 5, 1953 was an F5 that killed 38 people — the only December F5 in modern US tornado records.",
     "category": "Guide",
     "keywords": "Vicksburg, Mississippi Tornado of 1953 — F5, 38 Killed in December The Vicksburg, Mississippi tornado of December 5, 1953 was an F5 that killed 38 people — the only December F5 in modern US tornado records. vicksburg 1953"
+  },
+  {
+    "title": "Virga Explained: Rain or Snow That Evaporates Before Reaching the Ground",
+    "path": "/virga-explained/",
+    "description": "What virga is, why precipitation can fall from clouds but disappear, and how evaporating rain can create gusty winds.",
+    "category": "Weather Science",
+    "keywords": "Virga Explained: Rain or Snow That Evaporates Before Reaching the Ground What virga is, why precipitation can fall from clouds but disappear, and how evaporating rain can create gusty winds. virga explained"
   },
   {
     "title": "Virginia Tornadoes - Coastal Plain, Piedmont, and Mountain Events",
@@ -5619,6 +5773,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Convert wind speed between mph, km/h, knots, m/s, and feet per second. See the Beaufort scale rating, EF-scale equivalent, hurricane category, and a real-world comparison for any speed. Free, no signup, mobile friendly.",
     "category": "💨 Interactive tool",
     "keywords": "Wind Speed Converter — mph, km/h, knots, m/s, Beaufort, EF, Hurricane Convert wind speed between mph, km/h, knots, m/s, and feet per second. See the Beaufort scale rating, EF-scale equivalent, hurricane category, and a real-world comparison for any speed. Free, no signup, mobile friendly. wind speed converter"
+  },
+  {
+    "title": "Winter Precipitation Guides: Sleet, Freezing Rain, Graupel, Black Ice, and Fog",
+    "path": "/winter-precipitation-guides/",
+    "description": "A hub for winter precipitation explainers covering freezing rain, sleet, graupel, black ice, freezing fog, lake-effect snow, and winter alerts.",
+    "category": "Winter Precipitation",
+    "keywords": "Winter Precipitation Guides: Sleet, Freezing Rain, Graupel, Black Ice, and Fog A hub for winter precipitation explainers covering freezing rain, sleet, graupel, black ice, freezing fog, lake-effect snow, and winter alerts. winter precipitation guides"
   },
   {
     "title": "Winter Storm Watch vs Warning: Snow, Ice, Wind, and Travel Risk",
