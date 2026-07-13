@@ -32,20 +32,118 @@
     return String(value || '').replace(/^https?:/, '');
   }
 
+  function blockedClickNeedles() {
+    var fromConfig = [CFG.disabledClickunderSrc, CFG.disabledDirectLink]
+      .concat(CFG.blockedClickAdNeedles || [])
+      .filter(Boolean);
+    return fromConfig.map(normalizeUrl);
+  }
+
+  function nodeUrl(node) {
+    if (!node || node.nodeType !== 1) return '';
+    return node.getAttribute('src') || node.getAttribute('href') || node.getAttribute('data-src') || '';
+  }
+
+  function isBlockedClickAdValue(value) {
+    var normalized = normalizeUrl(value);
+    if (!normalized) return false;
+    return blockedClickNeedles().some(function (src) {
+      return normalized.indexOf(src) !== -1 || src.indexOf(normalized) !== -1;
+    });
+  }
+
+  function nodeContainsBlockedClickAd(node) {
+    if (!node || node.nodeType !== 1) return false;
+    if (isBlockedClickAdValue(nodeUrl(node))) return true;
+    return !!node.querySelector && !!node.querySelector('script[src],a[href],iframe[src],iframe[data-src]') &&
+      Array.prototype.some.call(node.querySelectorAll('script[src],a[href],iframe[src],iframe[data-src]'), function (child) {
+        return isBlockedClickAdValue(nodeUrl(child));
+      });
+  }
+
+  function removeNode(node) {
+    if (node && node.parentNode) node.parentNode.removeChild(node);
+  }
+
   function removeUnsafeClickAds() {
-    var blocked = [CFG.disabledClickunderSrc, CFG.disabledDirectLink]
-      .filter(Boolean)
-      .map(normalizeUrl);
-    if (!blocked.length) return;
+    var blocked = blockedClickNeedles();
+    if (!blocked.length) return 0;
+    var removed = 0;
 
     document.querySelectorAll('script[src],a[href],iframe[src]').forEach(function (node) {
-      var value = node.getAttribute('src') || node.getAttribute('href');
-      var normalized = normalizeUrl(value);
-      var isBlocked = blocked.some(function (src) {
-        return normalized.indexOf(src) !== -1 || src.indexOf(normalized) !== -1;
-      });
-      if (isBlocked && node.parentNode) node.parentNode.removeChild(node);
+      if (isBlockedClickAdValue(nodeUrl(node))) {
+        removeNode(node);
+        removed += 1;
+      }
     });
+    return removed;
+  }
+
+  function isLikelyInvisibleFullPageOverlay(node) {
+    if (!node || node.nodeType !== 1 || !node.getBoundingClientRect) return false;
+    if (node.closest && node.closest('.result-modal,.modal,.ad-rail,.inline-ad,.native-ad-wrap')) return false;
+    var style = window.getComputedStyle(node);
+    if (style.display === 'none' || style.visibility === 'hidden') return false;
+    if (style.position !== 'fixed' && style.position !== 'absolute') return false;
+
+    var rect = node.getBoundingClientRect();
+    var viewportArea = Math.max(1, window.innerWidth * window.innerHeight);
+    var nodeArea = Math.max(0, rect.width * rect.height);
+    var coversMostScreen = nodeArea / viewportArea > 0.65 || (
+      rect.left <= 8 && rect.top <= 8 &&
+      rect.right >= window.innerWidth - 8 &&
+      rect.bottom >= window.innerHeight - 8
+    );
+    if (!coversMostScreen) return false;
+
+    var opacity = parseFloat(style.opacity || '1');
+    var highZ = parseInt(style.zIndex, 10);
+    var looksInvisible = opacity < 0.08 || style.backgroundColor === 'rgba(0, 0, 0, 0)';
+    var hasAdTarget = nodeContainsBlockedClickAd(node) || /effectivecpmnetwork|highperformanceformat|topcreativeformat/i.test(node.innerHTML || '');
+    return hasAdTarget && (looksInvisible || highZ >= 999);
+  }
+
+  function removeClickHijackOverlays(root) {
+    var scope = root && root.querySelectorAll ? root : document;
+    var removed = 0;
+    var candidates = [];
+    if (scope.nodeType === 1) candidates.push(scope);
+    if (scope.querySelectorAll) {
+      candidates = candidates.concat(Array.prototype.slice.call(scope.querySelectorAll('a,iframe,div,ins,section,aside')));
+    }
+    candidates.forEach(function (node) {
+      if (nodeContainsBlockedClickAd(node) || isLikelyInvisibleFullPageOverlay(node)) {
+        removeNode(node);
+        removed += 1;
+      }
+    });
+    return removed;
+  }
+
+  function installClickHijackGuard() {
+    removeUnsafeClickAds();
+    removeClickHijackOverlays(document);
+
+    document.addEventListener('click', function (event) {
+      var target = event.target && event.target.closest ? event.target.closest('a,iframe,div,ins,section,aside') : null;
+      if (!target) return;
+      if (!nodeContainsBlockedClickAd(target) && !isLikelyInvisibleFullPageOverlay(target)) return;
+      event.preventDefault();
+      event.stopPropagation();
+      removeNode(target);
+    }, true);
+
+    if (!('MutationObserver' in window)) return;
+    var observer = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        Array.prototype.forEach.call(mutation.addedNodes || [], function (node) {
+          if (node.nodeType !== 1) return;
+          if (nodeContainsBlockedClickAd(node) || isLikelyInvisibleFullPageOverlay(node)) removeNode(node);
+          else removeClickHijackOverlays(node);
+        });
+      });
+    });
+    observer.observe(document.documentElement, { childList: true, subtree: true });
   }
 
   function injectMobileBanners() {
@@ -245,7 +343,7 @@
 
   function run() {
     injectResponsiveCSS();
-    removeUnsafeClickAds();
+    installClickHijackGuard();
     injectMobileBanners();
     lazyLoadBanners();
     injectSideRailAds();

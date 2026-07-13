@@ -16,11 +16,20 @@ window.ADSTERRA = {
   socialBarSrc: null,
   disabledClickunderSrc: '//pl30266273.effectivecpmnetwork.com/38/35/8f/38358fe894e2e2919ff9dbccf8e09481.js',
   disabledDirectLink: 'https://www.effectivecpmnetwork.com/vdj8rvs4q?key=a843db2a4e7a62c1fbab5d7ad4d91a33',
+  blockedClickAdNeedles: [
+    'pl30266273.effectivecpmnetwork.com',
+    '38358fe894e2e2919ff9dbccf8e09481',
+    'vdj8rvs4q',
+    'a843db2a4e7a62c1fbab5d7ad4d91a33',
+    'pl30266280.effectivecpmnetwork.com',
+    'e948122feaa7bd58b18c5ad800302247'
+  ],
 
   // Native Banner (in-content, stronger engagement than standard banners)
   nativeBannerSrc: '//pl30266272.effectivecpmnetwork.com/e6d44dd184e6e948eb9c1a7c57155196/invoke.js',
   nativeBannerContainerId: 'container-e6d44dd184e6e948eb9c1a7c57155196',
 
-  // In-Page Push (game/tool pages only)
-  inPagePushSrc: '//pl30266280.effectivecpmnetwork.com/e9/48/12/e948122feaa7bd58b18c5ad800302247.js',
+  // Disabled for UX safety: script-only formats can behave like overlays on some devices.
+  inPagePushSrc: null,
+  disabledInPagePushSrc: '//pl30266280.effectivecpmnetwork.com/e9/48/12/e948122feaa7bd58b18c5ad800302247.js',
 };
