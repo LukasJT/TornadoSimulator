@@ -224,6 +224,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Atlanta Tornadoes - When Downtown Was Hit and the Ongoing Risk Atlanta has been struck by multiple significant tornadoes: the 2008 EF2 hit CNN Center and Georgia Dome, plus the 2021 Newnan EF4. The metro faces real tornado risk. atlanta tornadoes"
   },
   {
+    "title": "Atmospheric River Records Explained: Moisture Plumes, Mountain Rain, Snow, and Flooding",
+    "path": "/atmospheric-river-records-explained/",
+    "description": "What atmospheric river records measure, why moisture transport matters, and how mountains turn plumes into extreme rain and snow.",
+    "category": "Flood Records",
+    "keywords": "Atmospheric River Records Explained: Moisture Plumes, Mountain Rain, Snow, and Flooding What atmospheric river records measure, why moisture transport matters, and how mountains turn plumes into extreme rain and snow. atmospheric river records explained"
+  },
+  {
     "title": "Atmospheric Rivers — The Sky's Firehoses",
     "path": "/atmospheric-rivers-explained/",
     "description": "Atmospheric rivers carry more water than the Amazon and are responsible for many extreme flood events on the US West Coast. Here is the science and their role in the modern water cycle.",
@@ -392,6 +399,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "The Biggest Tornado Outbreaks in US History - Ranked by Count The biggest US tornado outbreaks by count: April 27, 2011 (216 tornadoes), April 3-4, 1974 (148), April 11, 1965 (47), and more. biggest tornado outbreaks"
   },
   {
+    "title": "Billion-Dollar Weather Disasters Explained: Why Losses Keep Growing",
+    "path": "/billion-dollar-weather-disasters-explained/",
+    "description": "What billion-dollar weather disasters are, why the count changes over time, and how inflation, exposure, and climate affect losses.",
+    "category": "Weather Disasters",
+    "keywords": "Billion-Dollar Weather Disasters Explained: Why Losses Keep Growing What billion-dollar weather disasters are, why the count changes over time, and how inflation, exposure, and climate affect losses. billion dollar weather disasters explained"
+  },
+  {
     "title": "Birmingham, Alabama Tornadoes - The Tornado-Vulnerable Metro",
     "path": "/birmingham-tornadoes/",
     "description": "Birmingham has been struck by multiple major tornadoes: 2011 Tuscaloosa-Birmingham EF4, plus historical events. Alabama's largest metro is at high tornado risk.",
@@ -404,6 +418,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "How black ice forms, where it is most common, and why bridges, shaded roads, and early mornings are risky after winter precipitation.",
     "category": "Winter Weather",
     "keywords": "Black Ice Weather Guide: Why Roads Freeze When They Look Wet How black ice forms, where it is most common, and why bridges, shaded roads, and early mornings are risky after winter precipitation. black ice weather guide"
+  },
+  {
+    "title": "Blizzard Records Explained: Snow, Wind, Visibility, Duration, and Drifts",
+    "path": "/blizzard-records-explained/",
+    "description": "What blizzard records measure, why visibility and wind matter, and how snow depth, drifts, and storm duration shape impacts.",
+    "category": "Winter Records",
+    "keywords": "Blizzard Records Explained: Snow, Wind, Visibility, Duration, and Drifts What blizzard records measure, why visibility and wind matter, and how snow depth, drifts, and storm duration shape impacts. blizzard records explained"
   },
   {
     "title": "Blizzard and Whiteout Driving Safety: When Roads Disappear",
@@ -672,11 +693,25 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Climate Change and Tornadoes — What the Science Actually Says Is climate change making tornadoes worse? The honest answer, without oversimplification or denial. What the peer-reviewed research shows about tornado frequency, geography, seasonality and outbreak clustering in a warming climate. climate change and tornadoes"
   },
   {
+    "title": "Climate Normal Explained: Why Forecasts Compare Weather to 30-Year Averages",
+    "path": "/climate-normal-explained/",
+    "description": "What climate normals are, why they use 30-year periods, and how they help compare today weather with typical conditions.",
+    "category": "Climate Data",
+    "keywords": "Climate Normal Explained: Why Forecasts Compare Weather to 30-Year Averages What climate normals are, why they use 30-year periods, and how they help compare today weather with typical conditions. climate normal explained"
+  },
+  {
     "title": "Climate Pattern Guides: Blocking Highs, MJO, AO, NAO, Drought, and Air Masses",
     "path": "/climate-pattern-guides/",
     "description": "A hub for large-scale weather and climate pattern explainers, including blocking highs, drought, MJO, AO, NAO, air masses, rain shadows, and terrain effects.",
     "category": "Climate Patterns",
     "keywords": "Climate Pattern Guides: Blocking Highs, MJO, AO, NAO, Drought, and Air Masses A hub for large-scale weather and climate pattern explainers, including blocking highs, drought, MJO, AO, NAO, air masses, rain shadows, and terrain effects. climate pattern guides"
+  },
+  {
+    "title": "Climate and Weather Extremes Guides: Normals, Return Periods, Megadrought, Urban Heat, and Records",
+    "path": "/climate-weather-extremes-guides/",
+    "description": "A hub for climate-data and weather-extreme explainers, including normals, return periods, 100-year floods, megadrought, and urban heat islands.",
+    "category": "Climate Data",
+    "keywords": "Climate and Weather Extremes Guides: Normals, Return Periods, Megadrought, Urban Heat, and Records A hub for climate-data and weather-extreme explainers, including normals, return periods, 100-year floods, megadrought, and urban heat islands. climate weather extremes guides"
   },
   {
     "title": "Cloud Atlas — Every Cloud Type Illustrated",
@@ -726,6 +761,20 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A hub for coastal and marine weather hazards, including coastal flooding, king tides, storm surge, rip currents, beach flags, and boating thunderstorms.",
     "category": "Coastal Weather",
     "keywords": "Coastal and Marine Hazard Guides: Surge, Tides, Rip Currents, Beach Flags, and Boating Storms A hub for coastal and marine weather hazards, including coastal flooding, king tides, storm surge, rip currents, beach flags, and boating thunderstorms. coastal marine hazard guides"
+  },
+  {
+    "title": "Cold Wave Records Explained: Arctic Outbreaks, Wind Chill, Power Demand, and Freeze Damage",
+    "path": "/cold-wave-records-explained/",
+    "description": "How cold wave records happen, why wind chill matters, and how long-duration freezes affect people, pipes, crops, and power systems.",
+    "category": "Cold Records",
+    "keywords": "Cold Wave Records Explained: Arctic Outbreaks, Wind Chill, Power Demand, and Freeze Damage How cold wave records happen, why wind chill matters, and how long-duration freezes affect people, pipes, crops, and power systems. cold wave records explained"
+  },
+  {
+    "title": "Coldest Temperature Records Explained: Arctic Air, Snow Cover, Clear Nights, and Valleys",
+    "path": "/coldest-temperature-records-explained/",
+    "description": "How extreme cold records form, why valleys and snow cover matter, and how official cold readings are checked.",
+    "category": "Cold Records",
+    "keywords": "Coldest Temperature Records Explained: Arctic Air, Snow Cover, Clear Nights, and Valleys How extreme cold records form, why valleys and snow cover matter, and how official cold readings are checked. coldest temperature records explained"
   },
   {
     "title": "Colorado Tornadoes - Eastern Plains and Front Range Events",
@@ -791,6 +840,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "The 10 Costliest Tornadoes in US History — Ranked by Damage The 10 costliest tornadoes in US history ranked by economic damage. Joplin 2011 tops the list at $2.8 billion, followed by Tuscaloosa 2011 and Moore 2013. Full list with dates and totals. costliest us tornadoes"
   },
   {
+    "title": "Costliest Weather Disasters in the U.S.: Hurricanes, Floods, Tornadoes, Hail, Fire, and Heat",
+    "path": "/costliest-weather-disasters-us/",
+    "description": "Why some weather disasters become extremely costly, including exposure, rebuilding costs, insurance, infrastructure, and repeated events.",
+    "category": "Weather Disasters",
+    "keywords": "Costliest Weather Disasters in the U.S.: Hurricanes, Floods, Tornadoes, Hail, Fire, and Heat Why some weather disasters become extremely costly, including exposure, rebuilding costs, insurance, infrastructure, and repeated events. costliest weather disasters us"
+  },
+  {
     "title": "Crane Wind Weather Guide: Gusts, Loads, Thunderstorms, and Stop-Work Decisions",
     "path": "/crane-wind-weather-guide/",
     "description": "A weather guide for crane wind risk, including gusts, suspended loads, thunderstorms, and why stop-work thresholds matter.",
@@ -810,6 +866,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Dallas-Fort Worth has been struck by multiple significant tornadoes: 1957, 2000 Fort Worth F3, 2015 Rowlett EF4, 2019 EF3. One of the most tornado-vulnerable US metros.",
     "category": "Guide",
     "keywords": "Dallas Tornadoes - The Metro Under Constant Tornado Threat Dallas-Fort Worth has been struck by multiple significant tornadoes: 1957, 2000 Fort Worth F3, 2015 Rowlett EF4, 2019 EF3. One of the most tornado-vulnerable US metros. dallas tornadoes"
+  },
+  {
+    "title": "Deadliest Tornadoes in U.S. History: Why Older Disasters Were So Deadly",
+    "path": "/deadliest-tornadoes-us-history/",
+    "description": "A guide to the deadliest U.S. tornadoes and why warning systems, housing, population, and time of day shaped the death toll.",
+    "category": "Tornado History",
+    "keywords": "Deadliest Tornadoes in U.S. History: Why Older Disasters Were So Deadly A guide to the deadliest U.S. tornadoes and why warning systems, housing, population, and time of day shaped the death toll. deadliest tornadoes us history"
   },
   {
     "title": "The 10 Deadliest Tornadoes in US History — Ranked by Fatalities",
@@ -852,6 +915,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Denver tornadoes: history including 1988 airport EF3, 2008 Windsor, and Front Range storms. Colorado metro tornado safety guide.",
     "category": "Guide",
     "keywords": "Denver Tornadoes - Front Range Metro Tornado History Denver tornadoes: history including 1988 airport EF3, 2008 Windsor, and Front Range storms. Colorado metro tornado safety guide. denver tornadoes"
+  },
+  {
+    "title": "Derecho Records Explained: Long-Lived Wind Storms, Damage Paths, and Extreme Gusts",
+    "path": "/derecho-records-explained/",
+    "description": "What derecho records measure, why some wind storms travel hundreds of miles, and how damage swaths are documented.",
+    "category": "Wind Storms",
+    "keywords": "Derecho Records Explained: Long-Lived Wind Storms, Damage Paths, and Extreme Gusts What derecho records measure, why some wind storms travel hundreds of miles, and how damage swaths are documented. derecho records explained"
   },
   {
     "title": "Derecho vs Tornado — What's the Difference?",
@@ -1146,6 +1216,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "The difference between a fire weather watch and red flag warning, plus what homeowners, campers, and outdoor workers should do.",
     "category": "Fire Weather",
     "keywords": "Fire Weather Watch vs Red Flag Warning: What Is the Difference? The difference between a fire weather watch and red flag warning, plus what homeowners, campers, and outdoor workers should do. fire weather watch vs red flag warning"
+  },
+  {
+    "title": "Flash Flood Records Explained: Extreme Rain, Terrain, Burn Scars, and Fast Water",
+    "path": "/flash-flood-records-explained/",
+    "description": "Why flash flood records happen, how terrain and burn scars amplify runoff, and why rainfall totals do not tell the whole story.",
+    "category": "Flood Records",
+    "keywords": "Flash Flood Records Explained: Extreme Rain, Terrain, Burn Scars, and Fast Water Why flash flood records happen, how terrain and burn scars amplify runoff, and why rainfall totals do not tell the whole story. flash flood records explained"
   },
   {
     "title": "Flash Flood Safety — Turn Around Don't Drown",
@@ -1526,11 +1603,25 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Heat Lightning Explained: Why Distant Lightning Looks Silent What people call heat lightning, why it is usually distant thunderstorm lightning, and why it still means storms are somewhere nearby. heat lightning myth explained"
   },
   {
+    "title": "Heat Wave Records Explained: Duration, Nighttime Heat, Humidity, and Health Risk",
+    "path": "/heat-wave-records-explained/",
+    "description": "How heat wave records are measured, why hot nights matter, and why humidity and duration can be more dangerous than one hot afternoon.",
+    "category": "Heat Records",
+    "keywords": "Heat Wave Records Explained: Duration, Nighttime Heat, Humidity, and Health Risk How heat wave records are measured, why hot nights matter, and why humidity and duration can be more dangerous than one hot afternoon. heat wave records explained"
+  },
+  {
     "title": "Heat Wave Safety — Recognizing, Preventing, and Treating Heat Illness",
     "path": "/heat-wave-safety/",
     "description": "Heat waves kill more Americans than any other weather event. Here is how to prevent heat exhaustion and heatstroke, when to worry, and what to do when someone is affected.",
     "category": "Safety guide",
     "keywords": "Heat Wave Safety — Recognizing, Preventing, and Treating Heat Illness Heat waves kill more Americans than any other weather event. Here is how to prevent heat exhaustion and heatstroke, when to worry, and what to do when someone is affected. heat wave safety"
+  },
+  {
+    "title": "Highest Temperature Records Explained: Heat Domes, Deserts, Sensors, and Verification",
+    "path": "/highest-temperature-records-explained/",
+    "description": "Why extreme heat records happen, how official high temperatures are measured, and why sensor siting matters.",
+    "category": "Heat Records",
+    "keywords": "Highest Temperature Records Explained: Heat Domes, Deserts, Sensors, and Verification Why extreme heat records happen, how official high temperatures are measured, and why sensor siting matters. highest temperature records explained"
   },
   {
     "title": "Hiking Lightning Safety Guide: Ridges, Summits, Trees, and Turnaround Times",
@@ -1785,6 +1876,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "How Tornadoes Form — Step-by-Step From Sky to Ground How do tornadoes form? A step-by-step explanation from the initial thunderstorm through supercell development, mesocyclone formation, wall cloud descent, RFD wrap-around, and touchdown. Illustrated with a stage-by-stage inline diagram. how tornadoes form"
   },
   {
+    "title": "100-Year Flood Explained: What It Means and Why It Can Happen Twice",
+    "path": "/hundred-year-flood-explained/",
+    "description": "A plain-English guide to the 100-year flood idea, annual chance, flood maps, development, and changing rainfall risk.",
+    "category": "Flood Risk",
+    "keywords": "100-Year Flood Explained: What It Means and Why It Can Happen Twice A plain-English guide to the 100-year flood idea, annual chance, flood maps, development, and changing rainfall risk. hundred year flood explained"
+  },
+  {
     "title": "Saffir-Simpson Hurricane Scale Explorer — Category 1 to 5",
     "path": "/hurricane-category-explorer/",
     "description": "Interactive explorer for the Saffir-Simpson Hurricane Wind Scale. Click any category from tropical storm through Category 5 to see wind speeds, storm surge estimates, damage examples, and historic Atlantic and Pacific hurricanes at that intensity.",
@@ -1839,6 +1937,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A map-based guessing game for famous hurricanes and tropical cyclones. Look at the storm's track on a map — guess which hurricane it is. 60+ named storms from Camille to Katrina to Helene.",
     "category": "Guide",
     "keywords": "Hurricane Namer — Guess the Hurricane on the Map | Tornado Simulator A map-based guessing game for famous hurricanes and tropical cyclones. Look at the storm's track on a map — guess which hurricane it is. 60+ named storms from Camille to Katrina to Helene. hurricane namer"
+  },
+  {
+    "title": "Hurricane Records Explained: Pressure, Wind, Rain, Surge, Size, and Damage",
+    "path": "/hurricane-records-explained/",
+    "description": "How hurricane records are measured, including minimum pressure, maximum wind, rainfall, storm surge, size, deaths, and cost.",
+    "category": "Tropical Records",
+    "keywords": "Hurricane Records Explained: Pressure, Wind, Rain, Surge, Size, and Damage How hurricane records are measured, including minimum pressure, maximum wind, rainfall, storm surge, size, deaths, and cost. hurricane records explained"
   },
   {
     "title": "Hurricane Season Preparedness — A Month-by-Month Guide",
@@ -2030,6 +2135,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Landspouts — The Non-Supercell Tornado Landspouts are tornadoes that form without supercells — from developing thunderstorms interacting with pre-existing surface rotation. Here is how they differ from supercell tornadoes and why they matter. landspouts vs tornadoes"
   },
   {
+    "title": "Largest Hailstone Records: How Giant Hail Forms and Gets Measured",
+    "path": "/largest-hailstone-records/",
+    "description": "How giant hail forms inside supercell thunderstorms, how hailstones are measured, and why official records need careful documentation.",
+    "category": "Hail Records",
+    "keywords": "Largest Hailstone Records: How Giant Hail Forms and Gets Measured How giant hail forms inside supercell thunderstorms, how hailstones are measured, and why official records need careful documentation. largest hailstone records"
+  },
+  {
     "title": "Lawn Drainage Heavy Rain Guide: Standing Water, Soil, Slopes, and Yard Flooding",
     "path": "/lawn-drainage-heavy-rain-guide/",
     "description": "Why lawns hold water during heavy rain, how soil, slopes, drains, and grading matter, and when standing water points to a bigger drainage issue.",
@@ -2175,6 +2287,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "The Mayfield, Kentucky tornado of December 10, 2021 was an EF4 with 190 mph winds and a 165-mile path — one of the longest and deadliest December tornadoes in US history. 57 killed in Kentucky.",
     "category": "Guide",
     "keywords": "Mayfield, Kentucky Tornado of 2021 — EF4, 165-Mile Path, 57 Killed The Mayfield, Kentucky tornado of December 10, 2021 was an EF4 with 190 mph winds and a 165-mile path — one of the longest and deadliest December tornadoes in US history. 57 killed in Kentucky. mayfield 2021"
+  },
+  {
+    "title": "Megadrought Explained: Long-Term Dry Periods, Tree Rings, Reservoirs, and Climate",
+    "path": "/megadrought-explained/",
+    "description": "What a megadrought is, how scientists study long droughts, and why reservoirs, groundwater, snowpack, and heat matter.",
+    "category": "Drought",
+    "keywords": "Megadrought Explained: Long-Term Dry Periods, Tree Rings, Reservoirs, and Climate What a megadrought is, how scientists study long droughts, and why reservoirs, groundwater, snowpack, and heat matter. megadrought explained"
   },
   {
     "title": "Memphis Tornadoes - Tennessee-Mississippi Delta Metro History",
@@ -3528,6 +3647,27 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "How to Read the SPC Mesoanalysis Page The SPC Mesoanalysis page is updated hourly with dozens of atmospheric parameters overlaid on maps. Here is which panels actually matter, how to interpret STP, EHI, MLCAPE, and how to build a chase forecast from mesoanalysis. reading spc mesoanalysis"
   },
   {
+    "title": "Record-Breaking Weather Explained: Daily, Monthly, Seasonal, and All-Time Records",
+    "path": "/record-breaking-weather-explained/",
+    "description": "The difference between daily, monthly, seasonal, annual, and all-time weather records, and why record wording matters.",
+    "category": "Weather Records",
+    "keywords": "Record-Breaking Weather Explained: Daily, Monthly, Seasonal, and All-Time Records The difference between daily, monthly, seasonal, annual, and all-time weather records, and why record wording matters. record breaking weather explained"
+  },
+  {
+    "title": "Record Rainfall Explained: Inches Per Hour, Tropical Moisture, Training Storms, and Gauges",
+    "path": "/record-rainfall-explained/",
+    "description": "How record rainfall happens, why training storms are dangerous, and how rain gauges measure extreme totals.",
+    "category": "Rainfall Records",
+    "keywords": "Record Rainfall Explained: Inches Per Hour, Tropical Moisture, Training Storms, and Gauges How record rainfall happens, why training storms are dangerous, and how rain gauges measure extreme totals. record rainfall explained"
+  },
+  {
+    "title": "Record Snowfall Explained: Lake Effect, Snow Ratios, Storm Tracks, and Measuring Snow",
+    "path": "/record-snowfall-explained/",
+    "description": "Why record snowfall totals occur, how lake effect and snow ratios matter, and why measuring snow is harder than it sounds.",
+    "category": "Snow Records",
+    "keywords": "Record Snowfall Explained: Lake Effect, Snow Ratios, Storm Tracks, and Measuring Snow Why record snowfall totals occur, how lake effect and snow ratios matter, and why measuring snow is harder than it sounds. record snowfall explained"
+  },
+  {
     "title": "Red Flag Warning Explained: Wind, Humidity, and Fast Fire Spread",
     "path": "/red-flag-warning-explained/",
     "description": "What a red flag warning means, why wind and low humidity matter, and how to reduce wildfire risk during dangerous fire weather.",
@@ -3547,6 +3687,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A hub for regional weather pattern explainers, including downslope winds, lake breezes, fog types, sea fog, and mountain waves.",
     "category": "Regional Weather",
     "keywords": "Regional Weather Pattern Guides: Santa Ana, Chinook, Foehn, Lake Breeze, Fog, and Mountain Waves A hub for regional weather pattern explainers, including downslope winds, lake breezes, fog types, sea fog, and mountain waves. regional weather pattern guides"
+  },
+  {
+    "title": "Return Period Weather Explained: 10-Year, 50-Year, and 100-Year Events",
+    "path": "/return-period-weather-explained/",
+    "description": "What return periods mean in weather risk, why a 100-year event can happen more than once, and why changing conditions complicate the math.",
+    "category": "Risk",
+    "keywords": "Return Period Weather Explained: 10-Year, 50-Year, and 100-Year Events What return periods mean in weather risk, why a 100-year event can happen more than once, and why changing conditions complicate the math. return period weather explained"
   },
   {
     "title": "Rhode Island Tornadoes - Smallest State, Rarest Events",
@@ -4221,11 +4368,25 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Storm Drain Safety During Heavy Rain: Why Water Pulls Harder Than It Looks A safety guide for storm drains, culverts, ditches, and flood channels during heavy rain and flash flooding. storm drain safety heavy rain"
   },
   {
+    "title": "Storm Events Database Guide: How Historical Weather Damage Gets Archived",
+    "path": "/storm-events-database-guide/",
+    "description": "What storm event databases contain, how events are categorized, and why historical weather damage records have limitations.",
+    "category": "Storm Data",
+    "keywords": "Storm Events Database Guide: How Historical Weather Damage Gets Archived What storm event databases contain, how events are categorized, and why historical weather damage records have limitations. storm events database guide"
+  },
+  {
     "title": "Storm Photography Post-Processing — Lightroom Recipes",
     "path": "/storm-photography-post-processing/",
     "description": "Every storm photographer's Lightroom recipes for the classic storm shots. Supercell structure, lightning, tornado, mammatus, and post-storm cleanup. Practical settings and adjustments.",
     "category": "Photo editing",
     "keywords": "Storm Photography Post-Processing — Lightroom Recipes Every storm photographer's Lightroom recipes for the classic storm shots. Supercell structure, lightning, tornado, mammatus, and post-storm cleanup. Practical settings and adjustments. storm photography post processing"
+  },
+  {
+    "title": "Storm Report Database Guide: Hail, Wind, Tornado, Flood, and Damage Reports",
+    "path": "/storm-report-database-guide/",
+    "description": "How storm report databases are used, what reports can and cannot prove, and why duplicate or delayed reports happen.",
+    "category": "Storm Reports",
+    "keywords": "Storm Report Database Guide: Hail, Wind, Tornado, Flood, and Damage Reports How storm report databases are used, what reports can and cannot prove, and why duplicate or delayed reports happen. storm report database guide"
   },
   {
     "title": "Storm Shelter Buying Guide — Types, Costs, and Installation",
@@ -4303,6 +4464,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "How straight-line thunderstorm winds damage trees, roofs, fences, and power lines, and why severe thunderstorm warnings deserve action.",
     "category": "Severe Storms",
     "keywords": "Straight-Line Wind Damage Guide: Why It Can Be as Serious as a Tornado How straight-line thunderstorm winds damage trees, roofs, fences, and power lines, and why severe thunderstorm warnings deserve action. straight line wind damage guide"
+  },
+  {
+    "title": "Strongest Wind Gust Records: Mountains, Cyclones, Thunderstorms, and Measurement Limits",
+    "path": "/strongest-wind-gust-records/",
+    "description": "Why extreme wind gusts happen, where they are measured, and why wind records are challenging to verify.",
+    "category": "Wind Records",
+    "keywords": "Strongest Wind Gust Records: Mountains, Cyclones, Thunderstorms, and Measurement Limits Why extreme wind gusts happen, where they are measured, and why wind records are challenging to verify. strongest wind gust records"
   },
   {
     "title": "Summer Weather Safety Guide: Heat, Thunderstorms, Air Quality, and Flash Floods",
@@ -5453,6 +5621,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Tornado Quiz for Kids — Free Fun Weather Quiz (Grades 2-6) Free interactive tornado quiz for kids. Twelve friendly multiple-choice questions about tornadoes — what they are, how they form, safety rules, and cool facts. Perfect for grades 2-6, classroom use, or curious kids at home. Big buttons, colorful design, instant feedback, and a printable certificate at the end. tornado quiz for kids"
   },
   {
+    "title": "Tornado Records Explained: Width, Path Length, Wind, Deaths, and Damage",
+    "path": "/tornado-records-explained/",
+    "description": "How tornado records are defined, why some are uncertain, and what width, path length, EF rating, death toll, and cost really mean.",
+    "category": "Tornado Records",
+    "keywords": "Tornado Records Explained: Width, Path Length, Wind, Deaths, and Damage How tornado records are defined, why some are uncertain, and what width, path length, EF rating, death toll, and cost really mean. tornado records explained"
+  },
+  {
     "title": "Tornado Records — Widest, Longest, Fastest, Deadliest",
     "path": "/tornado-records/",
     "description": "Complete list of US tornado records: widest (2.6 mi El Reno 2013), longest track (219 mi Tri-State 1925), highest wind speed (301 mph Bridge Creek 1999), deadliest (695 Tri-State).",
@@ -6083,6 +6258,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Types of Tornadoes - Rope, Cone, Wedge, Multi-Vortex, and More Types of tornadoes: rope, cone, stovepipe, wedge, multi-vortex, satellite, landspout, waterspout. Each type explained with characteristics and typical intensity. types of tornadoes"
   },
   {
+    "title": "Typhoon Records Explained: Western Pacific Super Typhoons, Pressure, Wind, and Rainfall",
+    "path": "/typhoon-records-explained/",
+    "description": "How typhoon records are tracked, why the western Pacific can produce intense storms, and what super typhoon means.",
+    "category": "Tropical Records",
+    "keywords": "Typhoon Records Explained: Western Pacific Super Typhoons, Pressure, Wind, and Rainfall How typhoon records are tracked, why the western Pacific can produce intense storms, and what super typhoon means. typhoon records explained"
+  },
+  {
     "title": "Udall Tornado (May 25, 1955) — F5, 80 Dead, Deadliest in Kansas History",
     "path": "/udall-1955/",
     "description": "The 1955 Udall F5 tornado struck the sleeping Kansas town at 10:35 PM, killing 80 people — over half the town's population was killed or injured. It remains the deadliest tornado in Kansas history.",
@@ -6116,6 +6298,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Why cities can flood quickly during heavy rain, how pavement and drains change runoff, and why underpasses and low roads are dangerous.",
     "category": "Flooding",
     "keywords": "Urban Flash Flooding Guide: Streets, Underpasses, Storm Drains, and Fast Runoff Why cities can flood quickly during heavy rain, how pavement and drains change runoff, and why underpasses and low roads are dangerous. urban flash flooding guide"
+  },
+  {
+    "title": "Urban Heat Island Explained: Why Cities Stay Hotter Than Nearby Rural Areas",
+    "path": "/urban-heat-island-explained/",
+    "description": "Why cities can be hotter than surrounding areas, how pavement and buildings store heat, and why nighttime heat increases risk.",
+    "category": "Heat Safety",
+    "keywords": "Urban Heat Island Explained: Why Cities Stay Hotter Than Nearby Rural Areas Why cities can be hotter than surrounding areas, how pavement and buildings store heat, and why nighttime heat increases risk. urban heat island explained"
   },
   {
     "title": "Urban Heat Islands — Why Cities Are 5-15°F Hotter",
@@ -6314,6 +6503,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Weather Crossword — Free Interactive Meteorology Puzzle | Tornado Simulator A free interactive crossword puzzle themed around weather and meteorology. 21 clues across and down, from tornado to cirrus. Play in your browser. weather crossword"
   },
   {
+    "title": "Weather Disaster Record Guides: Billion-Dollar Disasters, Deadliest Tornadoes, Hurricanes, Typhoons, and Derechos",
+    "path": "/weather-disaster-record-guides/",
+    "description": "A hub for weather disaster record explainers, including billion-dollar disasters, deadliest tornadoes, costliest events, hurricanes, typhoons, and derechos.",
+    "category": "Weather Disasters",
+    "keywords": "Weather Disaster Record Guides: Billion-Dollar Disasters, Deadliest Tornadoes, Hurricanes, Typhoons, and Derechos A hub for weather disaster record explainers, including billion-dollar disasters, deadliest tornadoes, costliest events, hurricanes, typhoons, and derechos. weather disaster record guides"
+  },
+  {
     "title": "Weather Document Waterproofing: IDs, Insurance, Photos, and Digital Backups",
     "path": "/weather-documents-waterproofing/",
     "description": "How to protect important documents before floods, hurricanes, tornadoes, fires, and storm evacuations with waterproof storage and digital backups.",
@@ -6326,6 +6522,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A practical weather emergency go bag list for evacuations, shelters, power outages, apartment residents, pets, documents, and medications.",
     "category": "Preparedness",
     "keywords": "Weather Emergency Go Bag: What to Pack Before Storm Season A practical weather emergency go bag list for evacuations, shelters, power outages, apartment residents, pets, documents, and medications. weather emergency go bag"
+  },
+  {
+    "title": "Weather Extremes Guides: Records for Heat, Cold, Rain, Snow, Wind, Hail, Tornadoes, and Floods",
+    "path": "/weather-extremes-guides/",
+    "description": "A hub for extreme weather records, including heat, cold, rain, snow, wind, hail, tornado, hurricane, derecho, and flood records.",
+    "category": "Weather Records",
+    "keywords": "Weather Extremes Guides: Records for Heat, Cold, Rain, Snow, Wind, Hail, Tornadoes, and Floods A hub for extreme weather records, including heat, cold, rain, snow, wind, hail, tornado, hurricane, derecho, and flood records. weather extremes guides"
   },
   {
     "title": "Weather First Aid Kit Guide: Storms, Heat, Cold, Cuts, Burns, and Medications",
@@ -6510,6 +6713,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Weather Radio vs Phone Alerts: Why Redundant Warning Systems Matter Compare NOAA weather radio, Wireless Emergency Alerts, weather apps, sirens, and local media for tornadoes, floods, hurricanes, and severe storms. weather radio vs phone alerts"
   },
   {
+    "title": "Weather Records Explained: How Extreme Weather Records Are Measured and Verified",
+    "path": "/weather-records-explained/",
+    "description": "How weather records are measured, checked, and compared, including temperature, rainfall, snow, wind, hail, and pressure records.",
+    "category": "Weather Records",
+    "keywords": "Weather Records Explained: How Extreme Weather Records Are Measured and Verified How weather records are measured, checked, and compared, including temperature, rainfall, snow, wind, hail, and pressure records. weather records explained"
+  },
+  {
     "title": "Weather Safety for Coaches: Lightning, Heat, Air Quality, and Field Conditions",
     "path": "/weather-safety-for-coaches/",
     "description": "A practical weather safety guide for coaches handling lightning delays, heat illness, smoke, air quality, wet fields, and severe storm timing.",
@@ -6564,6 +6774,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "How station models show temperature, dew point, pressure, wind, cloud cover, and weather using compact symbols on surface maps.",
     "category": "Weather Maps",
     "keywords": "Weather Station Model Explained: How to Read the Little Weather Map Symbols How station models show temperature, dew point, pressure, wind, cloud cover, and weather using compact symbols on surface maps. weather station model explained"
+  },
+  {
+    "title": "Weather Station Record Quality: Siting, Instruments, Moves, and Missing Data",
+    "path": "/weather-station-record-quality/",
+    "description": "Why weather station quality matters for records, including sensor siting, station moves, instrument changes, and missing observations.",
+    "category": "Climate Data",
+    "keywords": "Weather Station Record Quality: Siting, Instruments, Moves, and Missing Data Why weather station quality matters for records, including sensor siting, station moves, instrument changes, and missing observations. weather station record quality"
   },
   {
     "title": "220+ Weather Trivia Questions and Answers (Bar Trivia Ready)",
