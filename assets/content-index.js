@@ -287,6 +287,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Aviation Weather Guides: METAR, TAF, Ceiling, Visibility, and Travel Weather A hub for beginner-friendly aviation weather guides that also help travelers understand fog, low clouds, airport observations, and changing local conditions. aviation weather guides"
   },
   {
+    "title": "Barometer School Project: Track Air Pressure Before Weather Changes",
+    "path": "/barometer-school-project/",
+    "description": "A student barometer project explaining air pressure, pressure trends, storms, fair weather, and simple observation logs.",
+    "category": "Student Weather",
+    "keywords": "Barometer School Project: Track Air Pressure Before Weather Changes A student barometer project explaining air pressure, pressure trends, storms, fair weather, and simple observation logs. barometer school project"
+  },
+  {
     "title": "Barometric Pressure Explained: High Pressure, Low Pressure, and Weather Changes",
     "path": "/barometric-pressure-explained/",
     "description": "What barometric pressure is, why it rises and falls, and how pressure patterns relate to wind, storms, clouds, and fair weather.",
@@ -495,6 +502,20 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Why bridges and overpasses ice before regular roads, and how drivers can spot freezing risk during winter travel.",
     "category": "Winter Weather",
     "keywords": "Bridge Icing Weather Guide: Why Overpasses Freeze First Why bridges and overpasses ice before regular roads, and how drivers can spot freezing risk during winter travel. bridge icing weather guide"
+  },
+  {
+    "title": "Broadcast Meteorologist Career Guide: TV, Streaming, Graphics, and Public Communication",
+    "path": "/broadcast-meteorologist-career-guide/",
+    "description": "What broadcast meteorologists do, including forecasting, graphics, severe weather coverage, communication, and public safety messaging.",
+    "category": "Weather Careers",
+    "keywords": "Broadcast Meteorologist Career Guide: TV, Streaming, Graphics, and Public Communication What broadcast meteorologists do, including forecasting, graphics, severe weather coverage, communication, and public safety messaging. broadcast meteorologist career guide"
+  },
+  {
+    "title": "Build a Wind Vane Project: Find Wind Direction With a Simple Weather Tool",
+    "path": "/build-a-wind-vane-project/",
+    "description": "How students can build a wind vane, test wind direction, and connect wind shifts to fronts, storms, sea breezes, and local obstacles.",
+    "category": "Student Weather",
+    "keywords": "Build a Wind Vane Project: Find Wind Direction With a Simple Weather Tool How students can build a wind vane, test wind direction, and connect wind shifts to fronts, storms, sea breezes, and local obstacles. build a wind vane project"
   },
   {
     "title": "Building Codes and Tornadoes — What Actually Improved",
@@ -749,6 +770,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Climate Pattern Guides: Blocking Highs, MJO, AO, NAO, Drought, and Air Masses A hub for large-scale weather and climate pattern explainers, including blocking highs, drought, MJO, AO, NAO, air masses, rain shadows, and terrain effects. climate pattern guides"
   },
   {
+    "title": "Climate Scientist Career Guide: Data, Models, Impacts, and Long-Term Weather Patterns",
+    "path": "/climate-scientist-career-guide/",
+    "description": "What climate scientists study, how climate work differs from daily forecasting, and what skills help in climate research and applied climate jobs.",
+    "category": "Weather Careers",
+    "keywords": "Climate Scientist Career Guide: Data, Models, Impacts, and Long-Term Weather Patterns What climate scientists study, how climate work differs from daily forecasting, and what skills help in climate research and applied climate jobs. climate scientist career guide"
+  },
+  {
     "title": "Climate and Weather Extremes Guides: Normals, Return Periods, Megadrought, Urban Heat, and Records",
     "path": "/climate-weather-extremes-guides/",
     "description": "A hub for climate-data and weather-extreme explainers, including normals, return periods, 100-year floods, megadrought, and urban heat islands.",
@@ -775,6 +803,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A free interactive game to test your cloud identification skills. See a drawn cloud, pick the type from four options. Learn cumulus from cumulonimbus, cirrus from cirrostratus, and mammatus from lenticular. Great for weather nerds, students and future storm spotters.",
     "category": "☁️ 15-round game",
     "keywords": "Cloud Identification Game — Guess the Cloud Type A free interactive game to test your cloud identification skills. See a drawn cloud, pick the type from four options. Learn cumulus from cumulonimbus, cirrus from cirrostratus, and mammatus from lenticular. Great for weather nerds, students and future storm spotters. cloud id game"
+  },
+  {
+    "title": "Cloud in a Jar Experiment: How Condensation Makes a Mini Cloud",
+    "path": "/cloud-in-a-jar-experiment/",
+    "description": "How to make a cloud in a jar, what it shows about condensation, cooling, water vapor, and cloud droplets.",
+    "category": "Student Weather",
+    "keywords": "Cloud in a Jar Experiment: How Condensation Makes a Mini Cloud How to make a cloud in a jar, what it shows about condensation, cooling, water vapor, and cloud droplets. cloud in a jar experiment"
   },
   {
     "title": "Cloud Types — An Illustrated Field Guide",
@@ -1174,6 +1209,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "How to build a family alert plan using phone alerts, weather radio, backup contacts, sirens, school alerts, and travel location settings.",
     "category": "Preparedness",
     "keywords": "Emergency Alerts Family Plan: Phones, Weather Radio, Sirens, and Backup Contacts How to build a family alert plan using phone alerts, weather radio, backup contacts, sirens, school alerts, and travel location settings. emergency alerts family plan"
+  },
+  {
+    "title": "Emergency Manager Weather Career: Warnings, Shelters, Evacuations, and Public Safety",
+    "path": "/emergency-manager-weather-career/",
+    "description": "How emergency managers use weather information, coordinate warnings, shelters, evacuations, recovery, and partner communication.",
+    "category": "Weather Careers",
+    "keywords": "Emergency Manager Weather Career: Warnings, Shelters, Evacuations, and Public Safety How emergency managers use weather information, coordinate warnings, shelters, evacuations, recovery, and partner communication. emergency manager weather career"
   },
   {
     "title": "Ensemble Forecast Explained: Why Meteorologists Run Many Forecasts at Once",
@@ -1918,6 +1960,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "How Hail Forms — From Bean-Sized to Softball-Sized Hail is one of the most destructive severe weather phenomena. Here is how a single ice pellet grows into a softball, why some storms produce giant hail and others don't, and what to do when it falls. how hail forms"
   },
   {
+    "title": "How Hurricane Forecasters Work: Tracks, Cones, Models, Aircraft, Surge, and Rain",
+    "path": "/how-hurricane-forecasters-work/",
+    "description": "How hurricane forecasters build track, intensity, rain, wind, and surge forecasts using models, satellites, aircraft, and observations.",
+    "category": "Tropical Forecasting",
+    "keywords": "How Hurricane Forecasters Work: Tracks, Cones, Models, Aircraft, Surge, and Rain How hurricane forecasters build track, intensity, rain, wind, and surge forecasts using models, satellites, aircraft, and observations. how hurricane forecasters work"
+  },
+  {
     "title": "How Loud Is a Tornado? Decibel Levels and the Freight Train Sound",
     "path": "/how-loud-is-a-tornado/",
     "description": "How loud is a tornado? Peak sound reaches 100-140 dB, comparable to jet engines. Understand the freight train sound description and safety implications.",
@@ -1932,11 +1981,25 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "How Many Tornadoes Per Year in the US? Trends and Records The US averages about 1,200 tornadoes per year. Record year was 2004 with 1,817. Trends by decade, state, and month. how many tornadoes per year"
   },
   {
+    "title": "How Meteorologists Predict Weather: Observations, Models, Radar, Satellite, and Experience",
+    "path": "/how-meteorologists-predict-weather/",
+    "description": "How meteorologists make forecasts using observations, computer models, radar, satellite, local knowledge, and communication.",
+    "category": "Forecasting",
+    "keywords": "How Meteorologists Predict Weather: Observations, Models, Radar, Satellite, and Experience How meteorologists make forecasts using observations, computer models, radar, satellite, local knowledge, and communication. how meteorologists predict weather"
+  },
+  {
     "title": "How Often Do Tornadoes Hit My Town? US Tornado Frequency by Location",
     "path": "/how-often-do-tornadoes-hit-my-town/",
     "description": "How often does a tornado hit any specific place? Learn US tornado density by location - and why the answer is far more nuanced than the numbers suggest.",
     "category": "Guide",
     "keywords": "How Often Do Tornadoes Hit My Town? US Tornado Frequency by Location How often does a tornado hit any specific place? Learn US tornado density by location - and why the answer is far more nuanced than the numbers suggest. how often do tornadoes hit my town"
+  },
+  {
+    "title": "How Radar Meteorologists Work: Reflectivity, Velocity, Dual-Pol, and Warnings",
+    "path": "/how-radar-meteorologists-work/",
+    "description": "How radar meteorologists analyze storms using reflectivity, velocity, dual-pol data, storm reports, and warning context.",
+    "category": "Radar",
+    "keywords": "How Radar Meteorologists Work: Reflectivity, Velocity, Dual-Pol, and Warnings How radar meteorologists analyze storms using reflectivity, velocity, dual-pol data, storm reports, and warning context. how radar meteorologists work"
   },
   {
     "title": "How Strong Are Tornado Winds? Wind Speed Guide by EF Rating",
@@ -1995,6 +2058,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "How to Use the Tornado Simulator - Complete Guide Complete guide to using our tornado simulator: click anywhere to place a tornado, adjust EF rating, path, wind speed, and see real damage estimates for your area. how to use tornado simulator"
   },
   {
+    "title": "How Tornado Warnings Are Issued: Radar, Spotters, Rotation, Debris, and Warning Polygons",
+    "path": "/how-tornado-warnings-are-issued/",
+    "description": "How tornado warnings are issued using radar rotation, debris signatures, spotter reports, storm environment, and warning polygons.",
+    "category": "Warnings",
+    "keywords": "How Tornado Warnings Are Issued: Radar, Spotters, Rotation, Debris, and Warning Polygons How tornado warnings are issued using radar rotation, debris signatures, spotter reports, storm environment, and warning polygons. how tornado warnings are issued"
+  },
+  {
     "title": "How Tornadoes Are Detected - Radar, Spotters, and Modern Tools",
     "path": "/how-tornadoes-are-detected/",
     "description": "Modern tornado detection uses NEXRAD Doppler radar, dual-polarization data, storm spotters, and mobile radar. How each works and their limitations.",
@@ -2007,6 +2077,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "How do tornadoes form? A step-by-step explanation from the initial thunderstorm through supercell development, mesocyclone formation, wall cloud descent, RFD wrap-around, and touchdown. Illustrated with a stage-by-stage inline diagram.",
     "category": "Formation science",
     "keywords": "How Tornadoes Form — Step-by-Step From Sky to Ground How do tornadoes form? A step-by-step explanation from the initial thunderstorm through supercell development, mesocyclone formation, wall cloud descent, RFD wrap-around, and touchdown. Illustrated with a stage-by-stage inline diagram. how tornadoes form"
+  },
+  {
+    "title": "How Winter Storms Are Forecast: Track, Temperature, Snow Ratios, Ice, and Impacts",
+    "path": "/how-winter-storms-are-forecast/",
+    "description": "How meteorologists forecast winter storms using storm track, temperature layers, snow ratios, ice potential, and road impacts.",
+    "category": "Winter Forecasting",
+    "keywords": "How Winter Storms Are Forecast: Track, Temperature, Snow Ratios, Ice, and Impacts How meteorologists forecast winter storms using storm track, temperature layers, snow ratios, ice potential, and road impacts. how winter storms are forecast"
   },
   {
     "title": "100-Year Flood Explained: What It Means and Why It Can Happen Twice",
@@ -2133,6 +2210,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A chronological reference of every major hurricane to hit the US since 1900. Category, deaths, damage, and lasting effects.",
     "category": "Historical reference",
     "keywords": "Hurricanes in US History — Every Major Landfall Since 1900 A chronological reference of every major hurricane to hit the US since 1900. Category, deaths, damage, and lasting effects. hurricanes in us history"
+  },
+  {
+    "title": "Hydrologist Career Guide: Rivers, Floods, Drought, Snowpack, and Water Forecasting",
+    "path": "/hydrologist-career-guide/",
+    "description": "What hydrologists do, including river forecasting, drought, snowpack, groundwater, flood risk, and water resources.",
+    "category": "Weather Careers",
+    "keywords": "Hydrologist Career Guide: Rivers, Floods, Drought, Snowpack, and Water Forecasting What hydrologists do, including river forecasting, drought, snowpack, groundwater, flood risk, and water resources. hydrologist career guide"
   },
   {
     "title": "Ice Storm Safety — Winter's Silent Killer",
@@ -2401,6 +2485,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Maine Tornadoes - Rare Northern New England Events Maine averages 2 tornadoes per year. Northern latitude, mountains, and ocean influence make tornadoes very rare. maine tornadoes"
   },
   {
+    "title": "Make a Rain Gauge Project: Measure Rainfall for a Weather Journal",
+    "path": "/make-a-rain-gauge-project/",
+    "description": "A student guide to making a simple rain gauge, placing it correctly, reading totals, and comparing rainfall with nearby official reports.",
+    "category": "Student Weather",
+    "keywords": "Make a Rain Gauge Project: Measure Rainfall for a Weather Journal A student guide to making a simple rain gauge, placing it correctly, reading totals, and comparing rainfall with nearby official reports. make a rain gauge project"
+  },
+  {
     "title": "Mammatus Clouds Explained: What Those Pouch-Shaped Clouds Mean",
     "path": "/mammatus-clouds-explained/",
     "description": "Mammatus clouds look ominous, but what do they actually mean? Learn how they form and why they often appear near strong thunderstorms.",
@@ -2511,6 +2602,20 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A beginner-friendly guide to METAR reports, including wind, visibility, clouds, temperature, dew point, pressure, and present weather codes.",
     "category": "Aviation Weather",
     "keywords": "METAR Report Explained: Reading Airport Weather Observations A beginner-friendly guide to METAR reports, including wind, visibility, clouds, temperature, dew point, pressure, and present weather codes. metar report explained"
+  },
+  {
+    "title": "Meteorologist Career Guide: School, Skills, Jobs, and Weather Work",
+    "path": "/meteorologist-career-guide/",
+    "description": "How to become a meteorologist, what skills matter, and what weather jobs exist in forecasting, research, media, aviation, and emergency planning.",
+    "category": "Weather Careers",
+    "keywords": "Meteorologist Career Guide: School, Skills, Jobs, and Weather Work How to become a meteorologist, what skills matter, and what weather jobs exist in forecasting, research, media, aviation, and emergency planning. meteorologist career guide"
+  },
+  {
+    "title": "Meteorology School Project Ideas: Forecasting, Clouds, Rain, Wind, Pressure, and Storm Safety",
+    "path": "/meteorology-school-project-ideas/",
+    "description": "School project ideas for meteorology, including weather journals, clouds, rain gauges, wind vanes, pressure, forecast verification, and safety posters.",
+    "category": "Student Weather",
+    "keywords": "Meteorology School Project Ideas: Forecasting, Clouds, Rain, Wind, Pressure, and Storm Safety School project ideas for meteorology, including weather journals, clouds, rain gauges, wind vanes, pressure, forecast verification, and safety posters. meteorology school project ideas"
   },
   {
     "title": "Miami Tornadoes - South Florida Hurricane-Spawned History",
@@ -2826,6 +2931,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "What nowcasting means, why it is useful for the next few hours, and how radar, satellite, lightning, and surface data help.",
     "category": "Forecasting",
     "keywords": "Nowcasting Weather Explained: Short-Term Forecasts From Radar, Satellite, and Observations What nowcasting means, why it is useful for the next few hours, and how radar, satellite, lightning, and surface data help. nowcasting weather explained"
+  },
+  {
+    "title": "National Weather Service Career Guide: Forecast Offices, Warnings, Hydrology, and Support Roles",
+    "path": "/nws-career-guide/",
+    "description": "A guide to National Weather Service careers, including forecasters, hydrologists, technicians, warning operations, and support roles.",
+    "category": "Weather Careers",
+    "keywords": "National Weather Service Career Guide: Forecast Offices, Warnings, Hydrology, and Support Roles A guide to National Weather Service careers, including forecasters, hydrologists, technicians, warning operations, and support roles. nws career guide"
   },
   {
     "title": "Office Tornado Drill Template for Managers and Teams",
@@ -4557,6 +4669,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Storm Chaser Beginner Guide — Practical How-to for New Chasers A no-fluff beginner's guide to storm chasing: the meteorology you need to learn, the gear that actually matters, how to read a Storm Prediction Center outlook, safety rules that keep chasers alive, and the ethics of the modern chase. storm chaser beginner guide"
   },
   {
+    "title": "Storm Chaser Career Guide: Research, Media, Safety, and Reality Checks",
+    "path": "/storm-chaser-career-guide/",
+    "description": "A realistic guide to storm chasing as work, including research, media, photography, safety, forecasting, driving, and income expectations.",
+    "category": "Weather Careers",
+    "keywords": "Storm Chaser Career Guide: Research, Media, Safety, and Reality Checks A realistic guide to storm chasing as work, including research, media, photography, safety, forecasting, driving, and income expectations. storm chaser career guide"
+  },
+  {
     "title": "Communicating with Family About Storm Chasing",
     "path": "/storm-chaser-communication-family/",
     "description": "Chase impacts family. Here is how to have the hard conversations, set expectations, and maintain relationships through chase season.",
@@ -4919,6 +5038,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A complete anatomy of a thunderstorm. Updraft, downdraft, anvil, wall cloud, rear-flank downdraft, forward-flank downdraft, gust front, and every other part of a supercell.",
     "category": "Storm science",
     "keywords": "Thunderstorm Anatomy — Every Part of a Storm Explained A complete anatomy of a thunderstorm. Updraft, downdraft, anvil, wall cloud, rear-flank downdraft, forward-flank downdraft, gust front, and every other part of a supercell. thunderstorm anatomy"
+  },
+  {
+    "title": "Thunderstorm Ingredients for Students: Moisture, Lift, Instability, and Wind Shear",
+    "path": "/thunderstorm-ingredients-school-guide/",
+    "description": "A student-friendly guide to thunderstorm ingredients, including moisture, lift, instability, wind shear, updrafts, downdrafts, and safety.",
+    "category": "Student Weather",
+    "keywords": "Thunderstorm Ingredients for Students: Moisture, Lift, Instability, and Wind Shear A student-friendly guide to thunderstorm ingredients, including moisture, lift, instability, wind shear, updrafts, downdrafts, and safety. thunderstorm ingredients school guide"
   },
   {
     "title": "Topeka, Kansas Tornado of 1966 — F5, Costliest Tornado of Its Era",
@@ -6881,6 +7007,20 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Weather Car Emergency Kit: Winter, Heat, Flooding, and Severe Storm Travel A weather car emergency kit guide for winter driving, heat, severe storms, flash flooding, and road closures. weather car emergency kit"
   },
   {
+    "title": "Weather Careers Guides: Meteorologists, Storm Chasers, Observers, Hydrologists, Climate Scientists, and Emergency Managers",
+    "path": "/weather-careers-guides/",
+    "description": "A hub for weather career explainers, including meteorologists, broadcast meteorologists, storm chasers, observers, hydrologists, climate scientists, and emergency managers.",
+    "category": "Weather Careers",
+    "keywords": "Weather Careers Guides: Meteorologists, Storm Chasers, Observers, Hydrologists, Climate Scientists, and Emergency Managers A hub for weather career explainers, including meteorologists, broadcast meteorologists, storm chasers, observers, hydrologists, climate scientists, and emergency managers. weather careers guides"
+  },
+  {
+    "title": "Weather Classroom Project Guides: Science Fair Ideas, Rain Gauges, Wind Vanes, Clouds, Maps, and Safety",
+    "path": "/weather-classroom-project-guides/",
+    "description": "A hub for student weather projects, including science fair questions, classroom experiments, weather maps, rain gauges, wind vanes, and safety presentations.",
+    "category": "Student Weather",
+    "keywords": "Weather Classroom Project Guides: Science Fair Ideas, Rain Gauges, Wind Vanes, Clouds, Maps, and Safety A hub for student weather projects, including science fair questions, classroom experiments, weather maps, rain gauges, wind vanes, and safety presentations. weather classroom project guides"
+  },
+  {
     "title": "Weather Commute Safety Guide: Rain, Fog, Wind, Ice, and Severe Storms",
     "path": "/weather-commute-safety-guide/",
     "description": "How commuters can adjust for heavy rain, dense fog, high wind, black ice, hail, lightning, and severe thunderstorm warnings.",
@@ -6893,6 +7033,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A free interactive crossword puzzle themed around weather and meteorology. 21 clues across and down, from tornado to cirrus. Play in your browser.",
     "category": "Guide",
     "keywords": "Weather Crossword — Free Interactive Meteorology Puzzle | Tornado Simulator A free interactive crossword puzzle themed around weather and meteorology. 21 clues across and down, from tornado to cirrus. Play in your browser. weather crossword"
+  },
+  {
+    "title": "Weather Data for School Projects: Where to Find Observations, Maps, Radar, and Climate Normals",
+    "path": "/weather-data-for-school-projects/",
+    "description": "How students can find weather data for projects, including local observations, climate normals, radar, satellite, maps, and storm reports.",
+    "category": "Student Weather",
+    "keywords": "Weather Data for School Projects: Where to Find Observations, Maps, Radar, and Climate Normals How students can find weather data for projects, including local observations, climate normals, radar, satellite, maps, and storm reports. weather data for school projects"
   },
   {
     "title": "Weather Disaster Record Guides: Billion-Dollar Disasters, Deadliest Tornadoes, Hurricanes, Typhoons, and Derechos",
@@ -6928,6 +7075,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "What to include in a weather-ready first aid kit for storm cleanup, heat illness, cold exposure, power outages, and household emergencies.",
     "category": "Preparedness",
     "keywords": "Weather First Aid Kit Guide: Storms, Heat, Cold, Cuts, Burns, and Medications What to include in a weather-ready first aid kit for storm cleanup, heat illness, cold exposure, power outages, and household emergencies. weather first aid kit guide"
+  },
+  {
+    "title": "Weather Forecasting Education Guides: How Forecasts, Radar, Hurricane, Tornado, and Winter Warnings Work",
+    "path": "/weather-forecasting-career-guides/",
+    "description": "A hub for forecast education pages explaining how meteorologists predict weather, radar analysis, hurricane forecasts, tornado warnings, and winter storm forecasts.",
+    "category": "Forecasting Education",
+    "keywords": "Weather Forecasting Education Guides: How Forecasts, Radar, Hurricane, Tornado, and Winter Warnings Work A hub for forecast education pages explaining how meteorologists predict weather, radar analysis, hurricane forecasts, tornado warnings, and winter storm forecasts. weather forecasting career guides"
   },
   {
     "title": "Famous Weather Forecast Failures — 10 Notorious Busts",
@@ -7007,6 +7161,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Weather Map Reading Guides: Radar, Surface Maps, Station Models, and Upper-Air Charts A hub for practical weather map reading guides, including radar loops, station models, surface analysis, upper-air maps, QPF, and forecast discussions. weather map reading guides"
   },
   {
+    "title": "Weather Map School Project: Fronts, Pressure, Radar, Clouds, and Forecast Symbols",
+    "path": "/weather-map-school-project/",
+    "description": "How students can make a weather map project using fronts, pressure, radar, clouds, temperature, wind, and forecast symbols.",
+    "category": "Student Weather",
+    "keywords": "Weather Map School Project: Fronts, Pressure, Radar, Clouds, and Forecast Symbols How students can make a weather map project using fronts, pressure, radar, clouds, temperature, wind, and forecast symbols. weather map school project"
+  },
+  {
     "title": "Weather Map Symbols — Fronts, Station Plots, Radar Codes Explained",
     "path": "/weather-map-symbols/",
     "description": "A visual reference guide to weather map symbols — cold fronts, warm fronts, occluded and stationary fronts, high/low pressure symbols, station-model plots, radar reflectivity codes, and severe weather icons. Learn to read a surface analysis in 10 minutes.",
@@ -7068,6 +7229,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "The difference between normals, averages, records, daily climate data, and why a warm day does not mean the same thing as a long-term trend.",
     "category": "Climate Data",
     "keywords": "Weather Normal vs Record: What Climate Numbers Really Mean The difference between normals, averages, records, daily climate data, and why a warm day does not mean the same thing as a long-term trend. weather normal vs record"
+  },
+  {
+    "title": "Weather Observer Career Guide: Airports, Stations, Reports, and Quality Control",
+    "path": "/weather-observer-career-guide/",
+    "description": "What weather observers do, including airport observations, temperature, wind, visibility, clouds, precipitation, and data quality.",
+    "category": "Weather Careers",
+    "keywords": "Weather Observer Career Guide: Airports, Stations, Reports, and Quality Control What weather observers do, including airport observations, temperature, wind, visibility, clouds, precipitation, and data quality. weather observer career guide"
   },
   {
     "title": "Best Weather Podcasts and YouTube Channels — 2026 Guide",
@@ -7140,11 +7308,25 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Weather Safety Lesson Plan: Tornadoes, Lightning, Floods, Heat, and Winter Storms A classroom-ready weather safety lesson plan for teachers covering alerts, sheltering, lightning, flooding, heat, winter storms, and family preparedness. weather safety lesson plan"
   },
   {
+    "title": "Weather Safety Presentation Ideas: Tornadoes, Lightning, Floods, Heat, Winter Storms, and Hurricanes",
+    "path": "/weather-safety-presentation-ideas/",
+    "description": "Weather safety presentation ideas for students, including tornado, lightning, flood, heat, winter storm, hurricane, and emergency kit topics.",
+    "category": "Student Weather",
+    "keywords": "Weather Safety Presentation Ideas: Tornadoes, Lightning, Floods, Heat, Winter Storms, and Hurricanes Weather safety presentation ideas for students, including tornado, lightning, flood, heat, winter storm, hurricane, and emergency kit topics. weather safety presentation ideas"
+  },
+  {
     "title": "Weather Satellites — Every Satellite and What It Does",
     "path": "/weather-satellite-guide/",
     "description": "A guide to every US and international weather satellite. GOES, NOAA-20, JPSS, EUMETSAT, and the smaller ones. What each does and where the data goes.",
     "category": "Space assets",
     "keywords": "Weather Satellites — Every Satellite and What It Does A guide to every US and international weather satellite. GOES, NOAA-20, JPSS, EUMETSAT, and the smaller ones. What each does and where the data goes. weather satellite guide"
+  },
+  {
+    "title": "Weather Science Fair Projects: Testable Questions About Rain, Wind, Heat, Clouds, and Forecasts",
+    "path": "/weather-science-fair-projects/",
+    "description": "Weather science fair project ideas with testable questions about temperature, surfaces, rain, wind, clouds, pressure, and forecast accuracy.",
+    "category": "Student Weather",
+    "keywords": "Weather Science Fair Projects: Testable Questions About Rain, Wind, Heat, Clouds, and Forecasts Weather science fair project ideas with testable questions about temperature, surfaces, rain, wind, clouds, pressure, and forecast accuracy. weather science fair projects"
   },
   {
     "title": "Weather Science Guides: Dew Point, Pressure, Fronts, Clouds, and Storm Systems",
@@ -7173,6 +7355,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Why weather station quality matters for records, including sensor siting, station moves, instrument changes, and missing observations.",
     "category": "Climate Data",
     "keywords": "Weather Station Record Quality: Siting, Instruments, Moves, and Missing Data Why weather station quality matters for records, including sensor siting, station moves, instrument changes, and missing observations. weather station record quality"
+  },
+  {
+    "title": "Weather Tools for Students: Thermometers, Rain Gauges, Wind Vanes, Barometers, Radar, and Maps",
+    "path": "/weather-tools-for-students/",
+    "description": "A guide to weather tools for students, including thermometers, rain gauges, wind vanes, barometers, radar, satellite, and weather maps.",
+    "category": "Student Weather",
+    "keywords": "Weather Tools for Students: Thermometers, Rain Gauges, Wind Vanes, Barometers, Radar, and Maps A guide to weather tools for students, including thermometers, rain gauges, wind vanes, barometers, radar, satellite, and weather maps. weather tools for students"
   },
   {
     "title": "220+ Weather Trivia Questions and Answers (Bar Trivia Ready)",
@@ -7355,6 +7544,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Weather Underground started as a college project and became one of the world's largest weather platforms. Here is the 30-year history and what changed.",
     "category": "Weather platform history",
     "keywords": "Weather Underground — The 30-Year History Weather Underground started as a college project and became one of the world's largest weather platforms. Here is the 30-year history and what changed. weather underground history"
+  },
+  {
+    "title": "Weather Vocabulary for Students: Forecast, Warning, Watch, Front, Pressure, Radar, and Climate",
+    "path": "/weather-vocabulary-for-students/",
+    "description": "A student-friendly weather vocabulary guide explaining common forecast, storm, map, radar, and climate words.",
+    "category": "Student Weather",
+    "keywords": "Weather Vocabulary for Students: Forecast, Warning, Watch, Front, Pressure, Radar, and Climate A student-friendly weather vocabulary guide explaining common forecast, storm, map, radar, and climate words. weather vocabulary for students"
   },
   {
     "title": "Weather Word Search — Free Printable and Interactive | Tornado Simulator",
