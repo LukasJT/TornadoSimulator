@@ -49,6 +49,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "About — Tornado Hub About Tornado Hub — an educational resource for understanding tornadoes. Our data sources, editorial approach, and why we built this. about"
   },
   {
+    "title": "Advection Fog Explained: When Moist Air Moves Over a Cooler Surface",
+    "path": "/advection-fog-explained/",
+    "description": "How advection fog forms when moist air moves over cooler land or water, and why it can affect coasts, lakes, airports, and roads.",
+    "category": "Fog",
+    "keywords": "Advection Fog Explained: When Moist Air Moves Over a Cooler Surface How advection fog forms when moist air moves over cooler land or water, and why it can affect coasts, lakes, airports, and roads. advection fog explained"
+  },
+  {
     "title": "After a Tornado — Recovery, Cleanup, and Insurance Claims",
     "path": "/after-a-tornado/",
     "description": "After a tornado: immediate safety checks, insurance claims, contractor scams to avoid, disaster aid, mental health resources. Complete recovery guide.",
@@ -110,6 +117,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "The April 29, 2022 Andover EF3 tornado hit Kansas suburbs. Same town devastated in 1991. Recent Kansas tornado history.",
     "category": "Guide",
     "keywords": "Andover, Kansas Tornado of April 29, 2022 The April 29, 2022 Andover EF3 tornado hit Kansas suburbs. Same town devastated in 1991. Recent Kansas tornado history. andover 2022"
+  },
+  {
+    "title": "Anvil Cloud Explained: The Flat Top of a Thunderstorm",
+    "path": "/anvil-cloud-explained/",
+    "description": "What an anvil cloud is, why strong thunderstorms spread out near the top, and why lightning can occur far from the rain core.",
+    "category": "Storm Clouds",
+    "keywords": "Anvil Cloud Explained: The Flat Top of a Thunderstorm What an anvil cloud is, why strong thunderstorms spread out near the top, and why lightning can occur far from the rain core. anvil cloud explained"
   },
   {
     "title": "Apartment Tornado Shelter Plan: Interior Rooms, Hallways, and Stairs",
@@ -574,6 +588,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Chicago Tornadoes - Illinois Metro Tornado History Chicago tornadoes: 1967 Belvidere/Oak Lawn F4, 1990 Plainfield F5, 2015 Rochelle-Fairdale, and more Illinois metro history. chicago tornadoes"
   },
   {
+    "title": "Chinook Winds Explained: Warm Downslope Winds and Rapid Snowmelt",
+    "path": "/chinook-winds-explained/",
+    "description": "How Chinook winds warm and dry as they descend mountains, why temperatures can jump quickly, and what hazards they can create.",
+    "category": "Regional Weather",
+    "keywords": "Chinook Winds Explained: Warm Downslope Winds and Rapid Snowmelt How Chinook winds warm and dry as they descend mountains, why temperatures can jump quickly, and what hazards they can create. chinook winds explained"
+  },
+  {
     "title": "Classroom Weather Resources: Lessons, Activities, Alerts, and Safety Practice",
     "path": "/classroom-weather-resources/",
     "description": "A hub for teacher-friendly weather resources, including lesson plans, severe weather activities, alert cheat sheets, and family preparedness links.",
@@ -1036,6 +1057,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Florida Tornadoes - Highest Density in the US After Great Plains Florida averages 50 tornadoes per year, ranking 5th nationally. Most are weak but hurricanes routinely spawn many. Central Florida sees the highest concentration. florida tornadoes"
   },
   {
+    "title": "Foehn Winds Explained: Downslope Warming Around the World",
+    "path": "/foehn-winds-explained/",
+    "description": "What foehn winds are, why they warm and dry air, and how they affect mountain communities, fire danger, avalanches, and comfort.",
+    "category": "Mountain Weather",
+    "keywords": "Foehn Winds Explained: Downslope Warming Around the World What foehn winds are, why they warm and dry air, and how they affect mountain communities, fire danger, avalanches, and comfort. foehn winds explained"
+  },
+  {
     "title": "Food Safety During a Power Outage: Fridge, Freezer, Ice, and When to Throw Food Out",
     "path": "/food-safety-power-outage/",
     "description": "How to handle refrigerator and freezer food during a weather power outage, including door rules, ice, thermometers, refreezing, and spoilage decisions.",
@@ -1055,6 +1083,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A practical forecasting hub covering weather models, ensembles, radar basics, forecast uncertainty, and how to read weather guidance without overreacting to one model run.",
     "category": "Forecasting Guides",
     "keywords": "Weather Forecasting Guides: Models, Ensembles, Radar, and Uncertainty A practical forecasting hub covering weather models, ensembles, radar basics, forecast uncertainty, and how to read weather guidance without overreacting to one model run. forecasting guides"
+  },
+  {
+    "title": "Freezing Drizzle Explained: Tiny Drops, Big Ice Problems",
+    "path": "/freezing-drizzle-explained/",
+    "description": "What freezing drizzle is, why it can glaze roads and sidewalks, and how it differs from freezing rain and snow.",
+    "category": "Winter Weather",
+    "keywords": "Freezing Drizzle Explained: Tiny Drops, Big Ice Problems What freezing drizzle is, why it can glaze roads and sidewalks, and how it differs from freezing rain and snow. freezing drizzle explained"
   },
   {
     "title": "Freezing Fog vs Frost: Icy Deposits, Visibility, and Slick Surfaces",
@@ -1183,6 +1218,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Great Plains Geography for Chasers — Every Terrain Feature The Great Plains isn't flat. Here is the geography chasers actually navigate — from Palo Duro canyons to Flint Hills to sandhills. great plains geography chase"
   },
   {
+    "title": "Green Sky Before a Storm: Myth, Hail Clue, or Tornado Warning?",
+    "path": "/green-sky-storm-myth/",
+    "description": "What a green sky can and cannot tell you before severe weather, and why sky color is not a reliable tornado warning.",
+    "category": "Weather Myths",
+    "keywords": "Green Sky Before a Storm: Myth, Hail Clue, or Tornado Warning? What a green sky can and cannot tell you before severe weather, and why sky color is not a reliable tornado warning. green sky storm myth"
+  },
+  {
     "title": "Greenfield, Iowa Tornado of May 21, 2024",
     "path": "/greenfield-2024/",
     "description": "The May 21, 2024 Greenfield EF4 tornado devastated small Iowa town. 5 killed, 90% of buildings damaged. Iowa tornado history.",
@@ -1202,6 +1244,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "The April 3, 1974 Guin F5 tornado devastated Alabama during the Super Outbreak. 23 killed, complete destruction of Guin. Alabama tornado history.",
     "category": "Guide",
     "keywords": "Guin, Alabama Tornado of April 3, 1974 - Super Outbreak F5 The April 3, 1974 Guin F5 tornado devastated Alabama during the Super Outbreak. 23 killed, complete destruction of Guin. Alabama tornado history. guin alabama 1974"
+  },
+  {
+    "title": "Gust Front Explained: The Wind Boundary Ahead of a Thunderstorm",
+    "path": "/gust-front-explained/",
+    "description": "What a gust front is, why wind can arrive before rain, and how gust fronts create dust, shelf clouds, and sudden travel hazards.",
+    "category": "Severe Storms",
+    "keywords": "Gust Front Explained: The Wind Boundary Ahead of a Thunderstorm What a gust front is, why wind can arrive before rain, and how gust fronts create dust, shelf clouds, and sudden travel hazards. gust front explained"
   },
   {
     "title": "Gutter and Downspout Heavy Rain Guide: Keep Water Away From the Foundation",
@@ -1230,6 +1279,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "How to protect a vehicle from hail, what to avoid during a hailstorm, and how to document dents, cracked glass, and insurance evidence.",
     "category": "Hail",
     "keywords": "Hail Car Protection Guide: What to Do Before, During, and After Hail How to protect a vehicle from hail, what to avoid during a hailstorm, and how to document dents, cracked glass, and insurance evidence. hail car protection guide"
+  },
+  {
+    "title": "Hail Core Radar Explained: Why Bright Colors Can Mean Large Hail",
+    "path": "/hail-core-radar-explained/",
+    "description": "How hail cores appear on radar, why very high reflectivity can signal hail, and why radar cannot tell exact hail size by color alone.",
+    "category": "Radar",
+    "keywords": "Hail Core Radar Explained: Why Bright Colors Can Mean Large Hail How hail cores appear on radar, why very high reflectivity can signal hail, and why radar cannot tell exact hail size by color alone. hail core radar explained"
   },
   {
     "title": "Hail Damage Guide: Cars, Roofs, Windows, and Insurance Notes",
@@ -1279,6 +1335,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "How heat index works, why humid heat stresses the body, warning signs of heat illness, and practical steps to stay safer during heat waves.",
     "category": "Heat",
     "keywords": "Heat Index Danger Levels: Why Humidity Makes Heat More Dangerous How heat index works, why humid heat stresses the body, warning signs of heat illness, and practical steps to stay safer during heat waves. heat index danger levels"
+  },
+  {
+    "title": "Heat Lightning Explained: Why Distant Lightning Looks Silent",
+    "path": "/heat-lightning-myth-explained/",
+    "description": "What people call heat lightning, why it is usually distant thunderstorm lightning, and why it still means storms are somewhere nearby.",
+    "category": "Weather Myths",
+    "keywords": "Heat Lightning Explained: Why Distant Lightning Looks Silent What people call heat lightning, why it is usually distant thunderstorm lightning, and why it still means storms are somewhere nearby. heat lightning myth explained"
   },
   {
     "title": "Heat Wave Safety — Recognizing, Preventing, and Treating Heat Illness",
@@ -1645,6 +1708,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Indiana Tornadoes - Palm Sunday, Super Outbreak, and Modern Events Indiana averages 20 tornadoes per year. History includes 1965 Palm Sunday, 1974 Super Outbreak, 2005 Van Wert, and 2012 Henryville EF4. indiana tornadoes"
   },
   {
+    "title": "Inflow Notch Explained: A Radar Clue Near Strong Thunderstorm Updrafts",
+    "path": "/inflow-notch-explained/",
+    "description": "What an inflow notch is on radar, why it can appear near strong storms, and why it should be interpreted with velocity and warning context.",
+    "category": "Radar",
+    "keywords": "Inflow Notch Explained: A Radar Clue Near Strong Thunderstorm Updrafts What an inflow notch is on radar, why it can appear near strong storms, and why it should be interpreted with velocity and warning context. inflow notch explained"
+  },
+  {
     "title": "Infrared Satellite Explained: Cloud-Top Temperatures and Nighttime Weather",
     "path": "/infrared-satellite-explained/",
     "description": "How infrared satellite imagery works at night, why colder cloud tops matter, and how meteorologists use it for storms and tropical cyclones.",
@@ -1713,6 +1783,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Kentucky averages 25 tornadoes per year. Mayfield 2021 EF4 killed 57 - Kentucky's deadliest modern event. State sits on the northern edge of Dixie Alley.",
     "category": "Guide",
     "keywords": "Kentucky Tornadoes - Mayfield and the Growing Dixie Alley Risk Kentucky averages 25 tornadoes per year. Mayfield 2021 EF4 killed 57 - Kentucky's deadliest modern event. State sits on the northern edge of Dixie Alley. kentucky tornadoes"
+  },
+  {
+    "title": "Lake Breeze Explained: Cooler Air, Wind Shifts, and Thunderstorm Boundaries",
+    "path": "/lake-breeze-explained/",
+    "description": "How lake breezes form, why temperatures can drop near shorelines, and how lake breeze fronts can trigger or redirect thunderstorms.",
+    "category": "Local Weather",
+    "keywords": "Lake Breeze Explained: Cooler Air, Wind Shifts, and Thunderstorm Boundaries How lake breezes form, why temperatures can drop near shorelines, and how lake breeze fronts can trigger or redirect thunderstorms. lake breeze explained"
   },
   {
     "title": "Lake-Effect Snow Explained: Why Narrow Snow Bands Dump So Much Snow",
@@ -2016,6 +2093,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Motorcycle Storm Safety — Riding Through Severe Weather Motorcycles are dangerous in severe weather. This guide covers hail evasion, lightning risk, wind gust survival, hydroplaning, decision-making about when to stop, and how to shelter safely. motorcycle storm safety"
   },
   {
+    "title": "Mountain Wave Weather Explained: Wind, Turbulence, Clouds, and Downslope Gusts",
+    "path": "/mountain-wave-weather-explained/",
+    "description": "What mountain waves are, how air flowing over terrain creates waves, and why they matter for wind, aviation turbulence, and unusual clouds.",
+    "category": "Mountain Weather",
+    "keywords": "Mountain Wave Weather Explained: Wind, Turbulence, Clouds, and Downslope Gusts What mountain waves are, how air flowing over terrain creates waves, and why they matter for wind, aviation turbulence, and unusual clouds. mountain wave weather explained"
+  },
+  {
     "title": "Multi-Vortex Tornadoes — When One Tornado Contains Several",
     "path": "/multi-vortex-tornado/",
     "description": "Multi-vortex tornadoes contain multiple smaller sub-vortices rotating within the parent tornado. They cause the most extreme, localized damage — often the difference between a total loss and a nearly-untouched home.",
@@ -2238,6 +2322,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A weather planning guide for outdoor weddings and private events, including tents, lightning, heat, wind, rain timing, and guest communication.",
     "category": "Event Weather",
     "keywords": "Outdoor Wedding Weather Plan: Rain, Heat, Wind, Lightning, and Backup Decisions A weather planning guide for outdoor weddings and private events, including tents, lightning, heat, wind, rain timing, and guest communication. outdoor wedding weather plan"
+  },
+  {
+    "title": "Outflow Boundary Explained: Leftover Storm Air That Can Trigger New Storms",
+    "path": "/outflow-boundary-explained/",
+    "description": "How thunderstorm outflow boundaries form, why they appear on radar, and how they can trigger new storms or change storm direction.",
+    "category": "Forecasting",
+    "keywords": "Outflow Boundary Explained: Leftover Storm Air That Can Trigger New Storms How thunderstorm outflow boundaries form, why they appear on radar, and how they can trigger new storms or change storm direction. outflow boundary explained"
   },
   {
     "title": "Palm Sunday Tornado Outbreak of 1965 - 47 Tornadoes, 271 Killed",
@@ -3059,6 +3150,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Radar Velocity Explained: Reading Wind on Doppler Radar A plain-language guide to radar velocity, inbound and outbound winds, rotation, couplets, limitations, and why meteorologists use velocity during tornado warnings. radar velocity explained"
   },
   {
+    "title": "Radiation Fog Explained: Clear Nights, Calm Wind, and Morning Visibility",
+    "path": "/radiation-fog-explained/",
+    "description": "What radiation fog is, why it forms on clear calm nights, and why it often disappears after sunrise.",
+    "category": "Fog",
+    "keywords": "Radiation Fog Explained: Clear Nights, Calm Wind, and Morning Visibility What radiation fog is, why it forms on clear calm nights, and why it often disappears after sunrise. radiation fog explained"
+  },
+  {
     "title": "Rain Shadow Explained: Why One Side of a Mountain Is Wetter",
     "path": "/rain-shadow-explained/",
     "description": "How mountains create rain shadows, why air dries after crossing terrain, and how rain shadows shape deserts, forests, and local climates.",
@@ -3143,6 +3241,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Regina Cyclone (June 30, 1912) — F4, 28 Dead, Canada's Deadliest Tornado The 1912 Regina Cyclone killed 28 people in Saskatchewan's capital — still the deadliest tornado in Canadian history, 110+ years later. regina 1912 tornado"
   },
   {
+    "title": "Regional Weather Pattern Guides: Santa Ana, Chinook, Foehn, Lake Breeze, Fog, and Mountain Waves",
+    "path": "/regional-weather-pattern-guides/",
+    "description": "A hub for regional weather pattern explainers, including downslope winds, lake breezes, fog types, sea fog, and mountain waves.",
+    "category": "Regional Weather",
+    "keywords": "Regional Weather Pattern Guides: Santa Ana, Chinook, Foehn, Lake Breeze, Fog, and Mountain Waves A hub for regional weather pattern explainers, including downslope winds, lake breezes, fog types, sea fog, and mountain waves. regional weather pattern guides"
+  },
+  {
     "title": "Rhode Island Tornadoes - Smallest State, Rarest Events",
     "path": "/rhode-island-tornadoes/",
     "description": "Rhode Island averages under 1 tornado per year. Small state size and coastal position make tornadoes extremely rare.",
@@ -3220,6 +3325,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Safety Guides — Tornado Hub Tornado safety, by scenario. Where you are when a warning is issued determines what you should do. Guides for home, mobile home, car, apartment, high-rise, school, workplace, hospital, and more. safety"
   },
   {
+    "title": "Santa Ana Winds Explained: Fire Weather, Dry Air, and Mountain Gaps",
+    "path": "/santa-ana-winds-explained/",
+    "description": "What Santa Ana winds are, why they are dry and gusty, and how they increase wildfire danger, travel issues, and power concerns in Southern California.",
+    "category": "Regional Weather",
+    "keywords": "Santa Ana Winds Explained: Fire Weather, Dry Air, and Mountain Gaps What Santa Ana winds are, why they are dry and gusty, and how they increase wildfire danger, travel issues, and power concerns in Southern California. santa ana winds explained"
+  },
+  {
     "title": "Satellite Weather Guides: Visible, Infrared, Water Vapor, Smoke, and Storms",
     "path": "/satellite-weather-guides/",
     "description": "A hub for satellite weather explainers, including visible imagery, infrared imagery, water vapor loops, smoke, clouds, and tropical cyclone monitoring.",
@@ -3260,6 +3372,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "How sea breezes form, why they can trigger thunderstorms, and why coastal weather can change quickly during warm seasons.",
     "category": "Local Weather",
     "keywords": "Sea Breeze Thunderstorms Explained: Coastline Boundaries and Afternoon Storms How sea breezes form, why they can trigger thunderstorms, and why coastal weather can change quickly during warm seasons. sea breeze thunderstorms"
+  },
+  {
+    "title": "Sea Fog Explained: Why Fog Rolls Over Cold Water",
+    "path": "/sea-fog-explained/",
+    "description": "Why sea fog forms, where it is common, and how it affects beaches, boats, bridges, and coastal travel.",
+    "category": "Marine Weather",
+    "keywords": "Sea Fog Explained: Why Fog Rolls Over Cold Water Why sea fog forms, where it is common, and how it affects beaches, boats, bridges, and coastal travel. sea fog explained"
   },
   {
     "title": "Search Tornado Hub",
@@ -3442,6 +3561,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Every radar signature that reveals severe weather. Hook echo, TVS, bow echo, TDS, and more.",
     "category": "Radar interpretation",
     "keywords": "Radar Signatures — Every Sign of Severe Weather Every radar signature that reveals severe weather. Hook echo, TVS, bow echo, TDS, and more. storm anatomy radar signatures"
+  },
+  {
+    "title": "Storm Boundary Guides: Gust Fronts, Outflow Boundaries, Inflow Notches, and Hail Cores",
+    "path": "/storm-boundary-guides/",
+    "description": "A hub for thunderstorm boundary and radar feature guides, including gust fronts, outflow boundaries, inflow notches, hail cores, anvils, and straight-line wind.",
+    "category": "Storm Boundaries",
+    "keywords": "Storm Boundary Guides: Gust Fronts, Outflow Boundaries, Inflow Notches, and Hail Cores A hub for thunderstorm boundary and radar feature guides, including gust fronts, outflow boundaries, inflow notches, hail cores, anvils, and straight-line wind. storm boundary guides"
   },
   {
     "title": "College Meteorology Programs — Where to Study Weather",
@@ -3745,6 +3871,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Storm Donation and Volunteer Guide: How to Help Without Getting in the Way How to help after storms with useful donations, verified organizations, cleanup safety, volunteer timing, and avoiding disaster scams. storm donation volunteer guide"
   },
   {
+    "title": "Storm Drain Safety During Heavy Rain: Why Water Pulls Harder Than It Looks",
+    "path": "/storm-drain-safety-heavy-rain/",
+    "description": "A safety guide for storm drains, culverts, ditches, and flood channels during heavy rain and flash flooding.",
+    "category": "Flooding",
+    "keywords": "Storm Drain Safety During Heavy Rain: Why Water Pulls Harder Than It Looks A safety guide for storm drains, culverts, ditches, and flood channels during heavy rain and flash flooding. storm drain safety heavy rain"
+  },
+  {
     "title": "Storm Photography Post-Processing — Lightroom Recipes",
     "path": "/storm-photography-post-processing/",
     "description": "Every storm photographer's Lightroom recipes for the classic storm shots. Supercell structure, lightning, tornado, mammatus, and post-storm cleanup. Practical settings and adjustments.",
@@ -3813,6 +3946,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Should you book a storm chase tour or plan your own trip? Here is a full comparison of cost, learning curve, safety, and photography opportunities.",
     "category": "Chase planning",
     "keywords": "Storm Chase Tours vs DIY Storm Chasing — Cost, Safety, and Experience Should you book a storm chase tour or plan your own trip? Here is a full comparison of cost, learning curve, safety, and photography opportunities. storm vs storm chase tours"
+  },
+  {
+    "title": "Straight-Line Wind Damage Guide: Why It Can Be as Serious as a Tornado",
+    "path": "/straight-line-wind-damage-guide/",
+    "description": "How straight-line thunderstorm winds damage trees, roofs, fences, and power lines, and why severe thunderstorm warnings deserve action.",
+    "category": "Severe Storms",
+    "keywords": "Straight-Line Wind Damage Guide: Why It Can Be as Serious as a Tornado How straight-line thunderstorm winds damage trees, roofs, fences, and power lines, and why severe thunderstorm warnings deserve action. straight line wind damage guide"
   },
   {
     "title": "Summer Weather Safety Guide: Heat, Thunderstorms, Air Quality, and Flash Floods",
@@ -5600,6 +5740,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Upslope Snow Explained: Why Wind Against Terrain Makes Snow Heavier How upslope flow creates clouds and snow, why mountains and foothills can get enhanced precipitation, and why wind direction matters. upslope snow explained"
   },
   {
+    "title": "Urban Flash Flooding Guide: Streets, Underpasses, Storm Drains, and Fast Runoff",
+    "path": "/urban-flash-flooding-guide/",
+    "description": "Why cities can flood quickly during heavy rain, how pavement and drains change runoff, and why underpasses and low roads are dangerous.",
+    "category": "Flooding",
+    "keywords": "Urban Flash Flooding Guide: Streets, Underpasses, Storm Drains, and Fast Runoff Why cities can flood quickly during heavy rain, how pavement and drains change runoff, and why underpasses and low roads are dangerous. urban flash flooding guide"
+  },
+  {
     "title": "Urban Heat Islands — Why Cities Are 5-15°F Hotter",
     "path": "/urban-heat-island/",
     "description": "Cities are dramatically hotter than surrounding countryside — sometimes 15°F warmer at night. Here is the physics, the health impact, and what cities can do about it.",
@@ -5619,6 +5766,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A simple UV Index guide explaining low, moderate, high, very high, and extreme UV levels, plus clouds, shade, altitude, snow, water, and sunscreen timing.",
     "category": "Sun Safety",
     "keywords": "UV Index Guide: What the Numbers Mean for Sunburn and Skin Risk A simple UV Index guide explaining low, moderate, high, very high, and extreme UV levels, plus clouds, shade, altitude, snow, water, and sunscreen timing. uv index guide"
+  },
+  {
+    "title": "Valley Fog Explained: Why Low Spots Fill With Fog Overnight",
+    "path": "/valley-fog-explained/",
+    "description": "How valley fog forms, why cold air drains downhill, and why fog can be patchy and persistent in low terrain.",
+    "category": "Fog",
+    "keywords": "Valley Fog Explained: Why Low Spots Fill With Fog Overnight How valley fog forms, why cold air drains downhill, and why fog can be patchy and persistent in low terrain. valley fog explained"
   },
   {
     "title": "Vermont Tornadoes - Extremely Rare Northern Events",
@@ -5899,6 +6053,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Why the GFS and European model can show different storm tracks, snow totals, hurricane paths, or temperatures, and how forecasters weigh model guidance.",
     "category": "Forecasting",
     "keywords": "GFS vs European Model: Why Weather Models Disagree Why the GFS and European model can show different storm tracks, snow totals, hurricane paths, or temperatures, and how forecasters weigh model guidance. weather models gfs vs euro"
+  },
+  {
+    "title": "Weather Myths and Sky Signs: Green Skies, Heat Lightning, Anvils, and Storm Clues",
+    "path": "/weather-myths-and-signs/",
+    "description": "A hub for weather myths and sky-sign explainers, helping readers separate useful observations from unreliable storm folklore.",
+    "category": "Weather Myths",
+    "keywords": "Weather Myths and Sky Signs: Green Skies, Heat Lightning, Anvils, and Storm Clues A hub for weather myths and sky-sign explainers, helping readers separate useful observations from unreliable storm folklore. weather myths and signs"
   },
   {
     "title": "Weather Normal vs Record: What Climate Numbers Really Mean",
