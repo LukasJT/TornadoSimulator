@@ -1,50 +1,47 @@
 (function () {
   'use strict';
 
-  var STORAGE_KEY = 'tornadoHub.pageViews.v1';
+  var STORAGE_KEY = 'tornadoHub.pageViews.v2';
   var MAX_ITEMS = 80;
-  var FALLBACK = [
+  var COUNTER_ENDPOINT = window.TORNADO_VIEW_COUNTER_ENDPOINT ||
+    (window.TORNADO_ANALYTICS && window.TORNADO_ANALYTICS.viewCounterEndpoint) ||
+    '';
+  var POPULAR_STARTING_POINTS = [
     {
       path: '/tornado-warning-polygon-explained/',
       title: 'Tornado warning polygon explained',
-      description: 'How to read the shape on radar apps and decide when to shelter.',
-      category: 'Warning Guide',
-      seedViews: 184
+      description: 'How to read warning maps and decide when to shelter.',
+      category: 'Warning Guide'
     },
     {
       path: '/rain-wrapped-tornado/',
       title: 'Rain-wrapped tornadoes',
-      description: 'Why some tornadoes disappear inside heavy rain and how to stay safer.',
-      category: 'Safety',
-      seedViews: 171
+      description: 'Why some tornadoes hide in heavy rain and how to stay safer.',
+      category: 'Safety'
     },
     {
       path: '/tornado-shelter-without-basement/',
       title: 'Shelter without a basement',
       description: 'Interior rooms, apartments, mobile homes, and last-minute options.',
-      category: 'Preparedness',
-      seedViews: 166
+      category: 'Preparedness'
     },
     {
       path: '/tornado-car-safety-myths/',
       title: 'Tornado car safety myths',
       description: 'Overpasses, ditches, driving away, and what actually lowers risk.',
-      category: 'Myth Check',
-      seedViews: 153
+      category: 'Myth Check'
     },
     {
       path: '/joplin-2011/',
       title: 'Joplin 2011',
-      description: 'The warning, the impact, and what changed after one of the deadliest modern tornadoes.',
-      category: 'Case File',
-      seedViews: 141
+      description: 'The warning, the impact, and what changed afterward.',
+      category: 'Case File'
     },
     {
       path: '/tornado-debris-signature/',
       title: 'Tornado debris signature',
-      description: 'The radar clue that can confirm lofted debris during a dangerous storm.',
-      category: 'Radar',
-      seedViews: 132
+      description: 'The radar clue that can confirm lofted debris.',
+      category: 'Radar'
     }
   ];
 
@@ -95,57 +92,74 @@
     return 'Article';
   }
 
-  function recordView() {
+  function getCurrentItem() {
+    return {
+      path: location.pathname,
+      title: cleanTitle(document.title),
+      description: getDescription(),
+      category: getCategory()
+    };
+  }
+
+  function recordLocalView() {
     var path = location.pathname;
     if (!isTrackablePath(path)) return readStore();
 
     var store = readStore();
-    var item = store[path] || { path: path, views: 0 };
+    var item = store[path] || { path: path, localViews: 0 };
     item.title = cleanTitle(document.title);
     item.description = getDescription();
     item.category = getCategory();
-    item.views = (item.views || 0) + 1;
+    item.localViews = (item.localViews || item.views || 0) + 1;
+    delete item.views;
     item.lastViewed = Date.now();
     store[path] = item;
     writeStore(store);
     return store;
   }
 
-  function mergeTrending(store) {
-    var byPath = {};
-    FALLBACK.forEach(function (item) {
-      byPath[item.path] = {
-        path: item.path,
-        title: item.title,
-        description: item.description,
-        category: item.category,
-        views: item.seedViews,
-        lastViewed: 0,
-        seeded: true
-      };
-    });
+  function fetchRealCounts(currentItem) {
+    if (!COUNTER_ENDPOINT || !isTrackablePath(currentItem.path)) {
+      return Promise.resolve(null);
+    }
 
-    Object.keys(store).forEach(function (path) {
-      var item = store[path];
-      if (!item || !item.path || item.path === '/') return;
-      var existing = byPath[path] || {};
-      byPath[path] = {
-        path: path,
-        title: item.title || existing.title || cleanTitle(path),
-        description: item.description || existing.description || '',
-        category: item.category || existing.category || 'Article',
-        views: (item.views || 0) + (existing.views || 0),
-        lastViewed: item.lastViewed || 0,
-        seeded: false
-      };
-    });
-
-    return Object.keys(byPath)
-      .map(function (path) { return byPath[path]; })
-      .sort(function (a, b) {
-        if ((b.views || 0) !== (a.views || 0)) return (b.views || 0) - (a.views || 0);
-        return (b.lastViewed || 0) - (a.lastViewed || 0);
+    return fetch(COUNTER_ENDPOINT, {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'omit',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        path: currentItem.path,
+        title: currentItem.title,
+        description: currentItem.description,
+        category: currentItem.category,
+        referrer: document.referrer ? new URL(document.referrer, location.href).pathname : ''
+      })
+    })
+      .then(function (response) {
+        if (!response.ok) throw new Error('view counter failed');
+        return response.json();
+      })
+      .catch(function () {
+        return null;
       });
+  }
+
+  function recentItems(store) {
+    return Object.keys(store)
+      .map(function (path) { return store[path]; })
+      .filter(function (item) { return item && item.path !== location.pathname; })
+      .sort(function (a, b) { return (b.lastViewed || 0) - (a.lastViewed || 0); });
+  }
+
+  function formatCount(item) {
+    if (typeof item.views === 'number') {
+      return item.views === 1 ? '1 view' : item.views + ' views';
+    }
+    if (typeof item.localViews === 'number') {
+      return item.localViews === 1 ? '1 local view' : item.localViews + ' local views';
+    }
+    return '';
   }
 
   function renderList(selector, items, emptyText) {
@@ -153,12 +167,12 @@
       var limit = Number(container.getAttribute('data-limit') || 5);
       var selected = items.slice(0, limit);
       if (!selected.length) {
-        container.innerHTML = '<p class="tracker-empty">' + emptyText + '</p>';
+        container.innerHTML = '<p class="tracker-empty">' + escapeHtml(emptyText) + '</p>';
         return;
       }
       container.innerHTML = selected.map(function (item, index) {
-        var views = item.views === 1 ? '1 view' : String(item.views || 0) + ' views';
-        var kicker = escapeHtml(item.category) + ' · ' + escapeHtml(views);
+        var count = formatCount(item);
+        var kicker = escapeHtml(item.category || 'Article') + (count ? ' - ' + escapeHtml(count) : '');
         return [
           '<a class="trend-row" href="' + escapeHtml(item.path) + '">',
           '<span class="trend-rank">' + String(index + 1).padStart(2, '0') + '</span>',
@@ -170,6 +184,12 @@
           '</a>'
         ].join('');
       }).join('');
+    });
+  }
+
+  function updateTrendingLabels(text) {
+    document.querySelectorAll('[data-trending-label]').forEach(function (node) {
+      node.textContent = text;
     });
   }
 
@@ -185,25 +205,41 @@
     });
   }
 
-  function renderCurrentViewCount(store) {
+  function renderCurrentViewCount(store, realCount) {
     var item = store[location.pathname];
     document.querySelectorAll('[data-view-count]').forEach(function (node) {
-      var count = item ? item.views || 0 : 0;
+      if (typeof realCount === 'number') {
+        node.textContent = realCount === 1 ? '1 view' : realCount + ' views';
+        return;
+      }
+      var count = item ? item.localViews || 0 : 0;
       node.textContent = count === 1 ? '1 local view' : count + ' local views';
     });
   }
 
-  function run() {
-    var store = recordView();
-    var trending = mergeTrending(store);
-    var recent = Object.keys(store)
-      .map(function (path) { return store[path]; })
-      .filter(function (item) { return item && item.path !== location.pathname; })
-      .sort(function (a, b) { return (b.lastViewed || 0) - (a.lastViewed || 0); });
+  function renderWithRemoteCounts(store, payload) {
+    if (payload && Array.isArray(payload.popular) && payload.popular.length) {
+      updateTrendingLabels('Live views');
+      renderList('[data-trending-articles]', payload.popular, 'Live trending articles will appear after readers browse the site.');
+      renderCurrentViewCount(store, typeof payload.views === 'number' ? payload.views : null);
+      return;
+    }
 
-    renderList('[data-trending-articles]', trending, 'Trending articles will appear after readers browse the site.');
-    renderList('[data-recently-viewed]', recent, 'Recently viewed articles will appear after you browse a few pages.');
-    renderCurrentViewCount(store);
+    updateTrendingLabels(COUNTER_ENDPOINT ? 'Awaiting live data' : 'No fake counts');
+    renderList('[data-trending-articles]', POPULAR_STARTING_POINTS, 'Popular guides will appear here.');
+    renderCurrentViewCount(store, null);
+  }
+
+  function run() {
+    var store = recordLocalView();
+    var currentItem = getCurrentItem();
+
+    renderWithRemoteCounts(store, null);
+    renderList('[data-recently-viewed]', recentItems(store), 'Recently viewed articles will appear after you browse a few pages.');
+
+    fetchRealCounts(currentItem).then(function (payload) {
+      if (payload) renderWithRemoteCounts(store, payload);
+    });
   }
 
   if (document.readyState === 'loading') {
