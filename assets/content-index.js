@@ -147,6 +147,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Andover, Kansas Tornado of April 29, 2022 The April 29, 2022 Andover EF3 tornado hit Kansas suburbs. Same town devastated in 1991. Recent Kansas tornado history. andover 2022"
   },
   {
+    "title": "Anemometer Placement Guide: Why Backyard Wind Readings Are Hard",
+    "path": "/anemometer-placement-guide/",
+    "description": "How to place an anemometer, why trees and buildings distort wind, and why official wind measurements may differ from backyard readings.",
+    "category": "Weather Tools",
+    "keywords": "Anemometer Placement Guide: Why Backyard Wind Readings Are Hard How to place an anemometer, why trees and buildings distort wind, and why official wind measurements may differ from backyard readings. anemometer placement guide"
+  },
+  {
     "title": "Anvil Cloud Explained: The Flat Top of a Thunderstorm",
     "path": "/anvil-cloud-explained/",
     "description": "What an anvil cloud is, why strong thunderstorms spread out near the top, and why lightning can occur far from the rain core.",
@@ -250,6 +257,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A hub for beginner-friendly aviation weather guides that also help travelers understand fog, low clouds, airport observations, and changing local conditions.",
     "category": "Aviation Weather",
     "keywords": "Aviation Weather Guides: METAR, TAF, Ceiling, Visibility, and Travel Weather A hub for beginner-friendly aviation weather guides that also help travelers understand fog, low clouds, airport observations, and changing local conditions. aviation weather guides"
+  },
+  {
+    "title": "Barometric Pressure Explained: High Pressure, Low Pressure, and Weather Changes",
+    "path": "/barometric-pressure-explained/",
+    "description": "What barometric pressure is, why it rises and falls, and how pressure patterns relate to wind, storms, clouds, and fair weather.",
+    "category": "Weather Science",
+    "keywords": "Barometric Pressure Explained: High Pressure, Low Pressure, and Weather Changes What barometric pressure is, why it rises and falls, and how pressure patterns relate to wind, storms, clouds, and fair weather. barometric pressure explained"
   },
   {
     "title": "Barometric Pressure Weather Guide: What Rising and Falling Pressure Means",
@@ -756,6 +770,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "SPC Convective Outlook Categories: Marginal to High Risk Explained A guide to severe weather outlook categories, including marginal, slight, enhanced, moderate, and high risk, and what they mean for storm planning. convective outlook categories"
   },
   {
+    "title": "Correlation Coefficient Radar Guide: Debris, Hail, Rain, and Mixed Targets",
+    "path": "/correlation-coefficient-radar-guide/",
+    "description": "What correlation coefficient shows on dual-pol radar, why low values can indicate mixed targets, and how it helps identify debris or hail.",
+    "category": "Radar",
+    "keywords": "Correlation Coefficient Radar Guide: Debris, Hail, Rain, and Mixed Targets What correlation coefficient shows on dual-pol radar, why low values can indicate mixed targets, and how it helps identify debris or hail. correlation coefficient radar guide"
+  },
+  {
     "title": "Costliest US Tornadoes — Ranked by Insured Damage",
     "path": "/costliest-tornadoes/",
     "description": "The costliest US tornadoes ever, ranked by insured damage in inflation-adjusted dollars. Joplin 2011, Moore 2013, Tuscaloosa 2011, Xenia 1974 — where the biggest tornado disasters left their mark on the economy.",
@@ -847,6 +868,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Dew Point Calculator — Convert Temperature and Humidity to Dew Point | Tornado Simulator A free dew point calculator. Enter temperature and relative humidity (or wet bulb) to get exact dew point. Includes chart, comfort description, and severe weather relevance. dew point calculator"
   },
   {
+    "title": "Dew Point vs Humidity: Which Number Better Explains Sticky Weather?",
+    "path": "/dew-point-vs-humidity-guide/",
+    "description": "The difference between dew point and relative humidity, why dew point often feels more useful, and how both numbers affect comfort and storms.",
+    "category": "Weather Science",
+    "keywords": "Dew Point vs Humidity: Which Number Better Explains Sticky Weather? The difference between dew point and relative humidity, why dew point often feels more useful, and how both numbers affect comfort and storms. dew point vs humidity guide"
+  },
+  {
     "title": "Dew Point vs Humidity: Which One Tells You How Sticky It Feels?",
     "path": "/dew-point-vs-humidity/",
     "description": "Dew point and relative humidity both describe moisture, but dew point is often better for understanding comfort, storms, fog, and oppressive summer air.",
@@ -894,6 +922,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "What a dryline is, why it separates dry and moist air, and how it can trigger severe thunderstorms in the Plains.",
     "category": "Severe Storms",
     "keywords": "Dryline Explained: The Boundary Behind Many Plains Severe Storms What a dryline is, why it separates dry and moist air, and how it can trigger severe thunderstorms in the Plains. dryline explained"
+  },
+  {
+    "title": "Dual-Pol Radar Explained: How Radar Sees Raindrops, Hail, Snow, and Debris",
+    "path": "/dual-pol-radar-explained/",
+    "description": "How dual-polarization radar works, what extra data it provides, and why it helps meteorologists identify precipitation and debris.",
+    "category": "Radar",
+    "keywords": "Dual-Pol Radar Explained: How Radar Sees Raindrops, Hail, Snow, and Debris How dual-polarization radar works, what extra data it provides, and why it helps meteorologists identify precipitation and debris. dual pol radar explained"
   },
   {
     "title": "Dust Devil vs. Tornado — What's the Difference?",
@@ -1162,6 +1197,34 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Food Safety During a Power Outage: Fridge, Freezer, Ice, and When to Throw Food Out How to handle refrigerator and freezer food during a weather power outage, including door rules, ice, thermometers, refreezing, and spoilage decisions. food safety power outage"
   },
   {
+    "title": "Forecast Bust Explained: Why Weather Forecasts Sometimes Miss",
+    "path": "/forecast-bust-explained/",
+    "description": "Why weather forecasts can fail, including storm tracks, timing errors, small boundaries, model limits, and communication gaps.",
+    "category": "Forecasting",
+    "keywords": "Forecast Bust Explained: Why Weather Forecasts Sometimes Miss Why weather forecasts can fail, including storm tracks, timing errors, small boundaries, model limits, and communication gaps. forecast bust explained"
+  },
+  {
+    "title": "Forecast Confidence Explained: Why Some Weather Forecasts Are More Certain Than Others",
+    "path": "/forecast-confidence-explained/",
+    "description": "What forecast confidence means, why it changes by weather pattern, and how to read uncertainty before storms, snow, heat, or rain.",
+    "category": "Forecasting",
+    "keywords": "Forecast Confidence Explained: Why Some Weather Forecasts Are More Certain Than Others What forecast confidence means, why it changes by weather pattern, and how to read uncertainty before storms, snow, heat, or rain. forecast confidence explained"
+  },
+  {
+    "title": "Forecast Discussion Reading Guide: How to Read Meteorologists Notes",
+    "path": "/forecast-discussion-reading-guide/",
+    "description": "How to read forecast discussions from meteorologists, including confidence, timing, hazards, uncertainty, and technical terms.",
+    "category": "Forecasting",
+    "keywords": "Forecast Discussion Reading Guide: How to Read Meteorologists Notes How to read forecast discussions from meteorologists, including confidence, timing, hazards, uncertainty, and technical terms. forecast discussion reading guide"
+  },
+  {
+    "title": "Forecast Literacy Guides: Confidence, Busts, Discussions, Outlooks, and Alerts",
+    "path": "/forecast-literacy-guides/",
+    "description": "A hub for understanding weather forecasts, confidence, forecast busts, short-term nowcasting, discussions, outlooks, and alert settings.",
+    "category": "Forecasting",
+    "keywords": "Forecast Literacy Guides: Confidence, Busts, Discussions, Outlooks, and Alerts A hub for understanding weather forecasts, confidence, forecast busts, short-term nowcasting, discussions, outlooks, and alert settings. forecast literacy guides"
+  },
+  {
     "title": "Forecast Uncertainty — Why We Should Talk About It More",
     "path": "/forecast-uncertainty-explained/",
     "description": "Weather forecasts have real uncertainty. Here is how to interpret it, why it matters, and why we should communicate it better.",
@@ -1272,6 +1335,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Georgia tornado history: Gainesville 1936 F4 killed 203 (deadliest in state history), plus the Atlanta 2008 EF2 that struck downtown during an SEC tournament.",
     "category": "Guide",
     "keywords": "Georgia Tornadoes - Gainesville 1936 and the Deep South Risk Georgia tornado history: Gainesville 1936 F4 killed 203 (deadliest in state history), plus the Atlanta 2008 EF2 that struck downtown during an SEC tournament. georgia tornadoes"
+  },
+  {
+    "title": "GFS vs Euro Model Explained: Why Forecast Models Sometimes Disagree",
+    "path": "/gfs-vs-euro-model-explained/",
+    "description": "How the GFS and European weather models differ, why they can show different storm tracks, and how to avoid overreacting to one run.",
+    "category": "Forecast Models",
+    "keywords": "GFS vs Euro Model Explained: Why Forecast Models Sometimes Disagree How the GFS and European weather models differ, why they can show different storm tracks, and how to avoid overreacting to one run. gfs vs euro model explained"
   },
   {
     "title": "Global Warming and Tornadoes — What the Science Actually Shows",
@@ -1519,6 +1589,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Home Rain Gauge Guide: Placement, Reading, and Common Mistakes How to place and read a home rain gauge, why siting matters, and what causes bad rainfall measurements. home rain gauge guide"
   },
   {
+    "title": "Home Weather Measurement Guides: Weather Stations, Rain Gauges, Wind, Pressure, and Dew Point",
+    "path": "/home-weather-measurement-guides/",
+    "description": "A hub for home weather measurement guides, including station setup, rain gauge placement, wind sensors, pressure trends, and humidity.",
+    "category": "Weather Tools",
+    "keywords": "Home Weather Measurement Guides: Weather Stations, Rain Gauges, Wind, Pressure, and Dew Point A hub for home weather measurement guides, including station setup, rain gauge placement, wind sensors, pressure trends, and humidity. home weather measurement guides"
+  },
+  {
     "title": "Home Weather Readiness Guides: Go Bags, Gutters, Sump Pumps, Food Safety, and Documents",
     "path": "/home-weather-readiness-guides/",
     "description": "A hub for home weather readiness guides covering go bags, gutters, sump pumps, food safety, carbon monoxide, documents, and first aid kits.",
@@ -1531,6 +1608,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A comparison of home weather stations for hobbyists and citizen scientists. Covers Ambient Weather WS-2902, Davis Vantage Pro2, Tempest, and budget picks. What to spend, where to mount, how to feed data to Weather Underground.",
     "category": "Buying guide",
     "keywords": "Home Weather Station Buying Guide — 2026 Comparison A comparison of home weather stations for hobbyists and citizen scientists. Covers Ambient Weather WS-2902, Davis Vantage Pro2, Tempest, and budget picks. What to spend, where to mount, how to feed data to Weather Underground. home weather station buying guide"
+  },
+  {
+    "title": "Home Weather Station Guide: Temperature, Wind, Rain, Pressure, and Useful Setup Tips",
+    "path": "/home-weather-station-guide/",
+    "description": "How to choose and use a home weather station, including sensor placement, rain measurement, wind exposure, and pressure trends.",
+    "category": "Weather Tools",
+    "keywords": "Home Weather Station Guide: Temperature, Wind, Rain, Pressure, and Useful Setup Tips How to choose and use a home weather station, including sensor placement, rain measurement, wind exposure, and pressure trends. home weather station guide"
   },
   {
     "title": "Hook Echo - What Radar Shows When Tornadoes Form",
@@ -1855,6 +1939,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Iowa Tornadoes - Parkersburg EF5 and the 1968 Outbreak Iowa tornado history: home to Parkersburg 2008 (second-ever EF5), the 1968 Charles City-Oelwein double F5, and consistent central US supercell activity. iowa tornadoes"
   },
   {
+    "title": "Isobar Weather Map Guide: Pressure Lines, Wind Speed, and Storm Strength",
+    "path": "/isobar-weather-map-guide/",
+    "description": "What isobars are, why tight spacing means stronger wind, and how pressure patterns reveal storm systems and fronts.",
+    "category": "Weather Maps",
+    "keywords": "Isobar Weather Map Guide: Pressure Lines, Wind Speed, and Storm Strength What isobars are, why tight spacing means stronger wind, and how pressure patterns reveal storm systems and fronts. isobar weather map guide"
+  },
+  {
     "title": "Jarrell, Texas Tornado of 1997 — F5, Slowest Movement, Most Extreme Damage",
     "path": "/jarrell-1997/",
     "description": "The Jarrell, Texas tornado of May 27, 1997 was an F5 that produced possibly the most extreme tornado damage ever documented. 27 killed in the Double Creek Estates subdivision.",
@@ -1958,6 +2049,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Profiles of the most famous storm chasers past and present — from Roger Jensen (the first chaser) to Ted Fujita (the scientist) to Reed Timmer, Sean Casey and the Twistex team that lost their lives at El Reno 2013.",
     "category": "🎥 Profiles",
     "keywords": "Legendary Storm Chasers — The People Who Chase Tornadoes Profiles of the most famous storm chasers past and present — from Roger Jensen (the first chaser) to Ted Fujita (the scientist) to Reed Timmer, Sean Casey and the Twistex team that lost their lives at El Reno 2013. legendary storm chasers"
+  },
+  {
+    "title": "Lifted Index Explained: A Basic Instability Number for Thunderstorms",
+    "path": "/lifted-index-explained/",
+    "description": "What lifted index means, how negative values relate to instability, and why it should be used with CAPE, shear, and moisture.",
+    "category": "Weather Science",
+    "keywords": "Lifted Index Explained: A Basic Instability Number for Thunderstorms What lifted index means, how negative values relate to instability, and why it should be used with CAPE, shear, and moisture. lifted index explained"
   },
   {
     "title": "Lightning Safety at Home: What to Avoid Indoors During Thunderstorms",
@@ -2098,6 +2196,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A mesocyclone is the rotating updraft that defines a supercell thunderstorm. Here is the physics of how one forms, how radar sees them, and why they matter for tornado prediction.",
     "category": "Storm science",
     "keywords": "Mesocyclones — The Rotating Heart of a Supercell A mesocyclone is the rotating updraft that defines a supercell thunderstorm. Here is the physics of how one forms, how radar sees them, and why they matter for tornado prediction. mesocyclones explained"
+  },
+  {
+    "title": "Mesoscale Discussion Explained: What It Means Before Watches or Warnings",
+    "path": "/mesoscale-discussion-explained/",
+    "description": "What a mesoscale discussion is, who issues it, and how it can signal changing severe storm, winter, heavy rain, or fire weather risk.",
+    "category": "Severe Weather",
+    "keywords": "Mesoscale Discussion Explained: What It Means Before Watches or Warnings What a mesoscale discussion is, who issues it, and how it can signal changing severe storm, winter, heavy rain, or fire weather risk. mesoscale discussion explained"
   },
   {
     "title": "SPC Mesoscale Discussions — How to Read Them",
@@ -2380,6 +2485,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "North Dakota Tornadoes - Fargo 1957 and the Northern Plains North Dakota averages 20 tornadoes per year. History includes 1957 Fargo F5 - the state's deadliest tornado. north dakota tornadoes"
   },
   {
+    "title": "Nowcasting Weather Explained: Short-Term Forecasts From Radar, Satellite, and Observations",
+    "path": "/nowcasting-weather-explained/",
+    "description": "What nowcasting means, why it is useful for the next few hours, and how radar, satellite, lightning, and surface data help.",
+    "category": "Forecasting",
+    "keywords": "Nowcasting Weather Explained: Short-Term Forecasts From Radar, Satellite, and Observations What nowcasting means, why it is useful for the next few hours, and how radar, satellite, lightning, and surface data help. nowcasting weather explained"
+  },
+  {
     "title": "Office Tornado Drill Template for Managers and Teams",
     "path": "/office-tornado-drill-template/",
     "description": "A simple office tornado drill plan with shelter zones, alert roles, visitor handling, accountability, and post-drill improvements.",
@@ -2595,6 +2707,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A pool weather safety guide for lightning, thunderstorm wind, heat, pool chemicals, flooding, debris, and when swimmers should get out.",
     "category": "Outdoor Weather",
     "keywords": "Pool Weather Safety Guide: Lightning, Wind, Heat, Chemicals, and Storm Cleanup A pool weather safety guide for lightning, thunderstorm wind, heat, pool chemicals, flooding, debris, and when swimmers should get out. pool weather safety guide"
+  },
+  {
+    "title": "Pressure Falling Before a Storm: What It Means and What It Does Not Mean",
+    "path": "/pressure-falling-before-storm/",
+    "description": "Why pressure often falls before storms, how fast pressure drops matter, and why pressure alone cannot predict tornadoes or severe weather.",
+    "category": "Weather Science",
+    "keywords": "Pressure Falling Before a Storm: What It Means and What It Does Not Mean Why pressure often falls before storms, how fast pressure drops matter, and why pressure alone cannot predict tornadoes or severe weather. pressure falling before storm"
   },
   {
     "title": "Pressure Gradient Explained: Why Tight Isobars Mean Stronger Wind",
@@ -3283,6 +3402,20 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "How to Read a Weather Radar Loop Without Getting Fooled How to use radar loops for storm movement, intensity trends, training storms, gaps, and common mistakes like relying on one old frame. radar loop how to read"
   },
   {
+    "title": "Radar Loop Reading Guide: Motion, Growth, Decay, and Storm Timing",
+    "path": "/radar-loop-reading-guide/",
+    "description": "How to read a radar loop, estimate storm movement, spot strengthening or weakening, and avoid common radar-map mistakes.",
+    "category": "Radar",
+    "keywords": "Radar Loop Reading Guide: Motion, Growth, Decay, and Storm Timing How to read a radar loop, estimate storm movement, spot strengthening or weakening, and avoid common radar-map mistakes. radar loop reading guide"
+  },
+  {
+    "title": "Radar and Weather Map Reading Guides: Velocity, Dual-Pol, Fronts, Isobars, and Upper Air",
+    "path": "/radar-map-reading-guides/",
+    "description": "A hub for radar and map reading guides, including radar loops, velocity, dual-pol products, fronts, surface maps, isobars, and upper-air maps.",
+    "category": "Radar",
+    "keywords": "Radar and Weather Map Reading Guides: Velocity, Dual-Pol, Fronts, Isobars, and Upper Air A hub for radar and map reading guides, including radar loops, velocity, dual-pol products, fronts, surface maps, isobars, and upper-air maps. radar map reading guides"
+  },
+  {
     "title": "Radar Reflectivity Explained: What the Colors on Weather Radar Mean",
     "path": "/radar-reflectivity-explained/",
     "description": "Understand radar reflectivity colors, rain and hail intensity, bright banding, ground clutter, and why radar colors are not a perfect severe weather scale.",
@@ -3304,11 +3437,25 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Radar Velocity Explained: Reading Wind on Doppler Radar A plain-language guide to radar velocity, inbound and outbound winds, rotation, couplets, limitations, and why meteorologists use velocity during tornado warnings. radar velocity explained"
   },
   {
+    "title": "Radar Velocity Reading Guide: Wind Toward, Wind Away, Rotation, and Limits",
+    "path": "/radar-velocity-reading-guide/",
+    "description": "A beginner guide to radar velocity, including inbound and outbound wind, rotation clues, range limits, and why warnings need context.",
+    "category": "Radar",
+    "keywords": "Radar Velocity Reading Guide: Wind Toward, Wind Away, Rotation, and Limits A beginner guide to radar velocity, including inbound and outbound wind, rotation clues, range limits, and why warnings need context. radar velocity reading guide"
+  },
+  {
     "title": "Radiation Fog Explained: Clear Nights, Calm Wind, and Morning Visibility",
     "path": "/radiation-fog-explained/",
     "description": "What radiation fog is, why it forms on clear calm nights, and why it often disappears after sunrise.",
     "category": "Fog",
     "keywords": "Radiation Fog Explained: Clear Nights, Calm Wind, and Morning Visibility What radiation fog is, why it forms on clear calm nights, and why it often disappears after sunrise. radiation fog explained"
+  },
+  {
+    "title": "Rain Gauge Placement Guide: Getting More Accurate Backyard Rainfall",
+    "path": "/rain-gauge-placement-guide/",
+    "description": "Where to place a rain gauge, what causes bad rainfall readings, and how trees, roofs, wind, and splash affect totals.",
+    "category": "Weather Tools",
+    "keywords": "Rain Gauge Placement Guide: Getting More Accurate Backyard Rainfall Where to place a rain gauge, what causes bad rainfall readings, and how trees, roofs, wind, and splash affect totals. rain gauge placement guide"
   },
   {
     "title": "Rain Shadow Explained: Why One Side of a Mountain Is Wetter",
@@ -3598,6 +3745,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Severe Weather Classroom Activities: Maps, Radar, Clouds, and Safety Scenarios Hands-on classroom activities for teaching severe weather with radar loops, cloud photos, safety decisions, alert cards, and weather map symbols. severe weather classroom activities"
   },
   {
+    "title": "Severe Weather Outlook Categories: Marginal, Slight, Enhanced, Moderate, and High Risk",
+    "path": "/severe-weather-outlook-categories/",
+    "description": "What severe weather outlook categories mean, how probabilities work, and why even lower risk days can produce dangerous storms.",
+    "category": "Severe Weather",
+    "keywords": "Severe Weather Outlook Categories: Marginal, Slight, Enhanced, Moderate, and High Risk What severe weather outlook categories mean, how probabilities work, and why even lower risk days can produce dangerous storms. severe weather outlook categories"
+  },
+  {
     "title": "Shelf Cloud vs Wall Cloud: How to Tell the Difference",
     "path": "/shelf-cloud-vs-wall-cloud/",
     "description": "Shelf clouds and wall clouds are often confused. Learn where each forms, what they mean, and why one is linked more closely with tornado potential.",
@@ -3610,6 +3764,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Interactive tornado damage simulator — click anywhere in the world to place an EF0–EF5 tornado and model real fatalities, structural damage, and economic loss. US Census + Statistics Canada + UN population data for 173+ countries. Guides to deadliest/costliest tornadoes, every EF5 recorded, and the EF Scale.",
     "category": "Interactive",
     "keywords": "Tornado Simulator — Multi-Variable Damage Modeler Interactive tornado damage simulator — click anywhere in the world to place an EF0–EF5 tornado and model real fatalities, structural damage, and economic loss. US Census + Statistics Canada + UN population data for 173+ countries. Guides to deadliest/costliest tornadoes, every EF5 recorded, and the EF Scale. simulator"
+  },
+  {
+    "title": "Skew-T Diagram Basic Guide: Temperature, Dew Point, Wind, CAPE, and Layers",
+    "path": "/skew-t-diagram-basic-guide/",
+    "description": "A beginner explanation of skew-T diagrams and how meteorologists use them to assess moisture, instability, wind, and storm potential.",
+    "category": "Weather Science",
+    "keywords": "Skew-T Diagram Basic Guide: Temperature, Dew Point, Wind, CAPE, and Layers A beginner explanation of skew-T diagrams and how meteorologists use them to assess moisture, instability, wind, and storm potential. skew t diagram basic guide"
   },
   {
     "title": "Skywarn Spotter Training — What to Expect and How to Sign Up",
@@ -4177,6 +4338,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "How to read a surface analysis map, including highs, lows, fronts, drylines, troughs, isobars, and station observations.",
     "category": "Weather Maps",
     "keywords": "Surface Analysis Map Explained: Fronts, Pressure, Isobars, and Weather Symbols How to read a surface analysis map, including highs, lows, fronts, drylines, troughs, isobars, and station observations. surface analysis map explained"
+  },
+  {
+    "title": "Surface Analysis Map Guide: Fronts, Pressure, Wind, and Weather Boundaries",
+    "path": "/surface-analysis-map-guide/",
+    "description": "How to read a surface analysis map, including fronts, pressure centers, isobars, wind, dew points, and boundaries.",
+    "category": "Weather Maps",
+    "keywords": "Surface Analysis Map Guide: Fronts, Pressure, Wind, and Weather Boundaries How to read a surface analysis map, including fronts, pressure centers, isobars, wind, dew points, and boundaries. surface analysis map guide"
   },
   {
     "title": "TAF Forecast Explained: How Airport Forecasts Describe Changing Weather",
@@ -5929,6 +6097,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Upper-Air Weather Maps Explained: 500 mb, 700 mb, 850 mb, and Jet-Level Charts What upper-air maps show, why meteorologists use pressure levels, and how upper-level patterns guide storms, temperatures, and precipitation. upper air weather map explained"
   },
   {
+    "title": "Upper-Air Weather Map Guide: Jet Streams, Troughs, Ridges, and Storm Energy",
+    "path": "/upper-air-weather-map-guide/",
+    "description": "A beginner guide to upper-air weather maps, including jet streams, troughs, ridges, vorticity, and why weather starts above the surface.",
+    "category": "Weather Maps",
+    "keywords": "Upper-Air Weather Map Guide: Jet Streams, Troughs, Ridges, and Storm Energy A beginner guide to upper-air weather maps, including jet streams, troughs, ridges, vorticity, and why weather starts above the surface. upper air weather map guide"
+  },
+  {
     "title": "Upslope Snow Explained: Why Wind Against Terrain Makes Snow Heavier",
     "path": "/upslope-snow-explained/",
     "description": "How upslope flow creates clouds and snow, why mountains and foothills can get enhanced precipitation, and why wind direction matters.",
@@ -6062,6 +6237,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Waterspouts — The Ocean's Tornadoes Waterspouts are tornadoes over water. Some are true tornadoes; some are weaker \"fair weather\" spouts. Here is how they form, where they occur, and why they matter to mariners. waterspouts explained"
   },
   {
+    "title": "Weather Alert App Settings: Tornado, Severe Storm, Flood, Lightning, and Location Alerts",
+    "path": "/weather-alert-app-settings/",
+    "description": "How to set up weather app alerts without overload, including location permissions, tornado warnings, flood alerts, lightning, and quiet hours.",
+    "category": "Weather Safety",
+    "keywords": "Weather Alert App Settings: Tornado, Severe Storm, Flood, Lightning, and Location Alerts How to set up weather app alerts without overload, including location permissions, tornado warnings, flood alerts, lightning, and quiet hours. weather alert app settings"
+  },
+  {
     "title": "Weather Alert Cheat Sheet: Watch, Warning, Advisory, Outlook, and Emergency",
     "path": "/weather-alert-cheat-sheet/",
     "description": "A simple weather alert cheat sheet explaining watches, warnings, advisories, outlooks, emergencies, and special weather statements.",
@@ -6160,6 +6342,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Famous Weather Forecast Failures — 10 Notorious Busts Weather forecasters get it wrong sometimes. Here are 10 famous forecast failures — from the 1900 Galveston Hurricane to modern busts. weather forecasting mistakes history"
   },
   {
+    "title": "Weather Front Map Symbols: Cold Fronts, Warm Fronts, Stationary Fronts, and Occluded Fronts",
+    "path": "/weather-front-map-symbols/",
+    "description": "How to read common weather front symbols on maps and what each front can mean for wind, temperature, rain, storms, and clouds.",
+    "category": "Weather Maps",
+    "keywords": "Weather Front Map Symbols: Cold Fronts, Warm Fronts, Stationary Fronts, and Occluded Fronts How to read common weather front symbols on maps and what each front can mean for wind, temperature, rain, storms, and clouds. weather front map symbols"
+  },
+  {
     "title": "Weather Fronts Explained: Cold, Warm, Stationary, and Occluded Fronts",
     "path": "/weather-fronts-explained/",
     "description": "What weather fronts are, why they create clouds and storms, and how to read cold, warm, stationary, and occluded fronts on a weather map.",
@@ -6235,6 +6424,27 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A weather-themed memory match card game. Match pairs of weather symbols — tornadoes, hurricanes, hail, and more. Three difficulty levels. Free to play in browser.",
     "category": "Guide",
     "keywords": "Weather Memory Match — Free Interactive Weather Card Game | Tornado Simulator A weather-themed memory match card game. Match pairs of weather symbols — tornadoes, hurricanes, hail, and more. Three difficulty levels. Free to play in browser. weather memory match"
+  },
+  {
+    "title": "Weather Model Bias Explained: Why Models Have Habits",
+    "path": "/weather-model-bias-explained/",
+    "description": "What model bias means, why forecast models can lean too wet, too warm, too fast, or too strong, and how forecasters account for it.",
+    "category": "Forecast Models",
+    "keywords": "Weather Model Bias Explained: Why Models Have Habits What model bias means, why forecast models can lean too wet, too warm, too fast, or too strong, and how forecasters account for it. weather model bias explained"
+  },
+  {
+    "title": "Weather Model Guides: Model Runs, GFS vs Euro, Bias, Ensembles, and Forecast Uncertainty",
+    "path": "/weather-model-guides/",
+    "description": "A hub for weather model explainers, including model run times, GFS versus Euro differences, model bias, ensembles, and forecast confidence.",
+    "category": "Forecast Models",
+    "keywords": "Weather Model Guides: Model Runs, GFS vs Euro, Bias, Ensembles, and Forecast Uncertainty A hub for weather model explainers, including model run times, GFS versus Euro differences, model bias, ensembles, and forecast confidence. weather model guides"
+  },
+  {
+    "title": "Weather Model Run Explained: What 00z, 06z, 12z, and 18z Mean",
+    "path": "/weather-model-run-explained/",
+    "description": "A guide to weather model run times, forecast hours, and why new model data does not instantly mean the forecast has changed.",
+    "category": "Forecast Models",
+    "keywords": "Weather Model Run Explained: What 00z, 06z, 12z, and 18z Mean A guide to weather model run times, forecast hours, and why new model data does not instantly mean the forecast has changed. weather model run explained"
   },
   {
     "title": "Weather Model Run Timing: Why Forecast Maps Update Several Times a Day",
