@@ -119,6 +119,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Apartment Tornado Shelter Plan: Interior Rooms, Hallways, and Stairs How apartment residents can choose safer tornado shelter options, especially on upper floors or in buildings without basements. apartment interior room tornado"
   },
   {
+    "title": "Apartment Weather Preparedness Kit: Storms, Outages, Heat, Flooding, and Alerts",
+    "path": "/apartment-weather-preparedness-kit/",
+    "description": "A practical apartment weather kit for renters, including small-space supplies, alerts, power, water, pets, insurance photos, and building shelter questions.",
+    "category": "Apartments",
+    "keywords": "Apartment Weather Preparedness Kit: Storms, Outages, Heat, Flooding, and Alerts A practical apartment weather kit for renters, including small-space supplies, alerts, power, water, pets, insurance photos, and building shelter questions. apartment weather preparedness kit"
+  },
+  {
     "title": "April Tornadoes - Why April Is the Deadliest US Tornado Month",
     "path": "/april-tornadoes/",
     "description": "April averages 180 US tornadoes and has produced the deadliest tornado outbreaks in history. The 1974 Super Outbreak, 2011 Super Outbreak, and Palm Sunday 1965 all struck in April.",
@@ -215,6 +222,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "The 1985 Barrie F4 tornado killed 12 people and injured hundreds as part of the devastating 1985 US-Canada outbreak that also produced the Wheatland PA F5.",
     "category": "Canadian historic event",
     "keywords": "Barrie Tornado (May 31, 1985) — F4, 12 Dead, Ontario's Deadliest Modern Tornado The 1985 Barrie F4 tornado killed 12 people and injured hundreds as part of the devastating 1985 US-Canada outbreak that also produced the Wheatland PA F5. barrie 1985 tornado"
+  },
+  {
+    "title": "Basement Flooding During Rainstorms: Sump Pumps, Gutters, Drains, and Safety",
+    "path": "/basement-flooding-rainstorm-guide/",
+    "description": "Why basements flood during heavy rain, what to check before storms, and how to stay safer around water, electricity, mold, and cleanup.",
+    "category": "Flooding",
+    "keywords": "Basement Flooding During Rainstorms: Sump Pumps, Gutters, Drains, and Safety Why basements flood during heavy rain, what to check before storms, and how to stay safer around water, electricity, mold, and cleanup. basement flooding rainstorm guide"
   },
   {
     "title": "Beaufort Wind Scale — Force 0 to 12 Explained",
@@ -336,6 +350,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Blocking High Weather Pattern Explained: Why Forecasts Get Stuck What a blocking high is, why it can stall heat waves, cold snaps, drought, smoke, or repeated storm tracks, and how forecasters spot blocked patterns. blocking high weather pattern"
   },
   {
+    "title": "Boating Thunderstorm Safety: Lightning, Gust Fronts, Waves, and Safe Harbor",
+    "path": "/boating-thunderstorm-safety/",
+    "description": "How boaters can manage thunderstorm risk, including radar timing, gust fronts, lightning, visibility, and when to return to safe harbor.",
+    "category": "Marine Weather",
+    "keywords": "Boating Thunderstorm Safety: Lightning, Gust Fronts, Waves, and Safe Harbor How boaters can manage thunderstorm risk, including radar timing, gust fronts, lightning, visibility, and when to return to safe harbor. boating thunderstorm safety"
+  },
+  {
     "title": "Bomb Cyclone Explained: Rapidly Strengthening Storms and Big Weather Impacts",
     "path": "/bomb-cyclone-explained/",
     "description": "What bomb cyclone means, why pressure can fall quickly, and how rapidly intensifying storms can create wind, snow, rain, coastal flooding, and travel disruptions.",
@@ -369,6 +390,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "California averages 10 tornadoes per year. Most are weak but occasional significant events occur. History and safety information for California residents.",
     "category": "Guide",
     "keywords": "California Tornadoes - Yes, They Happen (Rarely) California averages 10 tornadoes per year. Most are weak but occasional significant events occur. History and safety information for California residents. california tornadoes"
+  },
+  {
+    "title": "Camping Thunderstorm Safety: Tents, Trees, Flooding, Wind, and Lightning",
+    "path": "/camping-thunderstorm-safety/",
+    "description": "How to plan for thunderstorms while camping, including campsite selection, lightning shelter, flash flooding, wind, trees, and weather radios.",
+    "category": "Outdoor Weather",
+    "keywords": "Camping Thunderstorm Safety: Tents, Trees, Flooding, Wind, and Lightning How to plan for thunderstorms while camping, including campsite selection, lightning shelter, flash flooding, wind, trees, and weather radios. camping thunderstorm safety"
   },
   {
     "title": "Can a Tornado Cross a River? Yes - Rivers Don't Stop Tornadoes",
@@ -854,6 +882,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "F5 vs. EF5 — The Difference Between the Two Top Tornado Ratings F5 (Fujita Scale, 1971-2007) required 261+ mph winds. EF5 (Enhanced Fujita, 2007+) requires 200+ mph. The scales differ in wind speed thresholds but not damage descriptions. f5 vs ef5"
   },
   {
+    "title": "Family Weather Drill Guide: Practice Tornado, Fire, Flood, and Outage Plans",
+    "path": "/family-weather-drill-guide/",
+    "description": "How to run simple family weather drills for tornado warnings, flash flooding, power outages, fire weather, and nighttime alerts.",
+    "category": "Preparedness",
+    "keywords": "Family Weather Drill Guide: Practice Tornado, Fire, Flood, and Outage Plans How to run simple family weather drills for tornado warnings, flash flooding, power outages, fire weather, and nighttime alerts. family weather drill guide"
+  },
+  {
     "title": "Famous Storm Chasers - The Legends of Tornado Research and Documentation",
     "path": "/famous-storm-chasers/",
     "description": "Famous storm chasers: Tim Samaras, Reed Timmer, Josh Wurman, Warren Faidley, Sean Casey, and other legends of tornado research and documentation.",
@@ -1001,6 +1036,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Gaylord, Michigan Tornado of May 20, 2022 The May 20, 2022 Gaylord EF3 tornado struck Northern Michigan. 2 killed, extensive damage - first major tornado in Northern Michigan in years. gaylord 2022 tornado"
   },
   {
+    "title": "Generator Safety During Weather Outages: Carbon Monoxide, Placement, and Cords",
+    "path": "/generator-safety-weather-outage/",
+    "description": "How to use generators more safely during storm outages, including carbon monoxide risk, outdoor placement, extension cords, fuel, and backfeed hazards.",
+    "category": "Power Outages",
+    "keywords": "Generator Safety During Weather Outages: Carbon Monoxide, Placement, and Cords How to use generators more safely during storm outages, including carbon monoxide risk, outdoor placement, extension cords, fuel, and backfeed hazards. generator safety weather outage"
+  },
+  {
     "title": "Georgia Tornadoes - Gainesville 1936 and the Deep South Risk",
     "path": "/georgia-tornadoes/",
     "description": "Georgia tornado history: Gainesville 1936 F4 killed 203 (deadliest in state history), plus the Atlanta 2008 EF2 that struck downtown during an SEC tournament.",
@@ -1076,6 +1118,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "The Hackleburg–Phil Campbell tornado of April 27, 2011 was an EF5 with 210 mph winds and a 132-mile path across Alabama and Tennessee. 72 killed — the deadliest tornado of the 2011 Super Outbreak.",
     "category": "Guide",
     "keywords": "Hackleburg–Phil Campbell Tornado of 2011 — EF5, 72 Killed The Hackleburg–Phil Campbell tornado of April 27, 2011 was an EF5 with 210 mph winds and a 132-mile path across Alabama and Tennessee. 72 killed — the deadliest tornado of the 2011 Super Outbreak. hackleburg 2011"
+  },
+  {
+    "title": "Hail Car Protection Guide: What to Do Before, During, and After Hail",
+    "path": "/hail-car-protection-guide/",
+    "description": "How to protect a vehicle from hail, what to avoid during a hailstorm, and how to document dents, cracked glass, and insurance evidence.",
+    "category": "Hail",
+    "keywords": "Hail Car Protection Guide: What to Do Before, During, and After Hail How to protect a vehicle from hail, what to avoid during a hailstorm, and how to document dents, cracked glass, and insurance evidence. hail car protection guide"
   },
   {
     "title": "Hail Damage Guide: Cars, Roofs, Windows, and Insurance Notes",
@@ -2016,6 +2065,20 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "What Outdoor Tornado Sirens Mean and What They Do Not Mean A clear guide to outdoor warning sirens: why they exist, why you may not hear them indoors, and why phone alerts and weather radios matter. outdoor sirens tornado meaning"
   },
   {
+    "title": "Outdoor Weather Safety Guides: Sports, Camping, Boating, Weddings, Pets, and Heat",
+    "path": "/outdoor-weather-safety-guides/",
+    "description": "A hub for outdoor weather safety, including lightning delays, camping storms, boating thunderstorms, outdoor weddings, and pet heat or winter weather.",
+    "category": "Outdoor Weather Safety",
+    "keywords": "Outdoor Weather Safety Guides: Sports, Camping, Boating, Weddings, Pets, and Heat A hub for outdoor weather safety, including lightning delays, camping storms, boating thunderstorms, outdoor weddings, and pet heat or winter weather. outdoor weather safety guides"
+  },
+  {
+    "title": "Outdoor Wedding Weather Plan: Rain, Heat, Wind, Lightning, and Backup Decisions",
+    "path": "/outdoor-wedding-weather-plan/",
+    "description": "A weather planning guide for outdoor weddings and private events, including tents, lightning, heat, wind, rain timing, and guest communication.",
+    "category": "Event Weather",
+    "keywords": "Outdoor Wedding Weather Plan: Rain, Heat, Wind, Lightning, and Backup Decisions A weather planning guide for outdoor weddings and private events, including tents, lightning, heat, wind, rain timing, and guest communication. outdoor wedding weather plan"
+  },
+  {
     "title": "Palm Sunday Tornado Outbreak of 1965 - 47 Tornadoes, 271 Killed",
     "path": "/palm-sunday-1965/",
     "description": "The Palm Sunday tornado outbreak of April 11, 1965 produced 47 tornadoes in a single afternoon across 6 states, killing 271.",
@@ -2037,6 +2100,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Pennsylvania Tornadoes - 1985 Outbreak and Modern Events Pennsylvania averages 16 tornadoes per year. History includes the 1985 F5 outbreak, 1990 Plymouth F4, and multiple recent significant events. pennsylvania tornadoes"
   },
   {
+    "title": "Pet Heat Wave Safety: Dogs, Cats, Pavement, Cars, and Cooling",
+    "path": "/pet-heat-wave-safety/",
+    "description": "How to protect pets during heat waves, including pavement burns, parked cars, shade, hydration, breed risk, and warning signs.",
+    "category": "Pet Weather",
+    "keywords": "Pet Heat Wave Safety: Dogs, Cats, Pavement, Cars, and Cooling How to protect pets during heat waves, including pavement burns, parked cars, shade, hydration, breed risk, and warning signs. pet heat wave safety"
+  },
+  {
     "title": "Pet Safety in Tornadoes — What to Do for Dogs, Cats and Others",
     "path": "/pet-safety-in-tornadoes/",
     "description": "A specific guide to keeping pets safe during a tornado. Emergency kit essentials for dogs, cats, birds and small mammals; how to shelter with pets; what to do in the aftermath; and how to find pets separated during a storm.",
@@ -2049,6 +2119,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "How to include pets in your tornado plan with carriers, leashes, shelter-room supplies, microchips, anxiety, and post-storm hazards.",
     "category": "Pets",
     "keywords": "Pet Tornado Shelter Plan: Dogs, Cats, Carriers, and After-Storm Safety How to include pets in your tornado plan with carriers, leashes, shelter-room supplies, microchips, anxiety, and post-storm hazards. pet tornado shelter plan"
+  },
+  {
+    "title": "Pet Winter Weather Safety: Cold, Ice, Paws, Antifreeze, and Storm Outages",
+    "path": "/pet-winter-weather-safety/",
+    "description": "How to protect pets during winter storms, including cold exposure, paw ice, salt, antifreeze, power outages, and emergency kits.",
+    "category": "Pet Weather",
+    "keywords": "Pet Winter Weather Safety: Cold, Ice, Paws, Antifreeze, and Storm Outages How to protect pets during winter storms, including cold exposure, paw ice, salt, antifreeze, power outages, and emergency kits. pet winter weather safety"
   },
   {
     "title": "Philadelphia, Mississippi Tornado of 2011 - EF5 Long-Track Rural",
@@ -2926,6 +3003,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Rolling Fork, Mississippi Tornado of 2023 — EF4, 21 Killed, Town Destroyed The Rolling Fork, Mississippi tornado of March 24, 2023 was an EF4 with 195 mph winds that nearly destroyed the town of Rolling Fork. 21 killed, 165 injured across a 59-mile path. rolling fork 2023"
   },
   {
+    "title": "Roof Leak After Storm: What to Check Safely and What to Document",
+    "path": "/roof-leak-after-storm-guide/",
+    "description": "What to do after a roof leak from wind, hail, heavy rain, or debris, including safe inspection, photos, temporary protection, and warning signs.",
+    "category": "Storm Damage",
+    "keywords": "Roof Leak After Storm: What to Check Safely and What to Document What to do after a roof leak from wind, hail, heavy rain, or debris, including safe inspection, photos, temporary protection, and warning signs. roof leak after storm guide"
+  },
+  {
     "title": "Rope Tornadoes: The Thin Twisting Stage Explained",
     "path": "/rope-tornado/",
     "description": "Rope tornadoes are narrow, twisting tornadoes often seen late in a tornado life cycle. Learn why they form, whether they are dangerous, and how they differ from cone and wedge shapes.",
@@ -2973,6 +3057,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "A guide for school administrators, teachers, and parents on tornado emergency planning. Shelter location selection, drill frequency, staff responsibilities, communication with parents, and specific considerations for young children and special needs students.",
     "category": "Institutional planning",
     "keywords": "School Tornado Emergency Plan — Templates and Best Practices A guide for school administrators, teachers, and parents on tornado emergency planning. Shelter location selection, drill frequency, staff responsibilities, communication with parents, and specific considerations for young children and special needs students. school tornado emergency plan"
+  },
+  {
+    "title": "School Weather Closure Factors: Snow, Heat, Wind, Flooding, and Severe Storms",
+    "path": "/school-weather-closure-factors/",
+    "description": "Why schools close, delay, or dismiss early for weather, including buses, sidewalks, wind chill, heat, flooding, power outages, and warning timing.",
+    "category": "School Weather",
+    "keywords": "School Weather Closure Factors: Snow, Heat, Wind, Flooding, and Severe Storms Why schools close, delay, or dismiss early for weather, including buses, sidewalks, wind chill, heat, flooding, power outages, and warning timing. school weather closure factors"
   },
   {
     "title": "Sea Breeze Thunderstorms Explained: Coastline Boundaries and Afternoon Storms",
@@ -3085,6 +3176,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Southeast US tornadoes: MS, AL, TN, GA, LA see more tornado deaths than any region in the modern era. Nighttime tornadoes, mobile homes, and rain-wrapped supercells make Southeast tornadoes especially dangerous.",
     "category": "Guide",
     "keywords": "Southeast Tornadoes - The Deadliest Region for Modern Tornado Deaths Southeast US tornadoes: MS, AL, TN, GA, LA see more tornado deaths than any region in the modern era. Nighttime tornadoes, mobile homes, and rain-wrapped supercells make Southeast tornadoes especially dangerous. southeast tornadoes"
+  },
+  {
+    "title": "Sports Lightning Delay Guide: When Games Should Stop and Restart",
+    "path": "/sports-lightning-delay-guide/",
+    "description": "A practical lightning safety guide for coaches, parents, referees, and outdoor sports organizers, including delay timing and shelter choices.",
+    "category": "Sports Weather",
+    "keywords": "Sports Lightning Delay Guide: When Games Should Stop and Restart A practical lightning safety guide for coaches, parents, referees, and outdoor sports organizers, including delay timing and shelter choices. sports lightning delay guide"
   },
   {
     "title": "Squall Line Explained: Fast-Moving Thunderstorm Lines and Damaging Wind Risk",
@@ -3407,6 +3505,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Storm chasing safety: the lessons of the 2013 El Reno TWISTEX deaths, minimum standoff distances, escape route planning, and why amateur chasing kills people.",
     "category": "Safety",
     "keywords": "Storm Chasing Safety — What Professionals Do (and What Kills Them) Storm chasing safety: the lessons of the 2013 El Reno TWISTEX deaths, minimum standoff distances, escape route planning, and why amateur chasing kills people. storm chasing safety"
+  },
+  {
+    "title": "Storm Damage Guides: Hail, Roof Leaks, Trees, Basement Flooding, and Cleanup Safety",
+    "path": "/storm-damage-guides/",
+    "description": "A hub for practical storm-damage guides covering hail on cars, roof leaks, tree damage, basement flooding, and documentation after severe weather.",
+    "category": "Storm Damage",
+    "keywords": "Storm Damage Guides: Hail, Roof Leaks, Trees, Basement Flooding, and Cleanup Safety A hub for practical storm-damage guides covering hail on cars, roof leaks, tree damage, basement flooding, and documentation after severe weather. storm damage guides"
   },
   {
     "title": "Storm Deploy — Drop a Supercell on a Real City and See What Happens",
@@ -5187,6 +5292,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Tornado Index — Live Data + Historical Records — Tornado Hub A live-updating tornado index. Recent tornadoes from NOAA Storm Prediction Center, historical records, US Storm Events Database, and every significant tornado since 1950. Refreshed daily. tornadoes"
   },
   {
+    "title": "Tree Damage After Windstorm: Limbs, Power Lines, Roofs, and Cleanup Safety",
+    "path": "/tree-damage-windstorm-guide/",
+    "description": "How to handle tree damage after high wind, severe thunderstorms, ice storms, or tropical systems, including power lines and cleanup hazards.",
+    "category": "Storm Damage",
+    "keywords": "Tree Damage After Windstorm: Limbs, Power Lines, Roofs, and Cleanup Safety How to handle tree damage after high wind, severe thunderstorms, ice storms, or tropical systems, including power lines and cleanup hazards. tree damage windstorm guide"
+  },
+  {
     "title": "Tri-State Tornado of 1925 — Deadliest US Tornado in History",
     "path": "/tri-state-1925/",
     "description": "The Tri-State tornado of March 18, 1925 killed 695 people across Missouri, Illinois, and Indiana over a 219-mile path — the deadliest single tornado in US history.",
@@ -5362,6 +5474,13 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Weather Alert Guides: Watches, Warnings, Advisories, and Outlooks A hub for weather alert explainers covering severe thunderstorms, flooding, fire weather, wind, fog, marine alerts, and coastal hazards. weather alert guides"
   },
   {
+    "title": "Weather Alerts for Elderly Family: Phones, Radios, Check-Ins, and Backup Plans",
+    "path": "/weather-alerts-for-elderly-family/",
+    "description": "How to help older relatives receive weather alerts and act on them, including phone settings, weather radios, hearing issues, mobility, and power backup.",
+    "category": "Preparedness",
+    "keywords": "Weather Alerts for Elderly Family: Phones, Radios, Check-Ins, and Backup Plans How to help older relatives receive weather alerts and act on them, including phone settings, weather radios, hearing issues, mobility, and power backup. weather alerts for elderly family"
+  },
+  {
     "title": "Best Weather Apps 2026 — Complete Comparison",
     "path": "/weather-app-comparison-2026/",
     "description": "Every major weather app compared for 2026. AccuWeather, Weather Channel, Windy, RadarScope, Weather Underground, and more.",
@@ -5388,6 +5507,13 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Every day, twice a day, 900 weather balloons launch worldwide carrying radiosondes into the stratosphere. Here is how they work, what data they collect, why forecast quality depends on them, and how you can find the balloons that land near you.",
     "category": "Data infrastructure",
     "keywords": "Weather Balloons and Radiosondes — How Atmospheric Data Gets Collected Every day, twice a day, 900 weather balloons launch worldwide carrying radiosondes into the stratosphere. Here is how they work, what data they collect, why forecast quality depends on them, and how you can find the balloons that land near you. weather balloons and radiosondes"
+  },
+  {
+    "title": "Weather Commute Safety Guide: Rain, Fog, Wind, Ice, and Severe Storms",
+    "path": "/weather-commute-safety-guide/",
+    "description": "How commuters can adjust for heavy rain, dense fog, high wind, black ice, hail, lightning, and severe thunderstorm warnings.",
+    "category": "Travel Weather",
+    "keywords": "Weather Commute Safety Guide: Rain, Fog, Wind, Ice, and Severe Storms How commuters can adjust for heavy rain, dense fog, high wind, black ice, hail, lightning, and severe thunderstorm warnings. weather commute safety guide"
   },
   {
     "title": "Weather Crossword — Free Interactive Meteorology Puzzle | Tornado Simulator",
@@ -5509,11 +5635,32 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Best Weather Podcasts and YouTube Channels — 2026 Guide A curated guide to the best weather podcasts, YouTube channels, and Twitter/X accounts for hobbyists, chasers, and professional meteorologists. From Weather Geeks to Ryan Hall Y'all to the Storm Prediction Center feed. weather podcasts and youtube"
   },
   {
+    "title": "Weather Power Outage Kit: What to Keep Ready Before Storms",
+    "path": "/weather-power-outage-kit/",
+    "description": "A practical power outage kit for thunderstorms, hurricanes, ice storms, wind storms, heat waves, and winter storms.",
+    "category": "Preparedness",
+    "keywords": "Weather Power Outage Kit: What to Keep Ready Before Storms A practical power outage kit for thunderstorms, hurricanes, ice storms, wind storms, heat waves, and winter storms. weather power outage kit"
+  },
+  {
+    "title": "Weather Preparedness Guides: Outages, Alerts, Family Drills, Apartments, and Elderly Family",
+    "path": "/weather-preparedness-guides/",
+    "description": "A hub for practical weather preparedness guides covering outage kits, generator safety, alert layers, family drills, apartment kits, and older relatives.",
+    "category": "Preparedness",
+    "keywords": "Weather Preparedness Guides: Outages, Alerts, Family Drills, Apartments, and Elderly Family A hub for practical weather preparedness guides covering outage kits, generator safety, alert layers, family drills, apartment kits, and older relatives. weather preparedness guides"
+  },
+  {
     "title": "NOAA Weather Radio Buying Guide — What to Get in 2026",
     "path": "/weather-radio-buying-guide/",
     "description": "NOAA Weather Radio is still the most reliable way to receive severe weather alerts. This guide compares Midland, Sangean, Eton, and RadioShack models — from bedside alarms to hand-cranked emergency units.",
     "category": "Buying guide",
     "keywords": "NOAA Weather Radio Buying Guide — What to Get in 2026 NOAA Weather Radio is still the most reliable way to receive severe weather alerts. This guide compares Midland, Sangean, Eton, and RadioShack models — from bedside alarms to hand-cranked emergency units. weather radio buying guide"
+  },
+  {
+    "title": "Weather Radio vs Phone Alerts: Why Redundant Warning Systems Matter",
+    "path": "/weather-radio-vs-phone-alerts/",
+    "description": "Compare NOAA weather radio, Wireless Emergency Alerts, weather apps, sirens, and local media for tornadoes, floods, hurricanes, and severe storms.",
+    "category": "Weather Alerts",
+    "keywords": "Weather Radio vs Phone Alerts: Why Redundant Warning Systems Matter Compare NOAA weather radio, Wireless Emergency Alerts, weather apps, sirens, and local media for tornadoes, floods, hurricanes, and severe storms. weather radio vs phone alerts"
   },
   {
     "title": "Weather Safety Guides: Heat, Lightning, Flooding, Winter Storms, Hail, and Smoke",
