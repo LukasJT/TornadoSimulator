@@ -66,9 +66,9 @@ const pages = [
 <h2>Information we may collect</h2>
 <ul><li>Basic technical data such as browser type, device type, referring pages, approximate location, and pages viewed.</li><li>Voluntary messages you send through contact links or issue reports.</li><li>Local browser data used for non-sensitive features such as article view tracking or saved preferences.</li></ul>
 <h2>Advertising cookies and third-party ads</h2>
-<p>Third-party vendors, including Google, may use cookies to serve ads based on a user's prior visits to this website or other websites. Google's use of advertising cookies enables Google and its partners to serve ads based on visits to this site and/or other sites on the Internet.</p>
-<p>Users may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" rel="nofollow">Google Ads Settings</a>. Users may also opt out of some third-party vendors' uses of cookies for personalized advertising through <a href="https://www.aboutads.info/choices/" rel="nofollow">AboutAds.info</a>.</p>
-<p>The site may also use non-Google ad networks, including Adsterra-related domains such as highperformanceformat.com and effectivecpmnetwork.com. Those vendors may use cookies, scripts, or similar technologies to serve and measure ads. Visit the relevant vendor websites for their opt-out and privacy information when available.</p>
+<p>The site may use third-party ad networks, including Adsterra-related domains such as highperformanceformat.com and effectivecpmnetwork.com. Those vendors may use cookies, scripts, or similar technologies to serve, limit, and measure ads.</p>
+<p>Users can use browser settings, privacy extensions, or participating industry opt-out tools to limit personalized advertising and manage cookies. Some ad network choices may be controlled on the vendor's own privacy or opt-out pages.</p>
+<p>We avoid ad formats that hijack normal page clicks, force unexpected full-page navigation, or make the site difficult to use. Display banners, native placements, and clearly framed ad slots are preferred.</p>
 <h2>Analytics and site measurement</h2>
 <p>We may use server logs, privacy-conscious counters, or analytics tools to understand which pages are useful, diagnose technical issues, and improve navigation. Article popularity features may use aggregate or local counts rather than identifying a specific person.</p>
 <h2>Affiliate links</h2>
@@ -78,7 +78,7 @@ const pages = [
 <h2>Contact and correction messages</h2>
 <p>If you contact us, we may use your message and contact details only to respond, investigate corrections, or maintain the site. Do not send sensitive personal information.</p>
 <h2>Your choices</h2>
-<ul><li>Use browser settings to block or delete cookies.</li><li>Use Google Ads Settings to opt out of personalized Google advertising.</li><li>Use AboutAds.info choices for participating third-party vendors.</li><li>Contact us through the Contact page for correction or privacy questions.</li></ul>`
+<ul><li>Use browser settings to block or delete cookies.</li><li>Use privacy extensions or participating industry opt-out tools to limit personalized advertising.</li><li>Review ad vendor privacy choices where available.</li><li>Contact us through the Contact page for correction or privacy questions.</li></ul>`
   },
   {
     slug: 'terms-and-conditions',
@@ -121,7 +121,7 @@ const pages = [
 <h2>Advertising and funding</h2>
 <p>Tornado Hub is free to use. The site may be funded by display advertising and affiliate links. Advertising helps pay for hosting, development, research, and maintenance.</p>
 <h2>Independence</h2>
-<p>Tornado Hub is not affiliated with NOAA, the National Weather Service, FEMA, Google, Adsterra, or any government agency. Brand names and data-source names belong to their respective owners.</p>`
+<p>Tornado Hub is not affiliated with NOAA, the National Weather Service, FEMA, Adsterra, or any government agency. Brand names and data-source names belong to their respective owners.</p>`
   },
   {
     slug: 'contact',
@@ -212,4 +212,4 @@ fs.writeFileSync(path.join(root, 'assets', 'content-index.js'), `window.TORNADO_
 const urls = items.map((item) => `  <url>\n    <loc>${site}${item.path}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${item.path === '/' ? 'daily' : 'monthly'}</changefreq>\n    <priority>${item.path === '/' ? '1.0' : item.path.includes('privacy') || item.path.includes('terms') || item.path.includes('contact') || item.path.includes('about-us') ? '0.6' : item.path.includes('guides') ? '0.8' : '0.7'}</priority>\n  </url>`).join('\n');
 fs.writeFileSync(path.join(root, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`);
 
-console.log(`Added AdSense readiness pages and rebuilt ${items.length} indexed URLs.`);
+console.log(`Added ad policy pages and rebuilt ${items.length} indexed URLs.`);
