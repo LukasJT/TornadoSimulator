@@ -89,7 +89,15 @@
     );
   }
 
+  function isContentArticlePage() {
+    if (location.pathname === '/' || location.pathname === '/articles/') return false;
+    var article = document.querySelector('article.article') || document.querySelector('article');
+    if (!article) return false;
+    return !!article.querySelector('h1,.article-header,.eyebrow,.lede') && article.querySelectorAll('p').length >= 3;
+  }
+
   function inject() {
+    if (isContentArticlePage()) return;
     var banners = document.querySelectorAll('.inline-ad');
     if (!banners.length) return;
 
@@ -104,8 +112,8 @@
         'left:50%;transform:translateX(-50%)}' +
         '.inline-ad-row .house-ad-wrap{display:none;flex:0 0 210px}' +
         '.inline-ad-row .inline-ad{margin:0;flex:1 1 auto;max-width:728px;align-self:center}' +
-        '@media (min-width:1180px){.inline-ad-row .house-ad-wrap{display:block}}' +
-        '@media (max-width:1179px){.inline-ad-row{width:auto;left:auto;transform:none;padding:0;max-width:100%}}';
+        '@media (min-width:1480px){.inline-ad-row .house-ad-wrap{display:block}}' +
+        '@media (max-width:1479px){.inline-ad-row{width:auto;left:auto;transform:none;padding:0;max-width:100%}}';
       document.head.appendChild(s);
     }
 

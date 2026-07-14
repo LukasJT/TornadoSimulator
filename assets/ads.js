@@ -11,19 +11,25 @@
     s.id = 'ads-responsive-css';
     s.textContent = [
       'html,body{overflow-x:hidden;max-width:100vw}',
-      '.inline-ad{max-width:100vw;box-sizing:border-box}',
-      '.inline-ad iframe{max-width:100%}',
+      '.inline-ad{max-width:100vw;box-sizing:border-box;position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;isolation:isolate}',
+      '.inline-ad>*{max-width:100%}',
+      '.inline-ad iframe{display:block!important;max-width:100%;margin:0 auto!important;position:static!important}',
       '.inline-ad,.native-ad-wrap{clear:both}',
+      '.native-ad-wrap{position:relative;z-index:1;overflow:hidden;isolation:isolate}',
       '.medium-rectangle-ad{text-align:center;margin:30px auto;min-height:250px;max-width:336px}',
       '.medium-rectangle-ad .ad-label{font:10px/1.2 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#8b8f9c;text-align:center;margin-bottom:6px}',
       '@media (max-width:767px){.inline-ad iframe[width="728"]{display:none!important}}',
       '@media (max-width:767px){.inline-ad iframe[width="468"]{display:none!important}}',
-      '.ad-rail{display:none;position:fixed;top:96px;z-index:40;width:160px;min-height:300px;pointer-events:auto}',
+      '#adsterra-side,#adsterra-left,.ad-rail{display:none!important;pointer-events:none!important}',
+      '.ad-rail{position:fixed;top:96px;z-index:20;width:160px;min-height:300px}',
       '.ad-rail iframe{border:0;display:block;max-width:160px;background:transparent}',
       '.ad-rail-label{font:10px/1.2 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#8b8f9c;text-align:center;margin-bottom:6px}',
-      '.ad-rail-left{left:10px}.ad-rail-right{right:10px}',
-      '@media (min-width:1240px){.ad-rail{display:block}}',
-      '@media (max-width:1239px){.side-ad,#adsterra-side,#adsterra-left,.ad-rail{display:none!important}}',
+      '.ad-rail-left{left:max(12px,calc((100vw - 1120px)/2 - 190px))!important}.ad-rail-right{right:max(12px,calc((100vw - 1120px)/2 - 190px))!important}',
+      'body.ad-side-rails-ok #adsterra-side,body.ad-side-rails-ok #adsterra-left{position:fixed!important;top:96px!important;transform:none!important;width:160px!important;z-index:20!important}',
+      'body.ad-side-rails-ok #adsterra-side{right:max(12px,calc((100vw - 1120px)/2 - 190px))!important;height:600px!important}',
+      'body.ad-side-rails-ok #adsterra-left{left:max(12px,calc((100vw - 1120px)/2 - 190px))!important;height:300px!important}',
+      '@media (min-width:1480px){body.ad-side-rails-ok .ad-rail,body.ad-side-rails-ok #adsterra-side,body.ad-side-rails-ok #adsterra-left{display:block!important;pointer-events:auto!important}}',
+      '@media (max-width:1479px){.side-ad,#adsterra-side,#adsterra-left,.ad-rail{display:none!important;pointer-events:none!important}}',
       '.mobile-ad-swap{display:none;justify-content:center;margin:12px auto;width:100%;min-height:50px}',
       '@media (max-width:767px){.mobile-ad-swap{display:flex}}'
     ].join('\n');
@@ -209,8 +215,18 @@
   function isArticleLikePage() {
     if (document.body && document.body.hasAttribute('data-no-side-ads')) return false;
     if (isGamePage()) return false;
-    if (document.querySelector('article')) return true;
-    return location.pathname === '/articles/' || location.pathname.indexOf('/articles/') === 0;
+    if (location.pathname === '/' || location.pathname === '/articles/') return false;
+
+    var article = document.querySelector('article.article') || document.querySelector('article');
+    if (!article) return false;
+    var paragraphCount = article.querySelectorAll('p').length;
+    var hasArticleHeader = !!article.querySelector('h1,.article-header,.eyebrow,.lede');
+    return hasArticleHeader && paragraphCount >= 3;
+  }
+
+  function updateSideRailEligibility() {
+    if (!document.body) return;
+    document.body.classList.toggle('ad-side-rails-ok', isArticleLikePage());
   }
 
   function makeAdFrame(key, width, height) {
@@ -396,9 +412,26 @@
     document.body.appendChild(s);
   }
 
+  function makeArticleCardsClickable() {
+    document.querySelectorAll('.article-card').forEach(function (card) {
+      if (card.getAttribute('data-card-clickable') === '1') return;
+      var link = card.querySelector('.article-title a,h3 a,a[href]');
+      if (!link || !link.href) return;
+      card.setAttribute('data-card-clickable', '1');
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', function (event) {
+        if (event.defaultPrevented) return;
+        if (event.target && event.target.closest && event.target.closest('a,button,input,select,textarea')) return;
+        window.location.href = link.href;
+      });
+    });
+  }
+
   function run() {
     injectResponsiveCSS();
+    updateSideRailEligibility();
     installClickHijackGuard();
+    makeArticleCardsClickable();
     injectMobileBanners();
     injectSideRailAds();
     autoPlaceMediumRectangles();
