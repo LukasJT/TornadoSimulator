@@ -6812,7 +6812,7 @@ window.TORNADO_CONTENT_INDEX = [
   {
     "title": "Weather Satellites &amp; Space Trivia — Free Interactive Weather Trivia",
     "description": "GOES, TIROS, Himawari — how well do you know the eyes-in-the-sky watching our weather? Instant scoring, share your result. Free weather trivia quiz.",
-    "url": "/weather-trivia/weather-satellites/",
+    "url": "/weather-trivia/weather-satellite-guide/",
     "category": "Guide"
   },
   {
