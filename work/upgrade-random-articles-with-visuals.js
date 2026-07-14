@@ -301,18 +301,41 @@ function cleanTitle(title) {
 
 function classify(slug, title, category) {
   const haystack = `${slug} ${title} ${category}`.toLowerCase();
-  if (/\baustralia\b|\bfinland\b|\bsweden\b|\blatvia\b|\binternational\b|mete[o]?alarm|\bbom\b|\bfmi\b|\bsmhi\b|gulf-of-riga|baltic|european-severe-weather|eswd/.test(haystack)) return 'international';
-  if (/school|student|classroom|project|experiment|lesson|career|meteorologist|hydrologist|science-fair|vocabulary|kids|teacher|worksheet|activity|presentation/.test(haystack)) return 'education';
-  if (/history|timeline|record|records|disaster|deadliest|costliest|outbreak|legacy|lessons|1974|2011|1936|1953|1925|1899|1999|2013|2020|2021|2022|2023|2024|xenia|joplin|moore|jarrell|tri-state|waco|tupelo|gainesville|greensburg|mayfield|plainfield|woodward|flint|fargo|barrie|edmonton|regina|vicksburg|natchez|topeka|wichita-falls/.test(haystack)) return 'history';
-  if (/bomb-cyclone|nor-easter|noreaster|extra-tropical-cyclone|extratropical-cyclone/.test(haystack)) return 'winter';
-  if (/hurricane|typhoon|tropical-storm|tropical-cyclone|tropical-depression|severe-tropical-cyclone|storm-surge|surge|evacuation-zone|andrew|katrina|harvey|sandy|galveston/.test(haystack)) return 'hurricane';
-  if (/safety|preparedness|emergency|emergency-kit|kit|drill|shelter|go-bag|outage|generator|carbon-monoxide|downed-power|first-aid|action-plan|cleanup|recovery-guide|storm-prep|weather-prep|continuity|checklist|safe-room|family-communication|emergency-communication/.test(haystack)) return 'safety';
-  if (/tornado|twister|supercell|funnel|wall-cloud|mesocyclone|hook-echo|dryline|ef-scale|fujita|wedge|rope|waterspout|landspout|qlcs|debris-signature|tornado-alley|dixie-alley|siren/.test(haystack)) return 'tornado';
-  if (/flood|rainfall|rainstorm|river|atmospheric-river|qpf|excessive-rain|drainage|sump|mold|water-safety|coastal-flood|hundred-year/.test(haystack)) return 'flood';
-  if (/winter|snow|blizzard|ice|icing|freezing|sleet|frost|whiteout|wind-chill|polar-vortex|lake-effect|nor-easter|cold-wave|snowfall/.test(haystack)) return 'winter';
-  if (/heat|drought|wildfire|smoke|air-quality|uv-index|red-flag|burn-ban|stagnation|cooling-center|megadrought|urban-heat|fire-tornado|pyrocumulonimbus/.test(haystack)) return 'heat';
-  if (/radar|satellite|forecast|model|spc|nws|noaa|metar|taf|skew|hodograph|weather-map|surface-analysis|upper-air|outlook|mesoanalysis|mesoscale|ensemble|nowcasting|probability|confidence|uncertainty|weather-app|velocity|reflectivity|correlation-coefficient|area-forecast/.test(haystack)) return 'radar';
-  if (/marine|beach|rip-current|small-craft|gale|boating|coastal|king-tide|sea-fog|lake-breeze|waterfront|harbor|safeboating/.test(haystack)) return 'marine';
+  const slugText = slug.toLowerCase();
+  const internationalPattern = /\baustralia\b|\bfinland\b|\bsweden\b|\blatvia\b|\binternational\b|mete[o]?alarm|\bbom\b|\bfmi\b|\bsmhi\b|gulf-of-riga|baltic|european-severe-weather|eswd/;
+  const radarPattern = /dual-pol|radar|satellite|forecast|forecasting|model|spc|nws|noaa|metar|taf|skew|hodograph|weather-map|surface-analysis|upper-air|outlook|mesoanalysis|mesoscale|ensemble|nowcasting|probability|confidence|uncertainty|weather-app|velocity|reflectivity|correlation-coefficient|area-forecast/;
+  const historyPattern = /history|timeline|record|records|disaster|deadliest|costliest|outbreak|legacy|lessons|1974|2011|1936|1953|1925|1899|1999|2013|2020|2021|2022|2023|2024|xenia|joplin|moore|jarrell|tri-state|waco|tupelo|gainesville|greensburg|mayfield|plainfield|woodward|flint|fargo|barrie|edmonton|regina|vicksburg|natchez|topeka|wichita-falls|dust-bowl/;
+  const educationPattern = /school|student|classroom|project|experiment|lesson|career|meteorologist|hydrologist|science-fair|vocabulary|kids|teacher|worksheet|activity|presentation/;
+  const floodPattern = /flood|rainfall|rainstorm|river|atmospheric-river|qpf|excessive-rain|drainage|sump|mold|water-safety|coastal-flood|hundred-year/;
+  const marinePattern = /marine|beach|rip-current|small-craft|gale|boating|coastal|king-tide|sea-fog|lake-breeze|waterfront|harbor|safeboating/;
+  const winterPattern = /winter|snow|blizzard|ice|icing|freezing|sleet|frost|whiteout|wind-chill|polar-vortex|lake-effect|nor-easter|cold-wave|snowfall|bomb-cyclone|noreaster|extra-tropical-cyclone|extratropical-cyclone/;
+  const hurricanePattern = /hurricane|typhoon|tropical-storm|tropical-cyclone|tropical-depression|severe-tropical-cyclone|storm-surge|surge|evacuation-zone|andrew|katrina|harvey|sandy|galveston/;
+  const safetyPattern = /safety|preparedness|emergency|emergency-kit|kit|drill|shelter|go-bag|outage|generator|carbon-monoxide|downed-power|first-aid|action-plan|cleanup|recovery-guide|storm-prep|weather-prep|continuity|checklist|safe-room|family-communication|emergency-communication/;
+  const tornadoPattern = /tornado|twister|supercell|funnel|wall-cloud|mesocyclone|hook-echo|dryline|ef-scale|fujita|wedge|rope|waterspout|landspout|qlcs|debris-signature|tornado-alley|dixie-alley|siren/;
+  const heatPattern = /heat|drought|wildfire|smoke|air-quality|uv-index|red-flag|burn-ban|stagnation|cooling-center|megadrought|urban-heat|fire-tornado|pyrocumulonimbus/;
+
+  if (internationalPattern.test(haystack)) return 'international';
+  if (radarPattern.test(slugText)) return 'radar';
+  if (floodPattern.test(slugText)) return 'flood';
+  if (marinePattern.test(slugText)) return 'marine';
+  if (historyPattern.test(slugText)) return 'history';
+  if (educationPattern.test(slugText)) return 'education';
+  if (winterPattern.test(slugText)) return 'winter';
+  if (hurricanePattern.test(slugText)) return 'hurricane';
+  if (safetyPattern.test(slugText)) return 'safety';
+  if (tornadoPattern.test(slugText)) return 'tornado';
+  if (heatPattern.test(slugText)) return 'heat';
+
+  if (educationPattern.test(haystack)) return 'education';
+  if (historyPattern.test(haystack)) return 'history';
+  if (winterPattern.test(haystack)) return 'winter';
+  if (hurricanePattern.test(haystack)) return 'hurricane';
+  if (safetyPattern.test(haystack)) return 'safety';
+  if (tornadoPattern.test(haystack)) return 'tornado';
+  if (floodPattern.test(haystack)) return 'flood';
+  if (heatPattern.test(haystack)) return 'heat';
+  if (radarPattern.test(haystack)) return 'radar';
+  if (marinePattern.test(haystack)) return 'marine';
   return 'general';
 }
 
