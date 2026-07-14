@@ -246,10 +246,11 @@ function cleanTitle(title) {
 
 function classify(slug, title, category) {
   const haystack = `${slug} ${title} ${category}`.toLowerCase();
-  if (/australia|finland|sweden|latvia|international|mete[o]?alarm|bom|fmi|smhi|gulf-of-riga|baltic|european-severe-weather|eswd/.test(haystack)) return 'international';
+  if (/\baustralia\b|\bfinland\b|\bsweden\b|\blatvia\b|\binternational\b|mete[o]?alarm|\bbom\b|\bfmi\b|\bsmhi\b|gulf-of-riga|baltic|european-severe-weather|eswd/.test(haystack)) return 'international';
   if (/school|student|classroom|project|experiment|lesson|career|meteorologist|hydrologist|science-fair|vocabulary|kids|teacher|worksheet|activity|presentation/.test(haystack)) return 'education';
   if (/history|timeline|record|records|disaster|deadliest|costliest|outbreak|legacy|lessons|1974|2011|1936|1953|1925|1899|1999|2013|2020|2021|2022|2023|2024|xenia|joplin|moore|jarrell|tri-state|waco|tupelo|gainesville|greensburg|mayfield|plainfield|woodward|flint|fargo|barrie|edmonton|regina|vicksburg|natchez|topeka|wichita-falls/.test(haystack)) return 'history';
-  if (/hurricane|typhoon|cyclone|tropical-storm|tropical-cyclone|tropical-depression|storm-surge|surge|evacuation-zone|andrew|katrina|harvey|sandy|galveston/.test(haystack)) return 'hurricane';
+  if (/bomb-cyclone|nor-easter|noreaster|extra-tropical-cyclone|extratropical-cyclone/.test(haystack)) return 'winter';
+  if (/hurricane|typhoon|tropical-storm|tropical-cyclone|tropical-depression|severe-tropical-cyclone|storm-surge|surge|evacuation-zone|andrew|katrina|harvey|sandy|galveston/.test(haystack)) return 'hurricane';
   if (/safety|preparedness|emergency|emergency-kit|kit|drill|shelter|go-bag|outage|generator|carbon-monoxide|downed-power|first-aid|action-plan|cleanup|recovery-guide|storm-prep|weather-prep|continuity|checklist|safe-room|family-communication|emergency-communication/.test(haystack)) return 'safety';
   if (/tornado|twister|supercell|funnel|wall-cloud|mesocyclone|hook-echo|dryline|ef-scale|fujita|wedge|rope|waterspout|landspout|qlcs|debris-signature|tornado-alley|dixie-alley|siren/.test(haystack)) return 'tornado';
   if (/flood|rainfall|rainstorm|river|atmospheric-river|qpf|excessive-rain|drainage|sump|mold|water-safety|coastal-flood|hundred-year/.test(haystack)) return 'flood';
@@ -309,20 +310,18 @@ function makeDepthSection({ title, kind }) {
 
 function insertSection(html, section) {
   const relatedIndex = html.indexOf('<section class="related">');
-  if (relatedIndex !== -1) return `${html.slice(0, relatedIndex)}${section}${html.slice(relatedIndex)}`;
+  if (relatedIndex !== -1) return `${html.slice(0, relatedIndex).replace(/[ \t]*\r?\n[ \t]*$/, '\n')}${section}${html.slice(relatedIndex)}`;
   const articleCloseIndex = html.indexOf('</article>');
-  if (articleCloseIndex !== -1) return `${html.slice(0, articleCloseIndex)}${section}${html.slice(articleCloseIndex)}`;
+  if (articleCloseIndex !== -1) return `${html.slice(0, articleCloseIndex).replace(/[ \t]*\r?\n[ \t]*$/, '\n')}${section}${html.slice(articleCloseIndex)}`;
   return html;
 }
 
 function removeExistingSection(html) {
   const start = html.indexOf(`<section class="article-depth-v2" ${marker}>`);
   if (start === -1) return html;
-  const relatedIndex = html.indexOf('<section class="related">', start);
-  const articleCloseIndex = html.indexOf('</article>', start);
-  const end = relatedIndex !== -1 ? relatedIndex : articleCloseIndex;
+  const end = html.indexOf('</section>', start);
   if (end === -1) return html;
-  return `${html.slice(0, start)}${html.slice(end)}`;
+  return `${html.slice(0, start).replace(/[ \t]*\r?\n[ \t]*$/, '\n')}${html.slice(end + '</section>'.length).replace(/^[ \t]*\r?\n[ \t]*/, '')}`;
 }
 
 function auditPage(filePath) {

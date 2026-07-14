@@ -240,10 +240,11 @@ function slugify(value) {
 
 function classify(slug, title, category) {
   const haystack = `${slug} ${title} ${category}`.toLowerCase();
-  if (/australia|finland|sweden|latvia|international|mete[o]?alarm|bom|fmi|smhi|gulf-of-riga|baltic|european-severe-weather|eswd/.test(haystack)) return 'international';
+  if (/\baustralia\b|\bfinland\b|\bsweden\b|\blatvia\b|\binternational\b|mete[o]?alarm|\bbom\b|\bfmi\b|\bsmhi\b|gulf-of-riga|baltic|european-severe-weather|eswd/.test(haystack)) return 'international';
   if (/school|student|classroom|project|experiment|lesson|career|meteorologist|hydrologist|science-fair|vocabulary|kids|teacher|worksheet|activity|presentation/.test(haystack)) return 'education';
   if (/history|timeline|record|records|disaster|deadliest|costliest|outbreak|legacy|lessons|1974|2011|1936|1953|1925|1899|1999|2013|2020|2021|2022|2023|2024|xenia|joplin|moore|jarrell|tri-state|waco|tupelo|gainesville|greensburg|mayfield|plainfield|woodward|flint|fargo|barrie|edmonton|regina|vicksburg|natchez|topeka|wichita-falls/.test(haystack)) return 'history';
-  if (/hurricane|typhoon|cyclone|tropical-storm|tropical-cyclone|tropical-depression|storm-surge|surge|evacuation-zone|andrew|katrina|harvey|sandy|galveston/.test(haystack)) return 'hurricane';
+  if (/bomb-cyclone|nor-easter|noreaster|extra-tropical-cyclone|extratropical-cyclone/.test(haystack)) return 'winter';
+  if (/hurricane|typhoon|tropical-storm|tropical-cyclone|tropical-depression|severe-tropical-cyclone|storm-surge|surge|evacuation-zone|andrew|katrina|harvey|sandy|galveston/.test(haystack)) return 'hurricane';
   if (/safety|preparedness|emergency|emergency-kit|kit|drill|shelter|go-bag|outage|generator|carbon-monoxide|downed-power|first-aid|action-plan|cleanup|recovery-guide|storm-prep|weather-prep|continuity|checklist|safe-room|family-communication|emergency-communication/.test(haystack)) return 'safety';
   if (/tornado|twister|supercell|funnel|wall-cloud|mesocyclone|hook-echo|dryline|ef-scale|fujita|wedge|rope|waterspout|landspout|qlcs|debris-signature|tornado-alley|dixie-alley|siren/.test(haystack)) return 'tornado';
   if (/flood|rainfall|rainstorm|river|atmospheric-river|qpf|excessive-rain|drainage|sump|mold|water-safety|coastal-flood|hundred-year/.test(haystack)) return 'flood';
@@ -287,7 +288,7 @@ function removeExistingBrief(html) {
   if (start === -1) return html;
   const end = html.indexOf('</section>', start);
   if (end === -1) return html;
-  return `${html.slice(0, start)}${html.slice(end + '</section>'.length)}`;
+  return `${html.slice(0, start).replace(/[ \t]*\r?\n[ \t]*$/, '\n')}${html.slice(end + '</section>'.length).replace(/^[ \t]*\r?\n[ \t]*/, '')}`;
 }
 
 function splitAtContentCutoff(html) {
@@ -387,12 +388,12 @@ function insertBrief(html, brief) {
   const headerEnd = html.indexOf('</header>');
   if (headerEnd !== -1) {
     const end = headerEnd + '</header>'.length;
-    return `${html.slice(0, end)}${brief}${html.slice(end)}`;
+    return `${html.slice(0, end).replace(/[ \t]*\r?\n[ \t]*$/, '\n')}${brief}${html.slice(end)}`;
   }
   const articleOpen = html.match(/<article\b[^>]*>/i);
   if (!articleOpen || articleOpen.index === undefined) return html;
   const end = articleOpen.index + articleOpen[0].length;
-  return `${html.slice(0, end)}${brief}${html.slice(end)}`;
+  return `${html.slice(0, end).replace(/[ \t]*\r?\n[ \t]*$/, '\n')}${brief}${html.slice(end)}`;
 }
 
 function auditPage(filePath) {

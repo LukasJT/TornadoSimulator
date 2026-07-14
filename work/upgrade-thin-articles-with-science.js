@@ -268,7 +268,8 @@ function classify(slug, title, category) {
 
   if (/school|student|classroom|project|experiment|lesson|career|meteorologist|hydrologist|science-fair|vocabulary|kids|teacher|worksheet|activity|presentation/.test(haystack)) return 'education';
   if (historyPattern.test(haystack)) return 'history';
-  if (/hurricane|typhoon|cyclone|tropical-storm|tropical-cyclone|tropical-depression|storm-surge|surge|evacuation-zone|andrew|katrina|harvey|sandy|galveston/.test(haystack)) return 'hurricane';
+  if (/bomb-cyclone|nor-easter|noreaster|extra-tropical-cyclone|extratropical-cyclone/.test(haystack)) return 'winter';
+  if (/hurricane|typhoon|tropical-storm|tropical-cyclone|tropical-depression|severe-tropical-cyclone|storm-surge|surge|evacuation-zone|andrew|katrina|harvey|sandy|galveston/.test(haystack)) return 'hurricane';
   if (explicitSafety.test(haystack)) return 'safety';
   if (/tornado|twister|supercell|funnel|wall-cloud|mesocyclone|hook-echo|dryline|ef-scale|fujita|wedge|rope|waterspout|landspout|qlcs|debris-signature|tornado-alley|dixie-alley|siren/.test(haystack)) return 'tornado';
   if (/flood|rainfall|rainstorm|river|atmospheric-river|qpf|excessive-rain|drainage|sump|mold|water-safety|coastal-flood|hundred-year/.test(haystack)) return 'flood';
@@ -439,11 +440,11 @@ function shouldSkip(filePath, slug) {
 function insertSection(html, section) {
   const relatedIndex = html.indexOf('<section class="related">');
   if (relatedIndex !== -1) {
-    return `${html.slice(0, relatedIndex)}${section}${html.slice(relatedIndex)}`;
+    return `${html.slice(0, relatedIndex).replace(/[ \t]*\r?\n[ \t]*$/, '\n')}${section}${html.slice(relatedIndex)}`;
   }
   const articleCloseIndex = html.indexOf('</article>');
   if (articleCloseIndex !== -1) {
-    return `${html.slice(0, articleCloseIndex)}${section}${html.slice(articleCloseIndex)}`;
+    return `${html.slice(0, articleCloseIndex).replace(/[ \t]*\r?\n[ \t]*$/, '\n')}${section}${html.slice(articleCloseIndex)}`;
   }
   return html;
 }
@@ -451,11 +452,9 @@ function insertSection(html, section) {
 function removeExistingSection(html) {
   const start = html.indexOf(`<section class="article-upgrade" ${marker}>`);
   if (start === -1) return html;
-  const relatedIndex = html.indexOf('<section class="related">', start);
-  const articleCloseIndex = html.indexOf('</article>', start);
-  const end = relatedIndex !== -1 ? relatedIndex : articleCloseIndex;
+  const end = html.indexOf('</section>', start);
   if (end === -1) return html;
-  return `${html.slice(0, start)}${html.slice(end)}`;
+  return `${html.slice(0, start).replace(/[ \t]*\r?\n[ \t]*$/, '\n')}${html.slice(end + '</section>'.length).replace(/^[ \t]*\r?\n[ \t]*/, '')}`;
 }
 
 function auditPage(filePath) {
