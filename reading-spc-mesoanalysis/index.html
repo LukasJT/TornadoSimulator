@@ -5,6 +5,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="max-image-preview:large" />
 <title>How to Read the SPC Mesoanalysis Page</title>
 <meta name="description" content="The SPC Mesoanalysis page is updated hourly with dozens of atmospheric parameters overlaid on maps. Here is which panels actually matter, how to interpret STP, EHI, MLCAPE, and how to build a chase forecast from mesoanalysis." />
 <meta name="twitter:description" content="The SPC Mesoanalysis page is updated hourly with dozens of atmospheric parameters overlaid on maps. Here is which panels actually matter, how to interpret STP, EHI, MLCAPE, and how to build a chase forecast from mesoanalysis." />
@@ -93,10 +94,33 @@ article li{margin-bottom:6px;font-size:16px}
     <h1>How to read the <em>SPC mesoanalysis</em></h1>
     <p class="lede">The SPC Mesoanalysis is the single most useful real-time forecasting tool a chaser or storm-watcher has. Here is how to actually use it.</p>
   </header>
+<section class="article-brief-v3" data-generated="article-brief-v3" aria-label="Article overview">
+  <style>
+    .article-brief-v3{margin:28px 0 34px;padding:0}.article-brief-v3 .brief-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(220px,.9fr);gap:14px}.article-brief-v3 .brief-card{background:var(--surface,#fff);border:1px solid var(--border,#e5e1d8);border-radius:8px;padding:18px 20px;box-shadow:0 4px 16px rgba(20,22,28,.05)}.article-brief-v3 h2{font-family:var(--serif,Georgia,serif);font-size:21px;line-height:1.2;margin:0 0 12px;letter-spacing:0}.article-brief-v3 p{font-size:15.5px;line-height:1.58;margin:0 0 12px;color:var(--text-secondary,#4a5061)}.article-brief-v3 ul,.article-brief-v3 ol{margin:0 0 0 20px}.article-brief-v3 li{font-size:14.5px;line-height:1.55;margin-bottom:7px}.article-brief-v3 strong{color:var(--text,#14161c)}.article-brief-v3 .brief-signals{margin-top:12px;background:var(--bg-alt,#f4f1ea);border:1px solid var(--border,#e5e1d8);border-radius:8px;padding:12px 14px;font-size:14px;color:var(--text-secondary,#4a5061)}.article-brief-v3 .brief-signals span{display:inline-block;margin:3px 6px 3px 0;padding:3px 8px;border-radius:999px;background:var(--surface,#fff);border:1px solid var(--border,#e5e1d8);color:var(--text,#14161c)}@media(max-width:720px){.article-brief-v3 .brief-layout{grid-template-columns:1fr}}
+  </style>
+  <div class="brief-layout">
+    <div class="brief-card">
+      <h2 id="article-at-a-glance">At a glance</h2>
+      <p>This guide is best for understanding what each weather product can and cannot tell you.</p>
+      <ul>
+        <li><strong>Reading time:</strong> about 7 minutes</li>
+        <li><strong>Primary focus:</strong> forecast tools, radar, satellite, models, observations, and warning interpretation</li>
+        <li><strong>Watch for:</strong> update time, radar mode, model spread, storm growth, official discussions, and local observations</li>
+        <li><strong>Decision point:</strong> Trust trends more when several official tools agree, and stay cautious when radar, model guidance, and observations conflict.</li>
+        <li><strong>Official check:</strong> <a href="https://www.nssl.noaa.gov/education/svrwx101/radar/" rel="noopener">NOAA/NSSL radar basics</a></li>
+      </ul>
+    </div>
+    <div class="brief-card">
+      <h2 id="article-section-guide">In this guide</h2>
+      <ol><li><a href="#the-layout">The layout</a></li><li><a href="#the-8-panels-chasers-actually-watch">The 8 panels chasers actually watch</a></li><li><a href="#building-a-chase-forecast-from-mesoanalysis">Building a chase forecast from mesoanalysis</a></li><li><a href="#the-panel-legend-colors">The panel legend colors</a></li><li><a href="#time-evolution">Time evolution</a></li><li><a href="#learn-more">Learn more</a></li></ol>
+    </div>
+  </div>
+  <div class="brief-signals"><strong>Key terms:</strong> <span>forecast confidence</span></div>
+</section>
 
-  <h2>The layout</h2>
+  <h2 id="the-layout">The layout</h2>
   <p>Every hour, the Storm Prediction Center runs the Rapid Refresh model, extracts a few dozen atmospheric parameters, and overlays them on a US map. The page (spc.noaa.gov/exper/mesoanalysis) has ten tabs: Surface, Upper Levels, Composite, Winter, and more. Chasers care about about 8 of the panels.</p>
-  <h2>The 8 panels chasers actually watch</h2>
+  <h2 id="the-8-panels-chasers-actually-watch">The 8 panels chasers actually watch</h2>
   <div class="subtype-grid">
     <div class="subtype"><div class="subtype-name">SBCAPE</div><div class="subtype-desc">Surface-based Convective Available Potential Energy. Instability if the storm parcel starts at the surface. >2500 J/kg supports strong storms.</div></div>
     <div class="subtype"><div class="subtype-name">MLCAPE</div><div class="subtype-desc">Mixed-layer CAPE. Instability using averaged surface parcels. More representative than SBCAPE. Chasers watch MLCAPE + SBCIN together.</div></div>
@@ -107,7 +131,7 @@ article li{margin-bottom:6px;font-size:16px}
     <div class="subtype"><div class="subtype-name">EHI</div><div class="subtype-desc">Energy-Helicity Index. Combines CAPE and helicity. 2+ = tornadic potential.</div></div>
     <div class="subtype"><div class="subtype-name">SCP</div><div class="subtype-desc">Supercell Composite Parameter. 4+ = supercell likely.</div></div>
   </div>
-  <h2>Building a chase forecast from mesoanalysis</h2>
+  <h2 id="building-a-chase-forecast-from-mesoanalysis">Building a chase forecast from mesoanalysis</h2>
   <ol>
     <li>Start at MLCAPE. Is instability >1500 J/kg somewhere reachable?</li>
     <li>Check SBCIN over the same region. Is the cap breakable?</li>
@@ -117,12 +141,12 @@ article li{margin-bottom:6px;font-size:16px}
     <li>Cross-check with EHI and SCP.</li>
     <li>Watch the surface panel for boundaries — outflow, dryline, warm front.</li>
   </ol>
-  <h2>The panel legend colors</h2>
+  <h2 id="the-panel-legend-colors">The panel legend colors</h2>
   <p>SPC panels use a rough color code: greens = weak, yellows = notable, oranges = significant, reds = extreme. Trust the color; the exact number matters less than the trend and the overlap with other parameters.</p>
-  <h2>Time evolution</h2>
+  <h2 id="time-evolution">Time evolution</h2>
   <p>The most important thing about a mesoanalysis is the trend. Is STP building or eroding? Is SBCIN weakening? Watch the 3-panel time series — 15z, 18z, 21z — to see whether the atmosphere is loading or unloading. A single snapshot lies; the sequence does not.</p>
 
-  <h2>Learn more</h2>
+  <h2 id="learn-more">Learn more</h2>
   <ul>
     <li><a href="/what-makes-a-tornado/">The six atmospheric ingredients</a></li>
     <li><a href="/supercell-simulator/">Interactive supercell simulator</a></li>

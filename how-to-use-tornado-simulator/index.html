@@ -5,6 +5,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="max-image-preview:large" />
 <title>How to Use the Tornado Simulator - Complete Guide</title>
 <meta name="description" content="Complete guide to using our tornado simulator: click anywhere to place a tornado, adjust EF rating, path, wind speed, and see real damage estimates for your area." />
 <meta name="twitter:description" content="Complete guide to using our tornado simulator: click anywhere to place a tornado, adjust EF rating, path, wind speed, and see real damage estimates for your area." />
@@ -131,6 +132,29 @@ img { max-width:100%; display:block; }
     <h1>How to Use the Tornado Simulator</h1>
     <p class="lede">Complete guide to using our tornado simulator: click anywhere to place a tornado, adjust EF rating, path, wind speed, and see real damage estimates for your area.</p>
   </header>
+<section class="article-brief-v3" data-generated="article-brief-v3" aria-label="Article overview">
+  <style>
+    .article-brief-v3{margin:28px 0 34px;padding:0}.article-brief-v3 .brief-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(220px,.9fr);gap:14px}.article-brief-v3 .brief-card{background:var(--surface,#fff);border:1px solid var(--border,#e5e1d8);border-radius:8px;padding:18px 20px;box-shadow:0 4px 16px rgba(20,22,28,.05)}.article-brief-v3 h2{font-family:var(--serif,Georgia,serif);font-size:21px;line-height:1.2;margin:0 0 12px;letter-spacing:0}.article-brief-v3 p{font-size:15.5px;line-height:1.58;margin:0 0 12px;color:var(--text-secondary,#4a5061)}.article-brief-v3 ul,.article-brief-v3 ol{margin:0 0 0 20px}.article-brief-v3 li{font-size:14.5px;line-height:1.55;margin-bottom:7px}.article-brief-v3 strong{color:var(--text,#14161c)}.article-brief-v3 .brief-signals{margin-top:12px;background:var(--bg-alt,#f4f1ea);border:1px solid var(--border,#e5e1d8);border-radius:8px;padding:12px 14px;font-size:14px;color:var(--text-secondary,#4a5061)}.article-brief-v3 .brief-signals span{display:inline-block;margin:3px 6px 3px 0;padding:3px 8px;border-radius:999px;background:var(--surface,#fff);border:1px solid var(--border,#e5e1d8);color:var(--text,#14161c)}@media(max-width:720px){.article-brief-v3 .brief-layout{grid-template-columns:1fr}}
+  </style>
+  <div class="brief-layout">
+    <div class="brief-card">
+      <h2 id="article-at-a-glance">At a glance</h2>
+      <p>This guide is best for understanding when a rotating storm becomes a practical shelter problem.</p>
+      <ul>
+        <li><strong>Reading time:</strong> about 8 minutes</li>
+        <li><strong>Primary focus:</strong> tornado risk, warning context, storm structure, and shelter decisions</li>
+        <li><strong>Watch for:</strong> warning polygons, radar rotation, debris, fast storm motion, night timing, and weak shelter options</li>
+        <li><strong>Decision point:</strong> Move to shelter sooner when a warning, confirmed rotation, debris signature, or reliable local report lines up with your location.</li>
+        <li><strong>Official check:</strong> <a href="https://www.weather.gov/safety/tornado" rel="noopener">National Weather Service tornado safety</a></li>
+      </ul>
+    </div>
+    <div class="brief-card">
+      <h2 id="article-section-guide">In this guide</h2>
+      <ol><li><a href="#quick-start">Quick Start</a></li><li><a href="#understanding-the-results">Understanding the Results</a></li><li><a href="#advanced-features">Advanced Features</a></li><li><a href="#interpret-the-results">Interpret the Results</a></li><li><a href="#use-cases">Use Cases</a></li><li><a href="#what-the-simulator-won-t-tell-you">What the Simulator Won't Tell You</a></li><li><a href="#educational-applications">Educational Applications</a></li></ol>
+    </div>
+  </div>
+  <div class="brief-signals"><strong>Key terms:</strong> <span>tornado risk</span><span>damaging wind</span></div>
+</section>
 
   <div style="text-align:center; margin: 24px 0; min-height:250px;">
 <script type="text/javascript">
@@ -146,7 +170,7 @@ img { max-width:100%; display:block; }
 <script type="text/javascript" src="https://www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
 </div>
 
-<h2>Quick Start</h2>
+<h2 id="quick-start">Quick Start</h2>
     <ol>
       <li><strong>Click anywhere on the map</strong> - places a tornado at that location</li>
       <li><strong>Adjust wind speed slider</strong> - changes EF rating from EF0 to EF5</li>
@@ -154,7 +178,7 @@ img { max-width:100%; display:block; }
       <li><strong>View results</strong> - fatalities, injuries, damage in dollars</li>
     </ol>
 
-    <h2>Understanding the Results</h2>
+    <h2 id="understanding-the-results">Understanding the Results</h2>
 
     <h3>Fatalities and Injuries</h3>
     <p>Estimated using peer-reviewed casualty models:</p>
@@ -183,7 +207,7 @@ atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':9
 </script>
 <script type="text/javascript" src="//www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
 </div>
-<h2>Advanced Features</h2>
+<h2 id="advanced-features">Advanced Features</h2>
 
     <h3>Multi-Segment Paths</h3>
     <p>Draw a tornado path with multiple points. The simulator will calculate damage for each segment using local population density from that specific county.</p>
@@ -200,7 +224,7 @@ atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':9
     <h3>Sub-Vortex Boost</h3>
     <p>Adds intensity peaks matching multi-vortex tornado behavior. Simulates events like Jarrell 1997 or the 1999 Bridge Creek-Moore F5.</p>
 
-    <h2>Interpret the Results</h2>
+    <h2 id="interpret-the-results">Interpret the Results</h2>
     <p>Compare your simulated tornado to historical events:</p>
     <ul>
       <li><strong>Under 5 killed:</strong> Weak or rural event</li>
@@ -216,7 +240,7 @@ atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':9
 </script>
 <script type="text/javascript" src="//www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
 </div>
-<h2>Use Cases</h2>
+<h2 id="use-cases">Use Cases</h2>
     <ul>
       <li><strong>Emergency planners</strong> - visualize damage scenarios for exercises</li>
       <li><strong>Teachers and students</strong> - understand tornado meteorology</li>
@@ -225,7 +249,7 @@ atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':9
       <li><strong>Storm chasers and meteorologists</strong> - explore scenario space</li>
     </ul>
 
-    <h2>Data Sources</h2>
+    <h2 id="data-sources">Data Sources</h2>
     <p>Our simulator uses:</p>
     <ul>
       <li><strong>US Census Bureau ACS 5-Year (2022)</strong> - 3,143 US counties</li>
@@ -243,7 +267,7 @@ atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':9
 </script>
 <script type="text/javascript" src="//www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
 </div>
-<h2>What the Simulator Won't Tell You</h2>
+<h2 id="what-the-simulator-won-t-tell-you">What the Simulator Won't Tell You</h2>
     <ul>
       <li>Specific individual outcomes - it's a statistical estimate</li>
       <li>Exact building types in your path</li>
@@ -252,7 +276,7 @@ atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':9
     </ul>
     <p>Do not use the simulator as a substitute for real NWS tornado warnings. If a warning is issued for your area, seek shelter immediately regardless of what any simulator says.</p>
 
-    <h2>Educational Applications</h2>
+    <h2 id="educational-applications">Educational Applications</h2>
     <p>Teachers using the simulator: consider having students simulate:</p>
     <ul>
       <li>The Joplin 2011 tornado at Joplin's coordinates</li>

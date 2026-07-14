@@ -5,6 +5,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="max-image-preview:large" />
 <title>AI Weather Forecasting — GraphCast, Pangu, Aurora Explained</title>
 <meta name="description" content="Machine learning weather models are catching up to physics-based forecasts — and running 1000x faster. Here is what GraphCast, Pangu, and Aurora are, how they work, and what they can (and cannot) do." />
 <meta name="twitter:description" content="Machine learning weather models are catching up to physics-based forecasts — and running 1000x faster. Here is what GraphCast, Pangu, and Aurora are, how they work, and what they can (and cannot) do." />
@@ -93,12 +94,35 @@ article li{margin-bottom:6px;font-size:16px}
     <h1>AI weather <em>forecasting</em></h1>
     <p class="lede">In 2023-24, machine learning models started beating traditional physics-based weather models. Here is what they are, why they work, and what they still get wrong.</p>
   </header>
+<section class="article-brief-v3" data-generated="article-brief-v3" aria-label="Article overview">
+  <style>
+    .article-brief-v3{margin:28px 0 34px;padding:0}.article-brief-v3 .brief-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(220px,.9fr);gap:14px}.article-brief-v3 .brief-card{background:var(--surface,#fff);border:1px solid var(--border,#e5e1d8);border-radius:8px;padding:18px 20px;box-shadow:0 4px 16px rgba(20,22,28,.05)}.article-brief-v3 h2{font-family:var(--serif,Georgia,serif);font-size:21px;line-height:1.2;margin:0 0 12px;letter-spacing:0}.article-brief-v3 p{font-size:15.5px;line-height:1.58;margin:0 0 12px;color:var(--text-secondary,#4a5061)}.article-brief-v3 ul,.article-brief-v3 ol{margin:0 0 0 20px}.article-brief-v3 li{font-size:14.5px;line-height:1.55;margin-bottom:7px}.article-brief-v3 strong{color:var(--text,#14161c)}.article-brief-v3 .brief-signals{margin-top:12px;background:var(--bg-alt,#f4f1ea);border:1px solid var(--border,#e5e1d8);border-radius:8px;padding:12px 14px;font-size:14px;color:var(--text-secondary,#4a5061)}.article-brief-v3 .brief-signals span{display:inline-block;margin:3px 6px 3px 0;padding:3px 8px;border-radius:999px;background:var(--surface,#fff);border:1px solid var(--border,#e5e1d8);color:var(--text,#14161c)}@media(max-width:720px){.article-brief-v3 .brief-layout{grid-template-columns:1fr}}
+  </style>
+  <div class="brief-layout">
+    <div class="brief-card">
+      <h2 id="article-at-a-glance">At a glance</h2>
+      <p>This guide is best for understanding what each weather product can and cannot tell you.</p>
+      <ul>
+        <li><strong>Reading time:</strong> about 7 minutes</li>
+        <li><strong>Primary focus:</strong> forecast tools, radar, satellite, models, observations, and warning interpretation</li>
+        <li><strong>Watch for:</strong> update time, radar mode, model spread, storm growth, official discussions, and local observations</li>
+        <li><strong>Decision point:</strong> Trust trends more when several official tools agree, and stay cautious when radar, model guidance, and observations conflict.</li>
+        <li><strong>Official check:</strong> <a href="https://www.nssl.noaa.gov/education/svrwx101/radar/" rel="noopener">NOAA/NSSL radar basics</a></li>
+      </ul>
+    </div>
+    <div class="brief-card">
+      <h2 id="article-section-guide">In this guide</h2>
+      <ol><li><a href="#the-paradigm-shift">The paradigm shift</a></li><li><a href="#how-ai-weather-models-work">How AI weather models work</a></li><li><a href="#the-three-main-systems">The three main systems</a></li><li><a href="#what-they-re-good-at">What they're good at</a></li><li><a href="#what-they-re-still-bad-at">What they're still bad at</a></li><li><a href="#why-they-matter-for-chasers-and-safety">Why they matter for chasers and safety</a></li><li><a href="#what-nws-does-with-them">What NWS does with them</a></li></ol>
+    </div>
+  </div>
+  <div class="brief-signals"><strong>Key terms:</strong> <span>forecast confidence</span><span>weather models</span></div>
+</section>
 
-  <h2>The paradigm shift</h2>
+  <h2 id="the-paradigm-shift">The paradigm shift</h2>
   <p>For 70 years, weather forecasting has meant solving the equations of atmospheric physics on supercomputers. Slow, expensive, effective.</p>
   <p>In 2023, Google DeepMind's GraphCast beat the industry standard ECMWF model on many metrics. In 2023, Huawei's Pangu did too. In 2024, Microsoft's Aurora. All run on GPUs in seconds instead of hours on CPUs.</p>
   <p>This isn't incremental improvement. It's a new paradigm.</p>
-  <h2>How AI weather models work</h2>
+  <h2 id="how-ai-weather-models-work">How AI weather models work</h2>
   <ol>
     <li>Start with 40+ years of past weather data (ERA5 reanalysis dataset).</li>
     <li>Train a neural network to predict future weather from past weather.</li>
@@ -108,7 +132,7 @@ article li{margin-bottom:6px;font-size:16px}
     <li>Chain 6-hour steps to get 10-day forecasts.</li>
     <li>GPU inference: seconds per forecast.</li>
   </ol>
-  <h2>The three main systems</h2>
+  <h2 id="the-three-main-systems">The three main systems</h2>
   <div class="subtype-grid">
     <div class="subtype"><div class="subtype-name">GraphCast (Google DeepMind, 2023)</div><div class="subtype-desc">Graph neural network. 0.25° global resolution. 10-day forecasts.</div></div>
     <div class="subtype"><div class="subtype-name">Pangu-Weather (Huawei, 2023)</div><div class="subtype-desc">3D neural network. 0.25° global. Beats ECMWF on 6 of 8 metrics.</div></div>
@@ -117,7 +141,7 @@ article li{margin-bottom:6px;font-size:16px}
     <div class="subtype"><div class="subtype-name">Fuxi (Fudan, 2023)</div><div class="subtype-desc">Chinese-developed. Competitive on medium range.</div></div>
     <div class="subtype"><div class="subtype-name">AIFS (ECMWF, 2024)</div><div class="subtype-desc">Official European ML model. Operational since 2024.</div></div>
   </div>
-  <h2>What they're good at</h2>
+  <h2 id="what-they-re-good-at">What they're good at</h2>
   <ul>
     <li>Medium-range forecasts (3-10 days).</li>
     <li>Storm track prediction.</li>
@@ -127,7 +151,7 @@ article li{margin-bottom:6px;font-size:16px}
     <li>Being trained on cheaper hardware.</li>
     <li>Ensembling — running many variations quickly.</li>
   </ul>
-  <h2>What they're still bad at</h2>
+  <h2 id="what-they-re-still-bad-at">What they're still bad at</h2>
   <ul>
     <li>Extreme events they haven't seen before.</li>
     <li>Fine-scale convection (like individual thunderstorms).</li>
@@ -138,7 +162,7 @@ article li{margin-bottom:6px;font-size:16px}
     <li>Fog.</li>
     <li>Ocean-atmosphere coupling for hurricane intensity.</li>
   </ul>
-  <h2>Why they matter for chasers and safety</h2>
+  <h2 id="why-they-matter-for-chasers-and-safety">Why they matter for chasers and safety</h2>
   <ul>
     <li>AI models will supplement, not replace, HRRR for chase-day decisions.</li>
     <li>Better medium-range means better multi-day chase planning.</li>
@@ -147,7 +171,7 @@ article li{margin-bottom:6px;font-size:16px}
     <li>Warn-on-Forecast with AI acceleration coming.</li>
     <li>Personal AI weather assistants for individual users.</li>
   </ul>
-  <h2>What NWS does with them</h2>
+  <h2 id="what-nws-does-with-them">What NWS does with them</h2>
   <ul>
     <li>As of 2026, NWS uses AI models as inputs to human forecast decisions.</li>
     <li>Not as final forecast product.</li>
@@ -155,7 +179,7 @@ article li{margin-bottom:6px;font-size:16px}
     <li>National Blend of Models (NBM) increasingly incorporates AI.</li>
     <li>Human forecaster still makes the call for warnings and outlooks.</li>
   </ul>
-  <h2>The training data problem</h2>
+  <h2 id="the-training-data-problem">The training data problem</h2>
   <ul>
     <li>AI models trained on 1979-present data.</li>
     <li>Extreme events (EF5 tornadoes, Cat 5 hurricanes) are RARE in training.</li>
@@ -164,7 +188,7 @@ article li{margin-bottom:6px;font-size:16px}
     <li>Training data quality varies globally — poor for developing world.</li>
     <li>Bias toward "average" outcomes.</li>
   </ul>
-  <h2>The interpretability problem</h2>
+  <h2 id="the-interpretability-problem">The interpretability problem</h2>
   <p>Traditional models: we know why they output what they do (equations).</p>
   <p>AI models: we don't. It's a black box.</p>
   <ul>
@@ -174,7 +198,7 @@ article li{margin-bottom:6px;font-size:16px}
     <li>AI models can hallucinate — produce physically impossible states.</li>
     <li>This limits how much you can rely on them in operational settings.</li>
   </ul>
-  <h2>The future</h2>
+  <h2 id="the-future">The future</h2>
   <ul>
     <li>Hybrid models: physics + ML. Best of both.</li>
     <li>Fine-tuned regional models.</li>
@@ -187,7 +211,7 @@ article li{margin-bottom:6px;font-size:16px}
     <li>AI for warning coordination.</li>
   </ul>
 
-  <h2>Learn more</h2>
+  <h2 id="learn-more">Learn more</h2>
   <ul>
     <li><a href="/how-forecast-accuracy-improved/">How forecast accuracy improved</a></li>
     <li><a href="/reading-spc-mesoanalysis/">Reading SPC mesoanalysis</a></li>

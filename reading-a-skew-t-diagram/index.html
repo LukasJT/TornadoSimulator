@@ -5,6 +5,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="max-image-preview:large" />
 <title>How to Read a Skew-T Diagram — Beginner's Guide</title>
 <meta name="description" content="Skew-T log-P diagrams are the standard way meteorologists visualize the vertical atmosphere. This guide walks through the axes, plotting temperature and dew point, identifying LCL, LFC and EL, reading CAPE and CIN, and using hodographs." />
 <meta name="twitter:description" content="Skew-T log-P diagrams are the standard way meteorologists visualize the vertical atmosphere. This guide walks through the axes, plotting temperature and dew point, identifying LCL, LFC and EL, reading CAPE and CIN, and using hodographs." />
@@ -93,8 +94,31 @@ article li{margin-bottom:6px;font-size:16px}
     <h1>How to read a <em>skew-T diagram</em></h1>
     <p class="lede">Skew-T log-P diagrams are how meteorologists visualize the atmosphere in the vertical. They look intimidating. They aren't — once you understand the four lines that matter.</p>
   </header>
+<section class="article-brief-v3" data-generated="article-brief-v3" aria-label="Article overview">
+  <style>
+    .article-brief-v3{margin:28px 0 34px;padding:0}.article-brief-v3 .brief-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(220px,.9fr);gap:14px}.article-brief-v3 .brief-card{background:var(--surface,#fff);border:1px solid var(--border,#e5e1d8);border-radius:8px;padding:18px 20px;box-shadow:0 4px 16px rgba(20,22,28,.05)}.article-brief-v3 h2{font-family:var(--serif,Georgia,serif);font-size:21px;line-height:1.2;margin:0 0 12px;letter-spacing:0}.article-brief-v3 p{font-size:15.5px;line-height:1.58;margin:0 0 12px;color:var(--text-secondary,#4a5061)}.article-brief-v3 ul,.article-brief-v3 ol{margin:0 0 0 20px}.article-brief-v3 li{font-size:14.5px;line-height:1.55;margin-bottom:7px}.article-brief-v3 strong{color:var(--text,#14161c)}.article-brief-v3 .brief-signals{margin-top:12px;background:var(--bg-alt,#f4f1ea);border:1px solid var(--border,#e5e1d8);border-radius:8px;padding:12px 14px;font-size:14px;color:var(--text-secondary,#4a5061)}.article-brief-v3 .brief-signals span{display:inline-block;margin:3px 6px 3px 0;padding:3px 8px;border-radius:999px;background:var(--surface,#fff);border:1px solid var(--border,#e5e1d8);color:var(--text,#14161c)}@media(max-width:720px){.article-brief-v3 .brief-layout{grid-template-columns:1fr}}
+  </style>
+  <div class="brief-layout">
+    <div class="brief-card">
+      <h2 id="article-at-a-glance">At a glance</h2>
+      <p>This guide is best for understanding what each weather product can and cannot tell you.</p>
+      <ul>
+        <li><strong>Reading time:</strong> about 7 minutes</li>
+        <li><strong>Primary focus:</strong> forecast tools, radar, satellite, models, observations, and warning interpretation</li>
+        <li><strong>Watch for:</strong> update time, radar mode, model spread, storm growth, official discussions, and local observations</li>
+        <li><strong>Decision point:</strong> Trust trends more when several official tools agree, and stay cautious when radar, model guidance, and observations conflict.</li>
+        <li><strong>Official check:</strong> <a href="https://www.nssl.noaa.gov/education/svrwx101/radar/" rel="noopener">NOAA/NSSL radar basics</a></li>
+      </ul>
+    </div>
+    <div class="brief-card">
+      <h2 id="article-section-guide">In this guide</h2>
+      <ol><li><a href="#the-four-line-types">The four line types</a></li><li><a href="#the-two-lines-that-get-plotted">The two lines that get plotted</a></li><li><a href="#the-critical-levels">The critical levels</a></li><li><a href="#reading-cape-and-cin">Reading CAPE and CIN</a></li><li><a href="#the-hodograph">The hodograph</a></li><li><a href="#practice-reading-real-soundings">Practice reading real soundings</a></li><li><a href="#learn-more">Learn more</a></li></ol>
+    </div>
+  </div>
+  <div class="brief-signals"><strong>Key terms:</strong> <span>forecast tools</span></div>
+</section>
 
-  <h2>The four line types</h2>
+  <h2 id="the-four-line-types">The four line types</h2>
   <p>A skew-T has four families of lines that never change:</p>
   <ul>
     <li><strong>Isobars</strong> — horizontal lines. Pressure decreases upward. 1000 mb at the surface, 100 mb near the tropopause.</li>
@@ -102,33 +126,33 @@ article li{margin-bottom:6px;font-size:16px}
     <li><strong>Dry adiabats</strong> — curved lines showing how an unsaturated parcel cools as it rises.</li>
     <li><strong>Moist adiabats</strong> — curved lines showing how a saturated parcel cools as it rises. Cools slower than dry because condensation releases latent heat.</li>
   </ul>
-  <h2>The two lines that get plotted</h2>
+  <h2 id="the-two-lines-that-get-plotted">The two lines that get plotted</h2>
   <p>A weather balloon sends back two continuous curves — one for temperature, one for dew point.</p>
   <ul>
     <li><strong>Temperature (T)</strong> — always the rightward curve.</li>
     <li><strong>Dew point (Td)</strong> — always the leftward curve.</li>
     <li>The gap between them indicates humidity. Touching = saturated (cloud). Wide apart = dry.</li>
   </ul>
-  <h2>The critical levels</h2>
+  <h2 id="the-critical-levels">The critical levels</h2>
   <ul>
     <li><strong>LCL — Lifted Condensation Level.</strong> Where the parcel becomes saturated if lifted. Marks cloud base.</li>
     <li><strong>LFC — Level of Free Convection.</strong> Where a lifted parcel becomes warmer than its environment and starts accelerating upward on its own.</li>
     <li><strong>EL — Equilibrium Level.</strong> Where the rising parcel is finally cooler than its surroundings. Approximate storm top.</li>
   </ul>
-  <h2>Reading CAPE and CIN</h2>
+  <h2 id="reading-cape-and-cin">Reading CAPE and CIN</h2>
   <p>CAPE (Convective Available Potential Energy) is the area between the parcel path and the environmental temperature <em>above</em> the LFC — literally an area on the diagram. Bigger area = more instability.</p>
   <p>CIN (Convective Inhibition) is the small area <em>below</em> the LFC where the parcel is <em>cooler</em> than its environment — the "cap" that must be broken.</p>
   <div class="callout"><p>Rough visual test: if the parcel path stays far to the right of the environmental temperature for most of the mid-troposphere, you have big CAPE. If the parcel dips just left of the environment near 850-700 mb, you have a cap.</p></div>
-  <h2>The hodograph</h2>
+  <h2 id="the-hodograph">The hodograph</h2>
   <p>Attached to most skew-T displays is a hodograph — a plot of wind vector tips at different heights. Straight hodograph = splitting supercells. Curved (clockwise in the Northern Hemisphere) = right-moving supercells favored. Sickle-shaped low-level curve = high tornado potential.</p>
-  <h2>Practice reading real soundings</h2>
+  <h2 id="practice-reading-real-soundings">Practice reading real soundings</h2>
   <ul>
     <li>SPC soundings page — spc.noaa.gov/exper/soundings/</li>
     <li>University of Wyoming atmospheric soundings — weather.uwyo.edu/upperair/sounding.html</li>
     <li>Iowa State Environmental Mesonet</li>
   </ul>
 
-  <h2>Learn more</h2>
+  <h2 id="learn-more">Learn more</h2>
   <ul>
     <li><a href="/what-makes-a-tornado/">What makes a tornado — six ingredients</a></li>
     <li><a href="/supercell-simulator/">Interactive supercell simulator</a></li>

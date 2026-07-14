@@ -5,6 +5,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="max-image-preview:large" />
 <title>Mesocyclones — The Rotating Heart of a Supercell</title>
 <meta name="description" content="A mesocyclone is the rotating updraft that defines a supercell thunderstorm. Here is the physics of how one forms, how radar sees them, and why they matter for tornado prediction." />
 <meta name="twitter:description" content="A mesocyclone is the rotating updraft that defines a supercell thunderstorm. Here is the physics of how one forms, how radar sees them, and why they matter for tornado prediction." />
@@ -93,11 +94,34 @@ article li{margin-bottom:6px;font-size:16px}
     <h1>Mesocyclones <em>explained</em></h1>
     <p class="lede">Not every rotating storm makes a tornado. But every violent tornado comes from a rotating storm. Meet the mesocyclone — the invisible engine of a supercell.</p>
   </header>
+<section class="article-brief-v3" data-generated="article-brief-v3" aria-label="Article overview">
+  <style>
+    .article-brief-v3{margin:28px 0 34px;padding:0}.article-brief-v3 .brief-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(220px,.9fr);gap:14px}.article-brief-v3 .brief-card{background:var(--surface,#fff);border:1px solid var(--border,#e5e1d8);border-radius:8px;padding:18px 20px;box-shadow:0 4px 16px rgba(20,22,28,.05)}.article-brief-v3 h2{font-family:var(--serif,Georgia,serif);font-size:21px;line-height:1.2;margin:0 0 12px;letter-spacing:0}.article-brief-v3 p{font-size:15.5px;line-height:1.58;margin:0 0 12px;color:var(--text-secondary,#4a5061)}.article-brief-v3 ul,.article-brief-v3 ol{margin:0 0 0 20px}.article-brief-v3 li{font-size:14.5px;line-height:1.55;margin-bottom:7px}.article-brief-v3 strong{color:var(--text,#14161c)}.article-brief-v3 .brief-signals{margin-top:12px;background:var(--bg-alt,#f4f1ea);border:1px solid var(--border,#e5e1d8);border-radius:8px;padding:12px 14px;font-size:14px;color:var(--text-secondary,#4a5061)}.article-brief-v3 .brief-signals span{display:inline-block;margin:3px 6px 3px 0;padding:3px 8px;border-radius:999px;background:var(--surface,#fff);border:1px solid var(--border,#e5e1d8);color:var(--text,#14161c)}@media(max-width:720px){.article-brief-v3 .brief-layout{grid-template-columns:1fr}}
+  </style>
+  <div class="brief-layout">
+    <div class="brief-card">
+      <h2 id="article-at-a-glance">At a glance</h2>
+      <p>This guide is best for separating the storm category from the hazards that actually affect a location.</p>
+      <ul>
+        <li><strong>Reading time:</strong> about 8 minutes</li>
+        <li><strong>Primary focus:</strong> tropical weather, surge, wind, rainfall, evacuation timing, and inland impacts</li>
+        <li><strong>Watch for:</strong> storm surge, rainfall totals, evacuation zones, cone updates, tornado risk, and power outage timing</li>
+        <li><strong>Decision point:</strong> Act before tropical-storm-force winds, water over roads, or local evacuation deadlines make movement harder.</li>
+        <li><strong>Official check:</strong> <a href="https://www.nhc.noaa.gov/" rel="noopener">National Hurricane Center</a></li>
+      </ul>
+    </div>
+    <div class="brief-card">
+      <h2 id="article-section-guide">In this guide</h2>
+      <ol><li><a href="#the-definition">The definition</a></li><li><a href="#how-mesocyclones-form">How mesocyclones form</a></li><li><a href="#the-two-mesocyclone-types">The two mesocyclone types</a></li><li><a href="#how-radar-detects-mesocyclones">How radar detects mesocyclones</a></li><li><a href="#mesocyclone-detection-algorithms">Mesocyclone detection algorithms</a></li><li><a href="#cyclic-mesocyclones">Cyclic mesocyclones</a></li><li><a href="#anticyclonic-mesocyclones">Anticyclonic mesocyclones</a></li></ol>
+    </div>
+  </div>
+  <div class="brief-signals"><strong>Key terms:</strong> <span>tornado risk</span><span>supercells</span><span>radar</span><span>cyclone impacts</span></div>
+</section>
 
-  <h2>The definition</h2>
+  <h2 id="the-definition">The definition</h2>
   <p>A mesocyclone is a persistent, rotating updraft within a supercell thunderstorm. Diameter: 2-10 km. Rotation speeds up to 100 mph at peak. Lifespan: 30 min to 3 hours.</p>
   <p>The name means 'medium-scale cyclone' — larger than a tornado but smaller than a synoptic-scale low-pressure system.</p>
-  <h2>How mesocyclones form</h2>
+  <h2 id="how-mesocyclones-form">How mesocyclones form</h2>
   <ol>
     <li><strong>Wind shear</strong> — winds change direction with height (e.g., southerly at surface, westerly aloft).</li>
     <li>This creates HORIZONTAL rotation like a rolling log.</li>
@@ -106,14 +130,14 @@ article li{margin-bottom:6px;font-size:16px}
     <li>The rotating column intensifies as vertical stretching amplifies rotation (like a figure skater pulling arms in).</li>
     <li>A mesocyclone is now spinning within the storm.</li>
   </ol>
-  <h2>The two mesocyclone types</h2>
+  <h2 id="the-two-mesocyclone-types">The two mesocyclone types</h2>
   <div class="subtype-grid">
     <div class="subtype"><div class="subtype-name">Mid-level mesocyclone</div><div class="subtype-desc">The classic. 3-8 km altitude. Forms first as storm becomes supercellular.</div></div>
     <div class="subtype"><div class="subtype-name">Low-level mesocyclone</div><div class="subtype-desc">Below 3 km. Often forms as mid-level mesocyclone matures. This is the tornado producer.</div></div>
     <div class="subtype"><div class="subtype-name">Descending mesocyclone</div><div class="subtype-desc">Rotation extending downward from mid-level to surface.</div></div>
     <div class="subtype"><div class="subtype-name">Non-descending</div><div class="subtype-desc">Rotation building from surface upward. Non-supercell tornadoes.</div></div>
   </div>
-  <h2>How radar detects mesocyclones</h2>
+  <h2 id="how-radar-detects-mesocyclones">How radar detects mesocyclones</h2>
   <ul>
     <li>Doppler radar detects rotation via VELOCITY DATA — winds toward and away from radar in adjacent regions.</li>
     <li>A mesocyclone shows as a "couplet" — adjacent bright and dark pixels on velocity display.</li>
@@ -125,7 +149,7 @@ article li{margin-bottom:6px;font-size:16px}
     <li>Mesocyclones show as vertical columns of rotation on cross-section radar.</li>
     <li>Not all mesocyclones produce tornadoes — but almost all violent tornadoes have one.</li>
   </ul>
-  <h2>Mesocyclone detection algorithms</h2>
+  <h2 id="mesocyclone-detection-algorithms">Mesocyclone detection algorithms</h2>
   <ul>
     <li>MDA (Mesocyclone Detection Algorithm) — automated NEXRAD product.</li>
     <li>TVS (Tornado Vortex Signature) — tighter, smaller rotation embedded in mesocyclone.</li>
@@ -133,13 +157,13 @@ article li{margin-bottom:6px;font-size:16px}
     <li>AI-augmented detection now supplementing traditional algorithms.</li>
     <li>"Tightening" of a mesocyclone often precedes tornado touchdown by 10 minutes.</li>
   </ul>
-  <h2>Cyclic mesocyclones</h2>
+  <h2 id="cyclic-mesocyclones">Cyclic mesocyclones</h2>
   <p>Some supercells produce multiple mesocyclones sequentially over hours. Each occlues (dies), and the storm generates a new one to its east or northeast.</p>
   <p>This CYCLIC tornadoproducer can drop 4-8 tornadoes in a single supercell. The 1974 Guin, AL tornado and 1965 Palm Sunday outbreak had cyclic supercells.</p>
-  <h2>Anticyclonic mesocyclones</h2>
+  <h2 id="anticyclonic-mesocyclones">Anticyclonic mesocyclones</h2>
   <p>Rare. In supercells, some anticyclonic (clockwise, opposite of normal) rotation can develop, usually on the LEFT flank of a right-moving supercell.</p>
   <p>Left-moving supercells with anticyclonic rotation exist but are rare. Anticyclonic tornadoes have been documented — 2013 El Reno had one.</p>
-  <h2>The occlusion process</h2>
+  <h2 id="the-occlusion-process">The occlusion process</h2>
   <p>As a mesocyclone matures:</p>
   <ol>
     <li>It becomes wrapped in cool downdraft air (RFD wraps around).</li>
@@ -148,7 +172,7 @@ article li{margin-bottom:6px;font-size:16px}
     <li>A new mesocyclone often forms east or northeast of the old one.</li>
     <li>This is the storm's natural cycle.</li>
   </ol>
-  <h2>What mesocyclones tell you</h2>
+  <h2 id="what-mesocyclones-tell-you">What mesocyclones tell you</h2>
   <ul>
     <li>A storm has become supercellular.</li>
     <li>Damaging hail is possible.</li>
@@ -158,7 +182,7 @@ article li{margin-bottom:6px;font-size:16px}
     <li>On radar: mesocyclone height reduction is a red flag.</li>
     <li>Persistent low-level rotation for 15+ min = tornado likely.</li>
   </ul>
-  <h2>The prediction challenge</h2>
+  <h2 id="the-prediction-challenge">The prediction challenge</h2>
   <p>About 25% of mesocyclones produce tornadoes. 75% don't. Why?</p>
   <ul>
     <li>Low-level moisture insufficient.</li>
@@ -170,7 +194,7 @@ article li{margin-bottom:6px;font-size:16px}
   </ul>
   <p>Warn-on-Forecast aims to distinguish tornado-producing mesocyclones from non-tornadoproducing ones with better lead time.</p>
 
-  <h2>Learn more</h2>
+  <h2 id="learn-more">Learn more</h2>
   <ul>
     <li><a href="/what-is-a-supercell/">What is a supercell?</a></li>
     <li><a href="/thunderstorm-anatomy/">Thunderstorm anatomy</a></li>

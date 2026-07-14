@@ -5,6 +5,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="max-image-preview:large" />
 <title>NOAA Data Sources — A Weather Nerd's Complete Reference</title>
 <meta name="description" content="A complete reference to NOAA's public weather data — GFS, HRRR, RAP, NAM, radar, satellite, historical archives, buoys, upper-air soundings, and more. What each product is, where to get it, and what it is good for." />
 <meta name="twitter:description" content="A complete reference to NOAA's public weather data — GFS, HRRR, RAP, NAM, radar, satellite, historical archives, buoys, upper-air soundings, and more. What each product is, where to get it, and what it is good for." />
@@ -93,8 +94,31 @@ article li{margin-bottom:6px;font-size:16px}
     <h1>NOAA data sources <em>reference</em></h1>
     <p class="lede">NOAA operates the largest free public weather dataset in the world. Here is what is available, where to find it, and what each product is actually good for.</p>
   </header>
+<section class="article-brief-v3" data-generated="article-brief-v3" aria-label="Article overview">
+  <style>
+    .article-brief-v3{margin:28px 0 34px;padding:0}.article-brief-v3 .brief-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(220px,.9fr);gap:14px}.article-brief-v3 .brief-card{background:var(--surface,#fff);border:1px solid var(--border,#e5e1d8);border-radius:8px;padding:18px 20px;box-shadow:0 4px 16px rgba(20,22,28,.05)}.article-brief-v3 h2{font-family:var(--serif,Georgia,serif);font-size:21px;line-height:1.2;margin:0 0 12px;letter-spacing:0}.article-brief-v3 p{font-size:15.5px;line-height:1.58;margin:0 0 12px;color:var(--text-secondary,#4a5061)}.article-brief-v3 ul,.article-brief-v3 ol{margin:0 0 0 20px}.article-brief-v3 li{font-size:14.5px;line-height:1.55;margin-bottom:7px}.article-brief-v3 strong{color:var(--text,#14161c)}.article-brief-v3 .brief-signals{margin-top:12px;background:var(--bg-alt,#f4f1ea);border:1px solid var(--border,#e5e1d8);border-radius:8px;padding:12px 14px;font-size:14px;color:var(--text-secondary,#4a5061)}.article-brief-v3 .brief-signals span{display:inline-block;margin:3px 6px 3px 0;padding:3px 8px;border-radius:999px;background:var(--surface,#fff);border:1px solid var(--border,#e5e1d8);color:var(--text,#14161c)}@media(max-width:720px){.article-brief-v3 .brief-layout{grid-template-columns:1fr}}
+  </style>
+  <div class="brief-layout">
+    <div class="brief-card">
+      <h2 id="article-at-a-glance">At a glance</h2>
+      <p>This guide is best for understanding what each weather product can and cannot tell you.</p>
+      <ul>
+        <li><strong>Reading time:</strong> about 7 minutes</li>
+        <li><strong>Primary focus:</strong> forecast tools, radar, satellite, models, observations, and warning interpretation</li>
+        <li><strong>Watch for:</strong> update time, radar mode, model spread, storm growth, official discussions, and local observations</li>
+        <li><strong>Decision point:</strong> Trust trends more when several official tools agree, and stay cautious when radar, model guidance, and observations conflict.</li>
+        <li><strong>Official check:</strong> <a href="https://www.nssl.noaa.gov/education/svrwx101/radar/" rel="noopener">NOAA/NSSL radar basics</a></li>
+      </ul>
+    </div>
+    <div class="brief-card">
+      <h2 id="article-section-guide">In this guide</h2>
+      <ol><li><a href="#real-time-forecast-models">Real-time forecast models</a></li><li><a href="#radar-data">Radar data</a></li><li><a href="#satellite-data">Satellite data</a></li><li><a href="#historical-archives">Historical archives</a></li><li><a href="#ocean-and-buoy-data">Ocean and buoy data</a></li><li><a href="#upper-air-data">Upper-air data</a></li><li><a href="#apis-and-access">APIs and access</a></li></ol>
+    </div>
+  </div>
+  <div class="brief-signals"><strong>Key terms:</strong> <span>forecast tools</span></div>
+</section>
 
-  <h2>Real-time forecast models</h2>
+  <h2 id="real-time-forecast-models">Real-time forecast models</h2>
   <div class="subtype-grid">
     <div class="subtype"><div class="subtype-name">GFS (Global Forecast System)</div><div class="subtype-desc">13 km global model. Runs every 6 hrs, forecasts to 16 days. Best for medium-range planning.</div></div>
     <div class="subtype"><div class="subtype-name">HRRR (High-Resolution Rapid Refresh)</div><div class="subtype-desc">3 km CONUS convection-allowing. Runs hourly, 18-48 hr forecast. Best for convection prediction.</div></div>
@@ -103,7 +127,7 @@ article li{margin-bottom:6px;font-size:16px}
     <div class="subtype"><div class="subtype-name">SREF (Short-Range Ensemble)</div><div class="subtype-desc">Ensemble of NAM and RAP. Uncertainty quantification.</div></div>
     <div class="subtype"><div class="subtype-name">GEFS (Global Ensemble)</div><div class="subtype-desc">31-member GFS ensemble. Long-range probabilistic.</div></div>
   </div>
-  <h2>Radar data</h2>
+  <h2 id="radar-data">Radar data</h2>
   <ul>
     <li><strong>NEXRAD (Level 2)</strong> — raw radar data. Available from AWS S3 (noaa-nexrad-level2 bucket).</li>
     <li><strong>NEXRAD (Level 3)</strong> — processed products. Available from AWS and NOAA NCEI.</li>
@@ -111,7 +135,7 @@ article li{margin-bottom:6px;font-size:16px}
     <li><strong>TDWR</strong> — Terminal Doppler at airports. Higher resolution near airports.</li>
     <li><strong>Historic radar</strong> — NCEI archive back to 1991.</li>
   </ul>
-  <h2>Satellite data</h2>
+  <h2 id="satellite-data">Satellite data</h2>
   <ul>
     <li><strong>GOES-East (GOES-16)</strong> — geostationary at 75°W, covers Americas.</li>
     <li><strong>GOES-West (GOES-18)</strong> — geostationary at 137°W, covers western hemisphere.</li>
@@ -119,7 +143,7 @@ article li{margin-bottom:6px;font-size:16px}
     <li><strong>Suomi NPP</strong> — polar orbiter with VIIRS.</li>
     <li><strong>Access</strong>: AWS S3 (noaa-goes16 bucket), NASA Worldview.</li>
   </ul>
-  <h2>Historical archives</h2>
+  <h2 id="historical-archives">Historical archives</h2>
   <ul>
     <li><strong>NCEI (National Centers for Environmental Information)</strong> — the archive for climate data.</li>
     <li><strong>ISD (Integrated Surface Database)</strong> — hourly station data back to 1901.</li>
@@ -127,20 +151,20 @@ article li{margin-bottom:6px;font-size:16px}
     <li><strong>SPC Storm Reports</strong> — every filed severe weather report since 1950.</li>
     <li><strong>NCEI Storm Events Database</strong> — tornado, hail, wind, and flood data by county since 1950.</li>
   </ul>
-  <h2>Ocean and buoy data</h2>
+  <h2 id="ocean-and-buoy-data">Ocean and buoy data</h2>
   <ul>
     <li><strong>NDBC (National Data Buoy Center)</strong> — hundreds of ocean and Great Lakes buoys.</li>
     <li><strong>C-MAN stations</strong> — coastal marine automated network.</li>
     <li><strong>Tides and Currents</strong> — 200+ tidal stations.</li>
     <li><strong>NHC hurricane track archive</strong> — every hurricane since 1851.</li>
   </ul>
-  <h2>Upper-air data</h2>
+  <h2 id="upper-air-data">Upper-air data</h2>
   <ul>
     <li><strong>RAOB (Radiosonde Observations)</strong> — 92 US launch sites, twice daily.</li>
     <li><strong>Wyoming Sounding Archive</strong> — university.wyoming.edu upperair archive.</li>
     <li><strong>NCEI Radiosonde Archive</strong> — full historical soundings.</li>
   </ul>
-  <h2>APIs and access</h2>
+  <h2 id="apis-and-access">APIs and access</h2>
   <ul>
     <li><strong>api.weather.gov</strong> — official NWS API. Free, no key required.</li>
     <li><strong>NOMADS</strong> — real-time model output.</li>
@@ -150,7 +174,7 @@ article li{margin-bottom:6px;font-size:16px}
     <li><strong>USCRN</strong> — Climate Reference Network stations.</li>
   </ul>
 
-  <h2>Learn more</h2>
+  <h2 id="learn-more">Learn more</h2>
   <ul>
     <li><a href="/best-free-weather-apps/">Best free weather apps</a></li>
     <li><a href="/reading-a-skew-t-diagram/">Reading a skew-T</a></li>

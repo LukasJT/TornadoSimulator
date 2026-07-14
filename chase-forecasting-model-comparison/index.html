@@ -5,6 +5,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="max-image-preview:large" />
 <title>Chase Forecasting — Which Model to Actually Trust</title>
 <meta name="description" content="HRRR, RAP, NAM, GFS, ECMWF — every chase day has multiple models saying different things. Here is when to trust which, and how to blend them." />
 <meta name="twitter:description" content="HRRR, RAP, NAM, GFS, ECMWF — every chase day has multiple models saying different things. Here is when to trust which, and how to blend them." />
@@ -93,8 +94,31 @@ article li{margin-bottom:6px;font-size:16px}
     <h1>Chase forecasting <em>model comparison</em></h1>
     <p class="lede">HRRR says storms fire at 5. GFS says nothing happens. NAM disagrees. Here is which to trust when.</p>
   </header>
+<section class="article-brief-v3" data-generated="article-brief-v3" aria-label="Article overview">
+  <style>
+    .article-brief-v3{margin:28px 0 34px;padding:0}.article-brief-v3 .brief-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(220px,.9fr);gap:14px}.article-brief-v3 .brief-card{background:var(--surface,#fff);border:1px solid var(--border,#e5e1d8);border-radius:8px;padding:18px 20px;box-shadow:0 4px 16px rgba(20,22,28,.05)}.article-brief-v3 h2{font-family:var(--serif,Georgia,serif);font-size:21px;line-height:1.2;margin:0 0 12px;letter-spacing:0}.article-brief-v3 p{font-size:15.5px;line-height:1.58;margin:0 0 12px;color:var(--text-secondary,#4a5061)}.article-brief-v3 ul,.article-brief-v3 ol{margin:0 0 0 20px}.article-brief-v3 li{font-size:14.5px;line-height:1.55;margin-bottom:7px}.article-brief-v3 strong{color:var(--text,#14161c)}.article-brief-v3 .brief-signals{margin-top:12px;background:var(--bg-alt,#f4f1ea);border:1px solid var(--border,#e5e1d8);border-radius:8px;padding:12px 14px;font-size:14px;color:var(--text-secondary,#4a5061)}.article-brief-v3 .brief-signals span{display:inline-block;margin:3px 6px 3px 0;padding:3px 8px;border-radius:999px;background:var(--surface,#fff);border:1px solid var(--border,#e5e1d8);color:var(--text,#14161c)}@media(max-width:720px){.article-brief-v3 .brief-layout{grid-template-columns:1fr}}
+  </style>
+  <div class="brief-layout">
+    <div class="brief-card">
+      <h2 id="article-at-a-glance">At a glance</h2>
+      <p>This guide is best for understanding what each weather product can and cannot tell you.</p>
+      <ul>
+        <li><strong>Reading time:</strong> about 7 minutes</li>
+        <li><strong>Primary focus:</strong> forecast tools, radar, satellite, models, observations, and warning interpretation</li>
+        <li><strong>Watch for:</strong> update time, radar mode, model spread, storm growth, official discussions, and local observations</li>
+        <li><strong>Decision point:</strong> Trust trends more when several official tools agree, and stay cautious when radar, model guidance, and observations conflict.</li>
+        <li><strong>Official check:</strong> <a href="https://www.nssl.noaa.gov/education/svrwx101/radar/" rel="noopener">NOAA/NSSL radar basics</a></li>
+      </ul>
+    </div>
+    <div class="brief-card">
+      <h2 id="article-section-guide">In this guide</h2>
+      <ol><li><a href="#the-models-to-know">The models to know</a></li><li><a href="#the-forecast-timeline">The forecast timeline</a></li><li><a href="#the-model-biases">The model biases</a></li><li><a href="#reading-the-ensemble">Reading the ensemble</a></li><li><a href="#the-specific-composite-indices">The specific composite indices</a></li><li><a href="#the-chase-day-model-workflow">The chase-day model workflow</a></li><li><a href="#when-models-disagree">When models disagree</a></li></ol>
+    </div>
+  </div>
+  <div class="brief-signals"><strong>Key terms:</strong> <span>forecast confidence</span><span>weather models</span></div>
+</section>
 
-  <h2>The models to know</h2>
+  <h2 id="the-models-to-know">The models to know</h2>
   <div class="subtype-grid">
     <div class="subtype"><div class="subtype-name">HRRR</div><div class="subtype-desc">3 km CONUS. Convection-allowing. Hourly runs. Best for storm mode within 18 hrs.</div></div>
     <div class="subtype"><div class="subtype-name">RAP</div><div class="subtype-desc">13 km CONUS. Hourly. Best for evolving synoptic setup.</div></div>
@@ -108,7 +132,7 @@ article li{margin-bottom:6px;font-size:16px}
     <div class="subtype"><div class="subtype-name">CMC/GEM</div><div class="subtype-desc">Canadian. Sometimes best for northern US.</div></div>
     <div class="subtype"><div class="subtype-name">AI models (GraphCast, Aurora, Pangu)</div><div class="subtype-desc">Best medium-range track. Not chase-ready yet.</div></div>
   </div>
-  <h2>The forecast timeline</h2>
+  <h2 id="the-forecast-timeline">The forecast timeline</h2>
   <ol>
     <li>10+ days out: GFS + ECMWF. Very broad pattern.</li>
     <li>5-10 days: ECMWF + GEFS/EPS. Pattern recognition.</li>
@@ -119,7 +143,7 @@ article li{margin-bottom:6px;font-size:16px}
     <li>0-12 hrs: HRRR + observed reality.</li>
     <li>0-6 hrs: HRRR + radar + own eyes.</li>
   </ol>
-  <h2>The model biases</h2>
+  <h2 id="the-model-biases">The model biases</h2>
   <div class="subtype-grid">
     <div class="subtype"><div class="subtype-name">HRRR</div><div class="subtype-desc">Sometimes fires storms too early. Sometimes underforecast wedges.</div></div>
     <div class="subtype"><div class="subtype-name">RAP</div><div class="subtype-desc">Reliable but coarser than HRRR for exact storm placement.</div></div>
@@ -128,7 +152,7 @@ article li{margin-bottom:6px;font-size:16px}
     <div class="subtype"><div class="subtype-name">ECMWF</div><div class="subtype-desc">Excellent overall but slow to update.</div></div>
     <div class="subtype"><div class="subtype-name">AI models</div><div class="subtype-desc">Under-forecast rare extreme events (training data bias).</div></div>
   </div>
-  <h2>Reading the ensemble</h2>
+  <h2 id="reading-the-ensemble">Reading the ensemble</h2>
   <ul>
     <li>Look at spread across all members.</li>
     <li>Tight cluster = high confidence.</li>
@@ -137,7 +161,7 @@ article li{margin-bottom:6px;font-size:16px}
     <li>For chase target, look at plume of possible storm tracks.</li>
     <li>For go/no-go, ensemble mean is a start.</li>
   </ul>
-  <h2>The specific composite indices</h2>
+  <h2 id="the-specific-composite-indices">The specific composite indices</h2>
   <div class="subtype-grid">
     <div class="subtype"><div class="subtype-name">CAPE</div><div class="subtype-desc">Instability. Storm potential.</div></div>
     <div class="subtype"><div class="subtype-name">CIN</div><div class="subtype-desc">Cap. Higher = harder to break.</div></div>
@@ -149,7 +173,7 @@ article li{margin-bottom:6px;font-size:16px}
     <div class="subtype"><div class="subtype-name">LCL height</div><div class="subtype-desc">Cloud base height. Lower = better tornado.</div></div>
     <div class="subtype"><div class="subtype-name">Effective SRH</div><div class="subtype-desc">Modern preferred over 0-1 km.</div></div>
   </div>
-  <h2>The chase-day model workflow</h2>
+  <h2 id="the-chase-day-model-workflow">The chase-day model workflow</h2>
   <ol>
     <li>7 AM: HRRR 12Z run. Check storm mode.</li>
     <li>8 AM: SPC Day 1 Outlook update.</li>
@@ -161,7 +185,7 @@ article li{margin-bottom:6px;font-size:16px}
     <li>4 PM: Adjust target based on cumulus development.</li>
     <li>6 PM: All models secondary — visual and radar primary.</li>
   </ol>
-  <h2>When models disagree</h2>
+  <h2 id="when-models-disagree">When models disagree</h2>
   <ol>
     <li>Check SPC outlook first — SPC is human-integrated.</li>
     <li>Look at which model has been closer this week.</li>
@@ -172,7 +196,7 @@ article li{margin-bottom:6px;font-size:16px}
     <li>Sometimes: split the difference.</li>
     <li>Sometimes: pick one and commit.</li>
   </ol>
-  <h2>The pitfalls</h2>
+  <h2 id="the-pitfalls">The pitfalls</h2>
   <ul>
     <li>Trusting model output beyond model skill window.</li>
     <li>Focusing on point forecast, ignoring uncertainty.</li>
@@ -182,7 +206,7 @@ article li{margin-bottom:6px;font-size:16px}
     <li>Ignoring warm layer aloft or high LCL.</li>
     <li>Overinterpreting single-run features.</li>
   </ul>
-  <h2>For beginners</h2>
+  <h2 id="for-beginners">For beginners</h2>
   <ul>
     <li>Start with SPC outlook.</li>
     <li>Read the Convective Discussion.</li>
@@ -192,7 +216,7 @@ article li{margin-bottom:6px;font-size:16px}
     <li>Log lessons.</li>
     <li>Add complexity slowly.</li>
   </ul>
-  <h2>For experienced chasers</h2>
+  <h2 id="for-experienced-chasers">For experienced chasers</h2>
   <ul>
     <li>Multi-model ensemble in your head.</li>
     <li>Weight each per pattern.</li>
@@ -202,7 +226,7 @@ article li{margin-bottom:6px;font-size:16px}
     <li>Chase what you see.</li>
   </ul>
 
-  <h2>Learn more</h2>
+  <h2 id="learn-more">Learn more</h2>
   <ul>
     <li><a href="/chase-forecasting-tutorial/">Chase forecasting tutorial</a></li>
     <li><a href="/reading-spc-mesoanalysis/">Reading SPC mesoanalysis</a></li>

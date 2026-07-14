@@ -5,6 +5,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="max-image-preview:large" />
 <title>Wind Chill vs Heat Index — What Each Measures and When</title>
 <meta name="description" content="Wind chill and heat index both estimate what temperature "feels like" — but they measure very different physical effects. Here is what each is, when to use it, and why the numbers can be misleading." />
 <meta name="twitter:description" content="Wind chill and heat index both estimate what temperature" />
@@ -93,10 +94,33 @@ article li{margin-bottom:6px;font-size:16px}
     <h1>Wind chill vs <em>heat index</em></h1>
     <p class="lede">"Feels like 15°F" or "Feels like 108°F" — both are calculated numbers, not measurements. Here is what they mean, how they're calculated, and where they mislead.</p>
   </header>
+<section class="article-brief-v3" data-generated="article-brief-v3" aria-label="Article overview">
+  <style>
+    .article-brief-v3{margin:28px 0 34px;padding:0}.article-brief-v3 .brief-layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(220px,.9fr);gap:14px}.article-brief-v3 .brief-card{background:var(--surface,#fff);border:1px solid var(--border,#e5e1d8);border-radius:8px;padding:18px 20px;box-shadow:0 4px 16px rgba(20,22,28,.05)}.article-brief-v3 h2{font-family:var(--serif,Georgia,serif);font-size:21px;line-height:1.2;margin:0 0 12px;letter-spacing:0}.article-brief-v3 p{font-size:15.5px;line-height:1.58;margin:0 0 12px;color:var(--text-secondary,#4a5061)}.article-brief-v3 ul,.article-brief-v3 ol{margin:0 0 0 20px}.article-brief-v3 li{font-size:14.5px;line-height:1.55;margin-bottom:7px}.article-brief-v3 strong{color:var(--text,#14161c)}.article-brief-v3 .brief-signals{margin-top:12px;background:var(--bg-alt,#f4f1ea);border:1px solid var(--border,#e5e1d8);border-radius:8px;padding:12px 14px;font-size:14px;color:var(--text-secondary,#4a5061)}.article-brief-v3 .brief-signals span{display:inline-block;margin:3px 6px 3px 0;padding:3px 8px;border-radius:999px;background:var(--surface,#fff);border:1px solid var(--border,#e5e1d8);color:var(--text,#14161c)}@media(max-width:720px){.article-brief-v3 .brief-layout{grid-template-columns:1fr}}
+  </style>
+  <div class="brief-layout">
+    <div class="brief-card">
+      <h2 id="article-at-a-glance">At a glance</h2>
+      <p>This guide is best for separating snow depth from ice, wind, cold, and visibility impacts.</p>
+      <ul>
+        <li><strong>Reading time:</strong> about 7 minutes</li>
+        <li><strong>Primary focus:</strong> snow, ice, wind, visibility, cold, road conditions, and outage risk</li>
+        <li><strong>Watch for:</strong> freezing rain, road temperature, wind gusts, snow bands, power lines, and the rain-snow transition</li>
+        <li><strong>Decision point:</strong> Change travel plans early when ice, whiteout visibility, drifting snow, or dangerous wind chill enters the forecast.</li>
+        <li><strong>Official check:</strong> <a href="https://www.weather.gov/safety/winter" rel="noopener">National Weather Service winter safety</a></li>
+      </ul>
+    </div>
+    <div class="brief-card">
+      <h2 id="article-section-guide">In this guide</h2>
+      <ol><li><a href="#the-core-idea">The core idea</a></li><li><a href="#wind-chill">Wind Chill</a></li><li><a href="#heat-index">Heat Index</a></li><li><a href="#where-they-mislead">Where they mislead</a></li><li><a href="#the-alternatives">The alternatives</a></li><li><a href="#when-to-use-each">When to use each</a></li><li><a href="#wet-bulb-temperature-and-survivability">Wet bulb temperature and survivability</a></li></ol>
+    </div>
+  </div>
+  <div class="brief-signals"><strong>Key terms:</strong> <span>heat stress</span><span>damaging wind</span></div>
+</section>
 
-  <h2>The core idea</h2>
+  <h2 id="the-core-idea">The core idea</h2>
   <p>Neither wind chill nor heat index measures actual air temperature. Both estimate how the human body loses (or fails to lose) heat under specific conditions — and translate that into an equivalent still-air temperature.</p>
-  <h2>Wind Chill</h2>
+  <h2 id="wind-chill">Wind Chill</h2>
   <p>Wind chill is the perceived temperature effect of wind moving over exposed skin. Faster wind = faster heat loss = colder perceived temperature.</p>
   <ul>
     <li>Only applies when actual temp is at or below 50°F.</li>
@@ -105,7 +129,7 @@ article li{margin-bottom:6px;font-size:16px}
     <li>The 2001 NWS formula replaced an older 1945 wartime formula that overestimated the effect.</li>
   </ul>
   <p>Formula: WC = 35.74 + 0.6215T − 35.75V^0.16 + 0.4275T·V^0.16 (T in °F, V in mph).</p>
-  <h2>Heat Index</h2>
+  <h2 id="heat-index">Heat Index</h2>
   <p>Heat index estimates how hot it feels when humidity limits evaporative cooling. Sweat cools you by evaporating; humid air slows evaporation.</p>
   <ul>
     <li>Only applies when actual temp is at or above 80°F.</li>
@@ -115,7 +139,7 @@ article li{margin-bottom:6px;font-size:16px}
     <li>The formula is a polynomial fit to biometric research from the 1970s.</li>
   </ul>
   <p>Simplified: HI = -42.379 + 2.04901523T + 10.14333127R − 0.22475541T·R − 0.00683783T² − 0.05481717R² + 0.00122874T²R + 0.00085282T·R² − 0.00000199T²R² (T in °F, R in %RH).</p>
-  <h2>Where they mislead</h2>
+  <h2 id="where-they-mislead">Where they mislead</h2>
   <ul>
     <li>Wind chill assumes exposed skin. In clothing, the effect is much reduced.</li>
     <li>Wind chill applies to living tissue — inanimate objects don't "feel" wind chill.</li>
@@ -124,14 +148,14 @@ article li{margin-bottom:6px;font-size:16px}
     <li>Neither number is measured with a sensor — both are formulas.</li>
     <li>Two people in identical conditions can perceive very different temperatures.</li>
   </ul>
-  <h2>The alternatives</h2>
+  <h2 id="the-alternatives">The alternatives</h2>
   <div class="subtype-grid">
     <div class="subtype"><div class="subtype-name">WBGT (Wet Bulb Globe Temperature)</div><div class="subtype-desc">Used by the military, athletics, industry. Accounts for humidity, wind, sun. Measured by three-thermometer instrument.</div></div>
     <div class="subtype"><div class="subtype-name">UTCI (Universal Thermal Climate Index)</div><div class="subtype-desc">European standard. Complex biometeorological model.</div></div>
     <div class="subtype"><div class="subtype-name">Apparent Temperature</div><div class="subtype-desc">Australian version. Broader validity range than heat index.</div></div>
     <div class="subtype"><div class="subtype-name">Wet Bulb</div><div class="subtype-desc">Simple humidity-adjusted temperature. Used in survival research.</div></div>
   </div>
-  <h2>When to use each</h2>
+  <h2 id="when-to-use-each">When to use each</h2>
   <ul>
     <li><strong>Winter</strong>: wind chill for frostbite planning.</li>
     <li><strong>Summer</strong>: heat index for heat exhaustion planning.</li>
@@ -139,10 +163,10 @@ article li{margin-bottom:6px;font-size:16px}
     <li><strong>Ordinary cold</strong>: check the actual temperature and wear appropriate layers.</li>
     <li><strong>Ordinary heat</strong>: check the actual temperature, humidity, and sun exposure.</li>
   </ul>
-  <h2>Wet bulb temperature and survivability</h2>
+  <h2 id="wet-bulb-temperature-and-survivability">Wet bulb temperature and survivability</h2>
   <p>The 35°C (95°F) wet bulb threshold is often cited as the survivability limit for humans — above it, we cannot cool ourselves even with unlimited water and shade. As of 2026, small regions of the Persian Gulf and Indus Valley have briefly exceeded this. Climate models predict expansion.</p>
 
-  <h2>Learn more</h2>
+  <h2 id="learn-more">Learn more</h2>
   <ul>
     <li><a href="/dew-point-calculator/">Dew point calculator</a></li>
     <li><a href="/wind-speed-converter/">Wind speed converter</a></li>
