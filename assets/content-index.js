@@ -3,7 +3,7 @@ window.TORNADO_CONTENT_INDEX = [
     "title": "Tornado Hub — Tornado News, Simulator, Safety Guides & Games",
     "description": "Tornado Hub is a tornado news-style resource with a worldwide damage simulator, trending guides, safety explainers, historical case files, quizzes, and weather games.",
     "url": "/",
-    "category": "Country Guide"
+    "category": "New Country Guide"
   },
   {
     "title": "100 Tornado Facts — Free Printable List for Teachers &amp; Kids",
@@ -240,9 +240,27 @@ window.TORNADO_CONTENT_INDEX = [
     "category": "Space weather"
   },
   {
+    "title": "Australia Bushfire Weather Warning Guide: Heat, Wind, Humidity, Lightning, Fuel, and Fire Danger",
+    "description": "A practical guide to Australian bushfire weather warnings, fire danger, heat, low humidity, wind changes, lightning, fuel growth, smoke, and emergency planning.",
+    "url": "/australia-bushfire-weather-warning-guide/",
+    "category": "Australia Weather"
+  },
+  {
     "title": "Australia Cyclone, Flood, Heat, and Bushfire Weather Guide",
     "description": "A practical Australia guide to tropical cyclones, flood forecasting, heat waves, bushfire weather, coastal hazards, and how these risks can compound.",
     "url": "/australia-cyclone-flood-heat-bushfire-guide/",
+    "category": "Australia Weather"
+  },
+  {
+    "title": "Australia East Coast Low Weather Guide: Rain, Wind, Surf, Flooding, and Coastal Damage",
+    "description": "A science-based guide to Australian east coast lows, including heavy rain, damaging wind, dangerous surf, coastal erosion, flooding, warnings, and safety decisions.",
+    "url": "/australia-east-coast-low-weather-guide/",
+    "category": "Australia Weather"
+  },
+  {
+    "title": "Australia Flash Flood Road Safety Guide: Why Floodwater Is So Dangerous",
+    "description": "A detailed Australia flash flood road safety guide explaining intense rain, urban drainage, low crossings, vehicle risk, river response, and BoM flood warnings.",
+    "url": "/australia-flash-flood-road-safety-guide/",
     "category": "Australia Weather"
   },
   {
@@ -1194,6 +1212,24 @@ window.TORNADO_CONTENT_INDEX = [
     "category": "Finland Weather"
   },
   {
+    "title": "Finland FMI Warning Colors Guide: Green, Yellow, Orange, Red, and What to Do",
+    "description": "A practical guide to Finnish Meteorological Institute warning colors, warning types, update timing, and how to use FMI alerts for travel, marine, thunderstorm, heat, cold, and wildfire decisions.",
+    "url": "/finland-fmi-warning-colors-guide/",
+    "category": "Finland Weather"
+  },
+  {
+    "title": "Finland Forest Thunderstorm Gust Safety Guide: Trees, Lakes, Campsites, and Power Lines",
+    "description": "A Finland severe thunderstorm safety guide focused on FMI thunderstorm gust warnings, forests, falling trees, lake recreation, campsites, power lines, and tornado context.",
+    "url": "/finland-forest-thunderstorm-gust-safety-guide/",
+    "category": "Finland Weather"
+  },
+  {
+    "title": "Finland Road Weather and Winter Driving Guide: Snow, Ice, Wind, Visibility, and FMI Warnings",
+    "description": "A Finland winter driving and road-weather guide covering snow, ice, freezing rain, darkness, wind chill, visibility, FMI warning colors, and travel decisions.",
+    "url": "/finland-road-weather-winter-driving-guide/",
+    "category": "Finland Weather"
+  },
+  {
     "title": "Finland Thunderstorms and Winter Storms Guide: Gusts, Lightning, Snow, Ice, and Road Weather",
     "description": "A detailed Finland guide to severe thunderstorm gusts, tornado context, winter storms, snow, ice, traffic weather, wind chill, and practical warning decisions.",
     "url": "/finland-thunderstorms-winter-storms-guide/",
@@ -2082,6 +2118,12 @@ window.TORNADO_CONTENT_INDEX = [
     "category": "Storm Recovery"
   },
   {
+    "title": "International Seasonal Weather Guides: Australia, Finland, Sweden, and Latvia",
+    "description": "A seasonal international weather hub for Australia, Finland, Sweden, and Latvia, linking country-specific guides for storm seasons, warnings, floods, wind, winter, fire weather, and coastal hazards.",
+    "url": "/international-seasonal-weather-guides/",
+    "category": "International Weather"
+  },
+  {
     "title": "International Tornado Records — Every Country's Worst",
     "description": "Tornadoes happen worldwide. Here are the deadliest, largest, and most historic tornadoes from every country that has had them documented — from Bangladesh to Argentina to New Zealand.",
     "url": "/international-tornado-records/",
@@ -2223,6 +2265,24 @@ window.TORNADO_CONTENT_INDEX = [
     "title": "Latvia Baltic Coastal Weather Guide: Gulf of Riga Wind, Waves, Water Levels, Winter Ice, and Storm Planning",
     "description": "A Latvia Baltic coastal weather guide covering Gulf of Riga wind, waves, coastal flooding, water levels, winter ice, ports, beaches, roads, and storm preparation.",
     "url": "/latvia-baltic-coastal-weather-guide/",
+    "category": "Latvia Weather"
+  },
+  {
+    "title": "Latvia European Severe Weather Reports Guide: ESWD, Tornadoes, Waterspouts, Hail, Wind, and Storm Documentation",
+    "description": "A Latvia severe weather reporting guide explaining ESWD, European convective storm reports, tornadoes, waterspouts, damaging wind, hail, lightning, and how reports differ from live warnings.",
+    "url": "/latvia-european-severe-weather-reports-guide/",
+    "category": "Latvia Weather"
+  },
+  {
+    "title": "Latvia Weather Warning Colors Guide: warnings.meteo.lv, Meteoalarm, Wind, Rain, Snow, Ice, Heat, and Storms",
+    "description": "A Latvia warning colors guide explaining warnings.meteo.lv, Meteoalarm Latvia, awareness levels, wind, rain, thunderstorms, snow, ice, heat, coastal water, and practical decisions.",
+    "url": "/latvia-meteoalarm-warning-colors-guide/",
+    "category": "Latvia Weather"
+  },
+  {
+    "title": "Riga and Gulf of Riga Flood and Wind Guide: Latvia Storm Planning for Roads, Rivers, and Coastal Water",
+    "description": "A Latvia guide for Riga and Gulf of Riga weather risk, including windstorms, heavy rain, urban flooding, river flooding, coastal water levels, winter ice, and warning decisions.",
+    "url": "/latvia-riga-gulf-flood-wind-guide/",
     "category": "Latvia Weather"
   },
   {
@@ -4494,6 +4554,18 @@ window.TORNADO_CONTENT_INDEX = [
     "category": "Sweden Weather"
   },
   {
+    "title": "Sweden SMHI Radar and Satellite Guide: Rain, Snow, Thunderstorms, and Warning Timing",
+    "description": "A Sweden guide to SMHI radar, satellite, observations, warnings, precipitation timing, radar limitations, snow, thunderstorms, and travel decisions.",
+    "url": "/sweden-smhi-radar-satellite-guide/",
+    "category": "Sweden Weather"
+  },
+  {
+    "title": "Sweden Snow and Ice Travel Guide: Roads, Rail, Visibility, Freezing Rain, and Winter Warnings",
+    "description": "A Sweden winter travel guide covering snow, ice, freezing rain, low visibility, road and rail disruption, SMHI warnings, observations, and practical travel planning.",
+    "url": "/sweden-snow-ice-travel-guide/",
+    "category": "Sweden Weather"
+  },
+  {
     "title": "Sweden Thunderstorms, Windstorms, and Floods Guide",
     "description": "A Sweden severe weather guide for thunderstorms, tornado context, windstorms, heavy rain, river flooding, urban flooding, radar, satellite, and practical safety decisions.",
     "url": "/sweden-thunderstorms-windstorms-floods-guide/",
@@ -4503,6 +4575,12 @@ window.TORNADO_CONTENT_INDEX = [
     "title": "Sweden Weather Risk Guide: SMHI Warnings, Windstorms, Snow, Flooding, Thunderstorms, Forest Fire Weather, and Coasts",
     "description": "A science-based Sweden weather guide covering SMHI warnings, radar, satellite, windstorms, snow, flooding, thunderstorms, forest fire weather, coastal hazards, and tornado context.",
     "url": "/sweden-weather-risk-guide/",
+    "category": "Sweden Weather"
+  },
+  {
+    "title": "Sweden Windstorm and Power Outage Guide: Trees, Roads, Rail, Coasts, and Warnings",
+    "description": "A Sweden windstorm guide explaining damaging winds, trees, saturated soil, power outages, road and rail disruption, coastal waves, SMHI warnings, and preparation.",
+    "url": "/sweden-windstorm-power-outage-guide/",
     "category": "Sweden Weather"
   },
   {
