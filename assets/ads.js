@@ -154,6 +154,24 @@
     observer.observe(document.documentElement, { childList: true, subtree: true });
   }
 
+  // --- Ensure at least one banner slot per page ----------------------------
+  // Many generated pages have no .inline-ad slot at all, so they earned
+  // nothing from banners. Create one above the footer; the mobile swap +
+  // responsive CSS then handle it like every other slot. Runs AFTER the
+  // auto medium-rectangle pass, so it only fires when that pass placed
+  // nothing (list-heavy pages, games, quizzes without inline slots).
+  function ensureBannerSlot() {
+    if (!CFG.banner728x90) return;
+    if (document.querySelector('.inline-ad')) return;
+    var footer = document.querySelector('footer, .footer');
+    if (!footer || !footer.parentNode) return;
+    var slot = document.createElement('div');
+    slot.className = 'inline-ad';
+    slot.style.cssText = 'text-align:center;margin:28px auto;max-width:728px;overflow:hidden;';
+    slot.appendChild(makeAdFrame(CFG.banner728x90, 728, 90));
+    footer.parentNode.insertBefore(slot, footer);
+  }
+
   function injectMobileBanners() {
     if (!CFG.banner320x50) return;
     var slots = document.querySelectorAll('.inline-ad');
@@ -328,57 +346,115 @@
     return !!(CFG.nativeBannerContainerId && document.getElementById(CFG.nativeBannerContainerId));
   }
 
-  function autoPlaceNativeSlot() {
-    if (document.querySelector('[data-native-ad]')) return;
-    if (hasExistingNativeBanner()) return;
+  // --- Native Banner --------------------------------------------------------
+  // Strongest in-content format. One Adsterra native zone = one fill per
+  // page, so the goal is: find the best in-content anchor on EVERY page type
+  // and place the single container there. Fallback chain covers articles,
+  // quizzes, games, Tornadle, and generic pages. Extra zones (if the user
+  // creates more in the Adsterra dashboard) go in CFG.nativeBannerZones.
+  function findNativeAnchor() {
+    // 1. Explicit slot wins.
+    var explicit = document.querySelector('[data-native-ad]');
+    if (explicit) return { parent: explicit, before: null };
 
-    var host = document.querySelector('article') || document.querySelector('main');
-    if (!host) return;
-
-    var anchor = host.querySelector('h2');
-    if (!anchor) {
-      var paragraphs = host.querySelectorAll('p');
-      anchor = paragraphs.length > 2 ? paragraphs[1] : null;
+    // 2. Article/main pages: after the first h2 that is a DIRECT child of the
+    //    host (never inject inside styled sub-boxes like .results panels).
+    //    Substance check: homepage-style card grids use <article class="article-card">
+    //    with ~200 chars of text — skip those so we never inject inside a card.
+    var host = null;
+    var candidates = document.querySelectorAll('article, main');
+    for (var c = 0; c < candidates.length; c++) {
+      if ((candidates[c].textContent || '').length > 800) { host = candidates[c]; break; }
     }
-    if (!anchor) return;
+    if (host) {
+      var h2s = host.querySelectorAll('h2');
+      for (var i = 0; i < h2s.length; i++) {
+        if (h2s[i].parentNode === host) {
+          return { parent: host, before: h2s[i].nextSibling };
+        }
+      }
+      // main exists but no direct-child h2 (games, calculators): append at end.
+      return { parent: host, before: null };
+    }
 
-    var slot = document.createElement('div');
-    slot.setAttribute('data-native-ad', 'auto');
-    anchor.parentNode.insertBefore(slot, anchor.nextSibling);
+    // 3. Trivia quiz pages: mid-quiz, before the 6th question card.
+    //    (Cards live inside #questions, so anchor on the card's own parent.)
+    var quiz = document.querySelector('.quiz-wrap');
+    if (quiz) {
+      var cards = quiz.querySelectorAll('.card');
+      if (cards.length > 5) return { parent: cards[5].parentNode, before: cards[5] };
+      var result = quiz.querySelector('#result');
+      if (result) return { parent: result.parentNode, before: result };
+      return { parent: quiz, before: null };
+    }
+
+    // 4. Tornadle / any page with .inline-ad slots: after the LAST one, which
+    //    sits in the lower content area — never above the game board.
+    var inlineAds = document.querySelectorAll('.inline-ad');
+    if (inlineAds.length) {
+      var lastAd = inlineAds[inlineAds.length - 1];
+      if (lastAd.parentNode) return { parent: lastAd.parentNode, before: lastAd.nextSibling };
+    }
+
+    // 5. Last resort: above the footer.
+    var footer = document.querySelector('footer, .footer');
+    if (footer && footer.parentNode) return { parent: footer.parentNode, before: footer };
+    return null;
+  }
+
+  function buildNativeWrap(containerId) {
+    var wrap = document.createElement('div');
+    wrap.className = 'native-ad-wrap';
+    wrap.style.cssText = 'margin:28px auto;max-width:728px;padding:12px;box-sizing:border-box;';
+    var container = document.createElement('div');
+    container.id = containerId;
+    wrap.appendChild(container);
+    // If Adsterra never fills (adblock / no fill), hide the empty wrap so
+    // no blank box lingers in the layout.
+    setTimeout(function () {
+      if (!container.firstChild) wrap.style.display = 'none';
+    }, 8000);
+    return wrap;
+  }
+
+  function loadNativeScript(src, anchorEl) {
+    var script = document.createElement('script');
+    script.async = true;
+    script.setAttribute('data-cfasync', 'false');
+    script.src = src.indexOf('//') === 0 ? src : '//' + src;
+    (anchorEl || document.body).appendChild(script);
   }
 
   function injectNativeBanners() {
-    if (!CFG.nativeBannerSrc || !CFG.nativeBannerContainerId) return;
-    if (hasExistingNativeBanner()) return;
+    if (document.querySelector('.native-ad-wrap')) return; // already done
+    if (hasExistingNativeBanner()) return; // page ships its own container
 
-    autoPlaceNativeSlot();
-    var slots = document.querySelectorAll('[data-native-ad]');
-    slots.forEach(function (slot, index) {
-      if (slot.getAttribute('data-loaded') === '1') return;
-      slot.setAttribute('data-loaded', '1');
+    // Zone list: primary zone from the flat keys, plus any extras.
+    var zones = [];
+    if (CFG.nativeBannerSrc && CFG.nativeBannerContainerId) {
+      zones.push({ src: CFG.nativeBannerSrc, containerId: CFG.nativeBannerContainerId });
+    }
+    if (CFG.nativeBannerZones && CFG.nativeBannerZones.length) {
+      zones = zones.concat(CFG.nativeBannerZones);
+    }
+    if (!zones.length) return;
 
-      var wrap = document.createElement('div');
-      wrap.className = 'native-ad-wrap';
-      wrap.style.cssText = 'margin:28px auto;max-width:728px;padding:12px;background:#fffdf7;border:1px solid #e6dfd0;border-radius:8px;';
+    // Primary zone: best in-content anchor on this page.
+    var anchor = findNativeAnchor();
+    if (!anchor) return;
+    var wrap = buildNativeWrap(zones[0].containerId);
+    anchor.parent.insertBefore(wrap, anchor.before || null);
+    loadNativeScript(zones[0].src, wrap);
 
-      var label = document.createElement('div');
-      label.textContent = 'Ad';
-      label.style.cssText = 'font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#8a8071;margin-bottom:6px;';
-      wrap.appendChild(label);
-
-      var container = document.createElement('div');
-      container.id = index === 0 ? CFG.nativeBannerContainerId : CFG.nativeBannerContainerId + '-' + index;
-      wrap.appendChild(container);
-      slot.appendChild(wrap);
-
-      if (index === 0) {
-        var script = document.createElement('script');
-        script.async = true;
-        script.setAttribute('data-cfasync', 'false');
-        script.src = CFG.nativeBannerSrc.indexOf('//') === 0 ? CFG.nativeBannerSrc : '//' + CFG.nativeBannerSrc;
-        slot.appendChild(script);
-      }
-    });
+    // Extra zones (only exist if user created more in the dashboard):
+    // place each above the footer.
+    for (var z = 1; z < zones.length; z++) {
+      var footer = document.querySelector('footer, .footer');
+      if (!footer || !footer.parentNode) break;
+      var extraWrap = buildNativeWrap(zones[z].containerId);
+      footer.parentNode.insertBefore(extraWrap, footer);
+      loadNativeScript(zones[z].src, extraWrap);
+    }
   }
 
   var GAME_PATHS = [
@@ -428,17 +504,13 @@
   }
 
   function run() {
-    injectResponsiveCSS();
-    updateSideRailEligibility();
-    installClickHijackGuard();
-    makeArticleCardsClickable();
-    injectMobileBanners();
-    injectSideRailAds();
-    autoPlaceMediumRectangles();
-    lazyLoadBanners();
-    injectSocialBar();
-    injectNativeBanners();
-    injectInPagePush();
+    // Each step isolated: one failure must never take down the others.
+    [injectResponsiveCSS, updateSideRailEligibility, installClickHijackGuard,
+     makeArticleCardsClickable, injectSideRailAds, autoPlaceMediumRectangles,
+     ensureBannerSlot, injectMobileBanners, lazyLoadBanners, injectSocialBar,
+     injectNativeBanners, injectInPagePush].forEach(function (step) {
+      try { step(); } catch (e) { /* keep serving remaining formats */ }
+    });
   }
 
   if (document.readyState === 'loading') {
