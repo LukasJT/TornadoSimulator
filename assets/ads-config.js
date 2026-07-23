@@ -3,6 +3,13 @@
  * tags that hijack normal page clicks.
  */
 window.ADSTERRA = {
+  // Lean mode: while the site is under AdSense review, keep the page ad count
+  // low so it never looks ad-heavy to a reviewer ("more ads than content").
+  // Effect: no side rails, at most 1 auto medium rectangle, native banner and
+  // the page's own inline slots still run. Set to false after AdSense approval
+  // to restore full Adsterra density.
+  leanMode: true,
+
   // Iframe banner keys (used inline in article HTML)
   banner728x90: 'b7d63c1973b341722e34dd6f314916ba', // desktop leaderboard
   banner468x60: null, // legacy size; lower demand and disabled for new injection

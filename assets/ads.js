@@ -315,6 +315,7 @@
 
     var maxSlots = parseInt(CFG.maxAutoMediumRectangles, 10);
     if (!maxSlots || maxSlots < 1) maxSlots = 3;
+    if (CFG.leanMode) maxSlots = 1; // keep pages light during AdSense review
 
     var existing = document.querySelectorAll('[data-auto-medium-rectangle], .inline-ad iframe[width="300"][height="250"], .ad-inline iframe[width="300"][height="250"]').length;
     var remaining = Math.max(0, maxSlots - existing);
@@ -345,6 +346,7 @@
   }
 
   function injectSideRailAds() {
+    if (CFG.leanMode) return; // no side rails during AdSense review
     if (!isArticleLikePage()) return;
     if (!CFG.banner160x600 && !CFG.banner160x300) return;
     var hasLeftRail = !!document.querySelector('.ad-rail-left,#adsterra-left');
