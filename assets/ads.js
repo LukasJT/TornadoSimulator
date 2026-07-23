@@ -289,7 +289,7 @@
     var maxSlots = parseInt(CFG.maxAutoMediumRectangles, 10);
     if (!maxSlots || maxSlots < 1) maxSlots = 3;
 
-    var existing = document.querySelectorAll('[data-auto-medium-rectangle], .inline-ad iframe[width="300"][height="250"]').length;
+    var existing = document.querySelectorAll('[data-auto-medium-rectangle], .inline-ad iframe[width="300"][height="250"], .ad-inline iframe[width="300"][height="250"]').length;
     var remaining = Math.max(0, maxSlots - existing);
     if (!remaining) return;
 
@@ -373,6 +373,15 @@
           return { parent: host, before: h2s[i].nextSibling };
         }
       }
+      // Rich article templates wrap every h2 in direct-child <section>s.
+      // Slot between the 1st and 2nd h2-bearing sections — still a direct
+      // child of host, never inside a styled box.
+      var sections = [];
+      for (var s = 0; s < host.children.length; s++) {
+        var kid = host.children[s];
+        if (kid.tagName === 'SECTION' && kid.querySelector('h2')) sections.push(kid);
+      }
+      if (sections.length > 1) return { parent: host, before: sections[1] };
       // main exists but no direct-child h2 (games, calculators): append at end.
       return { parent: host, before: null };
     }
