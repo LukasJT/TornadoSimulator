@@ -5,6 +5,33 @@
   'use strict';
   var CFG = window.ADSTERRA || {};
 
+  // Warm the DNS + TCP + TLS handshake to the ad-serving hosts before the
+  // first ad iframe/script actually requests them. Ads render sooner, which
+  // lifts viewability — and viewable impressions are what pay. No layout or
+  // UX cost; these are zero-byte connection hints in <head>.
+  function injectResourceHints() {
+    var hosts = ['www.topcreativeformat.com', 'www.highperformanceformat.com'];
+    [CFG.nativeBannerSrc, CFG.socialBarSrc, CFG.inPagePushSrc].forEach(function (src) {
+      if (!src) return;
+      var m = String(src).replace(/^https?:/, '').replace(/^\/\//, '').split('/')[0];
+      if (m && hosts.indexOf(m) === -1) hosts.push(m);
+    });
+    hosts.forEach(function (host) {
+      if (document.querySelector('link[data-adhint="' + host + '"]')) return;
+      var pre = document.createElement('link');
+      pre.rel = 'preconnect';
+      pre.href = 'https://' + host;
+      pre.crossOrigin = 'anonymous';
+      pre.setAttribute('data-adhint', host);
+      document.head.appendChild(pre);
+      var dns = document.createElement('link');
+      dns.rel = 'dns-prefetch';
+      dns.href = 'https://' + host;
+      dns.setAttribute('data-adhint', host);
+      document.head.appendChild(dns);
+    });
+  }
+
   function injectResponsiveCSS() {
     if (document.getElementById('ads-responsive-css')) return;
     var s = document.createElement('style');
@@ -514,7 +541,7 @@
 
   function run() {
     // Each step isolated: one failure must never take down the others.
-    [injectResponsiveCSS, updateSideRailEligibility, installClickHijackGuard,
+    [injectResourceHints, injectResponsiveCSS, updateSideRailEligibility, installClickHijackGuard,
      makeArticleCardsClickable, injectSideRailAds, autoPlaceMediumRectangles,
      ensureBannerSlot, injectMobileBanners, lazyLoadBanners, injectSocialBar,
      injectNativeBanners, injectInPagePush].forEach(function (step) {
