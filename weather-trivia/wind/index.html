@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wind Trivia Quiz — Free Interactive Weather Trivia</title>
+<meta name="description" content="Jet streams, derechos, Santa Anas, and record gusts. Fifteen questions on moving air." />
+<meta name="twitter:description" content="Jet streams, derechos, Santa Anas, and record gusts. Fifteen questions on moving air." />
+<meta name="twitter:title" content="Wind Trivia Quiz — Free Interactive Weather Trivia" />
+<meta name="twitter:card" content="summary" />
+<meta property="og:site_name" content="Tornado Hub" />
+<meta name="keywords" content="weather trivia, weather quiz, wind trivia, weather questions and answers" />
+<meta property="og:title" content="Wind Trivia Quiz — Free Interactive Weather Trivia" />
+<meta property="og:description" content="Jet streams, derechos, Santa Anas, and record gusts. Fifteen questions on moving air." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.tornadosimulator.net/weather-trivia/wind/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/weather-trivia/wind/" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%AA%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Quiz","name":"Wind Trivia Quiz","about":"Weather trivia","educationalLevel":"General","numberOfQuestions":15,"publisher":{"@type":"Organization","name":"Tornado Hub","url":"https://www.tornadosimulator.net/"} }
+</script>
+<script type="application/ld+json" data-seo="page">
+{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.tornadosimulator.net/weather-trivia/wind/#webpage","url":"https://www.tornadosimulator.net/weather-trivia/wind/","name":"Wind Trivia Quiz — Free Interactive Weather Trivia","description":"Jet streams, derechos, Santa Anas, and record gusts. Fifteen questions on moving air.","isPartOf":{"@id":"https://www.tornadosimulator.net/#website"},"publisher":{"@id":"https://www.tornadosimulator.net/#organization"},"inLanguage":"en"},{"@type":"BreadcrumbList","@id":"https://www.tornadosimulator.net/weather-trivia/wind/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"},{"@type":"ListItem","position":2,"name":"Weather Trivia","item":"https://www.tornadosimulator.net/weather-trivia/"},{"@type":"ListItem","position":3,"name":"Wind Trivia Quiz — Free Interactive Weather Trivia","item":"https://www.tornadosimulator.net/weather-trivia/wind/"}]}]}
+</script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --border-strong:#d4cfc3; --accent:#a02818; --accent-hover:#7d1f13; --link:#1e3a5f; --correct:#2d6a4f; --wrong:#a02818; --serif:"Fraunces",Georgia,serif; --sans:"Inter",-apple-system,sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--link);text-decoration:none}
+a:hover{color:var(--accent);text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text);text-decoration:none}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.breadcrumb{max-width:800px;margin:20px auto 0;padding:0 24px;font-size:13px;color:var(--text-muted)}
+.hero{padding:40px 24px 20px;max-width:800px;margin:0 auto;text-align:center}
+.hero .emoji{font-size:56px;line-height:1;margin-bottom:16px}
+.hero h1{font-family:var(--serif);font-size:clamp(28px,4vw,42px);font-weight:700;line-height:1.15;letter-spacing:-0.02em;margin-bottom:14px}
+.hero p{color:var(--text-secondary);font-size:17px;max-width:600px;margin:0 auto}
+.quiz-wrap{max-width:720px;margin:20px auto;padding:0 20px 60px}
+.progress-bar{position:sticky;top:66px;background:var(--surface);border-radius:8px;padding:12px 18px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,0.04);display:flex;justify-content:space-between;align-items:center;z-index:50;border:1px solid var(--border)}
+.progress-count{font-size:13px;color:var(--text-secondary);font-weight:600}
+.progress-count .score{color:var(--accent)}
+.progress-track{flex:1;margin:0 16px;height:6px;background:var(--bg-alt);border-radius:3px;overflow:hidden}
+.progress-fill{height:100%;background:var(--accent);width:0;transition:width 0.3s}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:16px;transition:box-shadow 0.15s}
+.card.answered{opacity:0.85}
+.q-num{font-size:11px;color:var(--text-muted);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px}
+.q-text{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.35;margin-bottom:16px;letter-spacing:-0.01em}
+.options{display:flex;flex-direction:column;gap:8px}
+.opt{padding:12px 16px;background:var(--bg);border:1.5px solid var(--border);border-radius:8px;cursor:pointer;text-align:left;font-family:var(--sans);font-size:15px;color:var(--text);transition:background 0.15s,border-color 0.15s;display:flex;align-items:center;gap:10px}
+.opt:hover:not(:disabled){background:var(--bg-alt);border-color:var(--border-strong)}
+.opt .letter{width:24px;height:24px;background:var(--surface);border:1.5px solid var(--border-strong);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;flex-shrink:0}
+.opt.correct{background:#e0f2e9;border-color:var(--correct);color:var(--correct)}
+.opt.correct .letter{background:var(--correct);color:white;border-color:var(--correct)}
+.opt.wrong{background:#fbe0dc;border-color:var(--wrong);color:var(--wrong)}
+.opt.wrong .letter{background:var(--wrong);color:white;border-color:var(--wrong)}
+.opt:disabled{cursor:default}
+.explanation{margin-top:14px;padding:12px 14px;background:var(--bg-alt);border-left:3px solid var(--accent);border-radius:4px;font-size:14px;color:var(--text-secondary);display:none}
+.explanation.show{display:block}
+.explanation strong{color:var(--accent)}
+.result{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:32px;margin-top:20px;text-align:center;display:none}
+.result.show{display:block}
+.result h2{font-family:var(--serif);font-size:32px;margin-bottom:12px}
+.result .score-big{font-family:var(--serif);font-size:72px;font-weight:700;color:var(--accent);line-height:1;margin:20px 0}
+.result .verdict{font-size:17px;color:var(--text-secondary);margin-bottom:20px}
+.result-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;font-size:14px;font-weight:600;border-radius:8px;border:1px solid var(--border-strong);background:transparent;color:var(--text);cursor:pointer;font-family:var(--sans);text-decoration:none}
+.btn.primary{background:var(--accent);color:white;border-color:var(--accent)}
+.btn.primary:hover{background:var(--accent-hover);color:white}
+.btn:hover{background:var(--bg-alt);text-decoration:none}
+.footer{text-align:center;padding:24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px;margin-top:40px}
+.inline-ad{text-align:center;margin:24px auto;max-width:728px;overflow:hidden}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"},
+  {"@type":"ListItem","position":2,"name":"Weather Trivia","item":"https://www.tornadosimulator.net/weather-trivia/"},
+  {"@type":"ListItem","position":3,"name":"Wind Trivia Quiz","item":"https://www.tornadosimulator.net/weather-trivia/wind/"}
+]}
+</script>
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#a02818" />
+
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" /></head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/search/">Search</a>
+      <a href="/quiz/">Quizzes</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/tornado-namer/">Namer</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/supercell-simulator/">Supercell Sim</a>
+      <a href="/tornadoes/">Index</a>
+      <a href="/simulator/" class="cta">Launch Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb"><a href="/">Home</a> · <a href="/weather-trivia/">Weather Trivia</a> · Wind Trivia Quiz</div>
+
+<section class="hero">
+  <div class="emoji">💨</div>
+  <h1>Wind Trivia Quiz</h1>
+  <p>Jet streams, derechos, Santa Anas, and record gusts. Fifteen questions on moving air.</p>
+</section>
+
+<div class="quiz-wrap">
+
+  <div class="progress-bar">
+    <div class="progress-count">Question <span id="qnum">1</span>/15</div>
+    <div class="progress-track"><div class="progress-fill" id="fill"></div></div>
+    <div class="progress-count"><span class="score" id="scoreLive">0</span> correct</div>
+  </div>
+
+  <div id="questions">
+    <div class="card" id="q0">
+      <div class="q-num">Question 1 of 15</div>
+      <div class="q-text">Winds are named for which direction?</div>
+      <div class="options"><button class="opt" onclick="pick(0,0,this)"><span class="letter">A</span><span>The direction they blow toward</span></button><button class="opt" onclick="pick(0,1,this)"><span class="letter">B</span><span>The direction they come from</span></button><button class="opt" onclick="pick(0,2,this)"><span class="letter">C</span><span>The nearest coastline</span></button><button class="opt" onclick="pick(0,3,this)"><span class="letter">D</span><span>The nearest mountain range</span></button></div>
+      <div class="explanation"><strong>Why:</strong> A north wind blows from the north toward the south. This trips up almost everyone at first.</div>
+    </div>
+    <div class="card" id="q1">
+      <div class="q-num">Question 2 of 15</div>
+      <div class="q-text">What instrument measures wind speed?</div>
+      <div class="options"><button class="opt" onclick="pick(1,0,this)"><span class="letter">A</span><span>A barometer</span></button><button class="opt" onclick="pick(1,1,this)"><span class="letter">B</span><span>An anemometer</span></button><button class="opt" onclick="pick(1,2,this)"><span class="letter">C</span><span>A hygrometer</span></button><button class="opt" onclick="pick(1,3,this)"><span class="letter">D</span><span>A ceilometer</span></button></div>
+      <div class="explanation"><strong>Why:</strong> The familiar spinning-cup anemometer converts rotation rate into wind speed.</div>
+    </div>
+    <div class="card" id="q2">
+      <div class="q-num">Question 3 of 15</div>
+      <div class="q-text">What causes the Coriolis effect?</div>
+      <div class="options"><button class="opt" onclick="pick(2,0,this)"><span class="letter">A</span><span>Mountain ranges</span></button><button class="opt" onclick="pick(2,1,this)"><span class="letter">B</span><span>Earth&#x27;s rotation</span></button><button class="opt" onclick="pick(2,2,this)"><span class="letter">C</span><span>Ocean currents</span></button><button class="opt" onclick="pick(2,3,this)"><span class="letter">D</span><span>The Moon&#x27;s gravity</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Earth&#x27;s rotation deflects moving air right in the Northern Hemisphere and left in the Southern.</div>
+    </div>
+    <div class="card" id="q3">
+      <div class="q-num">Question 4 of 15</div>
+      <div class="q-text">Roughly how fast is the core of a strong jet stream?</div>
+      <div class="options"><button class="opt" onclick="pick(3,0,this)"><span class="letter">A</span><span>25 mph</span></button><button class="opt" onclick="pick(3,1,this)"><span class="letter">B</span><span>60 mph</span></button><button class="opt" onclick="pick(3,2,this)"><span class="letter">C</span><span>100 to 200 mph</span></button><button class="opt" onclick="pick(3,3,this)"><span class="letter">D</span><span>Over 500 mph</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Jet stream cores sit near the tropopause and commonly run 100 to 200 mph, which is why eastbound flights are faster.</div>
+    </div>
+    <div class="card" id="q4">
+      <div class="q-num">Question 5 of 15</div>
+      <div class="q-text">What defines a derecho?</div>
+      <div class="options"><button class="opt" onclick="pick(4,0,this)"><span class="letter">A</span><span>Any thunderstorm with 40 mph gusts</span></button><button class="opt" onclick="pick(4,1,this)"><span class="letter">B</span><span>A widespread, long-lived straight-line windstorm</span></button><button class="opt" onclick="pick(4,2,this)"><span class="letter">C</span><span>A rotating windstorm</span></button><button class="opt" onclick="pick(4,3,this)"><span class="letter">D</span><span>A winter wind event only</span></button></div>
+      <div class="explanation"><strong>Why:</strong> A derecho produces a damage swath of at least about 400 miles with widespread severe gusts.</div>
+    </div>
+    <div class="card" id="q5">
+      <div class="q-num">Question 6 of 15</div>
+      <div class="q-text">What is a microburst?</div>
+      <div class="options"><button class="opt" onclick="pick(5,0,this)"><span class="letter">A</span><span>A small tornado</span></button><button class="opt" onclick="pick(5,1,this)"><span class="letter">B</span><span>A concentrated downdraft that spreads out violently at the surface</span></button><button class="opt" onclick="pick(5,2,this)"><span class="letter">C</span><span>A gust front</span></button><button class="opt" onclick="pick(5,3,this)"><span class="letter">D</span><span>A dust devil</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Microbursts can produce winds over 100 mph and were a major cause of historical aviation accidents.</div>
+    </div>
+    <div class="card" id="q6">
+      <div class="q-num">Question 7 of 15</div>
+      <div class="q-text">How does a sea breeze work on a sunny day?</div>
+      <div class="options"><button class="opt" onclick="pick(6,0,this)"><span class="letter">A</span><span>Air flows from land to sea</span></button><button class="opt" onclick="pick(6,1,this)"><span class="letter">B</span><span>Air flows from the cooler sea toward the warmer land</span></button><button class="opt" onclick="pick(6,2,this)"><span class="letter">C</span><span>Air sinks over the beach</span></button><button class="opt" onclick="pick(6,3,this)"><span class="letter">D</span><span>It only happens at night</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Land heats faster than water, air rises over land, and cooler marine air flows in to replace it.</div>
+    </div>
+    <div class="card" id="q7">
+      <div class="q-num">Question 8 of 15</div>
+      <div class="q-text">What are Santa Ana winds known for?</div>
+      <div class="options"><button class="opt" onclick="pick(7,0,this)"><span class="letter">A</span><span>Bringing heavy rain to Oregon</span></button><button class="opt" onclick="pick(7,1,this)"><span class="letter">B</span><span>Hot, dry downslope winds that raise wildfire danger in Southern California</span></button><button class="opt" onclick="pick(7,2,this)"><span class="letter">C</span><span>Cooling the Gulf Coast</span></button><button class="opt" onclick="pick(7,3,this)"><span class="letter">D</span><span>Producing snow in Arizona</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Air compresses and dries as it sinks toward the coast, driving humidity down and fire risk sharply up.</div>
+    </div>
+    <div class="card" id="q8">
+      <div class="q-num">Question 9 of 15</div>
+      <div class="q-text">What is a chinook wind?</div>
+      <div class="options"><button class="opt" onclick="pick(8,0,this)"><span class="letter">A</span><span>A cold Arctic outbreak</span></button><button class="opt" onclick="pick(8,1,this)"><span class="letter">B</span><span>A warm, dry downslope wind on the lee side of mountains</span></button><button class="opt" onclick="pick(8,2,this)"><span class="letter">C</span><span>A sea breeze</span></button><button class="opt" onclick="pick(8,3,this)"><span class="letter">D</span><span>A monsoon surge</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Chinooks can raise temperatures dozens of degrees in hours on the eastern slopes of the Rockies.</div>
+    </div>
+    <div class="card" id="q9">
+      <div class="q-num">Question 10 of 15</div>
+      <div class="q-text">Which scale describes wind by observed effects like smoke drift and swaying trees?</div>
+      <div class="options"><button class="opt" onclick="pick(9,0,this)"><span class="letter">A</span><span>The Fujita Scale</span></button><button class="opt" onclick="pick(9,1,this)"><span class="letter">B</span><span>The Beaufort Scale</span></button><button class="opt" onclick="pick(9,2,this)"><span class="letter">C</span><span>The Saffir-Simpson Scale</span></button><button class="opt" onclick="pick(9,3,this)"><span class="letter">D</span><span>The Palmer Index</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Admiral Beaufort devised it in 1805 so sailors could estimate wind without instruments.</div>
+    </div>
+    <div class="card" id="q10">
+      <div class="q-num">Question 11 of 15</div>
+      <div class="q-text">What is the highest surface wind gust ever recorded on Earth?</div>
+      <div class="options"><button class="opt" onclick="pick(10,0,this)"><span class="letter">A</span><span>150 mph</span></button><button class="opt" onclick="pick(10,1,this)"><span class="letter">B</span><span>195 mph</span></button><button class="opt" onclick="pick(10,2,this)"><span class="letter">C</span><span>231 mph at Mount Washington</span></button><button class="opt" onclick="pick(10,3,this)"><span class="letter">D</span><span>253 mph at Barrow Island, Australia</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Cyclone Olivia produced a 253 mph gust at Barrow Island in 1996, surpassing Mount Washington&#x27;s 1934 record.</div>
+    </div>
+    <div class="card" id="q11">
+      <div class="q-num">Question 12 of 15</div>
+      <div class="q-text">What are the trade winds?</div>
+      <div class="options"><button class="opt" onclick="pick(11,0,this)"><span class="letter">A</span><span>Winds circling the poles</span></button><button class="opt" onclick="pick(11,1,this)"><span class="letter">B</span><span>Steady easterly winds in the tropics</span></button><button class="opt" onclick="pick(11,2,this)"><span class="letter">C</span><span>Winds in the stratosphere</span></button><button class="opt" onclick="pick(11,3,this)"><span class="letter">D</span><span>Seasonal monsoon winds</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Trade winds blow from the northeast and southeast toward the equator and once carried sailing ships west.</div>
+    </div>
+    <div class="card" id="q12">
+      <div class="q-num">Question 13 of 15</div>
+      <div class="q-text">What are katabatic winds?</div>
+      <div class="options"><button class="opt" onclick="pick(12,0,this)"><span class="letter">A</span><span>Winds that rise up slopes</span></button><button class="opt" onclick="pick(12,1,this)"><span class="letter">B</span><span>Dense cold air draining downhill under gravity</span></button><button class="opt" onclick="pick(12,2,this)"><span class="letter">C</span><span>Winds caused by thunderstorms</span></button><button class="opt" onclick="pick(12,3,this)"><span class="letter">D</span><span>Equatorial winds</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Antarctica produces the most extreme examples, with cold air pouring off the ice sheet at hurricane force.</div>
+    </div>
+    <div class="card" id="q13">
+      <div class="q-num">Question 14 of 15</div>
+      <div class="q-text">What is wind shear?</div>
+      <div class="options"><button class="opt" onclick="pick(13,0,this)"><span class="letter">A</span><span>Wind blowing at constant speed</span></button><button class="opt" onclick="pick(13,1,this)"><span class="letter">B</span><span>A change in wind speed or direction with height or distance</span></button><button class="opt" onclick="pick(13,2,this)"><span class="letter">C</span><span>Wind measured at night</span></button><button class="opt" onclick="pick(13,3,this)"><span class="letter">D</span><span>Wind over water only</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Vertical shear is essential for supercells, but it also tears apart developing hurricanes.</div>
+    </div>
+    <div class="card" id="q14">
+      <div class="q-num">Question 15 of 15</div>
+      <div class="q-text">What does a wind rose diagram show?</div>
+      <div class="options"><button class="opt" onclick="pick(14,0,this)"><span class="letter">A</span><span>Daily temperature</span></button><button class="opt" onclick="pick(14,1,this)"><span class="letter">B</span><span>The frequency of winds from each direction</span></button><button class="opt" onclick="pick(14,2,this)"><span class="letter">C</span><span>Pressure changes</span></button><button class="opt" onclick="pick(14,3,this)"><span class="letter">D</span><span>Rainfall totals</span></button></div>
+      <div class="explanation"><strong>Why:</strong> A wind rose summarizes prevailing direction and speed at a site, useful for airports and wind farms.</div>
+    </div>
+  </div>
+
+  <div class="inline-ad">
+    <script type="text/javascript">atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};</script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
+  </div>
+
+  <div id="result" class="result">
+    <h2>You're done!</h2>
+    <div class="score-big"><span id="scoreFinal">0</span>/15</div>
+    <div class="verdict" id="verdict"></div>
+    <div class="result-btns">
+      <button class="btn primary" onclick="shareResult()">📋 Share your score</button>
+      <a class="btn" href="/weather-trivia/">More trivia →</a>
+      <a class="btn" href="/tornadle/">Try Tornadle</a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  Part of <a href="/">Tornado Hub</a> — free weather trivia.
+</footer>
+
+<script>
+const QUESTIONS = [{"q": "Winds are named for which direction?", "options": ["The direction they blow toward", "The direction they come from", "The nearest coastline", "The nearest mountain range"], "a": 1, "exp": "A north wind blows from the north toward the south. This trips up almost everyone at first."}, {"q": "What instrument measures wind speed?", "options": ["A barometer", "An anemometer", "A hygrometer", "A ceilometer"], "a": 1, "exp": "The familiar spinning-cup anemometer converts rotation rate into wind speed."}, {"q": "What causes the Coriolis effect?", "options": ["Mountain ranges", "Earth's rotation", "Ocean currents", "The Moon's gravity"], "a": 1, "exp": "Earth's rotation deflects moving air right in the Northern Hemisphere and left in the Southern."}, {"q": "Roughly how fast is the core of a strong jet stream?", "options": ["25 mph", "60 mph", "100 to 200 mph", "Over 500 mph"], "a": 2, "exp": "Jet stream cores sit near the tropopause and commonly run 100 to 200 mph, which is why eastbound flights are faster."}, {"q": "What defines a derecho?", "options": ["Any thunderstorm with 40 mph gusts", "A widespread, long-lived straight-line windstorm", "A rotating windstorm", "A winter wind event only"], "a": 1, "exp": "A derecho produces a damage swath of at least about 400 miles with widespread severe gusts."}, {"q": "What is a microburst?", "options": ["A small tornado", "A concentrated downdraft that spreads out violently at the surface", "A gust front", "A dust devil"], "a": 1, "exp": "Microbursts can produce winds over 100 mph and were a major cause of historical aviation accidents."}, {"q": "How does a sea breeze work on a sunny day?", "options": ["Air flows from land to sea", "Air flows from the cooler sea toward the warmer land", "Air sinks over the beach", "It only happens at night"], "a": 1, "exp": "Land heats faster than water, air rises over land, and cooler marine air flows in to replace it."}, {"q": "What are Santa Ana winds known for?", "options": ["Bringing heavy rain to Oregon", "Hot, dry downslope winds that raise wildfire danger in Southern California", "Cooling the Gulf Coast", "Producing snow in Arizona"], "a": 1, "exp": "Air compresses and dries as it sinks toward the coast, driving humidity down and fire risk sharply up."}, {"q": "What is a chinook wind?", "options": ["A cold Arctic outbreak", "A warm, dry downslope wind on the lee side of mountains", "A sea breeze", "A monsoon surge"], "a": 1, "exp": "Chinooks can raise temperatures dozens of degrees in hours on the eastern slopes of the Rockies."}, {"q": "Which scale describes wind by observed effects like smoke drift and swaying trees?", "options": ["The Fujita Scale", "The Beaufort Scale", "The Saffir-Simpson Scale", "The Palmer Index"], "a": 1, "exp": "Admiral Beaufort devised it in 1805 so sailors could estimate wind without instruments."}, {"q": "What is the highest surface wind gust ever recorded on Earth?", "options": ["150 mph", "195 mph", "231 mph at Mount Washington", "253 mph at Barrow Island, Australia"], "a": 3, "exp": "Cyclone Olivia produced a 253 mph gust at Barrow Island in 1996, surpassing Mount Washington's 1934 record."}, {"q": "What are the trade winds?", "options": ["Winds circling the poles", "Steady easterly winds in the tropics", "Winds in the stratosphere", "Seasonal monsoon winds"], "a": 1, "exp": "Trade winds blow from the northeast and southeast toward the equator and once carried sailing ships west."}, {"q": "What are katabatic winds?", "options": ["Winds that rise up slopes", "Dense cold air draining downhill under gravity", "Winds caused by thunderstorms", "Equatorial winds"], "a": 1, "exp": "Antarctica produces the most extreme examples, with cold air pouring off the ice sheet at hurricane force."}, {"q": "What is wind shear?", "options": ["Wind blowing at constant speed", "A change in wind speed or direction with height or distance", "Wind measured at night", "Wind over water only"], "a": 1, "exp": "Vertical shear is essential for supercells, but it also tears apart developing hurricanes."}, {"q": "What does a wind rose diagram show?", "options": ["Daily temperature", "The frequency of winds from each direction", "Pressure changes", "Rainfall totals"], "a": 1, "exp": "A wind rose summarizes prevailing direction and speed at a site, useful for airports and wind farms."}];
+let answered = 0, score = 0;
+const total = QUESTIONS.length;
+
+function pick(qIdx, oIdx, btn) {
+  const q = QUESTIONS[qIdx];
+  if (btn.parentElement.dataset.done) return;
+  btn.parentElement.dataset.done = '1';
+  const buttons = btn.parentElement.querySelectorAll('.opt');
+  buttons.forEach((b, i) => {
+    b.disabled = true;
+    if (i === q.a) b.classList.add('correct');
+    else if (i === oIdx) b.classList.add('wrong');
+  });
+  const card = btn.closest('.card');
+  card.classList.add('answered');
+  card.querySelector('.explanation').classList.add('show');
+  if (oIdx === q.a) score++;
+  answered++;
+  document.getElementById('scoreLive').textContent = score;
+  document.getElementById('qnum').textContent = Math.min(answered + 1, total);
+  document.getElementById('fill').style.width = (answered / total * 100) + '%';
+  if (answered === total) showResult();
+  else {
+    const next = document.querySelectorAll('.card')[answered];
+    if (next) setTimeout(() => next.scrollIntoView({behavior:'smooth', block:'center'}), 400);
+  }
+}
+
+function showResult() {
+  const r = document.getElementById('result');
+  r.classList.add('show');
+  document.getElementById('scoreFinal').textContent = score;
+  const pct = Math.round(score / total * 100);
+  let msg;
+  if (pct === 100) msg = "🏆 Perfect score! You're a weather encyclopedia.";
+  else if (pct >= 80) msg = "🌪️ Impressive. Nearly a professional forecaster.";
+  else if (pct >= 60) msg = "🌤️ Solid — better than most casual weather watchers.";
+  else if (pct >= 40) msg = "🌫️ Not bad. Brush up and come back for another round.";
+  else msg = "🌧️ Room to grow — check out our articles and try again.";
+  document.getElementById('verdict').textContent = msg;
+  setTimeout(() => r.scrollIntoView({behavior:'smooth', block:'center'}), 300);
+}
+
+function shareResult() {
+  const pct = Math.round(score / total * 100);
+  const text = `I scored ${score}/${total} (${pct}%) on the ${document.title.split(' — ')[0]}!\n\nTry it at tornadosimulator.net/weather-trivia/wind/`;
+  if (navigator.share) navigator.share({ text }).catch(() => copyText(text));
+  else copyText(text);
+}
+function copyText(t) {
+  if (navigator.clipboard) navigator.clipboard.writeText(t).then(() => alert('Copied to clipboard!'));
+  else {
+    const ta = document.createElement('textarea');
+    ta.value = t; document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); document.body.removeChild(ta);
+    alert('Copied to clipboard!');
+  }
+}
+</script>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js" defer></script>
+<script src="/assets/ads.js" defer></script>
+<script src="/assets/house-ads.js" defer></script>
+</body>
+</html>

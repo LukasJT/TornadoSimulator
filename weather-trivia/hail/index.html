@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hail Trivia Quiz — Free Interactive Weather Trivia</title>
+<meta name="description" content="How hailstones grow, how big they get, and what size actually counts as severe. Fifteen questions." />
+<meta name="twitter:description" content="How hailstones grow, how big they get, and what size actually counts as severe. Fifteen questions." />
+<meta name="twitter:title" content="Hail Trivia Quiz — Free Interactive Weather Trivia" />
+<meta name="twitter:card" content="summary" />
+<meta property="og:site_name" content="Tornado Hub" />
+<meta name="keywords" content="weather trivia, weather quiz, hail trivia, weather questions and answers" />
+<meta property="og:title" content="Hail Trivia Quiz — Free Interactive Weather Trivia" />
+<meta property="og:description" content="How hailstones grow, how big they get, and what size actually counts as severe. Fifteen questions." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.tornadosimulator.net/weather-trivia/hail/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/weather-trivia/hail/" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%AA%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Quiz","name":"Hail Trivia Quiz","about":"Weather trivia","educationalLevel":"General","numberOfQuestions":15,"publisher":{"@type":"Organization","name":"Tornado Hub","url":"https://www.tornadosimulator.net/"} }
+</script>
+<script type="application/ld+json" data-seo="page">
+{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.tornadosimulator.net/weather-trivia/hail/#webpage","url":"https://www.tornadosimulator.net/weather-trivia/hail/","name":"Hail Trivia Quiz — Free Interactive Weather Trivia","description":"How hailstones grow, how big they get, and what size actually counts as severe. Fifteen questions.","isPartOf":{"@id":"https://www.tornadosimulator.net/#website"},"publisher":{"@id":"https://www.tornadosimulator.net/#organization"},"inLanguage":"en"},{"@type":"BreadcrumbList","@id":"https://www.tornadosimulator.net/weather-trivia/hail/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"},{"@type":"ListItem","position":2,"name":"Weather Trivia","item":"https://www.tornadosimulator.net/weather-trivia/"},{"@type":"ListItem","position":3,"name":"Hail Trivia Quiz — Free Interactive Weather Trivia","item":"https://www.tornadosimulator.net/weather-trivia/hail/"}]}]}
+</script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --border-strong:#d4cfc3; --accent:#a02818; --accent-hover:#7d1f13; --link:#1e3a5f; --correct:#2d6a4f; --wrong:#a02818; --serif:"Fraunces",Georgia,serif; --sans:"Inter",-apple-system,sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--link);text-decoration:none}
+a:hover{color:var(--accent);text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text);text-decoration:none}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.breadcrumb{max-width:800px;margin:20px auto 0;padding:0 24px;font-size:13px;color:var(--text-muted)}
+.hero{padding:40px 24px 20px;max-width:800px;margin:0 auto;text-align:center}
+.hero .emoji{font-size:56px;line-height:1;margin-bottom:16px}
+.hero h1{font-family:var(--serif);font-size:clamp(28px,4vw,42px);font-weight:700;line-height:1.15;letter-spacing:-0.02em;margin-bottom:14px}
+.hero p{color:var(--text-secondary);font-size:17px;max-width:600px;margin:0 auto}
+.quiz-wrap{max-width:720px;margin:20px auto;padding:0 20px 60px}
+.progress-bar{position:sticky;top:66px;background:var(--surface);border-radius:8px;padding:12px 18px;margin-bottom:20px;box-shadow:0 2px 12px rgba(0,0,0,0.04);display:flex;justify-content:space-between;align-items:center;z-index:50;border:1px solid var(--border)}
+.progress-count{font-size:13px;color:var(--text-secondary);font-weight:600}
+.progress-count .score{color:var(--accent)}
+.progress-track{flex:1;margin:0 16px;height:6px;background:var(--bg-alt);border-radius:3px;overflow:hidden}
+.progress-fill{height:100%;background:var(--accent);width:0;transition:width 0.3s}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:16px;transition:box-shadow 0.15s}
+.card.answered{opacity:0.85}
+.q-num{font-size:11px;color:var(--text-muted);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:8px}
+.q-text{font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.35;margin-bottom:16px;letter-spacing:-0.01em}
+.options{display:flex;flex-direction:column;gap:8px}
+.opt{padding:12px 16px;background:var(--bg);border:1.5px solid var(--border);border-radius:8px;cursor:pointer;text-align:left;font-family:var(--sans);font-size:15px;color:var(--text);transition:background 0.15s,border-color 0.15s;display:flex;align-items:center;gap:10px}
+.opt:hover:not(:disabled){background:var(--bg-alt);border-color:var(--border-strong)}
+.opt .letter{width:24px;height:24px;background:var(--surface);border:1.5px solid var(--border-strong);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;flex-shrink:0}
+.opt.correct{background:#e0f2e9;border-color:var(--correct);color:var(--correct)}
+.opt.correct .letter{background:var(--correct);color:white;border-color:var(--correct)}
+.opt.wrong{background:#fbe0dc;border-color:var(--wrong);color:var(--wrong)}
+.opt.wrong .letter{background:var(--wrong);color:white;border-color:var(--wrong)}
+.opt:disabled{cursor:default}
+.explanation{margin-top:14px;padding:12px 14px;background:var(--bg-alt);border-left:3px solid var(--accent);border-radius:4px;font-size:14px;color:var(--text-secondary);display:none}
+.explanation.show{display:block}
+.explanation strong{color:var(--accent)}
+.result{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:32px;margin-top:20px;text-align:center;display:none}
+.result.show{display:block}
+.result h2{font-family:var(--serif);font-size:32px;margin-bottom:12px}
+.result .score-big{font-family:var(--serif);font-size:72px;font-weight:700;color:var(--accent);line-height:1;margin:20px 0}
+.result .verdict{font-size:17px;color:var(--text-secondary);margin-bottom:20px}
+.result-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;font-size:14px;font-weight:600;border-radius:8px;border:1px solid var(--border-strong);background:transparent;color:var(--text);cursor:pointer;font-family:var(--sans);text-decoration:none}
+.btn.primary{background:var(--accent);color:white;border-color:var(--accent)}
+.btn.primary:hover{background:var(--accent-hover);color:white}
+.btn:hover{background:var(--bg-alt);text-decoration:none}
+.footer{text-align:center;padding:24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px;margin-top:40px}
+.inline-ad{text-align:center;margin:24px auto;max-width:728px;overflow:hidden}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"},
+  {"@type":"ListItem","position":2,"name":"Weather Trivia","item":"https://www.tornadosimulator.net/weather-trivia/"},
+  {"@type":"ListItem","position":3,"name":"Hail Trivia Quiz","item":"https://www.tornadosimulator.net/weather-trivia/hail/"}
+]}
+</script>
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#a02818" />
+
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" /></head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/search/">Search</a>
+      <a href="/quiz/">Quizzes</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/tornado-namer/">Namer</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/supercell-simulator/">Supercell Sim</a>
+      <a href="/tornadoes/">Index</a>
+      <a href="/simulator/" class="cta">Launch Simulator →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb"><a href="/">Home</a> · <a href="/weather-trivia/">Weather Trivia</a> · Hail Trivia Quiz</div>
+
+<section class="hero">
+  <div class="emoji">🧊</div>
+  <h1>Hail Trivia Quiz</h1>
+  <p>How hailstones grow, how big they get, and what size actually counts as severe. Fifteen questions.</p>
+</section>
+
+<div class="quiz-wrap">
+
+  <div class="progress-bar">
+    <div class="progress-count">Question <span id="qnum">1</span>/15</div>
+    <div class="progress-track"><div class="progress-fill" id="fill"></div></div>
+    <div class="progress-count"><span class="score" id="scoreLive">0</span> correct</div>
+  </div>
+
+  <div id="questions">
+    <div class="card" id="q0">
+      <div class="q-num">Question 1 of 15</div>
+      <div class="q-text">What is required for large hail to form?</div>
+      <div class="options"><button class="opt" onclick="pick(0,0,this)"><span class="letter">A</span><span>A cold front</span></button><button class="opt" onclick="pick(0,1,this)"><span class="letter">B</span><span>A strong updraft that can suspend the stone aloft</span></button><button class="opt" onclick="pick(0,2,this)"><span class="letter">C</span><span>Freezing surface temperatures</span></button><button class="opt" onclick="pick(0,3,this)"><span class="letter">D</span><span>Low humidity</span></button></div>
+      <div class="explanation"><strong>Why:</strong> The stronger the updraft, the longer a stone stays in the growth zone and the bigger it gets.</div>
+    </div>
+    <div class="card" id="q1">
+      <div class="q-num">Question 2 of 15</div>
+      <div class="q-text">What hail diameter does the National Weather Service consider severe?</div>
+      <div class="options"><button class="opt" onclick="pick(1,0,this)"><span class="letter">A</span><span>Half an inch</span></button><button class="opt" onclick="pick(1,1,this)"><span class="letter">B</span><span>One inch</span></button><button class="opt" onclick="pick(1,2,this)"><span class="letter">C</span><span>Two inches</span></button><button class="opt" onclick="pick(1,3,this)"><span class="letter">D</span><span>Three inches</span></button></div>
+      <div class="explanation"><strong>Why:</strong> One inch, about the size of a quarter, is the severe threshold that can trigger a severe thunderstorm warning.</div>
+    </div>
+    <div class="card" id="q2">
+      <div class="q-num">Question 3 of 15</div>
+      <div class="q-text">Hailstones grow by which process?</div>
+      <div class="options"><button class="opt" onclick="pick(2,0,this)"><span class="letter">A</span><span>Melting and refreezing on the ground</span></button><button class="opt" onclick="pick(2,1,this)"><span class="letter">B</span><span>Collecting supercooled water droplets that freeze on contact</span></button><button class="opt" onclick="pick(2,2,this)"><span class="letter">C</span><span>Compressing snowflakes</span></button><button class="opt" onclick="pick(2,3,this)"><span class="letter">D</span><span>Absorbing water vapor directly</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Supercooled liquid water freezes onto the stone as it is carried through the storm, adding layer after layer.</div>
+    </div>
+    <div class="card" id="q3">
+      <div class="q-num">Question 4 of 15</div>
+      <div class="q-text">Why do many hailstones show onion-like layers when cut open?</div>
+      <div class="options"><button class="opt" onclick="pick(3,0,this)"><span class="letter">A</span><span>They fuse with other stones</span></button><button class="opt" onclick="pick(3,1,this)"><span class="letter">B</span><span>They pass through zones with different water content and temperature</span></button><button class="opt" onclick="pick(3,2,this)"><span class="letter">C</span><span>Sunlight bleaches the outside</span></button><button class="opt" onclick="pick(3,3,this)"><span class="letter">D</span><span>Wind polishes them</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Clear layers form in wet growth, cloudy layers in dry growth, recording the stone&#x27;s trip through the storm.</div>
+    </div>
+    <div class="card" id="q4">
+      <div class="q-num">Question 5 of 15</div>
+      <div class="q-text">Where did the largest US hailstone by diameter fall?</div>
+      <div class="options"><button class="opt" onclick="pick(4,0,this)"><span class="letter">A</span><span>Vivian, South Dakota</span></button><button class="opt" onclick="pick(4,1,this)"><span class="letter">B</span><span>Aurora, Nebraska</span></button><button class="opt" onclick="pick(4,2,this)"><span class="letter">C</span><span>Coffeyville, Kansas</span></button><button class="opt" onclick="pick(4,3,this)"><span class="letter">D</span><span>Amarillo, Texas</span></button></div>
+      <div class="explanation"><strong>Why:</strong> The Vivian, South Dakota stone of July 23, 2010 measured 8 inches across and weighed nearly 2 pounds.</div>
+    </div>
+    <div class="card" id="q5">
+      <div class="q-num">Question 6 of 15</div>
+      <div class="q-text">What is graupel?</div>
+      <div class="options"><button class="opt" onclick="pick(5,0,this)"><span class="letter">A</span><span>A giant hailstone</span></button><button class="opt" onclick="pick(5,1,this)"><span class="letter">B</span><span>Soft ice pellets formed when rime coats a snowflake</span></button><button class="opt" onclick="pick(5,2,this)"><span class="letter">C</span><span>Freezing rain</span></button><button class="opt" onclick="pick(5,3,this)"><span class="letter">D</span><span>Sleet that has melted</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Graupel is soft and crumbles easily. It is not classified as hail despite looking like tiny white pellets.</div>
+    </div>
+    <div class="card" id="q6">
+      <div class="q-num">Question 7 of 15</div>
+      <div class="q-text">Which region is nicknamed Hail Alley?</div>
+      <div class="options"><button class="opt" onclick="pick(6,0,this)"><span class="letter">A</span><span>The Gulf Coast</span></button><button class="opt" onclick="pick(6,1,this)"><span class="letter">B</span><span>Where Colorado, Nebraska, and Wyoming meet</span></button><button class="opt" onclick="pick(6,2,this)"><span class="letter">C</span><span>The Pacific Northwest</span></button><button class="opt" onclick="pick(6,3,this)"><span class="letter">D</span><span>The Ohio Valley</span></button></div>
+      <div class="explanation"><strong>Why:</strong> High plains elevation puts the freezing level closer to the ground, so stones melt less on the way down.</div>
+    </div>
+    <div class="card" id="q7">
+      <div class="q-num">Question 8 of 15</div>
+      <div class="q-text">Roughly how fast can a softball-sized hailstone fall?</div>
+      <div class="options"><button class="opt" onclick="pick(7,0,this)"><span class="letter">A</span><span>About 20 mph</span></button><button class="opt" onclick="pick(7,1,this)"><span class="letter">B</span><span>About 50 mph</span></button><button class="opt" onclick="pick(7,2,this)"><span class="letter">C</span><span>Over 100 mph</span></button><button class="opt" onclick="pick(7,3,this)"><span class="letter">D</span><span>Around 200 mph</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Terminal velocity climbs with size. The largest stones can exceed 100 mph, which is why they destroy roofs.</div>
+    </div>
+    <div class="card" id="q8">
+      <div class="q-num">Question 9 of 15</div>
+      <div class="q-text">In which season does most damaging US hail occur?</div>
+      <div class="options"><button class="opt" onclick="pick(8,0,this)"><span class="letter">A</span><span>Winter</span></button><button class="opt" onclick="pick(8,1,this)"><span class="letter">B</span><span>Spring and early summer</span></button><button class="opt" onclick="pick(8,2,this)"><span class="letter">C</span><span>Autumn</span></button><button class="opt" onclick="pick(8,3,this)"><span class="letter">D</span><span>It is evenly spread</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Hail peaks with the severe storm season, when strong updrafts are most common.</div>
+    </div>
+    <div class="card" id="q9">
+      <div class="q-num">Question 10 of 15</div>
+      <div class="q-text">Can hail fall on a hot summer day?</div>
+      <div class="options"><button class="opt" onclick="pick(9,0,this)"><span class="letter">A</span><span>No, it needs cold surface air</span></button><button class="opt" onclick="pick(9,1,this)"><span class="letter">B</span><span>Yes, because it forms high above the freezing level</span></button><button class="opt" onclick="pick(9,2,this)"><span class="letter">C</span><span>Only above 10,000 feet elevation</span></button><button class="opt" onclick="pick(9,3,this)"><span class="letter">D</span><span>Only at night</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Hail forms miles up where it is well below freezing, then falls fast enough to survive the warm air below.</div>
+    </div>
+    <div class="card" id="q10">
+      <div class="q-num">Question 11 of 15</div>
+      <div class="q-text">What is the greenish sky sometimes seen before a hailstorm caused by?</div>
+      <div class="options"><button class="opt" onclick="pick(10,0,this)"><span class="letter">A</span><span>Pollution</span></button><button class="opt" onclick="pick(10,1,this)"><span class="letter">B</span><span>Light scattered through deep cloud loaded with water and ice</span></button><button class="opt" onclick="pick(10,2,this)"><span class="letter">C</span><span>Reflection off crops</span></button><button class="opt" onclick="pick(10,3,this)"><span class="letter">D</span><span>Lightning</span></button></div>
+      <div class="explanation"><strong>Why:</strong> The green tint comes from how sunlight is filtered by an unusually deep, water-laden storm.</div>
+    </div>
+    <div class="card" id="q11">
+      <div class="q-num">Question 12 of 15</div>
+      <div class="q-text">What is the best action when hail begins while driving?</div>
+      <div class="options"><button class="opt" onclick="pick(11,0,this)"><span class="letter">A</span><span>Speed up to escape it</span></button><button class="opt" onclick="pick(11,1,this)"><span class="letter">B</span><span>Pull over safely away from traffic and stay inside, away from windows</span></button><button class="opt" onclick="pick(11,2,this)"><span class="letter">C</span><span>Get out and lie beside the car</span></button><button class="opt" onclick="pick(11,3,this)"><span class="letter">D</span><span>Park under a tree</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Stay in the vehicle. Trees can drop limbs, and windshields are laminated so they usually crack rather than shatter.</div>
+    </div>
+    <div class="card" id="q12">
+      <div class="q-num">Question 13 of 15</div>
+      <div class="q-text">Which crop losses make hail especially costly?</div>
+      <div class="options"><button class="opt" onclick="pick(12,0,this)"><span class="letter">A</span><span>Rice</span></button><button class="opt" onclick="pick(12,1,this)"><span class="letter">B</span><span>Wheat, corn, and soybeans across the Plains</span></button><button class="opt" onclick="pick(12,2,this)"><span class="letter">C</span><span>Citrus in Florida</span></button><button class="opt" onclick="pick(12,3,this)"><span class="letter">D</span><span>Coffee</span></button></div>
+      <div class="explanation"><strong>Why:</strong> A single storm can wipe out a season of Plains grain in minutes, which is why crop hail insurance exists.</div>
+    </div>
+    <div class="card" id="q13">
+      <div class="q-num">Question 14 of 15</div>
+      <div class="q-text">Do hail cannons actually prevent hail?</div>
+      <div class="options"><button class="opt" onclick="pick(13,0,this)"><span class="letter">A</span><span>Yes, they are widely proven</span></button><button class="opt" onclick="pick(13,1,this)"><span class="letter">B</span><span>No, there is no credible scientific evidence they work</span></button><button class="opt" onclick="pick(13,2,this)"><span class="letter">C</span><span>Only for small hail</span></button><button class="opt" onclick="pick(13,3,this)"><span class="letter">D</span><span>Only within one mile</span></button></div>
+      <div class="explanation"><strong>Why:</strong> Shock waves from a ground device cannot meaningfully alter processes happening miles overhead.</div>
+    </div>
+    <div class="card" id="q14">
+      <div class="q-num">Question 15 of 15</div>
+      <div class="q-text">What is the heaviest hailstone ever reliably recorded worldwide?</div>
+      <div class="options"><button class="opt" onclick="pick(14,0,this)"><span class="letter">A</span><span>About half a pound</span></button><button class="opt" onclick="pick(14,1,this)"><span class="letter">B</span><span>About one pound</span></button><button class="opt" onclick="pick(14,2,this)"><span class="letter">C</span><span>Roughly 2.25 pounds, in Bangladesh</span></button><button class="opt" onclick="pick(14,3,this)"><span class="letter">D</span><span>Ten pounds</span></button></div>
+      <div class="explanation"><strong>Why:</strong> A stone weighing about 1.02 kg fell in the Gopalganj district of Bangladesh during a deadly 1986 hailstorm.</div>
+    </div>
+  </div>
+
+  <div class="inline-ad">
+    <script type="text/javascript">atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};</script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
+  </div>
+
+  <div id="result" class="result">
+    <h2>You're done!</h2>
+    <div class="score-big"><span id="scoreFinal">0</span>/15</div>
+    <div class="verdict" id="verdict"></div>
+    <div class="result-btns">
+      <button class="btn primary" onclick="shareResult()">📋 Share your score</button>
+      <a class="btn" href="/weather-trivia/">More trivia →</a>
+      <a class="btn" href="/tornadle/">Try Tornadle</a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  Part of <a href="/">Tornado Hub</a> — free weather trivia.
+</footer>
+
+<script>
+const QUESTIONS = [{"q": "What is required for large hail to form?", "options": ["A cold front", "A strong updraft that can suspend the stone aloft", "Freezing surface temperatures", "Low humidity"], "a": 1, "exp": "The stronger the updraft, the longer a stone stays in the growth zone and the bigger it gets."}, {"q": "What hail diameter does the National Weather Service consider severe?", "options": ["Half an inch", "One inch", "Two inches", "Three inches"], "a": 1, "exp": "One inch, about the size of a quarter, is the severe threshold that can trigger a severe thunderstorm warning."}, {"q": "Hailstones grow by which process?", "options": ["Melting and refreezing on the ground", "Collecting supercooled water droplets that freeze on contact", "Compressing snowflakes", "Absorbing water vapor directly"], "a": 1, "exp": "Supercooled liquid water freezes onto the stone as it is carried through the storm, adding layer after layer."}, {"q": "Why do many hailstones show onion-like layers when cut open?", "options": ["They fuse with other stones", "They pass through zones with different water content and temperature", "Sunlight bleaches the outside", "Wind polishes them"], "a": 1, "exp": "Clear layers form in wet growth, cloudy layers in dry growth, recording the stone's trip through the storm."}, {"q": "Where did the largest US hailstone by diameter fall?", "options": ["Vivian, South Dakota", "Aurora, Nebraska", "Coffeyville, Kansas", "Amarillo, Texas"], "a": 0, "exp": "The Vivian, South Dakota stone of July 23, 2010 measured 8 inches across and weighed nearly 2 pounds."}, {"q": "What is graupel?", "options": ["A giant hailstone", "Soft ice pellets formed when rime coats a snowflake", "Freezing rain", "Sleet that has melted"], "a": 1, "exp": "Graupel is soft and crumbles easily. It is not classified as hail despite looking like tiny white pellets."}, {"q": "Which region is nicknamed Hail Alley?", "options": ["The Gulf Coast", "Where Colorado, Nebraska, and Wyoming meet", "The Pacific Northwest", "The Ohio Valley"], "a": 1, "exp": "High plains elevation puts the freezing level closer to the ground, so stones melt less on the way down."}, {"q": "Roughly how fast can a softball-sized hailstone fall?", "options": ["About 20 mph", "About 50 mph", "Over 100 mph", "Around 200 mph"], "a": 2, "exp": "Terminal velocity climbs with size. The largest stones can exceed 100 mph, which is why they destroy roofs."}, {"q": "In which season does most damaging US hail occur?", "options": ["Winter", "Spring and early summer", "Autumn", "It is evenly spread"], "a": 1, "exp": "Hail peaks with the severe storm season, when strong updrafts are most common."}, {"q": "Can hail fall on a hot summer day?", "options": ["No, it needs cold surface air", "Yes, because it forms high above the freezing level", "Only above 10,000 feet elevation", "Only at night"], "a": 1, "exp": "Hail forms miles up where it is well below freezing, then falls fast enough to survive the warm air below."}, {"q": "What is the greenish sky sometimes seen before a hailstorm caused by?", "options": ["Pollution", "Light scattered through deep cloud loaded with water and ice", "Reflection off crops", "Lightning"], "a": 1, "exp": "The green tint comes from how sunlight is filtered by an unusually deep, water-laden storm."}, {"q": "What is the best action when hail begins while driving?", "options": ["Speed up to escape it", "Pull over safely away from traffic and stay inside, away from windows", "Get out and lie beside the car", "Park under a tree"], "a": 1, "exp": "Stay in the vehicle. Trees can drop limbs, and windshields are laminated so they usually crack rather than shatter."}, {"q": "Which crop losses make hail especially costly?", "options": ["Rice", "Wheat, corn, and soybeans across the Plains", "Citrus in Florida", "Coffee"], "a": 1, "exp": "A single storm can wipe out a season of Plains grain in minutes, which is why crop hail insurance exists."}, {"q": "Do hail cannons actually prevent hail?", "options": ["Yes, they are widely proven", "No, there is no credible scientific evidence they work", "Only for small hail", "Only within one mile"], "a": 1, "exp": "Shock waves from a ground device cannot meaningfully alter processes happening miles overhead."}, {"q": "What is the heaviest hailstone ever reliably recorded worldwide?", "options": ["About half a pound", "About one pound", "Roughly 2.25 pounds, in Bangladesh", "Ten pounds"], "a": 2, "exp": "A stone weighing about 1.02 kg fell in the Gopalganj district of Bangladesh during a deadly 1986 hailstorm."}];
+let answered = 0, score = 0;
+const total = QUESTIONS.length;
+
+function pick(qIdx, oIdx, btn) {
+  const q = QUESTIONS[qIdx];
+  if (btn.parentElement.dataset.done) return;
+  btn.parentElement.dataset.done = '1';
+  const buttons = btn.parentElement.querySelectorAll('.opt');
+  buttons.forEach((b, i) => {
+    b.disabled = true;
+    if (i === q.a) b.classList.add('correct');
+    else if (i === oIdx) b.classList.add('wrong');
+  });
+  const card = btn.closest('.card');
+  card.classList.add('answered');
+  card.querySelector('.explanation').classList.add('show');
+  if (oIdx === q.a) score++;
+  answered++;
+  document.getElementById('scoreLive').textContent = score;
+  document.getElementById('qnum').textContent = Math.min(answered + 1, total);
+  document.getElementById('fill').style.width = (answered / total * 100) + '%';
+  if (answered === total) showResult();
+  else {
+    const next = document.querySelectorAll('.card')[answered];
+    if (next) setTimeout(() => next.scrollIntoView({behavior:'smooth', block:'center'}), 400);
+  }
+}
+
+function showResult() {
+  const r = document.getElementById('result');
+  r.classList.add('show');
+  document.getElementById('scoreFinal').textContent = score;
+  const pct = Math.round(score / total * 100);
+  let msg;
+  if (pct === 100) msg = "🏆 Perfect score! You're a weather encyclopedia.";
+  else if (pct >= 80) msg = "🌪️ Impressive. Nearly a professional forecaster.";
+  else if (pct >= 60) msg = "🌤️ Solid — better than most casual weather watchers.";
+  else if (pct >= 40) msg = "🌫️ Not bad. Brush up and come back for another round.";
+  else msg = "🌧️ Room to grow — check out our articles and try again.";
+  document.getElementById('verdict').textContent = msg;
+  setTimeout(() => r.scrollIntoView({behavior:'smooth', block:'center'}), 300);
+}
+
+function shareResult() {
+  const pct = Math.round(score / total * 100);
+  const text = `I scored ${score}/${total} (${pct}%) on the ${document.title.split(' — ')[0]}!\n\nTry it at tornadosimulator.net/weather-trivia/hail/`;
+  if (navigator.share) navigator.share({ text }).catch(() => copyText(text));
+  else copyText(text);
+}
+function copyText(t) {
+  if (navigator.clipboard) navigator.clipboard.writeText(t).then(() => alert('Copied to clipboard!'));
+  else {
+    const ta = document.createElement('textarea');
+    ta.value = t; document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); document.body.removeChild(ta);
+    alert('Copied to clipboard!');
+  }
+}
+</script>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js" defer></script>
+<script src="/assets/ads.js" defer></script>
+<script src="/assets/house-ads.js" defer></script>
+</body>
+</html>

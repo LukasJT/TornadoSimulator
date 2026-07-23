@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Heat Index Calculator — What the Temperature Actually Feels Like</title>
+<meta name="description" content="Free heat index calculator using the official NWS formula. Enter temperature and humidity to see the apparent temperature and the heat danger category." />
+<meta name="keywords" content="heat index calculator, apparent temperature, feels like temperature, NWS heat index, humidity heat calculator" />
+<meta property="og:title" content="Heat Index Calculator — What the Temperature Actually Feels Like" />
+<meta property="og:description" content="Free heat index calculator using the official NWS formula. Enter temperature and humidity to see the apparent temperature and the heat danger category." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.tornadosimulator.net/heat-index-calculator/" />
+<meta property="og:site_name" content="Tornado Hub" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Heat Index Calculator — What the Temperature Actually Feels Like" />
+<meta name="twitter:description" content="Free heat index calculator using the official NWS formula. Enter temperature and humidity to see the apparent temperature and the heat danger category." />
+<link rel="canonical" href="https://www.tornadosimulator.net/heat-index-calculator/" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%AA%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script type="application/ld+json" data-seo="page">
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Heat Index Calculator — What the Temperature Actually Feels Like","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://www.tornadosimulator.net/heat-index-calculator/","description":"Free heat index calculator using the official NWS formula. Enter temperature and humidity to see the apparent temperature and the heat danger category."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"},{"@type":"ListItem","position":2,"name":"Heat Index Calculator","item":"https://www.tornadosimulator.net/heat-index-calculator/"}]}]}
+</script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --border-strong:#d4cfc3; --accent:#a02818; --link:#1e3a5f; --serif:"Fraunces",Georgia,serif; --sans:"Inter",-apple-system,sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text);text-decoration:none}
+.nav-links a.cta{background:var(--accent);color:#fff;font-weight:600}
+.breadcrumb{max-width:820px;margin:20px auto 0;padding:0 24px;font-size:13px;color:var(--text-muted)}
+main{max-width:820px;margin:0 auto;padding:24px}
+.hero{text-align:center;padding:24px 0 8px}
+.hero .emoji{font-size:52px;line-height:1}
+h1{font-family:var(--serif);font-size:clamp(28px,4vw,40px);font-weight:700;letter-spacing:-0.02em;margin:12px 0}
+.lede{color:var(--text-secondary);font-size:17px;max-width:620px;margin:0 auto 8px}
+h2{font-family:var(--serif);font-size:26px;margin:32px 0 12px;letter-spacing:-0.01em}
+h3{font-family:var(--serif);font-size:20px;margin:22px 0 8px}
+p{margin-bottom:14px;color:var(--text-secondary)}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;margin:24px 0;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.field label{display:block;font-weight:600;font-size:13px;color:var(--text-secondary);margin-bottom:6px}
+.field input,.field select{width:100%;padding:11px 13px;border:1.5px solid var(--border-strong);border-radius:8px;font-size:16px;font-family:var(--sans);background:var(--bg);color:var(--text)}
+.field input:focus,.field select:focus{outline:none;border-color:var(--accent)}
+.readout{margin-top:22px;padding:22px;border-radius:12px;background:var(--bg-alt);border:1px solid var(--border);text-align:center}
+.big{font-family:var(--serif);font-size:clamp(40px,9vw,64px);font-weight:700;line-height:1.05;letter-spacing:-.02em}
+.big-sub{font-size:15px;color:var(--text-secondary);margin-top:6px}
+.badge{display:inline-block;margin-top:14px;padding:7px 16px;border-radius:999px;font-weight:700;font-size:14px}
+.note{font-size:13px;color:var(--text-muted);margin-top:14px}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:14px 0}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--border)}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted)}
+.inline-ad{margin:28px auto;display:flex;justify-content:center}
+.related{margin:30px 0}
+.related a{display:inline-block;margin:0 12px 8px 0}
+.footer{border-top:1px solid var(--border);margin-top:40px;padding:24px;text-align:center;color:var(--text-muted);font-size:14px}
+.disclaimer{background:#fff8e6;border:1px solid #f0e0b0;border-radius:10px;padding:14px 16px;font-size:14px;color:#6b5a20;margin:20px 0}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/articles/">Articles</a>
+      <a href="/search/">Search</a>
+      <a href="/weather-trivia/">Weather Trivia</a>
+      <a href="/tornadle/">Tornadle</a>
+      <a href="/tornado-risk-calculator/">Risk Calculator</a>
+      <a href="/simulator/" class="cta">Launch Simulator →</a>
+    </div>
+  </div>
+</nav>
+<div class="breadcrumb"><a href="/">Home</a> &middot; Heat Index Calculator</div>
+<main>
+  <div class="hero">
+    <div class="emoji">🥵</div>
+    <h1>Heat Index Calculator</h1>
+    <p class="lede">Humidity is why 95&deg;F can feel like 115&deg;F. Enter the temperature and relative humidity to get the apparent temperature using the National Weather Service formula.</p>
+  </div>
+
+  <div class="panel">
+    <div class="fields">
+      <div class="field">
+        <label for="temp">Air temperature</label>
+        <input id="temp" type="number" value="95" step="1" />
+      </div>
+      <div class="field">
+        <label for="unit">Units</label>
+        <select id="unit"><option value="F">Fahrenheit</option><option value="C">Celsius</option></select>
+      </div>
+      <div class="field">
+        <label for="rh">Relative humidity (%)</label>
+        <input id="rh" type="number" value="60" min="0" max="100" step="1" />
+      </div>
+    </div>
+    <div class="readout">
+      <div class="big" id="hiOut">—</div>
+      <div class="big-sub" id="hiSub">Feels like</div>
+      <div><span class="badge" id="hiBadge"></span></div>
+      <div class="note" id="hiAdvice"></div>
+    </div>
+  </div>
+
+  <div class="inline-ad">
+    <iframe src="//www.topcreativeformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.html" width="728" height="90" frameborder="0" scrolling="no"></iframe>
+  </div>
+
+  <h2>What the heat index categories mean</h2>
+  <table>
+    <tr><th>Heat index</th><th>Category</th><th>What can happen</th></tr>
+    <tr><td>80–90&deg;F</td><td>Caution</td><td>Fatigue possible with prolonged exposure or activity.</td></tr>
+    <tr><td>90–103&deg;F</td><td>Extreme Caution</td><td>Heat cramps and heat exhaustion possible; heat stroke with prolonged exertion.</td></tr>
+    <tr><td>103–125&deg;F</td><td>Danger</td><td>Heat cramps and exhaustion likely; heat stroke probable with continued activity.</td></tr>
+    <tr><td>125&deg;F and above</td><td>Extreme Danger</td><td>Heat stroke highly likely.</td></tr>
+  </table>
+
+  <h2>Why humidity makes heat dangerous</h2>
+  <p>Your body sheds heat mainly by evaporating sweat. When the air is already loaded with moisture, sweat evaporates slowly, so the cooling system stalls and core temperature climbs. That is why a humid 90&deg;F day is far more punishing than a dry 100&deg;F day.</p>
+  <p>The heat index assumes shade and a light breeze. <strong>In full sunshine it can read up to 15&deg;F too low.</strong> If you are working or exercising in direct sun, treat the number as optimistic.</p>
+
+  <h2>The wet-bulb limit</h2>
+  <p>There is a hard ceiling on human tolerance. Once the wet-bulb temperature approaches about 35&deg;C (95&deg;F), sweat cannot evaporate at all, and no amount of shade or water prevents overheating. Even healthy people cannot survive many hours at that level. Real-world danger begins well below it.</p>
+
+  <h2>Heat safety basics</h2>
+  <p>Drink water before you are thirsty, take breaks in shade or air conditioning, and shift hard work to early morning. Watch for heavy sweating that suddenly stops, confusion, or hot dry skin — those signal heat stroke, which is a medical emergency. Cool the person fast and call for help immediately.</p>
+  <p>Never leave a child or pet in a parked car. Interiors can climb 40&deg;F above the outside air within an hour, and cracking a window barely slows it.</p>
+
+  <div class="disclaimer"><strong>Note:</strong> This calculator implements the NWS Rothfusz regression, the same equation behind official heat index products. It is provided for general information and is not medical advice.</div>
+
+  <div class="related">
+    <h3>Related tools</h3>
+    <a href="/wind-chill-calculator/">Wind Chill Calculator</a>
+    <a href="/dew-point-calculator/">Dew Point Calculator</a>
+    <a href="/weather-trivia/heat-and-drought/">Heat &amp; Drought Trivia</a>
+    <a href="/tornado-risk-calculator/">Tornado Risk Calculator</a>
+  </div>
+
+</main>
+<footer class="footer">
+  Part of <a href="/">Tornado Hub</a> — free weather tools. Educational resource, not affiliated with the National Weather Service.
+</footer>
+<script>
+
+function heatIndex(T, RH) {
+  // NWS Rothfusz regression, T in Fahrenheit.
+  var simple = 0.5 * (T + 61.0 + ((T - 68.0) * 1.2) + (RH * 0.094));
+  if ((simple + T) / 2 < 80) return (simple + T) / 2;
+  var HI = -42.379 + 2.04901523*T + 10.14333127*RH
+         - 0.22475541*T*RH - 0.00683783*T*T - 0.05481717*RH*RH
+         + 0.00122874*T*T*RH + 0.00085282*T*RH*RH - 0.00000199*T*T*RH*RH;
+  if (RH < 13 && T >= 80 && T <= 112) {
+    HI -= ((13 - RH) / 4) * Math.sqrt((17 - Math.abs(T - 95)) / 17);
+  } else if (RH > 85 && T >= 80 && T <= 87) {
+    HI += ((RH - 85) / 10) * ((87 - T) / 5);
+  }
+  return HI;
+}
+function category(hi) {
+  if (hi < 80)  return ['Safe',            '#e0f2e9', '#2d6a4f', 'Normal precautions. Stay hydrated during activity.'];
+  if (hi < 90)  return ['Caution',         '#fff4d6', '#8a6d1f', 'Fatigue is possible with prolonged exposure or exercise.'];
+  if (hi < 103) return ['Extreme Caution', '#ffe4cc', '#9a4a10', 'Heat cramps and heat exhaustion are possible. Limit exertion.'];
+  if (hi < 125) return ['Danger',          '#ffd6d6', '#a02818', 'Heat exhaustion likely; heat stroke possible. Avoid outdoor work.'];
+  return           ['Extreme Danger',      '#f5c2c2', '#7d1f13', 'Heat stroke is highly likely. Stay indoors with cooling.'];
+}
+function calc() {
+  var unit = document.getElementById('unit').value;
+  var raw  = parseFloat(document.getElementById('temp').value);
+  var rh   = parseFloat(document.getElementById('rh').value);
+  var out  = document.getElementById('hiOut');
+  if (isNaN(raw) || isNaN(rh)) { out.textContent = '\u2014'; return; }
+  rh = Math.max(0, Math.min(100, rh));
+  var F = unit === 'C' ? raw * 9 / 5 + 32 : raw;
+  var hi = heatIndex(F, rh);
+  var shown = unit === 'C' ? (hi - 32) * 5 / 9 : hi;
+  out.textContent = Math.round(shown) + '\u00B0' + unit;
+  document.getElementById('hiSub').textContent =
+    'Feels like, at ' + Math.round(raw) + '\u00B0' + unit + ' and ' + Math.round(rh) + '% humidity';
+  var c = category(hi);
+  var badge = document.getElementById('hiBadge');
+  badge.textContent = c[0];
+  badge.style.background = c[1];
+  badge.style.color = c[2];
+  document.getElementById('hiAdvice').textContent = c[3];
+}
+['temp','rh','unit'].forEach(function (id) {
+  document.getElementById(id).addEventListener('input', calc);
+  document.getElementById(id).addEventListener('change', calc);
+});
+calc();
+
+</script>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js" defer></script>
+<script src="/assets/ads.js" defer></script>
+<script src="/assets/house-ads.js" defer></script>
+</body>
+</html>

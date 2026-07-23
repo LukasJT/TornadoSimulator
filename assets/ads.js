@@ -493,15 +493,20 @@
     }
   }
 
+  // Interactive pages: never treated as article-like, so side rails and
+  // auto medium rectangles stay out of game and tool layouts.
   var GAME_PATHS = [
     '/tornadle/', '/tornado-namer/', '/hurricane-namer/',
     '/weather-memory-match/', '/weather-word-search/', '/weather-crossword/',
-    '/simulator/', '/damage-simulator/', '/supercell-simulator/',
-    '/cloud-identification-game/', '/radar-signature-game/',
-    '/lightning-distance-game/', '/tornado-quiz-for-kids/',
-    '/which-tornado-are-you/', '/which-chaser-are-you/',
-    '/storm-chaser-adventure/', '/ef-scale-game/', '/tornado-shape-game/',
-    '/tornado-risk-calculator/', '/weather-trivia/'
+    '/simulator/', '/supercell-simulator/', '/radar-signature-game/',
+    '/cloud-id-game/', '/storm-chaser-game/', '/which-storm-chaser-are-you/',
+    '/which-tornado-are-you/', '/tornado-quiz-for-kids/',
+    '/ef-scale-game/', '/ef-scale-explorer/', '/tornado-shape-game/',
+    '/tornado-kit-builder/', '/hurricane-category-explorer/',
+    '/tornado-risk-calculator/', '/snow-day-calculator/',
+    '/heat-index-calculator/', '/wind-chill-calculator/',
+    '/dew-point-calculator/', '/wind-speed-converter/',
+    '/pressure-unit-converter/', '/weather-trivia/'
   ];
 
   function isGamePage() {
