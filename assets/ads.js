@@ -452,6 +452,38 @@
     return null;
   }
 
+  // --- Adcash fallback fill ------------------------------------------------
+  // Adsterra is the primary network. When a slot comes back empty, Adcash fills
+  // it instead so the space still earns. Requires the aclib.js loader in <body>.
+  var ADC = window.ADCASH || {};
+
+  function whenAclibReady(cb, tries) {
+    tries = tries || 0;
+    if (window.aclib && typeof window.aclib.runBanner === 'function') return cb(true);
+    if (tries > 40) return cb(false); // give up after ~8s
+    setTimeout(function () { whenAclibReady(cb, tries + 1); }, 200);
+  }
+
+  // Pick the Adcash zone that best matches the space available.
+  function adcashZoneForWidth(width) {
+    if (width >= 728 && ADC.banner728x90) return ADC.banner728x90;
+    if (width >= 468 && ADC.banner468x60) return ADC.banner468x60;
+    return ADC.banner300x100 || ADC.bannerAlt1 || ADC.banner468x60 || ADC.banner728x90;
+  }
+
+  // aclib.runBanner injects where its <script> sits, so the wrapper must be in
+  // the DOM before the script element is appended.
+  function fillWithAdcash(wrap, zoneId) {
+    if (!ADC.enabled || !zoneId || !wrap || !wrap.parentNode) return false;
+    if (wrap.getAttribute('data-adcash') === '1') return false;
+    wrap.setAttribute('data-adcash', '1');
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.text = "aclib.runBanner({ zoneId: '" + String(zoneId) + "' });";
+    wrap.appendChild(s);
+    return true;
+  }
+
   function buildNativeWrap(containerId) {
     var wrap = document.createElement('div');
     wrap.className = 'native-ad-wrap';
@@ -459,10 +491,15 @@
     var container = document.createElement('div');
     container.id = containerId;
     wrap.appendChild(container);
-    // If Adsterra never fills (adblock / no fill), hide the empty wrap so
-    // no blank box lingers in the layout.
+    // If Adsterra never fills, hand the space to Adcash rather than wasting it.
+    // Only hide the wrap if Adcash has nothing either.
     setTimeout(function () {
-      if (!container.firstChild) wrap.style.display = 'none';
+      if (container.firstChild) return;               // Adsterra filled — leave it
+      whenAclibReady(function (ready) {
+        if (container.firstChild) return;             // filled late
+        var zone = ADC.bannerAlt1 || adcashZoneForWidth(wrap.offsetWidth || 728);
+        if (!(ready && fillWithAdcash(wrap, zone))) wrap.style.display = 'none';
+      });
     }, 8000);
     return wrap;
   }
@@ -543,6 +580,41 @@
     document.body.appendChild(s);
   }
 
+  // One guaranteed Adcash banner per page, low in the content, so Adcash earns
+  // even when every Adsterra slot fills. Zone is chosen to fit the viewport.
+  function injectAdcashSlot() {
+    if (!ADC.enabled) return;
+    if (document.querySelector('.adcash-slot')) return;
+    var zone = adcashZoneForWidth(document.documentElement.clientWidth || 728);
+    if (!zone) return;
+
+    var wrap = document.createElement('div');
+    wrap.className = 'adcash-slot';
+    wrap.style.cssText = 'display:flex;justify-content:center;align-items:center;margin:28px auto;max-width:100%;overflow:hidden;';
+
+    var footer = document.querySelector('footer, .footer');
+    if (footer && footer.parentNode) footer.parentNode.insertBefore(wrap, footer);
+    else {
+      var main = document.querySelector('main, article, .main');
+      if (!main) return;
+      main.appendChild(wrap);
+    }
+    whenAclibReady(function (ready) {
+      if (!(ready && fillWithAdcash(wrap, zone)) && wrap.parentNode) wrap.remove();
+    });
+  }
+
+  // Optional Adcash formats — only run when explicitly enabled in the config.
+  function injectAdcashExtras() {
+    if (!ADC.enabled || !window.aclib) return;
+    if (ADC.inPagePush && typeof window.aclib.runInPagePush === 'function') {
+      window.aclib.runInPagePush({ zoneId: String(ADC.inPagePush), maxAds: ADC.inPagePushMaxAds || 2 });
+    }
+    if (ADC.videoSlider && typeof window.aclib.runVideoSlider === 'function') {
+      window.aclib.runVideoSlider({ zoneId: String(ADC.videoSlider) });
+    }
+  }
+
   function makeArticleCardsClickable() {
     document.querySelectorAll('.article-card').forEach(function (card) {
       if (card.getAttribute('data-card-clickable') === '1') return;
@@ -563,7 +635,8 @@
     [injectResourceHints, injectResponsiveCSS, updateSideRailEligibility, installClickHijackGuard,
      makeArticleCardsClickable, injectSideRailAds, autoPlaceMediumRectangles,
      ensureBannerSlot, injectMobileBanners, lazyLoadBanners, injectSocialBar,
-     injectNativeBanners, injectInPagePush].forEach(function (step) {
+     injectNativeBanners, injectInPagePush,
+     injectAdcashSlot, injectAdcashExtras].forEach(function (step) {
       try { step(); } catch (e) { /* keep serving remaining formats */ }
     });
   }
