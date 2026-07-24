@@ -50,12 +50,13 @@ window.ADSTERRA = {
 window.ADCASH = {
   enabled: true,
 
-  // Banner zones, keyed by the slot size they replace.
+  // Banner zones. Sizes below were measured by rendering each zone live.
   banner728x90: '11810482',
   banner468x60: '11810490',
   banner300x100: '11810498',
-  bannerAlt1: '11810506',   // size unconfirmed — used for native-slot fallback
-  bannerAlt2: '11810534',   // size unconfirmed — spare rotation
+  // Vertical skyscrapers — only valid in a narrow side rail, never in-content.
+  banner160x600: '11810506',
+  banner120x600: '11810534',
 
   /* Intrusive formats: implemented and ready, but OFF while AdSense reviews the
    * site. An overlay push widget and a sticky auto-playing video slider hurt

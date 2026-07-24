@@ -464,11 +464,12 @@
     setTimeout(function () { whenAclibReady(cb, tries + 1); }, 200);
   }
 
-  // Pick the Adcash zone that best matches the space available.
+  // Pick the horizontal Adcash zone that best matches the space available.
+  // Skyscraper zones are deliberately excluded — they belong in side rails only.
   function adcashZoneForWidth(width) {
     if (width >= 728 && ADC.banner728x90) return ADC.banner728x90;
     if (width >= 468 && ADC.banner468x60) return ADC.banner468x60;
-    return ADC.banner300x100 || ADC.bannerAlt1 || ADC.banner468x60 || ADC.banner728x90;
+    return ADC.banner300x100 || ADC.banner468x60 || ADC.banner728x90;
   }
 
   // aclib.runBanner injects where its <script> sits, so the wrapper must be in
@@ -497,7 +498,9 @@
       if (container.firstChild) return;               // Adsterra filled — leave it
       whenAclibReady(function (ready) {
         if (container.firstChild) return;             // filled late
-        var zone = ADC.bannerAlt1 || adcashZoneForWidth(wrap.offsetWidth || 728);
+        // Horizontal zone only — the native slot sits in-content, so a
+        // 160x600/120x600 skyscraper would break the layout here.
+        var zone = adcashZoneForWidth(wrap.offsetWidth || 728);
         if (!(ready && fillWithAdcash(wrap, zone))) wrap.style.display = 'none';
       });
     }, 8000);
