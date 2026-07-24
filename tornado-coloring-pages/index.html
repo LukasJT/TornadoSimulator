@@ -237,9 +237,9 @@ function printOnly(btn) {
   const html = card.outerHTML;
   const w = window.open('', '', 'width=900,height=1200');
   w.document.write(`<html><head><title>Coloring page</title><style>body{margin:20px;font-family:Fraunces,Georgia,serif}h3{margin-bottom:10px}svg{width:100%;height:auto}.page-actions{display:none}</style></head><body>${html}<script src="/assets/article-tracker.js" defer></script>
-<script src="/assets/ads-config.js?v=2" defer></script>
-<script src="/assets/ads.js?v=2" defer></script>
-<script src="/assets/house-ads.js?v=2" defer></script>
+<script src="/assets/ads-config.js?v=3" defer></script>
+<script src="/assets/ads.js?v=3" defer></script>
+<script src="/assets/house-ads.js?v=3" defer></script>
 </body></html>`);
   w.document.close();
   setTimeout(() => { w.print(); w.close(); }, 400);

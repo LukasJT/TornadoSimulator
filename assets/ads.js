@@ -104,7 +104,12 @@
   }
 
   function removeNode(node) {
-    if (node && node.parentNode) node.parentNode.removeChild(node);
+    if (!node || !node.parentNode) return;
+    // Hard guarantee: never remove the site's own navigation chrome. The
+    // click-hijack guard only targets injected ad overlays; nav/header/footer
+    // links (including the home button) are site UI and must always survive.
+    if (node.closest && node.closest('nav, header, footer, .nav, .footer, .nav-brand, .nav-links')) return;
+    node.parentNode.removeChild(node);
   }
 
   function removeUnsafeClickAds() {
