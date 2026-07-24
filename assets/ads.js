@@ -505,7 +505,7 @@
     '/which-tornado-are-you/', '/tornado-quiz-for-kids/',
     '/ef-scale-game/', '/ef-scale-explorer/', '/tornado-shape-game/',
     '/tornado-kit-builder/', '/hurricane-category-explorer/',
-    '/tornado-risk-calculator/', '/snow-day-calculator/',
+    '/tornado-risk-calculator/', '/singapore-typhoon-simulator/', '/snow-day-calculator/',
     '/heat-index-calculator/', '/wind-chill-calculator/',
     '/dew-point-calculator/', '/wind-speed-converter/',
     '/pressure-unit-converter/', '/weather-trivia/'
