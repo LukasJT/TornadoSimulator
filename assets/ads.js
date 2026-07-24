@@ -254,6 +254,45 @@
     document.querySelectorAll('.inline-ad iframe[data-src], .side-ad iframe[data-src]').forEach(function (f) {
       io.observe(f);
     });
+
+    // Safety net. A banner that fails to serve collapses to 0x0, and a zero-size
+    // element never counts as "intersecting", so the observer would never fire
+    // and the frame would sit on about:blank forever. Load anything still parked.
+    setTimeout(function () {
+      document.querySelectorAll('.inline-ad iframe[data-src], .side-ad iframe[data-src]').forEach(function (f) {
+        var real = f.getAttribute('data-src');
+        if (real && f.getAttribute('src') !== real) f.setAttribute('src', real);
+      });
+    }, 2500);
+  }
+
+  // If an Adsterra banner slot renders nothing (collapsed or empty), hand the
+  // space to Adcash. A failed banner iframe measures 0x0, which is a reliable
+  // no-fill signal even though the frame itself is cross-origin.
+  function backfillFailedBanners() {
+    if (!ADC.enabled) return;
+    setTimeout(function () {
+      whenAclibReady(function (ready) {
+        if (!ready) return;
+        var frames = document.querySelectorAll('.inline-ad iframe, .mobile-ad-swap iframe, .side-ad iframe');
+        Array.prototype.forEach.call(frames, function (fr) {
+          // Judge each frame on its own. A sibling that is serving must not mask
+          // a dead one, and a frame hidden on purpose by the responsive CSS
+          // (desktop banner on mobile, and vice versa) is not a failure.
+          var style = window.getComputedStyle(fr);
+          if (style.display === 'none' || style.visibility === 'hidden') return;
+          var r = fr.getBoundingClientRect();
+          if (r.width > 20 && r.height > 20) return;   // serving fine
+
+          var host = fr.parentElement;
+          if (!host || host.getAttribute('data-adcash') === '1') return;
+          var declared = parseInt(fr.getAttribute('width'), 10) ||
+                         Math.round(host.getBoundingClientRect().width) || 728;
+          fr.remove();
+          fillWithAdcash(host, adcashZoneForWidth(declared));
+        });
+      });
+    }, 5000);
   }
 
   function injectSocialBar() {
@@ -595,9 +634,17 @@
     wrap.className = 'adcash-slot';
     wrap.style.cssText = 'display:flex;justify-content:center;align-items:center;margin:28px auto;max-width:100%;overflow:hidden;';
 
+    // Place it in-content, right after the first banner slot, so it is actually
+    // seen. Adsterra's iframe keeps its box even when it serves nothing, so a
+    // footer-only Adcash unit left pages looking ad-free.
+    var firstInline = document.querySelector('.inline-ad');
     var footer = document.querySelector('footer, .footer');
-    if (footer && footer.parentNode) footer.parentNode.insertBefore(wrap, footer);
-    else {
+    if (firstInline && firstInline.parentNode) {
+      var host = firstInline.closest('.inline-ad-row') || firstInline;
+      host.parentNode.insertBefore(wrap, host.nextSibling);
+    } else if (footer && footer.parentNode) {
+      footer.parentNode.insertBefore(wrap, footer);
+    } else {
       var main = document.querySelector('main, article, .main');
       if (!main) return;
       main.appendChild(wrap);
@@ -639,7 +686,7 @@
      makeArticleCardsClickable, injectSideRailAds, autoPlaceMediumRectangles,
      ensureBannerSlot, injectMobileBanners, lazyLoadBanners, injectSocialBar,
      injectNativeBanners, injectInPagePush,
-     injectAdcashSlot, injectAdcashExtras].forEach(function (step) {
+     injectAdcashSlot, injectAdcashExtras, backfillFailedBanners].forEach(function (step) {
       try { step(); } catch (e) { /* keep serving remaining formats */ }
     });
   }
