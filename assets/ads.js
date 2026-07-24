@@ -81,9 +81,16 @@
 
   function isBlockedClickAdValue(value) {
     var normalized = normalizeUrl(value);
-    if (!normalized) return false;
+    if (!normalized || normalized.length < 8) return false;
+    // Internal / relative links (a single leading "/") are site navigation —
+    // e.g. "/", "/articles/", "/tornado-risk-calculator/" — never third-party
+    // ad URLs. NEVER block them. (Protocol-relative external ads start "//".)
+    if (normalized.charAt(0) === '/' && normalized.charAt(1) !== '/') return false;
+    // Only a match when the node's URL CONTAINS a full blocked needle. The old
+    // reverse test (src.indexOf(normalized)) wrongly flagged "/" because every
+    // ad URL contains a slash, which deleted every home link on the site.
     return blockedClickNeedles().some(function (src) {
-      return normalized.indexOf(src) !== -1 || src.indexOf(normalized) !== -1;
+      return src.length >= 8 && normalized.indexOf(src) !== -1;
     });
   }
 

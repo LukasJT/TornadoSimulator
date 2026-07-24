@@ -89,6 +89,62 @@
     );
   }
 
+  // Horizontal banner variant — used for the guaranteed per-page house ad.
+  function renderAdWide(ad) {
+    return (
+      '<a href="' + ad.href + '" target="_blank" rel="noopener sponsored" class="house-ad" ' +
+      'style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center;' +
+      'padding:16px 22px;background:' + ad.bg + ';color:' + ad.color + ';' +
+      'text-decoration:none;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);' +
+      'font-family:Inter,system-ui,-apple-system,sans-serif">' +
+        '<div style="font-size:38px;line-height:1;flex:0 0 auto">' + ad.icon + '</div>' +
+        '<div style="flex:1 1 220px;text-align:left;min-width:180px">' +
+          '<div style="font-family:Fraunces,Georgia,serif;font-weight:700;font-size:19px;line-height:1.15;letter-spacing:-0.01em;margin-bottom:4px">' + ad.title + '</div>' +
+          '<div style="font-size:13px;opacity:0.94;line-height:1.4">' + ad.sub + '</div>' +
+        '</div>' +
+        '<div style="flex:0 0 auto;padding:8px 16px;background:rgba(255,255,255,0.2);border-radius:20px;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap">Visit site →</div>' +
+      '</a>'
+    );
+  }
+
+  function injectCss() {
+    if (document.getElementById('house-ad-css')) return;
+    var s = document.createElement('style');
+    s.id = 'house-ad-css';
+    s.textContent =
+      '.inline-ad-row{display:flex;gap:16px;justify-content:center;align-items:stretch;' +
+      'margin:32px auto;padding:0 16px;box-sizing:border-box;flex-wrap:nowrap;' +
+      'width:min(1200px,calc(100vw - 32px));position:relative;' +
+      'left:50%;transform:translateX(-50%)}' +
+      '.inline-ad-row .house-ad-wrap{display:none;flex:0 0 210px}' +
+      '.inline-ad-row .inline-ad{margin:0;flex:1 1 auto;max-width:728px;align-self:center}' +
+      '@media (min-width:1480px){.inline-ad-row .house-ad-wrap{display:block}}' +
+      '@media (max-width:1479px){.inline-ad-row{width:auto;left:auto;transform:none;padding:0;max-width:100%}}' +
+      '.house-ad-solo{max-width:728px;margin:28px auto;padding:0 16px;box-sizing:border-box}';
+    document.head.appendChild(s);
+  }
+
+  // Guaranteed per-page ad: every page shows at least one house ad, so no page
+  // is ever ad-less while AdSense is pending and third-party fill is unreliable.
+  function ensureSoloHouseAd() {
+    if (document.querySelector('.house-ad-solo')) return;
+    injectCss();
+    var wrap = document.createElement('div');
+    wrap.className = 'house-ad-solo';
+    wrap.innerHTML = renderAdWide(pickTwo()[0]);
+
+    var firstInline = document.querySelector('.inline-ad');
+    if (firstInline && firstInline.parentNode) {
+      var host = firstInline.closest('.inline-ad-row') || firstInline;
+      host.parentNode.insertBefore(wrap, host.nextSibling);
+      return;
+    }
+    var footer = document.querySelector('footer, .footer');
+    if (footer && footer.parentNode) { footer.parentNode.insertBefore(wrap, footer); return; }
+    var main = document.querySelector('main, article, .main');
+    if (main) main.appendChild(wrap);
+  }
+
   function isContentArticlePage() {
     if (location.pathname === '/' || location.pathname === '/articles/') return false;
     var article = document.querySelector('article.article') || document.querySelector('article');
@@ -97,25 +153,15 @@
   }
 
   function inject() {
+    // Every page gets one guaranteed, always-visible house ad.
+    ensureSoloHouseAd();
+
+    // Wide-screen flanking house ads only on non-article pages with banners.
     if (isContentArticlePage()) return;
     var banners = document.querySelectorAll('.inline-ad');
     if (!banners.length) return;
 
-    // Inject style once
-    if (!document.getElementById('house-ad-css')) {
-      var s = document.createElement('style');
-      s.id = 'house-ad-css';
-      s.textContent =
-        '.inline-ad-row{display:flex;gap:16px;justify-content:center;align-items:stretch;' +
-        'margin:32px auto;padding:0 16px;box-sizing:border-box;flex-wrap:nowrap;' +
-        'width:min(1200px,calc(100vw - 32px));position:relative;' +
-        'left:50%;transform:translateX(-50%)}' +
-        '.inline-ad-row .house-ad-wrap{display:none;flex:0 0 210px}' +
-        '.inline-ad-row .inline-ad{margin:0;flex:1 1 auto;max-width:728px;align-self:center}' +
-        '@media (min-width:1480px){.inline-ad-row .house-ad-wrap{display:block}}' +
-        '@media (max-width:1479px){.inline-ad-row{width:auto;left:auto;transform:none;padding:0;max-width:100%}}';
-      document.head.appendChild(s);
-    }
+    injectCss();
 
     var picks = pickTwo();
     var left = picks[0], right = picks[1];
