@@ -657,10 +657,26 @@
     whenAclibReady(function (ready) {
       if (!ready) return;
       Array.prototype.forEach.call(spots, function (spot) {
-        if (spot.getAttribute('data-adcash') === '1') return;
+        if (spot.getAttribute('data-adcash-done') === '1') return;
+        spot.setAttribute('data-adcash-done', '1');
+
         var w = Math.round(spot.getBoundingClientRect().width) || 300;
-        spot.style.cssText += ';display:flex;justify-content:center;margin:18px 0;max-width:100%;overflow:hidden;';
-        fillBoxWithFallback(spot, adcashBoxZones(w), 0);
+        var zones = adcashBoxZones(w);
+        if (!zones.length) return;
+
+        // Fit as many boxes side by side as the container allows (300px wide
+        // plus a 16px gap), so wide columns get ads either side rather than a
+        // single box with dead space beside it. Capped at 3.
+        var count = Math.max(1, Math.min(3, Math.floor((w + 16) / 316)));
+        spot.style.cssText += ';display:flex;flex-wrap:wrap;gap:16px;justify-content:center;' +
+                              'align-items:flex-start;margin:18px 0;max-width:100%;';
+        for (var i = 0; i < count; i++) {
+          var cell = document.createElement('div');
+          cell.className = 'adcash-box-cell';
+          cell.style.cssText = 'flex:0 0 auto;';
+          spot.appendChild(cell);
+          fillBoxWithFallback(cell, zones, 0);
+        }
       });
     });
   }
