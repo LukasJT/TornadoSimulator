@@ -58,6 +58,12 @@ window.ADCASH = {
   banner160x600: '11810506',
   banner120x600: '11810534',
 
+  // Box / rectangle zones, for filling column dead space. Any element marked
+  // data-adcash-box gets the largest of these that fits its container.
+  box336x280: '11810694',
+  box300x250: '11810762',
+  box250x250: '11810770',
+
   /* Intrusive formats: implemented and ready, but OFF while AdSense reviews the
    * site. An overlay push widget and a sticky auto-playing video slider hurt
    * approval odds and cut against the no-intrusive-ads rule. To switch either

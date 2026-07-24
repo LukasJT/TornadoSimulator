@@ -622,6 +622,49 @@
     document.body.appendChild(s);
   }
 
+  // Box zones that fit the space, best-filling first. 300x250 is listed ahead of
+  // the wider 336x280 because the 336 and 250 zones currently return no fill;
+  // the chain below falls through to them if that ever changes.
+  function adcashBoxZones(width) {
+    var list = [];
+    if (width >= 300 && ADC.box300x250) list.push(ADC.box300x250);
+    if (width >= 336 && ADC.box336x280) list.push(ADC.box336x280);
+    if (ADC.box250x250) list.push(ADC.box250x250);
+    if (!list.length && ADC.box300x250) list.push(ADC.box300x250);
+    return list;
+  }
+
+  // Try each zone in turn; if one renders nothing, move to the next so a
+  // no-fill zone never leaves a blank hole in the layout.
+  function fillBoxWithFallback(spot, zones, i) {
+    i = i || 0;
+    if (i >= zones.length) { spot.style.display = 'none'; return; }
+    spot.innerHTML = '';
+    spot.removeAttribute('data-adcash');
+    fillWithAdcash(spot, zones[i]);
+    setTimeout(function () {
+      if (spot.querySelector('a, iframe, img')) return;   // something rendered
+      fillBoxWithFallback(spot, zones, i + 1);
+    }, 3000);
+  }
+
+  // Fill any element marked data-adcash-box with a rectangle ad. Used to use up
+  // column dead space (e.g. under a short intro block beside a wide grid).
+  function injectAdcashBoxes() {
+    if (!ADC.enabled) return;
+    var spots = document.querySelectorAll('[data-adcash-box]');
+    if (!spots.length) return;
+    whenAclibReady(function (ready) {
+      if (!ready) return;
+      Array.prototype.forEach.call(spots, function (spot) {
+        if (spot.getAttribute('data-adcash') === '1') return;
+        var w = Math.round(spot.getBoundingClientRect().width) || 300;
+        spot.style.cssText += ';display:flex;justify-content:center;margin:18px 0;max-width:100%;overflow:hidden;';
+        fillBoxWithFallback(spot, adcashBoxZones(w), 0);
+      });
+    });
+  }
+
   // One guaranteed Adcash banner per page, low in the content, so Adcash earns
   // even when every Adsterra slot fills. Zone is chosen to fit the viewport.
   function injectAdcashSlot() {
@@ -686,7 +729,8 @@
      makeArticleCardsClickable, injectSideRailAds, autoPlaceMediumRectangles,
      ensureBannerSlot, injectMobileBanners, lazyLoadBanners, injectSocialBar,
      injectNativeBanners, injectInPagePush,
-     injectAdcashSlot, injectAdcashExtras, backfillFailedBanners].forEach(function (step) {
+     injectAdcashSlot, injectAdcashBoxes, injectAdcashExtras,
+     backfillFailedBanners].forEach(function (step) {
       try { step(); } catch (e) { /* keep serving remaining formats */ }
     });
   }
