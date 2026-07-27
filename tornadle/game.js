@@ -389,7 +389,7 @@
     const glyph = { correct: '🟩', present: '🟨', absent: '⬛' };
     const rows = state.statuses.map(s => s.map(x => glyph[x]).join('')).join('\n');
     const score = state.won ? `${state.guesses.length}/${MAX_GUESSES}` : `X/${MAX_GUESSES}`;
-    return `Tornadle #${puzzleNo} ${score} (${N} letters)\n\n${rows}\n\ntornadosimulator.net/tornadle`;
+    return `Tornadle #${puzzleNo} ${score} (${N} letters)\n\n${rows}\n\ntornadle.com`;
   }
 
   document.getElementById('btn-share').addEventListener('click', () => {
