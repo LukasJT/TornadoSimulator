@@ -266,35 +266,6 @@
     }, 2500);
   }
 
-  // If an Adsterra banner slot renders nothing (collapsed or empty), hand the
-  // space to Adcash. A failed banner iframe measures 0x0, which is a reliable
-  // no-fill signal even though the frame itself is cross-origin.
-  function backfillFailedBanners() {
-    if (!ADC.enabled) return;
-    setTimeout(function () {
-      whenAclibReady(function (ready) {
-        if (!ready) return;
-        var frames = document.querySelectorAll('.inline-ad iframe, .mobile-ad-swap iframe, .side-ad iframe');
-        Array.prototype.forEach.call(frames, function (fr) {
-          // Judge each frame on its own. A sibling that is serving must not mask
-          // a dead one, and a frame hidden on purpose by the responsive CSS
-          // (desktop banner on mobile, and vice versa) is not a failure.
-          var style = window.getComputedStyle(fr);
-          if (style.display === 'none' || style.visibility === 'hidden') return;
-          var r = fr.getBoundingClientRect();
-          if (r.width > 20 && r.height > 20) return;   // serving fine
-
-          var host = fr.parentElement;
-          if (!host || host.getAttribute('data-adcash') === '1') return;
-          var declared = parseInt(fr.getAttribute('width'), 10) ||
-                         Math.round(host.getBoundingClientRect().width) || 728;
-          fr.remove();
-          fillWithAdcash(host, adcashZoneForWidth(declared));
-        });
-      });
-    }, 5000);
-  }
-
   function injectSocialBar() {
     if (!CFG.socialBarSrc) return;
     if (normalizeUrl(CFG.socialBarSrc) === normalizeUrl(CFG.disabledClickunderSrc)) return;
@@ -491,39 +462,6 @@
     return null;
   }
 
-  // --- Adcash fallback fill ------------------------------------------------
-  // Adsterra is the primary network. When a slot comes back empty, Adcash fills
-  // it instead so the space still earns. Requires the aclib.js loader in <body>.
-  var ADC = window.ADCASH || {};
-
-  function whenAclibReady(cb, tries) {
-    tries = tries || 0;
-    if (window.aclib && typeof window.aclib.runBanner === 'function') return cb(true);
-    if (tries > 40) return cb(false); // give up after ~8s
-    setTimeout(function () { whenAclibReady(cb, tries + 1); }, 200);
-  }
-
-  // Pick the horizontal Adcash zone that best matches the space available.
-  // Skyscraper zones are deliberately excluded — they belong in side rails only.
-  function adcashZoneForWidth(width) {
-    if (width >= 728 && ADC.banner728x90) return ADC.banner728x90;
-    if (width >= 468 && ADC.banner468x60) return ADC.banner468x60;
-    return ADC.banner300x100 || ADC.banner468x60 || ADC.banner728x90;
-  }
-
-  // aclib.runBanner injects where its <script> sits, so the wrapper must be in
-  // the DOM before the script element is appended.
-  function fillWithAdcash(wrap, zoneId) {
-    if (!ADC.enabled || !zoneId || !wrap || !wrap.parentNode) return false;
-    if (wrap.getAttribute('data-adcash') === '1') return false;
-    wrap.setAttribute('data-adcash', '1');
-    var s = document.createElement('script');
-    s.type = 'text/javascript';
-    s.text = "aclib.runBanner({ zoneId: '" + String(zoneId) + "' });";
-    wrap.appendChild(s);
-    return true;
-  }
-
   function buildNativeWrap(containerId) {
     var wrap = document.createElement('div');
     wrap.className = 'native-ad-wrap';
@@ -531,17 +469,10 @@
     var container = document.createElement('div');
     container.id = containerId;
     wrap.appendChild(container);
-    // If Adsterra never fills, hand the space to Adcash rather than wasting it.
-    // Only hide the wrap if Adcash has nothing either.
+    // If Adsterra never fills (adblock / no fill), hide the empty wrap so no
+    // blank box lingers in the layout.
     setTimeout(function () {
-      if (container.firstChild) return;               // Adsterra filled — leave it
-      whenAclibReady(function (ready) {
-        if (container.firstChild) return;             // filled late
-        // Horizontal zone only — the native slot sits in-content, so a
-        // 160x600/120x600 skyscraper would break the layout here.
-        var zone = adcashZoneForWidth(wrap.offsetWidth || 728);
-        if (!(ready && fillWithAdcash(wrap, zone))) wrap.style.display = 'none';
-      });
+      if (!container.firstChild) wrap.style.display = 'none';
     }, 8000);
     return wrap;
   }
@@ -622,106 +553,27 @@
     document.body.appendChild(s);
   }
 
-  // Box zones that fit the space, best-filling first. 300x250 is listed ahead of
-  // the wider 336x280 because the 336 and 250 zones currently return no fill;
-  // the chain below falls through to them if that ever changes.
-  function adcashBoxZones(width) {
-    var list = [];
-    if (width >= 300 && ADC.box300x250) list.push(ADC.box300x250);
-    if (width >= 336 && ADC.box336x280) list.push(ADC.box336x280);
-    if (ADC.box250x250) list.push(ADC.box250x250);
-    if (!list.length && ADC.box300x250) list.push(ADC.box300x250);
-    return list;
-  }
-
-  // Try each zone in turn; if one renders nothing, move to the next so a
-  // no-fill zone never leaves a blank hole in the layout.
-  function fillBoxWithFallback(spot, zones, i) {
-    i = i || 0;
-    if (i >= zones.length) { spot.style.display = 'none'; return; }
-    spot.innerHTML = '';
-    spot.removeAttribute('data-adcash');
-    fillWithAdcash(spot, zones[i]);
-    setTimeout(function () {
-      if (spot.querySelector('a, iframe, img')) return;   // something rendered
-      fillBoxWithFallback(spot, zones, i + 1);
-    }, 3000);
-  }
-
-  // Fill any element marked data-adcash-box with a rectangle ad. Used to use up
-  // column dead space (e.g. under a short intro block beside a wide grid).
-  function injectAdcashBoxes() {
-    if (!ADC.enabled) return;
-    var spots = document.querySelectorAll('[data-adcash-box]');
-    if (!spots.length) return;
-    whenAclibReady(function (ready) {
-      if (!ready) return;
-      Array.prototype.forEach.call(spots, function (spot) {
-        if (spot.getAttribute('data-adcash-done') === '1') return;
-        spot.setAttribute('data-adcash-done', '1');
-
-        var w = Math.round(spot.getBoundingClientRect().width) || 300;
-        var zones = adcashBoxZones(w);
-        if (!zones.length) return;
-
-        // Fit as many boxes side by side as the container allows (300px wide
-        // plus a 16px gap), so wide columns get ads either side rather than a
-        // single box with dead space beside it. Capped at 3.
-        var count = Math.max(1, Math.min(3, Math.floor((w + 16) / 316)));
-        spot.style.cssText += ';display:flex;flex-wrap:wrap;gap:16px;justify-content:center;' +
-                              'align-items:flex-start;margin:18px 0;max-width:100%;';
-        for (var i = 0; i < count; i++) {
-          var cell = document.createElement('div');
-          cell.className = 'adcash-box-cell';
-          cell.style.cssText = 'flex:0 0 auto;';
-          spot.appendChild(cell);
-          fillBoxWithFallback(cell, zones, 0);
-        }
-      });
+  // Fill any element marked data-ad-box with as many Adsterra 300x250 medium
+  // rectangles as fit side by side (300px + 16px gap), used to fill column dead
+  // space (e.g. under a short intro block beside a wide grid).
+  function injectAdBoxes() {
+    if (!CFG.banner300x250) return;
+    var spots = document.querySelectorAll('[data-ad-box]');
+    Array.prototype.forEach.call(spots, function (spot) {
+      if (spot.getAttribute('data-ad-box-done') === '1') return;
+      spot.setAttribute('data-ad-box-done', '1');
+      var w = Math.round(spot.getBoundingClientRect().width) || 300;
+      var count = Math.max(1, Math.min(3, Math.floor((w + 16) / 316)));
+      spot.style.cssText += ';display:flex;flex-wrap:wrap;gap:16px;justify-content:center;' +
+                            'align-items:flex-start;margin:18px 0;max-width:100%;';
+      for (var i = 0; i < count; i++) {
+        var cell = document.createElement('div');
+        cell.className = 'inline-ad';
+        cell.style.cssText = 'flex:0 0 auto;margin:0;';
+        cell.appendChild(makeAdFrame(CFG.banner300x250, 300, 250));
+        spot.appendChild(cell);
+      }
     });
-  }
-
-  // One guaranteed Adcash banner per page, low in the content, so Adcash earns
-  // even when every Adsterra slot fills. Zone is chosen to fit the viewport.
-  function injectAdcashSlot() {
-    if (!ADC.enabled) return;
-    if (document.querySelector('.adcash-slot')) return;
-    var zone = adcashZoneForWidth(document.documentElement.clientWidth || 728);
-    if (!zone) return;
-
-    var wrap = document.createElement('div');
-    wrap.className = 'adcash-slot';
-    wrap.style.cssText = 'display:flex;justify-content:center;align-items:center;margin:28px auto;max-width:100%;overflow:hidden;';
-
-    // Place it in-content, right after the first banner slot, so it is actually
-    // seen. Adsterra's iframe keeps its box even when it serves nothing, so a
-    // footer-only Adcash unit left pages looking ad-free.
-    var firstInline = document.querySelector('.inline-ad');
-    var footer = document.querySelector('footer, .footer');
-    if (firstInline && firstInline.parentNode) {
-      var host = firstInline.closest('.inline-ad-row') || firstInline;
-      host.parentNode.insertBefore(wrap, host.nextSibling);
-    } else if (footer && footer.parentNode) {
-      footer.parentNode.insertBefore(wrap, footer);
-    } else {
-      var main = document.querySelector('main, article, .main');
-      if (!main) return;
-      main.appendChild(wrap);
-    }
-    whenAclibReady(function (ready) {
-      if (!(ready && fillWithAdcash(wrap, zone)) && wrap.parentNode) wrap.remove();
-    });
-  }
-
-  // Optional Adcash formats — only run when explicitly enabled in the config.
-  function injectAdcashExtras() {
-    if (!ADC.enabled || !window.aclib) return;
-    if (ADC.inPagePush && typeof window.aclib.runInPagePush === 'function') {
-      window.aclib.runInPagePush({ zoneId: String(ADC.inPagePush), maxAds: ADC.inPagePushMaxAds || 2 });
-    }
-    if (ADC.videoSlider && typeof window.aclib.runVideoSlider === 'function') {
-      window.aclib.runVideoSlider({ zoneId: String(ADC.videoSlider) });
-    }
   }
 
   function makeArticleCardsClickable() {
@@ -744,9 +596,7 @@
     [injectResourceHints, injectResponsiveCSS, updateSideRailEligibility, installClickHijackGuard,
      makeArticleCardsClickable, injectSideRailAds, autoPlaceMediumRectangles,
      ensureBannerSlot, injectMobileBanners, lazyLoadBanners, injectSocialBar,
-     injectNativeBanners, injectInPagePush,
-     injectAdcashSlot, injectAdcashBoxes, injectAdcashExtras,
-     backfillFailedBanners].forEach(function (step) {
+     injectNativeBanners, injectInPagePush, injectAdBoxes].forEach(function (step) {
       try { step(); } catch (e) { /* keep serving remaining formats */ }
     });
   }

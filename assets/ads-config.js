@@ -42,35 +42,3 @@ window.ADSTERRA = {
   inPagePushSrc: null,
   disabledInPagePushSrc: '//pl30266280.effectivecpmnetwork.com/e9/48/12/e948122feaa7bd58b18c5ad800302247.js',
 };
-
-/* Adcash — used as fallback fill when an Adsterra slot returns no ad, plus one
- * guaranteed banner slot per page. Requires the aclib.js loader in <body>.
- * Zones here are individually controllable (unlike the removed AutoTag, which
- * could serve pop-unders and would have disqualified the site from AdSense). */
-window.ADCASH = {
-  enabled: true,
-
-  // Banner zones. Sizes below were measured by rendering each zone live.
-  banner728x90: '11810482',
-  banner468x60: '11810490',
-  banner300x100: '11810498',
-  // Vertical skyscrapers — only valid in a narrow side rail, never in-content.
-  banner160x600: '11810506',
-  banner120x600: '11810534',
-
-  // Box / rectangle zones, for filling column dead space. Any element marked
-  // data-adcash-box gets the largest of these that fits its container.
-  box336x280: '11810694',
-  box300x250: '11810762',
-  box250x250: '11810770',
-
-  /* Intrusive formats: implemented and ready, but OFF while AdSense reviews the
-   * site. An overlay push widget and a sticky auto-playing video slider hurt
-   * approval odds and cut against the no-intrusive-ads rule. To switch either
-   * on later, move the id from the "disabled" key up to the live key. */
-  inPagePush: null,
-  videoSlider: null,
-  disabledInPagePush: '11810542',
-  disabledInPagePushMaxAds: 2,
-  disabledVideoSlider: '11810550',
-};
