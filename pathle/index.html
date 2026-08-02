@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pathle — Guess the Tornado From Its Path | Daily Tornado Game</title>
+<meta name="description" content="Pathle is a free daily tornado guessing game. See a famous tornado's damage path, then guess which tornado it is. Hints reveal the country, rating, region, and year. Share your score." />
+<meta name="keywords" content="pathle, tornado game, guess the tornado, daily tornado game, tornado path game, famous tornadoes quiz, tornado wordle" />
+<meta property="og:title" content="Pathle — Guess the Tornado From Its Path" />
+<meta property="og:description" content="A free daily tornado guessing game. See the damage path, use the hints, name the tornado." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.tornadosimulator.net/pathle/" />
+<meta property="og:site_name" content="Tornado Hub" />
+<meta name="twitter:card" content="summary" />
+<link rel="canonical" href="https://www.tornadosimulator.net/pathle/" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script type="application/ld+json" data-seo="page">
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Pathle","url":"https://www.tornadosimulator.net/pathle/","applicationCategory":"GameApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"A free daily tornado guessing game. See a famous tornado's damage path and guess which tornado it is, with hints revealing country, rating, region, and year.","isPartOf":{"@id":"https://www.tornadosimulator.net/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"},{"@type":"ListItem","position":2,"name":"Games","item":"https://www.tornadosimulator.net/games/"},{"@type":"ListItem","position":3,"name":"Pathle","item":"https://www.tornadosimulator.net/pathle/"}]}]}
+</script>
+<style>
+:root{--bg:#fbfaf7;--bg-alt:#f4f1ea;--surface:#fff;--text:#14161c;--text-secondary:#4a5061;--text-muted:#8b8f9c;--border:#e5e1d8;--border-strong:#d4cfc3;--accent:#a02818;--accent-hover:#7d1f13;--good:#2e7d46;--bad:#c0392b;--serif:"Fraunces",Georgia,serif;--sans:"Inter",-apple-system,sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--accent);text-decoration:none}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1100px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 12px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text)}
+.nav-links a.cta{background:var(--accent);color:#fff;font-weight:600}
+.wrap{max-width:640px;margin:0 auto;padding:24px 20px 40px}
+.hero{text-align:center;margin-bottom:18px}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+h1{font-family:var(--serif);font-size:clamp(30px,6vw,42px);font-weight:700;letter-spacing:-.02em}
+.sub{color:var(--text-secondary);font-size:15px;margin-top:6px}
+.board{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:0 2px 14px rgba(0,0,0,.05)}
+.mapbox{background:linear-gradient(180deg,#eef4ee,#e4ece2);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.mapbox svg{display:block;width:100%;height:auto}
+.hints{list-style:none;margin:16px 0 0;display:grid;gap:8px}
+.hint{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;background:var(--bg-alt);border:1px solid var(--border);font-size:14px;opacity:.55}
+.hint.on{opacity:1;background:#fff;border-color:var(--border-strong)}
+.hint .k{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);flex:0 0 76px}
+.hint .v{font-weight:600}
+.hint.locked .v{color:var(--text-muted);font-weight:500}
+.guessform{margin-top:18px;display:flex;gap:8px}
+.guessform input{flex:1;padding:13px 14px;border:1.5px solid var(--border-strong);border-radius:10px;font-size:16px;font-family:var(--sans);background:var(--bg);color:var(--text)}
+.guessform input:focus{outline:none;border-color:var(--accent)}
+.btn{padding:13px 18px;border:0;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--sans)}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-hover)}
+.btn-ghost{background:var(--bg-alt);color:var(--text);border:1px solid var(--border)}
+.guesses{margin-top:14px;display:grid;gap:7px}
+.grow{display:flex;align-items:center;gap:10px;padding:9px 13px;border-radius:9px;font-size:14px;font-weight:600;border:1px solid var(--border)}
+.grow.miss{background:#fdece9;border-color:#f2c9c0;color:#7d241a}
+.grow.hit{background:#e7f5ec;border-color:#bfe3cc;color:#1e6b39}
+.grow .mark{margin-left:auto;font-weight:800}
+.tries{display:flex;justify-content:center;gap:6px;margin-top:4px}
+.pip{width:11px;height:11px;border-radius:50%;background:var(--border-strong)}
+.pip.used{background:var(--bad)}.pip.win{background:var(--good)}
+.result{margin-top:18px;text-align:center;display:none}
+.result.show{display:block}
+.result h2{font-family:var(--serif);font-size:24px;margin-bottom:6px}
+.result p{color:var(--text-secondary);font-size:15px;margin-bottom:14px}
+.result .answer{font-weight:700;color:var(--text)}
+.rowbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.modes{display:flex;gap:8px;justify-content:center;margin:14px 0 0}
+.chip{padding:7px 14px;border-radius:999px;border:1px solid var(--border-strong);background:var(--surface);font-size:13px;font-weight:700;cursor:pointer;color:var(--text-secondary)}
+.chip.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.inline-ad{margin:26px auto;display:flex;justify-content:center}
+.about{margin-top:30px}
+.about h2{font-family:var(--serif);font-size:24px;margin:24px 0 8px}
+.about h3{font-family:var(--serif);font-size:18px;margin:18px 0 6px}
+.about p{color:var(--text-secondary);margin-bottom:12px}
+.about ul{margin:0 0 12px 20px;color:var(--text-secondary)}
+.footer{border-top:1px solid var(--border);margin-top:34px;padding:26px;text-align:center;color:var(--text-muted);font-size:14px}
+.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:#14161c;color:#fff;padding:10px 18px;border-radius:8px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:200}
+.toast.show{opacity:1}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/games/">Games</a>
+    <a href="/tornadle/">Tornadle</a>
+    <a href="/spot-the-twister/">Spot the Twister</a>
+    <a href="/tornado-forecast/">Forecast</a>
+    <a href="/simulator/" class="cta">Simulator →</a>
+  </div>
+</div></nav>
+
+<main class="wrap">
+  <div class="hero">
+    <div class="eyebrow">🌪️ Daily tornado game</div>
+    <h1>Pathle</h1>
+    <p class="sub">Guess the famous tornado from its damage path. Each wrong guess reveals a new hint.</p>
+  </div>
+
+  <div class="modes">
+    <button class="chip active" id="mDaily">Daily</button>
+    <button class="chip" id="mEndless">Endless</button>
+  </div>
+
+  <div class="board" style="margin-top:14px">
+    <div class="mapbox" id="mapbox"></div>
+
+    <ul class="hints" id="hints"></ul>
+
+    <div class="tries" id="pips"></div>
+
+    <form class="guessform" id="guessform" autocomplete="off">
+      <input id="guess" list="tornadoList" placeholder="Name the tornado…" aria-label="Your guess" />
+      <button class="btn btn-primary" type="submit">Guess</button>
+    </form>
+    <datalist id="tornadoList"></datalist>
+
+    <div class="guesses" id="guesses"></div>
+
+    <div class="result" id="result">
+      <h2 id="resultTitle"></h2>
+      <p id="resultText"></p>
+      <div class="rowbtns">
+        <button class="btn btn-primary" id="shareBtn">Share result</button>
+        <button class="btn btn-ghost" id="againBtn" style="display:none">New tornado →</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="inline-ad">
+    <iframe src="//www.topcreativeformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.html" width="728" height="90" frameborder="0" scrolling="no"></iframe>
+  </div>
+
+  <section class="about">
+    <h2>How to play Pathle</h2>
+    <p>Pathle shows you the <strong>damage path</strong> of a famous tornado — its length, direction, and shape drawn on a stylised map. Your job is to name the tornado. You get <strong>five guesses</strong>. Start with just the path; each time you guess wrong, a new hint is revealed in this order:</p>
+    <ul>
+      <li><strong>Country</strong> — where in the world it struck</li>
+      <li><strong>Rating</strong> — its Fujita or Enhanced Fujita intensity</li>
+      <li><strong>Region</strong> — the state, province, or region</li>
+      <li><strong>Year</strong> — when it happened</li>
+    </ul>
+    <p>A new Pathle puzzle appears every day. Switch to <strong>Endless</strong> mode to keep playing random tornadoes back to back. When you finish, share your score — the squares show how many hints you needed, without spoiling the answer.</p>
+    <h3>More tornado games</h3>
+    <p>Love this? Try <a href="/spot-the-twister/">Spot the Twister</a> (name the tornado from a photo), the daily <a href="/tornadle/">Tornadle</a>, the <a href="/tornado-namer/">Tornado Namer</a>, or browse all <a href="/games/">tornado games</a>. Want to learn the real events? Read up on the <a href="/tornado-records/">biggest tornadoes in history</a>.</p>
+  </section>
+</main>
+
+<footer class="footer">A free daily game from <a href="/">Tornado Hub</a> — just for fun, built on real tornado history.</footer>
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  "use strict";
+  // path[] are normalised track points in a 0-100 box. Country -> Rating -> Region -> Year are the staged hints.
+  var DATA = [
+    {name:"Tri-State Tornado", country:"United States", rating:"F5", region:"Missouri, Illinois & Indiana", year:1925, path:[[8,74],[28,63],[48,52],[70,40],[92,30]], fact:"The deadliest tornado in US history — 695 killed on a 219-mile (352 km) track."},
+    {name:"Joplin Tornado", country:"United States", rating:"EF5", region:"Missouri", year:2011, path:[[36,58],[50,54],[64,50]], fact:"Killed 158 people in Joplin — the deadliest single US tornado since 1947."},
+    {name:"Moore Tornado", country:"United States", rating:"EF5", region:"Oklahoma", year:2013, path:[[44,66],[52,52],[60,38]], fact:"Struck Moore, Oklahoma, killing 24, including children at Plaza Towers Elementary."},
+    {name:"El Reno Tornado", country:"United States", rating:"EF3", region:"Oklahoma", year:2013, path:[[36,60],[46,58],[50,49],[61,54],[67,43],[74,50]], fact:"The widest tornado ever recorded — 2.6 miles (4.2 km) across."},
+    {name:"Jarrell Tornado", country:"United States", rating:"F5", region:"Texas", year:1997, path:[[54,38],[56,50],[51,61],[44,67]], fact:"A slow, looping F5 that produced some of the most extreme ground scouring ever seen."},
+    {name:"Greensburg Tornado", country:"United States", rating:"EF5", region:"Kansas", year:2007, path:[[44,66],[51,52],[58,38]], fact:"Destroyed 95% of Greensburg, Kansas — the town rebuilt as one of the greenest in America."},
+    {name:"Bridge Creek–Moore Tornado", country:"United States", rating:"F5", region:"Oklahoma", year:1999, path:[[28,66],[44,56],[60,46],[74,37]], fact:"Produced the highest wind speed ever measured on Earth: 302 mph (486 km/h)."},
+    {name:"Tuscaloosa–Birmingham Tornado", country:"United States", rating:"EF4", region:"Alabama", year:2011, path:[[16,71],[36,59],[56,47],[76,35],[88,28]], fact:"An 80-mile-long EF4 during the 2011 Super Outbreak, the deadliest US outbreak in decades."},
+    {name:"Xenia Tornado", country:"United States", rating:"F5", region:"Ohio", year:1974, path:[[40,60],[52,50],[63,42]], fact:"The signature tornado of the 1974 Super Outbreak; devastated Xenia, killing 32."},
+    {name:"Hackleburg–Phil Campbell Tornado", country:"United States", rating:"EF5", region:"Alabama", year:2011, path:[[8,75],[28,62],[48,50],[68,38],[90,25]], fact:"The deadliest tornado of the 2011 Super Outbreak — 72 killed on a 132-mile path."},
+    {name:"Elie Tornado", country:"Canada", rating:"F5", region:"Manitoba", year:2007, path:[[50,56],[53,49],[55,42]], fact:"Canada's only officially rated F5 tornado."},
+    {name:"Edmonton Tornado", country:"Canada", rating:"F4", region:"Alberta", year:1987, path:[[52,74],[50,58],[48,42],[46,27]], fact:"“Black Friday” — an F4 that killed 27 in and near Edmonton."},
+    {name:"Regina Cyclone", country:"Canada", rating:"F4", region:"Saskatchewan", year:1912, path:[[50,68],[50,53],[50,38]], fact:"Canada's deadliest tornado — 28 killed in Regina."},
+    {name:"Daulatpur–Saturia Tornado", country:"Bangladesh", rating:"Unrated (pre-survey)", region:"Manikganj District", year:1989, path:[[22,52],[42,50],[62,48],[80,46]], fact:"The deadliest tornado in world history — roughly 1,300 killed."},
+    {name:"Birmingham Tornado", country:"United Kingdom", rating:"T5 / EF2", region:"West Midlands", year:2005, path:[[46,53],[52,50],[58,47]], fact:"One of the strongest UK tornadoes on record, cutting through southern Birmingham."},
+    {name:"Ivanovo Tornado", country:"Russia", rating:"F5", region:"Ivanovo Oblast", year:1984, path:[[34,64],[48,52],[62,42]], fact:"A rare F5 in Russia during the 1984 outbreak near Ivanovo, north-east of Moscow."},
+    {name:"Great Natchez Tornado", country:"United States", rating:"Unrated (pre-1950)", region:"Mississippi", year:1840, path:[[46,66],[50,53],[53,40]], fact:"The second-deadliest US tornado — struck along the Mississippi River at Natchez."},
+    {name:"Andover Tornado", country:"United States", rating:"F5", region:"Kansas", year:1991, path:[[32,62],[48,52],[62,43],[72,37]], fact:"An F5 that tore through Andover, Kansas, and a mobile home park, killing 17."}
+  ];
+
+  var $ = function(s){ return document.querySelector(s); };
+  var box=$("#mapbox"), hintsEl=$("#hints"), pipsEl=$("#pips"), guessesEl=$("#guesses"),
+      form=$("#guessform"), input=$("#guess"), resultEl=$("#result"),
+      shareBtn=$("#shareBtn"), againBtn=$("#againBtn"), toastEl=$("#toast");
+  var MAX=5, mode="daily", state=null;
+
+  // datalist of all names
+  var dl=$("#tornadoList");
+  DATA.forEach(function(t){ var o=document.createElement("option"); o.value=t.name; dl.appendChild(o); });
+
+  function epochDay(){ return Math.floor((Date.now() - new Date().getTimezoneOffset()*60000)/86400000); }
+  function dailyIndex(){ return epochDay() % DATA.length; }
+  function puzzleNumber(){ return epochDay() - 19100; } // arbitrary origin so numbers look reasonable
+
+  function drawMap(t){
+    var p=t.path, pts=p.map(function(pt){ return pt[0].toFixed(1)+","+pt[1].toFixed(1); }).join(" ");
+    var s=p[0], e=p[p.length-1];
+    var grid="";
+    for(var g=10; g<100; g+=10){ grid+='<line x1="'+g+'" y1="0" x2="'+g+'" y2="100" stroke="#d7e2d4" stroke-width="0.4"/>'; grid+='<line x1="0" y1="'+g+'" x2="100" y2="'+g+'" stroke="#d7e2d4" stroke-width="0.4"/>'; }
+    box.innerHTML =
+      '<svg viewBox="0 0 100 100" role="img" aria-label="Stylised tornado damage path">'+
+      '<rect x="0" y="0" width="100" height="100" fill="#e8f0e5"/>'+grid+
+      '<polyline points="'+pts+'" fill="none" stroke="#a02818" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" opacity="0.9"/>'+
+      '<circle cx="'+s[0]+'" cy="'+s[1]+'" r="2.6" fill="#2e7d46"/>'+
+      '<circle cx="'+e[0]+'" cy="'+e[1]+'" r="2.6" fill="#c0392b"/>'+
+      '<text x="'+s[0]+'" y="'+(s[1]-4)+'" font-size="4" fill="#2e7d46" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700">START</text>'+
+      '<text x="'+e[0]+'" y="'+(e[1]+8)+'" font-size="4" fill="#c0392b" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700">END</text>'+
+      '</svg>';
+  }
+
+  function hintRows(t, revealed){
+    var rows=[["Country",t.country],["Rating",t.rating],["Region",t.region],["Year",String(t.year)]];
+    hintsEl.innerHTML = rows.map(function(r,i){
+      var on = i < revealed;
+      return '<li class="hint '+(on?"on":"locked")+'"><span class="k">'+r[0]+'</span><span class="v">'+(on?r[1]:"???")+'</span></li>';
+    }).join("");
+  }
+
+  function pips(){
+    var h="";
+    for(var i=0;i<MAX;i++){
+      var cls="pip";
+      if(i<state.guesses.length){ cls += state.solvedAt===i ? " win" : " used"; }
+      h+='<span class="'+cls+'"></span>';
+    }
+    pipsEl.innerHTML=h;
+  }
+
+  function renderGuesses(){
+    guessesEl.innerHTML = state.guesses.map(function(g){
+      var hit=g.correct;
+      return '<div class="grow '+(hit?"hit":"miss")+'">'+g.text+'<span class="mark">'+(hit?"✔":"✗")+'</span></div>';
+    }).join("");
+  }
+
+  function key(){ return mode==="daily" ? "pathle-daily-"+puzzleNumber() : null; }
+
+  function save(){ var k=key(); if(k){ try{ localStorage.setItem(k, JSON.stringify(state)); }catch(e){} } }
+  function load(){ var k=key(); if(k){ try{ var v=localStorage.getItem(k); if(v) return JSON.parse(v); }catch(e){} } return null; }
+
+  function newState(idx){ return { idx:idx, guesses:[], done:false, solvedAt:-1 }; }
+
+  function start(){
+    if(mode==="daily"){
+      state = load() || newState(dailyIndex());
+    } else {
+      state = newState(Math.floor(Math.random()*DATA.length));
+    }
+    render();
+  }
+
+  function render(){
+    var t=DATA[state.idx];
+    drawMap(t);
+    // revealed hints = number of wrong guesses so far (capped at 4)
+    var wrong = state.guesses.filter(function(g){ return !g.correct; }).length;
+    hintRows(t, Math.min(wrong,4));
+    pips();
+    renderGuesses();
+    if(state.done){ finish(); }
+    else { resultEl.classList.remove("show"); input.disabled=false; }
+    againBtn.style.display = (mode==="endless") ? "inline-block" : "none";
+  }
+
+  function toast(msg){ toastEl.textContent=msg; toastEl.classList.add("show"); setTimeout(function(){ toastEl.classList.remove("show"); },1600); }
+
+  function finish(){
+    var t=DATA[state.idx];
+    input.disabled=true;
+    resultEl.classList.add("show");
+    var won = state.solvedAt>=0;
+    $("#resultTitle").textContent = won ? "Solved! 🌪️" : "Out of guesses";
+    var lead = won
+      ? "You named it in <strong>"+(state.solvedAt+1)+"</strong> "+(state.solvedAt===0?"guess":"guesses")+" — it was "
+      : "Out of guesses — it was ";
+    $("#resultText").innerHTML = lead + '<span class="answer">'+t.name+'</span> ('+t.year+', '+t.rating+'). '+t.fact;
+    againBtn.style.display = (mode==="endless") ? "inline-block" : "none";
+  }
+
+  function submitGuess(val){
+    if(state.done) return;
+    var t=DATA[state.idx];
+    var norm=function(s){ return s.toLowerCase().replace(/[^a-z0-9]/g,""); };
+    var correct = norm(val)===norm(t.name);
+    // also accept if they typed an exact list name that matches
+    state.guesses.push({ text: val, correct: correct });
+    if(correct){ state.solvedAt = state.guesses.length-1; state.done=true; }
+    else if(state.guesses.length>=MAX){ state.done=true; }
+    save();
+    render();
+    if(!correct && !state.done) toast("Not quite — new hint revealed");
+  }
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var v=input.value.trim();
+    if(!v) return;
+    // require it to be one of the known names to avoid typo dead-ends
+    var known = DATA.some(function(t){ return t.name.toLowerCase()===v.toLowerCase(); });
+    if(!known){
+      var match = DATA.filter(function(t){ return t.name.toLowerCase().indexOf(v.toLowerCase())>=0; });
+      if(match.length===1){ v=match[0].name; }
+      else { toast("Pick a tornado from the list"); return; }
+    }
+    input.value="";
+    submitGuess(v);
+  });
+
+  shareBtn.addEventListener("click", function(){
+    var squares="";
+    for(var i=0;i<MAX;i++){
+      if(i<state.guesses.length){ squares += state.guesses[i].correct ? "🟩" : "🟥"; }
+      else { squares += "⬜"; }
+    }
+    var score = state.solvedAt>=0 ? (state.solvedAt+1)+"/"+MAX : "X/"+MAX;
+    var head = mode==="daily" ? ("Pathle #"+puzzleNumber()) : "Pathle";
+    var txt = head+" "+score+"\n"+squares+"\nhttps://www.tornadosimulator.net/pathle/";
+    if(navigator.share){ navigator.share({text:txt}).catch(function(){}); }
+    else if(navigator.clipboard){ navigator.clipboard.writeText(txt).then(function(){ toast("Result copied!"); }, function(){ toast("Copy failed"); }); }
+    else { toast("Sharing not supported"); }
+  });
+
+  againBtn.addEventListener("click", function(){ state=newState(Math.floor(Math.random()*DATA.length)); render(); input.disabled=false; input.focus(); });
+
+  $("#mDaily").addEventListener("click", function(){ if(mode==="daily")return; mode="daily"; $("#mDaily").classList.add("active"); $("#mEndless").classList.remove("active"); start(); });
+  $("#mEndless").addEventListener("click", function(){ if(mode==="endless")return; mode="endless"; $("#mEndless").classList.add("active"); $("#mDaily").classList.remove("active"); start(); input.disabled=false; });
+
+  start();
+})();
+</script>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=11" defer></script>
+<script src="/assets/ads.js?v=11" defer></script>
+<script src="/assets/house-ads.js?v=12" defer></script>
+</body>
+</html>

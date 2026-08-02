@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Spot the Twister — Identify the Tornado From Its Shape | Tornado Game</title>
+<meta name="description" content="Spot the Twister is a free tornado guessing game. Look at the tornado and identify what type it is — wedge, rope, cone, stovepipe, multi-vortex, waterspout and more. Score points and beat your streak." />
+<meta name="keywords" content="spot the twister, tornado game, identify tornado, tornado types game, tornado shapes, wedge rope cone tornado, guess the tornado" />
+<meta property="og:title" content="Spot the Twister — Identify the Tornado" />
+<meta property="og:description" content="Look at the tornado and name its type. A free game — score points and beat your best streak." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.tornadosimulator.net/spot-the-twister/" />
+<meta property="og:site_name" content="Tornado Hub" />
+<meta name="twitter:card" content="summary" />
+<link rel="canonical" href="https://www.tornadosimulator.net/spot-the-twister/" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script type="application/ld+json" data-seo="page">
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Spot the Twister","url":"https://www.tornadosimulator.net/spot-the-twister/","applicationCategory":"GameApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"A free tornado identification game. Look at the tornado and name its type — wedge, rope, cone, stovepipe, multi-vortex, waterspout and more.","isPartOf":{"@id":"https://www.tornadosimulator.net/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"},{"@type":"ListItem","position":2,"name":"Games","item":"https://www.tornadosimulator.net/games/"},{"@type":"ListItem","position":3,"name":"Spot the Twister","item":"https://www.tornadosimulator.net/spot-the-twister/"}]}]}
+</script>
+<style>
+:root{--bg:#fbfaf7;--bg-alt:#f4f1ea;--surface:#fff;--text:#14161c;--text-secondary:#4a5061;--text-muted:#8b8f9c;--border:#e5e1d8;--border-strong:#d4cfc3;--accent:#a02818;--accent-hover:#7d1f13;--good:#2e7d46;--bad:#c0392b;--serif:"Fraunces",Georgia,serif;--sans:"Inter",-apple-system,sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--accent);text-decoration:none}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1100px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 12px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text)}
+.nav-links a.cta{background:var(--accent);color:#fff;font-weight:600}
+.wrap{max-width:620px;margin:0 auto;padding:24px 20px 40px}
+.hero{text-align:center;margin-bottom:16px}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+h1{font-family:var(--serif);font-size:clamp(30px,6vw,42px);font-weight:700;letter-spacing:-.02em}
+.sub{color:var(--text-secondary);font-size:15px;margin-top:6px}
+.hud{display:flex;justify-content:center;gap:22px;margin:10px 0 6px;font-size:14px;font-weight:700;color:var(--text-secondary)}
+.hud b{color:var(--accent)}
+.board{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:16px;box-shadow:0 2px 14px rgba(0,0,0,.05)}
+.scene{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#cfd8dc}
+.scene svg{display:block;width:100%;height:auto}
+.q{text-align:center;font-weight:700;margin:14px 0 10px;font-size:16px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt{padding:14px 12px;border:1.5px solid var(--border-strong);border-radius:10px;background:var(--bg);font-size:15px;font-weight:600;cursor:pointer;text-align:center;transition:.12s;color:var(--text)}
+.opt:hover{border-color:var(--accent)}
+.opt:disabled{cursor:default}
+.opt.correct{background:#e7f5ec;border-color:var(--good);color:#1e6b39}
+.opt.wrong{background:#fdece9;border-color:var(--bad);color:#7d241a}
+.explain{margin-top:12px;padding:12px 14px;border-radius:10px;background:var(--bg-alt);border:1px solid var(--border);font-size:14px;color:var(--text-secondary);display:none}
+.explain.show{display:block}
+.explain b{color:var(--text)}
+.next{margin-top:12px;text-align:center}
+.btn{padding:12px 22px;border:0;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--sans)}
+.btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:var(--accent-hover)}
+.btn-ghost{background:var(--bg-alt);color:var(--text);border:1px solid var(--border)}
+.result{text-align:center;padding:14px 6px}
+.result h2{font-family:var(--serif);font-size:26px;margin-bottom:6px}
+.result .big{font-family:var(--serif);font-size:44px;font-weight:700;color:var(--accent);line-height:1.1}
+.result p{color:var(--text-secondary);margin:8px 0 16px}
+.rowbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.inline-ad{margin:26px auto;display:flex;justify-content:center}
+.about{margin-top:30px}
+.about h2{font-family:var(--serif);font-size:24px;margin:24px 0 8px}
+.about h3{font-family:var(--serif);font-size:18px;margin:18px 0 6px}
+.about p{color:var(--text-secondary);margin-bottom:12px}
+.about ul{margin:0 0 12px 20px;color:var(--text-secondary)}
+.footer{border-top:1px solid var(--border);margin-top:34px;padding:26px;text-align:center;color:var(--text-muted);font-size:14px}
+.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:#14161c;color:#fff;padding:10px 18px;border-radius:8px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:200}
+.toast.show{opacity:1}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/games/">Games</a>
+    <a href="/pathle/">Pathle</a>
+    <a href="/tornadle/">Tornadle</a>
+    <a href="/tornado-forecast/">Forecast</a>
+    <a href="/simulator/" class="cta">Simulator →</a>
+  </div>
+</div></nav>
+
+<main class="wrap">
+  <div class="hero">
+    <div class="eyebrow">🌪️ Tornado game</div>
+    <h1>Spot the Twister</h1>
+    <p class="sub">Look at the tornado and name its type. Ten rounds — how high can your streak go?</p>
+  </div>
+
+  <div class="hud">
+    <div>Round <b id="round">1</b>/10</div>
+    <div>Score <b id="score">0</b></div>
+    <div>Streak <b id="streak">0</b></div>
+  </div>
+
+  <div class="board">
+    <div id="game">
+      <div class="scene" id="scene"></div>
+      <div class="q">What kind of tornado is this?</div>
+      <div class="opts" id="opts"></div>
+      <div class="explain" id="explain"></div>
+      <div class="next" id="nextWrap" style="display:none">
+        <button class="btn btn-primary" id="nextBtn">Next →</button>
+      </div>
+    </div>
+
+    <div class="result" id="result" style="display:none">
+      <h2>Final score</h2>
+      <div class="big"><span id="finalScore">0</span>/10</div>
+      <p id="finalMsg"></p>
+      <div class="rowbtns">
+        <button class="btn btn-primary" id="shareBtn">Share score</button>
+        <button class="btn btn-ghost" id="againBtn">Play again</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="inline-ad">
+    <iframe src="//www.topcreativeformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.html" width="728" height="90" frameborder="0" scrolling="no"></iframe>
+  </div>
+
+  <section class="about">
+    <h2>About the game</h2>
+    <p>Tornadoes come in many shapes, and their form tells you a lot about how they behave. <strong>Spot the Twister</strong> shows you a tornado and asks you to identify its type from four choices. Get it right to build your streak across ten rounds, then share your score.</p>
+    <h3>The tornado types</h3>
+    <ul>
+      <li><strong>Rope</strong> — thin and snaking, often the birth or death stage of a tornado.</li>
+      <li><strong>Cone</strong> — the classic funnel, wider at the cloud base than at the ground.</li>
+      <li><strong>Wedge</strong> — appears at least as wide as it is tall; often the most violent.</li>
+      <li><strong>Stovepipe</strong> — a tall column of nearly uniform width.</li>
+      <li><strong>Multi-vortex</strong> — several small suction vortices circling one center.</li>
+      <li><strong>Waterspout</strong> — a tornado over water.</li>
+      <li><strong>Landspout</strong> — a weaker tornado not tied to a supercell's mesocyclone.</li>
+      <li><strong>Elephant trunk</strong> — a tapering, curving funnel that narrows toward the ground.</li>
+    </ul>
+    <p>The images are original illustrations built to show each shape clearly. Want more? Play <a href="/pathle/">Pathle</a>, the daily <a href="/tornadle/">Tornadle</a>, or browse all <a href="/games/">tornado games</a>. Learn the science on <a href="/what-is-a-supercell/">what a supercell is</a> and the <a href="/ef-scale-explorer/">EF scale</a>.</p>
+  </section>
+</main>
+
+<footer class="footer">A free game from <a href="/">Tornado Hub</a> — original illustrations, real meteorology.</footer>
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s);};
+
+  // ---- Tornado illustration engine (original SVG art) ----
+  function scene(inner, opts){
+    opts=opts||{};
+    var ground = opts.water
+      ? '<rect x="0" y="170" width="300" height="60" fill="#3b6ea5"/><rect x="0" y="170" width="300" height="60" fill="url(#water)"/>'
+      : '<rect x="0" y="176" width="300" height="54" fill="#7d8a5a"/><rect x="0" y="176" width="300" height="6" fill="#6a774b"/>';
+    var cloud = opts.fair
+      ? '<ellipse cx="150" cy="34" rx="120" ry="16" fill="#c9cdd2" opacity="0.7"/>'
+      : '<ellipse cx="150" cy="30" rx="180" ry="30" fill="#5a5f6b"/><ellipse cx="150" cy="44" rx="150" ry="20" fill="#484d59"/>';
+    return '<svg viewBox="0 0 300 230" role="img" aria-label="Illustration of a tornado">'+
+      '<defs>'+
+        '<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">'+
+          '<stop offset="0" stop-color="'+(opts.fair?'#a9c7e8':'#8a94a6')+'"/>'+
+          '<stop offset="1" stop-color="'+(opts.fair?'#dfeaf5':'#c3b79a')+'"/>'+
+        '</linearGradient>'+
+        '<linearGradient id="fun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a4e58"/><stop offset="1" stop-color="#2b2e36"/></linearGradient>'+
+        '<linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5b8fc0"/><stop offset="1" stop-color="#2f5f8a"/></linearGradient>'+
+      '</defs>'+
+      '<rect width="300" height="230" fill="url(#sky)"/>'+ground+cloud+inner+'</svg>';
+  }
+
+  function funnel(topW, botW, bx, wob, botY){
+    botY = botY||178;
+    var n=12, top=46, pts=[];
+    for(var i=0;i<=n;i++){
+      var t=i/n, y=top+(botY-top)*t, w=topW+(botW-topW)*t;
+      var cx=150+(bx-150)*t+Math.sin(t*3.14159*1.5)*wob*(1-t*0.25);
+      pts.push([cx,y,w]);
+    }
+    var d="M "+(pts[0][0]-pts[0][2]).toFixed(1)+" "+pts[0][1].toFixed(1);
+    for(var i=1;i<pts.length;i++) d+=" L "+(pts[i][0]-pts[i][2]).toFixed(1)+" "+pts[i][1].toFixed(1);
+    for(var j=pts.length-1;j>=0;j--) d+=" L "+(pts[j][0]+pts[j][2]).toFixed(1)+" "+pts[j][1].toFixed(1);
+    d+=" Z";
+    return {path:'<path d="'+d+'" fill="url(#fun)"/>', base:pts[pts.length-1]};
+  }
+
+  function dust(cx,y,r){ return '<ellipse cx="'+cx+'" cy="'+y+'" rx="'+r+'" ry="'+(r*0.42).toFixed(1)+'" fill="#8a7f66" opacity="0.85"/>'+
+    '<ellipse cx="'+(cx-r*0.5)+'" cy="'+(y+2)+'" rx="'+(r*0.6)+'" ry="'+(r*0.3)+'" fill="#9a8f74" opacity="0.7"/>'; }
+
+  var RENDER = {
+    rope: function(){ var f=funnel(7,3,168,26,176); return scene(f.path); },
+    cone: function(){ var f=funnel(30,11,150,6,178); return scene(f.path+dust(f.base[0],178,20)); },
+    wedge: function(){ var f=funnel(78,60,150,4,178); return scene(f.path+dust(f.base[0],178,55)); },
+    stovepipe: function(){ var f=funnel(26,22,150,5,178); return scene(f.path+dust(f.base[0],178,26)); },
+    multivortex: function(){
+      var broad=funnel(66,52,150,4,178);
+      var v1=funnel(9,5,128,6,178), v2=funnel(9,5,150,-6,178), v3=funnel(9,5,172,6,178);
+      var inner='<g opacity="0.9">'+v1.path+v2.path+v3.path+'</g>';
+      var faint='<path d="'+broad.path.match(/d="([^"]+)"/)[1]+'" fill="#3a3e47" opacity="0.35"/>';
+      return scene(faint+inner+dust(150,178,58));
+    },
+    waterspout: function(){ var f=funnel(22,9,150,8,172);
+      var spray='<ellipse cx="'+f.base[0]+'" cy="172" rx="20" ry="7" fill="#dfeaf2" opacity="0.85"/><ellipse cx="'+f.base[0]+'" cy="170" rx="11" ry="4" fill="#fff" opacity="0.7"/>';
+      return scene(f.path+spray,{water:true}); },
+    landspout: function(){ var f=funnel(9,7,150,4,178);
+      return scene('<g opacity="0.88">'+f.path+'</g>'+dust(f.base[0],178,18),{fair:true}); },
+    elephant: function(){ var f=funnel(40,8,132,16,178); return scene(f.path+dust(f.base[0],178,16)); }
+  };
+
+  var TYPES = [
+    {key:"rope", label:"Rope", desc:"Rope tornadoes are thin and often snaking — usually the beginning or the dying, dissipating stage of a tornado's life."},
+    {key:"cone", label:"Cone", desc:"The cone is the classic tornado shape: clearly wider where it meets the cloud base than where it touches the ground."},
+    {key:"wedge", label:"Wedge", desc:"A wedge looks at least as wide as it is tall. Many of the most violent EF4–EF5 tornadoes appear as wedges."},
+    {key:"stovepipe", label:"Stovepipe", desc:"A stovepipe is a tall, near-uniform column, roughly the same width top to bottom."},
+    {key:"multivortex", label:"Multi-vortex", desc:"A multi-vortex tornado contains several small suction vortices orbiting a common center — responsible for narrow streaks of extreme damage."},
+    {key:"waterspout", label:"Waterspout", desc:"A waterspout is a tornado over water. Fair-weather waterspouts are usually weak; tornadic ones can be dangerous."},
+    {key:"landspout", label:"Landspout", desc:"A landspout is a weaker tornado that forms without a supercell's rotating mesocyclone, often under growing cumulus clouds."},
+    {key:"elephant", label:"Elephant trunk", desc:"An elephant-trunk tornado tapers and curves as it narrows toward the ground."}
+  ];
+
+  var round=0, score=0, streak=0, best=0, answers=[], current=null, ROUNDS=10;
+  try{ best=parseInt(localStorage.getItem("spot-best")||"0",10)||0; }catch(e){}
+
+  function shuffle(a){ a=a.slice(); for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i];a[i]=a[j];a[j]=t; } return a; }
+
+  function nextRound(){
+    if(round>=ROUNDS){ return finish(); }
+    round++;
+    $("#round").textContent=round;
+    var correct = TYPES[Math.floor(Math.random()*TYPES.length)];
+    current = correct;
+    $("#scene").innerHTML = RENDER[correct.key]();
+    var others = shuffle(TYPES.filter(function(t){return t.key!==correct.key;})).slice(0,3);
+    var choices = shuffle(others.concat([correct]));
+    $("#opts").innerHTML = choices.map(function(c){ return '<button class="opt" data-key="'+c.key+'">'+c.label+'</button>'; }).join("");
+    $("#explain").classList.remove("show");
+    $("#nextWrap").style.display="none";
+    [].forEach.call(document.querySelectorAll(".opt"), function(b){ b.addEventListener("click", choose); });
+  }
+
+  function choose(e){
+    var pick=e.currentTarget.getAttribute("data-key");
+    var right = pick===current.key;
+    [].forEach.call(document.querySelectorAll(".opt"), function(b){
+      b.disabled=true;
+      var k=b.getAttribute("data-key");
+      if(k===current.key) b.classList.add("correct");
+      else if(k===pick) b.classList.add("wrong");
+    });
+    if(right){ score++; streak++; if(streak>best){ best=streak; try{localStorage.setItem("spot-best",String(best));}catch(e){} } }
+    else { streak=0; }
+    answers.push(right);
+    $("#score").textContent=score;
+    $("#streak").textContent=streak;
+    $("#explain").innerHTML="<b>"+current.label+".</b> "+current.desc;
+    $("#explain").classList.add("show");
+    $("#nextWrap").style.display="block";
+    $("#nextBtn").textContent = round>=ROUNDS ? "See results →" : "Next →";
+  }
+
+  function finish(){
+    $("#game").style.display="none";
+    $("#result").style.display="block";
+    $("#finalScore").textContent=score;
+    var msg = score===10 ? "Perfect! You're a true storm spotter. 🌪️"
+      : score>=8 ? "Excellent eye for tornadoes!"
+      : score>=6 ? "Solid — you know your funnels."
+      : score>=4 ? "Not bad. Play again to sharpen up."
+      : "Keep practicing — read the shapes below.";
+    $("#finalMsg").innerHTML = msg + "<br>Best streak: <b>"+best+"</b>";
+  }
+
+  function toast(m){ var t=$("#toast"); t.textContent=m; t.classList.add("show"); setTimeout(function(){t.classList.remove("show");},1600); }
+
+  $("#nextBtn").addEventListener("click", nextRound);
+  $("#againBtn").addEventListener("click", function(){ round=0;score=0;streak=0;answers=[]; $("#score").textContent=0;$("#streak").textContent=0; $("#result").style.display="none"; $("#game").style.display="block"; nextRound(); });
+  $("#shareBtn").addEventListener("click", function(){
+    var sq=answers.map(function(a){return a?"🟩":"🟥";}).join("");
+    var txt="Spot the Twister — "+score+"/10\n"+sq+"\nBest streak "+best+"\nhttps://www.tornadosimulator.net/spot-the-twister/";
+    if(navigator.share){ navigator.share({text:txt}).catch(function(){}); }
+    else if(navigator.clipboard){ navigator.clipboard.writeText(txt).then(function(){toast("Score copied!");},function(){toast("Copy failed");}); }
+    else { toast("Sharing not supported"); }
+  });
+
+  nextRound();
+})();
+</script>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=11" defer></script>
+<script src="/assets/ads.js?v=11" defer></script>
+<script src="/assets/house-ads.js?v=12" defer></script>
+</body>
+</html>
