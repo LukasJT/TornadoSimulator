@@ -112,14 +112,14 @@
     var s = document.createElement('style');
     s.id = 'house-ad-css';
     s.textContent =
-      '.inline-ad-row{display:flex;gap:16px;justify-content:center;align-items:stretch;' +
-      'margin:32px auto;padding:0 16px;box-sizing:border-box;flex-wrap:nowrap;' +
-      'width:min(1200px,calc(100vw - 32px));position:relative;' +
-      'left:50%;transform:translateX(-50%)}' +
-      '.inline-ad-row .house-ad-wrap{display:none;flex:0 0 210px}' +
-      '.inline-ad-row .inline-ad{margin:0;flex:1 1 auto;max-width:728px;align-self:center}' +
-      '@media (min-width:1480px){.inline-ad-row .house-ad-wrap{display:block}}' +
-      '@media (max-width:1479px){.inline-ad-row{width:auto;left:auto;transform:none;padding:0;max-width:100%}}' +
+      // Contained, centred row. No viewport break-out: the row never grows
+      // wider than the slot it lives in, so it can't overlap neighbouring
+      // columns/grids. Flanking house ads wrap under on tight widths.
+      '.inline-ad-row{display:flex;gap:16px;justify-content:center;align-items:center;' +
+      'margin:32px auto;box-sizing:border-box;flex-wrap:wrap;max-width:100%}' +
+      '.inline-ad-row .house-ad-wrap{flex:0 0 220px;max-width:220px}' +
+      '.inline-ad-row .inline-ad{margin:0;flex:0 1 728px;max-width:728px;align-self:center}' +
+      '@media (max-width:1479px){.inline-ad-row .house-ad-wrap{display:none}}' +
       '.house-ad-solo{max-width:728px;margin:28px auto;padding:0 16px;box-sizing:border-box}';
     document.head.appendChild(s);
   }
@@ -169,6 +169,13 @@
     banners.forEach(function (banner) {
       if (banner.closest('.inline-ad-row')) return;
       if (banner.closest('.house-ad')) return;
+
+      // Only flank a banner that sits in a genuinely wide, full-width slot.
+      // In a narrow column (e.g. a 2-column search/grid section) the flanking
+      // boxes would spill over the neighbouring content, so skip them there.
+      var host = banner.parentNode;
+      var avail = host && host.getBoundingClientRect ? host.getBoundingClientRect().width : 0;
+      if (avail < 1180) return;
 
       var row = document.createElement('div');
       row.className = 'inline-ad-row';
