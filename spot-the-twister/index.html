@@ -145,6 +145,8 @@ h1{font-family:var(--serif);font-size:clamp(30px,6vw,42px);font-weight:700;lette
       <li><strong>Waterspout</strong> — a tornado over water.</li>
       <li><strong>Landspout</strong> — a weaker tornado not tied to a supercell's mesocyclone.</li>
       <li><strong>Elephant trunk</strong> — a tapering, curving funnel that narrows toward the ground.</li>
+      <li><strong>Funnel cloud</strong> — a rotating funnel that hasn't reached the ground yet; not a tornado until it touches down.</li>
+      <li><strong>Rain-wrapped</strong> — a tornado hidden inside heavy rain, making it dangerously hard to see.</li>
     </ul>
     <p>The images are original illustrations built to show each shape clearly. Want more? Play <a href="/pathle/">Pathle</a>, the daily <a href="/tornadle/">Tornadle</a>, or browse all <a href="/games/">tornado games</a>. Learn the science on <a href="/what-is-a-supercell/">what a supercell is</a> and the <a href="/ef-scale-explorer/">EF scale</a>.</p>
 
@@ -224,7 +226,14 @@ h1{font-family:var(--serif);font-size:clamp(30px,6vw,42px);font-weight:700;lette
       return scene(f.path+spray,{water:true}); },
     landspout: function(){ var f=funnel(9,7,150,4,178);
       return scene('<g opacity="0.88">'+f.path+'</g>'+dust(f.base[0],178,18),{fair:true}); },
-    elephant: function(){ var f=funnel(40,8,132,16,178); return scene(f.path+dust(f.base[0],178,16)); }
+    elephant: function(){ var f=funnel(40,8,132,16,178); return scene(f.path+dust(f.base[0],178,16)); },
+    funnelcloud: function(){ var f=funnel(22,4,150,4,118); return scene(f.path); },
+    rainwrapped: function(){
+      var f=funnel(50,34,150,4,178);
+      var faint='<path d="'+f.path.match(/d="([^"]+)"/)[1]+'" fill="#3a3e47" opacity="0.4"/>';
+      var rain=''; for(var x=15;x<300;x+=9){ rain+='<line x1="'+x+'" y1="40" x2="'+(x-10)+'" y2="185" stroke="#aab2bd" stroke-width="1.4" opacity="0.5"/>'; }
+      return scene(faint+dust(150,178,42)+'<g>'+rain+'</g>');
+    }
   };
 
   var TYPES = [
@@ -235,7 +244,9 @@ h1{font-family:var(--serif);font-size:clamp(30px,6vw,42px);font-weight:700;lette
     {key:"multivortex", label:"Multi-vortex", desc:"A multi-vortex tornado contains several small suction vortices orbiting a common center — responsible for narrow streaks of extreme damage."},
     {key:"waterspout", label:"Waterspout", desc:"A waterspout is a tornado over water. Fair-weather waterspouts are usually weak; tornadic ones can be dangerous."},
     {key:"landspout", label:"Landspout", desc:"A landspout is a weaker tornado that forms without a supercell's rotating mesocyclone, often under growing cumulus clouds."},
-    {key:"elephant", label:"Elephant trunk", desc:"An elephant-trunk tornado tapers and curves as it narrows toward the ground."}
+    {key:"elephant", label:"Elephant trunk", desc:"An elephant-trunk tornado tapers and curves as it narrows toward the ground."},
+    {key:"funnelcloud", label:"Funnel cloud", desc:"A funnel cloud is a rotating, funnel-shaped cloud that has not reached the ground — it only becomes a tornado once it touches down."},
+    {key:"rainwrapped", label:"Rain-wrapped", desc:"A rain-wrapped tornado is hidden inside heavy rain, making it very hard to see — one of the most dangerous situations for anyone in its path."}
   ];
 
   var round=0, score=0, streak=0, best=0, answers=[], current=null, ROUNDS=10;
