@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <script type="application/ld+json" data-seo="page">
-{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Pathle","url":"https://www.tornadosimulator.net/pathle/","applicationCategory":"GameApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"A free daily tornado guessing game. See a famous tornado's damage path and guess which tornado it is, with hints revealing country, rating, region, and year.","isPartOf":{"@id":"https://www.tornadosimulator.net/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"},{"@type":"ListItem","position":2,"name":"Games","item":"https://www.tornadosimulator.net/games/"},{"@type":"ListItem","position":3,"name":"Pathle","item":"https://www.tornadosimulator.net/pathle/"}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Pathle","url":"https://www.tornadosimulator.net/pathle/","applicationCategory":"GameApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"A free daily tornado guessing game. See a famous tornado's damage path and guess which tornado it is, with hints revealing country, rating, region, and year.","isPartOf":{"@id":"https://www.tornadosimulator.net/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"},{"@type":"ListItem","position":2,"name":"Games","item":"https://www.tornadosimulator.net/games/"},{"@type":"ListItem","position":3,"name":"Pathle","item":"https://www.tornadosimulator.net/pathle/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Pathle?","acceptedAnswer":{"@type":"Answer","text":"Pathle is a free daily tornado guessing game. It shows the real damage path of a famous tornado, and you have five guesses to name it. Each wrong guess reveals a new hint: country, then rating, then region, then year."}},{"@type":"Question","name":"How do you play Pathle?","acceptedAnswer":{"@type":"Answer","text":"Look at the tornado's path on the map, type the name of the tornado you think it is, and guess. If you are wrong, a new hint appears. You get five guesses. There is a new puzzle every day, plus an endless mode."}},{"@type":"Question","name":"Are the tornado paths real?","acceptedAnswer":{"@type":"Answer","text":"Yes. Each path is projected from the tornado's actual documented track, so the direction, shape, and relative length are geographically accurate, with north pointing up."}},{"@type":"Question","name":"How many tornadoes are in Pathle?","acceptedAnswer":{"@type":"Answer","text":"Pathle features 31 famous tornadoes from around the world, including the Tri-State Tornado, Joplin, El Reno, Jarrell, the Mayfield Quad-State tornado, and events from Canada, Bangladesh, Russia, and the United Kingdom."}},{"@type":"Question","name":"Is Pathle free?","acceptedAnswer":{"@type":"Answer","text":"Yes, Pathle is completely free to play with no sign-up required, and you can share your result."}}]}]}
 </script>
 <style>
 :root{--bg:#fbfaf7;--bg-alt:#f4f1ea;--surface:#fff;--text:#14161c;--text-secondary:#4a5061;--text-muted:#8b8f9c;--border:#e5e1d8;--border-strong:#d4cfc3;--accent:#a02818;--accent-hover:#7d1f13;--good:#2e7d46;--bad:#c0392b;--serif:"Fraunces",Georgia,serif;--sans:"Inter",-apple-system,sans-serif;}
@@ -70,6 +70,18 @@ h1{font-family:var(--serif);font-size:clamp(30px,6vw,42px);font-weight:700;lette
 .result p{color:var(--text-secondary);font-size:15px;margin-bottom:14px}
 .result .answer{font-weight:700;color:var(--text)}
 .rowbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.stats{display:flex;justify-content:center;gap:0;margin:16px 0 8px}
+.stat{flex:1;max-width:90px;text-align:center;padding:0 4px}
+.stat .n{font-family:var(--serif);font-size:26px;font-weight:700;line-height:1}
+.stat .l{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em;margin-top:3px}
+.dist{max-width:340px;margin:6px auto 4px;display:grid;gap:4px}
+.dist-row{display:flex;align-items:center;gap:8px;font-size:12px}
+.dist-row .lab{flex:0 0 16px;color:var(--text-secondary);font-weight:700;text-align:right}
+.dist-row .bar{background:var(--good);color:#fff;border-radius:4px;padding:1px 6px;font-size:11px;font-weight:700;min-width:20px;text-align:right}
+.dist-row .bar.zero{background:var(--border-strong);color:var(--text-muted)}
+.dist-row.cur .bar{background:var(--accent)}
+.countdown{font-size:13px;color:var(--text-muted);margin:8px 0 4px}
+.countdown b{color:var(--text-secondary);font-variant-numeric:tabular-nums}
 .modes{display:flex;gap:8px;justify-content:center;margin:14px 0 0}
 .chip{padding:7px 14px;border-radius:999px;border:1px solid var(--border-strong);background:var(--surface);font-size:13px;font-weight:700;cursor:pointer;color:var(--text-secondary)}
 .chip.active{background:var(--accent);color:#fff;border-color:var(--accent)}
@@ -127,6 +139,9 @@ h1{font-family:var(--serif);font-size:clamp(30px,6vw,42px);font-weight:700;lette
     <div class="result" id="result">
       <h2 id="resultTitle"></h2>
       <p id="resultText"></p>
+      <div class="stats" id="stats"></div>
+      <div class="dist" id="dist"></div>
+      <div class="countdown" id="countdown"></div>
       <div class="rowbtns">
         <button class="btn btn-primary" id="shareBtn">Share result</button>
         <button class="btn btn-ghost" id="againBtn" style="display:none">New tornado →</button>
@@ -149,7 +164,17 @@ h1{font-family:var(--serif);font-size:clamp(30px,6vw,42px);font-weight:700;lette
     </ul>
     <p>A new Pathle puzzle appears every day. Switch to <strong>Endless</strong> mode to keep playing random tornadoes back to back. When you finish, share your score — the squares show how many hints you needed, without spoiling the answer.</p>
     <h3>More tornado games</h3>
-    <p>Love this? Try <a href="/spot-the-twister/">Spot the Twister</a> (name the tornado from a photo), the daily <a href="/tornadle/">Tornadle</a>, the <a href="/tornado-namer/">Tornado Namer</a>, or browse all <a href="/games/">tornado games</a>. Want to learn the real events? Read up on the <a href="/tornado-records/">biggest tornadoes in history</a>.</p>
+    <p>Love this? Try <a href="/spot-the-twister/">Spot the Twister</a> (name the tornado from its shape), the daily <a href="/tornadle/">Tornadle</a>, the <a href="/tornado-namer/">Tornado Namer</a>, or browse all <a href="/games/">tornado games</a>. Want to learn the real events? Read up on the <a href="/tornado-records/">biggest tornadoes in history</a>.</p>
+
+    <h2>Frequently asked questions</h2>
+    <h3>Are the tornado paths real?</h3>
+    <p>Yes. Every path is projected from the tornado's actual documented track, so the direction, shape, and relative length are geographically accurate, with north pointing up. A short tornado like Moore draws small; a long-track tornado like the Tri-State draws large.</p>
+    <h3>How many tornadoes are in Pathle?</h3>
+    <p>There are 31 famous tornadoes from around the world, from the Tri-State Tornado and El Reno to the Mayfield Quad-State tornado, plus events in Canada, Bangladesh, Russia, and the United Kingdom.</p>
+    <h3>When does the daily puzzle reset?</h3>
+    <p>A new Pathle appears every day at local midnight. After you finish, a countdown shows the time until the next puzzle, along with your play stats and win streak.</p>
+    <h3>Is Pathle free?</h3>
+    <p>Completely free, no sign-up, instant play, and shareable — like a Wordle for tornado history.</p>
   </section>
 </main>
 
@@ -308,6 +333,42 @@ h1{font-family:var(--serif);font-size:clamp(30px,6vw,42px);font-weight:700;lette
 
   function toast(msg){ toastEl.textContent=msg; toastEl.classList.add("show"); setTimeout(function(){ toastEl.classList.remove("show"); },1600); }
 
+  // ---- persistent daily stats ----
+  function loadStats(){ try{ return JSON.parse(localStorage.getItem("pathle-stats"))||{}; }catch(e){ return {}; } }
+  function saveStats(s){ try{ localStorage.setItem("pathle-stats", JSON.stringify(s)); }catch(e){} }
+  function recordDaily(won, tries){
+    var s=loadStats();
+    s.played=s.played||0; s.wins=s.wins||0; s.cur=s.cur||0; s.max=s.max||0; s.dist=s.dist||[0,0,0,0,0];
+    var pn=puzzleNumber();
+    if(s.lastNum!==pn){ // record once per puzzle
+      s.lastNum=pn; s.played++;
+      if(won){ s.wins++; s.cur++; if(s.cur>s.max) s.max=s.cur; s.dist[tries-1]++; }
+      else { s.cur=0; }
+      saveStats(s);
+    }
+    return s;
+  }
+  function statCell(n,l){ return '<div class="stat"><div class="n">'+n+'</div><div class="l">'+l+'</div></div>'; }
+  function renderStats(s){
+    var pct=s.played?Math.round(s.wins/s.played*100):0;
+    $("#stats").innerHTML=statCell(s.played,"Played")+statCell(pct,"Win %")+statCell(s.cur,"Streak")+statCell(s.max,"Max");
+  }
+  function renderDist(s,cur){
+    var mx=Math.max.apply(null,s.dist)||1, rows="";
+    for(var i=0;i<5;i++){ var v=s.dist[i], w=v?Math.max(Math.round(v/mx*100),12):0;
+      rows+='<div class="dist-row'+(cur===i+1?" cur":"")+'"><span class="lab">'+(i+1)+'</span><span class="bar'+(v===0?" zero":"")+'" style="width:'+w+'%">'+v+'</span></div>'; }
+    $("#dist").innerHTML=rows;
+  }
+  var cdTimer=null;
+  function stopCountdown(){ if(cdTimer){ clearInterval(cdTimer); cdTimer=null; } }
+  function startCountdown(){
+    stopCountdown();
+    function pad(x){ return (x<10?"0":"")+x; }
+    function tick(){ var now=new Date(), next=new Date(now.getFullYear(),now.getMonth(),now.getDate()+1,0,0,0,0), ms=Math.max(0,next-now);
+      $("#countdown").innerHTML='Next Pathle in <b>'+pad(Math.floor(ms/3600000))+':'+pad(Math.floor(ms%3600000/60000))+':'+pad(Math.floor(ms%60000/1000))+'</b>'; }
+    tick(); cdTimer=setInterval(tick,1000);
+  }
+
   function finish(){
     var t=DATA[state.idx];
     input.disabled=true;
@@ -318,6 +379,14 @@ h1{font-family:var(--serif);font-size:clamp(30px,6vw,42px);font-weight:700;lette
       ? "You named it in <strong>"+(state.solvedAt+1)+"</strong> "+(state.solvedAt===0?"guess":"guesses")+" — it was "
       : "Out of guesses — it was ";
     $("#resultText").innerHTML = lead + '<span class="answer">'+t.name+'</span> ('+t.year+', '+t.rating+'). '+t.fact;
+    if(mode==="daily"){
+      var s=recordDaily(won, won?state.solvedAt+1:0);
+      renderStats(s); renderDist(s, won?state.solvedAt+1:-1); startCountdown();
+      $("#stats").style.display=""; $("#dist").style.display=""; $("#countdown").style.display="";
+    } else {
+      stopCountdown();
+      $("#stats").innerHTML=""; $("#dist").innerHTML=""; $("#countdown").innerHTML="";
+    }
     againBtn.style.display = (mode==="endless") ? "inline-block" : "none";
   }
 

@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <script type="application/ld+json" data-seo="page">
-{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Spot the Twister","url":"https://www.tornadosimulator.net/spot-the-twister/","applicationCategory":"GameApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"A free tornado identification game. Look at the tornado and name its type — wedge, rope, cone, stovepipe, multi-vortex, waterspout and more.","isPartOf":{"@id":"https://www.tornadosimulator.net/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"},{"@type":"ListItem","position":2,"name":"Games","item":"https://www.tornadosimulator.net/games/"},{"@type":"ListItem","position":3,"name":"Spot the Twister","item":"https://www.tornadosimulator.net/spot-the-twister/"}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Spot the Twister","url":"https://www.tornadosimulator.net/spot-the-twister/","applicationCategory":"GameApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"A free tornado identification game. Look at the tornado and name its type — wedge, rope, cone, stovepipe, multi-vortex, waterspout and more.","isPartOf":{"@id":"https://www.tornadosimulator.net/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"},{"@type":"ListItem","position":2,"name":"Games","item":"https://www.tornadosimulator.net/games/"},{"@type":"ListItem","position":3,"name":"Spot the Twister","item":"https://www.tornadosimulator.net/spot-the-twister/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Spot the Twister?","acceptedAnswer":{"@type":"Answer","text":"Spot the Twister is a free tornado game. You are shown a tornado and must identify its type — wedge, rope, cone, stovepipe, multi-vortex, waterspout, landspout, or elephant trunk — from four choices, over ten rounds."}},{"@type":"Question","name":"What are the main tornado shapes?","acceptedAnswer":{"@type":"Answer","text":"Common tornado shapes include the rope (thin and snaking), cone (the classic funnel), wedge (as wide as it is tall), stovepipe (a uniform column), multi-vortex (several vortices at once), waterspout (over water), landspout, and elephant trunk (a tapering funnel)."}},{"@type":"Question","name":"How do you tell tornado types apart?","acceptedAnswer":{"@type":"Answer","text":"Look at the funnel's width relative to its height and where it is widest. A wedge looks at least as wide as it is tall, a cone is wider at the cloud than the ground, a rope is thin and often contorted, and a waterspout sits over water."}},{"@type":"Question","name":"Is Spot the Twister free?","acceptedAnswer":{"@type":"Answer","text":"Yes. It is completely free with no sign-up, tracks your best score and streak, and lets you share your result."}}]}]}
 </script>
 <style>
 :root{--bg:#fbfaf7;--bg-alt:#f4f1ea;--surface:#fff;--text:#14161c;--text-secondary:#4a5061;--text-muted:#8b8f9c;--border:#e5e1d8;--border-strong:#d4cfc3;--accent:#a02818;--accent-hover:#7d1f13;--good:#2e7d46;--bad:#c0392b;--serif:"Fraunces",Georgia,serif;--sans:"Inter",-apple-system,sans-serif;}
@@ -64,6 +64,10 @@ h1{font-family:var(--serif);font-size:clamp(30px,6vw,42px);font-weight:700;lette
 .result .big{font-family:var(--serif);font-size:44px;font-weight:700;color:var(--accent);line-height:1.1}
 .result p{color:var(--text-secondary);margin:8px 0 16px}
 .rowbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.lstats{display:flex;justify-content:center;gap:0;margin:14px 0 4px}
+.lstats .st{flex:1;max-width:100px;text-align:center;padding:0 4px}
+.lstats .st .n{font-family:var(--serif);font-size:24px;font-weight:700;line-height:1}
+.lstats .st .l{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em;margin-top:3px}
 .inline-ad{margin:26px auto;display:flex;justify-content:center}
 .about{margin-top:30px}
 .about h2{font-family:var(--serif);font-size:24px;margin:24px 0 8px}
@@ -116,6 +120,7 @@ h1{font-family:var(--serif);font-size:clamp(30px,6vw,42px);font-weight:700;lette
       <h2>Final score</h2>
       <div class="big"><span id="finalScore">0</span>/10</div>
       <p id="finalMsg"></p>
+      <div class="lstats" id="lstats"></div>
       <div class="rowbtns">
         <button class="btn btn-primary" id="shareBtn">Share score</button>
         <button class="btn btn-ghost" id="againBtn">Play again</button>
@@ -142,6 +147,16 @@ h1{font-family:var(--serif);font-size:clamp(30px,6vw,42px);font-weight:700;lette
       <li><strong>Elephant trunk</strong> — a tapering, curving funnel that narrows toward the ground.</li>
     </ul>
     <p>The images are original illustrations built to show each shape clearly. Want more? Play <a href="/pathle/">Pathle</a>, the daily <a href="/tornadle/">Tornadle</a>, or browse all <a href="/games/">tornado games</a>. Learn the science on <a href="/what-is-a-supercell/">what a supercell is</a> and the <a href="/ef-scale-explorer/">EF scale</a>.</p>
+
+    <h2>Frequently asked questions</h2>
+    <h3>How do you tell tornado types apart?</h3>
+    <p>Look at the funnel's width relative to its height and where it is widest. A <strong>wedge</strong> looks at least as wide as it is tall, a <strong>cone</strong> is wider at the cloud than the ground, a <strong>rope</strong> is thin and often contorted, and a <strong>waterspout</strong> sits over water.</p>
+    <h3>Which tornado shape is the most dangerous?</h3>
+    <p>There is no strict rule, but many of the most violent EF4–EF5 tornadoes appear as large wedges, and multi-vortex tornadoes can carve narrow streaks of extreme damage. Shape alone doesn't determine strength — always take any tornado seriously.</p>
+    <h3>Does the game keep score?</h3>
+    <p>Yes — it tracks your score across ten rounds plus your best score, running average, and best streak, and you can share your result.</p>
+    <h3>Is Spot the Twister free?</h3>
+    <p>Completely free, no sign-up, instant play.</p>
   </section>
 </main>
 
@@ -272,7 +287,18 @@ h1{font-family:var(--serif);font-size:clamp(30px,6vw,42px);font-weight:700;lette
       : score>=6 ? "Solid — you know your funnels."
       : score>=4 ? "Not bad. Play again to sharpen up."
       : "Keep practicing — read the shapes below.";
-    $("#finalMsg").innerHTML = msg + "<br>Best streak: <b>"+best+"</b>";
+    $("#finalMsg").innerHTML = msg;
+    // lifetime stats
+    var ls={};
+    try{ ls=JSON.parse(localStorage.getItem("spot-stats"))||{}; }catch(e){}
+    ls.played=(ls.played||0)+1;
+    ls.totalScore=(ls.totalScore||0)+score;
+    if(score>(ls.bestScore||0)) ls.bestScore=score;
+    ls.bestStreak=best;
+    try{ localStorage.setItem("spot-stats", JSON.stringify(ls)); }catch(e){}
+    var avg=Math.round(ls.totalScore/ls.played);
+    function cell(n,l){ return '<div class="st"><div class="n">'+n+'</div><div class="l">'+l+'</div></div>'; }
+    $("#lstats").innerHTML = cell(ls.played,"Games")+cell(ls.bestScore+"/10","Best")+cell(avg+"/10","Average")+cell(best,"Streak");
   }
 
   function toast(m){ var t=$("#toast"); t.textContent=m; t.classList.add("show"); setTimeout(function(){t.classList.remove("show");},1600); }
