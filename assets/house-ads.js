@@ -120,8 +120,51 @@
       '.inline-ad-row .house-ad-wrap{flex:0 0 220px;max-width:220px}' +
       '.inline-ad-row .inline-ad{margin:0;flex:0 1 728px;max-width:728px;align-self:center}' +
       '@media (max-width:1479px){.inline-ad-row .house-ad-wrap{display:none}}' +
-      '.house-ad-solo{max-width:728px;margin:28px auto;padding:0 16px;box-sizing:border-box}';
+      '.house-ad-solo{max-width:728px;margin:28px auto;padding:0 16px;box-sizing:border-box}' +
+      // Reserve slot height so an unfilled/collapsed network banner never leaves
+      // a dead 0px gap — the backfill house banner fills the reserved space.
+      '.inline-ad{min-height:96px}' +
+      '.house-ad-backfill{width:100%;max-width:728px;margin:6px auto 0;display:flex;justify-content:center}' +
+      '.house-ad-top{max-width:728px;margin:16px auto 24px;padding:0 16px;box-sizing:border-box}';
     document.head.appendChild(s);
+  }
+
+  function houseBannerEl(cls) {
+    injectCss();
+    var w = document.createElement('div');
+    w.className = cls || 'house-ad-solo';
+    w.innerHTML = renderAdWide(pickTwo()[0]);
+    return w;
+  }
+
+  // A guaranteed banner near the very top of the content, so every page shows a
+  // visible banner above the fold regardless of third-party ad fill.
+  function ensureTopBanner() {
+    if (document.querySelector('.house-ad-top')) return;
+    var main = document.querySelector('article.article') || document.querySelector('main') || document.querySelector('.main');
+    if (!main) return;
+    var anchor = main.querySelector('.hero') || main.querySelector('h1') || main.querySelector('.lede');
+    var w = houseBannerEl('house-ad-top');
+    if (anchor && anchor.parentNode) {
+      var host = anchor.closest('.hero') || anchor;
+      host.parentNode.insertBefore(w, host.nextSibling);
+    } else {
+      main.insertBefore(w, main.firstChild);
+    }
+  }
+
+  // Any network banner slot that stays empty/collapsed gets a visible house
+  // banner so the user always sees a banner where a slot exists.
+  function backfillBanners() {
+    setTimeout(function () {
+      document.querySelectorAll('.inline-ad').forEach(function (slot) {
+        if (slot.querySelector('.house-ad')) return;      // already houses an ad
+        if (slot.closest('.house-ad')) return;
+        var ifr = slot.querySelector('iframe');
+        var filled = ifr && ifr.offsetHeight > 24;         // network banner actually rendered
+        if (!filled) slot.appendChild(houseBannerEl('house-ad-backfill'));
+      });
+    }, 4200);
   }
 
   // Guaranteed per-page ad: every page shows at least one house ad, so no page
@@ -153,8 +196,11 @@
   }
 
   function inject() {
-    // Every page gets one guaranteed, always-visible house ad.
+    // Every page gets a guaranteed banner near the top and one lower down.
+    ensureTopBanner();
     ensureSoloHouseAd();
+    // Backfill any empty/collapsed network banner slot with a visible banner.
+    backfillBanners();
 
     // Wide-screen flanking house ads only on non-article pages with banners.
     if (isContentArticlePage()) return;
