@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Spot the Twister — 看图辨认龙卷风类型或名字 | 龙卷风游戏</title>
+<meta name="description" content="Spot the Twister 是一款免费的龙卷风猜谜游戏，有两种模式：根据外形辨认龙卷风类型（楔形、绳状、锥形、烟囱状、水龙卷等），或根据真实的 NOAA 公有领域照片猜出著名龙卷风。计分并挑战连胜。" />
+<meta name="keywords" content="龙卷风游戏, 龙卷风类型, 辨认龙卷风, 龙卷风形状, 楔形 绳状 锥形, 猜龙卷风, spot the twister 中文" />
+<meta property="og:title" content="Spot the Twister — 辨认龙卷风" />
+<meta property="og:description" content="看图辨认龙卷风类型。免费游戏——计分并刷新你的最佳连胜。" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.tornadosimulator.net/zh/spot-the-twister/" />
+<meta property="og:site_name" content="Tornado Hub" />
+<meta name="twitter:card" content="summary" />
+<link rel="canonical" href="https://www.tornadosimulator.net/zh/spot-the-twister/" />
+<link rel="alternate" hreflang="zh" href="https://www.tornadosimulator.net/zh/spot-the-twister/" />
+<link rel="alternate" hreflang="en" href="https://www.tornadosimulator.net/spot-the-twister/" />
+<link rel="alternate" hreflang="x-default" href="https://www.tornadosimulator.net/spot-the-twister/" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script type="application/ld+json" data-seo="page">
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Spot the Twister（中文）","url":"https://www.tornadosimulator.net/zh/spot-the-twister/","applicationCategory":"GameApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"免费游戏：辨认龙卷风类型，或根据真实照片猜出著名龙卷风。","inLanguage":"zh","isPartOf":{"@id":"https://www.tornadosimulator.net/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.tornadosimulator.net/zh/"},{"@type":"ListItem","position":2,"name":"游戏","item":"https://www.tornadosimulator.net/games/"},{"@type":"ListItem","position":3,"name":"Spot the Twister","item":"https://www.tornadosimulator.net/zh/spot-the-twister/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"如何区分龙卷风的类型？","acceptedAnswer":{"@type":"Answer","text":"看漏斗宽度与高度的比例，以及最宽的位置。楞形看起来至少和它的高度一样宽，锥形上宽下窄，绳状细而弯曲，水龙卷则在水面上。"}},{"@type":"Question","name":"这些龙卷风照片是真实的吗？","acceptedAnswer":{"@type":"Answer","text":"是。真实照片模式使用美国 NOAA 及其国家强风暴实验室的公有领域真实照片，每张均在页面上标注来源。"}},{"@type":"Question","name":"Spot the Twister 是免费的吗？","acceptedAnswer":{"@type":"Answer","text":"完全免费，无需注册，即开即玩。"}}]}]}
+</script>
+<style>
+:root{--bg:#fbfaf7;--bg-alt:#f4f1ea;--surface:#fff;--text:#14161c;--text-secondary:#4a5061;--text-muted:#8b8f9c;--border:#e5e1d8;--border-strong:#d4cfc3;--accent:#a02818;--accent-hover:#7d1f13;--good:#2e7d46;--bad:#c0392b;--serif:"Fraunces",Georgia,serif;--sans:"Inter",-apple-system,sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--accent);text-decoration:none}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1100px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 12px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text)}
+.nav-links a.cta{background:var(--accent);color:#fff;font-weight:600}
+.wrap{max-width:620px;margin:0 auto;padding:24px 20px 40px}
+.hero{text-align:center;margin-bottom:16px}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+h1{font-family:var(--serif);font-size:clamp(30px,6vw,42px);font-weight:700;letter-spacing:-.02em}
+.sub{color:var(--text-secondary);font-size:15px;margin-top:6px}
+.hud{display:flex;justify-content:center;gap:22px;margin:10px 0 6px;font-size:14px;font-weight:700;color:var(--text-secondary)}
+.hud b{color:var(--accent)}
+.board{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:16px;box-shadow:0 2px 14px rgba(0,0,0,.05)}
+.scene{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#cfd8dc}
+.scene svg{display:block;width:100%;height:auto}
+.scene img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+.modes{display:flex;gap:8px;justify-content:center;margin:0 0 12px}
+.chip{padding:7px 16px;border-radius:999px;border:1px solid var(--border-strong);background:var(--surface);font-size:13px;font-weight:700;cursor:pointer;color:var(--text-secondary)}
+.chip.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.credit{font-size:11px;color:var(--text-muted);text-align:center;margin:6px 0 0;min-height:14px}
+.credit a{color:var(--text-muted);text-decoration:underline}
+.credits-box{background:var(--bg-alt);border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin:14px 0;font-size:13px}
+.credits-box h3{margin:0 0 8px}
+.credits-box ul{margin:0 0 0 18px}
+.credits-box li{margin-bottom:6px;color:var(--text-secondary)}
+.credits-box a{color:var(--accent)}
+.q{text-align:center;font-weight:700;margin:14px 0 10px;font-size:16px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt{padding:14px 12px;border:1.5px solid var(--border-strong);border-radius:10px;background:var(--bg);font-size:15px;font-weight:600;cursor:pointer;text-align:center;transition:.12s;color:var(--text)}
+.opt:hover{border-color:var(--accent)}
+.opt:disabled{cursor:default}
+.opt.correct{background:#e7f5ec;border-color:var(--good);color:#1e6b39}
+.opt.wrong{background:#fdece9;border-color:var(--bad);color:#7d241a}
+.explain{margin-top:12px;padding:12px 14px;border-radius:10px;background:var(--bg-alt);border:1px solid var(--border);font-size:14px;color:var(--text-secondary);display:none}
+.explain.show{display:block}
+.explain b{color:var(--text)}
+.next{margin-top:12px;text-align:center}
+.btn{padding:12px 22px;border:0;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--sans)}
+.btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:var(--accent-hover)}
+.btn-ghost{background:var(--bg-alt);color:var(--text);border:1px solid var(--border)}
+.result{text-align:center;padding:14px 6px}
+.result h2{font-family:var(--serif);font-size:26px;margin-bottom:6px}
+.result .big{font-family:var(--serif);font-size:44px;font-weight:700;color:var(--accent);line-height:1.1}
+.result p{color:var(--text-secondary);margin:8px 0 16px}
+.rowbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.lstats{display:flex;justify-content:center;gap:0;margin:14px 0 4px}
+.lstats .st{flex:1;max-width:100px;text-align:center;padding:0 4px}
+.lstats .st .n{font-family:var(--serif);font-size:24px;font-weight:700;line-height:1}
+.lstats .st .l{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.04em;margin-top:3px}
+.inline-ad{margin:26px auto;display:flex;justify-content:center}
+.about{margin-top:30px}
+.about h2{font-family:var(--serif);font-size:24px;margin:24px 0 8px}
+.about h3{font-family:var(--serif);font-size:18px;margin:18px 0 6px}
+.about p{color:var(--text-secondary);margin-bottom:12px}
+.about ul{margin:0 0 12px 20px;color:var(--text-secondary)}
+.footer{border-top:1px solid var(--border);margin-top:34px;padding:26px;text-align:center;color:var(--text-muted);font-size:14px}
+.toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:#14161c;color:#fff;padding:10px 18px;border-radius:8px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:200}
+.toast.show{opacity:1}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
+  <div class="nav-links">
+    <a href="/zh/">首页</a>
+    <a href="/zh/wenzhang/">文章</a>
+    <a href="/games/">游戏</a>
+    <a href="/simulator/">模拟器</a>
+    <a href="/">English</a>
+    <a href="/simulator/" class="cta">模拟器 →</a>
+  </div>
+</div></nav>
+
+<main class="wrap">
+  <div class="hero">
+    <div class="eyebrow">🌪️ 龙卷风游戏</div>
+    <h1>Spot the Twister</h1>
+    <p class="sub">看图辨认龙卷风——你的连胜能冲多高？</p>
+  </div>
+
+  <div class="modes">
+    <button class="chip active" id="mShapes">看形状</button>
+    <button class="chip" id="mPhotos">真实照片</button>
+  </div>
+
+  <div class="hud">
+    <div>第 <b id="round">1</b> 轮/<span id="roundsTotal">10</span></div>
+    <div>得分 <b id="score">0</b></div>
+    <div>连胜 <b id="streak">0</b></div>
+  </div>
+
+  <div class="board">
+    <div id="game">
+      <div class="scene" id="scene"></div>
+      <div class="credit" id="credit"></div>
+      <div class="q" id="q">这是哪种类型的龙卷风？</div>
+      <div class="opts" id="opts"></div>
+      <div class="explain" id="explain"></div>
+      <div class="next" id="nextWrap" style="display:none">
+        <button class="btn btn-primary" id="nextBtn">下一题 →</button>
+      </div>
+    </div>
+
+    <div class="result" id="result" style="display:none">
+      <h2>最终得分</h2>
+      <div class="big"><span id="finalScore">0</span>/<span id="finalTotal">10</span></div>
+      <p id="finalMsg"></p>
+      <div class="lstats" id="lstats"></div>
+      <div class="rowbtns">
+        <button class="btn btn-primary" id="shareBtn">分享成绩</button>
+        <button class="btn btn-ghost" id="againBtn">再玩一次</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="inline-ad">
+    <iframe src="//www.topcreativeformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.html" width="728" height="90" frameborder="0" scrolling="no"></iframe>
+  </div>
+
+  <section class="about">
+    <h2>关于这个游戏</h2>
+    <p>龙卷风形态各异，而它的外形往往透露出它的行为方式。<strong>Spot the Twister</strong> 会给你展示一个龙卷风，让你从四个选项中辨认它的类型。答对就能在十轮里累积连胜，最后分享你的成绩。</p>
+    <h3>龙卷风的类型</h3>
+    <ul>
+      <li><strong>绳状</strong>——细长而蜿蜒，通常是龙卷风的初生或消亡阶段。</li>
+      <li><strong>锥形</strong>——经典的漏斗形，云底处比地面处更宽。</li>
+      <li><strong>楔形</strong>——看起来至少和高度一样宽，往往最为猛烈。</li>
+      <li><strong>烟囱状</strong>——一根高高的、上下几乎等宽的柱子。</li>
+      <li><strong>多涡旋</strong>——多个小型吸入涡旋绕着共同中心旋转。</li>
+      <li><strong>水龙卷</strong>——发生在水面上的龙卷风。</li>
+      <li><strong>陆龙卷</strong>——不依赖超级单体中气旋的较弱龙卷风。</li>
+      <li><strong>象鼻状</strong>——一根向地面收窄、弯曲的漏斗。</li>
+      <li><strong>漏斗云</strong>——尚未触及地面的旋转漏斗云；触地后才算龙卷风。</li>
+      <li><strong>雨幕包裹</strong>——被暴雨遮挡的龙卷风，极难看清，非常危险。</li>
+    </ul>
+    <p>这些图像是为清晰展示每种形状而绘制的原创插图。想玩更多？试试 <a href="/games/">全部龙卷风游戏</a>。想了解科学原理，请看我们的 <a href="/zh/wenzhang/">中文文章</a>。</p>
+
+    <h2>两种玩法</h2>
+    <p>在游戏顶部切换两种模式。<strong>看形状</strong> 用原创插图教你辨认经典的龙卷风形状；<strong>真实照片</strong> 展示著名龙卷风的公有领域真实照片，让你猜出它是哪一个。</p>
+
+    <div class="credits-box">
+      <h3>照片来源</h3>
+      <p style="margin:0 0 8px;color:var(--text-secondary)">所有照片均为美国国家海洋和大气管理局（NOAA）及其国家强风暴实验室（NSSL）的作品，属于公有领域。</p>
+      <ul>
+        <li>得克萨斯州迪米特（1995 年 6 月 2 日）——Harald Richter，NOAA/NSSL。<a href="https://commons.wikimedia.org/wiki/File:Dimmitt_Tornado1_-_NOAA.jpg" target="_blank" rel="noopener">来源</a></li>
+        <li>俄克拉何马州科德尔（1981）——NOAA/NSSL。<a href="https://commons.wikimedia.org/wiki/File:Tornado,_Cordell,_Oklahoma_1981_-_NOAA.jpg" target="_blank" rel="noopener">来源</a></li>
+        <li>俄克拉何马州联合城（1973 年 5 月 24 日）——NOAA。<a href="https://commons.wikimedia.org/wiki/File:Union_City_Oklahoma_Tornado_(mature).jpg" target="_blank" rel="noopener">来源</a></li>
+        <li>俄克拉何马州阿纳达科（1999 年 5 月 3 日）——Daphne Zaras，NOAA。<a href="https://commons.wikimedia.org/wiki/File:A_tornado_near_Anadarko,_Oklahoma,_on_May_3,_1999.jpg" target="_blank" rel="noopener">来源</a></li>
+        <li>俄克拉何马州皮德蒙特–马尔霍尔（1999 年 5 月 3 日）——NOAA/NSSL。<a href="https://commons.wikimedia.org/wiki/File:Piedmont_and_Mulhall_tornadoes_-_NOAA.jpg" target="_blank" rel="noopener">来源</a></li>
+        <li>俄克拉何马州明科——NOAA。<a href="https://commons.wikimedia.org/wiki/File:Tornado_near_Minco,_Oklahoma_-_NOAA.jpg" target="_blank" rel="noopener">来源</a></li>
+        <li>俄克拉何马州苜蓿（1981 年 5 月 22 日）——NOAA/NSSL。<a href="https://commons.wikimedia.org/wiki/File:Alfalfa_Tornado_-_NOAA.jpg" target="_blank" rel="noopener">来源</a></li>
+        <li>得克萨斯州西摩（1979 年 4 月 10 日）——NOAA/NSSL。<a href="https://commons.wikimedia.org/wiki/File:Seymour_Texas_Tornado.jpg" target="_blank" rel="noopener">来源</a></li>
+        <li>俄克拉何马州奥尔特斯（1982 年 5 月 11 日）——NOAA。<a href="https://commons.wikimedia.org/wiki/File:Altus_Oklahoma_Tornado.jpg" target="_blank" rel="noopener">来源</a></li>
+        <li>俄克拉何马州伊尼德（1966 年 6 月 5 日）——Leo Ainsworth，NOAA/NSSL。<a href="https://commons.wikimedia.org/wiki/File:Tornado_Enid_Oklahoma_Nssl0060.jpg" target="_blank" rel="noopener">来源</a></li>
+      </ul>
+    </div>
+
+    <h2>常见问题</h2>
+    <h3>如何区分龙卷风的类型？</h3>
+    <p>看漏斗宽度与高度的比例，以及最宽的位置。<strong>楔形</strong>看起来至少和高度一样宽，<strong>锥形</strong>上宽下窄，<strong>绳状</strong>细而常常扭曲，<strong>水龙卷</strong>则在水面上。</p>
+    <h3>哪种龙卷风形状最危险？</h3>
+    <p>没有绝对规律，但许多最猛烈的龙卷风（EF4–EF5）呈巨大的楔形，多涡旋龙卷风则会留下狭窄的极端破坏带。形状本身并不决定强度——对任何龙卷风都要认真对待。</p>
+    <h3>游戏会记录得分吗？</h3>
+    <p>会。它记录你十轮的得分，以及你的最高分和最佳连胜，还可以分享结果。</p>
+    <h3>这些照片是真实的吗？</h3>
+    <p>是的。<strong>真实照片</strong>模式使用来自 NOAA 及国家强风暴实验室的公有领域真实照片——包括迪米特（得州）、联合城、阿纳达科、科德尔和明科（俄克拉何马）——每张都在上方标注来源。</p>
+    <h3>Spot the Twister 是免费的吗？</h3>
+    <p>完全免费，无需注册，即开即玩。</p>
+  </section>
+</main>
+
+<footer class="footer"><a href="/zh/">Tornado Hub</a> 出品的免费游戏——原创插图，真实气象。 <a href="/">English</a></footer>
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s);};
+
+  // ---- Tornado illustration engine (original SVG art) ----
+  function scene(inner, opts){
+    opts=opts||{};
+    var ground = opts.water
+      ? '<rect x="0" y="170" width="300" height="60" fill="#3b6ea5"/><rect x="0" y="170" width="300" height="60" fill="url(#water)"/>'
+      : '<rect x="0" y="176" width="300" height="54" fill="#7d8a5a"/><rect x="0" y="176" width="300" height="6" fill="#6a774b"/>';
+    var cloud = opts.fair
+      ? '<ellipse cx="150" cy="34" rx="120" ry="16" fill="#c9cdd2" opacity="0.7"/>'
+      : '<ellipse cx="150" cy="30" rx="180" ry="30" fill="#5a5f6b"/><ellipse cx="150" cy="44" rx="150" ry="20" fill="#484d59"/>';
+    return '<svg viewBox="0 0 300 230" role="img" aria-label="Illustration of a tornado">'+
+      '<defs>'+
+        '<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">'+
+          '<stop offset="0" stop-color="'+(opts.fair?'#a9c7e8':'#8a94a6')+'"/>'+
+          '<stop offset="1" stop-color="'+(opts.fair?'#dfeaf5':'#c3b79a')+'"/>'+
+        '</linearGradient>'+
+        '<linearGradient id="fun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a4e58"/><stop offset="1" stop-color="#2b2e36"/></linearGradient>'+
+        '<linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5b8fc0"/><stop offset="1" stop-color="#2f5f8a"/></linearGradient>'+
+      '</defs>'+
+      '<rect width="300" height="230" fill="url(#sky)"/>'+ground+cloud+inner+'</svg>';
+  }
+
+  function funnel(topW, botW, bx, wob, botY){
+    botY = botY||178;
+    var n=12, top=46, pts=[];
+    for(var i=0;i<=n;i++){
+      var t=i/n, y=top+(botY-top)*t, w=topW+(botW-topW)*t;
+      var cx=150+(bx-150)*t+Math.sin(t*3.14159*1.5)*wob*(1-t*0.25);
+      pts.push([cx,y,w]);
+    }
+    var d="M "+(pts[0][0]-pts[0][2]).toFixed(1)+" "+pts[0][1].toFixed(1);
+    for(var i=1;i<pts.length;i++) d+=" L "+(pts[i][0]-pts[i][2]).toFixed(1)+" "+pts[i][1].toFixed(1);
+    for(var j=pts.length-1;j>=0;j--) d+=" L "+(pts[j][0]+pts[j][2]).toFixed(1)+" "+pts[j][1].toFixed(1);
+    d+=" Z";
+    return {path:'<path d="'+d+'" fill="url(#fun)"/>', base:pts[pts.length-1]};
+  }
+
+  function dust(cx,y,r){ return '<ellipse cx="'+cx+'" cy="'+y+'" rx="'+r+'" ry="'+(r*0.42).toFixed(1)+'" fill="#8a7f66" opacity="0.85"/>'+
+    '<ellipse cx="'+(cx-r*0.5)+'" cy="'+(y+2)+'" rx="'+(r*0.6)+'" ry="'+(r*0.3)+'" fill="#9a8f74" opacity="0.7"/>'; }
+
+  var RENDER = {
+    rope: function(){ var f=funnel(7,3,168,26,176); return scene(f.path); },
+    cone: function(){ var f=funnel(30,11,150,6,178); return scene(f.path+dust(f.base[0],178,20)); },
+    wedge: function(){ var f=funnel(78,60,150,4,178); return scene(f.path+dust(f.base[0],178,55)); },
+    stovepipe: function(){ var f=funnel(26,22,150,5,178); return scene(f.path+dust(f.base[0],178,26)); },
+    multivortex: function(){
+      var broad=funnel(66,52,150,4,178);
+      var v1=funnel(9,5,128,6,178), v2=funnel(9,5,150,-6,178), v3=funnel(9,5,172,6,178);
+      var inner='<g opacity="0.9">'+v1.path+v2.path+v3.path+'</g>';
+      var faint='<path d="'+broad.path.match(/d="([^"]+)"/)[1]+'" fill="#3a3e47" opacity="0.35"/>';
+      return scene(faint+inner+dust(150,178,58));
+    },
+    waterspout: function(){ var f=funnel(22,9,150,8,172);
+      var spray='<ellipse cx="'+f.base[0]+'" cy="172" rx="20" ry="7" fill="#dfeaf2" opacity="0.85"/><ellipse cx="'+f.base[0]+'" cy="170" rx="11" ry="4" fill="#fff" opacity="0.7"/>';
+      return scene(f.path+spray,{water:true}); },
+    landspout: function(){ var f=funnel(9,7,150,4,178);
+      return scene('<g opacity="0.88">'+f.path+'</g>'+dust(f.base[0],178,18),{fair:true}); },
+    elephant: function(){ var f=funnel(40,8,132,16,178); return scene(f.path+dust(f.base[0],178,16)); },
+    funnelcloud: function(){ var f=funnel(22,4,150,4,118); return scene(f.path); },
+    rainwrapped: function(){
+      var f=funnel(50,34,150,4,178);
+      var faint='<path d="'+f.path.match(/d="([^"]+)"/)[1]+'" fill="#3a3e47" opacity="0.4"/>';
+      var rain=''; for(var x=15;x<300;x+=9){ rain+='<line x1="'+x+'" y1="40" x2="'+(x-10)+'" y2="185" stroke="#aab2bd" stroke-width="1.4" opacity="0.5"/>'; }
+      return scene(faint+dust(150,178,42)+'<g>'+rain+'</g>');
+    }
+  };
+
+  var TYPES = [
+    {key:"rope", label:"绳状", desc:"绳状龙卷风细长而蜿蜒，通常是龙卷风的初生阶段或走向消亡的阶段。"},
+    {key:"cone", label:"锥形", desc:"锥形是经典的龙卷风外形：云底处明显比触地处更宽。"},
+    {key:"wedge", label:"楔形", desc:"楔形看起来至少和它的高度一样宽。许多最猛烈的 EF4–EF5 龙卷风都呈楔形。"},
+    {key:"stovepipe", label:"烟囱状", desc:"烟囱状是一根高高的、上下宽度几乎一致的柱子。"},
+    {key:"multivortex", label:"多涡旋", desc:"多涡旋龙卷风包含多个绕共同中心旋转的小型吸入涡旋，会造成狭窄的极端破坏带。"},
+    {key:"waterspout", label:"水龙卷", desc:"水龙卷是发生在水面上的龙卷风。晴天型通常较弱，龙卷型则可能很危险。"},
+    {key:"landspout", label:"陆龙卷", desc:"陆龙卷是一种较弱的龙卷风，不依赖超级单体的旋转中气旋，常在发展中的积云下形成。"},
+    {key:"elephant", label:"象鼻状", desc:"象鼻状龙卷风向地面收窄时会逐渐变细并弯曲。"},
+    {key:"funnelcloud", label:"漏斗云", desc:"漏斗云是尚未触及地面的旋转漏斗形云——只有触地后才成为龙卷风。"},
+    {key:"rainwrapped", label:"雨幕包裹", desc:"被雨幕包裹的龙卷风藏在暴雨之中，极难看清，是处在其路径上最危险的情况之一。"}
+  ];
+
+  // Real public-domain tornado photos (NOAA/NSSL), bundled in /photos and cited.
+  var PHOTOS = [
+    {key:"dimmitt", label:"Dimmitt, Texas (1995)", name:"Dimmitt, Texas", year:1995, file:"dimmitt.jpg",
+     fact:"一个经典的锥形龙卷风，1995 年 6 月 2 日在得克萨斯州迪米特以南、VORTEX 计划期间拍摄。",
+     credit:"Harald Richter, NOAA/NSSL", source:"https://commons.wikimedia.org/wiki/File:Dimmitt_Tornado1_-_NOAA.jpg"},
+    {key:"cordell", label:"Cordell, Oklahoma (1981)", name:"Cordell, Oklahoma", year:1981, file:"cordell.jpg",
+     fact:"1981 年在俄克拉何马州科德尔附近，一个楔形龙卷风卷起碎片云。",
+     credit:"NOAA/NSSL", source:"https://commons.wikimedia.org/wiki/File:Tornado,_Cordell,_Oklahoma_1981_-_NOAA.jpg"},
+    {key:"unioncity", label:"Union City, Oklahoma (1973)", name:"Union City, Oklahoma", year:1973, file:"unioncity.jpg",
+     fact:"1973 年 5 月 24 日俄克拉何马州联合城的 F4 龙卷风处于成熟阶段——龙卷风研究中的里程碑风暴。",
+     credit:"NOAA", source:"https://commons.wikimedia.org/wiki/File:Union_City_Oklahoma_Tornado_(mature).jpg"},
+    {key:"anadarko", label:"Anadarko, Oklahoma (1999)", name:"Anadarko, Oklahoma", year:1999, file:"anadarko.jpg",
+     fact:"1999 年 5 月 3 日俄克拉何马州阿纳达科附近的龙卷风——那天正是毁灭性的俄克拉何马城龙卷风爆发日。",
+     credit:"Daphne Zaras, NOAA", source:"https://commons.wikimedia.org/wiki/File:A_tornado_near_Anadarko,_Oklahoma,_on_May_3,_1999.jpg"},
+    {key:"piedmont", label:"Piedmont–Mulhall, Oklahoma (1999)", name:"Piedmont–Mulhall, Oklahoma", year:1999, file:"piedmont.jpg",
+     fact:"1999 年 5 月 3 日俄克拉何马州，产生皮德蒙特和马尔霍尔龙卷风那一系列中的早期一个。",
+     credit:"NOAA/NSSL", source:"https://commons.wikimedia.org/wiki/File:Piedmont_and_Mulhall_tornadoes_-_NOAA.jpg"},
+    {key:"minco", label:"Minco, Oklahoma", name:"Minco, Oklahoma", year:null, file:"minco.jpg",
+     fact:"俄克拉何马州明科附近的一个烟囱状龙卷风，来自 NOAA 国家强风暴实验室的收藏。",
+     credit:"NOAA", source:"https://commons.wikimedia.org/wiki/File:Tornado_near_Minco,_Oklahoma_-_NOAA.jpg"},
+    {key:"alfalfa", label:"Alfalfa, Oklahoma (1981)", name:"Alfalfa, Oklahoma", year:1981, file:"alfalfa.jpg",
+     fact:"1981 年 5 月 22 日俄克拉何马州苜蓿附近的龙卷风，由国家强风暴实验室记录。",
+     credit:"NOAA/NSSL", source:"https://commons.wikimedia.org/wiki/File:Alfalfa_Tornado_-_NOAA.jpg"},
+    {key:"seymour", label:"Seymour, Texas (1979)", name:"Seymour, Texas", year:1979, file:"seymour.jpg",
+     fact:"1979 年 4 月 10 日得克萨斯州西摩的龙卷风——与致命的红河谷爆发同一天。",
+     credit:"NOAA/NSSL", source:"https://commons.wikimedia.org/wiki/File:Seymour_Texas_Tornado.jpg"},
+    {key:"altus", label:"Altus, Oklahoma (1982)", name:"Altus, Oklahoma", year:1982, file:"altus.jpg",
+     fact:"1982 年 5 月 11 日俄克拉何马州奥尔特斯附近的龙卷风，来自 NOAA 强风暴收藏。",
+     credit:"NOAA", source:"https://commons.wikimedia.org/wiki/File:Altus_Oklahoma_Tornado.jpg"},
+    {key:"enid", label:"Enid, Oklahoma (1966)", name:"Enid, Oklahoma", year:1966, file:"enid.jpg",
+     fact:"1966 年 6 月 5 日俄克拉何马州伊尼德的龙卷风，一组成熟龙卷风经典照片系列之一。",
+     credit:"Leo Ainsworth, NOAA/NSSL", source:"https://commons.wikimedia.org/wiki/File:Tornado_Enid_Oklahoma_Nssl0060.jpg"}
+  ];
+
+  var mode="shapes", round=0, score=0, streak=0, best=0, answers=[], current=null, ROUNDS=10, deck=[];
+  try{ best=parseInt(localStorage.getItem("zh-spot-best")||"0",10)||0; }catch(e){}
+
+  function shuffle(a){ a=a.slice(); for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i];a[i]=a[j];a[j]=t; } return a; }
+
+  function nextRound(){
+    if(round>=ROUNDS){ return finish(); }
+    round++;
+    $("#round").textContent=round;
+    var others, choices, correct;
+    if(mode==="photos"){
+      if(!deck.length) deck=shuffle(PHOTOS);
+      correct=deck[round-1]; current=correct;
+      $("#scene").innerHTML='<img src="/spot-the-twister/photos/'+correct.file+'" alt="Real tornado photograph" loading="lazy">';
+      $("#credit").innerHTML='照片：美国 NOAA / NSSL——公有领域';
+      $("#q").textContent="这是哪一个龙卷风？";
+      others=shuffle(PHOTOS.filter(function(p){return p.key!==correct.key;})).slice(0,3);
+    } else {
+      correct=TYPES[Math.floor(Math.random()*TYPES.length)]; current=correct;
+      $("#scene").innerHTML=RENDER[correct.key]();
+      $("#credit").innerHTML="";
+      $("#q").textContent="这是哪种类型的龙卷风？";
+      others=shuffle(TYPES.filter(function(t){return t.key!==correct.key;})).slice(0,3);
+    }
+    choices=shuffle(others.concat([correct]));
+    $("#opts").innerHTML=choices.map(function(c){ return '<button class="opt" data-key="'+c.key+'">'+c.label+'</button>'; }).join("");
+    $("#explain").classList.remove("show");
+    $("#nextWrap").style.display="none";
+    [].forEach.call(document.querySelectorAll(".opt"), function(b){ b.addEventListener("click", choose); });
+  }
+
+  function choose(e){
+    var pick=e.currentTarget.getAttribute("data-key");
+    var right = pick===current.key;
+    [].forEach.call(document.querySelectorAll(".opt"), function(b){
+      b.disabled=true;
+      var k=b.getAttribute("data-key");
+      if(k===current.key) b.classList.add("correct");
+      else if(k===pick) b.classList.add("wrong");
+    });
+    if(right){ score++; streak++; if(streak>best){ best=streak; try{localStorage.setItem("zh-spot-best",String(best));}catch(e){} } }
+    else { streak=0; }
+    answers.push(right);
+    $("#score").textContent=score;
+    $("#streak").textContent=streak;
+    if(mode==="photos"){
+      $("#credit").innerHTML='照片：'+current.credit+' — <a href="'+current.source+'" target="_blank" rel="noopener">来源</a> · 公有领域';
+      $("#explain").innerHTML="<b>"+current.name+(current.year?" ("+current.year+")":"")+".</b> "+current.fact;
+    } else {
+      $("#explain").innerHTML="<b>"+current.label+".</b> "+current.desc;
+    }
+    $("#explain").classList.add("show");
+    $("#nextWrap").style.display="block";
+    $("#nextBtn").textContent = round>=ROUNDS ? "查看结果 →" : "下一题 →";
+  }
+
+  function finish(){
+    $("#game").style.display="none";
+    $("#result").style.display="block";
+    $("#finalScore").textContent=score;
+    $("#finalTotal").textContent=ROUNDS;
+    var pct=score/ROUNDS;
+    var msg = pct===1 ? "完美！你是真正的风暴观测员。🌪️"
+      : pct>=0.8 ? "你对龙卷风的眼力真棒！"
+      : pct>=0.6 ? "不错——你很懂龙卷风。"
+      : pct>=0.4 ? "还行。再玩一次练练手。"
+      : "继续练习——研究下方的示例。";
+    $("#finalMsg").innerHTML = msg;
+    var ls={};
+    try{ ls=JSON.parse(localStorage.getItem("zh-spot-stats"))||{}; }catch(e){}
+    ls.played=(ls.played||0)+1;
+    if(streak>(ls.bestStreak||0)) ls.bestStreak=streak;
+    ls.bestStreak=Math.max(ls.bestStreak||0,best);
+    try{ localStorage.setItem("zh-spot-stats", JSON.stringify(ls)); }catch(e){}
+    function cell(n,l){ return '<div class="st"><div class="n">'+n+'</div><div class="l">'+l+'</div></div>'; }
+    $("#lstats").innerHTML = cell(ls.played,"局数")+cell(score+"/"+ROUNDS,"本局")+cell(best,"最佳连胜");
+  }
+
+  function toast(m){ var t=$("#toast"); t.textContent=m; t.classList.add("show"); setTimeout(function(){t.classList.remove("show");},1600); }
+
+  function reset(){ round=0;score=0;streak=0;answers=[];deck=[]; $("#score").textContent=0;$("#streak").textContent=0; $("#result").style.display="none"; $("#game").style.display="block"; }
+  function setMode(m){
+    if(mode===m && round<=1) return;
+    mode=m; ROUNDS = (m==="photos") ? PHOTOS.length : 10;
+    $("#roundsTotal").textContent=ROUNDS;
+    $("#mShapes").classList.toggle("active",m==="shapes");
+    $("#mPhotos").classList.toggle("active",m==="photos");
+    reset(); nextRound();
+  }
+
+  $("#nextBtn").addEventListener("click", nextRound);
+  $("#againBtn").addEventListener("click", function(){ reset(); nextRound(); });
+  $("#mShapes").addEventListener("click", function(){ setMode("shapes"); });
+  $("#mPhotos").addEventListener("click", function(){ setMode("photos"); });
+  $("#shareBtn").addEventListener("click", function(){
+    var sq=answers.map(function(a){return a?"🟩":"🟥";}).join("");
+    var label = mode==="photos" ? "真实照片" : "看形状";
+    var txt="Spot the Twister ("+label+") — "+score+"/"+ROUNDS+"\n"+sq+"\nBest streak "+best+"\nhttps://www.tornadosimulator.net/zh/spot-the-twister/";
+    if(navigator.share){ navigator.share({text:txt}).catch(function(){}); }
+    else if(navigator.clipboard){ navigator.clipboard.writeText(txt).then(function(){toast("成绩已复制！");},function(){toast("复制失败");}); }
+    else { toast("不支持分享"); }
+  });
+
+  nextRound();
+})();
+</script>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=11" defer></script>
+<script src="/assets/ads.js?v=11" defer></script>
+<script src="/assets/house-ads.js?v=14" defer></script>
+</body>
+</html>
