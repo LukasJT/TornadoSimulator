@@ -8517,5 +8517,54 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "How to prepare a yard before severe storms, wind, hail, heavy rain, and tropical systems, including patio furniture, trees, grills, drains, and loose objects.",
     "category": "Home Weather Prep",
     "keywords": "Yard Storm Prep Guide: Patio Furniture, Trees, Trampolines, Grills, and Drainage How to prepare a yard before severe storms, wind, hail, heavy rain, and tropical systems, including patio furniture, trees, grills, drains, and loose objects. yard storm prep guide"
+  },
+  {
+    "title": "Perryton, Texas Tornado of 2023 — EF3, 3 Killed in Panhandle Mobile Home Community",
+    "path": "/perryton-2023/",
+    "description": "An EF3 tornado struck Perryton, Texas on June 15, 2023, killing 3 people and injuring around 100 as it tore through a mobile home community during the evening rush.",
+    "category": "Guide",
+    "keywords": "Perryton, Texas Tornado of 2023 — EF3, 3 Killed in Panhandle Mobile Home Community An EF3 tornado struck Perryton, Texas on June 15, 2023, killing 3 people and injuring around 100 as it tore through a mobile home community during the evening rush. perryton texas tornado 2023"
+  },
+  {
+    "title": "Selma, Alabama Tornado of 2023 — EF3 Tears Through Historic Downtown",
+    "path": "/selma-2023/",
+    "description": "An EF3 tornado cut directly through downtown Selma, Alabama on January 12, 2023, heavily damaging the historic district during a Southeastern outbreak that proved fatal elsewhere in the region.",
+    "category": "Guide",
+    "keywords": "Selma, Alabama Tornado of 2023 — EF3 Tears Through Historic Downtown An EF3 tornado cut directly through downtown Selma, Alabama on January 12, 2023, heavily damaging the historic district during a Southeastern outbreak that proved fatal elsewhere in the region. selma alabama tornado 2023"
+  },
+  {
+    "title": "Little Rock, Arkansas Tornado of 2023 — EF3 Tears Through State Capital",
+    "path": "/little-rock-2023/",
+    "description": "An EF3 tornado cut directly through West Little Rock and North Little Rock on March 31, 2023, a rare urban direct hit that heavily damaged neighborhoods and businesses during a nationwide multi-day outbreak.",
+    "category": "Guide",
+    "keywords": "Little Rock, Arkansas Tornado of 2023 — EF3 Tears Through State Capital An EF3 tornado cut directly through West Little Rock and North Little Rock on March 31, 2023, a rare urban direct hit that heavily damaged neighborhoods and businesses during a nationwide multi-day outbreak. little rock arkansas tornado 2023"
+  },
+  {
+    "title": "Wynne, Arkansas Tornado of 2023 — EF3, School Buses Destroyed, 4 Killed",
+    "path": "/wynne-2023/",
+    "description": "An EF3 tornado struck Wynne, Arkansas on the evening of March 31, 2023, destroying dozens of school buses and killing four people during the same nationwide outbreak that hit Little Rock hours earlier.",
+    "category": "Guide",
+    "keywords": "Wynne, Arkansas Tornado of 2023 — EF3, School Buses Destroyed, 4 Killed An EF3 tornado struck Wynne, Arkansas on the evening of March 31, 2023, destroying dozens of school buses and killing four people during the same nationwide outbreak that hit Little Rock hours earlier. wynne arkansas tornado 2023"
+  },
+  {
+    "title": "Edwardsville, Illinois Tornado of 2021 — Amazon Warehouse Collapse, 6 Killed",
+    "path": "/edwardsville-2021/",
+    "description": "An EF3 tornado partially collapsed an Amazon fulfillment center in Edwardsville, Illinois on December 10, 2021, killing six warehouse workers and triggering a national reckoning over workplace severe-weather protocols.",
+    "category": "Guide",
+    "keywords": "Edwardsville, Illinois Tornado of 2021 — Amazon Warehouse Collapse, 6 Killed An EF3 tornado partially collapsed an Amazon fulfillment center in Edwardsville, Illinois on December 10, 2021, killing six warehouse workers and triggering a national reckoning over workplace severe-weather protocols. edwardsville illinois tornado amazon warehouse"
+  },
+  {
+    "title": "Newnan, Georgia Tornado of 2021 — EF4, 66-Mile Path, Zero Deaths",
+    "path": "/newnan-2021/",
+    "description": "A long-track EF4 tornado tore directly through Newnan, Georgia in the middle of the night on March 25, 2021, causing roughly $100 million in damage across a 66-mile path — yet caused no fatalities, a case study in overnight tornado survival.",
+    "category": "Guide",
+    "keywords": "Newnan, Georgia Tornado of 2021 — EF4, 66-Mile Path, Zero Deaths A long-track EF4 tornado tore directly through Newnan, Georgia in the middle of the night on March 25, 2021, causing roughly $100 million in damage across a 66-mile path — yet caused no fatalities, a case study in overnight tornado survival. newnan georgia tornado 2021"
+  },
+  {
+    "title": "Winterset, Iowa Tornado of 2022 — EF4 Kills 6 in Record Iowa Outbreak",
+    "path": "/winterset-2022/",
+    "description": "An EF4 tornado struck rural Madison County near Winterset, Iowa on March 5, 2022, killing six people during a historic single-day outbreak that produced more confirmed tornadoes in Iowa than any day on record.",
+    "category": "Guide",
+    "keywords": "Winterset, Iowa Tornado of 2022 — EF4 Kills 6 in Record Iowa Outbreak An EF4 tornado struck rural Madison County near Winterset, Iowa on March 5, 2022, killing six people during a historic single-day outbreak that produced more confirmed tornadoes in Iowa than any day on record. winterset iowa tornado 2022"
   }
 ];
