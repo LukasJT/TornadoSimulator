@@ -9035,5 +9035,61 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Le 15 juin 2010, des pluies diluviennes ont provoqué des crues éclair dévastatrices dans le Var, notamment à Draguignan et dans la vallée de l'Argens, faisant environ 25 morts en quelques heures.",
     "category": "Guide",
     "keywords": "Les inondations du Var (juin 2010) — Une crue éclair meurtrière à Draguignan Le 15 juin 2010, des pluies diluviennes ont provoqué des crues éclair dévastatrices dans le Var, notamment à Draguignan et dans la vallée de l'Argens, faisant environ 25 morts en quelques heures."
+  },
+  {
+    "title": "The TORRO Scale Explained — Britain's Tornado Intensity Scale (T0-T11)",
+    "path": "/torro-scale-explained/",
+    "description": "The UK does not use the Enhanced Fujita scale. British tornadoes are rated on the TORRO scale, which runs from T0 to T11 and is defined by wind speed rather than damage. Here is how it works and how it converts to EF ratings.",
+    "category": "Guide",
+    "keywords": "The TORRO Scale Explained — Britain's Tornado Intensity Scale (T0-T11) The UK does not use the Enhanced Fujita scale. British tornadoes are rated on the TORRO scale, which runs from T0 to T11 and is defined by wind speed rather than damage. Here is how it works and how it converts to EF ratings. torro scale explained uk tornado rating"
+  },
+  {
+    "title": "How UK Storms Are Named — The Met Office Naming System Explained",
+    "path": "/uk-storm-naming-explained/",
+    "description": "Britain only started naming its storms in 2015. The system is run jointly with Ireland and the Netherlands, follows a published alphabetical list each season, and exists for one specific reason: getting people to actually act on warnings.",
+    "category": "Guide",
+    "keywords": "How UK Storms Are Named — The Met Office Naming System Explained Britain only started naming its storms in 2015. The system is run jointly with Ireland and the Netherlands, follows a published alphabetical list each season, and exists for one specific reason: getting people to actually act on warnings. uk storm naming explained met office"
+  },
+  {
+    "title": "Australian Cyclone Categories vs Saffir-Simpson — Why They Are Not the Same",
+    "path": "/australian-cyclone-categories-explained/",
+    "description": "An Australian Category 5 cyclone and an American Category 5 hurricane are not measured the same way. Australia rates cyclones by maximum wind gust; the US uses sustained wind. Here is what that difference actually means.",
+    "category": "Guide",
+    "keywords": "Australian Cyclone Categories vs Saffir-Simpson — Why They Are Not the Same An Australian Category 5 cyclone and an American Category 5 hurricane are not measured the same way. Australia rates cyclones by maximum wind gust; the US uses sustained wind. Here is what that difference actually means. australian cyclone categories vs saffir simpson"
+  },
+  {
+    "title": "Australian Fire Danger Ratings — What Moderate, High, Extreme and Catastrophic Mean",
+    "path": "/australian-fire-danger-ratings-explained/",
+    "description": "Australia's fire danger rating system was rebuilt in 2022 into four levels, each tied to a specific action. Catastrophic means one thing above all: leaving early is the only option that reliably keeps you alive.",
+    "category": "Guide",
+    "keywords": "Australian Fire Danger Ratings — What Moderate, High, Extreme and Catastrophic Mean Australia's fire danger rating system was rebuilt in 2022 into four levels, each tied to a specific action. Catastrophic means one thing above all: leaving early is the only option that reliably keeps you alive. australian fire danger ratings explained"
+  },
+  {
+    "title": "New Zealand Weather Warnings — Watches, Orange and Red Warnings Explained",
+    "path": "/new-zealand-weather-warnings-explained/",
+    "description": "MetService uses a tiered system of Watches and Warnings, with Red Warnings reserved for the most extreme events. Here is what each level means and what it asks you to do.",
+    "category": "Guide",
+    "keywords": "New Zealand Weather Warnings — Watches, Orange and Red Warnings Explained MetService uses a tiered system of Watches and Warnings, with Red Warnings reserved for the most extreme events. Here is what each level means and what it asks you to do. new zealand weather warnings explained metservice"
+  },
+  {
+    "title": "La vigilance Météo-France — Ce que signifient vert, jaune, orange et rouge",
+    "path": "/fr/vigilance-meteo-france-expliquee/",
+    "description": "Le système de vigilance de Météo-France utilise quatre couleurs pour indiquer le niveau de danger météorologique. Voici ce que chaque niveau signifie concrètement et ce qu'il faut faire.",
+    "category": "Guide",
+    "keywords": "La vigilance Météo-France — Ce que signifient vert, jaune, orange et rouge Le système de vigilance de Météo-France utilise quatre couleurs pour indiquer le niveau de danger météorologique. Voici ce que chaque niveau signifie concrètement et ce qu'il faut faire."
+  },
+  {
+    "title": "Die Warnstufen von MeteoSchweiz — Was die Gefahrenstufen 1 bis 5 bedeuten",
+    "path": "/de/warnstufen-meteoschweiz/",
+    "description": "MeteoSchweiz verwendet eine fünfstufige Gefahrenskala für Unwetterwarnungen. Hier steht, was jede Stufe konkret bedeutet und welches Verhalten sie erwartet.",
+    "category": "Guide",
+    "keywords": "Die Warnstufen von MeteoSchweiz — Was die Gefahrenstufen 1 bis 5 bedeuten MeteoSchweiz verwendet eine fünfstufige Gefahrenskala für Unwetterwarnungen. Hier steht, was jede Stufe konkret bedeutet und welches Verhalten sie erwartet."
+  },
+  {
+    "title": "KMI-weerwaarschuwingen — Wat groen, geel, oranje en rood betekenen",
+    "path": "/nl/kmi-waarschuwingen-belgie/",
+    "description": "Het Koninklijk Meteorologisch Instituut gebruikt vier kleurcodes voor weerwaarschuwingen in België. Dit is wat elke kleur concreet betekent en welk gedrag ervan verwacht wordt.",
+    "category": "Guide",
+    "keywords": "KMI-weerwaarschuwingen — Wat groen, geel, oranje en rood betekenen Het Koninklijk Meteorologisch Instituut gebruikt vier kleurcodes voor weerwaarschuwingen in België. Dit is wat elke kleur concreet betekent en welk gedrag ervan verwacht wordt."
   }
 ];
