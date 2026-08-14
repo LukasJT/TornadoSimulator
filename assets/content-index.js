@@ -8839,5 +8839,54 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Im August 2005 verursachten mehrtägige Starkregenfälle schwere Überschwemmungen in weiten Teilen der Schweiz, darunter Bern, Luzern und das Berner Oberland, mit sechs Todesopfern und Schäden von über 3 Milliarden Franken.",
     "category": "Guide",
     "keywords": "Das Hochwasser von 2005 — Eine der teuersten Naturkatastrophen der Schweizer Geschichte Im August 2005 verursachten mehrtägige Starkregenfälle schwere Überschwemmungen in weiten Teilen der Schweiz, darunter Bern, Luzern und das Berner Oberland, mit sechs Todesopfern und Schäden von über 3 Milliarden Franken."
+  },
+  {
+    "title": "The Beast from the East (2018) — The UK's Most Disruptive Cold Snap in Decades",
+    "path": "/beast-from-the-east-2018/",
+    "description": "From late February into early March 2018, an extreme cold snap nicknamed the Beast from the East brought record-low temperatures and severe blizzards to the UK, killing at least 17 people and paralyzing transport nationwide.",
+    "category": "Guide",
+    "keywords": "The Beast from the East (2018) — The UK's Most Disruptive Cold Snap in Decades From late February into early March 2018, an extreme cold snap nicknamed the Beast from the East brought record-low temperatures and severe blizzards to the UK, killing at least 17 people and paralyzing transport nationwide. beast from the east 2018 uk"
+  },
+  {
+    "title": "The Big Freeze of 1962-63 — The UK's Coldest Winter in Over 200 Years",
+    "path": "/big-freeze-1962/",
+    "description": "From late December 1962 through early March 1963, the UK endured its coldest winter since 1740, with snow lying continuously for over two months, rivers and coastal sea freezing solid, and daily life brought to a near-standstill nationwide.",
+    "category": "Guide",
+    "keywords": "The Big Freeze of 1962-63 — The UK's Coldest Winter in Over 200 Years From late December 1962 through early March 1963, the UK endured its coldest winter since 1740, with snow lying continuously for over two months, rivers and coastal sea freezing solid, and daily life brought to a near-standstill nationwide. big freeze 1962 1963 uk"
+  },
+  {
+    "title": "The Thredbo Landslide (1997) — A Winter Disaster in the Australian Alps",
+    "path": "/thredbo-landslide-1997/",
+    "description": "On July 30, 1997, after days of heavy rain saturated an unstable slope above the ski resort town of Thredbo, a landslide swept away two ski lodges in seconds, killing 18 people in one of Australia's most dramatic alpine disasters.",
+    "category": "Guide",
+    "keywords": "The Thredbo Landslide (1997) — A Winter Disaster in the Australian Alps On July 30, 1997, after days of heavy rain saturated an unstable slope above the ski resort town of Thredbo, a landslide swept away two ski lodges in seconds, killing 18 people in one of Australia's most dramatic alpine disasters. thredbo landslide 1997"
+  },
+  {
+    "title": "The Great Snow of August 2011 — Snow Reached Parts of New Zealand That Almost Never See It",
+    "path": "/great-snow-2011/",
+    "description": "In mid-August 2011, an exceptionally powerful polar outbreak brought snow to parts of New Zealand that rarely or never see it, including brief flurries around Auckland, and blanketed Wellington heavily enough to disrupt the capital for days.",
+    "category": "Guide",
+    "keywords": "The Great Snow of August 2011 — Snow Reached Parts of New Zealand That Almost Never See It In mid-August 2011, an exceptionally powerful polar outbreak brought snow to parts of New Zealand that rarely or never see it, including brief flurries around Auckland, and blanketed Wellington heavily enough to disrupt the capital for days. great snow new zealand 2011"
+  },
+  {
+    "title": "The North Sea Flood of 1953 — Britain's Deadliest Peacetime Natural Disaster",
+    "path": "/north-sea-flood-1953/",
+    "description": "On the night of January 31-February 1, 1953, a catastrophic storm surge breached sea defences along England's east coast, killing 307 people — Britain's deadliest peacetime natural disaster of the 20th century — and led directly to the construction of the Thames Barrier.",
+    "category": "Guide",
+    "keywords": "The North Sea Flood of 1953 — Britain's Deadliest Peacetime Natural Disaster On the night of January 31-February 1, 1953, a catastrophic storm surge breached sea defences along England's east coast, killing 307 people — Britain's deadliest peacetime natural disaster of the 20th century — and led directly to the construction of the Thames Barrier. north sea flood 1953 uk"
+  },
+  {
+    "title": "L'avalanche de Montroc (1999) — Un hameau englouti dans la vallée de Chamonix",
+    "path": "/fr/avalanche-montroc-1999/",
+    "description": "Le 9 février 1999, une avalanche exceptionnelle a englouti le hameau de Montroc, dans la vallée de Chamonix, détruisant des chalets et tuant 12 personnes — l'une des catastrophes hivernales les plus meurtrières de l'histoire alpine française récente.",
+    "category": "Guide",
+    "keywords": "L'avalanche de Montroc (1999) — Un hameau englouti dans la vallée de Chamonix Le 9 février 1999, une avalanche exceptionnelle a englouti le hameau de Montroc, dans la vallée de Chamonix, détruisant des chalets et tuant 12 personnes — l'une des catastrophes hivernales les plus meurtrières de l'histoire alpine française récente."
+  },
+  {
+    "title": "Die Lawine von Évolène (1999) — Katastrophe in einem Schweizer Bergdorf",
+    "path": "/de/lawine-evolene-1999/",
+    "description": "Am 21. Februar 1999 verschüttete eine gewaltige Lawine Teile des Walliser Dorfes Évolène und forderte 12 Todesopfer — eine der schwersten Lawinenkatastrophen im außergewöhnlich schneereichen und lawinengefährlichen Winter 1999 in den Alpen.",
+    "category": "Guide",
+    "keywords": "Die Lawine von Évolène (1999) — Katastrophe in einem Schweizer Bergdorf Am 21. Februar 1999 verschüttete eine gewaltige Lawine Teile des Walliser Dorfes Évolène und forderte 12 Todesopfer — eine der schwersten Lawinenkatastrophen im außergewöhnlich schneereichen und lawinengefährlichen Winter 1999 in den Alpen."
   }
 ];
