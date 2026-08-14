@@ -8930,5 +8930,54 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Dans la nuit du 15 au 16 octobre 1987, la même tempête exceptionnelle qui a dévasté le sud de l'Angleterre a également frappé la Bretagne et le nord-ouest de la France, abattant des millions d'arbres et causant des dégâts considérables sur le littoral.",
     "category": "Guide",
     "keywords": "La tempête d'octobre 1987 — Quand le \"Great Storm\" britannique a aussi frappé la France Dans la nuit du 15 au 16 octobre 1987, la même tempête exceptionnelle qui a dévasté le sud de l'Angleterre a également frappé la Bretagne et le nord-ouest de la France, abattant des millions d'arbres et causant des dégâts considérables sur le littoral."
+  },
+  {
+    "title": "The Great Smog of London (1952) — The Weather Event That Killed Thousands",
+    "path": "/great-smog-of-london-1952/",
+    "description": "For five days in December 1952, a windless anticyclone trapped coal smoke over London under a temperature inversion, creating a smog so dense it stopped traffic and killed thousands of people — and led directly to the Clean Air Act.",
+    "category": "Guide",
+    "keywords": "The Great Smog of London (1952) — The Weather Event That Killed Thousands For five days in December 1952, a windless anticyclone trapped coal smoke over London under a temperature inversion, creating a smog so dense it stopped traffic and killed thousands of people — and led directly to the Clean Air Act. great smog london 1952"
+  },
+  {
+    "title": "The Lynmouth Flood (1952) — A Devon Village Destroyed in a Night",
+    "path": "/lynmouth-flood-1952/",
+    "description": "On the night of August 15-16, 1952, torrential rain over Exmoor sent a wall of water and boulders down the East and West Lyn rivers into the Devon village of Lynmouth, destroying dozens of buildings and killing 34 people.",
+    "category": "Guide",
+    "keywords": "The Lynmouth Flood (1952) — A Devon Village Destroyed in a Night On the night of August 15-16, 1952, torrential rain over Exmoor sent a wall of water and boulders down the East and West Lyn rivers into the Devon village of Lynmouth, destroying dozens of buildings and killing 34 people. lynmouth flood 1952"
+  },
+  {
+    "title": "The 1976 UK Heatwave and Drought — Britain's Benchmark Hot Summer",
+    "path": "/uk-heatwave-drought-1976/",
+    "description": "The summer of 1976 brought the UK its most extreme heatwave and drought of the 20th century, with 15 consecutive days above 32°C, reservoirs running dry, standpipes in the streets, and a government minister appointed specifically to manage the drought.",
+    "category": "Guide",
+    "keywords": "The 1976 UK Heatwave and Drought — Britain's Benchmark Hot Summer The summer of 1976 brought the UK its most extreme heatwave and drought of the 20th century, with 15 consecutive days above 32°C, reservoirs running dry, standpipes in the streets, and a government minister appointed specifically to manage the drought. uk heatwave drought 1976"
+  },
+  {
+    "title": "Black Summer (2019-20) — Australia's Largest Bushfire Season on Record",
+    "path": "/black-summer-bushfires-2019/",
+    "description": "Across the summer of 2019-20, bushfires burned an unprecedented area of eastern Australia, destroying thousands of homes, killing 33 people directly and many more through smoke exposure, and blanketing major cities in hazardous smoke for weeks.",
+    "category": "Guide",
+    "keywords": "Black Summer (2019-20) — Australia's Largest Bushfire Season on Record Across the summer of 2019-20, bushfires burned an unprecedented area of eastern Australia, destroying thousands of homes, killing 33 people directly and many more through smoke exposure, and blanketing major cities in hazardous smoke for weeks. black summer bushfires 2019 2020"
+  },
+  {
+    "title": "Cyclone Larry (2006) — The Category 5 That Flattened Innisfail",
+    "path": "/cyclone-larry-2006/",
+    "description": "On March 20, 2006, Severe Tropical Cyclone Larry crossed the Queensland coast near Innisfail as a Category 5 system, devastating the town and wiping out most of Australia's banana crop — yet causing no direct deaths, a result credited to warning and preparation.",
+    "category": "Guide",
+    "keywords": "Cyclone Larry (2006) — The Category 5 That Flattened Innisfail On March 20, 2006, Severe Tropical Cyclone Larry crossed the Queensland coast near Innisfail as a Category 5 system, devastating the town and wiping out most of Australia's banana crop — yet causing no direct deaths, a result credited to warning and preparation. cyclone larry 2006 innisfail"
+  },
+  {
+    "title": "L'inondation de Vaison-la-Romaine (1992) — Une crue éclair meurtrière dans le Vaucluse",
+    "path": "/fr/inondation-vaison-la-romaine-1992/",
+    "description": "Le 22 septembre 1992, une crue éclair de l'Ouvèze a ravagé Vaison-la-Romaine, dans le Vaucluse, emportant campings, véhicules et bâtiments et faisant 47 morts — l'une des inondations les plus meurtrières de l'histoire récente de la France.",
+    "category": "Guide",
+    "keywords": "L'inondation de Vaison-la-Romaine (1992) — Une crue éclair meurtrière dans le Vaucluse Le 22 septembre 1992, une crue éclair de l'Ouvèze a ravagé Vaison-la-Romaine, dans le Vaucluse, emportant campings, véhicules et bâtiments et faisant 47 morts — l'une des inondations les plus meurtrières de l'histoire récente de la France."
+  },
+  {
+    "title": "Der Bergsturz von Gondo (2000) — Unwetterkatastrophe im Wallis",
+    "path": "/de/unwetter-gondo-2000/",
+    "description": "Im Oktober 2000 lösten tagelange extreme Regenfälle im Wallis einen Murgang aus, der einen Teil des Dorfes Gondo zerstörte und 13 Menschen tötete — eine der schwersten Unwetterkatastrophen der jüngeren Schweizer Geschichte.",
+    "category": "Guide",
+    "keywords": "Der Bergsturz von Gondo (2000) — Unwetterkatastrophe im Wallis Im Oktober 2000 lösten tagelange extreme Regenfälle im Wallis einen Murgang aus, der einen Teil des Dorfes Gondo zerstörte und 13 Menschen tötete — eine der schwersten Unwetterkatastrophen der jüngeren Schweizer Geschichte."
   }
 ];
