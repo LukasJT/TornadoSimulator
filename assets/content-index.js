@@ -8979,5 +8979,61 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Im Oktober 2000 lösten tagelange extreme Regenfälle im Wallis einen Murgang aus, der einen Teil des Dorfes Gondo zerstörte und 13 Menschen tötete — eine der schwersten Unwetterkatastrophen der jüngeren Schweizer Geschichte.",
     "category": "Guide",
     "keywords": "Der Bergsturz von Gondo (2000) — Unwetterkatastrophe im Wallis Im Oktober 2000 lösten tagelange extreme Regenfälle im Wallis einen Murgang aus, der einen Teil des Dorfes Gondo zerstörte und 13 Menschen tötete — eine der schwersten Unwetterkatastrophen der jüngeren Schweizer Geschichte."
+  },
+  {
+    "title": "The Great Storm of 1703 — The Worst Storm in Recorded British History",
+    "path": "/great-storm-of-1703/",
+    "description": "In late November 1703, an extraordinarily violent windstorm swept across southern Britain, sinking a large part of the Royal Navy, destroying the Eddystone Lighthouse, and killing thousands — and produced what is often called the first work of modern journalism.",
+    "category": "Guide",
+    "keywords": "The Great Storm of 1703 — The Worst Storm in Recorded British History In late November 1703, an extraordinarily violent windstorm swept across southern Britain, sinking a large part of the Royal Navy, destroying the Eddystone Lighthouse, and killing thousands — and produced what is often called the first work of modern journalism. great storm 1703 britain"
+  },
+  {
+    "title": "The Braer Storm (1993) — The Deepest Atlantic Low Ever Recorded",
+    "path": "/braer-storm-1993/",
+    "description": "In January 1993, a storm off Scotland deepened to a central pressure of around 914 hPa — the lowest ever recorded for an extratropical cyclone in the North Atlantic — battering Shetland just days after the tanker Braer had run aground there.",
+    "category": "Guide",
+    "keywords": "The Braer Storm (1993) — The Deepest Atlantic Low Ever Recorded In January 1993, a storm off Scotland deepened to a central pressure of around 914 hPa — the lowest ever recorded for an extratropical cyclone in the North Atlantic — battering Shetland just days after the tanker Braer had run aground there. braer storm 1993"
+  },
+  {
+    "title": "Storm Desmond (2015) — A UK Rainfall Record and the Flooding of Cumbria",
+    "path": "/storm-desmond-2015/",
+    "description": "In December 2015, Storm Desmond drove an atmospheric river into northwest England, setting a UK 24-hour rainfall record at Honister Pass and flooding thousands of homes across Cumbria — some for the second time in a decade.",
+    "category": "Guide",
+    "keywords": "Storm Desmond (2015) — A UK Rainfall Record and the Flooding of Cumbria In December 2015, Storm Desmond drove an atmospheric river into northwest England, setting a UK 24-hour rainfall record at Honister Pass and flooding thousands of homes across Cumbria — some for the second time in a decade. storm desmond 2015 cumbria"
+  },
+  {
+    "title": "July 2022 — The Day the UK First Exceeded 40°C",
+    "path": "/uk-heat-record-2022/",
+    "description": "On July 19, 2022, the UK exceeded 40°C for the first time in recorded history, reaching 40.3°C at Coningsby in Lincolnshire, under the country's first-ever red extreme heat warning, with infrastructure buckling and wildfires breaking out around London.",
+    "category": "Guide",
+    "keywords": "July 2022 — The Day the UK First Exceeded 40°C On July 19, 2022, the UK exceeded 40°C for the first time in recorded history, reaching 40.3°C at Coningsby in Lincolnshire, under the country's first-ever red extreme heat warning, with infrastructure buckling and wildfires breaking out around London. uk 40c heat record july 2022"
+  },
+  {
+    "title": "The Lismore Floods (2022) — Australia's Costliest Flood Disaster",
+    "path": "/lismore-floods-2022/",
+    "description": "In late February 2022, catastrophic rainfall sent the Wilsons River through Lismore, New South Wales to a record height of around 14.4 metres — more than two metres above any previous flood — in a disaster that became one of the costliest in Australian history.",
+    "category": "Guide",
+    "keywords": "The Lismore Floods (2022) — Australia's Costliest Flood Disaster In late February 2022, catastrophic rainfall sent the Wilsons River through Lismore, New South Wales to a record height of around 14.4 metres — more than two metres above any previous flood — in a disaster that became one of the costliest in Australian history. lismore floods 2022"
+  },
+  {
+    "title": "The Millennium Drought — The Dry Decade That Reshaped Australia",
+    "path": "/millennium-drought-australia/",
+    "description": "From the late 1990s to 2009, southeastern Australia endured its most severe prolonged drought in recorded history, draining the Murray-Darling Basin, driving cities to build desalination plants, and permanently changing how Australia manages water.",
+    "category": "Guide",
+    "keywords": "The Millennium Drought — The Dry Decade That Reshaped Australia From the late 1990s to 2009, southeastern Australia endured its most severe prolonged drought in recorded history, draining the Murray-Darling Basin, driving cities to build desalination plants, and permanently changing how Australia manages water. millennium drought australia"
+  },
+  {
+    "title": "Cyclone Debbie (2017) — The Cyclone That Flooded Two Countries",
+    "path": "/cyclone-debbie-2017/",
+    "description": "In late March 2017, Cyclone Debbie struck the Whitsundays as a Category 4 system, then tracked south as an ex-cyclone causing severe flooding in New South Wales — and days later, its remnants flooded Edgecumbe in New Zealand.",
+    "category": "Guide",
+    "keywords": "Cyclone Debbie (2017) — The Cyclone That Flooded Two Countries In late March 2017, Cyclone Debbie struck the Whitsundays as a Category 4 system, then tracked south as an ex-cyclone causing severe flooding in New South Wales — and days later, its remnants flooded Edgecumbe in New Zealand. cyclone debbie 2017"
+  },
+  {
+    "title": "Les inondations du Var (juin 2010) — Une crue éclair meurtrière à Draguignan",
+    "path": "/fr/inondations-du-var-2010/",
+    "description": "Le 15 juin 2010, des pluies diluviennes ont provoqué des crues éclair dévastatrices dans le Var, notamment à Draguignan et dans la vallée de l'Argens, faisant environ 25 morts en quelques heures.",
+    "category": "Guide",
+    "keywords": "Les inondations du Var (juin 2010) — Une crue éclair meurtrière à Draguignan Le 15 juin 2010, des pluies diluviennes ont provoqué des crues éclair dévastatrices dans le Var, notamment à Draguignan et dans la vallée de l'Argens, faisant environ 25 morts en quelques heures."
   }
 ];
