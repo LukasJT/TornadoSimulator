@@ -20,6 +20,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script type="application/ld+json" data-seo="page">
 {"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Pathle","url":"https://www.tornadosimulator.net/pathle/","applicationCategory":"GameApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"A free daily tornado guessing game. See a famous tornado's damage path and guess which tornado it is, with hints revealing country, rating, region, and year.","isPartOf":{"@id":"https://www.tornadosimulator.net/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"},{"@type":"ListItem","position":2,"name":"Games","item":"https://www.tornadosimulator.net/games/"},{"@type":"ListItem","position":3,"name":"Pathle","item":"https://www.tornadosimulator.net/pathle/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Pathle?","acceptedAnswer":{"@type":"Answer","text":"Pathle is a free daily tornado guessing game. It shows the real damage path of a famous tornado, and you have five guesses to name it. Each wrong guess reveals a new hint: country, then rating, then region, then year."}},{"@type":"Question","name":"How do you play Pathle?","acceptedAnswer":{"@type":"Answer","text":"Look at the tornado's path on the map, type the name of the tornado you think it is, and guess. If you are wrong, a new hint appears. You get five guesses. There is a new puzzle every day, plus an endless mode."}},{"@type":"Question","name":"Are the tornado paths real?","acceptedAnswer":{"@type":"Answer","text":"Yes. Each path is projected from the tornado's actual documented track, so the direction, shape, and relative length are geographically accurate, with north pointing up."}},{"@type":"Question","name":"How many tornadoes are in Pathle?","acceptedAnswer":{"@type":"Answer","text":"Pathle features 36 famous tornadoes from around the world, including the Tri-State Tornado, Joplin, El Reno, Jarrell, the Mayfield Quad-State tornado, and events from Canada, Bangladesh, Russia, and the United Kingdom."}},{"@type":"Question","name":"Is Pathle free?","acceptedAnswer":{"@type":"Answer","text":"Yes, Pathle is completely free to play with no sign-up required, and you can share your result."}}]}]}
 </script>
@@ -43,6 +44,10 @@ h1{font-family:var(--serif);font-size:clamp(30px,6vw,42px);font-weight:700;lette
 .board{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:0 2px 14px rgba(0,0,0,.05)}
 .mapbox{background:linear-gradient(180deg,#eef4ee,#e4ece2);border:1px solid var(--border);border-radius:12px;overflow:hidden}
 .mapbox svg{display:block;width:100%;height:auto}
+.track-map-wrap{margin-top:18px;text-align:left;border-top:1px solid var(--border);padding-top:18px}
+.track-map-wrap h3{font-family:var(--serif);font-size:19px;margin:0 0 5px}
+.track-map-wrap p{font-size:13px;color:var(--text-secondary);margin:0 0 10px}
+.track-map{height:300px;border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--bg-alt)}
 .hints{list-style:none;margin:16px 0 0;display:grid;gap:8px}
 .hint{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;background:var(--bg-alt);border:1px solid var(--border);font-size:14px;opacity:.55}
 .hint.on{opacity:1;background:#fff;border-color:var(--border-strong)}
@@ -146,6 +151,11 @@ h1{font-family:var(--serif);font-size:clamp(30px,6vw,42px);font-weight:700;lette
         <button class="btn btn-primary" id="shareBtn">Share result</button>
         <button class="btn btn-ghost" id="againBtn" style="display:none">New tornado →</button>
       </div>
+      <div class="track-map-wrap" id="trackMapWrap" hidden>
+        <h3>Verified track map</h3>
+        <p>The red line uses this puzzle’s documented track coordinates. It appears after the answer so the map does not spoil the game. Basemap © OpenStreetMap contributors.</p>
+        <div class="track-map" id="trackMap" aria-label="Map showing the tornado's documented track"></div>
+      </div>
     </div>
   </div>
 
@@ -181,6 +191,7 @@ h1{font-family:var(--serif);font-size:clamp(30px,6vw,42px);font-weight:700;lette
 <footer class="footer">A free daily game from <a href="/">Tornado Hub</a> — just for fun, built on real tornado history.</footer>
 <div class="toast" id="toast"></div>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 (function(){
   "use strict";
@@ -230,7 +241,7 @@ h1{font-family:var(--serif);font-size:clamp(30px,6vw,42px);font-weight:700;lette
   var box=$("#mapbox"), hintsEl=$("#hints"), pipsEl=$("#pips"), guessesEl=$("#guesses"),
       form=$("#guessform"), input=$("#guess"), resultEl=$("#result"),
       shareBtn=$("#shareBtn"), againBtn=$("#againBtn"), toastEl=$("#toast");
-  var MAX=5, mode="daily", state=null;
+  var MAX=5, mode="daily", state=null, trackMap=null;
 
   // datalist of all names
   var dl=$("#tornadoList");
@@ -280,6 +291,30 @@ h1{font-family:var(--serif);font-size:clamp(30px,6vw,42px);font-weight:700;lette
       '<text x="'+s[0]+'" y="'+syl+'" font-size="4" fill="#2e7d46" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700">START</text>'+
       '<text x="'+e[0]+'" y="'+eyl+'" font-size="4" fill="#c0392b" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700">END</text>'+
       '</svg>';
+  }
+
+  function clearTrackMap(){
+    var wrap=$("#trackMapWrap");
+    wrap.hidden=true;
+    if(trackMap){ trackMap.remove(); trackMap=null; }
+  }
+
+  function showTrackMap(t){
+    if(!window.L) return;
+    var wrap=$("#trackMapWrap"), mapEl=$("#trackMap");
+    clearTrackMap();
+    wrap.hidden=false;
+    trackMap=L.map(mapEl,{scrollWheelZoom:false,attributionControl:true});
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{
+      maxZoom:19,
+      attribution:"&copy; <a href=\"https://www.openstreetmap.org/copyright\" rel=\"noopener\">OpenStreetMap</a> contributors"
+    }).addTo(trackMap);
+    var points=t.track.map(function(p){ return [p[1],p[0]]; });
+    var line=L.polyline(points,{color:"#a02818",weight:5,opacity:.9}).addTo(trackMap);
+    L.circleMarker(points[0],{radius:7,color:"#fff",weight:2,fillColor:"#2e7d46",fillOpacity:1}).bindTooltip("Start").addTo(trackMap);
+    L.circleMarker(points[points.length-1],{radius:7,color:"#fff",weight:2,fillColor:"#c0392b",fillOpacity:1}).bindTooltip("End").addTo(trackMap);
+    trackMap.fitBounds(line.getBounds(),{padding:[24,24],maxZoom:10});
+    setTimeout(function(){ if(trackMap) trackMap.invalidateSize(); },0);
   }
 
   function hintRows(t, revealed){
@@ -332,7 +367,7 @@ h1{font-family:var(--serif);font-size:clamp(30px,6vw,42px);font-weight:700;lette
     pips();
     renderGuesses();
     if(state.done){ finish(); }
-    else { resultEl.classList.remove("show"); input.disabled=false; }
+    else { clearTrackMap(); resultEl.classList.remove("show"); input.disabled=false; }
     againBtn.style.display = (mode==="endless") ? "inline-block" : "none";
   }
 
@@ -392,6 +427,7 @@ h1{font-family:var(--serif);font-size:clamp(30px,6vw,42px);font-weight:700;lette
       stopCountdown();
       $("#stats").innerHTML=""; $("#dist").innerHTML=""; $("#countdown").innerHTML="";
     }
+    showTrackMap(t);
     againBtn.style.display = (mode==="endless") ? "inline-block" : "none";
   }
 
