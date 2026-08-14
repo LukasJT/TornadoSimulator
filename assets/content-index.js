@@ -8566,5 +8566,208 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "An EF4 tornado struck rural Madison County near Winterset, Iowa on March 5, 2022, killing six people during a historic single-day outbreak that produced more confirmed tornadoes in Iowa than any day on record.",
     "category": "Guide",
     "keywords": "Winterset, Iowa Tornado of 2022 — EF4 Kills 6 in Record Iowa Outbreak An EF4 tornado struck rural Madison County near Winterset, Iowa on March 5, 2022, killing six people during a historic single-day outbreak that produced more confirmed tornadoes in Iowa than any day on record. winterset iowa tornado 2022"
+  },
+  {
+    "title": "The Great Storm of 1987 — The Night 15 Million Trees Fell in the UK",
+    "path": "/great-storm-of-1987/",
+    "description": "On the night of October 15-16, 1987, an exceptionally deep extratropical cyclone battered southern England and northern France, killing 18 people in England, felling an estimated 15 million trees, and becoming one of the most talked-about storms in British weather history.",
+    "category": "Guide",
+    "keywords": "The Great Storm of 1987 — The Night 15 Million Trees Fell in the UK On the night of October 15-16, 1987, an exceptionally deep extratropical cyclone battered southern England and northern France, killing 18 people in England, felling an estimated 15 million trees, and becoming one of the most talked-about storms in British weather history. great storm 1987 uk"
+  },
+  {
+    "title": "The Birmingham Tornado of 2005 — One of the UK's Most Damaging Tornadoes on Record",
+    "path": "/birmingham-tornado-2005/",
+    "description": "On July 28, 2005, a tornado tracked through south Birmingham, England, injuring around 19 people and damaging hundreds of homes — without a single fatality, making it one of the most destructive yet least deadly tornadoes in UK history.",
+    "category": "Guide",
+    "keywords": "The Birmingham Tornado of 2005 — One of the UK's Most Damaging Tornadoes on Record On July 28, 2005, a tornado tracked through south Birmingham, England, injuring around 19 people and damaging hundreds of homes — without a single fatality, making it one of the most destructive yet least deadly tornadoes in UK history. birmingham tornado 2005"
+  },
+  {
+    "title": "The Boscastle Flood of 2004 — A Catastrophic Flash Flood With Zero Deaths",
+    "path": "/boscastle-flood-2004/",
+    "description": "On August 16, 2004, extreme localized rainfall triggered a catastrophic flash flood through Boscastle, Cornwall, sweeping away cars and buildings — yet a dramatic mass helicopter rescue meant not a single person died.",
+    "category": "Guide",
+    "keywords": "The Boscastle Flood of 2004 — A Catastrophic Flash Flood With Zero Deaths On August 16, 2004, extreme localized rainfall triggered a catastrophic flash flood through Boscastle, Cornwall, sweeping away cars and buildings — yet a dramatic mass helicopter rescue meant not a single person died. boscastle flood 2004"
+  },
+  {
+    "title": "The Somerset Levels Floods of 2013-14 — England's Wettest Winter in Recorded History",
+    "path": "/somerset-levels-floods-2014/",
+    "description": "Through the winter of 2013-14, the Somerset Levels in southwest England were inundated for weeks after the wettest winter in parts of the country since records began, flooding hundreds of homes and igniting a national debate over flood management.",
+    "category": "Guide",
+    "keywords": "The Somerset Levels Floods of 2013-14 — England's Wettest Winter in Recorded History Through the winter of 2013-14, the Somerset Levels in southwest England were inundated for weeks after the wettest winter in parts of the country since records began, flooding hundreds of homes and igniting a national debate over flood management. somerset levels floods 2014"
+  },
+  {
+    "title": "Cyclone Tracy (1974) — The Christmas Storm That Destroyed Darwin",
+    "path": "/cyclone-tracy-1974/",
+    "description": "In the early hours of Christmas Day 1974, Cyclone Tracy tore through Darwin, Australia, destroying more than 70 percent of the city's buildings, killing 71 people, and triggering the largest evacuation in Australian history.",
+    "category": "Guide",
+    "keywords": "Cyclone Tracy (1974) — The Christmas Storm That Destroyed Darwin In the early hours of Christmas Day 1974, Cyclone Tracy tore through Darwin, Australia, destroying more than 70 percent of the city's buildings, killing 71 people, and triggering the largest evacuation in Australian history. cyclone tracy 1974 darwin"
+  },
+  {
+    "title": "The Sydney Hailstorm of 1999 — Australia's Costliest Natural Disaster",
+    "path": "/sydney-hailstorm-1999/",
+    "description": "On April 14, 1999, a supercell thunderstorm dropped grapefruit-sized hail on eastern Sydney, damaging tens of thousands of homes and vehicles and causing over $1.7 billion AUD in insured losses — still one of Australia's costliest natural disasters.",
+    "category": "Guide",
+    "keywords": "The Sydney Hailstorm of 1999 — Australia's Costliest Natural Disaster On April 14, 1999, a supercell thunderstorm dropped grapefruit-sized hail on eastern Sydney, damaging tens of thousands of homes and vehicles and causing over $1.7 billion AUD in insured losses — still one of Australia's costliest natural disasters. sydney hailstorm 1999"
+  },
+  {
+    "title": "Black Saturday (2009) — The Deadliest Bushfire Disaster in Australian History",
+    "path": "/black-saturday-bushfires-2009/",
+    "description": "On February 7, 2009, catastrophic bushfires swept across Victoria, Australia during record heat and violent winds, killing 173 people and destroying over 2,000 homes — the deadliest bushfire disaster in Australian history.",
+    "category": "Guide",
+    "keywords": "Black Saturday (2009) — The Deadliest Bushfire Disaster in Australian History On February 7, 2009, catastrophic bushfires swept across Victoria, Australia during record heat and violent winds, killing 173 people and destroying over 2,000 homes — the deadliest bushfire disaster in Australian history. black saturday bushfires 2009"
+  },
+  {
+    "title": "Cyclone Yasi (2011) — One of Queensland's Most Powerful Cyclones in a Century",
+    "path": "/cyclone-yasi-2011/",
+    "description": "On February 3, 2011, Severe Tropical Cyclone Yasi made landfall near Mission Beach, Queensland as a huge Category 5 system — one of the most powerful cyclones to hit the Queensland coast in a century, but with a remarkably low direct death toll thanks to extensive evacuation.",
+    "category": "Guide",
+    "keywords": "Cyclone Yasi (2011) — One of Queensland's Most Powerful Cyclones in a Century On February 3, 2011, Severe Tropical Cyclone Yasi made landfall near Mission Beach, Queensland as a huge Category 5 system — one of the most powerful cyclones to hit the Queensland coast in a century, but with a remarkably low direct death toll thanks to extensive evacuation. cyclone yasi 2011"
+  },
+  {
+    "title": "The Wahine Disaster (1968) — New Zealand's Deadliest Modern Storm",
+    "path": "/wahine-storm-1968/",
+    "description": "On April 10, 1968, an extraordinarily violent storm sank the inter-island ferry TEV Wahine at the entrance to Wellington Harbour, killing 51 people in New Zealand's worst peacetime maritime disaster and one of its most powerful storms on record.",
+    "category": "Guide",
+    "keywords": "The Wahine Disaster (1968) — New Zealand's Deadliest Modern Storm On April 10, 1968, an extraordinarily violent storm sank the inter-island ferry TEV Wahine at the entrance to Wellington Harbour, killing 51 people in New Zealand's worst peacetime maritime disaster and one of its most powerful storms on record. wahine storm disaster 1968"
+  },
+  {
+    "title": "The Auckland Tornado of 2011 — One of New Zealand's Deadliest Tornadoes",
+    "path": "/auckland-tornado-2011/",
+    "description": "On May 3, 2011, a tornado tore through the Albany and North Shore area of Auckland, New Zealand, killing 3 people and injuring dozens in one of the country's most destructive and deadliest tornadoes on record.",
+    "category": "Guide",
+    "keywords": "The Auckland Tornado of 2011 — One of New Zealand's Deadliest Tornadoes On May 3, 2011, a tornado tore through the Albany and North Shore area of Auckland, New Zealand, killing 3 people and injuring dozens in one of the country's most destructive and deadliest tornadoes on record. auckland tornado 2011"
+  },
+  {
+    "title": "Cyclone Bola (1988) — Catastrophic Flooding Across New Zealand's East Cape",
+    "path": "/cyclone-bola-1988/",
+    "description": "In March 1988, ex-tropical Cyclone Bola stalled over New Zealand's North Island, dumping extreme rainfall on the East Cape and Gisborne region and triggering catastrophic flooding and landslides that made it one of the costliest weather disasters in New Zealand history at the time.",
+    "category": "Guide",
+    "keywords": "Cyclone Bola (1988) — Catastrophic Flooding Across New Zealand's East Cape In March 1988, ex-tropical Cyclone Bola stalled over New Zealand's North Island, dumping extreme rainfall on the East Cape and Gisborne region and triggering catastrophic flooding and landslides that made it one of the costliest weather disasters in New Zealand history at the time. cyclone bola 1988"
+  },
+  {
+    "title": "Cyclone Gabrielle (2023) — New Zealand's Costliest Modern Weather Disaster",
+    "path": "/cyclone-gabrielle-2023/",
+    "description": "In February 2023, ex-tropical Cyclone Gabrielle devastated New Zealand's North Island, triggering only the third national state of emergency in the country's history, killing 11 people, and causing catastrophic flooding and landslides across Hawke's Bay, Gisborne, and Auckland.",
+    "category": "Guide",
+    "keywords": "Cyclone Gabrielle (2023) — New Zealand's Costliest Modern Weather Disaster In February 2023, ex-tropical Cyclone Gabrielle devastated New Zealand's North Island, triggering only the third national state of emergency in the country's history, killing 11 people, and causing catastrophic flooding and landslides across Hawke's Bay, Gisborne, and Auckland. cyclone gabrielle 2023"
+  },
+  {
+    "title": "UK Severe Weather Index — Notable Storms, Floods, and Tornadoes",
+    "path": "/uk-severe-weather-index/",
+    "description": "An index of the United Kingdom's most significant severe weather events on record — windstorms, flash floods, prolonged flooding, and tornadoes — with links to full write-ups of the record-breaking ones.",
+    "category": "Guide",
+    "keywords": "UK Severe Weather Index — Notable Storms, Floods, and Tornadoes An index of the United Kingdom's most significant severe weather events on record — windstorms, flash floods, prolonged flooding, and tornadoes — with links to full write-ups of the record-breaking ones. uk severe weather index tornadoes storms floods"
+  },
+  {
+    "title": "Australia Severe Weather Index — Notable Cyclones, Bushfires, and Storms",
+    "path": "/australia-severe-weather-index/",
+    "description": "An index of Australia's most significant and record-breaking severe weather disasters — tropical cyclones, bushfires, giant hailstorms, and tornadoes — with links to full write-ups of the biggest events.",
+    "category": "Guide",
+    "keywords": "Australia Severe Weather Index — Notable Cyclones, Bushfires, and Storms An index of Australia's most significant and record-breaking severe weather disasters — tropical cyclones, bushfires, giant hailstorms, and tornadoes — with links to full write-ups of the biggest events. australia severe weather index cyclones bushfires hail"
+  },
+  {
+    "title": "New Zealand Severe Weather Index — Notable Storms, Cyclones, and Floods",
+    "path": "/new-zealand-severe-weather-index/",
+    "description": "An index of New Zealand's most significant and record-breaking severe weather disasters — ex-tropical cyclones, extreme storms, floods, and tornadoes — with links to full write-ups of the biggest events.",
+    "category": "Guide",
+    "keywords": "New Zealand Severe Weather Index — Notable Storms, Cyclones, and Floods An index of New Zealand's most significant and record-breaking severe weather disasters — ex-tropical cyclones, extreme storms, floods, and tornadoes — with links to full write-ups of the biggest events. new zealand severe weather index cyclones storms floods"
+  },
+  {
+    "title": "Les tempêtes Lothar et Martin de 1999 — Les tempêtes les plus destructrices de l'histoire de France",
+    "path": "/fr/tempete-lothar-martin-1999/",
+    "description": "Les 26 et 27 décembre 1999, deux tempêtes exceptionnelles, Lothar puis Martin, ont frappé coup sur coup la France, faisant près de 140 morts, abattant des dizaines de millions d'arbres et provoquant des coupures d'électricité massives.",
+    "category": "Guide",
+    "keywords": "Les tempêtes Lothar et Martin de 1999 — Les tempêtes les plus destructrices de l'histoire de France Les 26 et 27 décembre 1999, deux tempêtes exceptionnelles, Lothar puis Martin, ont frappé coup sur coup la France, faisant près de 140 morts, abattant des dizaines de millions d'arbres et provoquant des coupures d'électricité massives."
+  },
+  {
+    "title": "La canicule de 2003 en France — Environ 15 000 morts liés à la chaleur",
+    "path": "/fr/canicule-2003/",
+    "description": "Début août 2003, une canicule exceptionnelle a frappé la France avec des températures dépassant 40°C plusieurs jours d'affilée, causant environ 15 000 décès liés à la chaleur et provoquant une refonte complète de la politique française de gestion des vagues de chaleur.",
+    "category": "Guide",
+    "keywords": "La canicule de 2003 en France — Environ 15 000 morts liés à la chaleur Début août 2003, une canicule exceptionnelle a frappé la France avec des températures dépassant 40°C plusieurs jours d'affilée, causant environ 15 000 décès liés à la chaleur et provoquant une refonte complète de la politique française de gestion des vagues de chaleur."
+  },
+  {
+    "title": "La tempête Xynthia (2010) — Submersion marine meurtrière sur le littoral atlantique",
+    "path": "/fr/tempete-xynthia-2010/",
+    "description": "Dans la nuit du 27 au 28 février 2010, la tempête Xynthia a provoqué une submersion marine catastrophique sur le littoral atlantique français, tuant 47 personnes, principalement à La Faute-sur-Mer, et provoquant une réforme majeure de l'urbanisme du littoral.",
+    "category": "Guide",
+    "keywords": "La tempête Xynthia (2010) — Submersion marine meurtrière sur le littoral atlantique Dans la nuit du 27 au 28 février 2010, la tempête Xynthia a provoqué une submersion marine catastrophique sur le littoral atlantique français, tuant 47 personnes, principalement à La Faute-sur-Mer, et provoquant une réforme majeure de l'urbanisme du littoral."
+  },
+  {
+    "title": "Catastrophes météorologiques en France — Tempêtes, canicules, inondations et tornades",
+    "path": "/fr/catastrophes-meteorologiques-en-france/",
+    "description": "Un index des événements météorologiques les plus marquants de l'histoire récente de la France : tempêtes, canicules, submersions marines et tornades, avec des liens vers les récits complets des événements les plus importants.",
+    "category": "Guide",
+    "keywords": "Catastrophes météorologiques en France — Tempêtes, canicules, inondations et tornades Un index des événements météorologiques les plus marquants de l'histoire récente de la France : tempêtes, canicules, submersions marines et tornades, avec des liens vers les récits complets des événements les plus importants."
+  },
+  {
+    "title": "Les inondations de juillet 2021 en Belgique — 39 morts en Wallonie",
+    "path": "/fr/inondations-belgique-2021/",
+    "description": "Mi-juillet 2021, des pluies torrentielles ont provoqué des inondations catastrophiques en Wallonie, notamment à Verviers, Pepinster, Liège et Rochefort, faisant 39 morts — la catastrophe naturelle la plus meurtrière en Belgique depuis des décennies.",
+    "category": "Guide",
+    "keywords": "Les inondations de juillet 2021 en Belgique — 39 morts en Wallonie Mi-juillet 2021, des pluies torrentielles ont provoqué des inondations catastrophiques en Wallonie, notamment à Verviers, Pepinster, Liège et Rochefort, faisant 39 morts — la catastrophe naturelle la plus meurtrière en Belgique depuis des décennies."
+  },
+  {
+    "title": "De overstromingen van juli 2021 in België — 39 doden in Wallonië",
+    "path": "/nl/overstromingen-belgie-2021/",
+    "description": "Half juli 2021 veroorzaakte extreme regenval catastrofale overstromingen in Wallonië, met name in Verviers, Pepinster, Luik en Rochefort, met 39 doden tot gevolg — de dodelijkste natuurramp in België in decennia.",
+    "category": "Guide",
+    "keywords": "De overstromingen van juli 2021 in België — 39 doden in Wallonië Half juli 2021 veroorzaakte extreme regenval catastrofale overstromingen in Wallonië, met name in Verviers, Pepinster, Luik en Rochefort, met 39 doden tot gevolg — de dodelijkste natuurramp in België in decennia."
+  },
+  {
+    "title": "Météo extrême en Belgique — Tornades, tempêtes et inondations",
+    "path": "/fr/meteo-extreme-en-belgique/",
+    "description": "Un guide sur les risques météorologiques extrêmes en Belgique : tornades rares mais réelles, tempêtes hivernales, orages violents et le risque d'inondation illustré par la catastrophe de juillet 2021.",
+    "category": "Guide",
+    "keywords": "Météo extrême en Belgique — Tornades, tempêtes et inondations Un guide sur les risques météorologiques extrêmes en Belgique : tornades rares mais réelles, tempêtes hivernales, orages violents et le risque d'inondation illustré par la catastrophe de juillet 2021."
+  },
+  {
+    "title": "Noodweer in België — Tornado's, stormen en overstromingen",
+    "path": "/nl/noodweer-in-belgie/",
+    "description": "Een gids over extreem weer in België: zeldzame maar reële tornado's, winterstormen, zware onweersbuien en het overstromingsrisico, geïllustreerd door de ramp van juli 2021.",
+    "category": "Guide",
+    "keywords": "Noodweer in België — Tornado's, stormen en overstromingen Een gids over extreem weer in België: zeldzame maar reële tornado's, winterstormen, zware onweersbuien en het overstromingsrisico, geïllustreerd door de ramp van juli 2021."
+  },
+  {
+    "title": "Der Hagelsturm von Zürich (2021) — Die teuerste Naturkatastrophe der Schweiz",
+    "path": "/de/hagelsturm-zuerich-2021/",
+    "description": "Ende Juni 2021 zog ein gewaltiger Hagelsturm über die Region Zürich hinweg, mit Hagelkörnern von bis zu 8 Zentimetern Durchmesser und Versicherungsschäden von über 2 Milliarden Franken — die teuerste einzelne Naturkatastrophe in der Geschichte der Schweiz.",
+    "category": "Guide",
+    "keywords": "Der Hagelsturm von Zürich (2021) — Die teuerste Naturkatastrophe der Schweiz Ende Juni 2021 zog ein gewaltiger Hagelsturm über die Region Zürich hinweg, mit Hagelkörnern von bis zu 8 Zentimetern Durchmesser und Versicherungsschäden von über 2 Milliarden Franken — die teuerste einzelne Naturkatastrophe in der Geschichte der Schweiz."
+  },
+  {
+    "title": "La grêle de Zurich (2021) — La catastrophe naturelle la plus coûteuse de l'histoire suisse",
+    "path": "/fr/grele-zurich-2021/",
+    "description": "Fin juin 2021, un violent orage de grêle a frappé la région de Zurich avec des grêlons atteignant 8 centimètres de diamètre, causant plus de 2 milliards de francs suisses de dégâts assurés — la catastrophe naturelle isolée la plus coûteuse de l'histoire de la Suisse.",
+    "category": "Guide",
+    "keywords": "La grêle de Zurich (2021) — La catastrophe naturelle la plus coûteuse de l'histoire suisse Fin juin 2021, un violent orage de grêle a frappé la région de Zurich avec des grêlons atteignant 8 centimètres de diamètre, causant plus de 2 milliards de francs suisses de dégâts assurés — la catastrophe naturelle isolée la plus coûteuse de l'histoire de la Suisse."
+  },
+  {
+    "title": "La grandinata di Zurigo (2021) — Il disastro naturale più costoso nella storia svizzera",
+    "path": "/it/grandinata-zurigo-2021/",
+    "description": "Alla fine di giugno 2021, una violenta grandinata ha colpito la regione di Zurigo con chicchi fino a 8 centimetri di diametro, causando danni assicurati per oltre 2 miliardi di franchi svizzeri — il più costoso disastro naturale isolato nella storia della Svizzera.",
+    "category": "Guide",
+    "keywords": "La grandinata di Zurigo (2021) — Il disastro naturale più costoso nella storia svizzera Alla fine di giugno 2021, una violenta grandinata ha colpito la regione di Zurigo con chicchi fino a 8 centimetri di diametro, causando danni assicurati per oltre 2 miliardi di franchi svizzeri — il più costoso disastro naturale isolato nella storia della Svizzera."
+  },
+  {
+    "title": "Unwetter in der Schweiz — Hagel, Stürme und Überschwemmungen",
+    "path": "/de/unwetter-in-der-schweiz/",
+    "description": "Ein Überblick über extremes Wetter in der Schweiz: seltene Tornados, verheerende Hagelstürme wie jener von Zürich 2021, Sturmschäden durch Lothar 1999 und das Hochwasserrisiko in den Alpentälern.",
+    "category": "Guide",
+    "keywords": "Unwetter in der Schweiz — Hagel, Stürme und Überschwemmungen Ein Überblick über extremes Wetter in der Schweiz: seltene Tornados, verheerende Hagelstürme wie jener von Zürich 2021, Sturmschäden durch Lothar 1999 und das Hochwasserrisiko in den Alpentälern."
+  },
+  {
+    "title": "Météo extrême en Suisse — Grêle, tempêtes et inondations",
+    "path": "/fr/meteo-extreme-en-suisse/",
+    "description": "Un guide sur la météo extrême en Suisse : tornades rares, orages de grêle dévastateurs comme celui de Zurich en 2021, dégâts de la tempête Lothar en 1999, et le risque d'inondation dans les vallées alpines.",
+    "category": "Guide",
+    "keywords": "Météo extrême en Suisse — Grêle, tempêtes et inondations Un guide sur la météo extrême en Suisse : tornades rares, orages de grêle dévastateurs comme celui de Zurich en 2021, dégâts de la tempête Lothar en 1999, et le risque d'inondation dans les vallées alpines."
+  },
+  {
+    "title": "Maltempo in Svizzera — Grandine, tempeste e alluvioni",
+    "path": "/it/maltempo-in-svizzera/",
+    "description": "Una guida al maltempo estremo in Svizzera: tornado rari, violente grandinate come quella di Zurigo del 2021, i danni della tempesta Lothar del 1999 e il rischio di alluvioni nelle valli alpine.",
+    "category": "Guide",
+    "keywords": "Maltempo in Svizzera — Grandine, tempeste e alluvioni Una guida al maltempo estremo in Svizzera: tornado rari, violente grandinate come quella di Zurigo del 2021, i danni della tempesta Lothar del 1999 e il rischio di alluvioni nelle valli alpine."
   }
 ];
