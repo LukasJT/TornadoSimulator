@@ -8769,5 +8769,75 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Una guida al maltempo estremo in Svizzera: tornado rari, violente grandinate come quella di Zurigo del 2021, i danni della tempesta Lothar del 1999 e il rischio di alluvioni nelle valli alpine.",
     "category": "Guide",
     "keywords": "Maltempo in Svizzera — Grandine, tempeste e alluvioni Una guida al maltempo estremo in Svizzera: tornado rari, violente grandinate come quella di Zurigo del 2021, i danni della tempesta Lothar del 1999 e il rischio di alluvioni nelle valli alpine."
+  },
+  {
+    "title": "The Burns' Day Storm of 1990 — Deadlier Than the Great Storm of 1987",
+    "path": "/burns-day-storm-1990/",
+    "description": "On January 25, 1990, the Burns' Day Storm swept across the UK during daylight hours, killing 47 people — more than the more famous Great Storm of 1987 — because it struck while millions of people were outdoors and commuting.",
+    "category": "Guide",
+    "keywords": "The Burns' Day Storm of 1990 — Deadlier Than the Great Storm of 1987 On January 25, 1990, the Burns' Day Storm swept across the UK during daylight hours, killing 47 people — more than the more famous Great Storm of 1987 — because it struck while millions of people were outdoors and commuting. burns day storm 1990 uk"
+  },
+  {
+    "title": "The London Tornado of 2006 — A Twister Filmed Live Across a Global City",
+    "path": "/london-tornado-2006/",
+    "description": "On December 7, 2006, a tornado tore through the Kensal Rise and Ladbroke Grove area of northwest London, ripping roofs off around 100 homes and becoming one of the most extensively filmed urban tornadoes ever recorded, without a single serious injury.",
+    "category": "Guide",
+    "keywords": "The London Tornado of 2006 — A Twister Filmed Live Across a Global City On December 7, 2006, a tornado tore through the Kensal Rise and Ladbroke Grove area of northwest London, ripping roofs off around 100 homes and becoming one of the most extensively filmed urban tornadoes ever recorded, without a single serious injury. london tornado 2006 kensal rise"
+  },
+  {
+    "title": "Storm Eunice (2022) — England's Highest Wind Gust Ever Recorded",
+    "path": "/storm-eunice-2022/",
+    "description": "On February 18, 2022, Storm Eunice battered the UK with a gust of 122 mph at the Isle of Wight — the highest ever recorded in England — killing at least 4 people and prompting the first-ever red weather warning for London.",
+    "category": "Guide",
+    "keywords": "Storm Eunice (2022) — England's Highest Wind Gust Ever Recorded On February 18, 2022, Storm Eunice battered the UK with a gust of 122 mph at the Isle of Wight — the highest ever recorded in England — killing at least 4 people and prompting the first-ever red weather warning for London. storm eunice 2022 uk"
+  },
+  {
+    "title": "Ash Wednesday (1983) — The Bushfire Disaster That Preceded Black Saturday",
+    "path": "/ash-wednesday-bushfires-1983/",
+    "description": "On February 16, 1983, catastrophic bushfires swept across Victoria and South Australia in a single afternoon, killing 75 people and destroying thousands of homes — the deadliest Australian bushfire disaster until Black Saturday in 2009.",
+    "category": "Guide",
+    "keywords": "Ash Wednesday (1983) — The Bushfire Disaster That Preceded Black Saturday On February 16, 1983, catastrophic bushfires swept across Victoria and South Australia in a single afternoon, killing 75 people and destroying thousands of homes — the deadliest Australian bushfire disaster until Black Saturday in 2009. ash wednesday bushfires 1983"
+  },
+  {
+    "title": "The 2010-11 Queensland Floods — The \"Inland Tsunami\" at Toowoomba",
+    "path": "/queensland-floods-2011/",
+    "description": "Across December 2010 and January 2011, catastrophic flooding inundated three-quarters of Queensland, culminating in a sudden flash flood that tore through Toowoomba and the Lockyer Valley on January 10, 2011 — an event so violent it became known as the \"inland tsunami.\"",
+    "category": "Guide",
+    "keywords": "The 2010-11 Queensland Floods — The \"Inland Tsunami\" at Toowoomba Across December 2010 and January 2011, catastrophic flooding inundated three-quarters of Queensland, culminating in a sudden flash flood that tore through Toowoomba and the Lockyer Valley on January 10, 2011 — an event so violent it became known as the \"inland tsunami.\" queensland floods 2011 toowoomba"
+  },
+  {
+    "title": "The Pasha Bulker Storm (2007) — The East Coast Low That Beached a Cargo Ship",
+    "path": "/pasha-bulker-storm-2007/",
+    "description": "In June 2007, a powerful East Coast Low battered Newcastle and the Hunter Valley, New South Wales, with torrential rain and huge seas that ran the bulk carrier Pasha Bulker aground on Nobbys Beach — one of the most photographed images in Australian weather history.",
+    "category": "Guide",
+    "keywords": "The Pasha Bulker Storm (2007) — The East Coast Low That Beached a Cargo Ship In June 2007, a powerful East Coast Low battered Newcastle and the Hunter Valley, New South Wales, with torrential rain and huge seas that ran the bulk carrier Pasha Bulker aground on Nobbys Beach — one of the most photographed images in Australian weather history. pasha bulker storm 2007 newcastle"
+  },
+  {
+    "title": "The Auckland Anniversary Floods (2023) — Auckland's Wettest Day on Record",
+    "path": "/auckland-anniversary-floods-2023/",
+    "description": "On January 27, 2023, record-breaking rainfall flooded Auckland, New Zealand's largest city, killing 4 people and triggering a state of emergency just weeks before Cyclone Gabrielle struck the same region.",
+    "category": "Guide",
+    "keywords": "The Auckland Anniversary Floods (2023) — Auckland's Wettest Day on Record On January 27, 2023, record-breaking rainfall flooded Auckland, New Zealand's largest city, killing 4 people and triggering a state of emergency just weeks before Cyclone Gabrielle struck the same region. auckland anniversary floods 2023"
+  },
+  {
+    "title": "La tempête Klaus (2009) — La forêt des Landes dévastée",
+    "path": "/fr/tempete-klaus-2009/",
+    "description": "Le 24 janvier 2009, la tempête Klaus a frappé le sud-ouest de la France avec des vents dépassant 170 km/h, tuant 12 personnes et dévastant environ 40% de la forêt de pins des Landes, l'un des plus grands massifs forestiers d'Europe.",
+    "category": "Guide",
+    "keywords": "La tempête Klaus (2009) — La forêt des Landes dévastée Le 24 janvier 2009, la tempête Klaus a frappé le sud-ouest de la France avec des vents dépassant 170 km/h, tuant 12 personnes et dévastant environ 40% de la forêt de pins des Landes, l'un des plus grands massifs forestiers d'Europe."
+  },
+  {
+    "title": "La tempête Alex (2020) — Crues et coulées de boue dévastatrices dans les Alpes-Maritimes",
+    "path": "/fr/tempete-alex-2020/",
+    "description": "Dans la nuit du 2 octobre 2020, la tempête Alex a déversé des quantités de pluie extrêmes sur les vallées de la Roya, de la Vésubie et de la Tinée dans les Alpes-Maritimes, provoquant des crues et des coulées de boue qui ont détruit des villages entiers et fait au moins 8 morts en France.",
+    "category": "Guide",
+    "keywords": "La tempête Alex (2020) — Crues et coulées de boue dévastatrices dans les Alpes-Maritimes Dans la nuit du 2 octobre 2020, la tempête Alex a déversé des quantités de pluie extrêmes sur les vallées de la Roya, de la Vésubie et de la Tinée dans les Alpes-Maritimes, provoquant des crues et des coulées de boue qui ont détruit des villages entiers et fait au moins 8 morts en France."
+  },
+  {
+    "title": "Das Hochwasser von 2005 — Eine der teuersten Naturkatastrophen der Schweizer Geschichte",
+    "path": "/de/hochwasser-schweiz-2005/",
+    "description": "Im August 2005 verursachten mehrtägige Starkregenfälle schwere Überschwemmungen in weiten Teilen der Schweiz, darunter Bern, Luzern und das Berner Oberland, mit sechs Todesopfern und Schäden von über 3 Milliarden Franken.",
+    "category": "Guide",
+    "keywords": "Das Hochwasser von 2005 — Eine der teuersten Naturkatastrophen der Schweizer Geschichte Im August 2005 verursachten mehrtägige Starkregenfälle schwere Überschwemmungen in weiten Teilen der Schweiz, darunter Bern, Luzern und das Berner Oberland, mit sechs Todesopfern und Schäden von über 3 Milliarden Franken."
   }
 ];
