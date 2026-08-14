@@ -8888,5 +8888,47 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Am 21. Februar 1999 verschüttete eine gewaltige Lawine Teile des Walliser Dorfes Évolène und forderte 12 Todesopfer — eine der schwersten Lawinenkatastrophen im außergewöhnlich schneereichen und lawinengefährlichen Winter 1999 in den Alpen.",
     "category": "Guide",
     "keywords": "Die Lawine von Évolène (1999) — Katastrophe in einem Schweizer Bergdorf Am 21. Februar 1999 verschüttete eine gewaltige Lawine Teile des Walliser Dorfes Évolène und forderte 12 Todesopfer — eine der schwersten Lawinenkatastrophen im außergewöhnlich schneereichen und lawinengefährlichen Winter 1999 in den Alpen."
+  },
+  {
+    "title": "El Niño and La Niña in Australia — Drought, Bushfire, and Flood Risk Explained",
+    "path": "/el-nino-la-nina-australia/",
+    "description": "El Niño and La Niña are the two opposite phases of the El Niño-Southern Oscillation, and few countries feel the swing between them as strongly as Australia. Here is what each phase actually does to Australian rainfall, bushfire risk, and flood risk.",
+    "category": "Guide",
+    "keywords": "El Niño and La Niña in Australia — Drought, Bushfire, and Flood Risk Explained El Niño and La Niña are the two opposite phases of the El Niño-Southern Oscillation, and few countries feel the swing between them as strongly as Australia. Here is what each phase actually does to Australian rainfall, bushfire risk, and flood risk. el nino la nina australia"
+  },
+  {
+    "title": "El Niño and La Niña in New Zealand — Regional Rainfall and Wind Effects Explained",
+    "path": "/el-nino-la-nina-new-zealand/",
+    "description": "El Niño and La Niña shift New Zealand's prevailing wind direction, which in turn flips which regions run drier and which run wetter. Here is how each ENSO phase actually plays out across the North and South Islands.",
+    "category": "Guide",
+    "keywords": "El Niño and La Niña in New Zealand — Regional Rainfall and Wind Effects Explained El Niño and La Niña shift New Zealand's prevailing wind direction, which in turn flips which regions run drier and which run wetter. Here is how each ENSO phase actually plays out across the North and South Islands. el nino la nina new zealand"
+  },
+  {
+    "title": "Storm Ophelia (2017) — The Ex-Hurricane That Turned Britain's Sky Orange",
+    "path": "/storm-ophelia-2017/",
+    "description": "On October 16, 2017, the remnants of Hurricane Ophelia battered Ireland and the UK with winds over 90 mph, killing 3 people in Ireland — and, in an eerie side effect, turned the sky over southern England a deep orange and red as Saharan dust and wildfire smoke swept north ahead of it.",
+    "category": "Guide",
+    "keywords": "Storm Ophelia (2017) — The Ex-Hurricane That Turned Britain's Sky Orange On October 16, 2017, the remnants of Hurricane Ophelia battered Ireland and the UK with winds over 90 mph, killing 3 people in Ireland — and, in an eerie side effect, turned the sky over southern England a deep orange and red as Saharan dust and wildfire smoke swept north ahead of it. storm ophelia 2017 uk ireland"
+  },
+  {
+    "title": "The 1979 Fastnet Race Storm — Yacht Racing's Deadliest Disaster",
+    "path": "/fastnet-race-storm-1979/",
+    "description": "In August 1979, an unforecast, explosively deepening storm struck the Fastnet Race yacht fleet in the Irish Sea, capsizing and sinking boats in violent seas and killing 15 sailors — still the deadliest disaster in the history of yacht racing.",
+    "category": "Guide",
+    "keywords": "The 1979 Fastnet Race Storm — Yacht Racing's Deadliest Disaster In August 1979, an unforecast, explosively deepening storm struck the Fastnet Race yacht fleet in the Irish Sea, capsizing and sinking boats in violent seas and killing 15 sailors — still the deadliest disaster in the history of yacht racing. fastnet race storm 1979"
+  },
+  {
+    "title": "The Brisbane Floods of 1974 — Cyclone Wanda's Legacy",
+    "path": "/brisbane-floods-1974/",
+    "description": "In late January 1974, the remnants of Cyclone Wanda dumped extreme rainfall on southeast Queensland, causing catastrophic flooding across Brisbane that killed 14 people and inundated thousands of homes — the disaster that shaped the city's flood defences for the next four decades.",
+    "category": "Guide",
+    "keywords": "The Brisbane Floods of 1974 — Cyclone Wanda's Legacy In late January 1974, the remnants of Cyclone Wanda dumped extreme rainfall on southeast Queensland, causing catastrophic flooding across Brisbane that killed 14 people and inundated thousands of homes — the disaster that shaped the city's flood defences for the next four decades. brisbane floods 1974 cyclone wanda"
+  },
+  {
+    "title": "La tempête d'octobre 1987 — Quand le \"Great Storm\" britannique a aussi frappé la France",
+    "path": "/fr/tempete-octobre-1987/",
+    "description": "Dans la nuit du 15 au 16 octobre 1987, la même tempête exceptionnelle qui a dévasté le sud de l'Angleterre a également frappé la Bretagne et le nord-ouest de la France, abattant des millions d'arbres et causant des dégâts considérables sur le littoral.",
+    "category": "Guide",
+    "keywords": "La tempête d'octobre 1987 — Quand le \"Great Storm\" britannique a aussi frappé la France Dans la nuit du 15 au 16 octobre 1987, la même tempête exceptionnelle qui a dévasté le sud de l'Angleterre a également frappé la Bretagne et le nord-ouest de la France, abattant des millions d'arbres et causant des dégâts considérables sur le littoral."
   }
 ];
