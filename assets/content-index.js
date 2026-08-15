@@ -9161,5 +9161,47 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Nederland behoort tot de landen met de hoogste tornadodichtheid ter wereld, en België registreert er jaarlijks meerdere. Bijna niemand merkt het, en dat heeft dezelfde oorzaak als het feit dat ze zo vaak voorkomen.",
     "category": "Guide",
     "keywords": "Tornado's in Nederland en België — Waarom er meer zijn dan je denkt Nederland behoort tot de landen met de hoogste tornadodichtheid ter wereld, en België registreert er jaarlijks meerdere. Bijna niemand merkt het, en dat heeft dezelfde oorzaak als het feit dat ze zo vaak voorkomen."
+  },
+  {
+    "title": "Das Ahrtal-Hochwasser 2021 — Die tödlichste Naturkatastrophe Deutschlands seit Jahrzehnten",
+    "path": "/de/hochwasser-ahrtal-2021/",
+    "description": "In der Nacht vom 14. auf den 15. Juli 2021 verwandelte extremer Dauerregen die Ahr in einen reissenden Strom, der ganze Ortschaften zerstörte. Rund 135 Menschen starben allein im Kreis Ahrweiler.",
+    "category": "Guide",
+    "keywords": "Das Ahrtal-Hochwasser 2021 — Die tödlichste Naturkatastrophe Deutschlands seit Jahrzehnten In der Nacht vom 14. auf den 15. Juli 2021 verwandelte extremer Dauerregen die Ahr in einen reissenden Strom, der ganze Ortschaften zerstörte. Rund 135 Menschen starben allein im Kreis Ahrweiler."
+  },
+  {
+    "title": "Die Sturmflut von 1962 — 315 Tote in Hamburg und die Geburt einer Politikerkarriere",
+    "path": "/de/sturmflut-hamburg-1962/",
+    "description": "In der Nacht vom 16. auf den 17. Februar 1962 brachen die Deiche im Hamburger Süden. 315 Menschen starben, überwiegend in Wilhelmsburg — und Helmut Schmidt begründete mit seinem Krisenmanagement seinen bundesweiten Ruf.",
+    "category": "Guide",
+    "keywords": "Die Sturmflut von 1962 — 315 Tote in Hamburg und die Geburt einer Politikerkarriere In der Nacht vom 16. auf den 17. Februar 1962 brachen die Deiche im Hamburger Süden. 315 Menschen starben, überwiegend in Wilhelmsburg — und Helmut Schmidt begründete mit seinem Krisenmanagement seinen bundesweiten Ruf."
+  },
+  {
+    "title": "Das Elbehochwasser 2002 — Die \"Jahrhundertflut\" und Dresdens Kulturgüter",
+    "path": "/de/elbehochwasser-2002/",
+    "description": "Im August 2002 führte extremer Dauerregen zu einem Rekordhochwasser an Elbe und Mulde. Dresdens historisches Zentrum stand unter Wasser, und die Katastrophe beeinflusste sogar den Bundestagswahlkampf.",
+    "category": "Guide",
+    "keywords": "Das Elbehochwasser 2002 — Die \"Jahrhundertflut\" und Dresdens Kulturgüter Im August 2002 führte extremer Dauerregen zu einem Rekordhochwasser an Elbe und Mulde. Dresdens historisches Zentrum stand unter Wasser, und die Katastrophe beeinflusste sogar den Bundestagswahlkampf."
+  },
+  {
+    "title": "Orkan Kyrill (2007) — Als die Deutsche Bahn erstmals den gesamten Fernverkehr einstellte",
+    "path": "/de/orkan-kyrill-2007/",
+    "description": "Am 18. und 19. Januar 2007 fegte Orkan Kyrill über Nordwesteuropa. In Deutschland starben rund 13 Menschen, und die Deutsche Bahn legte zum ersten Mal in ihrer Geschichte den kompletten Fernverkehr still.",
+    "category": "Guide",
+    "keywords": "Orkan Kyrill (2007) — Als die Deutsche Bahn erstmals den gesamten Fernverkehr einstellte Am 18. und 19. Januar 2007 fegte Orkan Kyrill über Nordwesteuropa. In Deutschland starben rund 13 Menschen, und die Deutsche Bahn legte zum ersten Mal in ihrer Geschichte den kompletten Fernverkehr still."
+  },
+  {
+    "title": "Die Warnstufen des Deutschen Wetterdienstes — Gelb, Orange, Rot und Violett erklärt",
+    "path": "/de/warnstufen-dwd/",
+    "description": "Der DWD warnt in vier Stufen von Gelb bis Violett. Hier steht, was jede Farbe bedeutet, wie Cell Broadcast funktioniert und warum die höchste Stufe so selten vergeben wird.",
+    "category": "Guide",
+    "keywords": "Die Warnstufen des Deutschen Wetterdienstes — Gelb, Orange, Rot und Violett erklärt Der DWD warnt in vier Stufen von Gelb bis Violett. Hier steht, was jede Farbe bedeutet, wie Cell Broadcast funktioniert und warum die höchste Stufe so selten vergeben wird."
+  },
+  {
+    "title": "Unwetter in Deutschland — Hochwasser, Orkane, Hitze und Tornados",
+    "path": "/de/unwetter-in-deutschland/",
+    "description": "Ein Index der bedeutendsten Wetterkatastrophen Deutschlands: das Ahrtal-Hochwasser 2021, die Sturmflut von 1962, das Elbehochwasser 2002, Orkan Kyrill und mehr — mit Links zu den ausführlichen Berichten.",
+    "category": "Guide",
+    "keywords": "Unwetter in Deutschland — Hochwasser, Orkane, Hitze und Tornados Ein Index der bedeutendsten Wetterkatastrophen Deutschlands: das Ahrtal-Hochwasser 2021, die Sturmflut von 1962, das Elbehochwasser 2002, Orkan Kyrill und mehr — mit Links zu den ausführlichen Berichten."
   }
 ];
