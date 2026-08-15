@@ -9126,5 +9126,40 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "In de nacht van 31 januari op 1 februari 1953 brak een noordwesterstorm de zeeweringen in Zeeland en Zuid-Holland. Ruim 1.800 mensen kwamen om in Nederland, tientallen in België, en de ramp leidde rechtstreeks tot de Deltawerken.",
     "category": "Guide",
     "keywords": "De Watersnoodramp van 1953 — De stormvloed die de Deltawerken voortbracht In de nacht van 31 januari op 1 februari 1953 brak een noordwesterstorm de zeeweringen in Zeeland en Zuid-Holland. Ruim 1.800 mensen kwamen om in Nederland, tientallen in België, en de ramp leidde rechtstreeks tot de Deltawerken."
+  },
+  {
+    "title": "The Night of the Big Wind (1839) — The Storm That Became an Irish Age Test",
+    "path": "/night-of-the-big-wind-1839/",
+    "description": "On the night of January 6-7, 1839, the most severe storm in Ireland's recorded history destroyed a quarter of Dublin's housing and killed hundreds. Seventy years later, remembering it was accepted as legal proof of a person's age.",
+    "category": "Guide",
+    "keywords": "The Night of the Big Wind (1839) — The Storm That Became an Irish Age Test On the night of January 6-7, 1839, the most severe storm in Ireland's recorded history destroyed a quarter of Dublin's housing and killed hundreds. Seventy years later, remembering it was accepted as legal proof of a person's age. night of the big wind 1839 ireland"
+  },
+  {
+    "title": "Hurricane Debbie (1961) — Ireland's Deadliest Modern Storm",
+    "path": "/hurricane-debbie-1961/",
+    "description": "In September 1961, the remnants of Hurricane Debbie tracked past Ireland's west coast with gusts recorded around 180 km/h, killing more than a dozen people in what remains Ireland's most severe storm of the modern era.",
+    "category": "Guide",
+    "keywords": "Hurricane Debbie (1961) — Ireland's Deadliest Modern Storm In September 1961, the remnants of Hurricane Debbie tracked past Ireland's west coast with gusts recorded around 180 km/h, killing more than a dozen people in what remains Ireland's most severe storm of the modern era. hurricane debbie 1961 ireland"
+  },
+  {
+    "title": "Ireland Severe Weather Index — Notable Storms, Floods, and Cold Events",
+    "path": "/ireland-severe-weather-index/",
+    "description": "An index of Ireland's most significant severe weather events — Atlantic windstorms, ex-hurricanes, floods, and rare extreme cold — with links to full write-ups of the biggest.",
+    "category": "Guide",
+    "keywords": "Ireland Severe Weather Index — Notable Storms, Floods, and Cold Events An index of Ireland's most significant severe weather events — Atlantic windstorms, ex-hurricanes, floods, and rare extreme cold — with links to full write-ups of the biggest. ireland severe weather index storms floods"
+  },
+  {
+    "title": "I livelli di allerta di MeteoSvizzera — Cosa significano i gradi di pericolo da 1 a 5",
+    "path": "/it/allerte-meteo-svizzera/",
+    "description": "MeteoSvizzera utilizza una scala di pericolo a cinque livelli per le allerte meteo. Ecco cosa significa concretamente ogni livello e quale comportamento richiede.",
+    "category": "Guide",
+    "keywords": "I livelli di allerta di MeteoSvizzera — Cosa significano i gradi di pericolo da 1 a 5 MeteoSvizzera utilizza una scala di pericolo a cinque livelli per le allerte meteo. Ecco cosa significa concretamente ogni livello e quale comportamento richiede."
+  },
+  {
+    "title": "Tornado's in Nederland en België — Waarom er meer zijn dan je denkt",
+    "path": "/nl/tornados-in-de-lage-landen/",
+    "description": "Nederland behoort tot de landen met de hoogste tornadodichtheid ter wereld, en België registreert er jaarlijks meerdere. Bijna niemand merkt het, en dat heeft dezelfde oorzaak als het feit dat ze zo vaak voorkomen.",
+    "category": "Guide",
+    "keywords": "Tornado's in Nederland en België — Waarom er meer zijn dan je denkt Nederland behoort tot de landen met de hoogste tornadodichtheid ter wereld, en België registreert er jaarlijks meerdere. Bijna niemand merkt het, en dat heeft dezelfde oorzaak als het feit dat ze zo vaak voorkomen."
   }
 ];
