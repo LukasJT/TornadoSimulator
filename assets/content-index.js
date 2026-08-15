@@ -9091,5 +9091,40 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Het Koninklijk Meteorologisch Instituut gebruikt vier kleurcodes voor weerwaarschuwingen in België. Dit is wat elke kleur concreet betekent en welk gedrag ervan verwacht wordt.",
     "category": "Guide",
     "keywords": "KMI-weerwaarschuwingen — Wat groen, geel, oranje en rood betekenen Het Koninklijk Meteorologisch Instituut gebruikt vier kleurcodes voor weerwaarschuwingen in België. Dit is wat elke kleur concreet betekent en welk gedrag ervan verwacht wordt."
+  },
+  {
+    "title": "Why Britain Gets So Many Tornadoes — The Highest Density in the World",
+    "path": "/why-britain-gets-tornadoes/",
+    "description": "The UK records more tornadoes per unit area than almost any country on Earth, including the United States. Almost nobody notices, because nearly all of them are weak. Here is why both halves of that are true.",
+    "category": "Guide",
+    "keywords": "Why Britain Gets So Many Tornadoes — The Highest Density in the World The UK records more tornadoes per unit area than almost any country on Earth, including the United States. Almost nobody notices, because nearly all of them are weak. Here is why both halves of that are true. why britain gets tornadoes uk tornado frequency"
+  },
+  {
+    "title": "Storm Arwen (2021) — The Northerly That Caught Britain's Trees Facing the Wrong Way",
+    "path": "/storm-arwen-2021/",
+    "description": "Storm Arwen struck in November 2021 from an unusual northerly direction, felling vast numbers of trees that had spent decades growing resistant to southwesterly winds, and leaving some homes without power for more than a week.",
+    "category": "Guide",
+    "keywords": "Storm Arwen (2021) — The Northerly That Caught Britain's Trees Facing the Wrong Way Storm Arwen struck in November 2021 from an unusual northerly direction, felling vast numbers of trees that had spent decades growing resistant to southwesterly winds, and leaving some homes without power for more than a week. storm arwen 2021"
+  },
+  {
+    "title": "The Hull Floods of 2007 — The Flooded City Nobody Reported",
+    "path": "/hull-floods-2007/",
+    "description": "In June 2007, record rainfall flooded around 8,600 homes in Hull — more than almost any other UK city that summer — yet the disaster was so overshadowed by flooding elsewhere that Hull became known as \"the forgotten city.\"",
+    "category": "Guide",
+    "keywords": "The Hull Floods of 2007 — The Flooded City Nobody Reported In June 2007, record rainfall flooded around 8,600 homes in Hull — more than almost any other UK city that summer — yet the disaster was so overshadowed by flooding elsewhere that Hull became known as \"the forgotten city.\" hull floods 2007 forgotten city"
+  },
+  {
+    "title": "L'épisode méditerranéen (ou cévenol) — Pourquoi le sud-est de la France subit des crues éclair",
+    "path": "/fr/episode-mediterraneen-explique/",
+    "description": "Vaison-la-Romaine, les inondations du Var, la tempête Alex : ces catastrophes partagent le même mécanisme météorologique. Voici comment se forme un épisode méditerranéen et pourquoi il est si dangereux.",
+    "category": "Guide",
+    "keywords": "L'épisode méditerranéen (ou cévenol) — Pourquoi le sud-est de la France subit des crues éclair Vaison-la-Romaine, les inondations du Var, la tempête Alex : ces catastrophes partagent le même mécanisme météorologique. Voici comment se forme un épisode méditerranéen et pourquoi il est si dangereux."
+  },
+  {
+    "title": "De Watersnoodramp van 1953 — De stormvloed die de Deltawerken voortbracht",
+    "path": "/nl/watersnoodramp-1953/",
+    "description": "In de nacht van 31 januari op 1 februari 1953 brak een noordwesterstorm de zeeweringen in Zeeland en Zuid-Holland. Ruim 1.800 mensen kwamen om in Nederland, tientallen in België, en de ramp leidde rechtstreeks tot de Deltawerken.",
+    "category": "Guide",
+    "keywords": "De Watersnoodramp van 1953 — De stormvloed die de Deltawerken voortbracht In de nacht van 31 januari op 1 februari 1953 brak een noordwesterstorm de zeeweringen in Zeeland en Zuid-Holland. Ruim 1.800 mensen kwamen om in Nederland, tientallen in België, en de ramp leidde rechtstreeks tot de Deltawerken."
   }
 ];
