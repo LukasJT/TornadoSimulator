@@ -9,7 +9,7 @@
   var activeCategory = 'All';
 
   function normalize(value) {
-    return String(value || '').toLowerCase().replace(/[^a-z0-9\s-]/g, ' ').replace(/\s+/g, ' ').trim();
+    return String(value || '').normalize('NFKD').toLowerCase().replace(/\p{M}/gu, '').replace(/[^\p{L}\p{N}\s-]/gu, ' ').replace(/\s+/g, ' ').trim();
   }
 
   function score(item, query) {
@@ -62,6 +62,8 @@
   }
 
   if (input) input.addEventListener('input', render);
+  if (input) input.setAttribute('aria-label', 'Search Tornado Hub');
+  if (count) { count.setAttribute('role', 'status'); count.setAttribute('aria-live', 'polite'); }
   chips.forEach(function (chip) {
     chip.addEventListener('click', function () {
       activeCategory = chip.getAttribute('data-search-chip') || 'All';

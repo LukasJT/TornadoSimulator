@@ -74,24 +74,15 @@ a{color:var(--link);text-decoration:none}a:hover{color:var(--accent)}
 .inline-ad{margin:26px auto;display:flex;justify-content:center}
 .footer{border-top:1px solid var(--border);margin-top:30px;padding:26px;text-align:center;color:var(--text-muted);font-size:14px}
 </style>
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<script src="/assets/site-shell.js?v=1" defer></script>
 </head>
 <body>
-<nav class="nav"><div class="nav-inner">
-  <a href="/" class="nav-brand">🌪️ Tornado Hub</a>
-  <div class="nav-links">
-    <a href="/">Home</a>
-    <a href="/weather-personality-quizzes/">Personality Quizzes</a>
-    <a href="/weather-trivia/">Trivia</a>
-    <a href="/tornadle/">Tornadle</a>
-    <a href="/tornado-forecast/">Forecast</a>
-    <a href="/games/">Games</a>
-    <a href="/simulator/" class="cta">Simulator →</a>
-  </div>
-</div></nav>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav><noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
 
 <section class="hero">
   <div class="eyebrow">⛈️ Personality quiz · 8 questions</div>
-  <h1>What kind of <em>storm</em> are you?</h1>
+  <h1 id="main-content" tabindex="-1">What kind of <em>storm</em> are you?</h1>
   <p>Everyone has a weather system inside them. Answer 8 questions and we&#x27;ll tell you whether you&#x27;re a sudden tornado, a slow-building hurricane, a silent blizzard, or something in between.</p>
 </section>
 
@@ -207,6 +198,6 @@ render();
 <script src="/assets/article-tracker.js" defer></script>
 <script src="/assets/ads-config.js?v=11" defer></script>
 <script src="/assets/ads.js?v=11" defer></script>
-<script src="/assets/house-ads.js?v=14" defer></script>
+<script src="/assets/house-ads.js?v=15" defer></script>
 </body>
 </html>

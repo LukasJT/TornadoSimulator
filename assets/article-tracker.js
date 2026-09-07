@@ -225,7 +225,7 @@
       return;
     }
 
-    updateTrendingLabels(COUNTER_ENDPOINT ? 'Awaiting live data' : 'No fake counts');
+    updateTrendingLabels('Selected guides');
     renderList('[data-trending-articles]', POPULAR_STARTING_POINTS, 'Popular guides will appear here.');
     renderCurrentViewCount(store, null);
   }
