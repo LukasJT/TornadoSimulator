@@ -66,6 +66,50 @@
       .hub-nav { padding: 6px 12px; }
       .hub-nav-links a { padding: 4px 8px; font-size: 11px; }
     }
+    :where(button, input, select, a):focus-visible {
+      outline: 3px solid #4fc3f7;
+      outline-offset: 2px;
+    }
+    .parameter-control input[type="number"] {
+      appearance: textfield;
+    }
+    .parameter-control input[type="number"]::-webkit-inner-spin-button,
+    .parameter-control input[type="number"]::-webkit-outer-spin-button {
+      opacity: 1;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+    .mobile-view-switcher { display: none; }
+    #site-footer { display: none !important; }
+    @media (max-width: 820px) {
+      body { height: 100dvh; padding-right: 0 !important; }
+      .hub-nav-links { max-width: 65vw; overflow-x: auto; scrollbar-width: none; }
+      .simulator-app { height: 100dvh !important; }
+      .simulator-header { padding: 8px 10px !important; }
+      .simulator-header-presets { overflow-x: auto; max-width: 58vw; }
+      .simulator-main { position: relative; flex-direction: column !important; }
+      .workspace-panel { display: contents !important; }
+      .controls-panel { width: 100% !important; border-right: 0 !important; padding-bottom: 84px !important; }
+      .visualization-panel { width: 100%; height: 100% !important; padding: 8px !important; }
+      .results-tabs, .results-panel, .result-context, .simulation-explainer, .simulation-controls { width: 100%; }
+      .results-tabs { overflow-x: auto; padding-inline: 4px !important; }
+      .results-panel { padding-bottom: 84px !important; }
+      .mobile-hidden { display: none !important; }
+      .mobile-view-switcher {
+        display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px;
+        padding: 6px 8px; background: #101024; border-bottom: 1px solid #24243d;
+      }
+      .mobile-view-switcher button {
+        min-height: 42px; border: 1px solid #32324e; border-radius: 5px;
+        background: #17172c; color: #9da2b4; font: 700 12px/1 Inter, sans-serif;
+      }
+      .mobile-view-switcher button[aria-pressed="true"] { background: #2a2a52; color: #fff; border-color: #575787; }
+    }
   </style>
 
 <script type="application/ld+json" data-seo="page">
@@ -1191,19 +1235,45 @@ const numFmt = (n) => Math.round(n).toLocaleString();
 // ─── SLIDER COMPONENT ───────────────────────────────────────────────────────
 
 function Slider({ label, value, onChange, min, max, step = 1, unit = "", info }) {
+  const id = `parameter-${label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+  const commitValue = (rawValue) => {
+    const parsed = Number(rawValue);
+    if (!Number.isFinite(parsed)) return;
+    onChange(Math.min(max, Math.max(min, parsed)));
+  };
   return (
-    <div style={{ marginBottom: 10 }}>
-      <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: "#b0b0b0", marginBottom: 3 }}>
-        <span title={info}>{label}</span>
-        <span style={{ color: "#e0e0e0", fontFamily: "'JetBrains Mono', monospace", fontWeight: 600 }}>
-          {typeof value === "number" ? value.toLocaleString() : value}{unit}
+    <div className="parameter-control" style={{ marginBottom: 12 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", gap: 10, fontSize: 11, color: "#b0b0b0", marginBottom: 6 }}>
+        <label htmlFor={id} title={info} style={{ lineHeight: 1.35 }}>{label}</label>
+        <span style={{ display: "flex", alignItems: "center", gap: 5 }}>
+          <input
+            id={id}
+            name={id}
+            type="number"
+            inputMode="decimal"
+            min={min}
+            max={max}
+            step={step}
+            value={value}
+            onChange={(event) => commitValue(event.target.value)}
+            aria-describedby={info ? `${id}-hint` : undefined}
+            style={{
+              width: 74, minHeight: 32, padding: "5px 7px", background: "#15152a",
+              color: "#f5f5f5", border: "1px solid #3c3c58", borderRadius: 4,
+              fontFamily: "'JetBrains Mono', monospace", fontWeight: 600, fontSize: 12,
+              fontVariantNumeric: "tabular-nums", textAlign: "right",
+            }}
+          />
+          {unit && <span aria-hidden="true" style={{ minWidth: 30, color: "#9ea3b5" }}>{unit.trim()}</span>}
         </span>
       </div>
       <input
         type="range" min={min} max={max} step={step} value={value}
+        aria-label={`${label}${unit ? ` (${unit.trim()})` : ""}`}
         onChange={(e) => onChange(parseFloat(e.target.value))}
-        style={{ width: "100%", accentColor: "#ef5350", height: 4 }}
+        style={{ width: "100%", accentColor: "#ef5350", minHeight: 24, cursor: "pointer" }}
       />
+      {info && <div id={`${id}-hint`} style={{ color: "#7f8498", fontSize: 10, lineHeight: 1.4 }}>{info}</div>}
     </div>
   );
 }
@@ -1229,19 +1299,75 @@ function Section({ title, icon, children, defaultOpen = true }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
     <div style={{ marginBottom: 8 }}>
-      <div
+      <button
+        type="button"
+        aria-expanded={open}
         onClick={() => setOpen(!open)}
         style={{
-          display: "flex", alignItems: "center", gap: 6, cursor: "pointer",
+          width: "100%", display: "flex", alignItems: "center", gap: 6, cursor: "pointer",
           padding: "6px 0", borderBottom: "1px solid #222", marginBottom: open ? 8 : 0,
-          userSelect: "none",
+          userSelect: "none", borderTop: 0, borderLeft: 0, borderRight: 0, background: "transparent",
         }}
       >
-        <span style={{ fontSize: 13 }}>{icon}</span>
+        <span aria-hidden="true" style={{ fontSize: 13 }}>{icon}</span>
         <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "#e0e0e0" }}>{title}</span>
         <span style={{ marginLeft: "auto", fontSize: 10, color: "#666", transition: "transform .2s", transform: open ? "rotate(180deg)" : "rotate(0)" }}>▼</span>
-      </div>
+      </button>
       {open && <div style={{ paddingLeft: 4 }}>{children}</div>}
+    </div>
+  );
+}
+
+function CoordinatePathEditor({ points, onChange, onFinish }) {
+  const updatePoint = (index, coordinateIndex, rawValue) => {
+    const parsed = Number(rawValue);
+    if (!Number.isFinite(parsed)) return;
+    const bounded = coordinateIndex === 0
+      ? Math.min(90, Math.max(-90, parsed))
+      : Math.min(180, Math.max(-180, parsed));
+    const next = points.map((point, pointIndex) => pointIndex === index
+      ? point.map((coordinate, valueIndex) => valueIndex === coordinateIndex ? bounded : coordinate)
+      : point
+    );
+    onChange(next);
+  };
+
+  const addPoint = () => {
+    const previous = points[points.length - 1] || [37.08, -94.51];
+    onChange([...points, [Number(previous[0].toFixed(4)), Number((previous[1] + 0.1).toFixed(4))]]);
+  };
+
+  return (
+    <div style={{ marginTop: 8, paddingTop: 8, borderTop: "1px solid #263552" }}>
+      <div style={{ color: "#d4d8e4", fontSize: 11, lineHeight: 1.45, marginBottom: 8 }}>
+        Enter at least 2 path points. Latitude must be −90 to 90; longitude must be −180 to 180.
+      </div>
+      <div style={{ display: "grid", gap: 7 }}>
+        {points.map((point, index) => (
+          <fieldset key={index} style={{ border: 0, padding: 0, margin: 0, display: "grid", gridTemplateColumns: "1fr 1fr auto", gap: 6, alignItems: "end" }}>
+            <legend style={{ gridColumn: "1 / -1", fontSize: 10, color: "#8e94a8", marginBottom: 2 }}>Point {index + 1}</legend>
+            <label style={{ fontSize: 10, color: "#aeb3c4" }}>
+              Latitude
+              <input type="number" inputMode="decimal" min="-90" max="90" step="0.0001" value={point[0]}
+                onChange={(event) => updatePoint(index, 0, event.target.value)}
+                style={{ width: "100%", minHeight: 34, marginTop: 3, padding: "6px", color: "#fff", background: "#15152a", border: "1px solid #3c3c58", borderRadius: 4, fontSize: 12 }} />
+            </label>
+            <label style={{ fontSize: 10, color: "#aeb3c4" }}>
+              Longitude
+              <input type="number" inputMode="decimal" min="-180" max="180" step="0.0001" value={point[1]}
+                onChange={(event) => updatePoint(index, 1, event.target.value)}
+                style={{ width: "100%", minHeight: 34, marginTop: 3, padding: "6px", color: "#fff", background: "#15152a", border: "1px solid #3c3c58", borderRadius: 4, fontSize: 12 }} />
+            </label>
+            <button type="button" aria-label={`Remove point ${index + 1}`} onClick={() => onChange(points.filter((_, pointIndex) => pointIndex !== index))}
+              style={{ minWidth: 34, minHeight: 34, border: "1px solid #3c3c58", borderRadius: 4, background: "#1a1a2e", color: "#d9dce7", cursor: "pointer" }}>×</button>
+          </fieldset>
+        ))}
+      </div>
+      <div style={{ display: "flex", gap: 6, marginTop: 9 }}>
+        <button type="button" onClick={addPoint} style={{ flex: 1, minHeight: 36, border: "1px solid #3c3c58", borderRadius: 4, background: "#1a1a2e", color: "#d9dce7", cursor: "pointer", fontWeight: 700 }}>Add point</button>
+        <button type="button" onClick={onFinish} disabled={points.length < 2}
+          style={{ flex: 1, minHeight: 36, border: 0, borderRadius: 4, background: points.length >= 2 ? "#2e7d32" : "#29293b", color: points.length >= 2 ? "#fff" : "#777b8c", cursor: points.length >= 2 ? "pointer" : "default", fontWeight: 700 }}>Use path</button>
+      </div>
     </div>
   );
 }
@@ -1847,10 +1973,10 @@ function ProtectionCTA({ fatalities, damage }) {
   const damageStr = damage >= 1e9 ? `$${(damage / 1e9).toFixed(1)}B` : damage >= 1e6 ? `$${(damage / 1e6).toFixed(0)}M` : `$${(damage / 1e3).toFixed(0)}K`;
   const severe = fatalities >= 50;
   const headline = severe
-    ? `A tornado like this would kill ${numFmt(fatalities)} people and cause ${damageStr} in damage. Is your home ready?`
+    ? `This modeled scenario estimates ${numFmt(fatalities)} fatalities and ${damageStr} in damage. Preparedness resources:`
     : fatalities > 0
-      ? `This tornado would cause ${damageStr} in damage. Prepare your home before the next one:`
-      : `You lucked out this time. But 1,200+ tornadoes hit the US each year — prepare now:`;
+      ? `This modeled scenario estimates ${damageStr} in damage. Preparedness resources:`
+      : `This modeled scenario estimates no fatalities at the selected exposure. Preparedness resources:`;
 
   return (
     <div style={{
@@ -1891,6 +2017,60 @@ function ProtectionCTA({ fatalities, damage }) {
           </a>
         ))}
       </div>
+    </div>
+  );
+}
+
+function ResultContext({ censusData, censusLoading, censusError, onRetry }) {
+  let title = "Using scenario inputs";
+  let detail = "Results use the density, construction, preparedness, and storm settings shown in the controls.";
+  let tone = "#8e94a8";
+
+  if (censusLoading) {
+    title = "Loading exposure data…";
+    detail = "Current estimates remain visible while the location lookup is in progress.";
+    tone = "#4fc3f7";
+  } else if (censusError) {
+    title = "Exposure data unavailable";
+    detail = censusError;
+    tone = "#ffb74d";
+  } else if (censusData?.status === "unknown") {
+    title = "Location data not confirmed";
+    detail = censusData.note || "The model kept the current manual density settings.";
+    tone = "#ffb74d";
+  } else if (censusData?.status === "valid-zero") {
+    title = "Zero-exposure location";
+    detail = "The country-boundary lookup classified this point as open ocean or uninhabited, so the model uses zero population and infrastructure exposure.";
+    tone = "#81c784";
+  } else if (censusData) {
+    const resolution = censusData.country === "us"
+      ? "county-level ACS estimate"
+      : censusData.country === "canada"
+        ? "census-division estimate"
+        : "country-level average";
+    title = censusData.name;
+    detail = `${resolution}. ${censusData.note || "The model combines this exposure data with the settings shown in the controls."}`;
+    tone = "#81c784";
+  }
+
+  return (
+    <div role={censusError ? "alert" : "status"} aria-live="polite" style={{
+      padding: "10px 14px", background: "#101426", borderTop: "1px solid #242a43",
+      borderBottom: "1px solid #242a43", display: "flex", alignItems: "center",
+      justifyContent: "space-between", gap: 12, flexWrap: "wrap",
+    }}>
+      <div style={{ minWidth: 0 }}>
+        <div style={{ color: tone, fontWeight: 800, fontSize: 11, marginBottom: 2 }}>{title}</div>
+        <div style={{ color: "#a7abba", fontSize: 10, lineHeight: 1.45, overflowWrap: "anywhere" }}>{detail}</div>
+        {censusData?.source && (
+          <div style={{ color: "#777d91", fontSize: 9, marginTop: 3 }}>
+            Source: {censusData.sourceUrl
+              ? <a href={censusData.sourceUrl} target="_blank" rel="noopener" style={{ color: "#8fcff0" }}>{censusData.source}</a>
+              : censusData.source}
+          </div>
+        )}
+      </div>
+      {censusError && <button type="button" onClick={onRetry} style={{ minHeight: 34, padding: "6px 10px", border: "1px solid #6c5731", borderRadius: 4, background: "#2a2114", color: "#ffd18a", cursor: "pointer", fontWeight: 700 }}>Retry lookup</button>}
     </div>
   );
 }
@@ -2046,6 +2226,7 @@ const URL_INIT = parseSimUrlParams();
 function TornadoSimulator() {
   const [params, setParams] = useState(URL_INIT?.params || PRESETS.suburban_ef4);
   const [activeTab, setActiveTab] = useState("overview");
+  const [mobileView, setMobileView] = useState("map");
   const [enabledCountries, setEnabledCountries] = useState("both");
   const [tornadoLat, setTornadoLat] = useState(URL_INIT?.lat ?? 37.08);
   const [tornadoLng, setTornadoLng] = useState(URL_INIT?.lon ?? -94.51);
@@ -2054,9 +2235,11 @@ function TornadoSimulator() {
   const [mapStyle, setMapStyle] = useState("satellite"); // "satellite", "streets", "topo", "dark"
   const [censusData, setCensusData] = useState(null);
   const [censusLoading, setCensusLoading] = useState(false);
+  const [censusError, setCensusError] = useState("");
   const [pathMode, setPathMode] = useState("straight"); // "straight", "curved", "draw"
   const [customWaypoints, setCustomWaypoints] = useState([]); // [[lat, lng], ...] for draw mode
   const [isDrawing, setIsDrawing] = useState(false); // actively drawing path
+  const [showCoordinateEditor, setShowCoordinateEditor] = useState(false);
 
   // Live simulation animation state
   const [simRunning, setSimRunning] = useState(false);
@@ -2084,6 +2267,7 @@ function TornadoSimulator() {
   const fetchCensusData = useCallback((lat, lng) => {
     setCensusLoading(true);
     setCensusData(null);
+    setCensusError("");
 
     // Step 1: Reverse geocode lat/lng to county FIPS via Census Geocoder
     const geocodeUrl = `https://geocoding.geo.census.gov/geocoder/geographies/coordinates?x=${lng}&y=${lat}&benchmark=Public_AR_Current&vintage=Current_Current&format=jsonp&callback=__censusCallback`;
@@ -2093,7 +2277,11 @@ function TornadoSimulator() {
     window.__censusCallback = (geoResult) => {
       try {
         const geographies = geoResult?.result?.geographies;
-        if (!geographies) { setCensusLoading(false); return; }
+        if (!geographies) {
+          setCensusError("Population data could not be matched to this location. Try again or enter density manually.");
+          setCensusLoading(false);
+          return;
+        }
 
         const county = geographies["Counties"]?.[0];
         const tract = geographies["Census Tracts"]?.[0];
@@ -2151,39 +2339,42 @@ function TornadoSimulator() {
                   vehiclesPerMile: isRemote ? 0 : Math.min(Math.round(popDensity / 8), 300),
                   livestockDensity: popDensity < 100 ? Math.min(Math.round((100 - popDensity) / 3), 50) : 0,
                 }));
+              } else {
+                setCensusError("The Census service returned no population record. Existing density settings were kept.");
               }
               setCensusLoading(false);
             })
-            .catch(() => setCensusLoading(false));
+            .catch(() => {
+              setCensusError("Population data could not be loaded. Check your connection, try again, or enter density manually.");
+              setCensusLoading(false);
+            });
         } else {
-          // No county found — might be water, federal land, or uncovered area within US bounds
+          // No county match is an unknown-data state, not proof that population is zero.
           setCensusData({
-            name: "No census coverage (water/federal land)",
-            population: 0,
-            popDensity: 0,
-            housingDensity: 0,
+            name: "Location not matched",
+            population: null,
+            popDensity: null,
+            housingDensity: null,
             source: "US Census Bureau — no county found at this coordinate",
             country: "us",
-            note: "Location may be over water, federal land, or outside county boundaries",
+            status: "unknown",
+            note: "The lookup cannot confirm whether this point is water, federal land, or outside a county boundary. Existing density settings were kept.",
           });
-          setParams(p => ({
-            ...p,
-            popDensity: 0,
-            housingDensity: 0,
-            powerLinesPerMile: 0, cellTowers: 0, bridges: 0,
-            waterTowers: 0, gasLinesPerMile: 0, vehiclesPerMile: 0,
-            cropType: "none", cropAcresPct: 0, livestockDensity: 0,
-          }));
           setCensusLoading(false);
         }
       } catch (e) {
+        setCensusError("Population data could not be read. Existing density settings were kept.");
         setCensusLoading(false);
       }
       delete window.__censusCallback;
       script.remove();
     };
     script.src = geocodeUrl;
-    script.onerror = () => { setCensusLoading(false); script.remove(); };
+    script.onerror = () => {
+      setCensusError("The Census location service is unavailable. Try again or enter density manually.");
+      setCensusLoading(false);
+      script.remove();
+    };
     document.head.appendChild(script);
   }, []);
 
@@ -2191,6 +2382,7 @@ function TornadoSimulator() {
   const handlePlaceTornado = useCallback((lat, lng) => {
     setTornadoLat(lat);
     setTornadoLng(lng);
+    setCensusError("");
 
     // Check if the point is on land (rough bounding boxes)
     const inUS = lat >= 24 && lat <= 50 && lng >= -125 && lng <= -66;
@@ -2262,24 +2454,18 @@ function TornadoSimulator() {
           livestockDensity: popDensity < 100 ? Math.min(Math.round((100 - popDensity) / 3), 50) : 0,
         }));
       } else {
-        // Very remote — no census division nearby (e.g., deep arctic)
+        // No nearby division is an unknown-data state; it does not prove zero exposure.
         setCensusData({
-          name: "Remote/Uninhabited Territory, Canada",
-          population: 0,
-          popDensity: 0,
-          housingDensity: 0,
+          name: "Location not matched",
+          population: null,
+          popDensity: null,
+          housingDensity: null,
           source: "Statistics Canada, 2021 Census of Population — no census division at this location",
           sourceUrl: "https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/index.cfm?Lang=E",
           country: "canada",
-          note: "Location is in uninhabited territory with no census coverage",
+          status: "unknown",
+          note: "No nearby census division was found. Existing density settings were kept.",
         });
-        setParams(p => ({
-          ...p,
-          popDensity: 0, housingDensity: 0,
-          powerLinesPerMile: 0, cellTowers: 0, bridges: 0,
-          waterTowers: 0, gasLinesPerMile: 0, vehiclesPerMile: 0,
-          cropType: "none", cropAcresPct: 0, livestockDensity: 0,
-        }));
       }
       setCensusLoading(false);
     } else {
@@ -2338,6 +2524,7 @@ function TornadoSimulator() {
           housingDensity: 0,
           source: "No census data — open ocean or unclassified area",
           country: "none",
+          status: "valid-zero",
           note: "No population, structures, or infrastructure at this location",
         });
         setParams(p => ({
@@ -2622,7 +2809,7 @@ function TornadoSimulator() {
   const tabs = ["overview", "structures", "casualties", "economic", "historical"];
 
   return (
-    <div style={{
+    <div className="simulator-app" style={{
       fontFamily: "'Inter', 'Segoe UI', sans-serif", background: "#0a0a18", color: "#e0e0e0",
       height: "100vh", display: "flex", flexDirection: "column", overflow: "hidden",
     }}>
@@ -2630,7 +2817,7 @@ function TornadoSimulator() {
       <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
       {/* HEADER */}
-      <div style={{
+      <div className="simulator-header" style={{
         padding: "10px 16px", borderBottom: "1px solid #1e1e3a",
         display: "flex", alignItems: "center", justifyContent: "space-between",
         background: "linear-gradient(180deg, #12122a 0%, #0a0a18 100%)",
@@ -2645,7 +2832,7 @@ function TornadoSimulator() {
             </div>
           </div>
         </div>
-        <div style={{ display: "flex", gap: 4 }}>
+        <div className="simulator-header-presets" style={{ display: "flex", gap: 4 }}>
           {Object.entries(PRESETS).map(([key, preset]) => (
             <button key={key} onClick={() => loadPreset(key)} style={{
               padding: "4px 10px", fontSize: 9, background: "#1a1a2e", border: "1px solid #333",
@@ -2658,11 +2845,17 @@ function TornadoSimulator() {
         </div>
       </div>
 
+      <div className="mobile-view-switcher" aria-label="Simulator view">
+        {[['map', 'Map'], ['settings', 'Settings'], ['results', 'Results']].map(([value, label]) => (
+          <button type="button" key={value} aria-pressed={mobileView === value} onClick={() => setMobileView(value)}>{label}</button>
+        ))}
+      </div>
+
       {/* MAIN LAYOUT */}
-      <div style={{ display: "flex", flex: 1, overflow: "hidden" }}>
+      <div className="simulator-main" style={{ display: "flex", flex: 1, overflow: "hidden" }}>
 
         {/* LEFT PANEL - Controls */}
-        <div style={{
+        <div className={`controls-panel ${mobileView === "settings" ? "" : "mobile-hidden"}`} style={{
           width: 260, borderRight: "1px solid #1e1e3a", overflowY: "auto",
           padding: "12px 14px", flexShrink: 0,
           scrollbarWidth: "thin", scrollbarColor: "#333 transparent",
@@ -2823,8 +3016,10 @@ function TornadoSimulator() {
                     if (mode === "draw") {
                       setCustomWaypoints([]);
                       setIsDrawing(true);
+                      setShowCoordinateEditor(false);
                     } else {
                       setIsDrawing(false);
+                      setShowCoordinateEditor(false);
                     }
                   }} style={{
                     flex: 1, padding: "4px 6px", fontSize: 9, fontWeight: 700, border: "none", cursor: "pointer",
@@ -2840,10 +3035,35 @@ function TornadoSimulator() {
             {/* Draw mode controls */}
             {pathMode === "draw" && (
               <div style={{ background: "#0d1428", borderRadius: 6, padding: "8px 10px", marginBottom: 8, border: "1px solid #1a2a4a" }}>
-                {isDrawing ? (
+                <div style={{ display: "flex", gap: 6, marginBottom: 8 }}>
+                  <button type="button" onClick={() => setShowCoordinateEditor(false)} aria-pressed={!showCoordinateEditor}
+                    style={{ flex: 1, minHeight: 34, border: "1px solid #34415e", borderRadius: 4, background: !showCoordinateEditor ? "#263552" : "#151b2c", color: "#e6e9f2", cursor: "pointer", fontWeight: 700 }}>
+                    Draw on map
+                  </button>
+                  <button type="button" onClick={() => {
+                    if (customWaypoints.length < 2) {
+                      setCustomWaypoints(generatePathPoints(tornadoLat, tornadoLng, params, "straight", []).slice(0, 2));
+                    }
+                    setShowCoordinateEditor(true);
+                    setIsDrawing(false);
+                  }} aria-pressed={showCoordinateEditor}
+                    style={{ flex: 1, minHeight: 34, border: "1px solid #34415e", borderRadius: 4, background: showCoordinateEditor ? "#263552" : "#151b2c", color: "#e6e9f2", cursor: "pointer", fontWeight: 700 }}>
+                    Enter coordinates
+                  </button>
+                </div>
+                {showCoordinateEditor ? (
+                  <CoordinatePathEditor points={customWaypoints} onChange={setCustomWaypoints} onFinish={() => {
+                    if (customWaypoints.length < 2) return;
+                    setIsDrawing(false);
+                    setTornadoLat(customWaypoints[0][0]);
+                    setTornadoLng(customWaypoints[0][1]);
+                    setParams(p => ({ ...p, pathLength: Math.round(pathLengthFromPoints(customWaypoints) * 10) / 10 }));
+                    handlePlaceTornado(customWaypoints[0][0], customWaypoints[0][1]);
+                  }} />
+                ) : isDrawing ? (
                   <>
                     <div style={{ fontSize: 10, color: "#4fc3f7", marginBottom: 6 }}>
-                      🖱️ Click map to add waypoints. Double-click to finish.
+                      Click the map to add waypoints. Double-click or use Finish path when ready.
                     </div>
                     <div style={{ fontSize: 10, color: "#aaa", marginBottom: 6 }}>
                       Waypoints: <span style={{ color: "#81c784", fontFamily: "'JetBrains Mono', monospace" }}>{customWaypoints.length}</span>
@@ -2918,18 +3138,10 @@ function TornadoSimulator() {
           <Section title="Environment" icon="🌍" defaultOpen={false}>
             <SelectInput label="Terrain" value={params.terrain} onChange={set("terrain")}
               options={[["flat_plains", "Flat Plains"], ["rolling_hills", "Rolling Hills"], ["urban", "Urban"], ["forested", "Forested"]]} />
-            {/* Time of Day - hour slider with lethality indicator */}
+            {/* Time of Day - exact hour input plus slider */}
             <div style={{ marginBottom: 10 }}>
-              <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: "#b0b0b0", marginBottom: 3 }}>
-                <span>Time of Day</span>
-                <span style={{ color: "#e0e0e0", fontFamily: "'JetBrains Mono', monospace", fontWeight: 600 }}>
-                  {params.timeOfDay === 0 ? "12" : params.timeOfDay > 12 ? params.timeOfDay - 12 : params.timeOfDay}:00 {params.timeOfDay >= 12 ? "PM" : "AM"}
-                </span>
-              </div>
-              <input type="range" min={0} max={23} step={1} value={params.timeOfDay}
-                onChange={(e) => set("timeOfDay")(parseInt(e.target.value))}
-                style={{ width: "100%", accentColor: params.timeOfDay >= 20 || params.timeOfDay < 5 ? "#ef5350" : params.timeOfDay >= 17 || params.timeOfDay < 8 ? "#ffb74d" : "#81c784", height: 4 }}
-              />
+              <Slider label="Time of Day" value={params.timeOfDay} onChange={set("timeOfDay")} min={0} max={23} step={1} unit=" hr"
+                info={`${params.timeOfDay === 0 ? "12" : params.timeOfDay > 12 ? params.timeOfDay - 12 : params.timeOfDay}:00 ${params.timeOfDay >= 12 ? "PM" : "AM"}`} />
               <div style={{ display: "flex", justifyContent: "space-between", fontSize: 8, color: "#555", marginTop: 2 }}>
                 <span>12 AM</span>
                 <span>6 AM</span>
@@ -3014,15 +3226,15 @@ function TornadoSimulator() {
             &nbsp;&nbsp;www12.statcan.gc.ca<br />
             World: UN WPP 2023 + CIA World Factbook<br />
             &nbsp;&nbsp;173 countries embedded (avg density)<br />
-            &nbsp;&nbsp;Ocean/uninhabited → params fallback
+            &nbsp;&nbsp;Ocean/uninhabited → zero exposure
           </div>
         </div>
 
         {/* CENTER + RIGHT */}
-        <div style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden" }}>
+        <div className="workspace-panel" style={{ flex: 1, display: "flex", flexDirection: "column", overflow: "hidden" }}>
 
           {/* VISUALIZATION with MAP/PATH toggle */}
-          <div style={{ height: "65%", padding: 12, flexShrink: 0, display: "flex", flexDirection: "column" }}>
+          <div className={`visualization-panel ${mobileView === "map" ? "" : "mobile-hidden"}`} style={{ height: "65%", padding: 12, flexShrink: 0, display: "flex", flexDirection: "column" }}>
             {/* Viz mode toggle + country selector */}
             <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6, flexShrink: 0 }}>
               <div style={{ display: "flex", background: "#1a1a2e", borderRadius: 5, overflow: "hidden", border: "1px solid #2a2a4a" }}>
@@ -3099,7 +3311,10 @@ function TornadoSimulator() {
           </div>
 
           {/* LIVE SIMULATION CONTROLS */}
-          <div style={{
+          <div className={`simulation-explainer ${mobileView === "results" ? "" : "mobile-hidden"}`} style={{ padding: "7px 12px", background: "#111426", borderTop: "1px solid #242a43", color: "#aeb3c4", fontSize: 10, lineHeight: 1.4 }}>
+            Estimates recalculate immediately when settings change. <strong style={{ color: "#e8eaf0" }}>Play path</strong> only animates how the modeled impacts accumulate along the route.
+          </div>
+          <div className={`simulation-controls ${mobileView === "map" ? "" : "mobile-hidden"}`} style={{
             flexShrink: 0, borderTop: "1px solid #1e1e3a", background: "#0a0a18",
             padding: "6px 12px", display: "flex", alignItems: "center", gap: 8,
           }}>
@@ -3109,7 +3324,7 @@ function TornadoSimulator() {
                 borderRadius: 4, background: tornadoLat ? "#2e7d32" : "#333",
                 color: tornadoLat ? "#fff" : "#666", letterSpacing: "0.04em",
               }}>
-                ▶ SIMULATE
+                ▶ PLAY PATH
               </button>
             ) : (
               <>
@@ -3195,8 +3410,17 @@ function TornadoSimulator() {
             )}
           </div>
 
+          <div className={`result-context ${mobileView === "results" ? "" : "mobile-hidden"}`}>
+            <ResultContext
+              censusData={censusData}
+              censusLoading={censusLoading}
+              censusError={censusError}
+              onRetry={() => handlePlaceTornado(tornadoLat, tornadoLng)}
+            />
+          </div>
+
           {/* TABS */}
-          <div style={{
+          <div className={`results-tabs ${mobileView === "results" ? "" : "mobile-hidden"}`} style={{
             display: "flex", borderBottom: "1px solid #1e1e3a", borderTop: "1px solid #1e1e3a",
             padding: "0 12px", flexShrink: 0, background: "#0e0e22",
           }}>
@@ -3213,7 +3437,14 @@ function TornadoSimulator() {
           </div>
 
           {/* RESULTS PANEL */}
-          <div style={{ flex: 1, overflowY: "auto", padding: 14, scrollbarWidth: "thin", scrollbarColor: "#333 transparent" }}>
+          <div className={`results-panel ${mobileView === "results" ? "" : "mobile-hidden"}`} style={{ flex: 1, overflowY: "auto", padding: 14, scrollbarWidth: "thin", scrollbarColor: "#333 transparent" }}>
+
+            <div style={{ marginBottom: 12 }}>
+              <div style={{ color: "#f4f5f8", fontSize: 13, fontWeight: 800 }}>Modeled estimate</div>
+              <div style={{ color: "#8e94a8", fontSize: 10, lineHeight: 1.45, marginTop: 3 }}>
+                Scenario outputs are estimates, not a forecast or damage survey. The model does not calculate uncertainty ranges; actual outcomes can differ substantially.
+              </div>
+            </div>
 
             {activeTab === "overview" && (
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
@@ -3285,8 +3516,6 @@ function TornadoSimulator() {
                     { label: "Business Interruption", value: result.businessInterruption, display: fmt(result.businessInterruption), color: "#90a4ae" },
                   ]} />
                 </div>
-
-                <ProtectionCTA fatalities={result.fatalities} damage={result.totalEconomicImpact} />
               </div>
             )}
 
