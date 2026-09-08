@@ -63,13 +63,12 @@ h1{font-family:var(--serif);font-size:clamp(30px,6vw,44px);font-weight:700;lette
 .toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:#14161c;color:#fff;padding:10px 18px;border-radius:8px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:200}
 .toast.show{opacity:1}
 </style>
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<script src="/assets/site-shell.js?v=1" defer></script>
 </head>
 <body>
-<nav class="nav"><div class="nav-inner">
-  <a href="/fr/" class="nav-brand">🌪️ Tornado Hub</a>
-  <div class="nav-links"><a href="/fr/">Accueil</a><a href="/games/">Jeux</a><a href="/fr/articles/">Articles</a><a href="/">English</a></div>
-</div></nav>
-<main class="wrap">
+<a class="th-skip" href="#main-content">Aller au contenu</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/fr/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/fr/articles/">Guides</a><a href="/tornado-forecast/">Prévisions</a><a href="/games/">Jeux</a><a href="/safety/">Sécurité</a><a href="/search/">Rechercher</a><a href="/simulator/" class="th-launch">Simulateur ↗</a></div></div></nav><noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content" tabindex="-1" class="wrap">
   <div class="hero">
     <div class="eyebrow">🔮 Test de personnalité</div>
     <h1>Quelle tornade es-tu ?</h1>
@@ -146,6 +145,6 @@ var DATA={"types": ["rope", "cone", "wedge", "waterspout", "multivortex"], "qwor
 </script>
 <script src="/assets/ads-config.js?v=11" defer></script>
 <script src="/assets/ads.js?v=11" defer></script>
-<script src="/assets/house-ads.js?v=14" defer></script>
+<script src="/assets/house-ads.js?v=15" defer></script>
 </body>
 </html>

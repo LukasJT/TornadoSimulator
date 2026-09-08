@@ -63,13 +63,12 @@ h1{font-family:var(--serif);font-size:clamp(30px,6vw,44px);font-weight:700;lette
 .footer{border-top:1px solid var(--border);margin-top:32px;padding:24px;text-align:center;color:var(--text-muted);font-size:14px}
 .toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:#14161c;color:#fff;padding:10px 18px;border-radius:8px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:200}.toast.show{opacity:1}
 </style>
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<script src="/assets/site-shell.js?v=1" defer></script>
 </head>
 <body>
-<nav class="nav"><div class="nav-inner">
-  <a href="/zh/" class="nav-brand">🌪️ Tornado Hub</a>
-  <div class="nav-links"><a href="/zh/">首页</a><a href="/games/">游戏</a><a href="/zh/wenzhang/">文章</a><a href="/">English</a></div>
-</div></nav>
-<main class="wrap">
+<a class="th-skip" href="#main-content">跳转到内容</a><nav class="th-nav" aria-label="菜单"><div class="th-nav-inner"><a href="/zh/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">菜单</button><div class="th-links" id="th-primary-links"><a href="/articles/">指南</a><a href="/tornado-forecast/">天气预报</a><a href="/games/">游戏</a><a href="/safety/">安全</a><a href="/search/">搜索</a><a href="/simulator/" class="th-launch">模拟器 ↗</a></div></div></nav><noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content" tabindex="-1" class="wrap">
   <div class="hero"><div class="eyebrow">❓ 龙卷风测验</div><h1>龙卷风知识测验</h1><p class="sub">10 道题，检验你对龙卷风的了解。</p></div>
   <div class="card" id="card">
     <div id="startScreen" class="center">
@@ -145,6 +144,6 @@ var DATA={"q": [["哪种级数用来衡量龙卷风的强度？", ["改进藤田
 </script>
 <script src="/assets/ads-config.js?v=11" defer></script>
 <script src="/assets/ads.js?v=11" defer></script>
-<script src="/assets/house-ads.js?v=14" defer></script>
+<script src="/assets/house-ads.js?v=15" defer></script>
 </body>
 </html>

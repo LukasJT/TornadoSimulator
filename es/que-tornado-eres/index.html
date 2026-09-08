@@ -63,13 +63,12 @@ h1{font-family:var(--serif);font-size:clamp(30px,6vw,44px);font-weight:700;lette
 .toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:#14161c;color:#fff;padding:10px 18px;border-radius:8px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s;z-index:200}
 .toast.show{opacity:1}
 </style>
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<script src="/assets/site-shell.js?v=1" defer></script>
 </head>
 <body>
-<nav class="nav"><div class="nav-inner">
-  <a href="/es/" class="nav-brand">🌪️ Tornado Hub</a>
-  <div class="nav-links"><a href="/es/">Inicio</a><a href="/es/juegos/">Juegos</a><a href="/es/articulos/">Artículos</a><a href="/">English</a></div>
-</div></nav>
-<main class="wrap">
+<a class="th-skip" href="#main-content">Ir al contenido</a><nav class="th-nav" aria-label="Menú"><div class="th-nav-inner"><a href="/es/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menú</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guías</a><a href="/tornado-forecast/">Pronóstico</a><a href="/games/">Juegos</a><a href="/safety/">Seguridad</a><a href="/search/">Buscar</a><a href="/simulator/" class="th-launch">Simulador ↗</a></div></div></nav><noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content" tabindex="-1" class="wrap">
   <div class="hero">
     <div class="eyebrow">🔮 Test de personalidad</div>
     <h1>¿Qué tornado eres?</h1>
@@ -146,6 +145,6 @@ var DATA={"types": ["rope", "cone", "wedge", "waterspout", "multivortex"], "qwor
 </script>
 <script src="/assets/ads-config.js?v=11" defer></script>
 <script src="/assets/ads.js?v=11" defer></script>
-<script src="/assets/house-ads.js?v=14" defer></script>
+<script src="/assets/house-ads.js?v=15" defer></script>
 </body>
 </html>

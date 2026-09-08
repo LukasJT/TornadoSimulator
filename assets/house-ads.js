@@ -222,6 +222,19 @@
   function inject() {
     // Site-wide language switcher.
     injectLangBar();
+    // Editorial pages keep a single disclosed house promotion near the footer.
+    if (document.querySelector('.th-nav')) {
+      var footer = document.querySelector('footer, .footer');
+      if (footer && !document.querySelector('.house-ad-solo')) {
+        var promotion = document.createElement('aside');
+        promotion.className = 'th-promotion';
+        promotion.setAttribute('aria-label', 'Advertisement');
+        var ad = pickTwo()[0];
+        promotion.innerHTML = '<small>Advertisement · From our network</small><a href="' + ad.href + '" target="_blank" rel="sponsored noopener">' + ad.title + ' ↗</a>';
+        footer.before(promotion);
+      }
+      return;
+    }
     // Every page gets a guaranteed banner near the top and one lower down.
     ensureTopBanner();
     ensureSoloHouseAd();
