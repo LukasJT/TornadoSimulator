@@ -10008,5 +10008,12 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Two tornado guides for every city in the Census Bureau Vintage 2025 top 100.",
     "category": "City Tornado Directory",
     "keywords": "top 100 US cities tornado history guides"
+  },
+  {
+    "title": "How Many Tornadoes Have Hit Your Area?",
+    "path": "/how-many-tornadoes-have-hit-your-area/",
+    "description": "Enter a U.S. address to find documented tornado paths within 5, 10, 25 or 50 km from 1950 through 2024.",
+    "category": "Interactive Tornado Tool",
+    "keywords": "tornadoes near me address local tornado history radius search"
   }
 ];

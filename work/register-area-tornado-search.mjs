@@ -1,0 +1,14 @@
+import fs from 'node:fs';
+import path from 'node:path';
+const root=path.resolve(import.meta.dirname,'..');
+const entry={title:'How Many Tornadoes Have Hit Your Area?',path:'/how-many-tornadoes-have-hit-your-area/',description:'Enter a U.S. address to find documented tornado paths within 5, 10, 25 or 50 km from 1950 through 2024.',category:'Interactive Tornado Tool',keywords:'tornadoes near me address local tornado history radius search'};
+const idxFile=path.join(root,'assets','content-index.js');
+const idx=JSON.parse(fs.readFileSync(idxFile,'utf8').replace(/^window\.TORNADO_CONTENT_INDEX\s*=\s*/,'').replace(/;\s*$/,''));
+fs.writeFileSync(idxFile,`window.TORNADO_CONTENT_INDEX = ${JSON.stringify([...idx.filter(e=>e.path!==entry.path),entry],null,2)};\n`);
+const mapFile=path.join(root,'sitemap.xml'); let map=fs.readFileSync(mapFile,'utf8');
+if(!map.includes(`<loc>https://www.tornadosimulator.net${entry.path}</loc>`)) map=map.replace('</urlset>',`<url><loc>https://www.tornadosimulator.net${entry.path}</loc><lastmod>2026-09-08</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>\n</urlset>`);
+fs.writeFileSync(mapFile,map);
+const articlesFile=path.join(root,'articles','index.html'); let articles=fs.readFileSync(articlesFile,'utf8').replace(/<section class="cat-section" data-generated="area-tornado-search">[\s\S]*?<\/section>\s*/,'');
+const section=`<section class="cat-section" data-generated="area-tornado-search"><h2 class="cat-heading">Explore your local tornado history</h2><p class="cat-sub">Search the official 1950–2024 U.S. tornado-path archive by address and distance.</p><div class="link-grid"><a class="link-card" href="${entry.path}">${entry.title} <small>Interactive address search · 5–50 km</small></a></div></section>\n`;
+articles=articles.replace('<main id="main-content" tabindex="-1" class="main">','<main id="main-content" tabindex="-1" class="main">\n'+section); fs.writeFileSync(articlesFile,articles);
+console.log('Registered local tornado-history search page.');
