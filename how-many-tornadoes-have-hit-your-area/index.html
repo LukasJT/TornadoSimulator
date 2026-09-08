@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <title>How Many Tornadoes Have Hit Your Area? — Tornado Hub</title>
+  <meta name="description" content="Enter a U.S. address to find tornado paths recorded within 5, 10, 25 or 50 km from 1950 through 2024.">
+  <link rel="canonical" href="https://www.tornadosimulator.net/how-many-tornadoes-have-hit-your-area/">
+  <meta property="og:title" content="How Many Tornadoes Have Hit Your Area?">
+  <meta property="og:description" content="Search 71,813 official U.S. tornado paths by address and distance.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.tornadosimulator.net/how-many-tornadoes-have-hit-your-area/">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIINfQ3ynhFwYfMZrfXEDY4hGxgT7Xk4C7E=" crossorigin="">
+  <link rel="stylesheet" href="/assets/site-shell.css?v=1">
+  <link rel="stylesheet" href="/assets/area-tornado-search.css?v=1">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"How Many Tornadoes Have Hit Your Area?","url":"https://www.tornadosimulator.net/how-many-tornadoes-have-hit-your-area/","applicationCategory":"WeatherApplication","operatingSystem":"Any","description":"Search 71,813 official U.S. tornado paths by address and distance.","publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+  <script src="/assets/site-shell.js?v=1" defer></script>
+</head>
+<body>
+  <a class="th-skip" href="#main-content">Skip to content</a>
+  <nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+
+  <main class="area-search-page" id="main-content">
+    <header class="area-intro">
+      <h1>How many tornadoes have hit your area?</h1>
+      <p>Search <strong>71,813 documented U.S. tornado paths</strong> from 1950 through 2024. Choose a radius and see how close each recorded path came to your address.</p>
+    </header>
+
+    <section class="lookup" aria-labelledby="lookup-heading">
+      <div class="lookup-panel">
+        <h2 id="lookup-heading">Find your local history</h2>
+        <p>Enter a full U.S. address for the most accurate match.</p>
+        <form id="area-search-form">
+          <label class="field-label" for="area-address">Street address, city and state</label>
+          <div class="address-row">
+            <input id="area-address" name="address" type="search" autocomplete="street-address" placeholder="1600 Pennsylvania Ave NW, Washington, DC" required>
+            <button class="locate-button" id="use-location" type="button" aria-label="Use my current location" title="Use my current location"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+          </div>
+          <fieldset class="radius-fieldset">
+            <legend>Search radius</legend>
+            <div class="radius-options">
+              <label><input type="radio" name="radius" value="5"><span>5 km</span></label>
+              <label><input type="radio" name="radius" value="10"><span>10 km</span></label>
+              <label><input type="radio" name="radius" value="25" checked><span>25 km</span></label>
+              <label><input type="radio" name="radius" value="50"><span>50 km</span></label>
+            </div>
+          </fieldset>
+          <button class="search-button" id="lookup-button" type="submit">Search tornado history</button>
+          <p class="privacy">Your address is sent to the U.S. Census geocoder to obtain coordinates. Tornado Hub does not store it.</p>
+          <div class="status" id="lookup-status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+      <div class="map-wrap">
+        <div class="map" id="area-map" aria-label="Map of the selected address, search radius and nearby tornado paths"></div>
+        <div class="map-placeholder" id="map-placeholder"><div><svg viewBox="0 0 96 96" fill="none" aria-hidden="true"><path d="M17 23c19-9 43-9 62 0M24 37c15-6 33-6 48 0M32 51c10-3 22-3 32 0M39 65c6-1 12-1 18 0M45 78h7" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg><strong>Your address is the center.</strong><span>The map will draw your selected radius and the nearest recorded tornado paths.</span></div></div>
+      </div>
+    </section>
+
+    <section class="results" id="area-results" hidden aria-labelledby="results-heading">
+      <header class="results-header">
+        <div><h2 id="results-heading">Tornadoes near this address</h2><p class="results-summary" id="results-summary"></p></div>
+        <label class="sort-label" for="result-sort">Sort results<select id="result-sort"><option value="nearest">Nearest path</option><option value="newest">Newest first</option><option value="strongest">Strongest rating</option></select></label>
+      </header>
+      <div class="radius-counts" id="radius-counts" aria-label="Tornado counts by radius"></div>
+      <p class="results-note">Distance is calculated to the closest point on the reported start-to-end path. A path is an approximate historical record, not the full damage footprint.</p>
+      <div class="event-list" id="event-list"></div>
+    </section>
+
+    <section class="method">
+      <div><h2>What this search measures</h2><p>The tool compares your geocoded point with the start-to-end line for each tornado in the official Storm Prediction Center archive. It includes documented U.S. tornadoes from 1950 through 2024 and reports the shortest distance to that line.</p><p>Early records are less complete, and some short tornadoes have identical start and end coordinates. Ratings before 2007 use the Fujita scale; later ratings use the Enhanced Fujita scale.</p></div>
+      <div><h2>Sources and limits</h2><p>Tornado records come from the <a href="https://www.spc.noaa.gov/wcm/#data">NOAA/NWS Storm Prediction Center severe-weather database</a>. Addresses are matched by the <a href="https://geocoding.geo.census.gov/">U.S. Census Geocoder</a>. Map tiles come from OpenStreetMap.</p><p>This is a historical exploration tool, not a property-risk score or live warning service. For current danger, follow your local National Weather Service office and emergency alerts.</p></div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="footer-inner"><span>&copy; Tornado Hub. An educational resource.</span><span><a href="/">Home</a> · <a href="/articles/">Articles</a> · <a href="/safety/">Safety</a> · <a href="/simulator/">Simulator</a></span></div></footer>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="/assets/area-tornado-search.js?v=1" defer></script>
+</body>
+</html>
