@@ -8519,20 +8519,6 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "Yard Storm Prep Guide: Patio Furniture, Trees, Trampolines, Grills, and Drainage How to prepare a yard before severe storms, wind, hail, heavy rain, and tropical systems, including patio furniture, trees, grills, drains, and loose objects. yard storm prep guide"
   },
   {
-    "title": "Tornadoes in Atlanta",
-    "path": "/tornadoes-in-atlanta/",
-    "description": "A chronological guide to tornadoes in Atlanta, including landmark events, local patterns and official research sources.",
-    "category": "City Tornado History",
-    "keywords": "Tornadoes in Atlanta Georgia tornado history geography notable tornadoes"
-  },
-  {
-    "title": "A History of Tornadoes in Atlanta",
-    "path": "/history-of-tornadoes-in-atlanta/",
-    "description": "How Atlanta's geography shapes tornado risk, with important storms from the local historical record.",
-    "category": "City Tornado History",
-    "keywords": "A History of Tornadoes in Atlanta Georgia tornado history geography notable tornadoes"
-  },
-  {
     "title": "Tornadoes in Birmingham",
     "path": "/tornadoes-in-birmingham/",
     "description": "A chronological guide to tornadoes in Birmingham, including landmark events, local patterns and official research sources.",
@@ -8547,20 +8533,6 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "A History of Tornadoes in Birmingham Alabama tornado history geography notable tornadoes"
   },
   {
-    "title": "Tornadoes in Chicago",
-    "path": "/tornadoes-in-chicago/",
-    "description": "A chronological guide to tornadoes in Chicago, including landmark events, local patterns and official research sources.",
-    "category": "City Tornado History",
-    "keywords": "Tornadoes in Chicago Illinois tornado history geography notable tornadoes"
-  },
-  {
-    "title": "A History of Tornadoes in Chicago",
-    "path": "/history-of-tornadoes-in-chicago/",
-    "description": "How Chicago's geography shapes tornado risk, with important storms from the local historical record.",
-    "category": "City Tornado History",
-    "keywords": "A History of Tornadoes in Chicago Illinois tornado history geography notable tornadoes"
-  },
-  {
     "title": "Tornadoes in Dallas–Fort Worth",
     "path": "/tornadoes-in-dallas-fort-worth/",
     "description": "A chronological guide to tornadoes in Dallas–Fort Worth, including landmark events, local patterns and official research sources.",
@@ -8573,160 +8545,6 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "How Dallas–Fort Worth's geography shapes tornado risk, with important storms from the local historical record.",
     "category": "City Tornado History",
     "keywords": "A History of Tornadoes in Dallas–Fort Worth Texas tornado history geography notable tornadoes"
-  },
-  {
-    "title": "Tornadoes in Denver",
-    "path": "/tornadoes-in-denver/",
-    "description": "A chronological guide to tornadoes in Denver, including landmark events, local patterns and official research sources.",
-    "category": "City Tornado History",
-    "keywords": "Tornadoes in Denver Colorado tornado history geography notable tornadoes"
-  },
-  {
-    "title": "A History of Tornadoes in Denver",
-    "path": "/history-of-tornadoes-in-denver/",
-    "description": "How Denver's geography shapes tornado risk, with important storms from the local historical record.",
-    "category": "City Tornado History",
-    "keywords": "A History of Tornadoes in Denver Colorado tornado history geography notable tornadoes"
-  },
-  {
-    "title": "Tornadoes in Houston",
-    "path": "/tornadoes-in-houston/",
-    "description": "A chronological guide to tornadoes in Houston, including landmark events, local patterns and official research sources.",
-    "category": "City Tornado History",
-    "keywords": "Tornadoes in Houston Texas tornado history geography notable tornadoes"
-  },
-  {
-    "title": "A History of Tornadoes in Houston",
-    "path": "/history-of-tornadoes-in-houston/",
-    "description": "How Houston's geography shapes tornado risk, with important storms from the local historical record.",
-    "category": "City Tornado History",
-    "keywords": "A History of Tornadoes in Houston Texas tornado history geography notable tornadoes"
-  },
-  {
-    "title": "Tornadoes in Kansas City",
-    "path": "/tornadoes-in-kansas-city/",
-    "description": "A chronological guide to tornadoes in Kansas City, including landmark events, local patterns and official research sources.",
-    "category": "City Tornado History",
-    "keywords": "Tornadoes in Kansas City Missouri–Kansas tornado history geography notable tornadoes"
-  },
-  {
-    "title": "A History of Tornadoes in Kansas City",
-    "path": "/history-of-tornadoes-in-kansas-city/",
-    "description": "How Kansas City's geography shapes tornado risk, with important storms from the local historical record.",
-    "category": "City Tornado History",
-    "keywords": "A History of Tornadoes in Kansas City Missouri–Kansas tornado history geography notable tornadoes"
-  },
-  {
-    "title": "Tornadoes in Memphis",
-    "path": "/tornadoes-in-memphis/",
-    "description": "A chronological guide to tornadoes in Memphis, including landmark events, local patterns and official research sources.",
-    "category": "City Tornado History",
-    "keywords": "Tornadoes in Memphis Tennessee tornado history geography notable tornadoes"
-  },
-  {
-    "title": "A History of Tornadoes in Memphis",
-    "path": "/history-of-tornadoes-in-memphis/",
-    "description": "How Memphis's geography shapes tornado risk, with important storms from the local historical record.",
-    "category": "City Tornado History",
-    "keywords": "A History of Tornadoes in Memphis Tennessee tornado history geography notable tornadoes"
-  },
-  {
-    "title": "Tornadoes in Miami",
-    "path": "/tornadoes-in-miami/",
-    "description": "A chronological guide to tornadoes in Miami, including landmark events, local patterns and official research sources.",
-    "category": "City Tornado History",
-    "keywords": "Tornadoes in Miami Florida tornado history geography notable tornadoes"
-  },
-  {
-    "title": "A History of Tornadoes in Miami",
-    "path": "/history-of-tornadoes-in-miami/",
-    "description": "How Miami's geography shapes tornado risk, with important storms from the local historical record.",
-    "category": "City Tornado History",
-    "keywords": "A History of Tornadoes in Miami Florida tornado history geography notable tornadoes"
-  },
-  {
-    "title": "Tornadoes in Nashville",
-    "path": "/tornadoes-in-nashville/",
-    "description": "A chronological guide to tornadoes in Nashville, including landmark events, local patterns and official research sources.",
-    "category": "City Tornado History",
-    "keywords": "Tornadoes in Nashville Tennessee tornado history geography notable tornadoes"
-  },
-  {
-    "title": "A History of Tornadoes in Nashville",
-    "path": "/history-of-tornadoes-in-nashville/",
-    "description": "How Nashville's geography shapes tornado risk, with important storms from the local historical record.",
-    "category": "City Tornado History",
-    "keywords": "A History of Tornadoes in Nashville Tennessee tornado history geography notable tornadoes"
-  },
-  {
-    "title": "Tornadoes in New Orleans",
-    "path": "/tornadoes-in-new-orleans/",
-    "description": "A chronological guide to tornadoes in New Orleans, including landmark events, local patterns and official research sources.",
-    "category": "City Tornado History",
-    "keywords": "Tornadoes in New Orleans Louisiana tornado history geography notable tornadoes"
-  },
-  {
-    "title": "A History of Tornadoes in New Orleans",
-    "path": "/history-of-tornadoes-in-new-orleans/",
-    "description": "How New Orleans's geography shapes tornado risk, with important storms from the local historical record.",
-    "category": "City Tornado History",
-    "keywords": "A History of Tornadoes in New Orleans Louisiana tornado history geography notable tornadoes"
-  },
-  {
-    "title": "Tornadoes in Oklahoma City",
-    "path": "/tornadoes-in-oklahoma-city/",
-    "description": "A chronological guide to tornadoes in Oklahoma City, including landmark events, local patterns and official research sources.",
-    "category": "City Tornado History",
-    "keywords": "Tornadoes in Oklahoma City Oklahoma tornado history geography notable tornadoes"
-  },
-  {
-    "title": "A History of Tornadoes in Oklahoma City",
-    "path": "/history-of-tornadoes-in-oklahoma-city/",
-    "description": "How Oklahoma City's geography shapes tornado risk, with important storms from the local historical record.",
-    "category": "City Tornado History",
-    "keywords": "A History of Tornadoes in Oklahoma City Oklahoma tornado history geography notable tornadoes"
-  },
-  {
-    "title": "Tornadoes in Orlando",
-    "path": "/tornadoes-in-orlando/",
-    "description": "A chronological guide to tornadoes in Orlando, including landmark events, local patterns and official research sources.",
-    "category": "City Tornado History",
-    "keywords": "Tornadoes in Orlando Florida tornado history geography notable tornadoes"
-  },
-  {
-    "title": "A History of Tornadoes in Orlando",
-    "path": "/history-of-tornadoes-in-orlando/",
-    "description": "How Orlando's geography shapes tornado risk, with important storms from the local historical record.",
-    "category": "City Tornado History",
-    "keywords": "A History of Tornadoes in Orlando Florida tornado history geography notable tornadoes"
-  },
-  {
-    "title": "Tornadoes in Phoenix",
-    "path": "/tornadoes-in-phoenix/",
-    "description": "A chronological guide to tornadoes in Phoenix, including landmark events, local patterns and official research sources.",
-    "category": "City Tornado History",
-    "keywords": "Tornadoes in Phoenix Arizona tornado history geography notable tornadoes"
-  },
-  {
-    "title": "A History of Tornadoes in Phoenix",
-    "path": "/history-of-tornadoes-in-phoenix/",
-    "description": "How Phoenix's geography shapes tornado risk, with important storms from the local historical record.",
-    "category": "City Tornado History",
-    "keywords": "A History of Tornadoes in Phoenix Arizona tornado history geography notable tornadoes"
-  },
-  {
-    "title": "Tornadoes in St. Louis",
-    "path": "/tornadoes-in-st-louis/",
-    "description": "A chronological guide to tornadoes in St. Louis, including landmark events, local patterns and official research sources.",
-    "category": "City Tornado History",
-    "keywords": "Tornadoes in St. Louis Missouri–Illinois tornado history geography notable tornadoes"
-  },
-  {
-    "title": "A History of Tornadoes in St. Louis",
-    "path": "/history-of-tornadoes-in-st-louis/",
-    "description": "How St. Louis's geography shapes tornado risk, with important storms from the local historical record.",
-    "category": "City Tornado History",
-    "keywords": "A History of Tornadoes in St. Louis Missouri–Illinois tornado history geography notable tornadoes"
   },
   {
     "title": "Tornadoes in Topeka",
@@ -8783,5 +8601,1412 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "How Toronto's geography shapes tornado risk, with important storms from the local historical record.",
     "category": "City Tornado History",
     "keywords": "A History of Tornadoes in Toronto Ontario tornado history geography notable tornadoes"
+  },
+  {
+    "title": "Tornadoes in New York",
+    "path": "/tornadoes-in-new-york/",
+    "description": "A researched guide to the tornado history of New York, New York, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "New York New York tornado history tornadoes city rank 1"
+  },
+  {
+    "title": "A History of Tornadoes in New York",
+    "path": "/history-of-tornadoes-in-new-york/",
+    "description": "How New York, New York's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "New York New York tornado history tornadoes city rank 1"
+  },
+  {
+    "title": "Tornadoes in Los Angeles",
+    "path": "/tornadoes-in-los-angeles/",
+    "description": "A researched guide to the tornado history of Los Angeles, California, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Los Angeles California tornado history tornadoes city rank 2"
+  },
+  {
+    "title": "A History of Tornadoes in Los Angeles",
+    "path": "/history-of-tornadoes-in-los-angeles/",
+    "description": "How Los Angeles, California's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Los Angeles California tornado history tornadoes city rank 2"
+  },
+  {
+    "title": "Tornadoes in Chicago",
+    "path": "/tornadoes-in-chicago/",
+    "description": "A researched guide to the tornado history of Chicago, Illinois, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Chicago Illinois tornado history tornadoes city rank 3"
+  },
+  {
+    "title": "A History of Tornadoes in Chicago",
+    "path": "/history-of-tornadoes-in-chicago/",
+    "description": "How Chicago, Illinois's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Chicago Illinois tornado history tornadoes city rank 3"
+  },
+  {
+    "title": "Tornadoes in Houston",
+    "path": "/tornadoes-in-houston/",
+    "description": "A researched guide to the tornado history of Houston, Texas, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Houston Texas tornado history tornadoes city rank 4"
+  },
+  {
+    "title": "A History of Tornadoes in Houston",
+    "path": "/history-of-tornadoes-in-houston/",
+    "description": "How Houston, Texas's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Houston Texas tornado history tornadoes city rank 4"
+  },
+  {
+    "title": "Tornadoes in Phoenix",
+    "path": "/tornadoes-in-phoenix/",
+    "description": "A researched guide to the tornado history of Phoenix, Arizona, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Phoenix Arizona tornado history tornadoes city rank 5"
+  },
+  {
+    "title": "A History of Tornadoes in Phoenix",
+    "path": "/history-of-tornadoes-in-phoenix/",
+    "description": "How Phoenix, Arizona's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Phoenix Arizona tornado history tornadoes city rank 5"
+  },
+  {
+    "title": "Tornadoes in Philadelphia",
+    "path": "/tornadoes-in-philadelphia/",
+    "description": "A researched guide to the tornado history of Philadelphia, Pennsylvania, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Philadelphia Pennsylvania tornado history tornadoes city rank 6"
+  },
+  {
+    "title": "A History of Tornadoes in Philadelphia",
+    "path": "/history-of-tornadoes-in-philadelphia/",
+    "description": "How Philadelphia, Pennsylvania's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Philadelphia Pennsylvania tornado history tornadoes city rank 6"
+  },
+  {
+    "title": "Tornadoes in San Antonio",
+    "path": "/tornadoes-in-san-antonio/",
+    "description": "A researched guide to the tornado history of San Antonio, Texas, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "San Antonio Texas tornado history tornadoes city rank 7"
+  },
+  {
+    "title": "A History of Tornadoes in San Antonio",
+    "path": "/history-of-tornadoes-in-san-antonio/",
+    "description": "How San Antonio, Texas's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "San Antonio Texas tornado history tornadoes city rank 7"
+  },
+  {
+    "title": "Tornadoes in San Diego",
+    "path": "/tornadoes-in-san-diego/",
+    "description": "A researched guide to the tornado history of San Diego, California, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "San Diego California tornado history tornadoes city rank 8"
+  },
+  {
+    "title": "A History of Tornadoes in San Diego",
+    "path": "/history-of-tornadoes-in-san-diego/",
+    "description": "How San Diego, California's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "San Diego California tornado history tornadoes city rank 8"
+  },
+  {
+    "title": "Tornadoes in Dallas",
+    "path": "/tornadoes-in-dallas/",
+    "description": "A researched guide to the tornado history of Dallas, Texas, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Dallas Texas tornado history tornadoes city rank 9"
+  },
+  {
+    "title": "A History of Tornadoes in Dallas",
+    "path": "/history-of-tornadoes-in-dallas/",
+    "description": "How Dallas, Texas's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Dallas Texas tornado history tornadoes city rank 9"
+  },
+  {
+    "title": "Tornadoes in Fort Worth",
+    "path": "/tornadoes-in-fort-worth/",
+    "description": "A researched guide to the tornado history of Fort Worth, Texas, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Fort Worth Texas tornado history tornadoes city rank 10"
+  },
+  {
+    "title": "A History of Tornadoes in Fort Worth",
+    "path": "/history-of-tornadoes-in-fort-worth/",
+    "description": "How Fort Worth, Texas's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Fort Worth Texas tornado history tornadoes city rank 10"
+  },
+  {
+    "title": "Tornadoes in Jacksonville",
+    "path": "/tornadoes-in-jacksonville/",
+    "description": "A researched guide to the tornado history of Jacksonville, Florida, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Jacksonville Florida tornado history tornadoes city rank 11"
+  },
+  {
+    "title": "A History of Tornadoes in Jacksonville",
+    "path": "/history-of-tornadoes-in-jacksonville/",
+    "description": "How Jacksonville, Florida's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Jacksonville Florida tornado history tornadoes city rank 11"
+  },
+  {
+    "title": "Tornadoes in Austin",
+    "path": "/tornadoes-in-austin/",
+    "description": "A researched guide to the tornado history of Austin, Texas, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Austin Texas tornado history tornadoes city rank 12"
+  },
+  {
+    "title": "A History of Tornadoes in Austin",
+    "path": "/history-of-tornadoes-in-austin/",
+    "description": "How Austin, Texas's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Austin Texas tornado history tornadoes city rank 12"
+  },
+  {
+    "title": "Tornadoes in San Jose",
+    "path": "/tornadoes-in-san-jose/",
+    "description": "A researched guide to the tornado history of San Jose, California, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "San Jose California tornado history tornadoes city rank 13"
+  },
+  {
+    "title": "A History of Tornadoes in San Jose",
+    "path": "/history-of-tornadoes-in-san-jose/",
+    "description": "How San Jose, California's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "San Jose California tornado history tornadoes city rank 13"
+  },
+  {
+    "title": "Tornadoes in Charlotte",
+    "path": "/tornadoes-in-charlotte/",
+    "description": "A researched guide to the tornado history of Charlotte, North Carolina, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Charlotte North Carolina tornado history tornadoes city rank 14"
+  },
+  {
+    "title": "A History of Tornadoes in Charlotte",
+    "path": "/history-of-tornadoes-in-charlotte/",
+    "description": "How Charlotte, North Carolina's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Charlotte North Carolina tornado history tornadoes city rank 14"
+  },
+  {
+    "title": "Tornadoes in Columbus",
+    "path": "/tornadoes-in-columbus/",
+    "description": "A researched guide to the tornado history of Columbus, Ohio, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Columbus Ohio tornado history tornadoes city rank 15"
+  },
+  {
+    "title": "A History of Tornadoes in Columbus",
+    "path": "/history-of-tornadoes-in-columbus/",
+    "description": "How Columbus, Ohio's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Columbus Ohio tornado history tornadoes city rank 15"
+  },
+  {
+    "title": "Tornadoes in Indianapolis",
+    "path": "/tornadoes-in-indianapolis/",
+    "description": "A researched guide to the tornado history of Indianapolis, Indiana, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Indianapolis Indiana tornado history tornadoes city rank 16"
+  },
+  {
+    "title": "A History of Tornadoes in Indianapolis",
+    "path": "/history-of-tornadoes-in-indianapolis/",
+    "description": "How Indianapolis, Indiana's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Indianapolis Indiana tornado history tornadoes city rank 16"
+  },
+  {
+    "title": "Tornadoes in San Francisco",
+    "path": "/tornadoes-in-san-francisco/",
+    "description": "A researched guide to the tornado history of San Francisco, California, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "San Francisco California tornado history tornadoes city rank 17"
+  },
+  {
+    "title": "A History of Tornadoes in San Francisco",
+    "path": "/history-of-tornadoes-in-san-francisco/",
+    "description": "How San Francisco, California's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "San Francisco California tornado history tornadoes city rank 17"
+  },
+  {
+    "title": "Tornadoes in Seattle",
+    "path": "/tornadoes-in-seattle/",
+    "description": "A researched guide to the tornado history of Seattle, Washington, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Seattle Washington tornado history tornadoes city rank 18"
+  },
+  {
+    "title": "A History of Tornadoes in Seattle",
+    "path": "/history-of-tornadoes-in-seattle/",
+    "description": "How Seattle, Washington's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Seattle Washington tornado history tornadoes city rank 18"
+  },
+  {
+    "title": "Tornadoes in Denver",
+    "path": "/tornadoes-in-denver/",
+    "description": "A researched guide to the tornado history of Denver, Colorado, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Denver Colorado tornado history tornadoes city rank 19"
+  },
+  {
+    "title": "A History of Tornadoes in Denver",
+    "path": "/history-of-tornadoes-in-denver/",
+    "description": "How Denver, Colorado's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Denver Colorado tornado history tornadoes city rank 19"
+  },
+  {
+    "title": "Tornadoes in Nashville",
+    "path": "/tornadoes-in-nashville/",
+    "description": "A researched guide to the tornado history of Nashville, Tennessee, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Nashville Tennessee tornado history tornadoes city rank 20"
+  },
+  {
+    "title": "A History of Tornadoes in Nashville",
+    "path": "/history-of-tornadoes-in-nashville/",
+    "description": "How Nashville, Tennessee's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Nashville Tennessee tornado history tornadoes city rank 20"
+  },
+  {
+    "title": "Tornadoes in Oklahoma City",
+    "path": "/tornadoes-in-oklahoma-city/",
+    "description": "A researched guide to the tornado history of Oklahoma City, Oklahoma, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Oklahoma City Oklahoma tornado history tornadoes city rank 21"
+  },
+  {
+    "title": "A History of Tornadoes in Oklahoma City",
+    "path": "/history-of-tornadoes-in-oklahoma-city/",
+    "description": "How Oklahoma City, Oklahoma's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Oklahoma City Oklahoma tornado history tornadoes city rank 21"
+  },
+  {
+    "title": "Tornadoes in Washington",
+    "path": "/tornadoes-in-washington/",
+    "description": "A researched guide to the tornado history of Washington, District of Columbia, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Washington District of Columbia tornado history tornadoes city rank 22"
+  },
+  {
+    "title": "A History of Tornadoes in Washington",
+    "path": "/history-of-tornadoes-in-washington/",
+    "description": "How Washington, District of Columbia's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Washington District of Columbia tornado history tornadoes city rank 22"
+  },
+  {
+    "title": "Tornadoes in El Paso",
+    "path": "/tornadoes-in-el-paso/",
+    "description": "A researched guide to the tornado history of El Paso, Texas, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "El Paso Texas tornado history tornadoes city rank 23"
+  },
+  {
+    "title": "A History of Tornadoes in El Paso",
+    "path": "/history-of-tornadoes-in-el-paso/",
+    "description": "How El Paso, Texas's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "El Paso Texas tornado history tornadoes city rank 23"
+  },
+  {
+    "title": "Tornadoes in Las Vegas",
+    "path": "/tornadoes-in-las-vegas/",
+    "description": "A researched guide to the tornado history of Las Vegas, Nevada, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Las Vegas Nevada tornado history tornadoes city rank 24"
+  },
+  {
+    "title": "A History of Tornadoes in Las Vegas",
+    "path": "/history-of-tornadoes-in-las-vegas/",
+    "description": "How Las Vegas, Nevada's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Las Vegas Nevada tornado history tornadoes city rank 24"
+  },
+  {
+    "title": "Tornadoes in Boston",
+    "path": "/tornadoes-in-boston/",
+    "description": "A researched guide to the tornado history of Boston, Massachusetts, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Boston Massachusetts tornado history tornadoes city rank 25"
+  },
+  {
+    "title": "A History of Tornadoes in Boston",
+    "path": "/history-of-tornadoes-in-boston/",
+    "description": "How Boston, Massachusetts's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Boston Massachusetts tornado history tornadoes city rank 25"
+  },
+  {
+    "title": "Tornadoes in Detroit",
+    "path": "/tornadoes-in-detroit/",
+    "description": "A researched guide to the tornado history of Detroit, Michigan, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Detroit Michigan tornado history tornadoes city rank 26"
+  },
+  {
+    "title": "A History of Tornadoes in Detroit",
+    "path": "/history-of-tornadoes-in-detroit/",
+    "description": "How Detroit, Michigan's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Detroit Michigan tornado history tornadoes city rank 26"
+  },
+  {
+    "title": "Tornadoes in Louisville",
+    "path": "/tornadoes-in-louisville/",
+    "description": "A researched guide to the tornado history of Louisville, Kentucky, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Louisville Kentucky tornado history tornadoes city rank 27"
+  },
+  {
+    "title": "A History of Tornadoes in Louisville",
+    "path": "/history-of-tornadoes-in-louisville/",
+    "description": "How Louisville, Kentucky's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Louisville Kentucky tornado history tornadoes city rank 27"
+  },
+  {
+    "title": "Tornadoes in Portland",
+    "path": "/tornadoes-in-portland/",
+    "description": "A researched guide to the tornado history of Portland, Oregon, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Portland Oregon tornado history tornadoes city rank 28"
+  },
+  {
+    "title": "A History of Tornadoes in Portland",
+    "path": "/history-of-tornadoes-in-portland/",
+    "description": "How Portland, Oregon's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Portland Oregon tornado history tornadoes city rank 28"
+  },
+  {
+    "title": "Tornadoes in Memphis",
+    "path": "/tornadoes-in-memphis/",
+    "description": "A researched guide to the tornado history of Memphis, Tennessee, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Memphis Tennessee tornado history tornadoes city rank 29"
+  },
+  {
+    "title": "A History of Tornadoes in Memphis",
+    "path": "/history-of-tornadoes-in-memphis/",
+    "description": "How Memphis, Tennessee's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Memphis Tennessee tornado history tornadoes city rank 29"
+  },
+  {
+    "title": "Tornadoes in Baltimore",
+    "path": "/tornadoes-in-baltimore/",
+    "description": "A researched guide to the tornado history of Baltimore, Maryland, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Baltimore Maryland tornado history tornadoes city rank 30"
+  },
+  {
+    "title": "A History of Tornadoes in Baltimore",
+    "path": "/history-of-tornadoes-in-baltimore/",
+    "description": "How Baltimore, Maryland's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Baltimore Maryland tornado history tornadoes city rank 30"
+  },
+  {
+    "title": "Tornadoes in Milwaukee",
+    "path": "/tornadoes-in-milwaukee/",
+    "description": "A researched guide to the tornado history of Milwaukee, Wisconsin, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Milwaukee Wisconsin tornado history tornadoes city rank 31"
+  },
+  {
+    "title": "A History of Tornadoes in Milwaukee",
+    "path": "/history-of-tornadoes-in-milwaukee/",
+    "description": "How Milwaukee, Wisconsin's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Milwaukee Wisconsin tornado history tornadoes city rank 31"
+  },
+  {
+    "title": "Tornadoes in Albuquerque",
+    "path": "/tornadoes-in-albuquerque/",
+    "description": "A researched guide to the tornado history of Albuquerque, New Mexico, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Albuquerque New Mexico tornado history tornadoes city rank 32"
+  },
+  {
+    "title": "A History of Tornadoes in Albuquerque",
+    "path": "/history-of-tornadoes-in-albuquerque/",
+    "description": "How Albuquerque, New Mexico's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Albuquerque New Mexico tornado history tornadoes city rank 32"
+  },
+  {
+    "title": "Tornadoes in Fresno",
+    "path": "/tornadoes-in-fresno/",
+    "description": "A researched guide to the tornado history of Fresno, California, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Fresno California tornado history tornadoes city rank 33"
+  },
+  {
+    "title": "A History of Tornadoes in Fresno",
+    "path": "/history-of-tornadoes-in-fresno/",
+    "description": "How Fresno, California's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Fresno California tornado history tornadoes city rank 33"
+  },
+  {
+    "title": "Tornadoes in Tucson",
+    "path": "/tornadoes-in-tucson/",
+    "description": "A researched guide to the tornado history of Tucson, Arizona, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Tucson Arizona tornado history tornadoes city rank 34"
+  },
+  {
+    "title": "A History of Tornadoes in Tucson",
+    "path": "/history-of-tornadoes-in-tucson/",
+    "description": "How Tucson, Arizona's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Tucson Arizona tornado history tornadoes city rank 34"
+  },
+  {
+    "title": "Tornadoes in Sacramento",
+    "path": "/tornadoes-in-sacramento/",
+    "description": "A researched guide to the tornado history of Sacramento, California, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Sacramento California tornado history tornadoes city rank 35"
+  },
+  {
+    "title": "A History of Tornadoes in Sacramento",
+    "path": "/history-of-tornadoes-in-sacramento/",
+    "description": "How Sacramento, California's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Sacramento California tornado history tornadoes city rank 35"
+  },
+  {
+    "title": "Tornadoes in Atlanta",
+    "path": "/tornadoes-in-atlanta/",
+    "description": "A researched guide to the tornado history of Atlanta, Georgia, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Atlanta Georgia tornado history tornadoes city rank 36"
+  },
+  {
+    "title": "A History of Tornadoes in Atlanta",
+    "path": "/history-of-tornadoes-in-atlanta/",
+    "description": "How Atlanta, Georgia's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Atlanta Georgia tornado history tornadoes city rank 36"
+  },
+  {
+    "title": "Tornadoes in Kansas City",
+    "path": "/tornadoes-in-kansas-city/",
+    "description": "A researched guide to the tornado history of Kansas City, Missouri, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Kansas City Missouri tornado history tornadoes city rank 37"
+  },
+  {
+    "title": "A History of Tornadoes in Kansas City",
+    "path": "/history-of-tornadoes-in-kansas-city/",
+    "description": "How Kansas City, Missouri's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Kansas City Missouri tornado history tornadoes city rank 37"
+  },
+  {
+    "title": "Tornadoes in Mesa",
+    "path": "/tornadoes-in-mesa/",
+    "description": "A researched guide to the tornado history of Mesa, Arizona, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Mesa Arizona tornado history tornadoes city rank 38"
+  },
+  {
+    "title": "A History of Tornadoes in Mesa",
+    "path": "/history-of-tornadoes-in-mesa/",
+    "description": "How Mesa, Arizona's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Mesa Arizona tornado history tornadoes city rank 38"
+  },
+  {
+    "title": "Tornadoes in Raleigh",
+    "path": "/tornadoes-in-raleigh/",
+    "description": "A researched guide to the tornado history of Raleigh, North Carolina, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Raleigh North Carolina tornado history tornadoes city rank 39"
+  },
+  {
+    "title": "A History of Tornadoes in Raleigh",
+    "path": "/history-of-tornadoes-in-raleigh/",
+    "description": "How Raleigh, North Carolina's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Raleigh North Carolina tornado history tornadoes city rank 39"
+  },
+  {
+    "title": "Tornadoes in Colorado Springs",
+    "path": "/tornadoes-in-colorado-springs/",
+    "description": "A researched guide to the tornado history of Colorado Springs, Colorado, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Colorado Springs Colorado tornado history tornadoes city rank 40"
+  },
+  {
+    "title": "A History of Tornadoes in Colorado Springs",
+    "path": "/history-of-tornadoes-in-colorado-springs/",
+    "description": "How Colorado Springs, Colorado's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Colorado Springs Colorado tornado history tornadoes city rank 40"
+  },
+  {
+    "title": "Tornadoes in Miami",
+    "path": "/tornadoes-in-miami/",
+    "description": "A researched guide to the tornado history of Miami, Florida, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Miami Florida tornado history tornadoes city rank 41"
+  },
+  {
+    "title": "A History of Tornadoes in Miami",
+    "path": "/history-of-tornadoes-in-miami/",
+    "description": "How Miami, Florida's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Miami Florida tornado history tornadoes city rank 41"
+  },
+  {
+    "title": "Tornadoes in Omaha",
+    "path": "/tornadoes-in-omaha/",
+    "description": "A researched guide to the tornado history of Omaha, Nebraska, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Omaha Nebraska tornado history tornadoes city rank 42"
+  },
+  {
+    "title": "A History of Tornadoes in Omaha",
+    "path": "/history-of-tornadoes-in-omaha/",
+    "description": "How Omaha, Nebraska's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Omaha Nebraska tornado history tornadoes city rank 42"
+  },
+  {
+    "title": "Tornadoes in Virginia Beach",
+    "path": "/tornadoes-in-virginia-beach/",
+    "description": "A researched guide to the tornado history of Virginia Beach, Virginia, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Virginia Beach Virginia tornado history tornadoes city rank 43"
+  },
+  {
+    "title": "A History of Tornadoes in Virginia Beach",
+    "path": "/history-of-tornadoes-in-virginia-beach/",
+    "description": "How Virginia Beach, Virginia's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Virginia Beach Virginia tornado history tornadoes city rank 43"
+  },
+  {
+    "title": "Tornadoes in Long Beach",
+    "path": "/tornadoes-in-long-beach/",
+    "description": "A researched guide to the tornado history of Long Beach, California, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Long Beach California tornado history tornadoes city rank 44"
+  },
+  {
+    "title": "A History of Tornadoes in Long Beach",
+    "path": "/history-of-tornadoes-in-long-beach/",
+    "description": "How Long Beach, California's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Long Beach California tornado history tornadoes city rank 44"
+  },
+  {
+    "title": "Tornadoes in Oakland",
+    "path": "/tornadoes-in-oakland/",
+    "description": "A researched guide to the tornado history of Oakland, California, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Oakland California tornado history tornadoes city rank 45"
+  },
+  {
+    "title": "A History of Tornadoes in Oakland",
+    "path": "/history-of-tornadoes-in-oakland/",
+    "description": "How Oakland, California's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Oakland California tornado history tornadoes city rank 45"
+  },
+  {
+    "title": "Tornadoes in Minneapolis",
+    "path": "/tornadoes-in-minneapolis/",
+    "description": "A researched guide to the tornado history of Minneapolis, Minnesota, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Minneapolis Minnesota tornado history tornadoes city rank 46"
+  },
+  {
+    "title": "A History of Tornadoes in Minneapolis",
+    "path": "/history-of-tornadoes-in-minneapolis/",
+    "description": "How Minneapolis, Minnesota's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Minneapolis Minnesota tornado history tornadoes city rank 46"
+  },
+  {
+    "title": "Tornadoes in Bakersfield",
+    "path": "/tornadoes-in-bakersfield/",
+    "description": "A researched guide to the tornado history of Bakersfield, California, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Bakersfield California tornado history tornadoes city rank 47"
+  },
+  {
+    "title": "A History of Tornadoes in Bakersfield",
+    "path": "/history-of-tornadoes-in-bakersfield/",
+    "description": "How Bakersfield, California's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Bakersfield California tornado history tornadoes city rank 47"
+  },
+  {
+    "title": "Tornadoes in Tulsa",
+    "path": "/tornadoes-in-tulsa/",
+    "description": "A researched guide to the tornado history of Tulsa, Oklahoma, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Tulsa Oklahoma tornado history tornadoes city rank 48"
+  },
+  {
+    "title": "A History of Tornadoes in Tulsa",
+    "path": "/history-of-tornadoes-in-tulsa/",
+    "description": "How Tulsa, Oklahoma's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Tulsa Oklahoma tornado history tornadoes city rank 48"
+  },
+  {
+    "title": "Tornadoes in Tampa",
+    "path": "/tornadoes-in-tampa/",
+    "description": "A researched guide to the tornado history of Tampa, Florida, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Tampa Florida tornado history tornadoes city rank 49"
+  },
+  {
+    "title": "A History of Tornadoes in Tampa",
+    "path": "/history-of-tornadoes-in-tampa/",
+    "description": "How Tampa, Florida's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Tampa Florida tornado history tornadoes city rank 49"
+  },
+  {
+    "title": "Tornadoes in Aurora",
+    "path": "/tornadoes-in-aurora/",
+    "description": "A researched guide to the tornado history of Aurora, Colorado, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Aurora Colorado tornado history tornadoes city rank 50"
+  },
+  {
+    "title": "A History of Tornadoes in Aurora",
+    "path": "/history-of-tornadoes-in-aurora/",
+    "description": "How Aurora, Colorado's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Aurora Colorado tornado history tornadoes city rank 50"
+  },
+  {
+    "title": "Tornadoes in Arlington",
+    "path": "/tornadoes-in-arlington/",
+    "description": "A researched guide to the tornado history of Arlington, Texas, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Arlington Texas tornado history tornadoes city rank 51"
+  },
+  {
+    "title": "A History of Tornadoes in Arlington",
+    "path": "/history-of-tornadoes-in-arlington/",
+    "description": "How Arlington, Texas's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Arlington Texas tornado history tornadoes city rank 51"
+  },
+  {
+    "title": "Tornadoes in Wichita",
+    "path": "/tornadoes-in-wichita/",
+    "description": "A researched guide to the tornado history of Wichita, Kansas, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Wichita Kansas tornado history tornadoes city rank 52"
+  },
+  {
+    "title": "A History of Tornadoes in Wichita",
+    "path": "/history-of-tornadoes-in-wichita/",
+    "description": "How Wichita, Kansas's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Wichita Kansas tornado history tornadoes city rank 52"
+  },
+  {
+    "title": "Tornadoes in Cleveland",
+    "path": "/tornadoes-in-cleveland/",
+    "description": "A researched guide to the tornado history of Cleveland, Ohio, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Cleveland Ohio tornado history tornadoes city rank 53"
+  },
+  {
+    "title": "A History of Tornadoes in Cleveland",
+    "path": "/history-of-tornadoes-in-cleveland/",
+    "description": "How Cleveland, Ohio's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Cleveland Ohio tornado history tornadoes city rank 53"
+  },
+  {
+    "title": "Tornadoes in New Orleans",
+    "path": "/tornadoes-in-new-orleans/",
+    "description": "A researched guide to the tornado history of New Orleans, Louisiana, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "New Orleans Louisiana tornado history tornadoes city rank 54"
+  },
+  {
+    "title": "A History of Tornadoes in New Orleans",
+    "path": "/history-of-tornadoes-in-new-orleans/",
+    "description": "How New Orleans, Louisiana's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "New Orleans Louisiana tornado history tornadoes city rank 54"
+  },
+  {
+    "title": "Tornadoes in Henderson",
+    "path": "/tornadoes-in-henderson/",
+    "description": "A researched guide to the tornado history of Henderson, Nevada, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Henderson Nevada tornado history tornadoes city rank 55"
+  },
+  {
+    "title": "A History of Tornadoes in Henderson",
+    "path": "/history-of-tornadoes-in-henderson/",
+    "description": "How Henderson, Nevada's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Henderson Nevada tornado history tornadoes city rank 55"
+  },
+  {
+    "title": "Tornadoes in Anaheim",
+    "path": "/tornadoes-in-anaheim/",
+    "description": "A researched guide to the tornado history of Anaheim, California, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Anaheim California tornado history tornadoes city rank 56"
+  },
+  {
+    "title": "A History of Tornadoes in Anaheim",
+    "path": "/history-of-tornadoes-in-anaheim/",
+    "description": "How Anaheim, California's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Anaheim California tornado history tornadoes city rank 56"
+  },
+  {
+    "title": "Tornadoes in Orlando",
+    "path": "/tornadoes-in-orlando/",
+    "description": "A researched guide to the tornado history of Orlando, Florida, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Orlando Florida tornado history tornadoes city rank 57"
+  },
+  {
+    "title": "A History of Tornadoes in Orlando",
+    "path": "/history-of-tornadoes-in-orlando/",
+    "description": "How Orlando, Florida's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Orlando Florida tornado history tornadoes city rank 57"
+  },
+  {
+    "title": "Tornadoes in Lexington",
+    "path": "/tornadoes-in-lexington/",
+    "description": "A researched guide to the tornado history of Lexington, Kentucky, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Lexington Kentucky tornado history tornadoes city rank 58"
+  },
+  {
+    "title": "A History of Tornadoes in Lexington",
+    "path": "/history-of-tornadoes-in-lexington/",
+    "description": "How Lexington, Kentucky's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Lexington Kentucky tornado history tornadoes city rank 58"
+  },
+  {
+    "title": "Tornadoes in Stockton",
+    "path": "/tornadoes-in-stockton/",
+    "description": "A researched guide to the tornado history of Stockton, California, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Stockton California tornado history tornadoes city rank 59"
+  },
+  {
+    "title": "A History of Tornadoes in Stockton",
+    "path": "/history-of-tornadoes-in-stockton/",
+    "description": "How Stockton, California's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Stockton California tornado history tornadoes city rank 59"
+  },
+  {
+    "title": "Tornadoes in Newark",
+    "path": "/tornadoes-in-newark/",
+    "description": "A researched guide to the tornado history of Newark, New Jersey, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Newark New Jersey tornado history tornadoes city rank 60"
+  },
+  {
+    "title": "A History of Tornadoes in Newark",
+    "path": "/history-of-tornadoes-in-newark/",
+    "description": "How Newark, New Jersey's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Newark New Jersey tornado history tornadoes city rank 60"
+  },
+  {
+    "title": "Tornadoes in Riverside",
+    "path": "/tornadoes-in-riverside/",
+    "description": "A researched guide to the tornado history of Riverside, California, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Riverside California tornado history tornadoes city rank 61"
+  },
+  {
+    "title": "A History of Tornadoes in Riverside",
+    "path": "/history-of-tornadoes-in-riverside/",
+    "description": "How Riverside, California's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Riverside California tornado history tornadoes city rank 61"
+  },
+  {
+    "title": "Tornadoes in Irvine",
+    "path": "/tornadoes-in-irvine/",
+    "description": "A researched guide to the tornado history of Irvine, California, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Irvine California tornado history tornadoes city rank 62"
+  },
+  {
+    "title": "A History of Tornadoes in Irvine",
+    "path": "/history-of-tornadoes-in-irvine/",
+    "description": "How Irvine, California's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Irvine California tornado history tornadoes city rank 62"
+  },
+  {
+    "title": "Tornadoes in Corpus Christi",
+    "path": "/tornadoes-in-corpus-christi/",
+    "description": "A researched guide to the tornado history of Corpus Christi, Texas, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Corpus Christi Texas tornado history tornadoes city rank 63"
+  },
+  {
+    "title": "A History of Tornadoes in Corpus Christi",
+    "path": "/history-of-tornadoes-in-corpus-christi/",
+    "description": "How Corpus Christi, Texas's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Corpus Christi Texas tornado history tornadoes city rank 63"
+  },
+  {
+    "title": "Tornadoes in Santa Ana",
+    "path": "/tornadoes-in-santa-ana/",
+    "description": "A researched guide to the tornado history of Santa Ana, California, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Santa Ana California tornado history tornadoes city rank 64"
+  },
+  {
+    "title": "A History of Tornadoes in Santa Ana",
+    "path": "/history-of-tornadoes-in-santa-ana/",
+    "description": "How Santa Ana, California's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Santa Ana California tornado history tornadoes city rank 64"
+  },
+  {
+    "title": "Tornadoes in Cincinnati",
+    "path": "/tornadoes-in-cincinnati/",
+    "description": "A researched guide to the tornado history of Cincinnati, Ohio, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Cincinnati Ohio tornado history tornadoes city rank 65"
+  },
+  {
+    "title": "A History of Tornadoes in Cincinnati",
+    "path": "/history-of-tornadoes-in-cincinnati/",
+    "description": "How Cincinnati, Ohio's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Cincinnati Ohio tornado history tornadoes city rank 65"
+  },
+  {
+    "title": "Tornadoes in Greensboro",
+    "path": "/tornadoes-in-greensboro/",
+    "description": "A researched guide to the tornado history of Greensboro, North Carolina, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Greensboro North Carolina tornado history tornadoes city rank 66"
+  },
+  {
+    "title": "A History of Tornadoes in Greensboro",
+    "path": "/history-of-tornadoes-in-greensboro/",
+    "description": "How Greensboro, North Carolina's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Greensboro North Carolina tornado history tornadoes city rank 66"
+  },
+  {
+    "title": "Tornadoes in Pittsburgh",
+    "path": "/tornadoes-in-pittsburgh/",
+    "description": "A researched guide to the tornado history of Pittsburgh, Pennsylvania, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Pittsburgh Pennsylvania tornado history tornadoes city rank 67"
+  },
+  {
+    "title": "A History of Tornadoes in Pittsburgh",
+    "path": "/history-of-tornadoes-in-pittsburgh/",
+    "description": "How Pittsburgh, Pennsylvania's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Pittsburgh Pennsylvania tornado history tornadoes city rank 67"
+  },
+  {
+    "title": "Tornadoes in St. Paul",
+    "path": "/tornadoes-in-st-paul/",
+    "description": "A researched guide to the tornado history of St. Paul, Minnesota, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "St. Paul Minnesota tornado history tornadoes city rank 68"
+  },
+  {
+    "title": "A History of Tornadoes in St. Paul",
+    "path": "/history-of-tornadoes-in-st-paul/",
+    "description": "How St. Paul, Minnesota's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "St. Paul Minnesota tornado history tornadoes city rank 68"
+  },
+  {
+    "title": "Tornadoes in Durham",
+    "path": "/tornadoes-in-durham/",
+    "description": "A researched guide to the tornado history of Durham, North Carolina, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Durham North Carolina tornado history tornadoes city rank 69"
+  },
+  {
+    "title": "A History of Tornadoes in Durham",
+    "path": "/history-of-tornadoes-in-durham/",
+    "description": "How Durham, North Carolina's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Durham North Carolina tornado history tornadoes city rank 69"
+  },
+  {
+    "title": "Tornadoes in Jersey City",
+    "path": "/tornadoes-in-jersey-city/",
+    "description": "A researched guide to the tornado history of Jersey City, New Jersey, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Jersey City New Jersey tornado history tornadoes city rank 70"
+  },
+  {
+    "title": "A History of Tornadoes in Jersey City",
+    "path": "/history-of-tornadoes-in-jersey-city/",
+    "description": "How Jersey City, New Jersey's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Jersey City New Jersey tornado history tornadoes city rank 70"
+  },
+  {
+    "title": "Tornadoes in Lincoln",
+    "path": "/tornadoes-in-lincoln/",
+    "description": "A researched guide to the tornado history of Lincoln, Nebraska, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Lincoln Nebraska tornado history tornadoes city rank 71"
+  },
+  {
+    "title": "A History of Tornadoes in Lincoln",
+    "path": "/history-of-tornadoes-in-lincoln/",
+    "description": "How Lincoln, Nebraska's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Lincoln Nebraska tornado history tornadoes city rank 71"
+  },
+  {
+    "title": "Tornadoes in North Las Vegas",
+    "path": "/tornadoes-in-north-las-vegas/",
+    "description": "A researched guide to the tornado history of North Las Vegas, Nevada, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "North Las Vegas Nevada tornado history tornadoes city rank 72"
+  },
+  {
+    "title": "A History of Tornadoes in North Las Vegas",
+    "path": "/history-of-tornadoes-in-north-las-vegas/",
+    "description": "How North Las Vegas, Nevada's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "North Las Vegas Nevada tornado history tornadoes city rank 72"
+  },
+  {
+    "title": "Tornadoes in Plano",
+    "path": "/tornadoes-in-plano/",
+    "description": "A researched guide to the tornado history of Plano, Texas, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Plano Texas tornado history tornadoes city rank 73"
+  },
+  {
+    "title": "A History of Tornadoes in Plano",
+    "path": "/history-of-tornadoes-in-plano/",
+    "description": "How Plano, Texas's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Plano Texas tornado history tornadoes city rank 73"
+  },
+  {
+    "title": "Tornadoes in Gilbert",
+    "path": "/tornadoes-in-gilbert/",
+    "description": "A researched guide to the tornado history of Gilbert, Arizona, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Gilbert Arizona tornado history tornadoes city rank 74"
+  },
+  {
+    "title": "A History of Tornadoes in Gilbert",
+    "path": "/history-of-tornadoes-in-gilbert/",
+    "description": "How Gilbert, Arizona's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Gilbert Arizona tornado history tornadoes city rank 74"
+  },
+  {
+    "title": "Tornadoes in Anchorage",
+    "path": "/tornadoes-in-anchorage/",
+    "description": "A researched guide to the tornado history of Anchorage, Alaska, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Anchorage Alaska tornado history tornadoes city rank 75"
+  },
+  {
+    "title": "A History of Tornadoes in Anchorage",
+    "path": "/history-of-tornadoes-in-anchorage/",
+    "description": "How Anchorage, Alaska's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Anchorage Alaska tornado history tornadoes city rank 75"
+  },
+  {
+    "title": "Tornadoes in Madison",
+    "path": "/tornadoes-in-madison/",
+    "description": "A researched guide to the tornado history of Madison, Wisconsin, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Madison Wisconsin tornado history tornadoes city rank 76"
+  },
+  {
+    "title": "A History of Tornadoes in Madison",
+    "path": "/history-of-tornadoes-in-madison/",
+    "description": "How Madison, Wisconsin's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Madison Wisconsin tornado history tornadoes city rank 76"
+  },
+  {
+    "title": "Tornadoes in Reno",
+    "path": "/tornadoes-in-reno/",
+    "description": "A researched guide to the tornado history of Reno, Nevada, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Reno Nevada tornado history tornadoes city rank 77"
+  },
+  {
+    "title": "A History of Tornadoes in Reno",
+    "path": "/history-of-tornadoes-in-reno/",
+    "description": "How Reno, Nevada's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Reno Nevada tornado history tornadoes city rank 77"
+  },
+  {
+    "title": "Tornadoes in Chandler",
+    "path": "/tornadoes-in-chandler/",
+    "description": "A researched guide to the tornado history of Chandler, Arizona, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Chandler Arizona tornado history tornadoes city rank 78"
+  },
+  {
+    "title": "A History of Tornadoes in Chandler",
+    "path": "/history-of-tornadoes-in-chandler/",
+    "description": "How Chandler, Arizona's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Chandler Arizona tornado history tornadoes city rank 78"
+  },
+  {
+    "title": "Tornadoes in St. Louis",
+    "path": "/tornadoes-in-st-louis/",
+    "description": "A researched guide to the tornado history of St. Louis, Missouri, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "St. Louis Missouri tornado history tornadoes city rank 79"
+  },
+  {
+    "title": "A History of Tornadoes in St. Louis",
+    "path": "/history-of-tornadoes-in-st-louis/",
+    "description": "How St. Louis, Missouri's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "St. Louis Missouri tornado history tornadoes city rank 79"
+  },
+  {
+    "title": "Tornadoes in Chula Vista",
+    "path": "/tornadoes-in-chula-vista/",
+    "description": "A researched guide to the tornado history of Chula Vista, California, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Chula Vista California tornado history tornadoes city rank 80"
+  },
+  {
+    "title": "A History of Tornadoes in Chula Vista",
+    "path": "/history-of-tornadoes-in-chula-vista/",
+    "description": "How Chula Vista, California's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Chula Vista California tornado history tornadoes city rank 80"
+  },
+  {
+    "title": "Tornadoes in Fort Wayne",
+    "path": "/tornadoes-in-fort-wayne/",
+    "description": "A researched guide to the tornado history of Fort Wayne, Indiana, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Fort Wayne Indiana tornado history tornadoes city rank 81"
+  },
+  {
+    "title": "A History of Tornadoes in Fort Wayne",
+    "path": "/history-of-tornadoes-in-fort-wayne/",
+    "description": "How Fort Wayne, Indiana's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Fort Wayne Indiana tornado history tornadoes city rank 81"
+  },
+  {
+    "title": "Tornadoes in Buffalo",
+    "path": "/tornadoes-in-buffalo/",
+    "description": "A researched guide to the tornado history of Buffalo, New York, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Buffalo New York tornado history tornadoes city rank 82"
+  },
+  {
+    "title": "A History of Tornadoes in Buffalo",
+    "path": "/history-of-tornadoes-in-buffalo/",
+    "description": "How Buffalo, New York's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Buffalo New York tornado history tornadoes city rank 82"
+  },
+  {
+    "title": "Tornadoes in Lubbock",
+    "path": "/tornadoes-in-lubbock/",
+    "description": "A researched guide to the tornado history of Lubbock, Texas, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Lubbock Texas tornado history tornadoes city rank 83"
+  },
+  {
+    "title": "A History of Tornadoes in Lubbock",
+    "path": "/history-of-tornadoes-in-lubbock/",
+    "description": "How Lubbock, Texas's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Lubbock Texas tornado history tornadoes city rank 83"
+  },
+  {
+    "title": "Tornadoes in Laredo",
+    "path": "/tornadoes-in-laredo/",
+    "description": "A researched guide to the tornado history of Laredo, Texas, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Laredo Texas tornado history tornadoes city rank 84"
+  },
+  {
+    "title": "A History of Tornadoes in Laredo",
+    "path": "/history-of-tornadoes-in-laredo/",
+    "description": "How Laredo, Texas's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Laredo Texas tornado history tornadoes city rank 84"
+  },
+  {
+    "title": "Tornadoes in Port St. Lucie",
+    "path": "/tornadoes-in-port-st-lucie/",
+    "description": "A researched guide to the tornado history of Port St. Lucie, Florida, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Port St. Lucie Florida tornado history tornadoes city rank 85"
+  },
+  {
+    "title": "A History of Tornadoes in Port St. Lucie",
+    "path": "/history-of-tornadoes-in-port-st-lucie/",
+    "description": "How Port St. Lucie, Florida's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Port St. Lucie Florida tornado history tornadoes city rank 85"
+  },
+  {
+    "title": "Tornadoes in St. Petersburg",
+    "path": "/tornadoes-in-st-petersburg/",
+    "description": "A researched guide to the tornado history of St. Petersburg, Florida, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "St. Petersburg Florida tornado history tornadoes city rank 86"
+  },
+  {
+    "title": "A History of Tornadoes in St. Petersburg",
+    "path": "/history-of-tornadoes-in-st-petersburg/",
+    "description": "How St. Petersburg, Florida's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "St. Petersburg Florida tornado history tornadoes city rank 86"
+  },
+  {
+    "title": "Tornadoes in Toledo",
+    "path": "/tornadoes-in-toledo/",
+    "description": "A researched guide to the tornado history of Toledo, Ohio, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Toledo Ohio tornado history tornadoes city rank 87"
+  },
+  {
+    "title": "A History of Tornadoes in Toledo",
+    "path": "/history-of-tornadoes-in-toledo/",
+    "description": "How Toledo, Ohio's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Toledo Ohio tornado history tornadoes city rank 87"
+  },
+  {
+    "title": "Tornadoes in Glendale",
+    "path": "/tornadoes-in-glendale/",
+    "description": "A researched guide to the tornado history of Glendale, Arizona, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Glendale Arizona tornado history tornadoes city rank 88"
+  },
+  {
+    "title": "A History of Tornadoes in Glendale",
+    "path": "/history-of-tornadoes-in-glendale/",
+    "description": "How Glendale, Arizona's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Glendale Arizona tornado history tornadoes city rank 88"
+  },
+  {
+    "title": "Tornadoes in Winston-Salem",
+    "path": "/tornadoes-in-winston-salem/",
+    "description": "A researched guide to the tornado history of Winston-Salem, North Carolina, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Winston-Salem North Carolina tornado history tornadoes city rank 89"
+  },
+  {
+    "title": "A History of Tornadoes in Winston-Salem",
+    "path": "/history-of-tornadoes-in-winston-salem/",
+    "description": "How Winston-Salem, North Carolina's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Winston-Salem North Carolina tornado history tornadoes city rank 89"
+  },
+  {
+    "title": "Tornadoes in Irving",
+    "path": "/tornadoes-in-irving/",
+    "description": "A researched guide to the tornado history of Irving, Texas, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Irving Texas tornado history tornadoes city rank 90"
+  },
+  {
+    "title": "A History of Tornadoes in Irving",
+    "path": "/history-of-tornadoes-in-irving/",
+    "description": "How Irving, Texas's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Irving Texas tornado history tornadoes city rank 90"
+  },
+  {
+    "title": "Tornadoes in Chesapeake",
+    "path": "/tornadoes-in-chesapeake/",
+    "description": "A researched guide to the tornado history of Chesapeake, Virginia, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Chesapeake Virginia tornado history tornadoes city rank 91"
+  },
+  {
+    "title": "A History of Tornadoes in Chesapeake",
+    "path": "/history-of-tornadoes-in-chesapeake/",
+    "description": "How Chesapeake, Virginia's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Chesapeake Virginia tornado history tornadoes city rank 91"
+  },
+  {
+    "title": "Tornadoes in Garland",
+    "path": "/tornadoes-in-garland/",
+    "description": "A researched guide to the tornado history of Garland, Texas, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Garland Texas tornado history tornadoes city rank 92"
+  },
+  {
+    "title": "A History of Tornadoes in Garland",
+    "path": "/history-of-tornadoes-in-garland/",
+    "description": "How Garland, Texas's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Garland Texas tornado history tornadoes city rank 92"
+  },
+  {
+    "title": "Tornadoes in Scottsdale",
+    "path": "/tornadoes-in-scottsdale/",
+    "description": "A researched guide to the tornado history of Scottsdale, Arizona, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Scottsdale Arizona tornado history tornadoes city rank 93"
+  },
+  {
+    "title": "A History of Tornadoes in Scottsdale",
+    "path": "/history-of-tornadoes-in-scottsdale/",
+    "description": "How Scottsdale, Arizona's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Scottsdale Arizona tornado history tornadoes city rank 93"
+  },
+  {
+    "title": "Tornadoes in Boise",
+    "path": "/tornadoes-in-boise/",
+    "description": "A researched guide to the tornado history of Boise, Idaho, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Boise Idaho tornado history tornadoes city rank 94"
+  },
+  {
+    "title": "A History of Tornadoes in Boise",
+    "path": "/history-of-tornadoes-in-boise/",
+    "description": "How Boise, Idaho's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Boise Idaho tornado history tornadoes city rank 94"
+  },
+  {
+    "title": "Tornadoes in Richmond",
+    "path": "/tornadoes-in-richmond/",
+    "description": "A researched guide to the tornado history of Richmond, Virginia, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Richmond Virginia tornado history tornadoes city rank 95"
+  },
+  {
+    "title": "A History of Tornadoes in Richmond",
+    "path": "/history-of-tornadoes-in-richmond/",
+    "description": "How Richmond, Virginia's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Richmond Virginia tornado history tornadoes city rank 95"
+  },
+  {
+    "title": "Tornadoes in Frisco",
+    "path": "/tornadoes-in-frisco/",
+    "description": "A researched guide to the tornado history of Frisco, Texas, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Frisco Texas tornado history tornadoes city rank 96"
+  },
+  {
+    "title": "A History of Tornadoes in Frisco",
+    "path": "/history-of-tornadoes-in-frisco/",
+    "description": "How Frisco, Texas's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Frisco Texas tornado history tornadoes city rank 96"
+  },
+  {
+    "title": "Tornadoes in Cape Coral",
+    "path": "/tornadoes-in-cape-coral/",
+    "description": "A researched guide to the tornado history of Cape Coral, Florida, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Cape Coral Florida tornado history tornadoes city rank 97"
+  },
+  {
+    "title": "A History of Tornadoes in Cape Coral",
+    "path": "/history-of-tornadoes-in-cape-coral/",
+    "description": "How Cape Coral, Florida's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Cape Coral Florida tornado history tornadoes city rank 97"
+  },
+  {
+    "title": "Tornadoes in McKinney",
+    "path": "/tornadoes-in-mckinney/",
+    "description": "A researched guide to the tornado history of McKinney, Texas, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "McKinney Texas tornado history tornadoes city rank 98"
+  },
+  {
+    "title": "A History of Tornadoes in McKinney",
+    "path": "/history-of-tornadoes-in-mckinney/",
+    "description": "How McKinney, Texas's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "McKinney Texas tornado history tornadoes city rank 98"
+  },
+  {
+    "title": "Tornadoes in Huntsville",
+    "path": "/tornadoes-in-huntsville/",
+    "description": "A researched guide to the tornado history of Huntsville, Alabama, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Huntsville Alabama tornado history tornadoes city rank 99"
+  },
+  {
+    "title": "A History of Tornadoes in Huntsville",
+    "path": "/history-of-tornadoes-in-huntsville/",
+    "description": "How Huntsville, Alabama's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Huntsville Alabama tornado history tornadoes city rank 99"
+  },
+  {
+    "title": "Tornadoes in Norfolk",
+    "path": "/tornadoes-in-norfolk/",
+    "description": "A researched guide to the tornado history of Norfolk, Virginia, with reporting context and official records.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Norfolk Virginia tornado history tornadoes city rank 100"
+  },
+  {
+    "title": "A History of Tornadoes in Norfolk",
+    "path": "/history-of-tornadoes-in-norfolk/",
+    "description": "How Norfolk, Virginia's geography shapes tornado risk, with important city and regional events.",
+    "category": "Top 100 U.S. City Tornado Guide",
+    "keywords": "Norfolk Virginia tornado history tornadoes city rank 100"
+  },
+  {
+    "title": "Tornado Guides for the 100 Largest U.S. Cities",
+    "path": "/top-100-us-city-tornado-guides/",
+    "description": "Two tornado guides for every city in the Census Bureau Vintage 2025 top 100.",
+    "category": "City Tornado Directory",
+    "keywords": "top 100 US cities tornado history guides"
   }
 ];
