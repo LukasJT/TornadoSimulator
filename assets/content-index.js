@@ -10015,5 +10015,12 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Enter a U.S. address to find documented tornado paths within 5, 10, 25 or 50 km from 1950 through 2024.",
     "category": "Interactive Tornado Tool",
     "keywords": "tornadoes near me address local tornado history radius search"
+  },
+  {
+    "title": "Live Tornado Warnings and Risk Maps — North America",
+    "path": "/live-tornado-warnings-north-america/",
+    "description": "Live U.S. and Canadian tornado warnings, recent warning history, and SPC Day 1 and Day 2 tornado-risk maps.",
+    "category": "Interactive Tornado Tool",
+    "keywords": "live tornado warnings map North America today tomorrow tornado risk outlook"
   }
 ];
