@@ -10022,5 +10022,12 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "Live U.S. and Canadian tornado warnings, recent warning history, and SPC Day 1 and Day 2 tornado-risk maps.",
     "category": "Interactive Tornado Tool",
     "keywords": "live tornado warnings map North America today tomorrow tornado risk outlook"
+  },
+  {
+    "title": "Tornado Hub Mobile Alerts",
+    "path": "/mobile-alerts/",
+    "description": "Installable location-aware tornado and severe thunderstorm warning monitor.",
+    "category": "Interactive Tornado Tool",
+    "keywords": "mobile tornado warning app severe thunderstorm nearby alerts notifications"
   }
 ];
