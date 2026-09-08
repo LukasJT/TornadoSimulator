@@ -8517,5 +8517,271 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "How to prepare a yard before severe storms, wind, hail, heavy rain, and tropical systems, including patio furniture, trees, grills, drains, and loose objects.",
     "category": "Home Weather Prep",
     "keywords": "Yard Storm Prep Guide: Patio Furniture, Trees, Trampolines, Grills, and Drainage How to prepare a yard before severe storms, wind, hail, heavy rain, and tropical systems, including patio furniture, trees, grills, drains, and loose objects. yard storm prep guide"
+  },
+  {
+    "title": "Tornadoes in Atlanta",
+    "path": "/tornadoes-in-atlanta/",
+    "description": "A chronological guide to tornadoes in Atlanta, including landmark events, local patterns and official research sources.",
+    "category": "City Tornado History",
+    "keywords": "Tornadoes in Atlanta Georgia tornado history geography notable tornadoes"
+  },
+  {
+    "title": "A History of Tornadoes in Atlanta",
+    "path": "/history-of-tornadoes-in-atlanta/",
+    "description": "How Atlanta's geography shapes tornado risk, with important storms from the local historical record.",
+    "category": "City Tornado History",
+    "keywords": "A History of Tornadoes in Atlanta Georgia tornado history geography notable tornadoes"
+  },
+  {
+    "title": "Tornadoes in Birmingham",
+    "path": "/tornadoes-in-birmingham/",
+    "description": "A chronological guide to tornadoes in Birmingham, including landmark events, local patterns and official research sources.",
+    "category": "City Tornado History",
+    "keywords": "Tornadoes in Birmingham Alabama tornado history geography notable tornadoes"
+  },
+  {
+    "title": "A History of Tornadoes in Birmingham",
+    "path": "/history-of-tornadoes-in-birmingham/",
+    "description": "How Birmingham's geography shapes tornado risk, with important storms from the local historical record.",
+    "category": "City Tornado History",
+    "keywords": "A History of Tornadoes in Birmingham Alabama tornado history geography notable tornadoes"
+  },
+  {
+    "title": "Tornadoes in Chicago",
+    "path": "/tornadoes-in-chicago/",
+    "description": "A chronological guide to tornadoes in Chicago, including landmark events, local patterns and official research sources.",
+    "category": "City Tornado History",
+    "keywords": "Tornadoes in Chicago Illinois tornado history geography notable tornadoes"
+  },
+  {
+    "title": "A History of Tornadoes in Chicago",
+    "path": "/history-of-tornadoes-in-chicago/",
+    "description": "How Chicago's geography shapes tornado risk, with important storms from the local historical record.",
+    "category": "City Tornado History",
+    "keywords": "A History of Tornadoes in Chicago Illinois tornado history geography notable tornadoes"
+  },
+  {
+    "title": "Tornadoes in Dallas–Fort Worth",
+    "path": "/tornadoes-in-dallas-fort-worth/",
+    "description": "A chronological guide to tornadoes in Dallas–Fort Worth, including landmark events, local patterns and official research sources.",
+    "category": "City Tornado History",
+    "keywords": "Tornadoes in Dallas–Fort Worth Texas tornado history geography notable tornadoes"
+  },
+  {
+    "title": "A History of Tornadoes in Dallas–Fort Worth",
+    "path": "/history-of-tornadoes-in-dallas-fort-worth/",
+    "description": "How Dallas–Fort Worth's geography shapes tornado risk, with important storms from the local historical record.",
+    "category": "City Tornado History",
+    "keywords": "A History of Tornadoes in Dallas–Fort Worth Texas tornado history geography notable tornadoes"
+  },
+  {
+    "title": "Tornadoes in Denver",
+    "path": "/tornadoes-in-denver/",
+    "description": "A chronological guide to tornadoes in Denver, including landmark events, local patterns and official research sources.",
+    "category": "City Tornado History",
+    "keywords": "Tornadoes in Denver Colorado tornado history geography notable tornadoes"
+  },
+  {
+    "title": "A History of Tornadoes in Denver",
+    "path": "/history-of-tornadoes-in-denver/",
+    "description": "How Denver's geography shapes tornado risk, with important storms from the local historical record.",
+    "category": "City Tornado History",
+    "keywords": "A History of Tornadoes in Denver Colorado tornado history geography notable tornadoes"
+  },
+  {
+    "title": "Tornadoes in Houston",
+    "path": "/tornadoes-in-houston/",
+    "description": "A chronological guide to tornadoes in Houston, including landmark events, local patterns and official research sources.",
+    "category": "City Tornado History",
+    "keywords": "Tornadoes in Houston Texas tornado history geography notable tornadoes"
+  },
+  {
+    "title": "A History of Tornadoes in Houston",
+    "path": "/history-of-tornadoes-in-houston/",
+    "description": "How Houston's geography shapes tornado risk, with important storms from the local historical record.",
+    "category": "City Tornado History",
+    "keywords": "A History of Tornadoes in Houston Texas tornado history geography notable tornadoes"
+  },
+  {
+    "title": "Tornadoes in Kansas City",
+    "path": "/tornadoes-in-kansas-city/",
+    "description": "A chronological guide to tornadoes in Kansas City, including landmark events, local patterns and official research sources.",
+    "category": "City Tornado History",
+    "keywords": "Tornadoes in Kansas City Missouri–Kansas tornado history geography notable tornadoes"
+  },
+  {
+    "title": "A History of Tornadoes in Kansas City",
+    "path": "/history-of-tornadoes-in-kansas-city/",
+    "description": "How Kansas City's geography shapes tornado risk, with important storms from the local historical record.",
+    "category": "City Tornado History",
+    "keywords": "A History of Tornadoes in Kansas City Missouri–Kansas tornado history geography notable tornadoes"
+  },
+  {
+    "title": "Tornadoes in Memphis",
+    "path": "/tornadoes-in-memphis/",
+    "description": "A chronological guide to tornadoes in Memphis, including landmark events, local patterns and official research sources.",
+    "category": "City Tornado History",
+    "keywords": "Tornadoes in Memphis Tennessee tornado history geography notable tornadoes"
+  },
+  {
+    "title": "A History of Tornadoes in Memphis",
+    "path": "/history-of-tornadoes-in-memphis/",
+    "description": "How Memphis's geography shapes tornado risk, with important storms from the local historical record.",
+    "category": "City Tornado History",
+    "keywords": "A History of Tornadoes in Memphis Tennessee tornado history geography notable tornadoes"
+  },
+  {
+    "title": "Tornadoes in Miami",
+    "path": "/tornadoes-in-miami/",
+    "description": "A chronological guide to tornadoes in Miami, including landmark events, local patterns and official research sources.",
+    "category": "City Tornado History",
+    "keywords": "Tornadoes in Miami Florida tornado history geography notable tornadoes"
+  },
+  {
+    "title": "A History of Tornadoes in Miami",
+    "path": "/history-of-tornadoes-in-miami/",
+    "description": "How Miami's geography shapes tornado risk, with important storms from the local historical record.",
+    "category": "City Tornado History",
+    "keywords": "A History of Tornadoes in Miami Florida tornado history geography notable tornadoes"
+  },
+  {
+    "title": "Tornadoes in Nashville",
+    "path": "/tornadoes-in-nashville/",
+    "description": "A chronological guide to tornadoes in Nashville, including landmark events, local patterns and official research sources.",
+    "category": "City Tornado History",
+    "keywords": "Tornadoes in Nashville Tennessee tornado history geography notable tornadoes"
+  },
+  {
+    "title": "A History of Tornadoes in Nashville",
+    "path": "/history-of-tornadoes-in-nashville/",
+    "description": "How Nashville's geography shapes tornado risk, with important storms from the local historical record.",
+    "category": "City Tornado History",
+    "keywords": "A History of Tornadoes in Nashville Tennessee tornado history geography notable tornadoes"
+  },
+  {
+    "title": "Tornadoes in New Orleans",
+    "path": "/tornadoes-in-new-orleans/",
+    "description": "A chronological guide to tornadoes in New Orleans, including landmark events, local patterns and official research sources.",
+    "category": "City Tornado History",
+    "keywords": "Tornadoes in New Orleans Louisiana tornado history geography notable tornadoes"
+  },
+  {
+    "title": "A History of Tornadoes in New Orleans",
+    "path": "/history-of-tornadoes-in-new-orleans/",
+    "description": "How New Orleans's geography shapes tornado risk, with important storms from the local historical record.",
+    "category": "City Tornado History",
+    "keywords": "A History of Tornadoes in New Orleans Louisiana tornado history geography notable tornadoes"
+  },
+  {
+    "title": "Tornadoes in Oklahoma City",
+    "path": "/tornadoes-in-oklahoma-city/",
+    "description": "A chronological guide to tornadoes in Oklahoma City, including landmark events, local patterns and official research sources.",
+    "category": "City Tornado History",
+    "keywords": "Tornadoes in Oklahoma City Oklahoma tornado history geography notable tornadoes"
+  },
+  {
+    "title": "A History of Tornadoes in Oklahoma City",
+    "path": "/history-of-tornadoes-in-oklahoma-city/",
+    "description": "How Oklahoma City's geography shapes tornado risk, with important storms from the local historical record.",
+    "category": "City Tornado History",
+    "keywords": "A History of Tornadoes in Oklahoma City Oklahoma tornado history geography notable tornadoes"
+  },
+  {
+    "title": "Tornadoes in Orlando",
+    "path": "/tornadoes-in-orlando/",
+    "description": "A chronological guide to tornadoes in Orlando, including landmark events, local patterns and official research sources.",
+    "category": "City Tornado History",
+    "keywords": "Tornadoes in Orlando Florida tornado history geography notable tornadoes"
+  },
+  {
+    "title": "A History of Tornadoes in Orlando",
+    "path": "/history-of-tornadoes-in-orlando/",
+    "description": "How Orlando's geography shapes tornado risk, with important storms from the local historical record.",
+    "category": "City Tornado History",
+    "keywords": "A History of Tornadoes in Orlando Florida tornado history geography notable tornadoes"
+  },
+  {
+    "title": "Tornadoes in Phoenix",
+    "path": "/tornadoes-in-phoenix/",
+    "description": "A chronological guide to tornadoes in Phoenix, including landmark events, local patterns and official research sources.",
+    "category": "City Tornado History",
+    "keywords": "Tornadoes in Phoenix Arizona tornado history geography notable tornadoes"
+  },
+  {
+    "title": "A History of Tornadoes in Phoenix",
+    "path": "/history-of-tornadoes-in-phoenix/",
+    "description": "How Phoenix's geography shapes tornado risk, with important storms from the local historical record.",
+    "category": "City Tornado History",
+    "keywords": "A History of Tornadoes in Phoenix Arizona tornado history geography notable tornadoes"
+  },
+  {
+    "title": "Tornadoes in St. Louis",
+    "path": "/tornadoes-in-st-louis/",
+    "description": "A chronological guide to tornadoes in St. Louis, including landmark events, local patterns and official research sources.",
+    "category": "City Tornado History",
+    "keywords": "Tornadoes in St. Louis Missouri–Illinois tornado history geography notable tornadoes"
+  },
+  {
+    "title": "A History of Tornadoes in St. Louis",
+    "path": "/history-of-tornadoes-in-st-louis/",
+    "description": "How St. Louis's geography shapes tornado risk, with important storms from the local historical record.",
+    "category": "City Tornado History",
+    "keywords": "A History of Tornadoes in St. Louis Missouri–Illinois tornado history geography notable tornadoes"
+  },
+  {
+    "title": "Tornadoes in Topeka",
+    "path": "/tornadoes-in-topeka/",
+    "description": "A chronological guide to tornadoes in Topeka, including landmark events, local patterns and official research sources.",
+    "category": "City Tornado History",
+    "keywords": "Tornadoes in Topeka Kansas tornado history geography notable tornadoes"
+  },
+  {
+    "title": "A History of Tornadoes in Topeka",
+    "path": "/history-of-tornadoes-in-topeka/",
+    "description": "How Topeka's geography shapes tornado risk, with important storms from the local historical record.",
+    "category": "City Tornado History",
+    "keywords": "A History of Tornadoes in Topeka Kansas tornado history geography notable tornadoes"
+  },
+  {
+    "title": "Tornadoes in Waco",
+    "path": "/tornadoes-in-waco/",
+    "description": "A chronological guide to tornadoes in Waco, including landmark events, local patterns and official research sources.",
+    "category": "City Tornado History",
+    "keywords": "Tornadoes in Waco Texas tornado history geography notable tornadoes"
+  },
+  {
+    "title": "A History of Tornadoes in Waco",
+    "path": "/history-of-tornadoes-in-waco/",
+    "description": "How Waco's geography shapes tornado risk, with important storms from the local historical record.",
+    "category": "City Tornado History",
+    "keywords": "A History of Tornadoes in Waco Texas tornado history geography notable tornadoes"
+  },
+  {
+    "title": "Tornadoes in Ottawa–Gatineau",
+    "path": "/tornadoes-in-ottawa-gatineau/",
+    "description": "A chronological guide to tornadoes in Ottawa–Gatineau, including landmark events, local patterns and official research sources.",
+    "category": "City Tornado History",
+    "keywords": "Tornadoes in Ottawa–Gatineau Ontario–Quebec tornado history geography notable tornadoes"
+  },
+  {
+    "title": "A History of Tornadoes in Ottawa–Gatineau",
+    "path": "/history-of-tornadoes-in-ottawa-gatineau/",
+    "description": "How Ottawa–Gatineau's geography shapes tornado risk, with important storms from the local historical record.",
+    "category": "City Tornado History",
+    "keywords": "A History of Tornadoes in Ottawa–Gatineau Ontario–Quebec tornado history geography notable tornadoes"
+  },
+  {
+    "title": "Tornadoes in Toronto",
+    "path": "/tornadoes-in-toronto/",
+    "description": "A chronological guide to tornadoes in Toronto, including landmark events, local patterns and official research sources.",
+    "category": "City Tornado History",
+    "keywords": "Tornadoes in Toronto Ontario tornado history geography notable tornadoes"
+  },
+  {
+    "title": "A History of Tornadoes in Toronto",
+    "path": "/history-of-tornadoes-in-toronto/",
+    "description": "How Toronto's geography shapes tornado risk, with important storms from the local historical record.",
+    "category": "City Tornado History",
+    "keywords": "A History of Tornadoes in Toronto Ontario tornado history geography notable tornadoes"
   }
 ];
