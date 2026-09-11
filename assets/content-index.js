@@ -10120,5 +10120,1412 @@ window.TORNADO_CONTENT_INDEX = [
     "description": "How to find tornado shelter in a hotel, what rooms to avoid, and how travelers can prepare before severe weather arrives.",
     "category": "Travel safety",
     "keywords": "Tornado Safety in a Hotel: What to Ask and Where to Go How to find tornado shelter in a hotel, what rooms to avoid, and how travelers can prepare before severe weather arrives."
+  },
+  {
+    "title": "Does Alabama Get Tornadoes?",
+    "path": "/does-alabama-get-tornadoes/",
+    "description": "Alabama tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Alabama Get Tornadoes? Alabama tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Alabama?",
+    "path": "/when-is-tornado-season-in-alabama/",
+    "description": "Alabama tornado season by month, based on 2,597 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Alabama? Alabama tornado season by month, based on 2,597 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Alabama Tornadoes by Month",
+    "path": "/alabama-tornadoes-by-month/",
+    "description": "Monthly Alabama tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Alabama Tornadoes by Month Monthly Alabama tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Alabama",
+    "path": "/strongest-tornadoes-in-alabama/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Alabama’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Alabama The highest tornado rating, longest recorded path, casualties, and rating caveats in Alabama’s SPC historical archive."
+  },
+  {
+    "title": "Does Alaska Get Tornadoes?",
+    "path": "/does-alaska-get-tornadoes/",
+    "description": "Alaska tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Alaska Get Tornadoes? Alaska tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Alaska?",
+    "path": "/when-is-tornado-season-in-alaska/",
+    "description": "Alaska tornado season by month, based on 5 SPC records from 1959 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Alaska? Alaska tornado season by month, based on 5 SPC records from 1959 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Alaska Tornadoes by Month",
+    "path": "/alaska-tornadoes-by-month/",
+    "description": "Monthly Alaska tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Alaska Tornadoes by Month Monthly Alaska tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Alaska",
+    "path": "/strongest-tornadoes-in-alaska/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Alaska’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Alaska The highest tornado rating, longest recorded path, casualties, and rating caveats in Alaska’s SPC historical archive."
+  },
+  {
+    "title": "Does Arizona Get Tornadoes?",
+    "path": "/does-arizona-get-tornadoes/",
+    "description": "Arizona tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Arizona Get Tornadoes? Arizona tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Arizona?",
+    "path": "/when-is-tornado-season-in-arizona/",
+    "description": "Arizona tornado season by month, based on 291 SPC records from 1952 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Arizona? Arizona tornado season by month, based on 291 SPC records from 1952 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Arizona Tornadoes by Month",
+    "path": "/arizona-tornadoes-by-month/",
+    "description": "Monthly Arizona tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Arizona Tornadoes by Month Monthly Arizona tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Arizona",
+    "path": "/strongest-tornadoes-in-arizona/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Arizona’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Arizona The highest tornado rating, longest recorded path, casualties, and rating caveats in Arizona’s SPC historical archive."
+  },
+  {
+    "title": "Does Arkansas Get Tornadoes?",
+    "path": "/does-arkansas-get-tornadoes/",
+    "description": "Arkansas tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Arkansas Get Tornadoes? Arkansas tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Arkansas?",
+    "path": "/when-is-tornado-season-in-arkansas/",
+    "description": "Arkansas tornado season by month, based on 2,028 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Arkansas? Arkansas tornado season by month, based on 2,028 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Arkansas Tornadoes by Month",
+    "path": "/arkansas-tornadoes-by-month/",
+    "description": "Monthly Arkansas tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Arkansas Tornadoes by Month Monthly Arkansas tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Arkansas",
+    "path": "/strongest-tornadoes-in-arkansas/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Arkansas’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Arkansas The highest tornado rating, longest recorded path, casualties, and rating caveats in Arkansas’s SPC historical archive."
+  },
+  {
+    "title": "Does California Get Tornadoes?",
+    "path": "/does-california-get-tornadoes/",
+    "description": "California tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does California Get Tornadoes? California tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in California?",
+    "path": "/when-is-tornado-season-in-california/",
+    "description": "California tornado season by month, based on 480 SPC records from 1951 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in California? California tornado season by month, based on 480 SPC records from 1951 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "California Tornadoes by Month",
+    "path": "/california-tornadoes-by-month/",
+    "description": "Monthly California tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "California Tornadoes by Month Monthly California tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in California",
+    "path": "/strongest-tornadoes-in-california/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in California’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in California The highest tornado rating, longest recorded path, casualties, and rating caveats in California’s SPC historical archive."
+  },
+  {
+    "title": "Does Colorado Get Tornadoes?",
+    "path": "/does-colorado-get-tornadoes/",
+    "description": "Colorado tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Colorado Get Tornadoes? Colorado tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Colorado?",
+    "path": "/when-is-tornado-season-in-colorado/",
+    "description": "Colorado tornado season by month, based on 2,445 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Colorado? Colorado tornado season by month, based on 2,445 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Colorado Tornadoes by Month",
+    "path": "/colorado-tornadoes-by-month/",
+    "description": "Monthly Colorado tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Colorado Tornadoes by Month Monthly Colorado tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Colorado",
+    "path": "/strongest-tornadoes-in-colorado/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Colorado’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Colorado The highest tornado rating, longest recorded path, casualties, and rating caveats in Colorado’s SPC historical archive."
+  },
+  {
+    "title": "Does Connecticut Get Tornadoes?",
+    "path": "/does-connecticut-get-tornadoes/",
+    "description": "Connecticut tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Connecticut Get Tornadoes? Connecticut tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Connecticut?",
+    "path": "/when-is-tornado-season-in-connecticut/",
+    "description": "Connecticut tornado season by month, based on 125 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Connecticut? Connecticut tornado season by month, based on 125 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Connecticut Tornadoes by Month",
+    "path": "/connecticut-tornadoes-by-month/",
+    "description": "Monthly Connecticut tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Connecticut Tornadoes by Month Monthly Connecticut tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Connecticut",
+    "path": "/strongest-tornadoes-in-connecticut/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Connecticut’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Connecticut The highest tornado rating, longest recorded path, casualties, and rating caveats in Connecticut’s SPC historical archive."
+  },
+  {
+    "title": "Does Delaware Get Tornadoes?",
+    "path": "/does-delaware-get-tornadoes/",
+    "description": "Delaware tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Delaware Get Tornadoes? Delaware tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Delaware?",
+    "path": "/when-is-tornado-season-in-delaware/",
+    "description": "Delaware tornado season by month, based on 73 SPC records from 1954 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Delaware? Delaware tornado season by month, based on 73 SPC records from 1954 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Delaware Tornadoes by Month",
+    "path": "/delaware-tornadoes-by-month/",
+    "description": "Monthly Delaware tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Delaware Tornadoes by Month Monthly Delaware tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Delaware",
+    "path": "/strongest-tornadoes-in-delaware/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Delaware’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Delaware The highest tornado rating, longest recorded path, casualties, and rating caveats in Delaware’s SPC historical archive."
+  },
+  {
+    "title": "Does Florida Get Tornadoes?",
+    "path": "/does-florida-get-tornadoes/",
+    "description": "Florida tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Florida Get Tornadoes? Florida tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Florida?",
+    "path": "/when-is-tornado-season-in-florida/",
+    "description": "Florida tornado season by month, based on 3,733 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Florida? Florida tornado season by month, based on 3,733 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Florida Tornadoes by Month",
+    "path": "/florida-tornadoes-by-month/",
+    "description": "Monthly Florida tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Florida Tornadoes by Month Monthly Florida tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Florida",
+    "path": "/strongest-tornadoes-in-florida/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Florida’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Florida The highest tornado rating, longest recorded path, casualties, and rating caveats in Florida’s SPC historical archive."
+  },
+  {
+    "title": "Does Georgia Get Tornadoes?",
+    "path": "/does-georgia-get-tornadoes/",
+    "description": "Georgia tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Georgia Get Tornadoes? Georgia tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Georgia?",
+    "path": "/when-is-tornado-season-in-georgia/",
+    "description": "Georgia tornado season by month, based on 1,929 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Georgia? Georgia tornado season by month, based on 1,929 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Georgia Tornadoes by Month",
+    "path": "/georgia-tornadoes-by-month/",
+    "description": "Monthly Georgia tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Georgia Tornadoes by Month Monthly Georgia tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Georgia",
+    "path": "/strongest-tornadoes-in-georgia/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Georgia’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Georgia The highest tornado rating, longest recorded path, casualties, and rating caveats in Georgia’s SPC historical archive."
+  },
+  {
+    "title": "Does Hawaii Get Tornadoes?",
+    "path": "/does-hawaii-get-tornadoes/",
+    "description": "Hawaii tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Hawaii Get Tornadoes? Hawaii tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Hawaii?",
+    "path": "/when-is-tornado-season-in-hawaii/",
+    "description": "Hawaii tornado season by month, based on 41 SPC records from 1955 through 2015. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Hawaii? Hawaii tornado season by month, based on 41 SPC records from 1955 through 2015. See the peak and year-round safety context."
+  },
+  {
+    "title": "Hawaii Tornadoes by Month",
+    "path": "/hawaii-tornadoes-by-month/",
+    "description": "Monthly Hawaii tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Hawaii Tornadoes by Month Monthly Hawaii tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Hawaii",
+    "path": "/strongest-tornadoes-in-hawaii/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Hawaii’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Hawaii The highest tornado rating, longest recorded path, casualties, and rating caveats in Hawaii’s SPC historical archive."
+  },
+  {
+    "title": "Does Idaho Get Tornadoes?",
+    "path": "/does-idaho-get-tornadoes/",
+    "description": "Idaho tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Idaho Get Tornadoes? Idaho tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Idaho?",
+    "path": "/when-is-tornado-season-in-idaho/",
+    "description": "Idaho tornado season by month, based on 224 SPC records from 1954 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Idaho? Idaho tornado season by month, based on 224 SPC records from 1954 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Idaho Tornadoes by Month",
+    "path": "/idaho-tornadoes-by-month/",
+    "description": "Monthly Idaho tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Idaho Tornadoes by Month Monthly Idaho tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Idaho",
+    "path": "/strongest-tornadoes-in-idaho/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Idaho’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Idaho The highest tornado rating, longest recorded path, casualties, and rating caveats in Idaho’s SPC historical archive."
+  },
+  {
+    "title": "Does Illinois Get Tornadoes?",
+    "path": "/does-illinois-get-tornadoes/",
+    "description": "Illinois tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Illinois Get Tornadoes? Illinois tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Illinois?",
+    "path": "/when-is-tornado-season-in-illinois/",
+    "description": "Illinois tornado season by month, based on 2,974 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Illinois? Illinois tornado season by month, based on 2,974 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Illinois Tornadoes by Month",
+    "path": "/illinois-tornadoes-by-month/",
+    "description": "Monthly Illinois tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Illinois Tornadoes by Month Monthly Illinois tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Illinois",
+    "path": "/strongest-tornadoes-in-illinois/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Illinois’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Illinois The highest tornado rating, longest recorded path, casualties, and rating caveats in Illinois’s SPC historical archive."
+  },
+  {
+    "title": "Does Indiana Get Tornadoes?",
+    "path": "/does-indiana-get-tornadoes/",
+    "description": "Indiana tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Indiana Get Tornadoes? Indiana tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Indiana?",
+    "path": "/when-is-tornado-season-in-indiana/",
+    "description": "Indiana tornado season by month, based on 1,662 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Indiana? Indiana tornado season by month, based on 1,662 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Indiana Tornadoes by Month",
+    "path": "/indiana-tornadoes-by-month/",
+    "description": "Monthly Indiana tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Indiana Tornadoes by Month Monthly Indiana tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Indiana",
+    "path": "/strongest-tornadoes-in-indiana/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Indiana’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Indiana The highest tornado rating, longest recorded path, casualties, and rating caveats in Indiana’s SPC historical archive."
+  },
+  {
+    "title": "Does Iowa Get Tornadoes?",
+    "path": "/does-iowa-get-tornadoes/",
+    "description": "Iowa tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Iowa Get Tornadoes? Iowa tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Iowa?",
+    "path": "/when-is-tornado-season-in-iowa/",
+    "description": "Iowa tornado season by month, based on 3,011 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Iowa? Iowa tornado season by month, based on 3,011 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Iowa Tornadoes by Month",
+    "path": "/iowa-tornadoes-by-month/",
+    "description": "Monthly Iowa tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Iowa Tornadoes by Month Monthly Iowa tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Iowa",
+    "path": "/strongest-tornadoes-in-iowa/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Iowa’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Iowa The highest tornado rating, longest recorded path, casualties, and rating caveats in Iowa’s SPC historical archive."
+  },
+  {
+    "title": "Does Kansas Get Tornadoes?",
+    "path": "/does-kansas-get-tornadoes/",
+    "description": "Kansas tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Kansas Get Tornadoes? Kansas tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Kansas?",
+    "path": "/when-is-tornado-season-in-kansas/",
+    "description": "Kansas tornado season by month, based on 4,545 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Kansas? Kansas tornado season by month, based on 4,545 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Kansas Tornadoes by Month",
+    "path": "/kansas-tornadoes-by-month/",
+    "description": "Monthly Kansas tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Kansas Tornadoes by Month Monthly Kansas tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Kansas",
+    "path": "/strongest-tornadoes-in-kansas/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Kansas’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Kansas The highest tornado rating, longest recorded path, casualties, and rating caveats in Kansas’s SPC historical archive."
+  },
+  {
+    "title": "Does Kentucky Get Tornadoes?",
+    "path": "/does-kentucky-get-tornadoes/",
+    "description": "Kentucky tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Kentucky Get Tornadoes? Kentucky tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Kentucky?",
+    "path": "/when-is-tornado-season-in-kentucky/",
+    "description": "Kentucky tornado season by month, based on 1,181 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Kentucky? Kentucky tornado season by month, based on 1,181 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Kentucky Tornadoes by Month",
+    "path": "/kentucky-tornadoes-by-month/",
+    "description": "Monthly Kentucky tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Kentucky Tornadoes by Month Monthly Kentucky tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Kentucky",
+    "path": "/strongest-tornadoes-in-kentucky/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Kentucky’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Kentucky The highest tornado rating, longest recorded path, casualties, and rating caveats in Kentucky’s SPC historical archive."
+  },
+  {
+    "title": "Does Louisiana Get Tornadoes?",
+    "path": "/does-louisiana-get-tornadoes/",
+    "description": "Louisiana tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Louisiana Get Tornadoes? Louisiana tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Louisiana?",
+    "path": "/when-is-tornado-season-in-louisiana/",
+    "description": "Louisiana tornado season by month, based on 2,400 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Louisiana? Louisiana tornado season by month, based on 2,400 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Louisiana Tornadoes by Month",
+    "path": "/louisiana-tornadoes-by-month/",
+    "description": "Monthly Louisiana tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Louisiana Tornadoes by Month Monthly Louisiana tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Louisiana",
+    "path": "/strongest-tornadoes-in-louisiana/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Louisiana’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Louisiana The highest tornado rating, longest recorded path, casualties, and rating caveats in Louisiana’s SPC historical archive."
+  },
+  {
+    "title": "Does Maine Get Tornadoes?",
+    "path": "/does-maine-get-tornadoes/",
+    "description": "Maine tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Maine Get Tornadoes? Maine tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Maine?",
+    "path": "/when-is-tornado-season-in-maine/",
+    "description": "Maine tornado season by month, based on 134 SPC records from 1953 through 2020. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Maine? Maine tornado season by month, based on 134 SPC records from 1953 through 2020. See the peak and year-round safety context."
+  },
+  {
+    "title": "Maine Tornadoes by Month",
+    "path": "/maine-tornadoes-by-month/",
+    "description": "Monthly Maine tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Maine Tornadoes by Month Monthly Maine tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Maine",
+    "path": "/strongest-tornadoes-in-maine/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Maine’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Maine The highest tornado rating, longest recorded path, casualties, and rating caveats in Maine’s SPC historical archive."
+  },
+  {
+    "title": "Does Maryland Get Tornadoes?",
+    "path": "/does-maryland-get-tornadoes/",
+    "description": "Maryland tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Maryland Get Tornadoes? Maryland tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Maryland?",
+    "path": "/when-is-tornado-season-in-maryland/",
+    "description": "Maryland tornado season by month, based on 409 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Maryland? Maryland tornado season by month, based on 409 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Maryland Tornadoes by Month",
+    "path": "/maryland-tornadoes-by-month/",
+    "description": "Monthly Maryland tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Maryland Tornadoes by Month Monthly Maryland tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Maryland",
+    "path": "/strongest-tornadoes-in-maryland/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Maryland’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Maryland The highest tornado rating, longest recorded path, casualties, and rating caveats in Maryland’s SPC historical archive."
+  },
+  {
+    "title": "Does Massachusetts Get Tornadoes?",
+    "path": "/does-massachusetts-get-tornadoes/",
+    "description": "Massachusetts tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Massachusetts Get Tornadoes? Massachusetts tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Massachusetts?",
+    "path": "/when-is-tornado-season-in-massachusetts/",
+    "description": "Massachusetts tornado season by month, based on 187 SPC records from 1951 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Massachusetts? Massachusetts tornado season by month, based on 187 SPC records from 1951 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Massachusetts Tornadoes by Month",
+    "path": "/massachusetts-tornadoes-by-month/",
+    "description": "Monthly Massachusetts tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Massachusetts Tornadoes by Month Monthly Massachusetts tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Massachusetts",
+    "path": "/strongest-tornadoes-in-massachusetts/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Massachusetts’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Massachusetts The highest tornado rating, longest recorded path, casualties, and rating caveats in Massachusetts’s SPC historical archive."
+  },
+  {
+    "title": "Does Michigan Get Tornadoes?",
+    "path": "/does-michigan-get-tornadoes/",
+    "description": "Michigan tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Michigan Get Tornadoes? Michigan tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Michigan?",
+    "path": "/when-is-tornado-season-in-michigan/",
+    "description": "Michigan tornado season by month, based on 1,106 SPC records from 1951 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Michigan? Michigan tornado season by month, based on 1,106 SPC records from 1951 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Michigan Tornadoes by Month",
+    "path": "/michigan-tornadoes-by-month/",
+    "description": "Monthly Michigan tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Michigan Tornadoes by Month Monthly Michigan tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Michigan",
+    "path": "/strongest-tornadoes-in-michigan/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Michigan’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Michigan The highest tornado rating, longest recorded path, casualties, and rating caveats in Michigan’s SPC historical archive."
+  },
+  {
+    "title": "Does Minnesota Get Tornadoes?",
+    "path": "/does-minnesota-get-tornadoes/",
+    "description": "Minnesota tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Minnesota Get Tornadoes? Minnesota tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Minnesota?",
+    "path": "/when-is-tornado-season-in-minnesota/",
+    "description": "Minnesota tornado season by month, based on 2,148 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Minnesota? Minnesota tornado season by month, based on 2,148 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Minnesota Tornadoes by Month",
+    "path": "/minnesota-tornadoes-by-month/",
+    "description": "Monthly Minnesota tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Minnesota Tornadoes by Month Monthly Minnesota tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Minnesota",
+    "path": "/strongest-tornadoes-in-minnesota/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Minnesota’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Minnesota The highest tornado rating, longest recorded path, casualties, and rating caveats in Minnesota’s SPC historical archive."
+  },
+  {
+    "title": "Does Mississippi Get Tornadoes?",
+    "path": "/does-mississippi-get-tornadoes/",
+    "description": "Mississippi tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Mississippi Get Tornadoes? Mississippi tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Mississippi?",
+    "path": "/when-is-tornado-season-in-mississippi/",
+    "description": "Mississippi tornado season by month, based on 2,731 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Mississippi? Mississippi tornado season by month, based on 2,731 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Mississippi Tornadoes by Month",
+    "path": "/mississippi-tornadoes-by-month/",
+    "description": "Monthly Mississippi tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Mississippi Tornadoes by Month Monthly Mississippi tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Mississippi",
+    "path": "/strongest-tornadoes-in-mississippi/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Mississippi’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Mississippi The highest tornado rating, longest recorded path, casualties, and rating caveats in Mississippi’s SPC historical archive."
+  },
+  {
+    "title": "Does Missouri Get Tornadoes?",
+    "path": "/does-missouri-get-tornadoes/",
+    "description": "Missouri tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Missouri Get Tornadoes? Missouri tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Missouri?",
+    "path": "/when-is-tornado-season-in-missouri/",
+    "description": "Missouri tornado season by month, based on 2,555 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Missouri? Missouri tornado season by month, based on 2,555 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Missouri Tornadoes by Month",
+    "path": "/missouri-tornadoes-by-month/",
+    "description": "Monthly Missouri tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Missouri Tornadoes by Month Monthly Missouri tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Missouri",
+    "path": "/strongest-tornadoes-in-missouri/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Missouri’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Missouri The highest tornado rating, longest recorded path, casualties, and rating caveats in Missouri’s SPC historical archive."
+  },
+  {
+    "title": "Does Montana Get Tornadoes?",
+    "path": "/does-montana-get-tornadoes/",
+    "description": "Montana tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Montana Get Tornadoes? Montana tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Montana?",
+    "path": "/when-is-tornado-season-in-montana/",
+    "description": "Montana tornado season by month, based on 444 SPC records from 1952 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Montana? Montana tornado season by month, based on 444 SPC records from 1952 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Montana Tornadoes by Month",
+    "path": "/montana-tornadoes-by-month/",
+    "description": "Monthly Montana tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Montana Tornadoes by Month Monthly Montana tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Montana",
+    "path": "/strongest-tornadoes-in-montana/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Montana’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Montana The highest tornado rating, longest recorded path, casualties, and rating caveats in Montana’s SPC historical archive."
+  },
+  {
+    "title": "Does Nebraska Get Tornadoes?",
+    "path": "/does-nebraska-get-tornadoes/",
+    "description": "Nebraska tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Nebraska Get Tornadoes? Nebraska tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Nebraska?",
+    "path": "/when-is-tornado-season-in-nebraska/",
+    "description": "Nebraska tornado season by month, based on 3,155 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Nebraska? Nebraska tornado season by month, based on 3,155 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Nebraska Tornadoes by Month",
+    "path": "/nebraska-tornadoes-by-month/",
+    "description": "Monthly Nebraska tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Nebraska Tornadoes by Month Monthly Nebraska tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Nebraska",
+    "path": "/strongest-tornadoes-in-nebraska/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Nebraska’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Nebraska The highest tornado rating, longest recorded path, casualties, and rating caveats in Nebraska’s SPC historical archive."
+  },
+  {
+    "title": "Does Nevada Get Tornadoes?",
+    "path": "/does-nevada-get-tornadoes/",
+    "description": "Nevada tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Nevada Get Tornadoes? Nevada tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Nevada?",
+    "path": "/when-is-tornado-season-in-nevada/",
+    "description": "Nevada tornado season by month, based on 96 SPC records from 1962 through 2023. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Nevada? Nevada tornado season by month, based on 96 SPC records from 1962 through 2023. See the peak and year-round safety context."
+  },
+  {
+    "title": "Nevada Tornadoes by Month",
+    "path": "/nevada-tornadoes-by-month/",
+    "description": "Monthly Nevada tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Nevada Tornadoes by Month Monthly Nevada tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Nevada",
+    "path": "/strongest-tornadoes-in-nevada/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Nevada’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Nevada The highest tornado rating, longest recorded path, casualties, and rating caveats in Nevada’s SPC historical archive."
+  },
+  {
+    "title": "Does New Hampshire Get Tornadoes?",
+    "path": "/does-new-hampshire-get-tornadoes/",
+    "description": "New Hampshire tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does New Hampshire Get Tornadoes? New Hampshire tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in New Hampshire?",
+    "path": "/when-is-tornado-season-in-new-hampshire/",
+    "description": "New Hampshire tornado season by month, based on 99 SPC records from 1951 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in New Hampshire? New Hampshire tornado season by month, based on 99 SPC records from 1951 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "New Hampshire Tornadoes by Month",
+    "path": "/new-hampshire-tornadoes-by-month/",
+    "description": "Monthly New Hampshire tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "New Hampshire Tornadoes by Month Monthly New Hampshire tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in New Hampshire",
+    "path": "/strongest-tornadoes-in-new-hampshire/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in New Hampshire’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in New Hampshire The highest tornado rating, longest recorded path, casualties, and rating caveats in New Hampshire’s SPC historical archive."
+  },
+  {
+    "title": "Does New Jersey Get Tornadoes?",
+    "path": "/does-new-jersey-get-tornadoes/",
+    "description": "New Jersey tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does New Jersey Get Tornadoes? New Jersey tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in New Jersey?",
+    "path": "/when-is-tornado-season-in-new-jersey/",
+    "description": "New Jersey tornado season by month, based on 186 SPC records from 1951 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in New Jersey? New Jersey tornado season by month, based on 186 SPC records from 1951 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "New Jersey Tornadoes by Month",
+    "path": "/new-jersey-tornadoes-by-month/",
+    "description": "Monthly New Jersey tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "New Jersey Tornadoes by Month Monthly New Jersey tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in New Jersey",
+    "path": "/strongest-tornadoes-in-new-jersey/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in New Jersey’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in New Jersey The highest tornado rating, longest recorded path, casualties, and rating caveats in New Jersey’s SPC historical archive."
+  },
+  {
+    "title": "Does New Mexico Get Tornadoes?",
+    "path": "/does-new-mexico-get-tornadoes/",
+    "description": "New Mexico tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does New Mexico Get Tornadoes? New Mexico tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in New Mexico?",
+    "path": "/when-is-tornado-season-in-new-mexico/",
+    "description": "New Mexico tornado season by month, based on 661 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in New Mexico? New Mexico tornado season by month, based on 661 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "New Mexico Tornadoes by Month",
+    "path": "/new-mexico-tornadoes-by-month/",
+    "description": "Monthly New Mexico tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "New Mexico Tornadoes by Month Monthly New Mexico tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in New Mexico",
+    "path": "/strongest-tornadoes-in-new-mexico/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in New Mexico’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in New Mexico The highest tornado rating, longest recorded path, casualties, and rating caveats in New Mexico’s SPC historical archive."
+  },
+  {
+    "title": "Does New York Get Tornadoes?",
+    "path": "/does-new-york-get-tornadoes/",
+    "description": "New York tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does New York Get Tornadoes? New York tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in New York?",
+    "path": "/when-is-tornado-season-in-new-york/",
+    "description": "New York tornado season by month, based on 525 SPC records from 1952 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in New York? New York tornado season by month, based on 525 SPC records from 1952 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "New York Tornadoes by Month",
+    "path": "/new-york-tornadoes-by-month/",
+    "description": "Monthly New York tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "New York Tornadoes by Month Monthly New York tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in New York",
+    "path": "/strongest-tornadoes-in-new-york/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in New York’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in New York The highest tornado rating, longest recorded path, casualties, and rating caveats in New York’s SPC historical archive."
+  },
+  {
+    "title": "Does North Carolina Get Tornadoes?",
+    "path": "/does-north-carolina-get-tornadoes/",
+    "description": "North Carolina tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does North Carolina Get Tornadoes? North Carolina tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in North Carolina?",
+    "path": "/when-is-tornado-season-in-north-carolina/",
+    "description": "North Carolina tornado season by month, based on 1,515 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in North Carolina? North Carolina tornado season by month, based on 1,515 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "North Carolina Tornadoes by Month",
+    "path": "/north-carolina-tornadoes-by-month/",
+    "description": "Monthly North Carolina tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "North Carolina Tornadoes by Month Monthly North Carolina tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in North Carolina",
+    "path": "/strongest-tornadoes-in-north-carolina/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in North Carolina’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in North Carolina The highest tornado rating, longest recorded path, casualties, and rating caveats in North Carolina’s SPC historical archive."
+  },
+  {
+    "title": "Does North Dakota Get Tornadoes?",
+    "path": "/does-north-dakota-get-tornadoes/",
+    "description": "North Dakota tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does North Dakota Get Tornadoes? North Dakota tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in North Dakota?",
+    "path": "/when-is-tornado-season-in-north-dakota/",
+    "description": "North Dakota tornado season by month, based on 1,654 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in North Dakota? North Dakota tornado season by month, based on 1,654 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "North Dakota Tornadoes by Month",
+    "path": "/north-dakota-tornadoes-by-month/",
+    "description": "Monthly North Dakota tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "North Dakota Tornadoes by Month Monthly North Dakota tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in North Dakota",
+    "path": "/strongest-tornadoes-in-north-dakota/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in North Dakota’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in North Dakota The highest tornado rating, longest recorded path, casualties, and rating caveats in North Dakota’s SPC historical archive."
+  },
+  {
+    "title": "Does Ohio Get Tornadoes?",
+    "path": "/does-ohio-get-tornadoes/",
+    "description": "Ohio tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Ohio Get Tornadoes? Ohio tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Ohio?",
+    "path": "/when-is-tornado-season-in-ohio/",
+    "description": "Ohio tornado season by month, based on 1,352 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Ohio? Ohio tornado season by month, based on 1,352 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Ohio Tornadoes by Month",
+    "path": "/ohio-tornadoes-by-month/",
+    "description": "Monthly Ohio tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Ohio Tornadoes by Month Monthly Ohio tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Ohio",
+    "path": "/strongest-tornadoes-in-ohio/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Ohio’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Ohio The highest tornado rating, longest recorded path, casualties, and rating caveats in Ohio’s SPC historical archive."
+  },
+  {
+    "title": "Does Oklahoma Get Tornadoes?",
+    "path": "/does-oklahoma-get-tornadoes/",
+    "description": "Oklahoma tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Oklahoma Get Tornadoes? Oklahoma tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Oklahoma?",
+    "path": "/when-is-tornado-season-in-oklahoma/",
+    "description": "Oklahoma tornado season by month, based on 4,372 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Oklahoma? Oklahoma tornado season by month, based on 4,372 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Oklahoma Tornadoes by Month",
+    "path": "/oklahoma-tornadoes-by-month/",
+    "description": "Monthly Oklahoma tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Oklahoma Tornadoes by Month Monthly Oklahoma tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Oklahoma",
+    "path": "/strongest-tornadoes-in-oklahoma/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Oklahoma’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Oklahoma The highest tornado rating, longest recorded path, casualties, and rating caveats in Oklahoma’s SPC historical archive."
+  },
+  {
+    "title": "Does Oregon Get Tornadoes?",
+    "path": "/does-oregon-get-tornadoes/",
+    "description": "Oregon tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Oregon Get Tornadoes? Oregon tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Oregon?",
+    "path": "/when-is-tornado-season-in-oregon/",
+    "description": "Oregon tornado season by month, based on 132 SPC records from 1951 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Oregon? Oregon tornado season by month, based on 132 SPC records from 1951 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Oregon Tornadoes by Month",
+    "path": "/oregon-tornadoes-by-month/",
+    "description": "Monthly Oregon tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Oregon Tornadoes by Month Monthly Oregon tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Oregon",
+    "path": "/strongest-tornadoes-in-oregon/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Oregon’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Oregon The highest tornado rating, longest recorded path, casualties, and rating caveats in Oregon’s SPC historical archive."
+  },
+  {
+    "title": "Does Pennsylvania Get Tornadoes?",
+    "path": "/does-pennsylvania-get-tornadoes/",
+    "description": "Pennsylvania tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Pennsylvania Get Tornadoes? Pennsylvania tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Pennsylvania?",
+    "path": "/when-is-tornado-season-in-pennsylvania/",
+    "description": "Pennsylvania tornado season by month, based on 956 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Pennsylvania? Pennsylvania tornado season by month, based on 956 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Pennsylvania Tornadoes by Month",
+    "path": "/pennsylvania-tornadoes-by-month/",
+    "description": "Monthly Pennsylvania tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Pennsylvania Tornadoes by Month Monthly Pennsylvania tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Pennsylvania",
+    "path": "/strongest-tornadoes-in-pennsylvania/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Pennsylvania’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Pennsylvania The highest tornado rating, longest recorded path, casualties, and rating caveats in Pennsylvania’s SPC historical archive."
+  },
+  {
+    "title": "Does Rhode Island Get Tornadoes?",
+    "path": "/does-rhode-island-get-tornadoes/",
+    "description": "Rhode Island tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Rhode Island Get Tornadoes? Rhode Island tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Rhode Island?",
+    "path": "/when-is-tornado-season-in-rhode-island/",
+    "description": "Rhode Island tornado season by month, based on 17 SPC records from 1972 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Rhode Island? Rhode Island tornado season by month, based on 17 SPC records from 1972 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Rhode Island Tornadoes by Month",
+    "path": "/rhode-island-tornadoes-by-month/",
+    "description": "Monthly Rhode Island tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Rhode Island Tornadoes by Month Monthly Rhode Island tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Rhode Island",
+    "path": "/strongest-tornadoes-in-rhode-island/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Rhode Island’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Rhode Island The highest tornado rating, longest recorded path, casualties, and rating caveats in Rhode Island’s SPC historical archive."
+  },
+  {
+    "title": "Does South Carolina Get Tornadoes?",
+    "path": "/does-south-carolina-get-tornadoes/",
+    "description": "South Carolina tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does South Carolina Get Tornadoes? South Carolina tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in South Carolina?",
+    "path": "/when-is-tornado-season-in-south-carolina/",
+    "description": "South Carolina tornado season by month, based on 1,206 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in South Carolina? South Carolina tornado season by month, based on 1,206 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "South Carolina Tornadoes by Month",
+    "path": "/south-carolina-tornadoes-by-month/",
+    "description": "Monthly South Carolina tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "South Carolina Tornadoes by Month Monthly South Carolina tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in South Carolina",
+    "path": "/strongest-tornadoes-in-south-carolina/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in South Carolina’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in South Carolina The highest tornado rating, longest recorded path, casualties, and rating caveats in South Carolina’s SPC historical archive."
+  },
+  {
+    "title": "Does South Dakota Get Tornadoes?",
+    "path": "/does-south-dakota-get-tornadoes/",
+    "description": "South Dakota tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does South Dakota Get Tornadoes? South Dakota tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in South Dakota?",
+    "path": "/when-is-tornado-season-in-south-dakota/",
+    "description": "South Dakota tornado season by month, based on 1,924 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in South Dakota? South Dakota tornado season by month, based on 1,924 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "South Dakota Tornadoes by Month",
+    "path": "/south-dakota-tornadoes-by-month/",
+    "description": "Monthly South Dakota tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "South Dakota Tornadoes by Month Monthly South Dakota tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in South Dakota",
+    "path": "/strongest-tornadoes-in-south-dakota/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in South Dakota’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in South Dakota The highest tornado rating, longest recorded path, casualties, and rating caveats in South Dakota’s SPC historical archive."
+  },
+  {
+    "title": "Does Tennessee Get Tornadoes?",
+    "path": "/does-tennessee-get-tornadoes/",
+    "description": "Tennessee tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Tennessee Get Tornadoes? Tennessee tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Tennessee?",
+    "path": "/when-is-tornado-season-in-tennessee/",
+    "description": "Tennessee tornado season by month, based on 1,392 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Tennessee? Tennessee tornado season by month, based on 1,392 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Tennessee Tornadoes by Month",
+    "path": "/tennessee-tornadoes-by-month/",
+    "description": "Monthly Tennessee tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Tennessee Tornadoes by Month Monthly Tennessee tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Tennessee",
+    "path": "/strongest-tornadoes-in-tennessee/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Tennessee’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Tennessee The highest tornado rating, longest recorded path, casualties, and rating caveats in Tennessee’s SPC historical archive."
+  },
+  {
+    "title": "Does Texas Get Tornadoes?",
+    "path": "/does-texas-get-tornadoes/",
+    "description": "Texas tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Texas Get Tornadoes? Texas tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Texas?",
+    "path": "/when-is-tornado-season-in-texas/",
+    "description": "Texas tornado season by month, based on 9,476 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Texas? Texas tornado season by month, based on 9,476 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Texas Tornadoes by Month",
+    "path": "/texas-tornadoes-by-month/",
+    "description": "Monthly Texas tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Texas Tornadoes by Month Monthly Texas tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Texas",
+    "path": "/strongest-tornadoes-in-texas/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Texas’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Texas The highest tornado rating, longest recorded path, casualties, and rating caveats in Texas’s SPC historical archive."
+  },
+  {
+    "title": "Does Utah Get Tornadoes?",
+    "path": "/does-utah-get-tornadoes/",
+    "description": "Utah tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Utah Get Tornadoes? Utah tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Utah?",
+    "path": "/when-is-tornado-season-in-utah/",
+    "description": "Utah tornado season by month, based on 137 SPC records from 1953 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Utah? Utah tornado season by month, based on 137 SPC records from 1953 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Utah Tornadoes by Month",
+    "path": "/utah-tornadoes-by-month/",
+    "description": "Monthly Utah tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Utah Tornadoes by Month Monthly Utah tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Utah",
+    "path": "/strongest-tornadoes-in-utah/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Utah’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Utah The highest tornado rating, longest recorded path, casualties, and rating caveats in Utah’s SPC historical archive."
+  },
+  {
+    "title": "Does Vermont Get Tornadoes?",
+    "path": "/does-vermont-get-tornadoes/",
+    "description": "Vermont tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Vermont Get Tornadoes? Vermont tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Vermont?",
+    "path": "/when-is-tornado-season-in-vermont/",
+    "description": "Vermont tornado season by month, based on 49 SPC records from 1953 through 2023. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Vermont? Vermont tornado season by month, based on 49 SPC records from 1953 through 2023. See the peak and year-round safety context."
+  },
+  {
+    "title": "Vermont Tornadoes by Month",
+    "path": "/vermont-tornadoes-by-month/",
+    "description": "Monthly Vermont tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Vermont Tornadoes by Month Monthly Vermont tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Vermont",
+    "path": "/strongest-tornadoes-in-vermont/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Vermont’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Vermont The highest tornado rating, longest recorded path, casualties, and rating caveats in Vermont’s SPC historical archive."
+  },
+  {
+    "title": "Does Virginia Get Tornadoes?",
+    "path": "/does-virginia-get-tornadoes/",
+    "description": "Virginia tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Virginia Get Tornadoes? Virginia tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Virginia?",
+    "path": "/when-is-tornado-season-in-virginia/",
+    "description": "Virginia tornado season by month, based on 821 SPC records from 1951 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Virginia? Virginia tornado season by month, based on 821 SPC records from 1951 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Virginia Tornadoes by Month",
+    "path": "/virginia-tornadoes-by-month/",
+    "description": "Monthly Virginia tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Virginia Tornadoes by Month Monthly Virginia tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Virginia",
+    "path": "/strongest-tornadoes-in-virginia/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Virginia’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Virginia The highest tornado rating, longest recorded path, casualties, and rating caveats in Virginia’s SPC historical archive."
+  },
+  {
+    "title": "Does Washington Get Tornadoes?",
+    "path": "/does-washington-get-tornadoes/",
+    "description": "Washington tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Washington Get Tornadoes? Washington tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Washington?",
+    "path": "/when-is-tornado-season-in-washington/",
+    "description": "Washington tornado season by month, based on 134 SPC records from 1954 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Washington? Washington tornado season by month, based on 134 SPC records from 1954 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Washington Tornadoes by Month",
+    "path": "/washington-tornadoes-by-month/",
+    "description": "Monthly Washington tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Washington Tornadoes by Month Monthly Washington tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Washington",
+    "path": "/strongest-tornadoes-in-washington/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Washington’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Washington The highest tornado rating, longest recorded path, casualties, and rating caveats in Washington’s SPC historical archive."
+  },
+  {
+    "title": "Does West Virginia Get Tornadoes?",
+    "path": "/does-west-virginia-get-tornadoes/",
+    "description": "West Virginia tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does West Virginia Get Tornadoes? West Virginia tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in West Virginia?",
+    "path": "/when-is-tornado-season-in-west-virginia/",
+    "description": "West Virginia tornado season by month, based on 164 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in West Virginia? West Virginia tornado season by month, based on 164 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "West Virginia Tornadoes by Month",
+    "path": "/west-virginia-tornadoes-by-month/",
+    "description": "Monthly West Virginia tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "West Virginia Tornadoes by Month Monthly West Virginia tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in West Virginia",
+    "path": "/strongest-tornadoes-in-west-virginia/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in West Virginia’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in West Virginia The highest tornado rating, longest recorded path, casualties, and rating caveats in West Virginia’s SPC historical archive."
+  },
+  {
+    "title": "Does Wisconsin Get Tornadoes?",
+    "path": "/does-wisconsin-get-tornadoes/",
+    "description": "Wisconsin tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Wisconsin Get Tornadoes? Wisconsin tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Wisconsin?",
+    "path": "/when-is-tornado-season-in-wisconsin/",
+    "description": "Wisconsin tornado season by month, based on 1,557 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Wisconsin? Wisconsin tornado season by month, based on 1,557 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Wisconsin Tornadoes by Month",
+    "path": "/wisconsin-tornadoes-by-month/",
+    "description": "Monthly Wisconsin tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Wisconsin Tornadoes by Month Monthly Wisconsin tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Wisconsin",
+    "path": "/strongest-tornadoes-in-wisconsin/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Wisconsin’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Wisconsin The highest tornado rating, longest recorded path, casualties, and rating caveats in Wisconsin’s SPC historical archive."
+  },
+  {
+    "title": "Does Wyoming Get Tornadoes?",
+    "path": "/does-wyoming-get-tornadoes/",
+    "description": "Wyoming tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive.",
+    "category": "State tornado data",
+    "keywords": "Does Wyoming Get Tornadoes? Wyoming tornado frequency, peak month, strongest recorded rating, and historical totals from the official SPC archive."
+  },
+  {
+    "title": "When Is Tornado Season in Wyoming?",
+    "path": "/when-is-tornado-season-in-wyoming/",
+    "description": "Wyoming tornado season by month, based on 739 SPC records from 1950 through 2024. See the peak and year-round safety context.",
+    "category": "State tornado data",
+    "keywords": "When Is Tornado Season in Wyoming? Wyoming tornado season by month, based on 739 SPC records from 1950 through 2024. See the peak and year-round safety context."
+  },
+  {
+    "title": "Wyoming Tornadoes by Month",
+    "path": "/wyoming-tornadoes-by-month/",
+    "description": "Monthly Wyoming tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes.",
+    "category": "State tornado data",
+    "keywords": "Wyoming Tornadoes by Month Monthly Wyoming tornado counts from the SPC historical archive, with a chart, peak month, quietest month, and interpretation notes."
+  },
+  {
+    "title": "Strongest Tornadoes Recorded in Wyoming",
+    "path": "/strongest-tornadoes-in-wyoming/",
+    "description": "The highest tornado rating, longest recorded path, casualties, and rating caveats in Wyoming’s SPC historical archive.",
+    "category": "State tornado data",
+    "keywords": "Strongest Tornadoes Recorded in Wyoming The highest tornado rating, longest recorded path, casualties, and rating caveats in Wyoming’s SPC historical archive."
+  },
+  {
+    "title": "Tornado Data for Every U.S. State",
+    "path": "/state-tornado-data/",
+    "description": "Explore 200 state tornado guides built from the official NOAA/SPC historical archive: frequency, seasonality, monthly counts, and strongest recorded ratings.",
+    "category": "State tornado data",
+    "keywords": "Tornado Data for Every U.S. State Explore 200 state tornado guides built from the official NOAA/SPC historical archive: frequency, seasonality, monthly counts, and strongest recorded ratings."
   }
 ];
