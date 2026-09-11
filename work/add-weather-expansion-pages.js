@@ -467,7 +467,7 @@ p { margin-bottom:16px; font-size:17px; }
   <div class="quick-answer"><strong>Quick answer:</strong> ${escapeHtml(page.quick)}</div>
   <div class="inline-ad">
     <script type="text/javascript">atOptions={'key':'1fe957d85bb2cf92027de309038cd17b','format':'iframe','height':250,'width':300,'params':{}};</script>
-    <script type="text/javascript" src="https://www.highperformanceformat.com/1fe957d85bb2cf92027de309038cd17b/invoke.js"></script>
+    <script type="text/javascript" src="https://removed-ad-network.invalid/1fe957d85bb2cf92027de309038cd17b/invoke.js"></script>
   </div>
 ${sections}
   <section class="faq">

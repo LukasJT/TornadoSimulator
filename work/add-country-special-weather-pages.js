@@ -663,7 +663,7 @@ function adSlot() {
 <script type="text/javascript">
   atOptions = {'key':'${ad300Key}','format':'iframe','height':250,'width':300,'params':{}};
 </script>
-<script type="text/javascript" src="https://www.highperformanceformat.com/${ad300Key}/invoke.js"></script>
+<script type="text/javascript" src="https://removed-ad-network.invalid/${ad300Key}/invoke.js"></script>
 </div>`;
 }
 
@@ -672,7 +672,7 @@ function sideAd() {
 <script type="text/javascript">
   atOptions = {'key':'${sideRailKey}','format':'iframe','height':600,'width':160,'params':{}};
 </script>
-<script type="text/javascript" src="https://www.highperformanceformat.com/${sideRailKey}/invoke.js"></script>
+<script type="text/javascript" src="https://removed-ad-network.invalid/${sideRailKey}/invoke.js"></script>
 </aside>`;
 }
 

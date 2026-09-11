@@ -1,136 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Interactive Tornado Alley Map — US Tornado Statistics by State</title>
-<meta name="description" content="Interactive US tornado map: click any state to see annual tornado averages, deadliest historic events, EF5 counts, and safety ranking. Highlights Tornado Alley and Dixie Alley. Data sourced from NOAA Storm Prediction Center." />
-<meta name="twitter:description" content="Interactive US tornado map: click any state to see annual tornado averages, deadliest historic events, EF5 counts, and safety ranking. Highlights Tornado Alley and Dixie Alley. Data sourced from NOAA Storm Prediction Center." />
-<meta name="twitter:title" content="Interactive Tornado Alley Map — US Tornado Statistics by State" />
-<meta name="twitter:card" content="summary" />
-<meta property="og:site_name" content="Tornado Hub" />
-<meta name="keywords" content="tornado alley map, tornado alley, dixie alley, US tornado map, tornadoes by state, tornado statistics, tornado risk map, tornado belt" />
-<meta property="og:title" content="Interactive Tornado Alley Map — US Tornado Statistics by State" />
-<meta property="og:description" content="Interactive US tornado map: click any state to see annual tornado averages, deadliest historic events, EF5 counts, and safety ranking. Highlights Tornado Alley and Dixie Alley. Data sourced from NOAA Storm Prediction Center." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.tornadosimulator.net/tornado-alley-map/" />
-<link rel="canonical" href="https://www.tornadosimulator.net/tornado-alley-map/" />
-<link rel="icon" href="/favicon.ico" sizes="any" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-<style>
-:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --accent:#a02818; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; --mono:"JetBrains Mono",monospace; }
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6}
-a{color:#1e3a5f;text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
-.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
-.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px}
-.nav-links{display:flex;gap:4px;flex-wrap:wrap}
-.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
-.nav-links a:hover{background:var(--bg-alt);color:var(--text);text-decoration:none}
-.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
-.hero{padding:36px 20px 20px;text-align:center;max-width:720px;margin:0 auto}
-.hero .eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
-.hero h1{font-family:var(--serif);font-size:clamp(30px,4.5vw,42px);font-weight:700;line-height:1.1;letter-spacing:-0.02em;margin-bottom:12px}
-.hero h1 em{color:var(--accent);font-style:italic;font-weight:400}
-.hero p{color:var(--text-secondary);font-size:16px}
-.wrap{max-width:1100px;margin:20px auto 40px;padding:0 20px;display:grid;grid-template-columns:1fr 320px;gap:20px}
-@media (max-width:900px){.wrap{grid-template-columns:1fr}}
-.map-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px}
-.legend{display:flex;justify-content:center;gap:14px;margin-bottom:8px;flex-wrap:wrap;font-size:12px}
-.legend-item{display:flex;align-items:center;gap:6px;color:var(--text-secondary)}
-.swatch{width:14px;height:14px;border-radius:3px}
-.state{cursor:pointer;stroke:#fff;stroke-width:0.5;transition:opacity 0.2s}
-.state:hover{opacity:0.7}
-.state.selected{stroke:#000;stroke-width:2}
-.detail-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 24px;height:fit-content;position:sticky;top:80px}
-.detail-name{font-family:var(--serif);font-size:26px;font-weight:700;letter-spacing:-0.01em;margin-bottom:4px}
-.detail-region{font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;font-weight:600;margin-bottom:16px}
-.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:16px}
-.stat{background:var(--bg-alt);border-radius:8px;padding:10px 12px;text-align:center}
-.stat-val{font-family:var(--mono);font-size:20px;font-weight:700;color:var(--accent);line-height:1.1}
-.stat-lbl{font-size:9px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;font-weight:600;margin-top:2px}
-.notable{background:var(--bg-alt);border-radius:8px;padding:12px 14px;font-size:13px;color:var(--text-secondary);line-height:1.5;margin-bottom:8px}
-.notable strong{color:var(--text);font-family:var(--serif);font-size:14px}
-.link-row{margin-top:14px}
-.link-row a{display:block;padding:10px 14px;background:var(--bg-alt);border-radius:6px;font-size:13px;font-weight:600;margin-bottom:6px}
-.zones{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px 26px;margin-top:20px}
-.zones h3{font-family:var(--serif);font-size:22px;margin-bottom:12px}
-.zone{padding:14px 18px;border-radius:8px;margin-bottom:10px}
-.zone-title{font-family:var(--serif);font-size:16px;font-weight:600;margin-bottom:4px}
-.zone p{font-size:13px;color:var(--text-secondary);line-height:1.5;margin:0}
-.zone.alley{background:rgba(255,193,7,0.12);border-left:3px solid #ffc107}
-.zone.dixie{background:rgba(160,40,24,0.1);border-left:3px solid var(--accent)}
-.zone.hoosier{background:rgba(45,106,79,0.1);border-left:3px solid #2d6a4f}
-.footer{text-align:center;padding:24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px}
-.inline-ad{text-align:center;margin:20px auto;max-width:728px;overflow:hidden}
-</style>
 
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-<script type="application/ld+json" data-seo="page">
-{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.tornadosimulator.net/tornado-alley-map/#webpage","url":"https://www.tornadosimulator.net/tornado-alley-map/","name":"Interactive Tornado Alley Map — US Tornado Statistics by State","description":"Interactive US tornado map: click any state to see annual tornado averages, deadliest historic events, EF5 counts, and safety ranking. Highlights Tornado Alley and Dixie Alley. Data sourced from NOAA Storm Prediction Center.","isPartOf":{"@id":"https://www.tornadosimulator.net/#website"},"publisher":{"@id":"https://www.tornadosimulator.net/#organization"},"inLanguage":"en"},{"@type":"BreadcrumbList","@id":"https://www.tornadosimulator.net/tornado-alley-map/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"},{"@type":"ListItem","position":2,"name":"Interactive Tornado Alley Map — US Tornado Statistics by State","item":"https://www.tornadosimulator.net/tornado-alley-map/"}]}]}
-</script><link rel="stylesheet" href="/assets/site-shell.css?v=1">
-<script src="/assets/site-shell.js?v=1" defer></script>
-</head>
-<body>
 
-<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav><noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
-
-<section class="hero">
-  <div class="eyebrow">🗺️ Interactive US map</div>
-  <h1 id="main-content" tabindex="-1">The <em>Tornado Alley</em> map</h1>
-  <p>Click any state to see its annual tornado average, EF5 count, deadliest event and safety ranking. Shading reflects the average tornadoes per year.</p>
-</section>
-
-<div class="wrap">
-  <div class="map-card">
-    <div class="legend">
-      <div class="legend-item"><div class="swatch" style="background:#e6efee"></div>0-25/yr</div>
-      <div class="legend-item"><div class="swatch" style="background:#ffe8b7"></div>25-50/yr</div>
-      <div class="legend-item"><div class="swatch" style="background:#ffb559"></div>50-100/yr</div>
-      <div class="legend-item"><div class="swatch" style="background:#e8621e"></div>100+/yr</div>
-      <div class="legend-item"><div class="swatch" style="background:#a02818"></div>Tornado / Dixie Alley core</div>
-    </div>
-    <!-- Simplified US map. Each rect represents a state. Layout is a schematic grid, not geographically precise. -->
-    <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" id="usmap" style="width:100%;height:auto;font-family:Inter,sans-serif;font-size:11px;font-weight:600">
-      <!-- Row 1 (border states, north) -->
-      <g id="states"></g>
-    </svg>
-    <p style="text-align:center;font-size:12px;color:var(--text-muted);margin-top:10px;font-style:italic">Schematic layout — click a state for detailed stats.</p>
-  </div>
-
-  <div class="detail-card" id="detail">
-    <div class="detail-name">Pick a state</div>
-    <div class="detail-region">Click any state on the map</div>
-    <p style="font-size:14px;color:var(--text-secondary);margin-bottom:12px">Or start with the tornado-alley heavies: Texas, Oklahoma, Kansas, Alabama, Mississippi.</p>
-  </div>
-</div>
-
-<div style="max-width:1100px;margin:0 auto;padding:0 20px">
-<div class="zones">
-  <h3>The alleys</h3>
-  <div class="zone alley">
-    <div class="zone-title">Tornado Alley</div>
-    <p>The traditional zone stretching from north Texas through Oklahoma, Kansas, and Nebraska. Flat terrain, dryline convection, and peak activity in April-June. Historically the most photogenic supercells.</p>
-  </div>
-  <div class="zone dixie">
-    <div class="zone-title">Dixie Alley</div>
-    <p>Mississippi, Alabama, Tennessee, Arkansas, western Georgia and northern Louisiana. Nocturnal tornadoes, rain-wrapped storms, and heavy tree cover make Dixie Alley the deadliest US tornado zone — more per-tornado fatalities than the traditional alley.</p>
-  </div>
-  <div class="zone hoosier">
-    <div class="zone-title">Hoosier Alley</div>
-    <p>The lesser-known Ohio Valley zone: Indiana, Illinois, Ohio, Kentucky. Peaks slightly later than Tornado Alley (May-June) and has produced some of the deadliest single tornadoes ever, including the 1925 Tri-State Tornado.</p>
-  </div>
-</div>
-
-<div class="inline-ad">
-  <script type="text/javascript">atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};</script>
-  <script type="text/javascript" src="//www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
 </div>
 </div>
 
@@ -264,8 +136,8 @@ svg.setAttribute('viewBox', `0 0 ${XPAD*2 + 9*CELL} ${YPAD*2 + 5*CELL}`);
 selectState('OK');
 </script>
 <script src="/assets/article-tracker.js" defer></script>
-<script src="/assets/ads-config.js?v=11" defer></script>
-<script src="/assets/ads.js?v=11" defer></script>
+
+
 <script src="/assets/house-ads.js?v=15" defer></script>
 </body>
 </html>
