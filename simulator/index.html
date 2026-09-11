@@ -831,19 +831,19 @@ const findWorldCountry = (lat, lng) => {
 
 // ─── SIMULATION ENGINE ──────────────────────────────────────────────────────
 
-// Look up population data for a point: returns { popDensity, housingDensity } 
+// Look up population data for a point: returns { popDensity, housingDensity }
 // For Canada, uses embedded census data. For US, checks the county cache.
 // The county cache is populated asynchronously by fetchCountiesAlongPath.
 function lookupLocalDensity(lat, lng, usCountyCache) {
   // Check if in Canada (rough boundary)
-  const inCanada = (lat >= 49 && lng >= -141 && lng <= -52) || 
+  const inCanada = (lat >= 49 && lng >= -141 && lng <= -52) ||
     (lat >= 41 && lat < 49 && lng >= -95 && lng <= -52 && lat > 42); // southern ON/QC/Maritimes
-  
+
   if (inCanada) {
     const { cd, dist } = findCanadianCensusDivision(lat, lng);
     if (cd && dist < 5) {
-      return { 
-        popDensity: Math.round(cd.d), 
+      return {
+        popDensity: Math.round(cd.d),
         housingDensity: Math.round(cd.h),
         name: cd.n,
         country: "canada",
@@ -851,7 +851,7 @@ function lookupLocalDensity(lat, lng, usCountyCache) {
     }
     return { popDensity: 0, housingDensity: 0, name: "Uninhabited", country: "canada" };
   }
-  
+
   // For US points, check the county cache
   if (usCountyCache) {
     // Find the nearest cached county (within ~0.5 degrees)
@@ -890,16 +890,16 @@ function lookupLocalDensity(lat, lng, usCountyCache) {
   return null;
 }
 
-// Run simulation for a single segment of the path 
+// Run simulation for a single segment of the path
 // timeOffsetHours: how many hours into the tornado's journey this segment occurs
 function runSegmentSimulation(params, segmentLengthMi, localDensity, timeOffsetHours) {
   const p = { ...params, pathLength: segmentLengthMi };
-  
+
   // Advance time of day based on how far along the path this segment is
   if (timeOffsetHours && typeof params.timeOfDay === "number") {
     p.timeOfDay = (params.timeOfDay + timeOffsetHours) % 24;
   }
-  
+
   // Override with local density if available
   if (localDensity) {
     p.popDensity = localDensity.popDensity;
@@ -914,7 +914,7 @@ function runSegmentSimulation(params, segmentLengthMi, localDensity, timeOffsetH
     p.vehiclesPerMile = isRemote ? 0 : Math.min(Math.round(localDensity.popDensity / 8), 300);
     p.livestockDensity = localDensity.popDensity < 100 ? Math.min(Math.round((100 - localDensity.popDensity) / 3), 50) : 0;
   }
-  
+
   return runSimulation(p);
 }
 
@@ -949,9 +949,9 @@ function runMultiSegmentSimulation(params, pathPoints, pathMode, usCountyCache) 
     const dLng = samplingPoints[i][1] - samplingPoints[i - 1][1];
     const cosLat = Math.cos(samplingPoints[i][0] * Math.PI / 180);
     const segLen = Math.sqrt(dLat * dLat + (dLng * cosLat) * (dLng * cosLat)) * 69;
-    segments.push({ 
-      start: samplingPoints[i - 1], 
-      end: samplingPoints[i], 
+    segments.push({
+      start: samplingPoints[i - 1],
+      end: samplingPoints[i],
       length: segLen,
       midLat: (samplingPoints[i - 1][0] + samplingPoints[i][0]) / 2,
       midLng: (samplingPoints[i - 1][1] + samplingPoints[i][1]) / 2,
@@ -991,7 +991,7 @@ function runMultiSegmentSimulation(params, pathPoints, pathMode, usCountyCache) 
     const midDistance = distanceSoFar + seg.length / 2;
     const timeOffsetHours = params.forwardSpeed > 0 ? midDistance / params.forwardSpeed : 0;
     const segResult = runSegmentSimulation(params, seg.length, localDensity, timeOffsetHours);
-    
+
     segmentResults.push({
       ...seg,
       result: segResult,
@@ -1152,7 +1152,7 @@ function runSimulation(params) {
   // Night multiplier: Ashley (2007) — nighttime tornadoes 2.5x more lethal
   // Smooth curve based on hour of day (0-23):
   // Peak lethality 0:00-5:00 (2.5x), lowest 10:00-16:00 (1.0x), transitions at dusk/dawn
-  const hour = typeof timeOfDay === "number" ? timeOfDay : 
+  const hour = typeof timeOfDay === "number" ? timeOfDay :
     (timeOfDay === "night" ? 2 : timeOfDay === "evening" ? 20 : timeOfDay === "morning" ? 8 : 14);
   const getNightMult = (h) => {
     // 0-5: deep night 2.5x, 5-8: dawn transition, 8-17: day 1.0x, 17-20: dusk transition, 20-24: night
@@ -2583,10 +2583,10 @@ function TornadoSimulator() {
     if (typeof window !== "undefined" && window.US_COUNTIES) return;
     if (!tornadoLat || !tornadoLng) return;
     if (pathMode === "draw" && isDrawing) return;
-    
+
     const pp = generatePathPoints(tornadoLat, tornadoLng, params, pathMode, customWaypoints);
     if (pp.length < 2) return;
-    
+
     // Generate sample points every ~3 miles along the path
     let samplePts = [];
     if (pp.length === 2) {
@@ -2618,19 +2618,19 @@ function TornadoSimulator() {
     // If not, fetch it via Census Geocoder
     const inUS = (lat, lng) => lat >= 24 && lat <= 50 && lng >= -125 && lng <= -66;
     const isAlreadyCached = (lat, lng) => usCountyCache.some(c => Math.abs(c.lat - lat) + Math.abs(c.lng - lng) < 0.3);
-    
+
     const toFetch = samplePts.filter(([lat, lng]) => inUS(lat, lng) && !isAlreadyCached(lat, lng));
-    
+
     if (toFetch.length === 0) return;
 
     // Fetch counties for uncached US points (max 8 parallel to stay under rate limit)
     const fetchLimit = Math.min(toFetch.length, 8);
     let fetched = 0;
-    
+
     for (let i = 0; i < fetchLimit; i++) {
       const [lat, lng] = toFetch[i];
       const geocodeUrl = `https://geocoding.geo.census.gov/geocoder/geographies/coordinates?x=${lng}&y=${lat}&benchmark=Public_AR_Current&vintage=Current_Current&format=jsonp&callback=__countyCache${i}`;
-      
+
       const script = document.createElement("script");
       window[`__countyCache${i}`] = (geoResult) => {
         try {
@@ -2640,7 +2640,7 @@ function TornadoSimulator() {
             const countyFips = county.COUNTY;
             const areaLand = county.AREALAND;
             const countyName = county.BASENAME || county.NAME;
-            
+
             // Fetch pop data
             const popUrl = `https://api.census.gov/data/2022/acs/acs5?get=NAME,B01003_001E,B25001_001E&for=county:${countyFips}&in=state:${stateFips}`;
             fetch(popUrl).then(r => r.json()).then(data => {
@@ -2651,7 +2651,7 @@ function TornadoSimulator() {
                 const areaLandSqMi = areaLand / 2589988.11;
                 const popDensity = Math.round(population / areaLandSqMi);
                 const housingDensity = Math.round(housingUnits / areaLandSqMi);
-                
+
                 setUsCountyCache(prev => {
                   // Don't add duplicates
                   if (prev.some(c => c.stateFips === stateFips && c.countyFips === countyFips)) return prev;
@@ -3736,21 +3736,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   </nav>
   <!-- Single right-side rail — only appears on wide monitors (>=1600px)
        so it never overlaps the simulator's control panels. -->
-  <aside id="adsterra-side" style="position:fixed;right:8px;top:50%;transform:translateY(-50%);width:160px;height:600px;z-index:9999;display:none;">
-    <script type="text/javascript">
-      atOptions = {'key':'da8c75671b236383c52eb13078c2a148','format':'iframe','height':600,'width':160,'params':{}};
-    </script>
-    <script type="text/javascript" src="//www.highperformanceformat.com/da8c75671b236383c52eb13078c2a148/invoke.js"></script>
-  </aside>
-  <style>
-    @media (min-width: 1600px) {
-      #adsterra-side { display: block !important; }
-      body { padding-right: 176px; box-sizing: border-box; }
-    }
-  </style>
+
+
 <script src="/assets/article-tracker.js" defer></script>
-<script src="/assets/ads-config.js?v=11" defer></script>
-<script src="/assets/ads.js?v=11" defer></script>
+
+
 <script src="/assets/house-ads.js?v=14" defer></script>
 </body>
 </html>

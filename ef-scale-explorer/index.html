@@ -1,149 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6394912562617960" crossorigin="anonymous"></script>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Enhanced Fujita Scale Explorer — EF0 to EF5 Explained</title>
-<meta name="description" content="An interactive explorer for the Enhanced Fujita (EF) Scale — the rating system meteorologists use to classify tornado intensity. Click each rating from EF0 to EF5 to see wind speeds, damage examples, and historic tornadoes at that strength. Live statistics on how common each rating is in the US." />
-<meta name="twitter:description" content="An interactive explorer for the Enhanced Fujita (EF) Scale — the rating system meteorologists use to classify tornado intensity. Click each rating from EF0 to EF5 to see wind speeds, damage examples, and historic tornadoes at that strength. Live statistics on how common each rating is in the US." />
-<meta name="twitter:title" content="Enhanced Fujita Scale Explorer — EF0 to EF5 Explained" />
-<meta name="twitter:card" content="summary" />
-<meta property="og:site_name" content="Tornado Hub" />
-<meta name="keywords" content="EF scale, Enhanced Fujita scale, EF0, EF1, EF2, EF3, EF4, EF5, tornado ratings, tornado damage scale, EF scale explained, tornado wind speeds" />
-<meta property="og:title" content="Enhanced Fujita Scale Explorer — EF0 to EF5 Explained" />
-<meta property="og:description" content="An interactive explorer for the Enhanced Fujita (EF) Scale — the rating system meteorologists use to classify tornado intensity. Click each rating from EF0 to EF5 to see wind speeds, damage examples, and historic tornadoes at that strength. Live statistics on how common each rating is in the US." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.tornadosimulator.net/ef-scale-explorer/" />
-<link rel="canonical" href="https://www.tornadosimulator.net/ef-scale-explorer/" />
-<link rel="icon" href="/favicon.ico" sizes="any" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"Enhanced Fujita Scale Explorer","author":{"@type":"Organization","name":"Tornado Hub"},"datePublished":"2026-07-09","mainEntityOfPage":"https://www.tornadosimulator.net/ef-scale-explorer/"}
-</script>
-<script type="application/ld+json" data-seo="page">
-{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.tornadosimulator.net/ef-scale-explorer/#webpage","url":"https://www.tornadosimulator.net/ef-scale-explorer/","name":"Enhanced Fujita Scale Explorer — EF0 to EF5 Explained","description":"An interactive explorer for the Enhanced Fujita (EF) Scale — the rating system meteorologists use to classify tornado intensity. Click each rating from EF0 to EF5 to see wind speeds, damage examples, and historic tornadoes at that strength. Live statistics on how common each rating is in the US.","isPartOf":{"@id":"https://www.tornadosimulator.net/#website"},"publisher":{"@id":"https://www.tornadosimulator.net/#organization"},"inLanguage":"en"},{"@type":"BreadcrumbList","@id":"https://www.tornadosimulator.net/ef-scale-explorer/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"},{"@type":"ListItem","position":2,"name":"Enhanced Fujita Scale Explorer — EF0 to EF5 Explained","item":"https://www.tornadosimulator.net/ef-scale-explorer/"}]}]}
-</script>
-<style>
-:root {
-  --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff;
-  --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c;
-  --border:#e5e1d8; --border-strong:#d4cfc3;
-  --accent:#a02818; --accent-hover:#7d1f13; --link:#1e3a5f;
-  --ef0:#88c057; --ef1:#eec53a; --ef2:#e88f2b; --ef3:#dd5c1a; --ef4:#c02929; --ef5:#7d0e0e;
-  --serif:"Fraunces",Georgia,serif;
-  --sans:"Inter",sans-serif;
-  --mono:"JetBrains Mono",monospace;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6}
-a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
 
-.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
-.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
-.nav-links{display:flex;gap:4px;flex-wrap:wrap}
-.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
-.nav-links a:hover{background:var(--bg-alt);color:var(--text);text-decoration:none}
-.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
 
-.hero{padding:40px 20px 28px;text-align:center;max-width:800px;margin:0 auto}
-.hero .eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
-.hero h1{font-family:var(--serif);font-size:clamp(30px,4.5vw,44px);font-weight:700;line-height:1.1;letter-spacing:-0.02em;margin-bottom:14px}
-.hero h1 em{color:var(--accent);font-style:italic;font-weight:400}
-.hero p{color:var(--text-secondary);font-size:16px;max-width:640px;margin:0 auto}
-
-.wrap{max-width:1000px;margin:0 auto;padding:0 20px 60px}
-
-/* Scale strip */
-.scale-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:22px}
-.scale-btn{padding:20px 8px 14px;border:none;border-radius:10px;cursor:pointer;font-family:var(--serif);font-weight:700;color:white;transition:transform 0.15s,box-shadow 0.15s;text-align:center;position:relative;overflow:hidden}
-.scale-btn:hover{transform:translateY(-4px)}
-.scale-btn.active{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.2);outline:3px solid var(--text)}
-.scale-btn.ef-0{background:var(--ef0)}
-.scale-btn.ef-1{background:var(--ef1);color:#333}
-.scale-btn.ef-2{background:var(--ef2)}
-.scale-btn.ef-3{background:var(--ef3)}
-.scale-btn.ef-4{background:var(--ef4)}
-.scale-btn.ef-5{background:var(--ef5)}
-.scale-btn .rank{font-size:clamp(24px,4vw,36px);line-height:1;font-weight:700;letter-spacing:-0.02em}
-.scale-btn .name{font-family:var(--sans);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;opacity:0.9;margin-top:3px;font-weight:600}
-.scale-btn .pct{font-family:var(--mono);font-size:10px;opacity:0.8;margin-top:2px}
-
-/* Detail card */
-.detail{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px 30px;transition:box-shadow 0.2s,border-color 0.2s;position:relative;overflow:hidden}
-.detail::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--ef2);transition:background 0.2s}
-.detail.ef-0::before{background:var(--ef0)}
-.detail.ef-1::before{background:var(--ef1)}
-.detail.ef-2::before{background:var(--ef2)}
-.detail.ef-3::before{background:var(--ef3)}
-.detail.ef-4::before{background:var(--ef4)}
-.detail.ef-5::before{background:var(--ef5)}
-.detail-head{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:18px;padding-bottom:16px;border-bottom:1px solid var(--border)}
-.detail-title{font-family:var(--serif);font-size:34px;font-weight:700;letter-spacing:-0.02em;line-height:1}
-.detail-subtitle{font-size:14px;color:var(--text-muted);font-style:italic;letter-spacing:0.01em}
-.detail-wind{font-family:var(--mono);font-size:15px;font-weight:600;color:var(--accent);background:rgba(160,40,24,0.08);padding:6px 12px;border-radius:6px;margin-left:auto}
-
-.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:22px}
-.stat-item{background:var(--bg-alt);border-radius:8px;padding:14px 16px}
-.stat-item .lbl{font-size:10px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px}
-.stat-item .val{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--text);line-height:1.1}
-.stat-item .sub{font-size:11px;color:var(--text-muted);margin-top:2px}
-
-.detail h3{font-family:var(--serif);font-size:20px;margin:22px 0 10px;color:var(--text)}
-.detail p{margin-bottom:12px;font-size:15px}
-.detail ul{margin:6px 0 16px 20px}
-.detail li{margin-bottom:5px;font-size:15px;color:var(--text-secondary)}
-
-.damage-visual{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:16px 20px;margin:16px 0 20px;display:flex;align-items:center;gap:16px}
-.damage-visual .icon{font-size:36px;line-height:1;flex-shrink:0}
-.damage-visual .desc{font-size:14px;color:var(--text-secondary);line-height:1.5}
-.damage-visual strong{color:var(--text);font-family:var(--serif);font-size:16px}
-
-.examples{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin:14px 0 8px}
-.example{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:12px 14px;text-decoration:none;color:var(--text);transition:transform 0.15s,border-color 0.15s;display:block}
-.example:hover{transform:translateY(-2px);border-color:var(--accent);text-decoration:none}
-.example .ex-name{font-family:var(--serif);font-weight:600;font-size:15px;margin-bottom:3px}
-.example .ex-meta{font-size:12px;color:var(--text-muted)}
-
-.footer{text-align:center;padding:26px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px;margin-top:40px}
-.inline-ad{text-align:center;margin:24px auto;max-width:728px;overflow:hidden}
-
-@media (max-width: 600px) {
-  .scale-strip{grid-template-columns:repeat(3,1fr)}
-  .detail-head{flex-direction:column;align-items:flex-start;gap:8px}
-  .detail-wind{margin-left:0}
-}
-</style>
-
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" /><link rel="stylesheet" href="/assets/site-shell.css?v=1">
-<script src="/assets/site-shell.js?v=1" defer></script>
-</head>
-<body>
-
-<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav><noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
-
-<section class="hero">
-  <div class="eyebrow">📊 Interactive scale reference</div>
-  <h1 id="main-content" tabindex="-1">The Enhanced Fujita Scale, <em>explained</em></h1>
-  <p>Click any rating to see the wind speed range, damage examples, and historic tornadoes at that intensity. Data comes from the NOAA Storm Prediction Center's tornado database.</p>
-</section>
-
-<div class="wrap">
-
-  <div class="scale-strip" id="scale-strip"></div>
-
-  <div id="detail" class="detail ef-2">
-    <!-- Populated by JS -->
-  </div>
-
-  <div class="inline-ad">
-    <script type="text/javascript">atOptions={'key':'b7d63c1973b341722e34dd6f314916ba','format':'iframe','height':90,'width':728,'params':{}};</script>
-    <script type="text/javascript" src="//www.highperformanceformat.com/b7d63c1973b341722e34dd6f314916ba/invoke.js"></script>
   </div>
 
   <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px 26px;margin-top:26px">
@@ -367,8 +226,8 @@ const initial = parseInt((location.hash.match(/#ef(\d)/) || [])[1]) || 2;
 render(Math.min(5, Math.max(0, initial)));
 </script>
 <script src="/assets/article-tracker.js" defer></script>
-<script src="/assets/ads-config.js?v=11" defer></script>
-<script src="/assets/ads.js?v=11" defer></script>
+
+
 <script src="/assets/house-ads.js?v=15" defer></script>
 </body>
 </html>
