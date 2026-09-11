@@ -13,18 +13,17 @@
   </script>
   <script src="//ezoicanalytics.com/analytics.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tornado Simulator — Multi-Variable Damage Modeler</title>
-  <meta name="description" content="Interactive tornado damage simulator — click anywhere in the world to place an EF0–EF5 tornado and model real fatalities, structural damage, and economic loss. US Census + Statistics Canada + UN population data for 173+ countries. Guides to deadliest/costliest tornadoes, every EF5 recorded, and the EF Scale." />
+  <title>Tornado Simulator: Interactive Map, Path & Damage Estimates</title>
+  <meta name="description" content="Build a tornado scenario on an interactive map. Adjust wind speed, path width and population, then compare estimated damage, exposure, swept area and travel time." />
 <meta property="og:site_name" content="Tornado Hub" />
 <link rel="canonical" href="https://www.tornadosimulator.net/simulator/" />
-  <meta name="keywords" content="tornado simulator, tornado damage calculator, EF scale, world tornado map, deadliest tornadoes, costliest tornadoes, EF5 tornadoes, Joplin 2011, Moore 2013, Tri-State 1925, Bangladesh 1989, tornado alley" />
-  <meta property="og:title" content="Tornado Simulator — Multi-Variable Damage Modeler" />
-  <meta property="og:description" content="Interactive tornado damage simulator — click anywhere in the world to place an EF0–EF5 tornado and model real fatalities, structural damage, and economic loss. US Census + Statistics Canada + UN population data for 173+ countries. Guides to deadliest/costliest tornadoes, every EF5 recorded, and the EF Scale." />
+  <meta property="og:title" content="Tornado Simulator: Interactive Map, Path & Damage Estimates" />
+  <meta property="og:description" content="Build a tornado scenario on an interactive map. Adjust wind speed, path width and population, then compare estimated damage, exposure, swept area and travel time." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.tornadosimulator.net/simulator/" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Tornado Simulator — Multi-Variable Damage Modeler" />
-  <meta name="twitter:description" content="Interactive tornado damage simulator — click anywhere in the world to place an EF0–EF5 tornado and model real fatalities, structural damage, and economic loss. US Census + Statistics Canada + UN population data for 173+ countries. Guides to deadliest/costliest tornadoes, every EF5 recorded, and the EF Scale." />
+  <meta name="twitter:title" content="Tornado Simulator: Interactive Map, Path & Damage Estimates" />
+  <meta name="twitter:description" content="Build a tornado scenario on an interactive map. Adjust wind speed, path width and population, then compare estimated damage, exposure, swept area and travel time." />
   <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -112,28 +111,24 @@
     }
   </style>
 
-<script type="application/ld+json" data-seo="page">
-{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.tornadosimulator.net/simulator/#webpage","url":"https://www.tornadosimulator.net/simulator/","name":"Tornado Simulator — Multi-Variable Damage Modeler","description":"Interactive tornado damage simulator — click anywhere in the world to place an EF0–EF5 tornado and model real fatalities, structural damage, and economic loss. US Census + Statistics Canada + UN population data for 173+ countries. Guides to deadliest/costliest tornadoes, every EF5 recorded, and the EF Scale.","isPartOf":{"@id":"https://www.tornadosimulator.net/#website"},"publisher":{"@id":"https://www.tornadosimulator.net/#organization"},"inLanguage":"en"},{"@type":"BreadcrumbList","@id":"https://www.tornadosimulator.net/simulator/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"},{"@type":"ListItem","position":2,"name":"Tornado Simulator — Multi-Variable Damage Modeler","item":"https://www.tornadosimulator.net/simulator/"}]}]}
-</script></head>
+<script type="application/ld+json" data-seo="page">{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"Tornado Simulator: Interactive Map, Path & Damage Estimates","url":"https://www.tornadosimulator.net/simulator/","description":"Build a tornado scenario on an interactive map. Adjust wind speed, path width and population, then compare estimated damage, exposure, swept area and travel time.","applicationCategory":"EducationalApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript and an internet connection","isAccessibleForFree":true},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"},{"@type":"ListItem","position":2,"name":"Tornado Simulator","item":"https://www.tornadosimulator.net/simulator/"}]}]}</script><link rel="stylesheet" href="/simulator/simulator.css?v=2">
+</head>
 <body>
-  <nav class="hub-nav">
-    <a href="/" class="hub-nav-brand"><span>🌪️</span> Tornado Hub</a>
-    <div class="hub-nav-links">
-      <a href="/">Home</a>
-      <a href="/articles/">Articles</a>
-      <a href="/search/">Search</a>
-      <a href="/quiz/">Quizzes</a>
-      <a href="/tornadle/">Tornadle</a>
-      <a href="/tornado-namer/">Namer</a>
-      <a href="/weather-trivia/">Weather Trivia</a>
-      <a href="/supercell-simulator/">Supercell Sim</a>
-      <a href="/tornadoes/">Tornado Index</a>
-      <a href="/learn/">Learn</a>
-      <a href="/safety/">Safety</a>
-      <a class="active" href="/simulator/">Simulator</a>
-    </div>
+  <nav class="hub-nav" aria-label="Main navigation">
+    <a href="/" class="hub-nav-brand">Tornado Hub</a>
+    <div class="hub-nav-links"><a href="/simulator/" aria-current="page">Simulator</a><a href="#simulator-guide">How it works</a><a href="/live-tornado-warnings-north-america/">Live warnings</a></div>
   </nav>
-  <div id="root"></div>
+  <main id="root" aria-label="Interactive tornado simulator"><p class="sim-loading">Loading the interactive simulator… If the controls do not appear, reload the page and check your connection. <a href="#simulator-guide">Read how the simulator works.</a></p></main>
+  <section id="simulator-guide" class="sim-guide" aria-labelledby="guide-title">
+    <h1 id="guide-title">Tornado simulator</h1>
+    <p class="guide-intro">Explore how a tornado’s wind, path and surroundings change its modeled impact. Place a starting point on the map, choose a preset, then adjust the settings to compare scenarios.</p>
+    <div class="guide-columns">
+      <div><h2>Build and compare a scenario</h2><ol><li>Tap the map to place an origin. Choose World in the region controls for locations beyond the US and Canada.</li><li>Open Settings to adjust wind speed, path length, width and forward speed. Type an exact value and press Enter or leave the field to apply it.</li><li>Choose a straight, curved or drawn path. In Draw mode, add at least two points and use Finish drawing.</li><li>Open Results for exposure, buildings and economic estimates. Results update when you change an input; Play path animates the route.</li></ol></div>
+      <div><h2>What the statistics mean</h2><p>Route distance follows the simulated centerline. Swept area is route distance multiplied by path width; it can count overlapping parts of a drawn path more than once. Travel time assumes constant forward speed. Point exposure is width divided by speed, not the time available to take shelter.</p><p>People and buildings in the path are modeled from population and housing density. These are area averages, not an inventory of individual addresses. Damage and casualty estimates depend on simplified assumptions and have no calculated uncertainty range.</p></div>
+      <div><h2>A model, not a forecast</h2><p>This educational tool does not predict a real tornado, certify a building’s safety or calculate your personal risk. Changing scenarios does not change current weather warnings. The EF label is a wind-band comparison; official EF ratings are assigned from surveyed damage, as explained by the <a href="https://www.weather.gov/oun/efscale">National Weather Service</a>.</p><p><a href="/ef-scale/">Understand the EF scale</a> · <a href="/how-many-tornadoes-have-hit-your-area/">Explore nearby historical tornadoes</a> · <a href="/live-tornado-warnings-north-america/">View live warnings</a></p></div>
+    </div>
+    <a href="#root">Back to the simulator ↑</a>
+  </section>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.26.2/babel.min.js"></script>
@@ -920,7 +915,7 @@ function runSegmentSimulation(params, segmentLengthMi, localDensity, timeOffsetH
 
 // Multi-segment simulation: splits path into segments, looks up local density for each
 // Always generates segments for any path > 2 miles, regardless of mode
-function runMultiSegmentSimulation(params, pathPoints, pathMode, usCountyCache) {
+function runMultiSegmentSimulation(params, pathPoints, pathMode, usCountyCache, useLocationData = true) {
   if (!pathPoints || pathPoints.length < 2) {
     return { result: runSimulation(params), segments: null };
   }
@@ -945,10 +940,7 @@ function runMultiSegmentSimulation(params, pathPoints, pathMode, usCountyCache) 
   const segments = [];
   let totalLength = 0;
   for (let i = 1; i < samplingPoints.length; i++) {
-    const dLat = samplingPoints[i][0] - samplingPoints[i - 1][0];
-    const dLng = samplingPoints[i][1] - samplingPoints[i - 1][1];
-    const cosLat = Math.cos(samplingPoints[i][0] * Math.PI / 180);
-    const segLen = Math.sqrt(dLat * dLat + (dLng * cosLat) * (dLng * cosLat)) * 69;
+    const segLen = pathLengthFromPoints([samplingPoints[i - 1], samplingPoints[i]]);
     segments.push({
       start: samplingPoints[i - 1],
       end: samplingPoints[i],
@@ -986,7 +978,7 @@ function runMultiSegmentSimulation(params, pathPoints, pathMode, usCountyCache) 
   let distanceSoFar = 0;
 
   for (const seg of sampleSegments) {
-    const localDensity = lookupLocalDensity(seg.midLat, seg.midLng, usCountyCache);
+    const localDensity = useLocationData ? lookupLocalDensity(seg.midLat, seg.midLng, usCountyCache) : null;
     // Calculate time offset: how many hours into the journey this segment's midpoint is
     const midDistance = distanceSoFar + seg.length / 2;
     const timeOffsetHours = params.forwardSpeed > 0 ? midDistance / params.forwardSpeed : 0;
@@ -999,7 +991,7 @@ function runMultiSegmentSimulation(params, pathPoints, pathMode, usCountyCache) 
       timeOffsetHours,
     });
 
-    const regionName = localDensity?.name || "Unknown";
+    const regionName = localDensity?.name || (useLocationData ? "Location not resolved" : "Scenario inputs");
     if (!seenNames.has(regionName)) {
       seenNames.add(regionName);
       countyNames.push(regionName);
@@ -1035,11 +1027,22 @@ function runMultiSegmentSimulation(params, pathPoints, pathMode, usCountyCache) 
     businessInterruption: segmentResults.reduce((s, sr) => s + sr.result.businessInterruption, 0),
     floodDamage: segmentResults.reduce((s, sr) => s + sr.result.floodDamage, 0),
     _multiSegment: true,
+    _usesLocationData: useLocationData,
+    _routeMiles: distanceSoFar,
     _segmentCount: sampleSegments.length,
     _countiesCrossed: countyNames,
     _segments: segmentResults,
   };
 
+  for (const key of ['powerLinesDestroyed', 'cellTowersDestroyed', 'bridgesDestroyed', 'waterTowersDestroyed', 'gasLinesDestroyed', 'vehiclesDestroyed', 'cropAcres', 'livestockLost']) {
+    multiResult[key] = segmentResults.reduce((sum, segment) => sum + segment.result[key], 0);
+  }
+  multiResult.pathAreaSqMi = (distanceSoFar * params.pathWidth / 1760).toFixed(2);
+  multiResult.structureDamage = Object.fromEntries(Object.keys(baseResult.structureDamage).map(type => [type,
+    Object.fromEntries(['total', 'destroyed', 'damaged'].map(key => [key,
+      segmentResults.reduce((sum, segment) => sum + segment.result.structureDamage[type][key], 0)
+    ]))
+  ]));
   return { result: multiResult, segments: segmentResults };
 }
 
@@ -1196,7 +1199,7 @@ function runSimulation(params) {
     ef, efIndex, effectiveWind: Math.round(effectiveWind), peakWind: Math.round(peakWind),
     pathAreaSqMi: pathAreaSqMi.toFixed(2),
     exposureDuration: exposureDuration.toFixed(1),
-    structureDamage, totalDestroyed, totalDamaged, totalStructures: Math.round(totalStructures),
+    structureDamage, totalDestroyed, totalDamaged, totalStructures: Object.values(structureDamage).reduce((sum, item) => sum + item.total, 0),
     infraLoss, powerLinesDestroyed: Math.round(powerLinesDestroyed),
     cellTowersDestroyed, bridgesDestroyed, waterTowersDestroyed,
     gasLinesDestroyed: Math.round(gasLinesDestroyed),
@@ -1236,10 +1239,16 @@ const numFmt = (n) => Math.round(n).toLocaleString();
 
 function Slider({ label, value, onChange, min, max, step = 1, unit = "", info }) {
   const id = `parameter-${label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+  const [draft, setDraft] = useState(String(value));
+  useEffect(() => setDraft(String(value)), [value]);
   const commitValue = (rawValue) => {
     const parsed = Number(rawValue);
-    if (!Number.isFinite(parsed)) return;
-    onChange(Math.min(max, Math.max(min, parsed)));
+    if (rawValue.trim() === "" || !Number.isFinite(parsed)) { setDraft(String(value)); return; }
+    const clamped = Math.min(max, Math.max(min, parsed));
+    const snapped = Number((min + Math.round((clamped - min) / step) * step).toFixed(6));
+    const next = Math.min(max, Math.max(min, snapped));
+    setDraft(String(next));
+    onChange(next);
   };
   return (
     <div className="parameter-control" style={{ marginBottom: 12 }}>
@@ -1254,8 +1263,11 @@ function Slider({ label, value, onChange, min, max, step = 1, unit = "", info })
             min={min}
             max={max}
             step={step}
-            value={value}
-            onChange={(event) => commitValue(event.target.value)}
+            value={draft}
+            aria-label={`${label}${unit ? ` (${unit.trim()})` : ""}`}
+            onChange={(event) => setDraft(event.target.value)}
+            onBlur={(event) => commitValue(event.target.value)}
+            onKeyDown={(event) => { if (event.key === "Enter") event.currentTarget.blur(); }}
             aria-describedby={info ? `${id}-hint` : undefined}
             style={{
               width: 74, minHeight: 32, padding: "5px 7px", background: "#15152a",
@@ -1282,7 +1294,7 @@ function SelectInput({ label, value, onChange, options }) {
   return (
     <div style={{ marginBottom: 10 }}>
       <div style={{ fontSize: 11, color: "#b0b0b0", marginBottom: 3 }}>{label}</div>
-      <select value={value} onChange={(e) => onChange(e.target.value)}
+      <select aria-label={label} value={value} onChange={(e) => onChange(e.target.value)}
         style={{
           width: "100%", padding: "5px 8px", background: "#1a1a2e", color: "#e0e0e0",
           border: "1px solid #333", borderRadius: 4, fontSize: 11, fontFamily: "inherit"
@@ -1428,10 +1440,13 @@ function generatePathPoints(tornadoLat, tornadoLng, params, pathMode, customWayp
 function pathLengthFromPoints(points) {
   let total = 0;
   for (let i = 1; i < points.length; i++) {
-    const dLat = points[i][0] - points[i - 1][0];
-    const dLng = points[i][1] - points[i - 1][1];
-    const cosLat = Math.cos(points[i][0] * Math.PI / 180);
-    total += Math.sqrt(dLat * dLat + (dLng * cosLat) * (dLng * cosLat)) * 69;
+    const radians = Math.PI / 180;
+    const lat1 = points[i - 1][0] * radians;
+    const lat2 = points[i][0] * radians;
+    const dLat = lat2 - lat1;
+    const dLng = (points[i][1] - points[i - 1][1]) * radians;
+    const a = Math.sin(dLat / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLng / 2) ** 2;
+    total += 3958.7613 * 2 * Math.asin(Math.sqrt(Math.min(1, Math.max(0, a))));
   }
   return total;
 }
@@ -1499,7 +1514,7 @@ function InteractiveMap({ enabledCountries, tornadoLat, tornadoLng, onPlaceTorna
       center: [39, -98],
       zoom: 4,
       zoomControl: false,
-      attributionControl: false,
+      attributionControl: true,
       maxBounds: [[10, -170], [72, -40]],
       maxBoundsViscosity: 1.0,
     });
@@ -1509,19 +1524,19 @@ function InteractiveMap({ enabledCountries, tornadoLat, tornadoLng, onPlaceTorna
     // Tile layers
     const satellite = L.tileLayer(
       "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-      { maxZoom: 18 }
+      { maxZoom: 18, attribution: "Tiles &copy; Esri and imagery contributors" }
     );
     const streets = L.tileLayer(
       "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-      { maxZoom: 19 }
+      { maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' }
     );
     const topo = L.tileLayer(
       "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
-      { maxZoom: 18 }
+      { maxZoom: 18, attribution: "Tiles &copy; Esri and contributors" }
     );
     const dark = L.tileLayer(
       "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
-      { maxZoom: 19 }
+      { maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>' }
     );
 
     layersRef.current = { satellite, streets, topo, dark };
@@ -1553,7 +1568,7 @@ function InteractiveMap({ enabledCountries, tornadoLat, tornadoLng, onPlaceTorna
           window.__tornadoAddWaypoint(rlat, rlng);
         }
       } else {
-        onPlaceTornado(Math.round(lat * 10) / 10, Math.round(lng * 10) / 10);
+        onPlaceTornado(rlat, rlng);
       }
     });
 
@@ -1568,8 +1583,12 @@ function InteractiveMap({ enabledCountries, tornadoLat, tornadoLng, onPlaceTorna
 
     mapRef.current = map;
 
+    const resizeObserver = new ResizeObserver(() => map.invalidateSize({ pan: false }));
+    resizeObserver.observe(containerRef.current);
+
     // Cleanup
     return () => {
+      resizeObserver.disconnect();
       map.remove();
       mapRef.current = null;
     };
@@ -1637,7 +1656,7 @@ function InteractiveMap({ enabledCountries, tornadoLat, tornadoLng, onPlaceTorna
       });
     }
 
-    if (!tornadoLat || !tornadoLng) return;
+    if (tornadoLat == null || tornadoLng == null) return;
     // In draw mode, don't render the simulation path until drawing is finished
     if (pathMode === "draw" && isDrawing) return;
 
@@ -1899,6 +1918,22 @@ function TornadoPathViz({ params, result }) {
 
 // ─── STAT CARD ──────────────────────────────────────────────────────────────
 
+function ScenarioStatistics({ params, result, routeMiles }) {
+  const area = routeMiles * params.pathWidth / 1760;
+  const travel = params.forwardSpeed > 0 ? routeMiles / params.forwardSpeed * 60 : null;
+  const rows = [
+    ['Route distance', routeMiles.toFixed(1) + ' mi', (routeMiles * 1.609344).toFixed(1) + ' km along the centerline'],
+    ['Swept area', area.toFixed(2) + ' sq mi', (area * 2.589988).toFixed(2) + ' km² · overlaps not removed'],
+    ['Travel time', travel == null ? 'Stationary' : travel.toFixed(1) + ' min', 'At the selected forward speed'],
+    ['Point exposure', Number(result.exposureDuration).toFixed(1) + ' min', 'Width ÷ speed · not warning lead time'],
+    ['People in path', numFmt(result.populationInPath), 'Density-based estimate'],
+    ['Buildings affected', numFmt(result.totalDestroyed + result.totalDamaged), numFmt(result.totalDestroyed) + ' destroyed + ' + numFmt(result.totalDamaged) + ' damaged'],
+    ['Wind speed', params.windSpeed + ' mph', Math.round(params.windSpeed * 1.609344) + ' km/h · ' + (params.windSpeed * 0.44704).toFixed(1) + ' m/s'],
+    ['Path width', numFmt(params.pathWidth) + ' yd', Math.round(params.pathWidth * 0.9144) + ' m']
+  ];
+  return <section className="scenario-statistics" aria-labelledby="statistics-title"><h3 id="statistics-title">Your scenario at a glance</h3><dl>{rows.map(([label, value, note]) => <div key={label}><dt>{label}</dt><dd>{value}<small>{note}</small></dd></div>)}</dl><p>Geometry assumes a constant width and speed. Impact totals use the model’s density and vulnerability assumptions.</p>{travel != null && Math.abs(travel - params.lifespan) > 1 && <p className="scenario-note">This route takes {travel.toFixed(1)} minutes at the selected speed. The lifespan input is {params.lifespan} minutes; it does not shorten the drawn route.</p>}</section>;
+}
+
 function Stat({ label, value, sub, color = "#e0e0e0", big }) {
   return (
     <div style={{
@@ -2021,12 +2056,15 @@ function ProtectionCTA({ fatalities, damage }) {
   );
 }
 
-function ResultContext({ censusData, censusLoading, censusError, onRetry }) {
-  let title = "Using scenario inputs";
-  let detail = "Results use the density, construction, preparedness, and storm settings shown in the controls.";
+function ResultContext({ densitySource, censusData, censusLoading, censusError, onRetry }) {
+  let title = "Using location estimates";
+  let detail = "Nearby area or national density estimates are used where available; unresolved segments keep scenario inputs. These are approximate locations, not a building survey.";
   let tone = "#8e94a8";
 
-  if (censusLoading) {
+  if (densitySource === "manual") {
+    title = "Using your scenario inputs";
+    detail = "Population, housing and infrastructure use your settings along the whole route.";
+  } else if (censusLoading) {
     title = "Loading exposure data…";
     detail = "Current estimates remain visible while the location lookup is in progress.";
     tone = "#4fc3f7";
@@ -2209,12 +2247,12 @@ function parseSimUrlParams() {
     const w = num("width");
     if (w != null) {
       // Width may be provided as miles (e.g. 1.7) or yards (e.g. 1760)
-      base.pathWidth = w < 20 ? Math.round(w * 1760) : Math.round(w);
+      base.pathWidth = Math.min(5000, Math.max(10, w < 20 ? Math.round(w * 1760) : Math.round(w)));
     }
     const lat = num("lat");
     const lon = num("lon") ?? num("lng");
     const name = q.get("name");
-    return { params: base, lat, lon, name };
+    return { params: base, lat: lat != null && Math.abs(lat) <= 90 ? lat : null, lon: lon != null && Math.abs(lon) <= 180 ? lon : null, name };
   } catch (e) {
     return null;
   }
@@ -2226,6 +2264,8 @@ const URL_INIT = parseSimUrlParams();
 function TornadoSimulator() {
   const [params, setParams] = useState(URL_INIT?.params || PRESETS.suburban_ef4);
   const [activeTab, setActiveTab] = useState("overview");
+  const [densitySource, setDensitySource] = useState("location");
+  const densitySourceRef = useRef("location");
   const [mobileView, setMobileView] = useState("map");
   const [enabledCountries, setEnabledCountries] = useState("both");
   const [tornadoLat, setTornadoLat] = useState(URL_INIT?.lat ?? 37.08);
@@ -2326,7 +2366,7 @@ function TornadoSimulator() {
 
                 // Auto-populate simulation parameters with real data
                 const isRemote = popDensity < 5;
-                setParams(p => ({
+                setParams(p => densitySourceRef.current === "manual" ? p : ({
                   ...p,
                   popDensity: Math.min(popDensity, 15000),
                   housingDensity: Math.min(housingDensity, 5000),
@@ -2383,6 +2423,7 @@ function TornadoSimulator() {
     setTornadoLat(lat);
     setTornadoLng(lng);
     setCensusError("");
+    if (densitySourceRef.current === "manual") { setCensusLoading(false); return; }
 
     // Check if the point is on land (rough bounding boxes)
     const inUS = lat >= 24 && lat <= 50 && lng >= -125 && lng <= -66;
@@ -2561,7 +2602,7 @@ function TornadoSimulator() {
 
   // Generate path points for rendering and multi-segment simulation
   const pathPoints = useMemo(() => {
-    if (!tornadoLat || !tornadoLng) return [];
+    if (tornadoLat == null || tornadoLng == null) return [];
     if (pathMode === "draw" && isDrawing) return customWaypoints;
     return generatePathPoints(tornadoLat, tornadoLng, params, pathMode, customWaypoints);
   }, [tornadoLat, tornadoLng, params, pathMode, customWaypoints, isDrawing]);
@@ -2581,7 +2622,7 @@ function TornadoSimulator() {
   // Skipped entirely when the static us-counties.js bundle is present.
   useEffect(() => {
     if (typeof window !== "undefined" && window.US_COUNTIES) return;
-    if (!tornadoLat || !tornadoLng) return;
+    if (tornadoLat == null || tornadoLng == null) return;
     if (pathMode === "draw" && isDrawing) return;
 
     const pp = generatePathPoints(tornadoLat, tornadoLng, params, pathMode, customWaypoints);
@@ -2682,12 +2723,12 @@ function TornadoSimulator() {
     if (pathMode === "draw" && isDrawing) {
       return { result: runSimulation(params), segments: null };
     }
-    const pp = (!tornadoLat || !tornadoLng) ? [] : generatePathPoints(tornadoLat, tornadoLng, params, pathMode, customWaypoints);
+    const pp = (tornadoLat == null || tornadoLng == null) ? [] : generatePathPoints(tornadoLat, tornadoLng, params, pathMode, customWaypoints);
     if (pp.length >= 2) {
-      return runMultiSegmentSimulation(params, pp, pathMode, usCountyCache);
+      return runMultiSegmentSimulation(params, pp, pathMode, usCountyCache, densitySource === "location");
     }
     return { result: runSimulation(params), segments: null };
-  }, [params, tornadoLat, tornadoLng, pathMode, customWaypoints, isDrawing, usCountyCache]);
+  }, [params, tornadoLat, tornadoLng, pathMode, customWaypoints, isDrawing, usCountyCache, densitySource]);
 
   // ─── LIVE SIMULATION ANIMATION ──────────────────
   const startSimulation = useCallback(() => {
@@ -2807,6 +2848,7 @@ function TornadoSimulator() {
   const loadPreset = (key) => setParams(PRESETS[key]);
 
   const tabs = ["overview", "structures", "casualties", "economic", "historical"];
+  const routeMiles = result._routeMiles ?? (pathPoints.length >= 2 ? pathLengthFromPoints(pathPoints) : params.pathLength);
 
   return (
     <div className="simulator-app" style={{
@@ -2824,11 +2866,11 @@ function TornadoSimulator() {
         flexShrink: 0,
       }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <span style={{ fontSize: 22 }}>🌪️</span>
+          <span className="sim-mark" aria-hidden="true">↗</span>
           <div>
-            <div style={{ fontSize: 14, fontWeight: 800, letterSpacing: "0.04em", color: "#fff" }}>TORNADO SIMULATOR</div>
+            <h2 className="sim-title">Explore a tornado</h2>
             <div style={{ fontSize: 9, color: "#666", letterSpacing: "0.1em" }}>
-              {urlPrefillName ? `PRELOADED: ${urlPrefillName.toUpperCase()}` : "MULTI-VARIABLE DAMAGE MODELER"}
+              {urlPrefillName ? `PRELOADED: ${urlPrefillName.toUpperCase()}` : "Place a path. Change the conditions."}
             </div>
           </div>
         </div>
@@ -2861,6 +2903,8 @@ function TornadoSimulator() {
           scrollbarWidth: "thin", scrollbarColor: "#333 transparent",
         }}>
           <Section title="Location" icon="📍" defaultOpen={true}>
+            <SelectInput label="Exposure data" value={densitySource} onChange={value => { densitySourceRef.current = value; setDensitySource(value); }} options={[["location", "Location estimates"], ["manual", "My scenario inputs"]]} />
+            <p className="exposure-help">{densitySource === "location" ? "Uses nearby density estimates and derived infrastructure where available. Choose My scenario inputs to control these values yourself." : "Uses your population, housing and infrastructure settings along the whole route."}</p>
             <SelectInput label="Region" value={enabledCountries} onChange={(v) => setEnabledCountries(v)}
               options={[["us", "🇺🇸 United States"], ["canada", "🇨🇦 Canada"], ["both", "🇺🇸🇨🇦 Both Countries"], ["world", "🌍 World (200+ countries)"]]} />
 
@@ -3016,6 +3060,8 @@ function TornadoSimulator() {
                     if (mode === "draw") {
                       setCustomWaypoints([]);
                       setIsDrawing(true);
+                      setMobileView("map");
+                      setVizMode("map");
                       setShowCoordinateEditor(false);
                     } else {
                       setIsDrawing(false);
@@ -3236,7 +3282,7 @@ function TornadoSimulator() {
           {/* VISUALIZATION with MAP/PATH toggle */}
           <div className={`visualization-panel ${mobileView === "map" ? "" : "mobile-hidden"}`} style={{ height: "65%", padding: 12, flexShrink: 0, display: "flex", flexDirection: "column" }}>
             {/* Viz mode toggle + country selector */}
-            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6, flexShrink: 0 }}>
+            <div className="map-toolbar" style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6, flexShrink: 0 }}>
               <div style={{ display: "flex", background: "#1a1a2e", borderRadius: 5, overflow: "hidden", border: "1px solid #2a2a4a" }}>
                 {["map", "path"].map((mode) => (
                   <button key={mode} onClick={() => setVizMode(mode)} style={{
@@ -3287,6 +3333,7 @@ function TornadoSimulator() {
                 </>
               )}
             </div>
+            {isDrawing && <div className="drawing-toolbar"><span>Tap the map to add points ({customWaypoints.length}).</span><button type="button" disabled={customWaypoints.length < 2} onClick={() => window.__tornadoFinishDraw?.()}>Finish drawing</button><button type="button" disabled={!customWaypoints.length} onClick={() => setCustomWaypoints(points => points.slice(0, -1))}>Undo point</button></div>}
             <div style={{ flex: 1, minHeight: 0 }}>
               {vizMode === "map" ? (
                 <InteractiveMap
@@ -3319,22 +3366,22 @@ function TornadoSimulator() {
             padding: "6px 12px", display: "flex", alignItems: "center", gap: 8,
           }}>
             {!simRunning ? (
-              <button onClick={startSimulation} disabled={!tornadoLat} style={{
-                padding: "5px 14px", fontSize: 10, fontWeight: 700, border: "none", cursor: tornadoLat ? "pointer" : "default",
-                borderRadius: 4, background: tornadoLat ? "#2e7d32" : "#333",
-                color: tornadoLat ? "#fff" : "#666", letterSpacing: "0.04em",
+              <button onClick={startSimulation} disabled={tornadoLat == null} style={{
+                padding: "5px 14px", fontSize: 10, fontWeight: 700, border: "none", cursor: tornadoLat != null ? "pointer" : "default",
+                borderRadius: 4, background: tornadoLat != null ? "#2e7d32" : "#333",
+                color: tornadoLat != null ? "#fff" : "#666", letterSpacing: "0.04em",
               }}>
                 ▶ PLAY PATH
               </button>
             ) : (
               <>
-                <button onClick={() => setSimPaused(!simPaused)} style={{
+                <button aria-label={simPaused ? "Resume playback" : "Pause playback"} onClick={() => setSimPaused(!simPaused)} style={{
                   padding: "5px 10px", fontSize: 10, fontWeight: 700, border: "none", cursor: "pointer",
                   borderRadius: 4, background: "#1a1a2e", color: "#fff",
                 }}>
                   {simPaused ? "▶" : "⏸"}
                 </button>
-                <button onClick={stopSimulation} style={{
+                <button aria-label="Stop playback" onClick={stopSimulation} style={{
                   padding: "5px 10px", fontSize: 10, fontWeight: 700, border: "none", cursor: "pointer",
                   borderRadius: 4, background: "#333", color: "#ef5350",
                 }}>
@@ -3412,6 +3459,7 @@ function TornadoSimulator() {
 
           <div className={`result-context ${mobileView === "results" ? "" : "mobile-hidden"}`}>
             <ResultContext
+              densitySource={densitySource}
               censusData={censusData}
               censusLoading={censusLoading}
               censusError={censusError}
@@ -3425,7 +3473,7 @@ function TornadoSimulator() {
             padding: "0 12px", flexShrink: 0, background: "#0e0e22",
           }}>
             {tabs.map((tab) => (
-              <button key={tab} onClick={() => setActiveTab(tab)} style={{
+              <button key={tab} aria-pressed={activeTab === tab} onClick={() => setActiveTab(tab)} style={{
                 padding: "8px 14px", fontSize: 10, fontWeight: 600, textTransform: "uppercase",
                 letterSpacing: "0.08em", background: "none", border: "none", cursor: "pointer",
                 color: activeTab === tab ? "#ef5350" : "#666",
@@ -3448,6 +3496,7 @@ function TornadoSimulator() {
 
             {activeTab === "overview" && (
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                <ScenarioStatistics params={params} result={result} routeMiles={routeMiles} />
                 {/* EF Badge */}
                 <div style={{
                   display: "flex", alignItems: "center", gap: 14, padding: "14px 18px",
@@ -3495,7 +3544,7 @@ function TornadoSimulator() {
                       ))}
                     </div>
                     <div style={{ fontSize: 9, color: "#555", marginTop: 4 }}>
-                      Population density varies per segment — totals reflect local census data
+                      {result._usesLocationData ? "Segments use nearby area or national density estimates where available." : "Every segment uses your scenario density and infrastructure inputs."}
                     </div>
                   </div>
                 )}
@@ -3534,7 +3583,7 @@ function TornadoSimulator() {
                     </div>
                     <MiniBar items={[
                       { label: "Destroyed", value: data.destroyed, color: "#ef5350" },
-                      { label: "Damaged", value: data.destroyed + data.damaged, color: "#ffb74d" },
+                      { label: "Damaged, not destroyed", value: data.damaged, color: "#ffb74d" },
                     ]} maxVal={data.total} />
                     <div style={{ fontSize: 9, color: "#555", marginTop: 6 }}>
                       Fragility at {result.peakWind} mph: {(interpolateFragility(type, result.peakWind) * 100).toFixed(1)}% destruction probability
@@ -3702,42 +3751,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   </React.StrictMode>
 );
   </script>
-  <!-- SEO / Internal-link footer nav -->
-  <nav id="site-footer" aria-label="Learn more about tornadoes" style="position:fixed;left:8px;bottom:6px;z-index:2147483647;pointer-events:auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:11px;color:#888;background:rgba(10,10,24,0.85);border:1px solid #2a2a3e;border-radius:6px;padding:5px 10px;backdrop-filter:blur(6px);max-width:calc(100vw - 200px);">
-    <span style="color:#666;margin-right:4px;">Learn:</span>
-    <a href="/topics/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#a78bfa;text-decoration:none;margin-right:8px;pointer-events:auto;font-weight:700;">📚 All Topics</a>
-    <a href="/deadliest-us-tornadoes/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#ffb74d;text-decoration:none;margin-right:8px;pointer-events:auto;font-weight:600;">Deadliest</a>
-    <a href="/costliest-us-tornadoes/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#ffb74d;text-decoration:none;margin-right:8px;pointer-events:auto;font-weight:600;">Costliest</a>
-    <a href="/every-ef5-tornado/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#ffb74d;text-decoration:none;margin-right:8px;pointer-events:auto;font-weight:600;">Every EF5</a>
-    <a href="/tornado-alley/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#ffb74d;text-decoration:none;margin-right:8px;pointer-events:auto;font-weight:600;">Tornado Alley</a>
-    <a href="/how-do-tornadoes-form/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#ffb74d;text-decoration:none;margin-right:8px;pointer-events:auto;font-weight:600;">How Tornadoes Form</a>
-    <a href="/tornado-safety/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#ffb74d;text-decoration:none;margin-right:8px;pointer-events:auto;font-weight:600;">Safety</a>
-    <a href="/2011-super-outbreak/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#ffb74d;text-decoration:none;margin-right:8px;pointer-events:auto;font-weight:600;">2011 Outbreak</a>
-    <a href="/1974-super-outbreak/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#ffb74d;text-decoration:none;margin-right:8px;pointer-events:auto;font-weight:600;">1974 Outbreak</a>
-    <a href="/tornado-season/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#ffb74d;text-decoration:none;margin-right:8px;pointer-events:auto;font-weight:600;">Season</a>
-    <a href="/tornado-warning-vs-watch/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#ffb74d;text-decoration:none;margin-right:8px;pointer-events:auto;font-weight:600;">Watch vs Warning</a>
-    <a href="/mayfield-2021/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#4fc3f7;text-decoration:none;margin-right:8px;pointer-events:auto;">Mayfield 2021</a>
-    <a href="/jarrell-1997/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#4fc3f7;text-decoration:none;margin-right:8px;pointer-events:auto;">Jarrell 1997</a>
-    <a href="/andover-1991/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#4fc3f7;text-decoration:none;margin-right:8px;pointer-events:auto;">Andover 1991</a>
-    <a href="/parkersburg-2008/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#4fc3f7;text-decoration:none;margin-right:8px;pointer-events:auto;">Parkersburg 2008</a>
-    <a href="/rolling-fork-2023/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#4fc3f7;text-decoration:none;margin-right:8px;pointer-events:auto;">Rolling Fork 2023</a>
-    <a href="/waco-1953/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#4fc3f7;text-decoration:none;margin-right:8px;pointer-events:auto;">Waco 1953</a>
-    <a href="/joplin-2011/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#4fc3f7;text-decoration:none;margin-right:8px;pointer-events:auto;">Joplin 2011</a>
-    <a href="/moore-2013/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#4fc3f7;text-decoration:none;margin-right:8px;pointer-events:auto;">Moore 2013</a>
-    <a href="/moore-1999/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#4fc3f7;text-decoration:none;margin-right:8px;pointer-events:auto;">Moore 1999</a>
-    <a href="/tuscaloosa-2011/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#4fc3f7;text-decoration:none;margin-right:8px;pointer-events:auto;">Tuscaloosa 2011</a>
-    <a href="/hackleburg-2011/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#4fc3f7;text-decoration:none;margin-right:8px;pointer-events:auto;">Hackleburg 2011</a>
-    <a href="/smithville-2011/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#4fc3f7;text-decoration:none;margin-right:8px;pointer-events:auto;">Smithville 2011</a>
-    <a href="/el-reno-2013/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#4fc3f7;text-decoration:none;margin-right:8px;pointer-events:auto;">El Reno 2013</a>
-    <a href="/greensburg-2007/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#4fc3f7;text-decoration:none;margin-right:8px;pointer-events:auto;">Greensburg 2007</a>
-    <a href="/xenia-1974/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#4fc3f7;text-decoration:none;margin-right:8px;pointer-events:auto;">Xenia 1974</a>
-    <a href="/tri-state-1925/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#4fc3f7;text-decoration:none;margin-right:8px;pointer-events:auto;">Tri-State 1925</a>
-    <a href="/ef-scale/" onmousedown="event.stopPropagation();window.location.href=this.href;" ontouchstart="event.stopPropagation();window.location.href=this.href;" onclick="event.stopPropagation();window.location.assign(this.href);return false;" style="color:#4fc3f7;text-decoration:none;pointer-events:auto;">EF Scale</a>
-  </nav>
-  <!-- Single right-side rail — only appears on wide monitors (>=1600px)
-       so it never overlaps the simulator's control panels. -->
-
-
 <script src="/assets/article-tracker.js" defer></script>
 
 

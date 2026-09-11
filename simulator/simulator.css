@@ -1,0 +1,105 @@
+/* The simulator is a workspace; its guide remains in normal document flow. */
+html { scroll-behavior: smooth; color-scheme: dark; }
+body { display: block; height: auto; overflow: auto; background: #101719; padding: 0 !important; }
+.hub-nav { height: 52px; padding: 0 20px; gap: 12px; background: #182124; border-color: #334044; }
+.hub-nav-brand { white-space: nowrap; }
+.hub-nav-links { min-width: 0; }
+.hub-nav-links a { display: inline-flex; align-items: center; min-height: 44px; color: #c2cdd0; }
+#root { height: calc(100svh - 52px); min-height: 600px; overflow: hidden; }
+.simulator-app { height: 100% !important; background: #101719 !important; }
+.simulator-header { background: #182124 !important; gap: 12px; border-color: #334044 !important; }
+.sim-title { font: 600 21px/1.2 Georgia, serif; color: #f4f5f0; }
+.sim-title + div { margin-top: 5px; color: #b3c1c5 !important; font-size: 11px !important; letter-spacing: 0 !important; }
+.sim-mark { color: #f0987f; font-size: 28px; }
+.simulator-header-presets button { white-space: nowrap; font-size: 12px !important; }
+.simulator-app button, .simulator-app select { min-height: 36px; }
+.simulator-app button { color: #c6ced7; }
+.simulator-app button[style*='color: rgb(102, 102, 102)'],
+.simulator-app button[style*='color: #666'] { color: #b9bfcd !important; }
+.simulator-main, .workspace-panel, .controls-panel, .results-panel { min-height: 0; min-width: 0; }
+.controls-panel { width: 300px !important; background: #101719; }
+.controls-panel > div > button span { letter-spacing: .025em !important; }
+.controls-panel > div > button span:first-child { display: none; }
+.parameter-control label { font-size: 13px; color: #d1d7df; }
+.parameter-control input[type=number] { min-height: 38px !important; width: 86px !important; font-size: 14px !important; }
+.parameter-control input[type=range] { min-height: 32px !important; }
+.parameter-control > div:last-child { color: #b2b9c8 !important; font-size: 12px !important; }
+.controls-panel select { font-size: 13px !important; }
+.visualization-panel { height: 46% !important; min-height: 220px; }
+.map-toolbar { flex-wrap: wrap; gap: 6px !important; }
+.map-toolbar > div { flex-shrink: 0; }
+.map-toolbar > div[style*='width: 1px'] { display: none; }
+.map-toolbar button { font-size: 11px !important; }
+.simulation-controls { flex-wrap: wrap; }
+.simulation-controls > div:last-child { flex-wrap: wrap; }
+.simulation-explainer, .result-context { flex-shrink: 0; }
+.simulation-explainer { font-size: 12px !important; }
+.results-tabs { overflow-x: auto; }
+.results-tabs button { flex-shrink: 0; font-size: 12px !important; letter-spacing: .02em !important; }
+.results-panel { overscroll-behavior: contain; }
+.results-panel > div:first-child > div:last-child { font-size: 12px !important; color: #b4bece !important; }
+.scenario-statistics h3 { font-size: 17px; font-weight: 600; margin: 2px 0 14px; }
+.scenario-statistics dl { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px 24px; }
+.scenario-statistics dl > div { border-top: 1px solid #364147; padding-top: 10px; }
+.scenario-statistics dt { color: #c2cbd1; font-size: 12px; margin-bottom: 5px; }
+.scenario-statistics dd { color: #f3f4f0; font-size: 20px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.scenario-statistics small { display: block; margin-top: 5px; color: #b1bdc6; font: 11px/1.5 Inter, sans-serif; }
+.scenario-statistics p { color: #b1bdc6; font-size: 12px; line-height: 1.5; margin: 16px 0; }
+.scenario-statistics .scenario-note { color: #efd1ab; }
+.leaflet-control-attribution { font-size: 10px !important; max-width: 100%; }
+.sim-guide { background: #f4f2eb; color: #253431; padding: 64px max(24px, calc((100vw - 1180px) / 2)); scroll-margin-top: 16px; }
+.sim-guide h1 { font: 500 clamp(32px, 4vw, 52px)/1.1 Georgia, serif; margin-bottom: 20px; }
+.sim-guide h2 { font: 600 23px/1.2 Georgia, serif; margin: 32px 0 16px; }
+.sim-guide p, .sim-guide li { font-size: 16px; line-height: 1.7; margin-bottom: 16px; }
+.sim-guide .guide-intro { max-width: 65ch; font-size: 19px; }
+.guide-columns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px; margin-bottom: 24px; }
+.sim-guide ol { padding-left: 20px; }
+.sim-guide a { color: #8d2f20; text-underline-offset: 3px; }
+.sim-loading { padding: 24px; color: #edf1ee; }
+.sim-loading a { color: #a7d7ea; }
+.exposure-help { font-size: 12px; line-height: 1.5; color: #bcc8cc; margin: 0 0 14px; }
+.drawing-toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding-bottom: 8px; font-size: 12px; }
+.drawing-toolbar button { padding: 6px 10px; background: #35494d; color: #fff; border: 1px solid #80969c; border-radius: 4px; }
+.simulator-app button:disabled { opacity: .5; cursor: not-allowed !important; }
+#ml-langbar { display: none !important; }
+::selection { background: #684135; color: #fff; }
+:where(button, input, select, a):focus-visible { outline: 3px solid #e4a385; outline-offset: 3px; }
+input { caret-color: #f0987f; }
+* { scrollbar-color: #697a80 #182124; }
+@media (max-width: 1100px) { .scenario-statistics dl { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 820px) {
+  .hub-nav { padding-inline: 12px; }
+  .hub-nav-brand { font-size: 14px; }
+  .hub-nav-links { max-width: none; gap: 8px; }
+  .hub-nav-links a { font-size: 12px; padding: 0; white-space: nowrap; }
+  .hub-nav-links a[aria-current] { display: none; }
+  #root { min-height: 600px; }
+  .simulator-app { height: 100% !important; }
+  .simulator-header { flex-direction: column; align-items: stretch !important; padding: 10px 12px !important; }
+  .sim-title { font-size: 22px; }
+  .simulator-header-presets { max-width: 100%; display: grid !important; grid-template-columns: repeat(4, minmax(0, 1fr)); overflow: visible; }
+  .simulator-header-presets button { min-width: 0; white-space: normal; padding: 5px !important; }
+  .mobile-view-switcher { flex-shrink: 0; background: #182124; padding: 6px 10px; }
+  .mobile-view-switcher button { min-height: 44px; font-size: 14px; }
+  .mobile-view-switcher button[aria-pressed=true] { background: #35494d; border-color: #91afb7; }
+  .controls-panel { width: 100% !important; flex: 1; padding: 16px 16px 24px !important; }
+  .simulator-app button, .simulator-app select { min-height: 44px; }
+  .controls-panel select, .parameter-control input[type=number] { font-size: 16px !important; }
+  .parameter-control label { font-size: 14px; }
+  .parameter-control input[type=number] { min-height: 44px !important; }
+  .parameter-control input[type=range] { min-height: 44px !important; }
+  .visualization-panel { height: auto !important; flex: 1 1 0; min-height: 0; }
+  .map-toolbar { gap: 4px !important; }
+  .map-toolbar button { padding-inline: 8px !important; }
+  .map-toolbar > span { display: none; }
+  .simulation-controls { padding: 6px 8px calc(6px + env(safe-area-inset-bottom)) !important; gap: 6px !important; }
+  .simulation-controls button { min-width: 40px; font-size: 12px !important; }
+  .results-panel { flex: 1; padding: 16px !important; }
+  .result-context > div { padding: 8px 12px !important; }
+  .result-context, .simulation-explainer { max-height: 90px; overflow-y: auto; }
+  .scenario-statistics dl { gap: 16px; }
+  .scenario-statistics small { font-size: 12px; }
+  .sim-guide { padding: 40px 20px; }
+  .guide-columns { grid-template-columns: 1fr; gap: 0; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
