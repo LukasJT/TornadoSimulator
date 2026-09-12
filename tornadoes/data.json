@@ -1,81 +1,1156 @@
 {
-  "generated_at": "2026-07-09T12:00:00Z",
-  "recent": [],
+  "generated_at": "2026-09-12T13:18:06Z",
+  "recent": [
+    {
+      "date": "2026-09-12T00:51:00+00:00",
+      "ef": "UNK",
+      "location": "7 NE Artichoke",
+      "county": "Stevens",
+      "state": "MN",
+      "lat": "45.47",
+      "lon": "-96.08",
+      "notes": "Tornado touchdown reported 7 miles northeast of Artichoke. Location estimated. (MPX)"
+    },
+    {
+      "date": "2026-09-12T00:50:00+00:00",
+      "ef": "UNK",
+      "location": "8 S Alberta",
+      "county": "Stevens",
+      "state": "MN",
+      "lat": "45.46",
+      "lon": "-96.06",
+      "notes": "8 power poles blocking county highway 9 near Trinity Lutheran Cemetery. (MPX)"
+    },
+    {
+      "date": "2026-09-10T20:35:00+00:00",
+      "ef": "UNK",
+      "location": "3 SE Toluca",
+      "county": "Marshall",
+      "state": "IL",
+      "lat": "40.97",
+      "lon": "-89.09",
+      "notes": "Video evidence of a tornado in a farm field 2-3 miles southeast of Toluca. No damage was observed or reported. (ILX)"
+    },
+    {
+      "date": "2026-09-10T01:34:00+00:00",
+      "ef": "UNK",
+      "location": "4 E New Concord",
+      "county": "Guernsey",
+      "state": "OH",
+      "lat": "40.01",
+      "lon": "-81.67",
+      "notes": "A tornado touchdown was estimated from radar to be 9:34pm... immediately knocking down a tree and impacting a couple residences at the intersection of Mayfield Lane and (PBZ)"
+    },
+    {
+      "date": "2026-09-09T23:19:00+00:00",
+      "ef": "UNK",
+      "location": "2 WSW Cyclone",
+      "county": "McKean",
+      "state": "PA",
+      "lat": "41.81",
+      "lon": "-78.63",
+      "notes": "An EF1 tornado with a maximum wind speed of 105mph occurred just east of Bradford Airport. Its path length was 1.23 miles and it had a peak width of around 200 yards. (CTP)"
+    },
+    {
+      "date": "2026-09-08T00:35:00+00:00",
+      "ef": "UNK",
+      "location": "4 ENE Spencer",
+      "county": "Boyd",
+      "state": "NE",
+      "lat": "42.9",
+      "lon": "-98.63",
+      "notes": "Storm chaser confirmed tornado. Approximated location. (LBF)"
+    },
+    {
+      "date": "2026-09-07T23:35:00+00:00",
+      "ef": "UNK",
+      "location": "6 S Strawberry Lake",
+      "county": "McLean",
+      "state": "ND",
+      "lat": "47.67",
+      "lon": "-100.87",
+      "notes": "Multiple reports of a cone tornado that lasted less than a minute. Storm was still rapidly rotating after tornado dissipated. (BIS)"
+    },
+    {
+      "date": "2026-09-07T19:39:00+00:00",
+      "ef": "UNK",
+      "location": "2 W Hammond",
+      "county": "Tangipahoa",
+      "state": "LA",
+      "lat": "30.5",
+      "lon": "-90.5",
+      "notes": "Tornado began in a parking lot on West Thomas Street and traveled south-southwest for around 3 quarters of a mile. Damage was mostly to trees however... minor structura (LIX)"
+    },
+    {
+      "date": "2026-09-07T00:17:00+00:00",
+      "ef": "UNK",
+      "location": "8 SSW Arnegard",
+      "county": "McKenzie",
+      "state": "ND",
+      "lat": "47.69",
+      "lon": "-103.48",
+      "notes": "Storm chaser reported brief touchdown. Radar estimated location. (BIS)"
+    },
+    {
+      "date": "2026-09-06T18:56:00+00:00",
+      "ef": "UNK",
+      "location": "1 NNE Plantation",
+      "county": "Broward",
+      "state": "FL",
+      "lat": "26.13",
+      "lon": "-80.25",
+      "notes": "[Landspout] Corrects previous tstm wnd dmg report from 1 NNE Plantation to landspout at 2:56PM. Reports of tree damage in the Plantation Gardens areas. Picture and vid (MFL)"
+    },
+    {
+      "date": "2026-09-05T22:44:00+00:00",
+      "ef": "UNK",
+      "location": "3 NW Sea View Pier",
+      "county": "Onslow",
+      "state": "NC",
+      "lat": "34.53",
+      "lon": "-77.43",
+      "notes": "Storm survey team found evidence of an EF0 tornado with estimated peak winds of 85 mph. The tornado touched down near the Mill Creek neighborhood... then crossed NC 210 (MHX)"
+    },
+    {
+      "date": "2026-09-05T22:37:00+00:00",
+      "ef": "UNK",
+      "location": "3 E Folkstone",
+      "county": "Onslow",
+      "state": "NC",
+      "lat": "34.53",
+      "lon": "-77.45",
+      "notes": "Storm survey team found evidence of an EF1 tornado with estimated peak winds of 110 mph and an estimated width of 50 yards. The tornado likely first touched down in the (MHX)"
+    },
+    {
+      "date": "2026-09-03T20:14:00+00:00",
+      "ef": "UNK",
+      "location": "2 NE Comerica Park",
+      "county": "Wayne",
+      "state": "MI",
+      "lat": "42.37",
+      "lon": "-83.03",
+      "notes": "An EF-2 tornado impacted east Detroit on the afternoon of September 3... touching down near the Poletown East neighborhood and tracking southeastward... eventually cros (DTX)"
+    },
+    {
+      "date": "2026-09-03T20:12:00+00:00",
+      "ef": "UNK",
+      "location": "Lincoln Park",
+      "county": "Wayne",
+      "state": "MI",
+      "lat": "42.24",
+      "lon": "-83.18",
+      "notes": "A brief EF-0 tornado impacted areas around Memorial Park in Lincoln Park on the afternoon of September 3. (DTX)"
+    },
+    {
+      "date": "2026-09-03T00:23:00+00:00",
+      "ef": "UNK",
+      "location": "1 SSW Rose Hill",
+      "county": "Seneca",
+      "state": "NY",
+      "lat": "42.83",
+      "lon": "-76.91",
+      "notes": "NWS survey confirms EF2 tornado with winds up to 115 mph. Several barns and outbuildings were severely damaged... leveled... or even lofted with damage strewn many hund (BGM)"
+    },
+    {
+      "date": "2026-09-03T00:21:00+00:00",
+      "ef": "UNK",
+      "location": "2 NW Packwood Corners",
+      "county": "Seneca",
+      "state": "NY",
+      "lat": "42.92",
+      "lon": "-76.92",
+      "notes": "Corrects end time and adds detail to previous tornado report from 2 NW Packwood Corners. NWS survey confirms EF1 tornado with winds up to 95 mph. It went through the vi (BGM)"
+    },
+    {
+      "date": "2026-09-03T00:00:00+00:00",
+      "ef": "UNK",
+      "location": "1 NNE Portageville",
+      "county": "Livingston",
+      "state": "NY",
+      "lat": "42.58",
+      "lon": "-78.03",
+      "notes": "Tornado confirmed by NWS Storm Survey. Maximum winds of 110 mph. Damage path 1.3 miles... with a maximum width of 130 yards. Significant tree damage with around 100 lar (BUF)"
+    },
+    {
+      "date": "2026-09-02T23:59:00+00:00",
+      "ef": "UNK",
+      "location": "1 WSW Portageville",
+      "county": "Wyoming",
+      "state": "NY",
+      "lat": "42.57",
+      "lon": "-78.05",
+      "notes": "EF-1 tornado confirmed by NWS Storm Survey. Maximum winds of 105 mph. Path length 1.2 miles and maximum width 300 yards. Significant damage to trees and powerlines in t (BUF)"
+    },
+    {
+      "date": "2026-09-02T23:30:00+00:00",
+      "ef": "UNK",
+      "location": "2 E Webster",
+      "county": "Monroe",
+      "state": "NY",
+      "lat": "43.22",
+      "lon": "-77.38",
+      "notes": "EF-1 tornado with peak winds of 105 mph... path length of 3.23 miles... and width of 130 yards. The National Weather Service in Buffalo completed a damage survey across (BUF)"
+    },
+    {
+      "date": "2026-09-02T23:29:00+00:00",
+      "ef": "UNK",
+      "location": "3 E Alexander",
+      "county": "Genesee",
+      "state": "NY",
+      "lat": "42.91",
+      "lon": "-78.2",
+      "notes": "The National Weather Service in Buffalo investigated storm- related damage from a bowing line of thunderstorms that ended up producing an EF-1 tornado during the evenin (BUF)"
+    },
+    {
+      "date": "2026-09-02T23:19:00+00:00",
+      "ef": "UNK",
+      "location": "1 NE Marysville",
+      "county": "St. Clair",
+      "state": "MI",
+      "lat": "42.92",
+      "lon": "-82.47",
+      "notes": "A brief EF-0 tornado tracked across portions of Marysville... Michigan in St. Clair County on the evening of September 2... 2026. Tree damage was sporadic along a narro (DTX)"
+    },
+    {
+      "date": "2026-09-02T22:45:00+00:00",
+      "ef": "UNK",
+      "location": "4 SE Medina",
+      "county": "Orleans",
+      "state": "NY",
+      "lat": "43.18",
+      "lon": "-78.34",
+      "notes": "The National Weather Service in Buffalo completed a damage survey across Orleans County today in response to reports of concentrated areas of damage near Shelby from a (BUF)"
+    },
+    {
+      "date": "2026-09-02T22:07:00+00:00",
+      "ef": "UNK",
+      "location": "Olcott",
+      "county": "Niagara",
+      "state": "NY",
+      "lat": "43.34",
+      "lon": "-78.71",
+      "notes": "The National Weather Service in Buffalo completed a damage survey across Niagara County today in response to reports of concentrated areas of damage near Olcott from a (BUF)"
+    },
+    {
+      "date": "2026-09-02T21:25:00+00:00",
+      "ef": "UNK",
+      "location": "3 ENE Serenada",
+      "county": "Williamson",
+      "state": "TX",
+      "lat": "30.72",
+      "lon": "-97.65",
+      "notes": "[Landspout] Corrects previous landspout report from 3 ENE Serenada. Pictures and videos of a possible landspout or dust devil between SH 195 and I-35 to the north of G (EWX)"
+    },
+    {
+      "date": "2026-09-01T23:44:00+00:00",
+      "ef": "UNK",
+      "location": "4 NE Gap",
+      "county": "Lancaster",
+      "state": "PA",
+      "lat": "40.03",
+      "lon": "-75.98",
+      "notes": "EF-1 tornado with 90 mph wind in Salisbury Twp. Path length 1.08 miles and width 100 yards. (CTP)"
+    },
+    {
+      "date": "2026-09-01T21:40:00+00:00",
+      "ef": "UNK",
+      "location": "2 SE Washingtonville",
+      "county": "Montour",
+      "state": "PA",
+      "lat": "41.03",
+      "lon": "-76.65",
+      "notes": "An EF-1 tornado... with peak winds of 100 mph... occurred in Derry Township. Path width 250 yds... length 0.87 mi. (CTP)"
+    },
+    {
+      "date": "2026-09-01T21:33:00+00:00",
+      "ef": "UNK",
+      "location": "4 WNW Gaines",
+      "county": "Potter",
+      "state": "PA",
+      "lat": "41.79",
+      "lon": "-77.62",
+      "notes": "An NWS Storm Survey team confirmed an EF1 Tornado in Pike Township in Potter County and Gaines Township in Tioga County. The tornado path length was 6.50 miles... had a (CTP)"
+    },
+    {
+      "date": "2026-08-27T22:10:00+00:00",
+      "ef": "UNK",
+      "location": "5 WNW Schuylerville",
+      "county": "Saratoga",
+      "state": "NY",
+      "lat": "43.13",
+      "lon": "-73.68",
+      "notes": "A brief EF-0 uprooted several softwood trees in the vicinity of Ruggles Road and Preserve Way. (ALY)"
+    },
+    {
+      "date": "2026-08-27T22:05:00+00:00",
+      "ef": "UNK",
+      "location": "6 NNE Saratoga Springs",
+      "county": "Saratoga",
+      "state": "NY",
+      "lat": "43.14",
+      "lon": "-73.73",
+      "notes": "An EF-1 tornado touched down west of the Northway in the vicinity of Greylock Drive and Glenburnie Drive. The tornado crossed the Northway and snapped trees from the No (ALY)"
+    },
+    {
+      "date": "2026-08-27T21:55:00+00:00",
+      "ef": "UNK",
+      "location": "3 NE Rosita",
+      "county": "Custer",
+      "state": "CO",
+      "lat": "38.13",
+      "lon": "-105.3",
+      "notes": "Relayed via Fremont County dispatch... location estimated. (PUB)"
+    },
+    {
+      "date": "2026-08-24T20:34:00+00:00",
+      "ef": "UNK",
+      "location": "4 NNW Atlantic",
+      "county": "Carteret",
+      "state": "NC",
+      "lat": "34.94",
+      "lon": "-76.35",
+      "notes": "Top estimated winds: EF0 85 MPH. Path Length: .18 miles... estimated. Path Width: Unknown. Along Highway 12/Cedar Island Road... just east of the Thorofare Bridge... tw (MHX)"
+    },
+    {
+      "date": "2026-08-24T01:36:00+00:00",
+      "ef": "UNK",
+      "location": "5 ENE Sorum",
+      "county": "Perkins",
+      "state": "SD",
+      "lat": "45.47",
+      "lon": "-102.84",
+      "notes": "Brief elephant trunk tornado confirmed by two storm chasers. Has since fully dissipated. Time estimated based on reports and radar. (UNR)"
+    },
+    {
+      "date": "2026-08-22T23:55:00+00:00",
+      "ef": "UNK",
+      "location": "3 NW Ramey",
+      "county": "Clearfield",
+      "state": "PA",
+      "lat": "40.83",
+      "lon": "-78.44",
+      "notes": "EF-1 tornado with maximum wind speed of 90 mph. Path length of 1 mile and path width of 150 yards. (CTP)"
+    },
+    {
+      "date": "2026-08-22T21:25:00+00:00",
+      "ef": "UNK",
+      "location": "6 NNW Buna",
+      "county": "Jasper",
+      "state": "TX",
+      "lat": "30.52",
+      "lon": "-94.02",
+      "notes": "[Landspout] Corrects previous landspout report from 6 NNW Buna. Jasper county EM and KFDM submitted photos of significant damage to an aluminum roof and aluminum outbu (LCH)"
+    },
+    {
+      "date": "2026-08-22T00:15:00+00:00",
+      "ef": "UNK",
+      "location": "1 NNE Moronts",
+      "county": "Putnam",
+      "state": "IL",
+      "lat": "41.3",
+      "lon": "-89.29",
+      "notes": "Video on social media. (DVN)"
+    },
+    {
+      "date": "2026-08-22T00:13:00+00:00",
+      "ef": "UNK",
+      "location": "2 N Moronts",
+      "county": "Putnam",
+      "state": "IL",
+      "lat": "41.31",
+      "lon": "-89.3",
+      "notes": "An EF0 tornado... with peak winds of 70 MPH... developed along the southern banks of the Illinois River and moved towards the south-southeast. The tornado crossed throu (DVN)"
+    },
+    {
+      "date": "2026-08-22T00:11:00+00:00",
+      "ef": "UNK",
+      "location": "1 S Depue",
+      "county": "Putnam",
+      "state": "IL",
+      "lat": "41.3",
+      "lon": "-89.32",
+      "notes": "Corrects previous tornado report starting location and time. An EF0 tornado... with estimated peak winds of 80 MPH... developed near the southern banks of the Illinois (DVN)"
+    },
+    {
+      "date": "2026-08-21T22:55:00+00:00",
+      "ef": "UNK",
+      "location": "4 SE Sublette",
+      "county": "Lee",
+      "state": "IL",
+      "lat": "41.6",
+      "lon": "-89.17",
+      "notes": "An NWS damage survey determined an EF-0 tornado with peak winds around 70 mph... path length of around 0.7 miles... and maximum width of around 200 yards impacted the r (LOT)"
+    },
+    {
+      "date": "2026-08-21T22:26:00+00:00",
+      "ef": "UNK",
+      "location": "6 SSE Tucson",
+      "county": "Pima",
+      "state": "AZ",
+      "lat": "32.12",
+      "lon": "-110.84",
+      "notes": "[Landspout] Spotter reported a landspout tornado looking west from Saguaro National Park East. (TWC)"
+    },
+    {
+      "date": "2026-08-20T22:47:00+00:00",
+      "ef": "UNK",
+      "location": "1 W Atlantic Beach",
+      "county": "Nassau",
+      "state": "NY",
+      "lat": "40.59",
+      "lon": "-73.75",
+      "notes": "NWS storm survey confirmed an EF-1 tornado producing a narrow swath of damage with estimated wind gusts of 65 to 97 mph across the far western end of Atlantic Beach bet (OKX)"
+    },
+    {
+      "date": "2026-08-20T22:18:00+00:00",
+      "ef": "UNK",
+      "location": "Dover",
+      "county": "Kent",
+      "state": "DE",
+      "lat": "39.16",
+      "lon": "-75.54",
+      "notes": "Trained spotter reported a rain wrapped tornado on the ground... flying debris. (PHI)"
+    },
+    {
+      "date": "2026-08-20T22:09:00+00:00",
+      "ef": "UNK",
+      "location": "2 N Wyoming",
+      "county": "Kent",
+      "state": "DE",
+      "lat": "39.14",
+      "lon": "-75.56",
+      "notes": "A tornado formed over the open fields west of Wyoming Mill Rd near Riverside Rd... scarring the crops before moving to the tree line east of Wyoming Mill Rd... snapping (PHI)"
+    },
+    {
+      "date": "2026-08-20T22:02:00+00:00",
+      "ef": "UNK",
+      "location": "Hazlettville",
+      "county": "Kent",
+      "state": "DE",
+      "lat": "39.12",
+      "lon": "-75.64",
+      "notes": "A brief tornado occurred just east of the community of Hazlettville... primarily impacting a farm and adjacent fields along Bryants Corner Road. The tornado began in a (PHI)"
+    },
+    {
+      "date": "2026-08-20T21:54:00+00:00",
+      "ef": "UNK",
+      "location": "1 S Marydel",
+      "county": "Kent",
+      "state": "DE",
+      "lat": "39.1",
+      "lon": "-75.74",
+      "notes": "A tornado occurred in Marydel beginning along the east side of Grygo Rd... about a quarter mile south of the intersection of Mahan Corner Rd... taking down several tree (PHI)"
+    },
+    {
+      "date": "2026-08-20T21:41:00+00:00",
+      "ef": "UNK",
+      "location": "2 W Barclay",
+      "county": "Queen Annes",
+      "state": "MD",
+      "lat": "39.15",
+      "lon": "-75.9",
+      "notes": "A brief tornado occurred near Barclay... snapping and uprooting several softwood and hardwood trees in a wooded area next to a residence located near the intersection o (PHI)"
+    },
+    {
+      "date": "2026-08-20T21:40:00+00:00",
+      "ef": "UNK",
+      "location": "East Caln Twp",
+      "county": "Chester",
+      "state": "PA",
+      "lat": "40.02",
+      "lon": "-75.68",
+      "notes": "A brief tornado occurred in East Caln Township. The first damage was noted just south of the intersection of East Lancaster Avenue and Quarry Road... where several smal (PHI)"
+    },
+    {
+      "date": "2026-08-20T20:57:00+00:00",
+      "ef": "UNK",
+      "location": "2 WSW Hurricane",
+      "county": "Baldwin",
+      "state": "AL",
+      "lat": "30.83",
+      "lon": "-87.93",
+      "notes": "Broadcast media shared video of a tornado near the Tensaw River via social media. Time and location estimated from radar with TDS evident. (MOB)"
+    },
+    {
+      "date": "2026-08-20T20:41:00+00:00",
+      "ef": "UNK",
+      "location": "3 N Corbin City",
+      "county": "Atlantic",
+      "state": "NJ",
+      "lat": "39.35",
+      "lon": "-74.75",
+      "notes": "Video footage via social media taken from along the Great Egg Harbor River in English Creek... Egg Harbor Township looking toward Estell Manor shows a very brief tornad (PHI)"
+    },
+    {
+      "date": "2026-08-20T20:38:00+00:00",
+      "ef": "UNK",
+      "location": "3 NW Millersville",
+      "county": "Lancaster",
+      "state": "PA",
+      "lat": "40.03",
+      "lon": "-76.39",
+      "notes": "EF-0 Tornado... Max Estimated winds 85 mph... path length 0.49 miles... path width 125 yards. (CTP)"
+    },
+    {
+      "date": "2026-08-20T20:37:00+00:00",
+      "ef": "UNK",
+      "location": "2 ESE Mountville",
+      "county": "Lancaster",
+      "state": "PA",
+      "lat": "40.03",
+      "lon": "-76.4",
+      "notes": "A brief EF-0 tornado occurred near Habecker Church Rd. It had a path length of 0.3 miles and path width of 75 yards. The estimated maximum wind speed was 65 mph. (CTP)"
+    },
+    {
+      "date": "2026-08-20T20:30:00+00:00",
+      "ef": "UNK",
+      "location": "SW Columbia",
+      "county": "Lancaster",
+      "state": "PA",
+      "lat": "40.03",
+      "lon": "-76.5",
+      "notes": "An NWS Storm Survey confirmed an EF-1 tornado occurred in Columbia... PA with a path length of 1.47 miles and a path width of 100 yards. The tornado exhibited anomalous (CTP)"
+    },
+    {
+      "date": "2026-08-20T20:24:00+00:00",
+      "ef": "UNK",
+      "location": "2 SW Wrightsville",
+      "county": "York",
+      "state": "PA",
+      "lat": "40",
+      "lon": "-76.55",
+      "notes": "*** 1 INJ *** An NWS Storm Survey confirmed an EF-2 tornado occurred in eastern York County... PA with a path length of 1.07 miles and a path width of 100 yards. The mo (CTP)"
+    },
+    {
+      "date": "2026-08-20T04:59:00+00:00",
+      "ef": "UNK",
+      "location": "2 S Folsomdale",
+      "county": "Graves",
+      "state": "KY",
+      "lat": "36.86",
+      "lon": "-88.67",
+      "notes": "Evidence of an EF-1 tornado with peak winds of 105 mph exists at the intersection of KY 408 and US 45 near the community of Viola. A large industrial metal building sys (PAH)"
+    },
+    {
+      "date": "2026-08-20T04:50:00+00:00",
+      "ef": "UNK",
+      "location": "Lowes",
+      "county": "Graves",
+      "state": "KY",
+      "lat": "36.89",
+      "lon": "-88.77",
+      "notes": "Multiple homes damaged in Lowes... KY. Lots of trees down over 131 in Graves... 3 mile marker. Very likely tornado with TDS. (PAH)"
+    },
+    {
+      "date": "2026-08-20T04:47:00+00:00",
+      "ef": "UNK",
+      "location": "3 ESE Cunningham",
+      "county": "Carlisle",
+      "state": "KY",
+      "lat": "36.89",
+      "lon": "-88.83",
+      "notes": "An EF-1 tornado touched down in Carlisle County 3 miles east-southeast of Cunningham and was on the ground for 1.5 miles before lifting 2 miles west of Lowes in Graves (PAH)"
+    },
+    {
+      "date": "2026-08-19T22:10:00+00:00",
+      "ef": "UNK",
+      "location": "4 S Oakley",
+      "county": "Logan",
+      "state": "KS",
+      "lat": "39.07",
+      "lon": "-100.85",
+      "notes": "[Landspout] EM relayed report of a possible landspout. (GLD)"
+    },
+    {
+      "date": "2026-08-19T21:31:00+00:00",
+      "ef": "UNK",
+      "location": "4 NNW Yorktown",
+      "county": "Delaware",
+      "state": "IN",
+      "lat": "40.23",
+      "lon": "-85.5",
+      "notes": "Delayed report from 8/19. An EF-U tornado with unknown wind speeds and a path length of 0.08 miles began at this location. No damage was found. (IND)"
+    },
+    {
+      "date": "2026-08-19T19:52:00+00:00",
+      "ef": "UNK",
+      "location": "2 E Marsh",
+      "county": "Louisa",
+      "state": "IA",
+      "lat": "41.09",
+      "lon": "-91.31",
+      "notes": "[Landspout] Corrects previous landspout report from 2 E Marsh. Multiple spotter reports of a landspout tornado reaching the ground and then dissipating. (DVN)"
+    },
+    {
+      "date": "2026-08-18T23:33:00+00:00",
+      "ef": "UNK",
+      "location": "1 SSW Hubertus",
+      "county": "Washington",
+      "state": "WI",
+      "lat": "43.22",
+      "lon": "-88.23",
+      "notes": "NWS storm survey finds a brief EF0 tornado damage track beginning near the intersection of Elmwood Rd & Timber Stone Way. Max wind speed 80 MPH. Additional details to f (MKX)"
+    },
+    {
+      "date": "2026-08-16T20:15:00+00:00",
+      "ef": "UNK",
+      "location": "1 SSE Orchard Hills",
+      "county": "Armstrong",
+      "state": "PA",
+      "lat": "40.58",
+      "lon": "-79.53",
+      "notes": "Corrects previous tornado report from 1 SSE Orchard Hills. NWS Storm Survey confirms an EF-0 tornado with maximum wind of 85 mph in Orchard Hills. (PBZ)"
+    },
+    {
+      "date": "2026-08-16T19:06:00+00:00",
+      "ef": "UNK",
+      "location": "1 NNE Harshaville",
+      "county": "Beaver",
+      "state": "PA",
+      "lat": "40.57",
+      "lon": "-80.41",
+      "notes": "A brief... narrow EF0 tornado caused damage mainly to trees along Upper Service Road in Greene and Raccoon Townships. Max wind was estimated at 75 mph... and path width (PBZ)"
+    },
+    {
+      "date": "2026-08-16T00:29:00+00:00",
+      "ef": "UNK",
+      "location": "2 N Saint Paris",
+      "county": "Champaign",
+      "state": "OH",
+      "lat": "40.16",
+      "lon": "-83.95",
+      "notes": "Tree down on Ward Road property. (ILN)"
+    },
+    {
+      "date": "2026-08-16T00:24:00+00:00",
+      "ef": "UNK",
+      "location": "2 NNW Saint Paris",
+      "county": "Champaign",
+      "state": "OH",
+      "lat": "40.16",
+      "lon": "-83.98",
+      "notes": "EF0 tornado confirmed north of St. Paris in Champaign County... Ohio. Maximum winds of 75 MPH. Several trees downed... with siding removed from a house. (ILN)"
+    },
+    {
+      "date": "2026-08-16T00:21:00+00:00",
+      "ef": "UNK",
+      "location": "4 NW Saint Paris",
+      "county": "Champaign",
+      "state": "OH",
+      "lat": "40.17",
+      "lon": "-84.01",
+      "notes": "EF0 tornado confirmed northwest of St. Paris in Champaign County... Ohio. Maximum winds of 65 MPH. Minor tree and barn damage observed. (ILN)"
+    },
+    {
+      "date": "2026-08-16T00:05:00+00:00",
+      "ef": "UNK",
+      "location": "3 N Fletcher",
+      "county": "Miami",
+      "state": "OH",
+      "lat": "40.18",
+      "lon": "-84.12",
+      "notes": "EFU tornado confirmed north of Fletcher in Miami County... Ohio. No known damage observed. (ILN)"
+    },
+    {
+      "date": "2026-08-14T21:31:00+00:00",
+      "ef": "UNK",
+      "location": "2 ENE Commerce City",
+      "county": "Adams",
+      "state": "CO",
+      "lat": "39.83",
+      "lon": "-104.89",
+      "notes": "[Landspout] Reports including a photo of a landspout approximately a mile to the north of Dicks Sporting Goods Park. Lasted approximately 7 minutes. Location estimated (BOU)"
+    }
+  ],
   "ef5": [
-    {"date":"2013-05-20","location":"Moore, OK","ef":"EF5","deaths":24,"path_length_mi":17.4,"notes":"Struck Moore, OK for the third time in 15 years; Plaza Towers Elementary destroyed.","article":"/moore-2013/"},
-    {"date":"2011-05-24","location":"El Reno/Piedmont, OK","ef":"EF5","deaths":9,"path_length_mi":63,"notes":"Very rural path — one of the longest EF5 paths on record.","article":"/el-reno-piedmont-2011/"},
-    {"date":"2011-05-22","location":"Joplin, MO","ef":"EF5","deaths":158,"path_length_mi":22.1,"notes":"Deadliest single US tornado since 1947.","article":"/joplin-2011/"},
-    {"date":"2011-04-27","location":"Rainsville, AL","ef":"EF5","deaths":25,"path_length_mi":25,"notes":"Part of the April 27, 2011 Super Outbreak.","article":"/rainsville-2011/"},
-    {"date":"2011-04-27","location":"Philadelphia, MS","ef":"EF5","deaths":3,"path_length_mi":29.4,"notes":"Also part of the 2011 Super Outbreak.","article":"/philadelphia-ms-2011/"},
-    {"date":"2011-04-27","location":"Smithville, MS","ef":"EF5","deaths":23,"path_length_mi":14.6,"notes":"Devastated the small town of Smithville.","article":"/smithville-2011/"},
-    {"date":"2011-04-27","location":"Hackleburg-Phil Campbell, AL","ef":"EF5","deaths":72,"path_length_mi":132,"notes":"Longest continuous path since the 1925 Tri-State.","article":"/hackleburg-2011/"},
-    {"date":"2008-05-25","location":"Parkersburg, IA","ef":"EF5","deaths":9,"path_length_mi":43,"notes":"Memorial Day weekend disaster.","article":"/parkersburg-2008/"},
-    {"date":"2007-05-04","location":"Greensburg, KS","ef":"EF5","deaths":11,"path_length_mi":22,"notes":"~95% of town destroyed. Rebuilt as a LEED-certified 'green' town.","article":"/greensburg-2007/"},
-    {"date":"1999-05-03","location":"Bridge Creek-Moore, OK","ef":"F5","deaths":36,"path_length_mi":38,"notes":"Recorded 302 mph winds — highest ever measured on Earth.","article":"/moore-1999/"},
-    {"date":"1997-05-27","location":"Jarrell, TX","ef":"F5","deaths":27,"path_length_mi":7.6,"notes":"Slow-moving F5 that ground-scoured concrete slabs.","article":"/jarrell-1997/"},
-    {"date":"1991-04-26","location":"Andover, KS","ef":"F5","deaths":17,"path_length_mi":46,"notes":"13 of 17 deaths at Golden Spur Mobile Home Park.","article":"/andover-1991/"},
-    {"date":"1990-08-28","location":"Plainfield, IL","ef":"F5","deaths":29,"path_length_mi":16.4,"notes":"Rare August F5.","article":"/plainfield-1990/"},
-    {"date":"1985-05-31","location":"Niles-Wheatland, PA","ef":"F5","deaths":18,"path_length_mi":56,"notes":"Part of the May 31, 1985 US-Canada border outbreak."},
-    {"date":"1980-06-13","location":"Grand Island, NE","ef":"F5","deaths":5,"path_length_mi":10,"notes":"Night of the Twisters — 7 tornadoes hit the town.","article":"/grand-island-1980/"},
-    {"date":"1974-04-03","location":"Xenia, OH","ef":"F5","deaths":32,"path_length_mi":32,"notes":"Signature F5 of the 1974 Super Outbreak.","article":"/xenia-1974/"},
-    {"date":"1974-04-03","location":"Guin, AL","ef":"F5","deaths":23,"path_length_mi":100,"notes":"Also part of the 1974 Super Outbreak.","article":"/guin-alabama-1974/"},
-    {"date":"1970-05-11","location":"Lubbock, TX","ef":"F5","deaths":26,"path_length_mi":8.3,"notes":"Damaged the Great Plains Life Building, permanently twisted.","article":"/lubbock-1970/"},
-    {"date":"1966-06-08","location":"Topeka, KS","ef":"F5","deaths":16,"path_length_mi":22,"notes":"One of the most photographed F5s ever.","article":"/topeka-1966/"},
-    {"date":"1957-06-20","location":"Fargo, ND","ef":"F5","deaths":13,"path_length_mi":52,"notes":"Extensively documented by Ted Fujita, helping establish tornado classification.","article":"/fargo-1957/"},
-    {"date":"1953-06-08","location":"Flint-Beecher, MI","ef":"F5","deaths":116,"path_length_mi":27,"notes":"Michigan's deadliest tornado.","article":"/flint-beecher-1953/"},
-    {"date":"1953-05-11","location":"Waco, TX","ef":"F5","deaths":114,"path_length_mi":23,"notes":"Struck downtown Waco.","article":"/waco-1953/"},
-    {"date":"1947-04-09","location":"Woodward, OK","ef":"F5","deaths":184,"path_length_mi":170,"notes":"One of the deadliest single tornadoes in Oklahoma history.","article":"/woodward-1947/"},
-    {"date":"1936-04-05","location":"Tupelo, MS","ef":"F5","deaths":216,"path_length_mi":15,"notes":"Deadliest Mississippi tornado on record.","article":"/tupelo-1936/"},
-    {"date":"1925-03-18","location":"Tri-State (MO/IL/IN)","ef":"F5","deaths":695,"path_length_mi":219,"notes":"Deadliest US tornado; longest continuous path ever recorded.","article":"/tri-state-1925/"}
+    {
+      "date": "2013-05-20",
+      "location": "Moore, OK",
+      "ef": "EF5",
+      "deaths": 24,
+      "path_length_mi": 17.4,
+      "notes": "Struck Moore, OK for the third time in 15 years; Plaza Towers Elementary destroyed.",
+      "article": "/moore-2013/"
+    },
+    {
+      "date": "2011-05-24",
+      "location": "El Reno/Piedmont, OK",
+      "ef": "EF5",
+      "deaths": 9,
+      "path_length_mi": 63,
+      "notes": "Very rural path — one of the longest EF5 paths on record.",
+      "article": "/el-reno-piedmont-2011/"
+    },
+    {
+      "date": "2011-05-22",
+      "location": "Joplin, MO",
+      "ef": "EF5",
+      "deaths": 158,
+      "path_length_mi": 22.1,
+      "notes": "Deadliest single US tornado since 1947.",
+      "article": "/joplin-2011/"
+    },
+    {
+      "date": "2011-04-27",
+      "location": "Rainsville, AL",
+      "ef": "EF5",
+      "deaths": 25,
+      "path_length_mi": 25,
+      "notes": "Part of the April 27, 2011 Super Outbreak.",
+      "article": "/rainsville-2011/"
+    },
+    {
+      "date": "2011-04-27",
+      "location": "Philadelphia, MS",
+      "ef": "EF5",
+      "deaths": 3,
+      "path_length_mi": 29.4,
+      "notes": "Also part of the 2011 Super Outbreak.",
+      "article": "/philadelphia-ms-2011/"
+    },
+    {
+      "date": "2011-04-27",
+      "location": "Smithville, MS",
+      "ef": "EF5",
+      "deaths": 23,
+      "path_length_mi": 14.6,
+      "notes": "Devastated the small town of Smithville.",
+      "article": "/smithville-2011/"
+    },
+    {
+      "date": "2011-04-27",
+      "location": "Hackleburg-Phil Campbell, AL",
+      "ef": "EF5",
+      "deaths": 72,
+      "path_length_mi": 132,
+      "notes": "Longest continuous path since the 1925 Tri-State.",
+      "article": "/hackleburg-2011/"
+    },
+    {
+      "date": "2008-05-25",
+      "location": "Parkersburg, IA",
+      "ef": "EF5",
+      "deaths": 9,
+      "path_length_mi": 43,
+      "notes": "Memorial Day weekend disaster.",
+      "article": "/parkersburg-2008/"
+    },
+    {
+      "date": "2007-05-04",
+      "location": "Greensburg, KS",
+      "ef": "EF5",
+      "deaths": 11,
+      "path_length_mi": 22,
+      "notes": "~95% of town destroyed. Rebuilt as a LEED-certified 'green' town.",
+      "article": "/greensburg-2007/"
+    },
+    {
+      "date": "1999-05-03",
+      "location": "Bridge Creek-Moore, OK",
+      "ef": "F5",
+      "deaths": 36,
+      "path_length_mi": 38,
+      "notes": "Recorded 302 mph winds — highest ever measured on Earth.",
+      "article": "/moore-1999/"
+    },
+    {
+      "date": "1997-05-27",
+      "location": "Jarrell, TX",
+      "ef": "F5",
+      "deaths": 27,
+      "path_length_mi": 7.6,
+      "notes": "Slow-moving F5 that ground-scoured concrete slabs.",
+      "article": "/jarrell-1997/"
+    },
+    {
+      "date": "1991-04-26",
+      "location": "Andover, KS",
+      "ef": "F5",
+      "deaths": 17,
+      "path_length_mi": 46,
+      "notes": "13 of 17 deaths at Golden Spur Mobile Home Park.",
+      "article": "/andover-1991/"
+    },
+    {
+      "date": "1990-08-28",
+      "location": "Plainfield, IL",
+      "ef": "F5",
+      "deaths": 29,
+      "path_length_mi": 16.4,
+      "notes": "Rare August F5.",
+      "article": "/plainfield-1990/"
+    },
+    {
+      "date": "1985-05-31",
+      "location": "Niles-Wheatland, PA",
+      "ef": "F5",
+      "deaths": 18,
+      "path_length_mi": 56,
+      "notes": "Part of the May 31, 1985 US-Canada border outbreak."
+    },
+    {
+      "date": "1980-06-13",
+      "location": "Grand Island, NE",
+      "ef": "F5",
+      "deaths": 5,
+      "path_length_mi": 10,
+      "notes": "Night of the Twisters — 7 tornadoes hit the town.",
+      "article": "/grand-island-1980/"
+    },
+    {
+      "date": "1974-04-03",
+      "location": "Xenia, OH",
+      "ef": "F5",
+      "deaths": 32,
+      "path_length_mi": 32,
+      "notes": "Signature F5 of the 1974 Super Outbreak.",
+      "article": "/xenia-1974/"
+    },
+    {
+      "date": "1974-04-03",
+      "location": "Guin, AL",
+      "ef": "F5",
+      "deaths": 23,
+      "path_length_mi": 100,
+      "notes": "Also part of the 1974 Super Outbreak.",
+      "article": "/guin-alabama-1974/"
+    },
+    {
+      "date": "1970-05-11",
+      "location": "Lubbock, TX",
+      "ef": "F5",
+      "deaths": 26,
+      "path_length_mi": 8.3,
+      "notes": "Damaged the Great Plains Life Building, permanently twisted.",
+      "article": "/lubbock-1970/"
+    },
+    {
+      "date": "1966-06-08",
+      "location": "Topeka, KS",
+      "ef": "F5",
+      "deaths": 16,
+      "path_length_mi": 22,
+      "notes": "One of the most photographed F5s ever.",
+      "article": "/topeka-1966/"
+    },
+    {
+      "date": "1957-06-20",
+      "location": "Fargo, ND",
+      "ef": "F5",
+      "deaths": 13,
+      "path_length_mi": 52,
+      "notes": "Extensively documented by Ted Fujita, helping establish tornado classification.",
+      "article": "/fargo-1957/"
+    },
+    {
+      "date": "1953-06-08",
+      "location": "Flint-Beecher, MI",
+      "ef": "F5",
+      "deaths": 116,
+      "path_length_mi": 27,
+      "notes": "Michigan's deadliest tornado.",
+      "article": "/flint-beecher-1953/"
+    },
+    {
+      "date": "1953-05-11",
+      "location": "Waco, TX",
+      "ef": "F5",
+      "deaths": 114,
+      "path_length_mi": 23,
+      "notes": "Struck downtown Waco.",
+      "article": "/waco-1953/"
+    },
+    {
+      "date": "1947-04-09",
+      "location": "Woodward, OK",
+      "ef": "F5",
+      "deaths": 184,
+      "path_length_mi": 170,
+      "notes": "One of the deadliest single tornadoes in Oklahoma history.",
+      "article": "/woodward-1947/"
+    },
+    {
+      "date": "1936-04-05",
+      "location": "Tupelo, MS",
+      "ef": "F5",
+      "deaths": 216,
+      "path_length_mi": 15,
+      "notes": "Deadliest Mississippi tornado on record.",
+      "article": "/tupelo-1936/"
+    },
+    {
+      "date": "1925-03-18",
+      "location": "Tri-State (MO/IL/IN)",
+      "ef": "F5",
+      "deaths": 695,
+      "path_length_mi": 219,
+      "notes": "Deadliest US tornado; longest continuous path ever recorded.",
+      "article": "/tri-state-1925/"
+    }
   ],
   "deadliest": [
-    {"date":"1925-03-18","location":"Tri-State (MO/IL/IN)","ef":"F5","deaths":695,"injuries":2027,"notes":"Deadliest US tornado on record.","article":"/tri-state-1925/"},
-    {"date":"1840-05-07","location":"Great Natchez, MS","ef":"F5","deaths":317,"notes":"Second-deadliest US tornado."},
-    {"date":"1896-05-27","location":"St. Louis-East St. Louis","ef":"F4","deaths":255,"notes":"Devastating urban tornado.","article":"/st-louis-1896/"},
-    {"date":"1936-04-05","location":"Tupelo, MS","ef":"F5","deaths":216,"notes":"Deep-South disaster.","article":"/tupelo-1936/"},
-    {"date":"1908-04-24","location":"Amite-Purvis (LA/MS)","ef":"F4","deaths":143,"notes":"Louisiana-Mississippi corridor."},
-    {"date":"1953-06-08","location":"Flint-Beecher, MI","ef":"F5","deaths":116,"injuries":844,"notes":"Michigan's deadliest.","article":"/flint-beecher-1953/"},
-    {"date":"1953-05-11","location":"Waco, TX","ef":"F5","deaths":114,"notes":"Downtown Waco.","article":"/waco-1953/"},
-    {"date":"1899-06-12","location":"New Richmond, WI","ef":"F5","deaths":117,"notes":"Wisconsin's deadliest."},
-    {"date":"1927-05-09","location":"Poplar Bluff, MO","ef":"F4","deaths":98,"notes":"Poplar Bluff, MO."},
-    {"date":"2011-05-22","location":"Joplin, MO","ef":"EF5","deaths":158,"injuries":1150,"notes":"Deadliest US tornado since 1947.","article":"/joplin-2011/"},
-    {"date":"1947-04-09","location":"Woodward, OK","ef":"F5","deaths":184,"notes":"Deadliest in Oklahoma history.","article":"/woodward-1947/"},
-    {"date":"1953-05-11","location":"San Angelo, TX","ef":"F4","deaths":13,"notes":"San Angelo, TX F4."},
-    {"date":"1974-04-03","location":"Brandenburg, KY","ef":"F5","deaths":31,"notes":"Part of the 1974 Super Outbreak."},
-    {"date":"1974-04-03","location":"Xenia, OH","ef":"F5","deaths":32,"notes":"Signature F5 of the 1974 Super Outbreak.","article":"/xenia-1974/"},
-    {"date":"2011-04-27","location":"Tuscaloosa-Birmingham, AL","ef":"EF4","deaths":65,"notes":"Major EF4 during the 2011 Super Outbreak.","article":"/tuscaloosa-2011/"},
-    {"date":"2011-04-27","location":"Hackleburg, AL","ef":"EF5","deaths":72,"notes":"Long-track EF5.","article":"/hackleburg-2011/"},
-    {"date":"2021-12-10","location":"Mayfield, KY","ef":"EF4","deaths":57,"notes":"Quad-State outbreak — deadliest Kentucky tornado ever.","article":"/mayfield-2021/"},
-    {"date":"1979-04-10","location":"Wichita Falls, TX","ef":"F4","deaths":42,"notes":"'Terrible Tuesday' outbreak.","article":"/wichita-falls-1979/"},
-    {"date":"2020-03-03","location":"Cookeville, TN","ef":"EF4","deaths":19,"notes":"Overnight EF4 during the March 2020 Nashville outbreak.","article":"/nashville-2020/"},
-    {"date":"2023-03-24","location":"Rolling Fork, MS","ef":"EF4","deaths":17,"notes":"Devastated the Mississippi Delta town.","article":"/rolling-fork-2023/"}
+    {
+      "date": "1925-03-18",
+      "location": "Tri-State (MO/IL/IN)",
+      "ef": "F5",
+      "deaths": 695,
+      "injuries": 2027,
+      "notes": "Deadliest US tornado on record.",
+      "article": "/tri-state-1925/"
+    },
+    {
+      "date": "1840-05-07",
+      "location": "Great Natchez, MS",
+      "ef": "F5",
+      "deaths": 317,
+      "notes": "Second-deadliest US tornado."
+    },
+    {
+      "date": "1896-05-27",
+      "location": "St. Louis-East St. Louis",
+      "ef": "F4",
+      "deaths": 255,
+      "notes": "Devastating urban tornado.",
+      "article": "/st-louis-1896/"
+    },
+    {
+      "date": "1936-04-05",
+      "location": "Tupelo, MS",
+      "ef": "F5",
+      "deaths": 216,
+      "notes": "Deep-South disaster.",
+      "article": "/tupelo-1936/"
+    },
+    {
+      "date": "1908-04-24",
+      "location": "Amite-Purvis (LA/MS)",
+      "ef": "F4",
+      "deaths": 143,
+      "notes": "Louisiana-Mississippi corridor."
+    },
+    {
+      "date": "1953-06-08",
+      "location": "Flint-Beecher, MI",
+      "ef": "F5",
+      "deaths": 116,
+      "injuries": 844,
+      "notes": "Michigan's deadliest.",
+      "article": "/flint-beecher-1953/"
+    },
+    {
+      "date": "1953-05-11",
+      "location": "Waco, TX",
+      "ef": "F5",
+      "deaths": 114,
+      "notes": "Downtown Waco.",
+      "article": "/waco-1953/"
+    },
+    {
+      "date": "1899-06-12",
+      "location": "New Richmond, WI",
+      "ef": "F5",
+      "deaths": 117,
+      "notes": "Wisconsin's deadliest."
+    },
+    {
+      "date": "1927-05-09",
+      "location": "Poplar Bluff, MO",
+      "ef": "F4",
+      "deaths": 98,
+      "notes": "Poplar Bluff, MO."
+    },
+    {
+      "date": "2011-05-22",
+      "location": "Joplin, MO",
+      "ef": "EF5",
+      "deaths": 158,
+      "injuries": 1150,
+      "notes": "Deadliest US tornado since 1947.",
+      "article": "/joplin-2011/"
+    },
+    {
+      "date": "1947-04-09",
+      "location": "Woodward, OK",
+      "ef": "F5",
+      "deaths": 184,
+      "notes": "Deadliest in Oklahoma history.",
+      "article": "/woodward-1947/"
+    },
+    {
+      "date": "1953-05-11",
+      "location": "San Angelo, TX",
+      "ef": "F4",
+      "deaths": 13,
+      "notes": "San Angelo, TX F4."
+    },
+    {
+      "date": "1974-04-03",
+      "location": "Brandenburg, KY",
+      "ef": "F5",
+      "deaths": 31,
+      "notes": "Part of the 1974 Super Outbreak."
+    },
+    {
+      "date": "1974-04-03",
+      "location": "Xenia, OH",
+      "ef": "F5",
+      "deaths": 32,
+      "notes": "Signature F5 of the 1974 Super Outbreak.",
+      "article": "/xenia-1974/"
+    },
+    {
+      "date": "2011-04-27",
+      "location": "Tuscaloosa-Birmingham, AL",
+      "ef": "EF4",
+      "deaths": 65,
+      "notes": "Major EF4 during the 2011 Super Outbreak.",
+      "article": "/tuscaloosa-2011/"
+    },
+    {
+      "date": "2011-04-27",
+      "location": "Hackleburg, AL",
+      "ef": "EF5",
+      "deaths": 72,
+      "notes": "Long-track EF5.",
+      "article": "/hackleburg-2011/"
+    },
+    {
+      "date": "2021-12-10",
+      "location": "Mayfield, KY",
+      "ef": "EF4",
+      "deaths": 57,
+      "notes": "Quad-State outbreak — deadliest Kentucky tornado ever.",
+      "article": "/mayfield-2021/"
+    },
+    {
+      "date": "1979-04-10",
+      "location": "Wichita Falls, TX",
+      "ef": "F4",
+      "deaths": 42,
+      "notes": "'Terrible Tuesday' outbreak.",
+      "article": "/wichita-falls-1979/"
+    },
+    {
+      "date": "2020-03-03",
+      "location": "Cookeville, TN",
+      "ef": "EF4",
+      "deaths": 19,
+      "notes": "Overnight EF4 during the March 2020 Nashville outbreak.",
+      "article": "/nashville-2020/"
+    },
+    {
+      "date": "2023-03-24",
+      "location": "Rolling Fork, MS",
+      "ef": "EF4",
+      "deaths": 17,
+      "notes": "Devastated the Mississippi Delta town.",
+      "article": "/rolling-fork-2023/"
+    }
   ],
   "yearly": [
-    {"year":2000,"count":1071},
-    {"year":2001,"count":1219},
-    {"year":2002,"count":941},
-    {"year":2003,"count":1374},
-    {"year":2004,"count":1819},
-    {"year":2005,"count":1264},
-    {"year":2006,"count":1103},
-    {"year":2007,"count":1093},
-    {"year":2008,"count":1691},
-    {"year":2009,"count":1156},
-    {"year":2010,"count":1282},
-    {"year":2011,"count":1691},
-    {"year":2012,"count":939},
-    {"year":2013,"count":907},
-    {"year":2014,"count":886},
-    {"year":2015,"count":1177},
-    {"year":2016,"count":972},
-    {"year":2017,"count":1418},
-    {"year":2018,"count":1170},
-    {"year":2019,"count":1517},
-    {"year":2020,"count":1075},
-    {"year":2021,"count":1376},
-    {"year":2022,"count":1332},
-    {"year":2023,"count":1424},
-    {"year":2024,"count":1750},
-    {"year":2025,"count":1298}
+    {
+      "year": 2000,
+      "count": 1071
+    },
+    {
+      "year": 2001,
+      "count": 1219
+    },
+    {
+      "year": 2002,
+      "count": 941
+    },
+    {
+      "year": 2003,
+      "count": 1374
+    },
+    {
+      "year": 2004,
+      "count": 1819
+    },
+    {
+      "year": 2005,
+      "count": 1264
+    },
+    {
+      "year": 2006,
+      "count": 1103
+    },
+    {
+      "year": 2007,
+      "count": 1093
+    },
+    {
+      "year": 2008,
+      "count": 1691
+    },
+    {
+      "year": 2009,
+      "count": 1156
+    },
+    {
+      "year": 2010,
+      "count": 1282
+    },
+    {
+      "year": 2011,
+      "count": 1691
+    },
+    {
+      "year": 2012,
+      "count": 939
+    },
+    {
+      "year": 2013,
+      "count": 907
+    },
+    {
+      "year": 2014,
+      "count": 886
+    },
+    {
+      "year": 2015,
+      "count": 1177
+    },
+    {
+      "year": 2016,
+      "count": 972
+    },
+    {
+      "year": 2017,
+      "count": 1418
+    },
+    {
+      "year": 2018,
+      "count": 1170
+    },
+    {
+      "year": 2019,
+      "count": 1517
+    },
+    {
+      "year": 2020,
+      "count": 1075
+    },
+    {
+      "year": 2021,
+      "count": 1376
+    },
+    {
+      "year": 2022,
+      "count": 1332
+    },
+    {
+      "year": 2023,
+      "count": 1424
+    },
+    {
+      "year": 2024,
+      "count": 1750
+    },
+    {
+      "year": 2025,
+      "count": 1298
+    }
   ]
 }
