@@ -5,7 +5,19 @@ function walk(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){
  const f=path.join(dir,e.name);
  if(e.isDirectory())walk(f);
  else if(e.name==='index.html'){
-  const s=fs.readFileSync(f,'utf8');pages.push(f);
+  const s=fs.readFileSync(f,'utf8');
+  if(s.includes('data-legacy-redirect')) {
+   const map=require('./legacy-url-map.json');
+   const oldPath=f.replaceAll('\\','/').replace(/\/index.html$/,'');
+   assert(map[oldPath],`${f}: unregistered redirect`);
+   const target='https://www.tornadosimulator.net/'+map[oldPath]+'/';
+   assert(s.includes(`content="0; url=${target}"`) && s.includes(`rel="canonical" href="${target}"`),`${f}: inconsistent redirect`);
+   assert(fs.existsSync(map[oldPath]+'/index.html'),`${f}: missing redirect target`);
+   assert(!fs.readFileSync(map[oldPath]+'/index.html','utf8').includes('data-legacy-redirect'),`${f}: redirect chain`);
+   assert(!fs.readFileSync('sitemap.xml','utf8').includes('<loc>https://www.tornadosimulator.net/'+oldPath+'/</loc>'),`${f}: redirect in sitemap`);
+   continue;
+  }
+  pages.push(f);
   for(const pattern of [/<title>[^<]+<\/title>/i,/<body\b/i,/<h1\b/i,/<\/body>/i,/rel=["']canonical["']/i])assert(pattern.test(s),`${f}: missing ${pattern}`);
   for(const m of s.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi))assert.doesNotThrow(()=>JSON.parse(m[1]),`${f}: invalid structured data`);
   const slots=[...s.matchAll(/data-th-ad="([^"]+)"/g)].map(m=>m[1]);
