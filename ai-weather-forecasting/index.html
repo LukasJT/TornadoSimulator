@@ -7,15 +7,15 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="robots" content="max-image-preview:large" />
-<title>AI Weather Forecasting — GraphCast, Pangu, Aurora Explained</title>
-<meta name="description" content="Machine learning weather models are catching up to physics-based forecasts — and running 1000x faster. Here is what GraphCast, Pangu, and Aurora are, how they work, and what they can (and cannot) do." />
-<meta name="twitter:description" content="Machine learning weather models are catching up to physics-based forecasts — and running 1000x faster. Here is what GraphCast, Pangu, and Aurora are, how they work, and what they can (and cannot) do." />
-<meta name="twitter:title" content="AI Weather Forecasting — GraphCast, Pangu, Aurora Explained" />
+<title>AI Weather Forecasting: GraphCast, Aurora, AIFS &amp; Tornado Limits</title>
+<meta name="description" content="Compare GraphCast, Aurora and ECMWF AIFS: how AI forecasts work, what accuracy claims mean, and why a global weather model is not a local tornado warning." />
+<meta name="twitter:description" content="Compare GraphCast, Aurora and ECMWF AIFS: how AI forecasts work, what accuracy claims mean, and why a global weather model is not a local tornado warning." />
+<meta name="twitter:title" content="AI Weather Forecasting: GraphCast, Aurora, AIFS &amp; Tornado Limits" />
 <meta name="twitter:card" content="summary" />
 <meta property="og:site_name" content="Tornado Hub" />
 <meta name="keywords" content="AI weather forecasting, GraphCast, Pangu weather, Aurora Microsoft, machine learning weather" />
-<meta property="og:title" content="AI Weather Forecasting — GraphCast, Pangu, Aurora Explained" />
-<meta property="og:description" content="Machine learning weather models are catching up to physics-based forecasts — and running 1000x faster. Here is what GraphCast, Pangu, and Aurora are, how they work, and what they can (and cannot) do." />
+<meta property="og:title" content="AI Weather Forecasting: GraphCast, Aurora, AIFS &amp; Tornado Limits" />
+<meta property="og:description" content="Compare GraphCast, Aurora and ECMWF AIFS: how AI forecasts work, what accuracy claims mean, and why a global weather model is not a local tornado warning." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.tornadosimulator.net/ai-weather-forecasting/" />
 <link rel="canonical" href="https://www.tornadosimulator.net/ai-weather-forecasting/" />
@@ -69,9 +69,7 @@ article li{margin-bottom:6px;font-size:16px}
 </style>
 
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-<script type="application/ld+json" data-seo="page">
-{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.tornadosimulator.net/ai-weather-forecasting/#webpage","url":"https://www.tornadosimulator.net/ai-weather-forecasting/","name":"AI Weather Forecasting — GraphCast, Pangu, Aurora Explained","description":"Machine learning weather models are catching up to physics-based forecasts — and running 1000x faster. Here is what GraphCast, Pangu, and Aurora are, how they work, and what they can (and cannot) do.","isPartOf":{"@id":"https://www.tornadosimulator.net/#website"},"publisher":{"@id":"https://www.tornadosimulator.net/#organization"},"inLanguage":"en"},{"@type":"BreadcrumbList","@id":"https://www.tornadosimulator.net/ai-weather-forecasting/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"},{"@type":"ListItem","position":2,"name":"AI Weather Forecasting — GraphCast, Pangu, Aurora Explained","item":"https://www.tornadosimulator.net/ai-weather-forecasting/"}]}]}
-</script><link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<script type="application/ld+json" data-seo="page">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.tornadosimulator.net/ai-weather-forecasting/#webpage","url":"https://www.tornadosimulator.net/ai-weather-forecasting/","name":"AI Weather Forecasting: GraphCast, Aurora, AIFS & Tornado Limits","description":"Compare GraphCast, Aurora and ECMWF AIFS: how AI forecasts work, what accuracy claims mean, and why a global weather model is not a local tornado warning.","isPartOf":{"@id":"https://www.tornadosimulator.net/#website"},"publisher":{"@id":"https://www.tornadosimulator.net/#organization"},"inLanguage":"en"},{"@type":"BreadcrumbList","@id":"https://www.tornadosimulator.net/ai-weather-forecasting/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"},{"@type":"ListItem","position":2,"name":"AI Weather Forecasting: GraphCast, Aurora, AIFS & Tornado Limits","item":"https://www.tornadosimulator.net/ai-weather-forecasting/"}]}]}</script><link rel="stylesheet" href="/assets/site-shell.css?v=1">
 <script src="/assets/site-shell.js?v=1" defer></script>
 <link rel="stylesheet" href="/assets/ads.css?v=20260912">
 </head>
@@ -82,122 +80,22 @@ article li{margin-bottom:6px;font-size:16px}
 <div class="breadcrumb"><a href="/">Home</a> · <a href="/articles/">Articles</a> · AI weather</div>
 
 <article id="main-content" tabindex="-1">
-  <header class="article-header">
-    <div class="eyebrow">Forecasting science</div>
-    <h1>AI weather <em>forecasting</em></h1>
-    <p class="lede">In 2023-24, machine learning models started beating traditional physics-based weather models. Here is what they are, why they work, and what they still get wrong.</p>
-  </header>
-
-
-  <h2 id="the-paradigm-shift">The paradigm shift</h2>
-  <p>For 70 years, weather forecasting has meant solving the equations of atmospheric physics on supercomputers. Slow, expensive, effective.</p>
-  <p>In 2023, Google DeepMind's GraphCast beat the industry standard ECMWF model on many metrics. In 2023, Huawei's Pangu did too. In 2024, Microsoft's Aurora. All run on GPUs in seconds instead of hours on CPUs.</p>
-  <p>This isn't incremental improvement. It's a new paradigm.</p>
-  <h2 id="how-ai-weather-models-work">How AI weather models work</h2>
-  <ol>
-    <li>Start with 40+ years of past weather data (ERA5 reanalysis dataset).</li>
-    <li>Train a neural network to predict future weather from past weather.</li>
-    <li>Not physics — pattern learning.</li>
-    <li>Model learns implicit physics from data.</li>
-    <li>Result: given current atmospheric state, predict state 6 hours later.</li>
-    <li>Chain 6-hour steps to get 10-day forecasts.</li>
-    <li>GPU inference: seconds per forecast.</li>
-  </ol>
-  <h2 id="the-three-main-systems">The three main systems</h2>
-  <div class="subtype-grid">
-    <div class="subtype"><div class="subtype-name">GraphCast (Google DeepMind, 2023)</div><div class="subtype-desc">Graph neural network. 0.25° global resolution. 10-day forecasts.</div></div>
-    <div class="subtype"><div class="subtype-name">Pangu-Weather (Huawei, 2023)</div><div class="subtype-desc">3D neural network. 0.25° global. Beats ECMWF on 6 of 8 metrics.</div></div>
-    <div class="subtype"><div class="subtype-name">Aurora (Microsoft, 2024)</div><div class="subtype-desc">Foundation model. Fine-tunable for specific tasks (air quality, waves).</div></div>
-    <div class="subtype"><div class="subtype-name">FourCastNet (NVIDIA, 2022)</div><div class="subtype-desc">Fourier neural operator. Earlier system, foundational.</div></div>
-    <div class="subtype"><div class="subtype-name">Fuxi (Fudan, 2023)</div><div class="subtype-desc">Chinese-developed. Competitive on medium range.</div></div>
-    <div class="subtype"><div class="subtype-name">AIFS (ECMWF, 2024)</div><div class="subtype-desc">Official European ML model. Operational since 2024.</div></div>
-  </div>
-  <h2 id="what-they-re-good-at">What they're good at</h2>
-  <ul>
-    <li>Medium-range forecasts (3-10 days).</li>
-    <li>Storm track prediction.</li>
-    <li>Temperature and pressure forecasting.</li>
-    <li>Global-scale patterns.</li>
-    <li>Running in seconds instead of hours.</li>
-    <li>Being trained on cheaper hardware.</li>
-    <li>Ensembling — running many variations quickly.</li>
-  </ul>
-  <h2 id="what-they-re-still-bad-at">What they're still bad at</h2>
-  <ul>
-    <li>Extreme events they haven't seen before.</li>
-    <li>Fine-scale convection (like individual thunderstorms).</li>
-    <li>Precipitation exact amounts and timing.</li>
-    <li>Tornado prediction (not enough training data on tornado details).</li>
-    <li>Climate-change-driven trends outside training distribution.</li>
-    <li>Small-scale wind features.</li>
-    <li>Fog.</li>
-    <li>Ocean-atmosphere coupling for hurricane intensity.</li>
-  </ul>
-  <h2 id="why-they-matter-for-chasers-and-safety">Why they matter for chasers and safety</h2>
-  <ul>
-    <li>AI models will supplement, not replace, HRRR for chase-day decisions.</li>
-    <li>Better medium-range means better multi-day chase planning.</li>
-    <li>AI ensemble outputs will show forecast confidence.</li>
-    <li>AI-augmented radar for tornado detection is in development.</li>
-    <li>Warn-on-Forecast with AI acceleration coming.</li>
-    <li>Personal AI weather assistants for individual users.</li>
-  </ul>
-  <h2 id="what-nws-does-with-them">What NWS does with them</h2>
-  <ul>
-    <li>As of 2026, NWS uses AI models as inputs to human forecast decisions.</li>
-    <li>Not as final forecast product.</li>
-    <li>Ensemble includes GFS + AI outputs.</li>
-    <li>National Blend of Models (NBM) increasingly incorporates AI.</li>
-    <li>Human forecaster still makes the call for warnings and outlooks.</li>
-  </ul>
-  <h2 id="the-training-data-problem">The training data problem</h2>
-  <ul>
-    <li>AI models trained on 1979-present data.</li>
-    <li>Extreme events (EF5 tornadoes, Cat 5 hurricanes) are RARE in training.</li>
-    <li>Result: AI models underforecast extreme events.</li>
-    <li>Climate change is producing conditions not in training.</li>
-    <li>Training data quality varies globally — poor for developing world.</li>
-    <li>Bias toward "average" outcomes.</li>
-  </ul>
-  <h2 id="the-interpretability-problem">The interpretability problem</h2>
-  <p>Traditional models: we know why they output what they do (equations).</p>
+<header class="article-header"><div class="eyebrow">Forecasting science</div><h1>AI weather forecasting: what it can tell you</h1><p class="lede">AI models can produce useful forecasts of large weather systems days ahead. Their value depends on the model, the variable and the forecast range; a global forecast does not tell you whether a tornado will strike your street.</p><p>Updated September 12, 2026. Sources and model versions are identified below.</p></header>
+<h2 id="how-it-works">How does AI weather forecasting work?</h2>
+<p>Models such as GraphCast learn relationships in historical atmospheric data, then use a recent atmospheric state to predict later conditions. Forecasts can be advanced in steps to cover several days. Numerical weather prediction instead calculates the evolution of the atmosphere through physical equations. Both depend on good starting information, and both must be checked against observations.</p>
+<h2 id="graphcast">GraphCast: a global forecast, not a street forecast</h2>
+<p>Google DeepMind's original GraphCast work describes a 10-day forecast on a 0.25-degree global grid, advanced in six-hour steps. Its published comparison found better performance than ECMWF's HRES on more than 90% of 1,380 evaluated variable and lead-time combinations. That is a result for a defined experiment, not a claim that every local prediction is 90% correct. Grid spacing, training data, forecast date and the comparison system all matter. <a href="https://deepmind.google/blog/graphcast-ai-model-for-faster-and-more-accurate-global-weather-forecasting/">Read DeepMind's GraphCast explanation and linked paper</a>.</p>
+<h2 id="aurora">Aurora: a model family with different tasks</h2>
+<p>Microsoft describes Aurora as an Earth-system foundation model that can be adapted to different forecasting tasks. Its project includes weather and other environmental applications. The current project documentation also distinguishes Aurora 1.5, with additional variables, hourly output and ensemble forecasting. Results from one version or task should not be assumed to describe every Aurora forecast. Check the version and output variable when comparing a chart with another service. <a href="https://www.microsoft.com/en-us/research/project/aurora-forecasting/">Microsoft Research's Aurora project</a>.</p>
 <aside class="th-ad-slot" data-th-ad="primary" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
-
-  <p>AI models: we don't. It's a black box.</p>
-  <ul>
-    <li>Meteorologists can't always trust an AI forecast for a specific event.</li>
-    <li>When AI and physics disagree, which is right?</li>
-    <li>Verification against ground truth is important.</li>
-    <li>AI models can hallucinate — produce physically impossible states.</li>
-    <li>This limits how much you can rely on them in operational settings.</li>
-  </ul>
-  <h2 id="the-future">The future</h2>
-  <ul>
-    <li>Hybrid models: physics + ML. Best of both.</li>
-    <li>Fine-tuned regional models.</li>
-    <li>Convection-allowing AI models.</li>
-    <li>Continuous learning: models updated with new events.</li>
-    <li>Ensemble AI for uncertainty quantification.</li>
-    <li>AI for radar interpretation.</li>
-    <li>AI for satellite interpretation.</li>
-    <li>AI-generated forecast text for public consumption.</li>
-    <li>AI for warning coordination.</li>
-  </ul>
-
-  <h2 id="learn-more">Learn more</h2>
-  <ul>
-    <li><a href="/how-forecast-accuracy-improved/">How forecast accuracy improved</a></li>
-    <li><a href="/reading-spc-mesoanalysis/">Reading SPC mesoanalysis</a></li>
-    <li><a href="/noaa-data-sources/">NOAA data sources</a></li>
-    <li><a href="/tornado-warning-lead-time-history/">Warning lead time history</a></li>
-  </ul>
-
-
-
-
-
-
-<section class="article-sources"><h2>Further reading</h2><ul><li><a href="https://www.nssl.noaa.gov/education/svrwx101/radar/">NOAA/NSSL radar basics</a></li><li><a href="https://www.nssl.noaa.gov/education/svrwx101/">NOAA/NSSL Severe Weather 101</a></li><li><a href="https://www.weather.gov/safety/">National Weather Service safety portal</a></li><li><a href="https://www.weather.gov/wrn/">NOAA Weather-Ready Nation</a></li></ul></section></article>
+<h2 id="aifs">When did ECMWF AIFS become operational?</h2>
+<p>ECMWF announced that its Artificial Intelligence Forecasting System became operational on <strong>February 25, 2025</strong>. It runs alongside ECMWF's physics-based forecasting system, providing an additional forecasting approach. The earlier version of this article incorrectly gave 2024 as the operational start date. Operational status means a system is being produced for use; it does not mean its forecasts are certain. <a href="https://www.ecmwf.int/en/about/media-centre/news/2025/ecmwfs-ai-forecasts-become-operational">ECMWF's operational announcement</a>.</p>
+<h2 id="compare-models">How to compare AI and conventional forecasts</h2>
+<ul><li>Compare forecasts initialized at the same time and valid for the same hour.</li><li>Check whether the map shows a single forecast or a probability from an ensemble.</li><li>Compare the same variable: a pressure-pattern score does not establish local rainfall accuracy.</li><li>Look for verification across many events, regions and seasons, rather than one successful storm track.</li><li>Treat runtime claims as specific to the hardware and task. Training, preparing input data and producing a forecast are different costs.</li></ul>
+<h2 id="tornado-limits">Can AI predict a tornado at my address?</h2>
+<p>The global models discussed here should not be used as address-level tornado alerts. A regional environment favorable for severe storms is different from confirmation of an individual tornado. Use <a href="/tornado-forecast/">the severe-weather outlook</a> to understand broader risk, and <a href="/tornado-watch-vs-warning/">learn the difference between a watch and a warning</a>. For immediate decisions, follow warnings and instructions from your official local weather service. <a href="https://www.weather.gov/safety/tornado">National Weather Service tornado safety guidance</a>.</p>
+<h2 id="related">Keep learning</h2><ul><li><a href="/how-forecast-accuracy-improved/">How weather forecast accuracy has improved</a></li><li><a href="/reading-spc-mesoanalysis/">Reading SPC mesoanalysis</a></li><li><a href="/noaa-data-sources/">NOAA data sources</a></li><li><a href="/tornado-reporting-guide/">How to report tornado facts accurately</a></li></ul>
+</article>
 
 <footer class="footer">
   Part of <a href="/">Tornado Hub</a>. Educational content.
