@@ -2,6 +2,145 @@
 <html lang="en">
 <head>
 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="max-image-preview:large" />
+<title>What Actually Makes a Tornado — The Science of Storm Ingredients</title>
+<meta name="description" content="Not every thunderstorm makes a tornado. This article walks through the six atmospheric ingredients — CAPE, CIN, wind shear, storm-relative helicity, LCL and moisture — that separate a garden-variety storm from a violent tornadic supercell. Includes a live simulator." />
+<meta name="twitter:description" content="Not every thunderstorm makes a tornado. This article walks through the six atmospheric ingredients — CAPE, CIN, wind shear, storm-relative helicity, LCL and moisture — that separate a garden-variety storm from a violent tornadic supercell. Includes a live simulator." />
+<meta name="twitter:title" content="What Actually Makes a Tornado — The Science of Storm Ingredients" />
+<meta name="twitter:card" content="summary" />
+<meta property="og:site_name" content="Tornado Hub" />
+<meta name="keywords" content="what makes a tornado, how tornadoes form, tornado ingredients, supercell formation, CAPE explained, wind shear tornado, storm relative helicity, LCL tornado, tornado science" />
+<meta property="og:title" content="What Actually Makes a Tornado — The Science of Storm Ingredients" />
+<meta property="og:description" content="Not every thunderstorm makes a tornado. This article walks through the six atmospheric ingredients — CAPE, CIN, wind shear, storm-relative helicity, LCL and moisture — that separate a garden-variety storm from a violent tornadic supercell. Includes a live simulator." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tornadosimulator.net/what-makes-a-tornado/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/what-makes-a-tornado/" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"What Actually Makes a Tornado — The Science of Storm Ingredients","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub","url":"https://www.tornadosimulator.net/"},"datePublished":"2026-07-09","mainEntityOfPage":"https://www.tornadosimulator.net/what-makes-a-tornado/"}
+</script>
+<script type="application/ld+json" data-seo="page">
+{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.tornadosimulator.net/what-makes-a-tornado/#webpage","url":"https://www.tornadosimulator.net/what-makes-a-tornado/","name":"What Actually Makes a Tornado — The Science of Storm Ingredients","description":"Not every thunderstorm makes a tornado. This article walks through the six atmospheric ingredients — CAPE, CIN, wind shear, storm-relative helicity, LCL and moisture — that separate a garden-variety storm from a violent tornadic supercell. Includes a live simulator.","isPartOf":{"@id":"https://www.tornadosimulator.net/#website"},"publisher":{"@id":"https://www.tornadosimulator.net/#organization"},"inLanguage":"en"},{"@type":"BreadcrumbList","@id":"https://www.tornadosimulator.net/what-makes-a-tornado/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"},{"@type":"ListItem","position":2,"name":"What Actually Makes a Tornado — The Science of Storm Ingredients","item":"https://www.tornadosimulator.net/what-makes-a-tornado/"}]}]}
+</script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --accent:#a02818; --link:#1e3a5f; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.7}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text);text-decoration:none}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.breadcrumb{max-width:760px;margin:16px auto 0;padding:0 24px;font-size:13px;color:var(--text-muted)}
+article{max-width:760px;margin:32px auto 60px;padding:0 24px}
+.article-header{margin-bottom:36px;padding-bottom:24px;border-bottom:1px solid var(--border)}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h1{font-family:var(--serif);font-size:clamp(32px,4vw,44px);line-height:1.15;letter-spacing:-0.02em;margin-bottom:14px}
+.lede{font-size:19px;color:var(--text-secondary);max-width:640px;line-height:1.55}
+article h2{font-family:var(--serif);font-size:28px;margin:44px 0 14px;letter-spacing:-0.01em}
+article h3{font-family:var(--serif);font-size:20px;margin:30px 0 10px}
+article p{margin-bottom:16px;font-size:17px;color:var(--text);}
+article ul{margin:8px 0 18px 22px}
+article li{margin-bottom:6px;font-size:16px}
+.callout{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:6px;padding:20px 24px;margin:28px 0}
+.callout p{margin:0;font-size:15px;color:var(--text-secondary)}
+.callout strong{color:var(--text)}
+.cta-box{background:linear-gradient(135deg,var(--accent) 0%,#7d1f13 100%);color:white;border-radius:14px;padding:28px 30px;margin:36px 0;display:flex;gap:22px;align-items:center;text-decoration:none;transition:transform 0.15s}
+.cta-box:hover{transform:translateY(-2px);text-decoration:none;color:white}
+.cta-emoji{font-size:44px;line-height:1}
+.cta-title{font-family:var(--serif);font-size:24px;font-weight:700;letter-spacing:-0.01em;margin-bottom:4px}
+.cta-desc{opacity:0.9;font-size:15px}
+.cta-arrow{margin-left:auto;font-size:22px}
+.recipe{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin:24px 0 36px}
+.ingredient{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 18px}
+.ingredient-name{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--accent);margin-bottom:4px}
+.ingredient-abbr{font-family:"Courier New",monospace;font-size:11px;color:var(--text-muted);margin-bottom:8px}
+.ingredient-body{font-size:14px;color:var(--text-secondary);line-height:1.5}
+.footer{text-align:center;padding:30px 24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px}
+.inline-ad{text-align:center;margin:32px auto;max-width:728px;overflow:hidden}
+</style>
+
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" /><link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<script src="/assets/site-shell.js?v=1" defer></script>
+<link rel="stylesheet" href="/assets/ads.css?v=20260912">
+</head>
+<body>
+
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav><noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+
+<div class="breadcrumb"><a href="/">Home</a> · <a href="/articles/">Articles</a> · The science of tornado ingredients</div>
+
+<article id="main-content" tabindex="-1">
+
+  <header class="article-header">
+    <div class="eyebrow">Science of severe weather</div>
+    <h1>What actually makes a tornado?</h1>
+    <p class="lede">Not every thunderstorm becomes a supercell, and not every supercell drops a tornado. Meteorologists watch a specific short list of atmospheric ingredients that decide the outcome. Here they are, in plain English.</p>
+  </header>
+
+
+  <p>If you've watched a live SPC outlook, you've heard the language: <em>2500 J/kg of CAPE, 60 knots of deep-layer shear, 300 m²/s² of low-level helicity, low LCL heights along the boundary</em>. It sounds like jargon, but each phrase is answering a very specific question about whether the sky is going to spit out a tornado today. There are only about six of them.</p>
+
+  <h2 id="the-recipe">The recipe</h2>
+
+  <div class="recipe">
+    <div class="ingredient">
+      <div class="ingredient-name">Instability</div>
+      <div class="ingredient-abbr">CAPE — J/kg</div>
+      <div class="ingredient-body">How much "spring energy" a rising air parcel gets. Values over 2500 J/kg mean an updraft can accelerate to jetliner speeds.</div>
+    </div>
+    <div class="ingredient">
+      <div class="ingredient-name">The cap</div>
+      <div class="ingredient-abbr">CIN — J/kg</div>
+      <div class="ingredient-body">A warm layer aloft that acts like a lid. A little cap concentrates energy; too much, and nothing forms all day.</div>
+    </div>
+    <div class="ingredient">
+      <div class="ingredient-name">Deep-layer shear</div>
+      <div class="ingredient-abbr">0–6 km — kt</div>
+      <div class="ingredient-body">The change in wind speed and direction from the surface to storm-top height. This is what turns a thunderstorm into a supercell.</div>
+    </div>
+    <div class="ingredient">
+      <div class="ingredient-name">Low-level helicity</div>
+      <div class="ingredient-abbr">SRH — m²/s²</div>
+      <div class="ingredient-body">How much horizontal spin is available in the lowest kilometer. This is the spin the mesocyclone stretches into a tornado.</div>
+    </div>
+    <div class="ingredient">
+      <div class="ingredient-name">Cloud base height</div>
+      <div class="ingredient-abbr">LCL — meters</div>
+      <div class="ingredient-body">Where the updraft first condenses. Lower cloud bases mean the storm's cold outflow doesn't cut off the low-level spin.</div>
+    </div>
+    <div class="ingredient">
+      <div class="ingredient-name">Boundary-layer moisture</div>
+      <div class="ingredient-abbr">Dewpoint — °F</div>
+      <div class="ingredient-body">The fuel for CAPE and the anchor for a low LCL. 70°F dewpoints across the Plains are a very red flag.</div>
+    </div>
+  </div>
+
+  <div class="callout"><p><strong>Skip the reading?</strong> Build your own atmosphere on the live <a href="/supercell-simulator/">supercell simulator</a> and watch the storm mode, STP score and expected tornado strength update in real time.</p>
+<aside class="th-ad-slot" data-th-ad="primary" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+</div>
+
+  <h2 id="ingredient-one-instability-cape">Ingredient one: instability (CAPE)</h2>
+  <p>Take a warm, moist parcel of air at the surface. If the air above it is cool enough, that parcel rises freely — buoyancy accelerates it upward like a hot-air balloon released from a hand. The total "spring energy" stored between the surface and the storm top is called <strong>Convective Available Potential Energy</strong>, or CAPE.</p>
+  <p>The number matters. Under about 500 J/kg you're not going to see much beyond weak scattered showers. At 1500 J/kg you're in normal severe-thunderstorm territory. At 3000 J/kg the atmosphere can put out sustained updrafts of 40 meters per second — 90 mph vertical winds inside the storm. Over 5000 J/kg is territory you associate with the biggest hail and the strongest supercells in history.</p>
+  <p>But CAPE by itself is not enough. Plenty of days feature big CAPE and produce nothing at all.</p>
+
+  <h2 id="ingredient-two-the-cap-cin">Ingredient two: the cap (CIN)</h2>
+  <p>Just above the moist surface layer, there's often a layer of warm, dry air — sometimes called the "elevated mixed layer" or EML — that's been pushed east from the Mexican plateau. This warm layer is <em>more buoyant</em> than the parcel trying to rise through it, so it acts like a lid, or <strong>Convective Inhibition</strong> (CIN, always negative). The parcel has to burn off some energy to break through.</p>
+  <p>Meteorologists <em>love</em> a small cap. Something like -50 J/kg is ideal: it holds back small storms during the day while surface heating builds enormous CAPE, then breaks late in the afternoon and lets everything explode at once. What you don't want is -250 J/kg, which typically caps out completely — the classic "cap bust" that fools forecasters into thinking severe weather is coming, then produces a beautiful sunset instead.</p>
+
+  <div class="inline-ad">
+
 
   </div>
 
@@ -9,6 +148,8 @@
   <p>Even the tallest thunderstorm dies quickly if it rains on itself. The updraft draws warm humid air up; the downdraft plunges rain-cooled air back down. If the wind speed and direction don't change much between the surface and 6 km up, those two air currents share the same column of sky and the storm chokes on its own outflow.</p>
   <p>But if the wind at 6 km is <em>much faster</em> or in a different direction than the wind at the surface, the storm tilts. The updraft leans away from the rain shaft. The rain falls into different air. The storm can now sustain itself for hours.</p>
   <p>The threshold to look for is about 40 knots of "bulk shear" over the 0–6 km layer. Below that, storms are short-lived and messy. Above it, you can get discrete rotating supercells — the kind that stay isolated on radar and can be tracked visually for hours.</p>
+<aside class="th-ad-slot" data-th-ad="secondary" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+
 
   <h2 id="ingredient-four-low-level-rotation-srh">Ingredient four: low-level rotation (SRH)</h2>
   <p>Deep shear organizes storms. But tornadoes need spin near the ground — specifically in the lowest 1 kilometer. That's where <strong>Storm-Relative Helicity</strong> (SRH) comes in: a measure of the horizontal spin available in the low-level wind field, integrated along the storm's motion.</p>
@@ -57,133 +198,9 @@
 
 
 
-<section class="article-upgrade" data-generated="science-depth-v1">
-  <style>
-    .article-upgrade{margin:42px 0 0;padding-top:10px}.article-upgrade .science-figure{margin:24px 0 28px;background:#fff;border:1px solid var(--border,#e5e1d8);border-radius:8px;overflow:hidden;box-shadow:0 8px 24px rgba(20,22,28,.08)}.article-upgrade .science-figure svg{display:block;width:100%;height:auto}.article-upgrade .science-figure figcaption{padding:12px 16px;color:var(--text-secondary,#4a5061);font-size:14px;line-height:1.5;border-top:1px solid var(--border,#e5e1d8)}.article-upgrade .article-checklist{margin:12px 0 18px 22px}.article-upgrade .article-checklist li{margin-bottom:8px}.article-upgrade .source-box{background:var(--surface,#fff);border-left:4px solid var(--accent,#a02818);padding:18px 20px;margin:28px 0;box-shadow:0 2px 10px rgba(0,0,0,.04)}.article-upgrade .source-box ul{margin:10px 0 0 20px}.article-upgrade .reader-note{font-size:15px;color:var(--text-secondary,#4a5061)}
-  </style>
-  <figure class="science-figure">
-    <svg viewBox="0 0 720 320" role="img" aria-labelledby="fig-title-what-makes-a-tornado fig-desc-what-makes-a-tornado" xmlns="http://www.w3.org/2000/svg">
-      <title id="fig-title-what-makes-a-tornado">What actually makes a tornado? visual guide</title><desc id="fig-desc-what-makes-a-tornado">A severe thunderstorm can organize rotation, lower a rotating wall cloud, and focus damaging wind into a narrow path near the ground.</desc>
-      <rect width="720" height="320" fill="#f4f7fb"/><path d="M0 260h720v60H0z" fill="#d9e7d3"/>
-      <path d="M75 118c70-64 151-67 214-26 34-38 109-45 157-12 62-22 132 7 166 58H75z" fill="#34465c"/>
-      <path d="M134 151c60 18 137 22 213 6 95-20 159 2 226 45" fill="none" stroke="#72839a" stroke-width="18" stroke-linecap="round"/>
-      <path d="M352 140c-31 28-24 69-53 101-17 19-40 32-67 45 53-1 90-12 116-38 42-42 22-81 63-112z" fill="#9aa7b5"/>
-      <path d="M254 274c34 9 77 9 118 0" stroke="#7b4f2a" stroke-width="10" stroke-linecap="round"/>
-      <path d="M500 95l40-22m-18 52l55-6m-94 31l39 22" stroke="#f4b844" stroke-width="7" stroke-linecap="round"/>
-      <text x="44" y="48" font-family="Inter,Arial,sans-serif" font-size="22" fill="#172033" font-weight="700">Storm base, rotation, and damage path</text>
-    </svg>
-    <figcaption>A severe thunderstorm can organize rotation, lower a rotating wall cloud, and focus damaging wind into a narrow path near the ground. This original Tornado Hub figure is designed as an educational diagram for What actually makes a tornado?.</figcaption>
-  </figure>
-  <h2>Why this science of severe weather story matters</h2>
-  <p>Tornado topics deserve more than a one-line answer because the hazard changes quickly at neighborhood scale. A tornado warning, a visible funnel, a debris signature on radar, and a damage rating all describe different parts of the same story. Readers need to know which part is about the atmosphere, which part is about confirmation, and which part is about what to do next.</p>
-  <p>For <strong>What actually makes a tornado?</strong>, the practical value is context. A reader should leave with a clearer sense of what the term means, what evidence supports it, and what choices it should influence before, during, or after hazardous weather.</p>
-  <h2>The science in plain English</h2>
-  <p>The core science is the overlap of moisture, instability, lift, and changing wind with height. NOAA severe-weather education materials describe tornadoes as rotating columns of air connected to a thunderstorm and the ground, but they also emphasize that the exact details of tornadogenesis are still an active research problem. That uncertainty matters: two storms can look similar on radar while only one produces a damaging tornado.</p>
-  <p>Weather is rarely controlled by one ingredient. The same headline can play out differently depending on storm timing, terrain, building quality, warning access, and how many people are exposed. That is why official meteorology sources usually describe risk as a combination of probability, severity, and confidence rather than as a single yes-or-no answer.</p>
-  <h2>How to use this information</h2>
-  <p>Use this article as a bridge between curiosity and action. If the topic is about formation, look for ingredients such as strong low-level moisture and wind shear. If it is about safety, focus on shelter quality, warning access, and how fast you can get to an interior room or rated shelter. If it is about a past event, separate the storm environment from the human exposure that made the outcome worse.</p>
-  <p>If you are comparing this page with another guide, look for the scale of the question. Some pages explain what happens inside a storm, some explain what forecasters can detect, and others explain what a household, school, business, or community should do. Mixing those scales is how weather myths spread.</p>
-  <h2>What to watch for</h2>
-  <p>The most important warning signs are official alerts, a storm with strong rotation, a lowering cloud base, rising dust or debris under a storm, and a sudden change from normal thunderstorm noise to a more violent wind signal. None of those signs should be used as a reason to wait outside. Night, rain wrapping, hills, trees, and buildings can hide a tornado until it is too close.</p>
-  <p>Pay attention to update timing. Forecasts and warnings are snapshots of the best available information, and high-impact weather can evolve between updates. When official guidance changes, treat the change as new information rather than as a contradiction.</p>
-  <h2>Common mistakes</h2>
-  <p>A common mistake is treating Tornado Alley as the only place that matters. Another is assuming a weaker rating means a safe storm. Ratings describe damage after the fact, not what a storm can do to a person in the path. It is also risky to chase photos, drive away at the last minute, or wait for sirens when phone alerts and NOAA Weather Radio are available.</p>
-  <p>Another general mistake is using old experience as the only guide. People often prepare for the last event they remember, but the next event may arrive at a different time of day, affect a different road, or stress a different part of the home or community.</p>
-  <h2>Reader checklist</h2>
-  <p>Before moving on from What actually makes a tornado?, use this quick checklist to separate useful weather information from noise:</p>
-  <ul class="article-checklist">
-    <li>Can you name the main hazard: wind, water, lightning, heat, cold, visibility, or air quality?</li>
-    <li>Do you know whether the page is explaining formation, detection, forecasting, safety, history, or recovery?</li>
-    <li>Have you checked whether the official source is describing probability, observed damage, or immediate action?</li>
-    <li>Can you identify the decision point: shelter, delay travel, evacuate, protect property, or keep monitoring?</li>
-    <li>Do you have a second alert path if power, cell service, sirens, or internet access fail?</li>
-  </ul>
-  <p>That checklist is intentionally conservative. Weather education is most valuable when it helps a reader make a calmer decision under pressure, not when it simply adds more dramatic storm vocabulary.</p>
-  <div class="source-box">
-    <strong>Sources and further reading:</strong>
-    <ul><li><a href="https://www.nssl.noaa.gov/education/svrwx101/tornadoes/" rel="noopener">NOAA/NSSL Severe Weather 101: Tornadoes</a></li><li><a href="https://www.spc.noaa.gov/faq/tornado/" rel="noopener">NOAA Storm Prediction Center Tornado FAQ</a></li><li><a href="https://www.weather.gov/safety/tornado" rel="noopener">National Weather Service tornado safety</a></li></ul>
-    <p class="reader-note">Tornado Hub articles are educational explainers and are not a live warning service. For immediate decisions, use official alerts from your local National Weather Service office, emergency management agency, or equivalent national weather authority.</p>
-  </div>
-</section>
-<section class="article-depth-v2" data-generated="article-depth-v2">
-  <style>
-    .article-depth-v2{margin:42px 0 0;padding:28px 0 4px;border-top:1px solid var(--border,#e5e1d8)}.article-depth-v2 h2{margin-top:28px}.article-depth-v2 .depth-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:18px 0 24px}.article-depth-v2 .depth-card{background:var(--surface,#fff);border:1px solid var(--border,#e5e1d8);border-radius:8px;padding:16px}.article-depth-v2 .depth-card strong{display:block;margin-bottom:6px;color:var(--accent,#a02818);font-size:12px;text-transform:uppercase;letter-spacing:.08em}.article-depth-v2 .depth-card p{font-size:15px;line-height:1.55;margin:0;color:var(--text-secondary,#4a5061)}.article-depth-v2 .depth-checklist{margin:12px 0 20px 22px}.article-depth-v2 .depth-checklist li{margin-bottom:8px}.article-depth-v2 .depth-source-box{background:var(--surface,#fff);border-left:4px solid var(--accent,#a02818);padding:18px 20px;margin:24px 0}.article-depth-v2 .depth-source-box ul{margin:10px 0 0 20px}.article-depth-v2 .depth-note{font-size:15px;color:var(--text-secondary,#4a5061)}
-  </style>
-  <h2>How to read this guide</h2>
-  <p><strong>What actually makes a tornado?</strong> is most useful when it is read as a decision guide, not just a definition. The goal is to connect the weather setup, the warning language, and the practical action a reader may need before conditions become dangerous.</p>
-  <div class="depth-grid">
-    <div class="depth-card"><strong>Main question</strong><p>What threat would change a shelter decision?</p></div>
-    <div class="depth-card"><strong>Reader takeaway</strong><p>Read this tornado article as a bridge between storm structure and action. The useful takeaway is not only what a tornado is, but what evidence would make a person stop watching and move to shelter.</p></div>
-  </div>
-  <h2>What to compare with official guidance</h2>
-  <p>Compare the article with official warnings, radar-confirmed rotation, debris signatures, local spotter reports, and the building you are actually in. A well-built interior room and a mobile home do not offer the same margin.</p>
-  <p>Tornado science is strongest when it separates observed damage, radar evidence, environmental ingredients, and forecast probability. Those pieces support different levels of confidence.</p>
-  <h2>Decision checklist</h2>
-  <ul class="depth-checklist">
-    <li>Identify the main hazard first: wind, water, lightning, heat, cold, visibility, air quality, or travel disruption.</li>
-    <li>Check whether the article is explaining a forecast ingredient, an observed hazard, a safety action, or a historical lesson.</li>
-    <li>Compare the page with the latest official warning, local emergency instruction, or agency update before acting.</li>
-    <li>Decide what would change your plan: sheltering sooner, delaying travel, avoiding water, preparing for outage, or checking on someone vulnerable.</li>
-    <li>Keep a backup alert path in case power, cell service, internet, sirens, or social media updates fail.</li>
-  </ul>
-  <p>Change the plan if a warning polygon includes your location, a storm becomes radar-confirmed, debris is reported, nightfall reduces visibility, or your only shelter option requires extra travel time.</p>
-  <div class="depth-source-box">
-    <strong>Additional sources and further reading:</strong>
-    <ul><li><a href="https://www.nssl.noaa.gov/education/svrwx101/tornadoes/" rel="noopener">NOAA/NSSL Severe Weather 101: Tornadoes</a></li><li><a href="https://www.spc.noaa.gov/faq/tornado/" rel="noopener">NOAA Storm Prediction Center tornado FAQ</a></li><li><a href="https://www.weather.gov/safety/tornado" rel="noopener">National Weather Service tornado safety</a></li></ul>
 
-  </div>
-</section>
-<section class="random-depth-v4" data-generated="random-depth-v4">
-  <style>
-    .random-depth-v4{margin:46px 0 0;padding:30px 0 0;border-top:1px solid var(--border,#e5e1d8)}.random-depth-v4 .random-visual{margin:20px 0 24px;background:var(--surface,#fff);border:1px solid var(--border,#e5e1d8);border-radius:8px;overflow:hidden;box-shadow:0 8px 24px rgba(20,22,28,.08)}.random-depth-v4 .random-visual svg{display:block;width:100%;height:auto}.random-depth-v4 .random-visual figcaption{border-top:1px solid var(--border,#e5e1d8);padding:12px 16px;font-size:14px;line-height:1.5;color:var(--text-secondary,#4a5061)}.random-depth-v4 .random-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:20px 0 24px}.random-depth-v4 .random-card{background:var(--surface,#fff);border:1px solid var(--border,#e5e1d8);border-radius:8px;padding:17px 18px}.random-depth-v4 .random-card strong{display:block;margin-bottom:6px;color:#a02818;font-size:12px;text-transform:uppercase;letter-spacing:0}.random-depth-v4 .random-card p{font-size:15.5px;line-height:1.58;margin:0;color:var(--text-secondary,#4a5061)}.random-depth-v4 .random-sources{background:var(--surface,#fff);border-left:4px solid #a02818;padding:18px 20px;margin:24px 0}.random-depth-v4 .random-sources ul{margin:10px 0 0 20px}.random-depth-v4 .random-note{font-size:15px;color:var(--text-secondary,#4a5061)}
-  </style>
-  <h2 id="field-notes-and-source-map">Field notes and source map</h2>
-  <p><strong>What actually makes a tornado?</strong> benefits from one more layer of context: what evidence a reader should compare, what the official sources actually cover, and what practical decision the article should support. This added section is intentionally written like a newsroom sidebar: quick to scan, but deep enough to make the page more useful than a short definition.</p>
-  <figure class="random-visual">
-    <svg viewBox="0 0 760 380" role="img" aria-labelledby="random-fig-title-what-makes-a-tornado random-fig-desc-what-makes-a-tornado" xmlns="http://www.w3.org/2000/svg">
-      <title id="random-fig-title-what-makes-a-tornado">What actually makes a tornado? visual source guide</title>
-      <desc id="random-fig-desc-what-makes-a-tornado">A custom Tornado Hub diagram showing the evidence layers readers should compare for this weather topic.</desc>
-      <rect width="760" height="380" rx="12" fill="#f4f1ea"/>
-      <rect x="34" y="34" width="692" height="312" rx="10" fill="#ffffff" stroke="#e5e1d8"/>
-      <text x="62" y="76" font-family="Inter,Arial,sans-serif" font-size="13" font-weight="700" fill="#a02818" letter-spacing="0">Tornado Analysis</text>
-      <text x="62" y="111" font-family="Georgia,serif" font-size="25" font-weight="700" fill="#14161c">What actually makes a tornado?</text>
-      <path d="M80 250 C160 150 250 150 330 218 C410 286 500 120 610 156 C670 176 700 230 710 280" fill="none" stroke="#d4cfc3" stroke-width="18" stroke-linecap="round"/>
-      <path d="M80 250 C160 150 250 150 330 218 C410 286 500 120 610 156 C670 176 700 230 710 280" fill="none" stroke="#a02818" stroke-width="4" stroke-dasharray="10 12" stroke-linecap="round"/>
-      <g>
-        <circle cx="140" cy="230" r="44" fill="#a02818" opacity=".92"/>
-        <text x="140" y="235" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="700" fill="#fff">Ingredients</text>
-      </g>
-      <g>
-        <circle cx="310" cy="176" r="44" fill="#1e3a5f" opacity=".92"/>
-        <text x="310" y="181" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="700" fill="#fff">Detection</text>
-      </g>
-      <g>
-        <circle cx="480" cy="226" r="44" fill="#2d6a4f" opacity=".92"/>
-        <text x="480" y="231" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="700" fill="#fff">Warning</text>
-      </g>
-      <g>
-        <circle cx="650" cy="178" r="44" fill="#b8620f" opacity=".92"/>
-        <text x="650" y="183" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="700" fill="#fff">Shelter</text>
-      </g>
-      <text x="62" y="320" font-family="Inter,Arial,sans-serif" font-size="14" fill="#4a5061">Use this as an evidence map: compare the concept, official source, local exposure, and action trigger.</text>
-    </svg>
-    <figcaption>The diagram below treats the storm as a chain of decisions. Ingredients create the possibility, detection raises confidence, warnings narrow the action area, and shelter quality controls the human outcome. This custom Tornado Hub visual is original to this article and is meant for education, not live warning use.</figcaption>
-  </figure>
-  <div class="random-grid">
-    <div class="random-card"><strong>Why it matters</strong><p>A tornado article is strongest when it keeps four layers separate: the environment that supports rotation, the radar or spotter evidence that raises confidence, the warning language that communicates urgency, and the shelter decision a person has to make quickly.</p></div>
-    <div class="random-card"><strong>How to read it</strong><p>When reading this page, ask what kind of statement is being made. A climatology statement tells you what is common, a warning statement tells you what is urgent, and a damage-rating statement describes what investigators found after the event.</p></div>
-  </div>
-  <h2 id="what-to-check-next">What to check next</h2>
-  <p>After reading this page, compare the article with the latest official information, the local terrain or building exposure, and the time window in which the hazard matters. A weather concept becomes useful when it changes one of those things: where you go, when you travel, how you shelter, what you monitor, or whether you wait for a safer window.</p>
-  <p>For readers coming from search, the key is to avoid treating one term as the whole answer. A headline may name the storm type, but the useful details are usually smaller: the warning wording, the observation trend, the affected road or coast, the people who need extra time, and the source that will update first.</p>
-  <h2 id="source-trail">Source trail</h2>
-  <p>The source trail matters because tornado science mixes real-time warning operations with after-the-fact surveys. NOAA/NSSL and SPC explain the atmospheric side, while NWS safety guidance explains the action side.</p>
-  <div class="random-sources">
-    <strong>Primary sources to compare:</strong>
-    <ul><li><a href="https://www.nssl.noaa.gov/education/svrwx101/tornadoes/" rel="noopener">NOAA/NSSL Severe Weather 101: Tornadoes</a></li><li><a href="https://www.spc.noaa.gov/faq/tornado/" rel="noopener">NOAA Storm Prediction Center tornado FAQ</a></li><li><a href="https://www.weather.gov/safety/tornado" rel="noopener">National Weather Service tornado safety</a></li><li><a href="https://www.ncei.noaa.gov/products/storm-events" rel="noopener">NOAA Storm Events Database</a></li></ul>
-    <p class="random-note">These links are provided so readers can move from Tornado Hub's plain-English explanation to official meteorological, warning, safety, or archive sources.</p>
-  </div>
-</section></article>
+
+<section class="article-sources"><h2>Further reading</h2><ul><li><a href="https://www.nssl.noaa.gov/education/svrwx101/tornadoes/">NOAA/NSSL Severe Weather 101: Tornadoes</a></li><li><a href="https://www.spc.noaa.gov/faq/tornado/">NOAA Storm Prediction Center tornado FAQ</a></li><li><a href="https://www.weather.gov/safety/tornado">National Weather Service tornado safety</a></li><li><a href="https://www.ncei.noaa.gov/products/storm-events">NOAA Storm Events Database</a></li></ul></section></article>
 
 <footer class="footer">
   Part of <a href="/">Tornado Hub</a> — educational content, not a forecast. For live watches see the <a href="https://www.spc.noaa.gov/" target="_blank" rel="noopener">NOAA Storm Prediction Center</a>.
@@ -193,5 +210,7 @@
 
 
 <script src="/assets/house-ads.js?v=15" defer></script>
+<script src="/assets/ads-config.js?v=20260912" defer></script>
+<script src="/assets/ads.js?v=20260912" defer></script>
 </body>
 </html>

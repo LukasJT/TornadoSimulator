@@ -2,6 +2,168 @@
 <html lang="en">
 <head>
 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Storm Chase Log — Free Chase Tracking Tool for Chasers</title>
+<meta name="description" content="A free, privacy-first storm chase log. Track your chases with date, target, storm mode, tornado observations, mileage, and photos. Data stored locally on your device only. Export to CSV for your records." />
+<meta name="twitter:description" content="A free, privacy-first storm chase log. Track your chases with date, target, storm mode, tornado observations, mileage, and photos. Data stored locally on your device only. Export to CSV for your records." />
+<meta name="twitter:title" content="Storm Chase Log — Free Chase Tracking Tool for Chasers" />
+<meta name="twitter:card" content="summary" />
+<meta property="og:site_name" content="Tornado Hub" />
+<meta name="keywords" content="storm chase log, chase tracker, chase journal, storm chasing tracker, tornado chase log, chaser statistics" />
+<meta property="og:title" content="Storm Chase Log — Free Chase Tracking Tool for Chasers" />
+<meta property="og:description" content="A free, privacy-first storm chase log. Track your chases with date, target, storm mode, tornado observations, mileage, and photos. Data stored locally on your device only. Export to CSV for your records." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.tornadosimulator.net/chase-log/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/chase-log/" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --border-strong:#d4cfc3; --accent:#a02818; --accent-hover:#7d1f13; --link:#1e3a5f; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; --mono:"JetBrains Mono",monospace; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text)}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+.hero{padding:36px 20px 20px;text-align:center;max-width:700px;margin:0 auto}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h1{font-family:var(--serif);font-size:clamp(28px,4vw,40px);font-weight:700;letter-spacing:-0.02em;margin-bottom:10px}
+h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.hero p{color:var(--text-secondary);font-size:15px}
+.wrap{max-width:1000px;margin:20px auto 40px;padding:0 20px}
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:16px}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;text-align:center}
+.stat-val{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--accent);line-height:1}
+.stat-lbl{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.06em;margin-top:2px;font-weight:600}
+.actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:16px}
+.btn{padding:10px 18px;font-size:14px;font-weight:600;border-radius:8px;border:1.5px solid var(--border-strong);background:var(--surface);color:var(--text);cursor:pointer;font-family:var(--sans)}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn.primary{background:var(--accent);color:white;border-color:var(--accent)}
+.btn.primary:hover{background:var(--accent-hover);color:white}
+.form-panel{background:var(--surface);border:2px dashed var(--accent);border-radius:12px;padding:22px 26px;margin-bottom:20px;display:none}
+.form-panel.show{display:block}
+.form-panel h3{font-family:var(--serif);font-size:20px;margin-bottom:14px}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:11px;font-weight:700;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px}
+.field input,.field select,.field textarea{width:100%;padding:10px 14px;font-size:14px;border:1.5px solid var(--border);border-radius:8px;font-family:var(--sans);background:var(--bg-alt)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);background:var(--surface)}
+.field textarea{min-height:60px;resize:vertical}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:500px){.grid2{grid-template-columns:1fr}}
+.chase-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px 22px;margin-bottom:12px;transition:border-color 0.15s}
+.chase-card:hover{border-color:var(--accent)}
+.chase-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;flex-wrap:wrap;gap:6px}
+.chase-date{font-family:var(--mono);font-size:14px;color:var(--accent);font-weight:700}
+.chase-loc{font-family:var(--serif);font-size:18px;font-weight:700}
+.chase-rating{background:rgba(160,40,24,0.09);color:var(--accent);padding:3px 10px;font-family:monospace;font-size:12px;font-weight:700;border-radius:5px}
+.chase-details{display:flex;gap:14px;font-size:13px;color:var(--text-secondary);flex-wrap:wrap;margin-bottom:6px}
+.chase-details span{background:var(--bg-alt);padding:2px 8px;border-radius:5px}
+.chase-notes{font-size:13px;color:var(--text-secondary);font-style:italic;line-height:1.5;margin-top:6px}
+.chase-actions{display:flex;gap:8px;margin-top:10px}
+.chase-actions button{font-size:12px;padding:4px 10px;background:transparent;border:1px solid var(--border-strong);border-radius:5px;color:var(--text-secondary);cursor:pointer;font-family:var(--sans)}
+.chase-actions button:hover{border-color:var(--accent);color:var(--accent)}
+.empty{background:var(--surface);border:2px dashed var(--border-strong);border-radius:12px;padding:40px 24px;text-align:center;color:var(--text-muted)}
+.empty h3{font-family:var(--serif);font-size:20px;color:var(--text);margin-bottom:6px}
+.footer{text-align:center;padding:24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px;margin-top:32px}
+.inline-ad{text-align:center;margin:24px auto;max-width:728px;overflow:hidden}
+</style>
+
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+<script type="application/ld+json" data-seo="page">
+{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.tornadosimulator.net/chase-log/#webpage","url":"https://www.tornadosimulator.net/chase-log/","name":"Storm Chase Log — Free Chase Tracking Tool for Chasers","description":"A free, privacy-first storm chase log. Track your chases with date, target, storm mode, tornado observations, mileage, and photos. Data stored locally on your device only. Export to CSV for your records.","isPartOf":{"@id":"https://www.tornadosimulator.net/#website"},"publisher":{"@id":"https://www.tornadosimulator.net/#organization"},"inLanguage":"en"},{"@type":"BreadcrumbList","@id":"https://www.tornadosimulator.net/chase-log/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"},{"@type":"ListItem","position":2,"name":"Storm Chase Log — Free Chase Tracking Tool for Chasers","item":"https://www.tornadosimulator.net/chase-log/"}]}]}
+</script><link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<script src="/assets/site-shell.js?v=1" defer></script>
+<link rel="stylesheet" href="/assets/ads.css?v=20260912">
+</head>
+<body>
+
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav><noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+
+<section class="hero">
+  <div class="eyebrow">📓 Free chase tracker</div>
+  <h1 id="main-content" tabindex="-1">Storm chase <em>log</em></h1>
+  <p>Track every chase — date, target, storm mode, tornadoes seen, miles driven. Data stays on your device (localStorage). Export to CSV anytime.</p>
+</section>
+
+<div class="wrap">
+
+  <div class="stats-row" id="stats"></div>
+
+  <div class="actions">
+    <button class="btn primary" onclick="showForm()">+ Add chase</button>
+    <button class="btn" onclick="exportCSV()">📄 Export CSV</button>
+    <button class="btn" onclick="importCSV()">📥 Import CSV</button>
+    <button class="btn" onclick="resetAll()">🗑️ Reset all</button>
+    <input type="file" id="import-file" style="display:none" accept=".csv" onchange="handleImport(this)">
+  </div>
+
+  <div class="form-panel" id="form">
+    <h3 id="form-title">Add a chase</h3>
+    <input type="hidden" id="edit-id">
+    <div class="grid2">
+      <div class="field">
+        <label>Date</label>
+        <input type="date" id="f-date">
+      </div>
+      <div class="field">
+        <label>Target state / region</label>
+        <input type="text" id="f-target" placeholder="e.g., Oklahoma dryline">
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="field">
+        <label>Miles driven</label>
+        <input type="number" id="f-miles" min="0">
+      </div>
+      <div class="field">
+        <label>Storm mode</label>
+        <select id="f-mode">
+          <option>Discrete supercell</option>
+          <option>HP supercell</option>
+          <option>Multicell / cluster</option>
+          <option>QLCS / squall line</option>
+          <option>Pulse storms</option>
+          <option>Landspout day</option>
+          <option>Bust</option>
+        </select>
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="field">
+        <label>Tornadoes seen</label>
+        <input type="number" id="f-torn" min="0" value="0">
+      </div>
+      <div class="field">
+        <label>Highest EF rating</label>
+        <select id="f-ef">
+          <option value="">—</option>
+          <option>EF0</option><option>EF1</option><option>EF2</option><option>EF3</option><option>EF4</option><option>EF5</option>
+        </select>
+      </div>
+    </div>
+    <div class="field">
+      <label>Chase notes</label>
+      <textarea id="f-notes" placeholder="Best structure, close calls, positioning issues, what you learned…"></textarea>
+    </div>
+    <div class="actions" style="justify-content:flex-start;margin-bottom:0">
+      <button class="btn primary" onclick="save()">Save chase</button>
+      <button class="btn" onclick="hideForm()">Cancel</button>
+    </div>
+  </div>
+
+  <div id="chase-list"></div>
+
+  <div class="inline-ad">
+
 
   </div>
 
