@@ -2,6 +2,169 @@
 <html lang="en">
 <head>
 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thunder Distance Calculator — How Far Away Is Lightning?</title>
+<meta name="description" content="Free interactive tool that measures how far away a lightning strike is based on flash-to-thunder seconds. Tap-to-time interface, live safety verdict, and NWS 30/30 rule guidance. Works with air temperature for accurate speed-of-sound math. Use it during any thunderstorm to decide when to seek shelter." />
+<meta name="twitter:description" content="Free interactive tool that measures how far away a lightning strike is based on flash-to-thunder seconds. Tap-to-time interface, live safety verdict, and NWS 30/30 rule guidance. Works with air temperature for accurate speed-of-sound math. Use it during any thunderstorm to decide when to seek shelter." />
+<meta name="twitter:title" content="Thunder Distance Calculator — How Far Away Is Lightning?" />
+<meta name="twitter:card" content="summary" />
+<meta property="og:site_name" content="Tornado Hub" />
+<meta name="keywords" content="thunder distance calculator, how far away is lightning, flash to bang, lightning distance calculator, count seconds lightning, storm distance, thunderstorm distance, lightning safety" />
+<meta property="og:title" content="Thunder Distance Calculator — How Far Away Is Lightning?" />
+<meta property="og:description" content="Free interactive tool that measures how far away a lightning strike is based on flash-to-thunder seconds. Tap-to-time interface, live safety verdict, and NWS 30/30 rule guidance. Works with air temperature for accurate speed-of-sound math. Use it during any thunderstorm to decide when to seek shelter." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.tornadosimulator.net/thunder-distance/" />
+<link rel="canonical" href="https://www.tornadosimulator.net/thunder-distance/" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Thunder Distance Calculator","applicationCategory":"UtilitiesApplication","operatingSystem":"Web browser","url":"https://www.tornadosimulator.net/thunder-distance/","description":"Interactive calculator for measuring lightning distance from the delay between a flash and its thunder."}
+</script>
+<script type="application/ld+json" data-seo="page">
+{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.tornadosimulator.net/thunder-distance/#webpage","url":"https://www.tornadosimulator.net/thunder-distance/","name":"Thunder Distance Calculator — How Far Away Is Lightning?","description":"Free interactive tool that measures how far away a lightning strike is based on flash-to-thunder seconds. Tap-to-time interface, live safety verdict, and NWS 30/30 rule guidance. Works with air temperature for accurate speed-of-sound math. Use it during any thunderstorm to decide when to seek shelter.","isPartOf":{"@id":"https://www.tornadosimulator.net/#website"},"publisher":{"@id":"https://www.tornadosimulator.net/#organization"},"inLanguage":"en"},{"@type":"BreadcrumbList","@id":"https://www.tornadosimulator.net/thunder-distance/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"},{"@type":"ListItem","position":2,"name":"Thunder Distance Calculator — How Far Away Is Lightning?","item":"https://www.tornadosimulator.net/thunder-distance/"}]}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"How do you calculate lightning distance from thunder?","acceptedAnswer":{"@type":"Answer","text":"Count the seconds between seeing the lightning flash and hearing the thunder. Divide by 5 to get miles or by 3 to get kilometers. This works because sound travels about 5 seconds per mile (3 seconds per kilometer) in typical air."}},
+  {"@type":"Question","name":"How close is too close for lightning?","acceptedAnswer":{"@type":"Answer","text":"The NWS 30/30 rule says: if the flash-to-thunder time is 30 seconds or less (about 6 miles), seek shelter immediately. Lightning can strike up to 10-15 miles from the parent thunderstorm, so any thunder means you're within striking distance."}},
+  {"@type":"Question","name":"Does temperature affect the count?","acceptedAnswer":{"@type":"Answer","text":"Yes, slightly. The speed of sound increases about 0.6 m/s per degree Celsius. In cold air (say 0°C / 32°F), sound moves about 3% slower than at 20°C / 68°F, so a 5-second count in freezing weather corresponds to a slightly shorter distance."}}
+]}
+</script>
+<style>
+:root { --bg:#fbfaf7; --bg-alt:#f4f1ea; --surface:#fff; --text:#14161c; --text-secondary:#4a5061; --text-muted:#8b8f9c; --border:#e5e1d8; --border-strong:#d4cfc3; --accent:#a02818; --accent-hover:#7d1f13; --link:#1e3a5f; --safe:#2d6a4f; --warn:#b8620f; --danger:#a02818; --serif:"Fraunces",Georgia,serif; --sans:"Inter",sans-serif; --mono:"JetBrains Mono",monospace; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:var(--link);text-decoration:none} a:hover{color:var(--accent);text-decoration:underline}
+
+.nav{background:var(--surface);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.nav-brand{font-family:var(--serif);font-weight:700;font-size:20px;text-decoration:none;color:var(--text)}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{color:var(--text-secondary);padding:8px 14px;font-size:14px;font-weight:500;border-radius:6px}
+.nav-links a:hover{background:var(--bg-alt);color:var(--text);text-decoration:none}
+.nav-links a.cta{background:var(--accent);color:white;font-weight:600}
+
+.hero{text-align:center;padding:40px 20px 20px;max-width:700px;margin:0 auto}
+.hero .eyebrow{font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.hero h1{font-family:var(--serif);font-size:clamp(30px,4.5vw,44px);font-weight:700;line-height:1.1;letter-spacing:-0.02em;margin-bottom:12px}
+.hero h1 em{color:var(--accent);font-style:italic;font-weight:400}
+.hero p{color:var(--text-secondary);font-size:16px;max-width:540px;margin:0 auto}
+
+.calc{max-width:640px;margin:24px auto;padding:0 20px}
+.timer-card{background:var(--surface);border:2px solid var(--border-strong);border-radius:16px;padding:32px 28px;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,0.06);transition:border-color 0.3s,box-shadow 0.3s}
+.timer-card.running{border-color:var(--accent);box-shadow:0 8px 30px rgba(160,40,24,0.14)}
+.timer-card.result{border-color:var(--safe)}
+.timer-card.result.danger{border-color:var(--danger);box-shadow:0 12px 40px rgba(160,40,24,0.2)}
+.timer-card.result.warn{border-color:var(--warn)}
+
+.stage{font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:20px}
+
+.big-btn{font-family:var(--sans);font-size:22px;font-weight:700;background:var(--accent);color:white;border:none;border-radius:14px;padding:28px 40px;cursor:pointer;width:100%;transition:transform 0.15s,background 0.15s;box-shadow:0 6px 20px rgba(160,40,24,0.25);letter-spacing:-0.01em;line-height:1.2}
+.big-btn:hover{background:var(--accent-hover);transform:translateY(-2px)}
+.big-btn:active{transform:translateY(0)}
+.big-btn.stop{background:var(--danger)}
+.big-btn.reset{background:var(--surface);color:var(--text);border:2px solid var(--border-strong);box-shadow:none}
+.big-btn small{display:block;font-size:14px;font-weight:500;opacity:0.9;margin-top:6px}
+
+.time-display{font-family:var(--mono);font-size:clamp(56px,12vw,96px);font-weight:700;letter-spacing:-0.03em;color:var(--accent);line-height:1;margin:16px 0}
+.time-display .unit{font-size:0.35em;color:var(--text-muted);margin-left:8px}
+
+.distance-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}
+.dist-card{background:var(--bg-alt);border-radius:12px;padding:18px 16px}
+.dist-val{font-family:var(--serif);font-size:34px;font-weight:700;color:var(--text);line-height:1}
+.dist-unit{font-size:13px;color:var(--text-muted);font-weight:600;letter-spacing:0.06em;text-transform:uppercase;margin-top:4px}
+
+.verdict{padding:16px 20px;border-radius:12px;margin-top:20px;text-align:left;font-size:14px;line-height:1.55}
+.verdict.safe{background:rgba(45,106,79,0.1);color:var(--safe);border-left:4px solid var(--safe)}
+.verdict.warn{background:rgba(184,98,15,0.12);color:var(--warn);border-left:4px solid var(--warn)}
+.verdict.danger{background:rgba(160,40,24,0.12);color:var(--danger);border-left:4px solid var(--danger)}
+.verdict strong{display:block;font-family:var(--serif);font-size:18px;margin-bottom:4px}
+
+.temp-row{margin-top:24px;padding-top:20px;border-top:1px solid var(--border);text-align:left}
+.temp-label{font-size:13px;color:var(--text-secondary);font-weight:500;display:flex;justify-content:space-between;margin-bottom:8px}
+.temp-label b{color:var(--accent);font-family:var(--mono)}
+.temp-slider{width:100%;height:6px;background:var(--bg-alt);border-radius:3px;-webkit-appearance:none;appearance:none;outline:none;cursor:pointer}
+.temp-slider::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--accent);cursor:pointer;border:2px solid var(--surface)}
+.temp-help{font-size:11px;color:var(--text-muted);margin-top:6px}
+
+.manual-input{display:flex;gap:8px;margin-top:16px;align-items:center;justify-content:center;font-size:13px;color:var(--text-secondary)}
+.manual-input input{width:70px;padding:8px 12px;border:1px solid var(--border-strong);border-radius:6px;font-family:var(--mono);font-size:15px;font-weight:600;text-align:center}
+.manual-input button{padding:8px 14px;background:var(--surface);border:1px solid var(--border-strong);border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;color:var(--text)}
+
+.explainer{max-width:720px;margin:40px auto 60px;padding:0 20px}
+.explainer h2{font-family:var(--serif);font-size:26px;margin:30px 0 12px;letter-spacing:-0.01em}
+.explainer p{color:var(--text-secondary);font-size:15px;margin-bottom:12px}
+.explainer ul{margin:8px 0 18px 22px}
+.explainer li{margin-bottom:6px;color:var(--text-secondary);font-size:15px}
+.callout{background:var(--surface);border-left:3px solid var(--accent);border-radius:6px;padding:14px 18px;margin:18px 0;font-size:14px;color:var(--text-secondary)}
+.callout strong{color:var(--text)}
+
+.footer{text-align:center;padding:24px;border-top:1px solid var(--border);background:var(--bg-alt);color:var(--text-muted);font-size:13px}
+.inline-ad{text-align:center;margin:24px auto;max-width:728px;overflow:hidden}
+</style>
+
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" /><link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<script src="/assets/site-shell.js?v=1" defer></script>
+<link rel="stylesheet" href="/assets/ads.css?v=20260912">
+</head>
+<body>
+
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav><noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+
+<section class="hero">
+  <div class="eyebrow">⚡ Interactive tool</div>
+  <h1 id="main-content" tabindex="-1">How far away is the <em>lightning</em>?</h1>
+  <p>Tap the flash. Tap the thunder. The tool tells you exactly how far the strike was and whether you should still be outside.</p>
+</section>
+
+<div class="calc">
+
+  <div id="card" class="timer-card">
+    <div class="stage" id="stage">Ready when you are</div>
+
+    <div class="time-display" id="time">0.00<span class="unit">s</span></div>
+
+    <button class="big-btn" id="main-btn" onclick="handleTap()">⚡ I see a flash<small>Tap the moment you see lightning</small></button>
+
+    <div id="results" style="display:none">
+      <div class="distance-grid">
+        <div class="dist-card">
+          <div class="dist-val" id="miles">—</div>
+          <div class="dist-unit">Miles away</div>
+        </div>
+        <div class="dist-card">
+          <div class="dist-val" id="km">—</div>
+          <div class="dist-unit">Kilometers away</div>
+        </div>
+      </div>
+
+      <div id="verdict" class="verdict"></div>
+
+      <button class="big-btn reset" style="margin-top:16px" onclick="reset()">↻ Time another strike</button>
+    </div>
+
+    <div class="manual-input">
+      Or type seconds:
+      <input type="number" id="manual" min="0" max="120" step="0.1" placeholder="5">
+      <button onclick="fromManual()">Calc</button>
+    </div>
+
+    <div class="temp-row">
+      <div class="temp-label">Air temperature <b><span id="temp-val">68</span>°F</b></div>
+      <input type="range" min="-40" max="120" value="68" class="temp-slider" id="temp">
+      <div class="temp-help">Sound moves faster in warmer air. The calculator adjusts automatically.</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="inline-ad">
+
 
 </div>
 

@@ -2,6 +2,156 @@
 <html lang="en">
 <head>
 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tornado Index — Live Data + Historical Records — Tornado Hub</title>
+<meta name="description" content="A live-updating tornado index. Recent tornadoes from NOAA Storm Prediction Center, historical records, US Storm Events Database, and every significant tornado since 1950. Refreshed daily." />
+<meta name="twitter:description" content="A live-updating tornado index. Recent tornadoes from NOAA Storm Prediction Center, historical records, US Storm Events Database, and every significant tornado since 1950. Refreshed daily." />
+<meta name="twitter:title" content="Tornado Index — Live Data + Historical Records — Tornado Hub" />
+<meta name="twitter:card" content="summary" />
+<meta property="og:url" content="https://www.tornadosimulator.net/tornadoes/" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="A live-updating tornado index. Recent tornadoes from NOAA Storm Prediction Center, historical records, US Storm Events Database, and every significant tornado since 1950. Refreshed daily." />
+<meta property="og:title" content="Tornado Index — Live Data + Historical Records — Tornado Hub" />
+<meta property="og:site_name" content="Tornado Hub" />
+<link rel="canonical" href="https://www.tornadosimulator.net/tornadoes/" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg: #fbfaf7; --bg-alt: #f4f1ea; --surface: #ffffff;
+  --text: #14161c; --text-secondary: #4a5061; --text-muted: #8b8f9c;
+  --border: #e5e1d8; --border-strong: #d4cfc3;
+  --accent: #a02818; --accent-hover: #7d1f13;
+  --link: #1e3a5f;
+  --success: #2d6a4f;
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--accent); text-decoration: underline; }
+.nav { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+.nav-inner { max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.nav-brand { font-family: var(--serif); font-weight: 700; font-size: 20px; color: var(--text); display: flex; align-items: center; gap: 8px; text-decoration: none; }
+.nav-links { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
+.nav-links a { color: var(--text-secondary); padding: 8px 14px; font-size: 14px; font-weight: 500; border-radius: 6px; text-decoration: none; }
+.nav-links a:hover { background: var(--bg-alt); color: var(--text); text-decoration: none; }
+.nav-links a.cta { background: var(--accent); color: white; font-weight: 600; }
+.nav-links a.cta:hover { background: var(--accent-hover); color: white; }
+.page-header { background: linear-gradient(180deg, var(--bg), var(--bg-alt)); border-bottom: 1px solid var(--border); padding: 56px 24px 40px; }
+.page-header-inner { max-width: 1000px; margin: 0 auto; }
+.eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+.page-header h1 { font-family: var(--serif); font-size: clamp(32px, 4.5vw, 48px); font-weight: 700; line-height: 1.1; margin-bottom: 12px; letter-spacing: -0.02em; }
+.page-header p { font-size: 17px; color: var(--text-secondary); max-width: 700px; line-height: 1.55; }
+.refresh-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; background: #e8f5e9; color: var(--success); border: 1px solid #a5d6a7; border-radius: 20px; font-size: 12px; font-weight: 600; margin-top: 20px; }
+.refresh-badge .dot { width: 8px; height: 8px; background: var(--success); border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+.main { max-width: 1200px; margin: 0 auto; padding: 40px 24px; }
+.tab-nav { display: flex; gap: 4px; margin-bottom: 24px; border-bottom: 1px solid var(--border); overflow-x: auto; }
+.tab-btn { padding: 12px 18px; background: none; border: none; font-family: inherit; font-size: 14px; font-weight: 600; color: var(--text-secondary); cursor: pointer; border-bottom: 2px solid transparent; transition: color 0.15s, border-color 0.15s; white-space: nowrap; }
+.tab-btn:hover { color: var(--text); }
+.tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+.loading { text-align: center; padding: 60px 24px; color: var(--text-muted); font-size: 15px; }
+.loading::before { content: "⏳ "; }
+.stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-bottom: 32px; }
+.stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 20px; text-align: center; }
+.stat-num { font-family: var(--serif); font-size: 36px; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 6px; }
+.stat-lbl { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); font-weight: 600; }
+.event-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+.event-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; }
+.event-card .ef { display: inline-block; font-family: var(--serif); font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-bottom: 8px; letter-spacing: 0.05em; }
+.ef-0 { background: #e0e7ff; color: #3730a3; }
+.ef-1 { background: #ddf4e0; color: #256029; }
+.ef-2 { background: #fef3c7; color: #92400e; }
+.ef-3 { background: #ffe4d6; color: #b45309; }
+.ef-4 { background: #fee4e2; color: #9f1239; }
+.ef-5 { background: #fecaca; color: #7f1d1d; }
+.event-date { font-size: 13px; color: var(--text-muted); font-weight: 500; margin-bottom: 4px; }
+.event-loc { font-family: var(--serif); font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 6px; letter-spacing: -0.01em; }
+.event-details { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+.event-details span { display: inline-block; margin-right: 12px; }
+.section-title { font-family: var(--serif); font-size: 22px; font-weight: 700; margin: 32px 0 12px; letter-spacing: -0.01em; }
+.section-lede { color: var(--text-secondary); font-size: 14px; margin-bottom: 20px; }
+.source-line { padding: 20px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; font-size: 13px; color: var(--text-secondary); margin-top: 32px; }
+.source-line strong { color: var(--text); }
+.ad-slot-inline { text-align:center; margin: 32px 0; min-height:250px; }
+.ad-slot-wide { text-align:center; margin: 32px 0; min-height:90px; overflow:hidden; }
+.footer { background: #14161c; color: #94a3b8; padding: 40px 24px; border-top: 4px solid var(--accent); text-align: center; font-size: 13px; }
+.footer a { color: white; text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
+@media (max-width: 500px) { .nav-links { gap: 0; } .nav-links a { padding: 6px 10px; font-size: 13px; } }
+</style>
+
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+<script type="application/ld+json" data-seo="page">
+{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.tornadosimulator.net/tornadoes/#webpage","url":"https://www.tornadosimulator.net/tornadoes/","name":"Tornado Index — Live Data + Historical Records — Tornado Hub","description":"A live-updating tornado index. Recent tornadoes from NOAA Storm Prediction Center, historical records, US Storm Events Database, and every significant tornado since 1950. Refreshed daily.","isPartOf":{"@id":"https://www.tornadosimulator.net/#website"},"publisher":{"@id":"https://www.tornadosimulator.net/#organization"},"inLanguage":"en"},{"@type":"BreadcrumbList","@id":"https://www.tornadosimulator.net/tornadoes/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"},{"@type":"ListItem","position":2,"name":"Tornado Index — Live Data + Historical Records — Tornado Hub","item":"https://www.tornadosimulator.net/tornadoes/"}]}]}
+</script><link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<script src="/assets/site-shell.js?v=1" defer></script>
+<link rel="stylesheet" href="/assets/ads.css?v=20260912">
+</head>
+<body>
+
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav><noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+
+<header class="page-header">
+  <div class="page-header-inner">
+    <div class="eyebrow">Tornado Index</div>
+    <h1>Every tornado, one place.</h1>
+    <p>A live-updating tornado index — recent events pulled from the NOAA Storm Prediction Center, historical F/EF5 records, US Storm Events Database, and every notable tornado since 1950. Refreshed every 24 hours.</p>
+    <div class="refresh-badge">
+      <span class="dot"></span>
+      <span>Last refresh: <span id="last-refresh">loading…</span></span>
+    </div>
+  </div>
+</header>
+
+<main id="main-content" tabindex="-1" class="main">
+
+<div class="tab-nav">
+  <button class="tab-btn active" data-tab="recent">Recent tornadoes</button>
+  <button class="tab-btn" data-tab="ef5">All EF5/F5</button>
+  <button class="tab-btn" data-tab="deadliest">Deadliest ever</button>
+  <button class="tab-btn" data-tab="stats">By year</button>
+</div>
+
+<!-- ─── Recent tornadoes (from NOAA SPC preliminary reports) ───────────── -->
+<div class="tab-content active" id="tab-recent">
+  <div id="recent-stats" class="stat-row"></div>
+  <div id="recent-events">
+    <div class="loading">Loading recent tornado reports…</div>
+  </div>
+</div>
+
+<!-- Mid-page ad -->
+<div class="ad-slot-inline">
+
+
+</div>
+
+<!-- ─── EF5 catalog ────────────────────────────────────────────────────── -->
+<div class="tab-content" id="tab-ef5">
+  <div id="ef5-events"><div class="loading">Loading EF5/F5 catalog…</div></div>
+</div>
+
+<!-- ─── Deadliest tornadoes ────────────────────────────────────────────── -->
+<div class="tab-content" id="tab-deadliest">
+  <div id="deadliest-events"><div class="loading">Loading deadliest events…</div></div>
+</div>
+
+<!-- ─── By year ────────────────────────────────────────────────────────── -->
+<div class="tab-content" id="tab-stats">
+  <div id="yearly-stats"><div class="loading">Loading yearly stats…</div></div>
+</div>
+
+<div class="ad-slot-wide">
 
 
 </div>
@@ -170,11 +320,17 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 loadData();
 </script>
 
+<aside id="adsterra-side" style="position:fixed;right:8px;top:50%;transform:translateY(-50%);width:160px;height:600px;z-index:50;display:none;">
 
 
+</aside>
+<style>@media (min-width:1280px){#adsterra-side{display:block!important;}}</style>
+
+<aside id="adsterra-left" style="position:fixed;left:8px;top:50%;transform:translateY(-50%);width:160px;height:300px;z-index:50;display:none;">
 
 
-
+</aside>
+<style>@media (min-width:1200px){#adsterra-left{display:block!important;}}</style>
 
 <script src="/assets/article-tracker.js" defer></script>
 
