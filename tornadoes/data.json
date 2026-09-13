@@ -1,6 +1,26 @@
 {
-  "generated_at": "2026-09-12T13:18:06Z",
+  "generated_at": "2026-09-13T11:06:31Z",
   "recent": [
+    {
+      "date": "2026-09-12T20:46:00+00:00",
+      "ef": "UNK",
+      "location": "1 ESE Spring Grove",
+      "county": "Surry",
+      "state": "VA",
+      "lat": "37.16",
+      "lon": "-76.96",
+      "notes": "Storm survey conducted by NWS employee found tornado damage consistent with an EF-0 along VA-10 east of Spring Grove. Time is estimated based on radar. (AKQ)"
+    },
+    {
+      "date": "2026-09-12T19:40:00+00:00",
+      "ef": "UNK",
+      "location": "5 WNW Palm Coast",
+      "county": "Flagler",
+      "state": "FL",
+      "lat": "29.6",
+      "lon": "-81.28",
+      "notes": "[Landspout] Video of a Landspout on the ground was taken and shared to Emergency Management as it formed near US-1 and Matanzas Woods Pkwy in NW section of Palm coast. (JAX)"
+    },
     {
       "date": "2026-09-12T00:51:00+00:00",
       "ef": "UNK",
@@ -650,16 +670,6 @@
       "lat": "40.18",
       "lon": "-84.12",
       "notes": "EFU tornado confirmed north of Fletcher in Miami County... Ohio. No known damage observed. (ILN)"
-    },
-    {
-      "date": "2026-08-14T21:31:00+00:00",
-      "ef": "UNK",
-      "location": "2 ENE Commerce City",
-      "county": "Adams",
-      "state": "CO",
-      "lat": "39.83",
-      "lon": "-104.89",
-      "notes": "[Landspout] Reports including a photo of a landspout approximately a mile to the north of Dicks Sporting Goods Park. Lasted approximately 7 minutes. Location estimated (BOU)"
     }
   ],
   "ef5": [
