@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-13T11:06:31Z",
+  "generated_at": "2026-09-14T11:50:01Z",
   "recent": [
     {
       "date": "2026-09-12T20:46:00+00:00",
@@ -630,46 +630,6 @@
       "lat": "40.57",
       "lon": "-80.41",
       "notes": "A brief... narrow EF0 tornado caused damage mainly to trees along Upper Service Road in Greene and Raccoon Townships. Max wind was estimated at 75 mph... and path width (PBZ)"
-    },
-    {
-      "date": "2026-08-16T00:29:00+00:00",
-      "ef": "UNK",
-      "location": "2 N Saint Paris",
-      "county": "Champaign",
-      "state": "OH",
-      "lat": "40.16",
-      "lon": "-83.95",
-      "notes": "Tree down on Ward Road property. (ILN)"
-    },
-    {
-      "date": "2026-08-16T00:24:00+00:00",
-      "ef": "UNK",
-      "location": "2 NNW Saint Paris",
-      "county": "Champaign",
-      "state": "OH",
-      "lat": "40.16",
-      "lon": "-83.98",
-      "notes": "EF0 tornado confirmed north of St. Paris in Champaign County... Ohio. Maximum winds of 75 MPH. Several trees downed... with siding removed from a house. (ILN)"
-    },
-    {
-      "date": "2026-08-16T00:21:00+00:00",
-      "ef": "UNK",
-      "location": "4 NW Saint Paris",
-      "county": "Champaign",
-      "state": "OH",
-      "lat": "40.17",
-      "lon": "-84.01",
-      "notes": "EF0 tornado confirmed northwest of St. Paris in Champaign County... Ohio. Maximum winds of 65 MPH. Minor tree and barn damage observed. (ILN)"
-    },
-    {
-      "date": "2026-08-16T00:05:00+00:00",
-      "ef": "UNK",
-      "location": "3 N Fletcher",
-      "county": "Miami",
-      "state": "OH",
-      "lat": "40.18",
-      "lon": "-84.12",
-      "notes": "EFU tornado confirmed north of Fletcher in Miami County... Ohio. No known damage observed. (ILN)"
     }
   ],
   "ef5": [
