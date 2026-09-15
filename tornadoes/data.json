@@ -1,6 +1,16 @@
 {
-  "generated_at": "2026-09-14T11:50:01Z",
+  "generated_at": "2026-09-15T11:06:09Z",
   "recent": [
+    {
+      "date": "2026-09-14T22:30:00+00:00",
+      "ef": "UNK",
+      "location": "Arboles",
+      "county": "Archuleta",
+      "state": "CO",
+      "lat": "37.02",
+      "lon": "-107.39",
+      "notes": "[Landspout] (GJT)"
+    },
     {
       "date": "2026-09-12T20:46:00+00:00",
       "ef": "UNK",
@@ -610,26 +620,6 @@
       "lat": "43.22",
       "lon": "-88.23",
       "notes": "NWS storm survey finds a brief EF0 tornado damage track beginning near the intersection of Elmwood Rd & Timber Stone Way. Max wind speed 80 MPH. Additional details to f (MKX)"
-    },
-    {
-      "date": "2026-08-16T20:15:00+00:00",
-      "ef": "UNK",
-      "location": "1 SSE Orchard Hills",
-      "county": "Armstrong",
-      "state": "PA",
-      "lat": "40.58",
-      "lon": "-79.53",
-      "notes": "Corrects previous tornado report from 1 SSE Orchard Hills. NWS Storm Survey confirms an EF-0 tornado with maximum wind of 85 mph in Orchard Hills. (PBZ)"
-    },
-    {
-      "date": "2026-08-16T19:06:00+00:00",
-      "ef": "UNK",
-      "location": "1 NNE Harshaville",
-      "county": "Beaver",
-      "state": "PA",
-      "lat": "40.57",
-      "lon": "-80.41",
-      "notes": "A brief... narrow EF0 tornado caused damage mainly to trees along Upper Service Road in Greene and Raccoon Townships. Max wind was estimated at 75 mph... and path width (PBZ)"
     }
   ],
   "ef5": [
