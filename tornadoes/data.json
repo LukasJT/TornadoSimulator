@@ -1,6 +1,16 @@
 {
-  "generated_at": "2026-09-15T11:06:09Z",
+  "generated_at": "2026-09-16T10:51:35Z",
   "recent": [
+    {
+      "date": "2026-09-14T23:49:00+00:00",
+      "ef": "UNK",
+      "location": "3 SW Avoca",
+      "county": "Otoe",
+      "state": "NE",
+      "lat": "40.77",
+      "lon": "-96.16",
+      "notes": "An EF-0 tornado touched down in an agricultural field just south of County Road B... between 32nd and 34th Roads... flattening a path through corn. The tornado tracked (OAX)"
+    },
     {
       "date": "2026-09-14T22:30:00+00:00",
       "ef": "UNK",
@@ -32,24 +42,14 @@
       "notes": "[Landspout] Video of a Landspout on the ground was taken and shared to Emergency Management as it formed near US-1 and Matanzas Woods Pkwy in NW section of Palm coast. (JAX)"
     },
     {
-      "date": "2026-09-12T00:51:00+00:00",
+      "date": "2026-09-12T00:44:00+00:00",
       "ef": "UNK",
-      "location": "7 NE Artichoke",
-      "county": "Stevens",
-      "state": "MN",
-      "lat": "45.47",
-      "lon": "-96.08",
-      "notes": "Tornado touchdown reported 7 miles northeast of Artichoke. Location estimated. (MPX)"
-    },
-    {
-      "date": "2026-09-12T00:50:00+00:00",
-      "ef": "UNK",
-      "location": "8 S Alberta",
+      "location": "4 NE Artichoke",
       "county": "Stevens",
       "state": "MN",
       "lat": "45.46",
-      "lon": "-96.06",
-      "notes": "8 power poles blocking county highway 9 near Trinity Lutheran Cemetery. (MPX)"
+      "lon": "-96.12",
+      "notes": "Initial touchdown... corrects location from previous report. Trained spotter confirmed brief tornado touchdown in an open field... with sporadic damage to crops along a (MPX)"
     },
     {
       "date": "2026-09-10T20:35:00+00:00",
