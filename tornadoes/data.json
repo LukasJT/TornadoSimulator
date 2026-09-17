@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T10:51:35Z",
+  "generated_at": "2026-09-17T10:58:48Z",
   "recent": [
     {
       "date": "2026-09-14T23:49:00+00:00",
@@ -610,16 +610,6 @@
       "lat": "41.09",
       "lon": "-91.31",
       "notes": "[Landspout] Corrects previous landspout report from 2 E Marsh. Multiple spotter reports of a landspout tornado reaching the ground and then dissipating. (DVN)"
-    },
-    {
-      "date": "2026-08-18T23:33:00+00:00",
-      "ef": "UNK",
-      "location": "1 SSW Hubertus",
-      "county": "Washington",
-      "state": "WI",
-      "lat": "43.22",
-      "lon": "-88.23",
-      "notes": "NWS storm survey finds a brief EF0 tornado damage track beginning near the intersection of Elmwood Rd & Timber Stone Way. Max wind speed 80 MPH. Additional details to f (MKX)"
     }
   ],
   "ef5": [
