@@ -1,6 +1,16 @@
 {
-  "generated_at": "2026-09-17T10:58:48Z",
+  "generated_at": "2026-09-18T10:35:28Z",
   "recent": [
+    {
+      "date": "2026-09-18T00:34:00+00:00",
+      "ef": "UNK",
+      "location": "11 NNE Chappell",
+      "county": "Garden",
+      "state": "NE",
+      "lat": "41.24",
+      "lon": "-102.38",
+      "notes": "Brief tornado touchdown reported by storm chaser via social media photo. (LBF)"
+    },
     {
       "date": "2026-09-14T23:49:00+00:00",
       "ef": "UNK",
@@ -550,66 +560,6 @@
       "lat": "40",
       "lon": "-76.55",
       "notes": "*** 1 INJ *** An NWS Storm Survey confirmed an EF-2 tornado occurred in eastern York County... PA with a path length of 1.07 miles and a path width of 100 yards. The mo (CTP)"
-    },
-    {
-      "date": "2026-08-20T04:59:00+00:00",
-      "ef": "UNK",
-      "location": "2 S Folsomdale",
-      "county": "Graves",
-      "state": "KY",
-      "lat": "36.86",
-      "lon": "-88.67",
-      "notes": "Evidence of an EF-1 tornado with peak winds of 105 mph exists at the intersection of KY 408 and US 45 near the community of Viola. A large industrial metal building sys (PAH)"
-    },
-    {
-      "date": "2026-08-20T04:50:00+00:00",
-      "ef": "UNK",
-      "location": "Lowes",
-      "county": "Graves",
-      "state": "KY",
-      "lat": "36.89",
-      "lon": "-88.77",
-      "notes": "Multiple homes damaged in Lowes... KY. Lots of trees down over 131 in Graves... 3 mile marker. Very likely tornado with TDS. (PAH)"
-    },
-    {
-      "date": "2026-08-20T04:47:00+00:00",
-      "ef": "UNK",
-      "location": "3 ESE Cunningham",
-      "county": "Carlisle",
-      "state": "KY",
-      "lat": "36.89",
-      "lon": "-88.83",
-      "notes": "An EF-1 tornado touched down in Carlisle County 3 miles east-southeast of Cunningham and was on the ground for 1.5 miles before lifting 2 miles west of Lowes in Graves (PAH)"
-    },
-    {
-      "date": "2026-08-19T22:10:00+00:00",
-      "ef": "UNK",
-      "location": "4 S Oakley",
-      "county": "Logan",
-      "state": "KS",
-      "lat": "39.07",
-      "lon": "-100.85",
-      "notes": "[Landspout] EM relayed report of a possible landspout. (GLD)"
-    },
-    {
-      "date": "2026-08-19T21:31:00+00:00",
-      "ef": "UNK",
-      "location": "4 NNW Yorktown",
-      "county": "Delaware",
-      "state": "IN",
-      "lat": "40.23",
-      "lon": "-85.5",
-      "notes": "Delayed report from 8/19. An EF-U tornado with unknown wind speeds and a path length of 0.08 miles began at this location. No damage was found. (IND)"
-    },
-    {
-      "date": "2026-08-19T19:52:00+00:00",
-      "ef": "UNK",
-      "location": "2 E Marsh",
-      "county": "Louisa",
-      "state": "IA",
-      "lat": "41.09",
-      "lon": "-91.31",
-      "notes": "[Landspout] Corrects previous landspout report from 2 E Marsh. Multiple spotter reports of a landspout tornado reaching the ground and then dissipating. (DVN)"
     }
   ],
   "ef5": [
