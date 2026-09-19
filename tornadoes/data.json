@@ -1,6 +1,36 @@
 {
-  "generated_at": "2026-09-18T10:35:28Z",
+  "generated_at": "2026-09-19T10:19:39Z",
   "recent": [
+    {
+      "date": "2026-09-18T23:05:00+00:00",
+      "ef": "UNK",
+      "location": "15 ESE Naples",
+      "county": "Uintah",
+      "state": "UT",
+      "lat": "40.32",
+      "lon": "-109.25",
+      "notes": "[Landspout] Public report shared via social media and television media (KUTV). (GJT)"
+    },
+    {
+      "date": "2026-09-18T19:52:00+00:00",
+      "ef": "UNK",
+      "location": "2 E Fruit Heights",
+      "county": "Davis",
+      "state": "UT",
+      "lat": "41.03",
+      "lon": "-111.87",
+      "notes": "Tornado seen in video shared on social media... showing rotation reaching the ground and debris being lofted into the air. The point that it touched down was near a sum (SLC)"
+    },
+    {
+      "date": "2026-09-18T17:30:00+00:00",
+      "ef": "UNK",
+      "location": "Lighthouse Point",
+      "county": "Broward",
+      "state": "FL",
+      "lat": "26.28",
+      "lon": "-80.08",
+      "notes": "[Landspout] Broadcast media relayed video of a short duration landspout that lofted palm fronds and other small debris for a brief period before it dissipated. TPBI ra (MFL)"
+    },
     {
       "date": "2026-09-18T00:34:00+00:00",
       "ef": "UNK",
@@ -430,136 +460,6 @@
       "lat": "32.12",
       "lon": "-110.84",
       "notes": "[Landspout] Spotter reported a landspout tornado looking west from Saguaro National Park East. (TWC)"
-    },
-    {
-      "date": "2026-08-20T22:47:00+00:00",
-      "ef": "UNK",
-      "location": "1 W Atlantic Beach",
-      "county": "Nassau",
-      "state": "NY",
-      "lat": "40.59",
-      "lon": "-73.75",
-      "notes": "NWS storm survey confirmed an EF-1 tornado producing a narrow swath of damage with estimated wind gusts of 65 to 97 mph across the far western end of Atlantic Beach bet (OKX)"
-    },
-    {
-      "date": "2026-08-20T22:18:00+00:00",
-      "ef": "UNK",
-      "location": "Dover",
-      "county": "Kent",
-      "state": "DE",
-      "lat": "39.16",
-      "lon": "-75.54",
-      "notes": "Trained spotter reported a rain wrapped tornado on the ground... flying debris. (PHI)"
-    },
-    {
-      "date": "2026-08-20T22:09:00+00:00",
-      "ef": "UNK",
-      "location": "2 N Wyoming",
-      "county": "Kent",
-      "state": "DE",
-      "lat": "39.14",
-      "lon": "-75.56",
-      "notes": "A tornado formed over the open fields west of Wyoming Mill Rd near Riverside Rd... scarring the crops before moving to the tree line east of Wyoming Mill Rd... snapping (PHI)"
-    },
-    {
-      "date": "2026-08-20T22:02:00+00:00",
-      "ef": "UNK",
-      "location": "Hazlettville",
-      "county": "Kent",
-      "state": "DE",
-      "lat": "39.12",
-      "lon": "-75.64",
-      "notes": "A brief tornado occurred just east of the community of Hazlettville... primarily impacting a farm and adjacent fields along Bryants Corner Road. The tornado began in a (PHI)"
-    },
-    {
-      "date": "2026-08-20T21:54:00+00:00",
-      "ef": "UNK",
-      "location": "1 S Marydel",
-      "county": "Kent",
-      "state": "DE",
-      "lat": "39.1",
-      "lon": "-75.74",
-      "notes": "A tornado occurred in Marydel beginning along the east side of Grygo Rd... about a quarter mile south of the intersection of Mahan Corner Rd... taking down several tree (PHI)"
-    },
-    {
-      "date": "2026-08-20T21:41:00+00:00",
-      "ef": "UNK",
-      "location": "2 W Barclay",
-      "county": "Queen Annes",
-      "state": "MD",
-      "lat": "39.15",
-      "lon": "-75.9",
-      "notes": "A brief tornado occurred near Barclay... snapping and uprooting several softwood and hardwood trees in a wooded area next to a residence located near the intersection o (PHI)"
-    },
-    {
-      "date": "2026-08-20T21:40:00+00:00",
-      "ef": "UNK",
-      "location": "East Caln Twp",
-      "county": "Chester",
-      "state": "PA",
-      "lat": "40.02",
-      "lon": "-75.68",
-      "notes": "A brief tornado occurred in East Caln Township. The first damage was noted just south of the intersection of East Lancaster Avenue and Quarry Road... where several smal (PHI)"
-    },
-    {
-      "date": "2026-08-20T20:57:00+00:00",
-      "ef": "UNK",
-      "location": "2 WSW Hurricane",
-      "county": "Baldwin",
-      "state": "AL",
-      "lat": "30.83",
-      "lon": "-87.93",
-      "notes": "Broadcast media shared video of a tornado near the Tensaw River via social media. Time and location estimated from radar with TDS evident. (MOB)"
-    },
-    {
-      "date": "2026-08-20T20:41:00+00:00",
-      "ef": "UNK",
-      "location": "3 N Corbin City",
-      "county": "Atlantic",
-      "state": "NJ",
-      "lat": "39.35",
-      "lon": "-74.75",
-      "notes": "Video footage via social media taken from along the Great Egg Harbor River in English Creek... Egg Harbor Township looking toward Estell Manor shows a very brief tornad (PHI)"
-    },
-    {
-      "date": "2026-08-20T20:38:00+00:00",
-      "ef": "UNK",
-      "location": "3 NW Millersville",
-      "county": "Lancaster",
-      "state": "PA",
-      "lat": "40.03",
-      "lon": "-76.39",
-      "notes": "EF-0 Tornado... Max Estimated winds 85 mph... path length 0.49 miles... path width 125 yards. (CTP)"
-    },
-    {
-      "date": "2026-08-20T20:37:00+00:00",
-      "ef": "UNK",
-      "location": "2 ESE Mountville",
-      "county": "Lancaster",
-      "state": "PA",
-      "lat": "40.03",
-      "lon": "-76.4",
-      "notes": "A brief EF-0 tornado occurred near Habecker Church Rd. It had a path length of 0.3 miles and path width of 75 yards. The estimated maximum wind speed was 65 mph. (CTP)"
-    },
-    {
-      "date": "2026-08-20T20:30:00+00:00",
-      "ef": "UNK",
-      "location": "SW Columbia",
-      "county": "Lancaster",
-      "state": "PA",
-      "lat": "40.03",
-      "lon": "-76.5",
-      "notes": "An NWS Storm Survey confirmed an EF-1 tornado occurred in Columbia... PA with a path length of 1.47 miles and a path width of 100 yards. The tornado exhibited anomalous (CTP)"
-    },
-    {
-      "date": "2026-08-20T20:24:00+00:00",
-      "ef": "UNK",
-      "location": "2 SW Wrightsville",
-      "county": "York",
-      "state": "PA",
-      "lat": "40",
-      "lon": "-76.55",
-      "notes": "*** 1 INJ *** An NWS Storm Survey confirmed an EF-2 tornado occurred in eastern York County... PA with a path length of 1.07 miles and a path width of 100 yards. The mo (CTP)"
     }
   ],
   "ef5": [
