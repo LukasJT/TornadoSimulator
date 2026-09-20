@@ -1,6 +1,16 @@
 {
-  "generated_at": "2026-09-19T10:19:39Z",
+  "generated_at": "2026-09-20T10:38:43Z",
   "recent": [
+    {
+      "date": "2026-09-19T22:31:00+00:00",
+      "ef": "UNK",
+      "location": "15 SE Saint Stephens",
+      "county": "Fremont",
+      "state": "WY",
+      "lat": "42.82",
+      "lon": "-108.21",
+      "notes": "[Landspout] Landspout tornado formed and reformed a few times in the span of about 5 minutes before finally dissipating. Storm movement was to the east-northeast. (RIW)"
+    },
     {
       "date": "2026-09-18T23:05:00+00:00",
       "ef": "UNK",
@@ -410,56 +420,6 @@
       "lat": "30.52",
       "lon": "-94.02",
       "notes": "[Landspout] Corrects previous landspout report from 6 NNW Buna. Jasper county EM and KFDM submitted photos of significant damage to an aluminum roof and aluminum outbu (LCH)"
-    },
-    {
-      "date": "2026-08-22T00:15:00+00:00",
-      "ef": "UNK",
-      "location": "1 NNE Moronts",
-      "county": "Putnam",
-      "state": "IL",
-      "lat": "41.3",
-      "lon": "-89.29",
-      "notes": "Video on social media. (DVN)"
-    },
-    {
-      "date": "2026-08-22T00:13:00+00:00",
-      "ef": "UNK",
-      "location": "2 N Moronts",
-      "county": "Putnam",
-      "state": "IL",
-      "lat": "41.31",
-      "lon": "-89.3",
-      "notes": "An EF0 tornado... with peak winds of 70 MPH... developed along the southern banks of the Illinois River and moved towards the south-southeast. The tornado crossed throu (DVN)"
-    },
-    {
-      "date": "2026-08-22T00:11:00+00:00",
-      "ef": "UNK",
-      "location": "1 S Depue",
-      "county": "Putnam",
-      "state": "IL",
-      "lat": "41.3",
-      "lon": "-89.32",
-      "notes": "Corrects previous tornado report starting location and time. An EF0 tornado... with estimated peak winds of 80 MPH... developed near the southern banks of the Illinois (DVN)"
-    },
-    {
-      "date": "2026-08-21T22:55:00+00:00",
-      "ef": "UNK",
-      "location": "4 SE Sublette",
-      "county": "Lee",
-      "state": "IL",
-      "lat": "41.6",
-      "lon": "-89.17",
-      "notes": "An NWS damage survey determined an EF-0 tornado with peak winds around 70 mph... path length of around 0.7 miles... and maximum width of around 200 yards impacted the r (LOT)"
-    },
-    {
-      "date": "2026-08-21T22:26:00+00:00",
-      "ef": "UNK",
-      "location": "6 SSE Tucson",
-      "county": "Pima",
-      "state": "AZ",
-      "lat": "32.12",
-      "lon": "-110.84",
-      "notes": "[Landspout] Spotter reported a landspout tornado looking west from Saguaro National Park East. (TWC)"
     }
   ],
   "ef5": [
