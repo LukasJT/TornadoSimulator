@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T10:38:43Z",
+  "generated_at": "2026-09-21T12:01:42Z",
   "recent": [
     {
       "date": "2026-09-19T22:31:00+00:00",
@@ -400,26 +400,6 @@
       "lat": "45.47",
       "lon": "-102.84",
       "notes": "Brief elephant trunk tornado confirmed by two storm chasers. Has since fully dissipated. Time estimated based on reports and radar. (UNR)"
-    },
-    {
-      "date": "2026-08-22T23:55:00+00:00",
-      "ef": "UNK",
-      "location": "3 NW Ramey",
-      "county": "Clearfield",
-      "state": "PA",
-      "lat": "40.83",
-      "lon": "-78.44",
-      "notes": "EF-1 tornado with maximum wind speed of 90 mph. Path length of 1 mile and path width of 150 yards. (CTP)"
-    },
-    {
-      "date": "2026-08-22T21:25:00+00:00",
-      "ef": "UNK",
-      "location": "6 NNW Buna",
-      "county": "Jasper",
-      "state": "TX",
-      "lat": "30.52",
-      "lon": "-94.02",
-      "notes": "[Landspout] Corrects previous landspout report from 6 NNW Buna. Jasper county EM and KFDM submitted photos of significant damage to an aluminum roof and aluminum outbu (LCH)"
     }
   ],
   "ef5": [
