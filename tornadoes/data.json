@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T12:01:42Z",
+  "generated_at": "2026-09-22T10:58:54Z",
   "recent": [
     {
       "date": "2026-09-19T22:31:00+00:00",
@@ -20,6 +20,16 @@
       "lat": "40.32",
       "lon": "-109.25",
       "notes": "[Landspout] Public report shared via social media and television media (KUTV). (GJT)"
+    },
+    {
+      "date": "2026-09-18T23:00:00+00:00",
+      "ef": "UNK",
+      "location": "15 SE Naples",
+      "county": "Uintah",
+      "state": "UT",
+      "lat": "40.28",
+      "lon": "-109.28",
+      "notes": "(GJT)"
     },
     {
       "date": "2026-09-18T19:52:00+00:00",
@@ -382,6 +392,16 @@
       "notes": "Relayed via Fremont County dispatch... location estimated. (PUB)"
     },
     {
+      "date": "2026-08-27T20:30:00+00:00",
+      "ef": "UNK",
+      "location": "3 S Hoffmeister",
+      "county": "Hamilton",
+      "state": "NY",
+      "lat": "43.36",
+      "lon": "-74.73",
+      "notes": "Drone imagery shared with the NWS indicates a brief tornado occurred along the western edge of straight line wind damage southwest of DeBraine Lake in Hamilton County. (ALY)"
+    },
+    {
       "date": "2026-08-24T20:34:00+00:00",
       "ef": "UNK",
       "location": "4 NNW Atlantic",
@@ -390,16 +410,6 @@
       "lat": "34.94",
       "lon": "-76.35",
       "notes": "Top estimated winds: EF0 85 MPH. Path Length: .18 miles... estimated. Path Width: Unknown. Along Highway 12/Cedar Island Road... just east of the Thorofare Bridge... tw (MHX)"
-    },
-    {
-      "date": "2026-08-24T01:36:00+00:00",
-      "ef": "UNK",
-      "location": "5 ENE Sorum",
-      "county": "Perkins",
-      "state": "SD",
-      "lat": "45.47",
-      "lon": "-102.84",
-      "notes": "Brief elephant trunk tornado confirmed by two storm chasers. Has since fully dissipated. Time estimated based on reports and radar. (UNR)"
     }
   ],
   "ef5": [
