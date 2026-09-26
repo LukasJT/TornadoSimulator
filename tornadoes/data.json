@@ -1,6 +1,16 @@
 {
-  "generated_at": "2026-09-25T11:10:20Z",
+  "generated_at": "2026-09-26T10:49:59Z",
   "recent": [
+    {
+      "date": "2026-09-25T22:45:00+00:00",
+      "ef": "UNK",
+      "location": "1 SE Wilmore",
+      "county": "Comanche",
+      "state": "KS",
+      "lat": "37.33",
+      "lon": "-99.2",
+      "notes": "[Landspout] An Emergency Manager passed along a public report of a landspout at 2050 Rd 20. At a similar time... the sherrifs office reported a large landspout southea (DDC)"
+    },
     {
       "date": "2026-09-23T22:36:00+00:00",
       "ef": "UNK",
@@ -370,46 +380,6 @@
       "lat": "41.79",
       "lon": "-77.62",
       "notes": "An NWS Storm Survey team confirmed an EF1 Tornado in Pike Township in Potter County and Gaines Township in Tioga County. The tornado path length was 6.50 miles... had a (CTP)"
-    },
-    {
-      "date": "2026-08-27T22:10:00+00:00",
-      "ef": "UNK",
-      "location": "5 WNW Schuylerville",
-      "county": "Saratoga",
-      "state": "NY",
-      "lat": "43.13",
-      "lon": "-73.68",
-      "notes": "A brief EF-0 uprooted several softwood trees in the vicinity of Ruggles Road and Preserve Way. (ALY)"
-    },
-    {
-      "date": "2026-08-27T22:05:00+00:00",
-      "ef": "UNK",
-      "location": "6 NNE Saratoga Springs",
-      "county": "Saratoga",
-      "state": "NY",
-      "lat": "43.14",
-      "lon": "-73.73",
-      "notes": "An EF-1 tornado touched down west of the Northway in the vicinity of Greylock Drive and Glenburnie Drive. The tornado crossed the Northway and snapped trees from the No (ALY)"
-    },
-    {
-      "date": "2026-08-27T21:55:00+00:00",
-      "ef": "UNK",
-      "location": "3 NE Rosita",
-      "county": "Custer",
-      "state": "CO",
-      "lat": "38.13",
-      "lon": "-105.3",
-      "notes": "Relayed via Fremont County dispatch... location estimated. (PUB)"
-    },
-    {
-      "date": "2026-08-27T20:30:00+00:00",
-      "ef": "UNK",
-      "location": "3 S Hoffmeister",
-      "county": "Hamilton",
-      "state": "NY",
-      "lat": "43.36",
-      "lon": "-74.73",
-      "notes": "Drone imagery shared with the NWS indicates a brief tornado occurred along the western edge of straight line wind damage southwest of DeBraine Lake in Hamilton County. (ALY)"
     }
   ],
   "ef5": [
