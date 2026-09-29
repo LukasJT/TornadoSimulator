@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T12:56:30Z",
+  "generated_at": "2026-09-29T12:08:59Z",
   "recent": [
     {
       "date": "2026-09-25T22:45:00+00:00",
@@ -10,6 +10,16 @@
       "lat": "37.33",
       "lon": "-99.2",
       "notes": "[Landspout] An Emergency Manager passed along a public report of a landspout at 2050 Rd 20. At a similar time... the sherrifs office reported a large landspout southea (DDC)"
+    },
+    {
+      "date": "2026-09-25T22:42:00+00:00",
+      "ef": "UNK",
+      "location": "3 S Wilmore",
+      "county": "Comanche",
+      "state": "KS",
+      "lat": "37.29",
+      "lon": "-99.2",
+      "notes": "[Landspout] Minor damage at a farmstead with an unanchored lean-to shed flipped and adjacent fence bent due to the movement of this shed. Fence posts were in water-log (DDC)"
     },
     {
       "date": "2026-09-23T22:36:00+00:00",
