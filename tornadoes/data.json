@@ -1,6 +1,36 @@
 {
-  "generated_at": "2026-09-29T12:08:59Z",
+  "generated_at": "2026-09-30T11:56:15Z",
   "recent": [
+    {
+      "date": "2026-09-30T02:45:00+00:00",
+      "ef": "UNK",
+      "location": "7 WNW Timbercreek Canyo",
+      "county": "Randall",
+      "state": "TX",
+      "lat": "35.09",
+      "lon": "-101.94",
+      "notes": "Tornado reported south of 335... west of I-27. Roped out at 9:45 PM... was on the ground for 3-4 minutes prior. (AMA)"
+    },
+    {
+      "date": "2026-09-30T00:12:00+00:00",
+      "ef": "UNK",
+      "location": "3 SSE Claude",
+      "county": "Armstrong",
+      "state": "TX",
+      "lat": "35.07",
+      "lon": "-101.34",
+      "notes": "Social media video report of tornado. Position estimated via radar. (AMA)"
+    },
+    {
+      "date": "2026-09-29T00:11:00+00:00",
+      "ef": "UNK",
+      "location": "8 WSW East Carbon",
+      "county": "Carbon",
+      "state": "UT",
+      "lat": "39.49",
+      "lon": "-110.55",
+      "notes": "Spotter posted a video depicting a mesocyclonic tornado to social media looking west-southwest from HWY 6 and Mud Spring rd. The tornado formed at 6:11PM MT and trekked (SLC)"
+    },
     {
       "date": "2026-09-25T22:45:00+00:00",
       "ef": "UNK",
