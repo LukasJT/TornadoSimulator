@@ -1,6 +1,166 @@
 {
-  "generated_at": "2026-09-30T11:56:15Z",
+  "generated_at": "2026-10-01T12:27:47Z",
   "recent": [
+    {
+      "date": "2026-10-01T00:23:00+00:00",
+      "ef": "UNK",
+      "location": "2 SE Victor",
+      "county": "Mitchell",
+      "state": "KS",
+      "lat": "39.23",
+      "lon": "-98.26",
+      "notes": "Brief touchdown reported. (GID)"
+    },
+    {
+      "date": "2026-10-01T00:01:00+00:00",
+      "ef": "UNK",
+      "location": "4 S Ash Grove",
+      "county": "Lincoln",
+      "state": "KS",
+      "lat": "39.11",
+      "lon": "-98.34",
+      "notes": "Multi-vortex tornado ongoing. (ICT)"
+    },
+    {
+      "date": "2026-09-30T23:53:00+00:00",
+      "ef": "UNK",
+      "location": "5 N Sylvan Grove",
+      "county": "Lincoln",
+      "state": "KS",
+      "lat": "39.09",
+      "lon": "-98.39",
+      "notes": "(ICT)"
+    },
+    {
+      "date": "2026-09-30T23:45:00+00:00",
+      "ef": "UNK",
+      "location": "4 E Lucas",
+      "county": "Lincoln",
+      "state": "KS",
+      "lat": "39.06",
+      "lon": "-98.45",
+      "notes": "(ICT)"
+    },
+    {
+      "date": "2026-09-30T23:43:00+00:00",
+      "ef": "UNK",
+      "location": "4 NW Sylvan Grove",
+      "county": "Lincoln",
+      "state": "KS",
+      "lat": "39.06",
+      "lon": "-98.44",
+      "notes": "(ICT)"
+    },
+    {
+      "date": "2026-09-30T23:39:00+00:00",
+      "ef": "UNK",
+      "location": "3 E Lucas",
+      "county": "Lincoln",
+      "state": "KS",
+      "lat": "39.06",
+      "lon": "-98.48",
+      "notes": "Elephant trunk tornado ongoing. (ICT)"
+    },
+    {
+      "date": "2026-09-30T23:24:00+00:00",
+      "ef": "UNK",
+      "location": "6 S Lucas",
+      "county": "Russell",
+      "state": "KS",
+      "lat": "38.98",
+      "lon": "-98.55",
+      "notes": "Spotter reported tornado ongoing 3 miles west of the Wilson Lake Dam. (ICT)"
+    },
+    {
+      "date": "2026-09-30T22:51:00+00:00",
+      "ef": "UNK",
+      "location": "3 E Bunker Hill",
+      "county": "Russell",
+      "state": "KS",
+      "lat": "38.87",
+      "lon": "-98.65",
+      "notes": "Rope tornado reported 3 miles west of Dorrance... north of I-70. (ICT)"
+    },
+    {
+      "date": "2026-09-30T22:10:00+00:00",
+      "ef": "UNK",
+      "location": "4 NNW Susank",
+      "county": "Barton",
+      "state": "KS",
+      "lat": "38.69",
+      "lon": "-98.79",
+      "notes": "Tornado damage to some outbuildings. Time estimated from radar. (ICT)"
+    },
+    {
+      "date": "2026-09-30T22:06:00+00:00",
+      "ef": "UNK",
+      "location": "4 NW Susank",
+      "county": "Barton",
+      "state": "KS",
+      "lat": "38.68",
+      "lon": "-98.83",
+      "notes": "Location estimated from radar. (ICT)"
+    },
+    {
+      "date": "2026-09-30T22:01:00+00:00",
+      "ef": "UNK",
+      "location": "4 W Susank",
+      "county": "Barton",
+      "state": "KS",
+      "lat": "38.64",
+      "lon": "-98.85",
+      "notes": "Several brief touchdowns via storm chaser video. (ICT)"
+    },
+    {
+      "date": "2026-09-30T21:58:00+00:00",
+      "ef": "UNK",
+      "location": "4 ESE Galatia",
+      "county": "Barton",
+      "state": "KS",
+      "lat": "38.62",
+      "lon": "-98.89",
+      "notes": "Trained spotter is reported multiple tornadoes ongoing. (ICT)"
+    },
+    {
+      "date": "2026-09-30T21:52:00+00:00",
+      "ef": "UNK",
+      "location": "4 NNE Olmitz",
+      "county": "Barton",
+      "state": "KS",
+      "lat": "38.57",
+      "lon": "-98.91",
+      "notes": "Tornado via chaser video. Location estimated from radar. (ICT)"
+    },
+    {
+      "date": "2026-09-30T20:53:00+00:00",
+      "ef": "UNK",
+      "location": "1 SE Ash Valley",
+      "county": "Pawnee",
+      "state": "KS",
+      "lat": "38.29",
+      "lon": "-99.2",
+      "notes": "Storm chaser report of a tornado with live feed video. (DDC)"
+    },
+    {
+      "date": "2026-09-30T20:49:00+00:00",
+      "ef": "UNK",
+      "location": "3 SSW Ash Valley",
+      "county": "Pawnee",
+      "state": "KS",
+      "lat": "38.26",
+      "lon": "-99.23",
+      "notes": "Storm chaser reports with live video of an ongoing tornado. (DDC)"
+    },
+    {
+      "date": "2026-09-30T16:00:00+00:00",
+      "ef": "UNK",
+      "location": "2 SW Rock Harbor",
+      "county": "FLC087",
+      "state": "FL",
+      "lat": "25.05",
+      "lon": "-80.48",
+      "notes": "Preliminary highly-localized damage to one residence in the Silver Shores community between Tavernier and Rock Harbor investigated by Emergency Manager. Time is approxi (KEY)"
+    },
     {
       "date": "2026-09-30T02:45:00+00:00",
       "ef": "UNK",
@@ -9,7 +169,17 @@
       "state": "TX",
       "lat": "35.09",
       "lon": "-101.94",
-      "notes": "Tornado reported south of 335... west of I-27. Roped out at 9:45 PM... was on the ground for 3-4 minutes prior. (AMA)"
+      "notes": "Corrects previous tornado report from 7 WNW Timbercreek Canyon.This tornado was observed by multiple spotters with picture and video evidence. The tornado developed in (AMA)"
+    },
+    {
+      "date": "2026-09-30T00:32:00+00:00",
+      "ef": "UNK",
+      "location": "9 N Dodge City",
+      "county": "Ford",
+      "state": "KS",
+      "lat": "37.88",
+      "lon": "-100.03",
+      "notes": "off duty NWS employee reported brief tornado touchdowns...location estimate from radar. (DDC)"
     },
     {
       "date": "2026-09-30T00:12:00+00:00",
@@ -19,7 +189,17 @@
       "state": "TX",
       "lat": "35.07",
       "lon": "-101.34",
-      "notes": "Social media video report of tornado. Position estimated via radar. (AMA)"
+      "notes": "Corrects previous tornado report from 3 SSE Claude. This tornado was documented by spotters via pictures and video. No damage was found with this tornado as indicators (AMA)"
+    },
+    {
+      "date": "2026-09-30T00:10:00+00:00",
+      "ef": "UNK",
+      "location": "3 NE Howell",
+      "county": "Ford",
+      "state": "KS",
+      "lat": "37.81",
+      "lon": "-100.14",
+      "notes": "delayed report...location estimate from radar...video evidence a brief tornado sent in from the public. (DDC)"
     },
     {
       "date": "2026-09-29T00:11:00+00:00",
@@ -390,36 +570,6 @@
       "lat": "30.72",
       "lon": "-97.65",
       "notes": "[Landspout] Corrects previous landspout report from 3 ENE Serenada. Pictures and videos of a possible landspout or dust devil between SH 195 and I-35 to the north of G (EWX)"
-    },
-    {
-      "date": "2026-09-01T23:44:00+00:00",
-      "ef": "UNK",
-      "location": "4 NE Gap",
-      "county": "Lancaster",
-      "state": "PA",
-      "lat": "40.03",
-      "lon": "-75.98",
-      "notes": "EF-1 tornado with 90 mph wind in Salisbury Twp. Path length 1.08 miles and width 100 yards. (CTP)"
-    },
-    {
-      "date": "2026-09-01T21:40:00+00:00",
-      "ef": "UNK",
-      "location": "2 SE Washingtonville",
-      "county": "Montour",
-      "state": "PA",
-      "lat": "41.03",
-      "lon": "-76.65",
-      "notes": "An EF-1 tornado... with peak winds of 100 mph... occurred in Derry Township. Path width 250 yds... length 0.87 mi. (CTP)"
-    },
-    {
-      "date": "2026-09-01T21:33:00+00:00",
-      "ef": "UNK",
-      "location": "4 WNW Gaines",
-      "county": "Potter",
-      "state": "PA",
-      "lat": "41.79",
-      "lon": "-77.62",
-      "notes": "An NWS Storm Survey team confirmed an EF1 Tornado in Pike Township in Potter County and Gaines Township in Tioga County. The tornado path length was 6.50 miles... had a (CTP)"
     }
   ],
   "ef5": [
