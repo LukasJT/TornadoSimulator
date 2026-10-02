@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T12:27:47Z",
+  "generated_at": "2026-10-02T11:54:05Z",
   "recent": [
     {
       "date": "2026-10-01T00:23:00+00:00",
@@ -132,6 +132,16 @@
       "notes": "Tornado via chaser video. Location estimated from radar. (ICT)"
     },
     {
+      "date": "2026-09-30T20:57:00+00:00",
+      "ef": "UNK",
+      "location": "2 E Ash Valley",
+      "county": "Pawnee",
+      "state": "KS",
+      "lat": "38.31",
+      "lon": "-99.19",
+      "notes": "Approximate end time for the third tornado in Pawnee County. (DDC)"
+    },
+    {
       "date": "2026-09-30T20:53:00+00:00",
       "ef": "UNK",
       "location": "1 SE Ash Valley",
@@ -142,6 +152,16 @@
       "notes": "Storm chaser report of a tornado with live feed video. (DDC)"
     },
     {
+      "date": "2026-09-30T20:51:00+00:00",
+      "ef": "UNK",
+      "location": "2 S Ash Valley",
+      "county": "Pawnee",
+      "state": "KS",
+      "lat": "38.28",
+      "lon": "-99.22",
+      "notes": "Approximate end time of the second tornado in Pawnee County. (DDC)"
+    },
+    {
       "date": "2026-09-30T20:49:00+00:00",
       "ef": "UNK",
       "location": "3 SSW Ash Valley",
@@ -150,6 +170,16 @@
       "lat": "38.26",
       "lon": "-99.23",
       "notes": "Storm chaser reports with live video of an ongoing tornado. (DDC)"
+    },
+    {
+      "date": "2026-09-30T20:30:00+00:00",
+      "ef": "UNK",
+      "location": "3 SW Sanford",
+      "county": "Pawnee",
+      "state": "KS",
+      "lat": "38.15",
+      "lon": "-99.35",
+      "notes": "Multiple pictures of a brief tornado with a well-developed funnel southwest of Sanford. (DDC)"
     },
     {
       "date": "2026-09-30T16:00:00+00:00",
@@ -470,106 +500,6 @@
       "lat": "42.24",
       "lon": "-83.18",
       "notes": "A brief EF-0 tornado impacted areas around Memorial Park in Lincoln Park on the afternoon of September 3. (DTX)"
-    },
-    {
-      "date": "2026-09-03T00:23:00+00:00",
-      "ef": "UNK",
-      "location": "1 SSW Rose Hill",
-      "county": "Seneca",
-      "state": "NY",
-      "lat": "42.83",
-      "lon": "-76.91",
-      "notes": "NWS survey confirms EF2 tornado with winds up to 115 mph. Several barns and outbuildings were severely damaged... leveled... or even lofted with damage strewn many hund (BGM)"
-    },
-    {
-      "date": "2026-09-03T00:21:00+00:00",
-      "ef": "UNK",
-      "location": "2 NW Packwood Corners",
-      "county": "Seneca",
-      "state": "NY",
-      "lat": "42.92",
-      "lon": "-76.92",
-      "notes": "Corrects end time and adds detail to previous tornado report from 2 NW Packwood Corners. NWS survey confirms EF1 tornado with winds up to 95 mph. It went through the vi (BGM)"
-    },
-    {
-      "date": "2026-09-03T00:00:00+00:00",
-      "ef": "UNK",
-      "location": "1 NNE Portageville",
-      "county": "Livingston",
-      "state": "NY",
-      "lat": "42.58",
-      "lon": "-78.03",
-      "notes": "Tornado confirmed by NWS Storm Survey. Maximum winds of 110 mph. Damage path 1.3 miles... with a maximum width of 130 yards. Significant tree damage with around 100 lar (BUF)"
-    },
-    {
-      "date": "2026-09-02T23:59:00+00:00",
-      "ef": "UNK",
-      "location": "1 WSW Portageville",
-      "county": "Wyoming",
-      "state": "NY",
-      "lat": "42.57",
-      "lon": "-78.05",
-      "notes": "EF-1 tornado confirmed by NWS Storm Survey. Maximum winds of 105 mph. Path length 1.2 miles and maximum width 300 yards. Significant damage to trees and powerlines in t (BUF)"
-    },
-    {
-      "date": "2026-09-02T23:30:00+00:00",
-      "ef": "UNK",
-      "location": "2 E Webster",
-      "county": "Monroe",
-      "state": "NY",
-      "lat": "43.22",
-      "lon": "-77.38",
-      "notes": "EF-1 tornado with peak winds of 105 mph... path length of 3.23 miles... and width of 130 yards. The National Weather Service in Buffalo completed a damage survey across (BUF)"
-    },
-    {
-      "date": "2026-09-02T23:29:00+00:00",
-      "ef": "UNK",
-      "location": "3 E Alexander",
-      "county": "Genesee",
-      "state": "NY",
-      "lat": "42.91",
-      "lon": "-78.2",
-      "notes": "The National Weather Service in Buffalo investigated storm- related damage from a bowing line of thunderstorms that ended up producing an EF-1 tornado during the evenin (BUF)"
-    },
-    {
-      "date": "2026-09-02T23:19:00+00:00",
-      "ef": "UNK",
-      "location": "1 NE Marysville",
-      "county": "St. Clair",
-      "state": "MI",
-      "lat": "42.92",
-      "lon": "-82.47",
-      "notes": "A brief EF-0 tornado tracked across portions of Marysville... Michigan in St. Clair County on the evening of September 2... 2026. Tree damage was sporadic along a narro (DTX)"
-    },
-    {
-      "date": "2026-09-02T22:45:00+00:00",
-      "ef": "UNK",
-      "location": "4 SE Medina",
-      "county": "Orleans",
-      "state": "NY",
-      "lat": "43.18",
-      "lon": "-78.34",
-      "notes": "The National Weather Service in Buffalo completed a damage survey across Orleans County today in response to reports of concentrated areas of damage near Shelby from a (BUF)"
-    },
-    {
-      "date": "2026-09-02T22:07:00+00:00",
-      "ef": "UNK",
-      "location": "Olcott",
-      "county": "Niagara",
-      "state": "NY",
-      "lat": "43.34",
-      "lon": "-78.71",
-      "notes": "The National Weather Service in Buffalo completed a damage survey across Niagara County today in response to reports of concentrated areas of damage near Olcott from a (BUF)"
-    },
-    {
-      "date": "2026-09-02T21:25:00+00:00",
-      "ef": "UNK",
-      "location": "3 ENE Serenada",
-      "county": "Williamson",
-      "state": "TX",
-      "lat": "30.72",
-      "lon": "-97.65",
-      "notes": "[Landspout] Corrects previous landspout report from 3 ENE Serenada. Pictures and videos of a possible landspout or dust devil between SH 195 and I-35 to the north of G (EWX)"
     }
   ],
   "ef5": [
