@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T11:54:05Z",
+  "generated_at": "2026-10-03T11:07:04Z",
   "recent": [
     {
       "date": "2026-10-01T00:23:00+00:00",
@@ -480,26 +480,6 @@
       "lat": "34.53",
       "lon": "-77.45",
       "notes": "Storm survey team found evidence of an EF1 tornado with estimated peak winds of 110 mph and an estimated width of 50 yards. The tornado likely first touched down in the (MHX)"
-    },
-    {
-      "date": "2026-09-03T20:14:00+00:00",
-      "ef": "UNK",
-      "location": "2 NE Comerica Park",
-      "county": "Wayne",
-      "state": "MI",
-      "lat": "42.37",
-      "lon": "-83.03",
-      "notes": "An EF-2 tornado impacted east Detroit on the afternoon of September 3... touching down near the Poletown East neighborhood and tracking southeastward... eventually cros (DTX)"
-    },
-    {
-      "date": "2026-09-03T20:12:00+00:00",
-      "ef": "UNK",
-      "location": "Lincoln Park",
-      "county": "Wayne",
-      "state": "MI",
-      "lat": "42.24",
-      "lon": "-83.18",
-      "notes": "A brief EF-0 tornado impacted areas around Memorial Park in Lincoln Park on the afternoon of September 3. (DTX)"
     }
   ],
   "ef5": [
