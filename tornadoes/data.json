@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T11:47:50Z",
+  "generated_at": "2026-10-05T13:38:03Z",
   "recent": [
     {
       "date": "2026-10-01T00:23:00+00:00",
@@ -460,26 +460,6 @@
       "lat": "26.13",
       "lon": "-80.25",
       "notes": "[Landspout] Corrects previous tstm wnd dmg report from 1 NNE Plantation to landspout at 2:56PM. Reports of tree damage in the Plantation Gardens areas. Picture and vid (MFL)"
-    },
-    {
-      "date": "2026-09-05T22:44:00+00:00",
-      "ef": "UNK",
-      "location": "3 NW Sea View Pier",
-      "county": "Onslow",
-      "state": "NC",
-      "lat": "34.53",
-      "lon": "-77.43",
-      "notes": "Storm survey team found evidence of an EF0 tornado with estimated peak winds of 85 mph. The tornado touched down near the Mill Creek neighborhood... then crossed NC 210 (MHX)"
-    },
-    {
-      "date": "2026-09-05T22:37:00+00:00",
-      "ef": "UNK",
-      "location": "3 E Folkstone",
-      "county": "Onslow",
-      "state": "NC",
-      "lat": "34.53",
-      "lon": "-77.45",
-      "notes": "Storm survey team found evidence of an EF1 tornado with estimated peak winds of 110 mph and an estimated width of 50 yards. The tornado likely first touched down in the (MHX)"
     }
   ],
   "ef5": [
