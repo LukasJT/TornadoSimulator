@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T13:38:03Z",
+  "generated_at": "2026-10-06T12:45:57Z",
   "recent": [
     {
       "date": "2026-10-01T00:23:00+00:00",
@@ -440,26 +440,6 @@
       "lat": "30.5",
       "lon": "-90.5",
       "notes": "Tornado began in a parking lot on West Thomas Street and traveled south-southwest for around 3 quarters of a mile. Damage was mostly to trees however... minor structura (LIX)"
-    },
-    {
-      "date": "2026-09-07T00:17:00+00:00",
-      "ef": "UNK",
-      "location": "8 SSW Arnegard",
-      "county": "McKenzie",
-      "state": "ND",
-      "lat": "47.69",
-      "lon": "-103.48",
-      "notes": "Storm chaser reported brief touchdown. Radar estimated location. (BIS)"
-    },
-    {
-      "date": "2026-09-06T18:56:00+00:00",
-      "ef": "UNK",
-      "location": "1 NNE Plantation",
-      "county": "Broward",
-      "state": "FL",
-      "lat": "26.13",
-      "lon": "-80.25",
-      "notes": "[Landspout] Corrects previous tstm wnd dmg report from 1 NNE Plantation to landspout at 2:56PM. Reports of tree damage in the Plantation Gardens areas. Picture and vid (MFL)"
     }
   ],
   "ef5": [
