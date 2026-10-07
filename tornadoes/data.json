@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T12:45:57Z",
+  "generated_at": "2026-10-07T12:40:16Z",
   "recent": [
     {
       "date": "2026-10-01T00:23:00+00:00",
@@ -410,36 +410,6 @@
       "lat": "41.81",
       "lon": "-78.63",
       "notes": "An EF1 tornado with a maximum wind speed of 105mph occurred just east of Bradford Airport. Its path length was 1.23 miles and it had a peak width of around 200 yards. (CTP)"
-    },
-    {
-      "date": "2026-09-08T00:35:00+00:00",
-      "ef": "UNK",
-      "location": "4 ENE Spencer",
-      "county": "Boyd",
-      "state": "NE",
-      "lat": "42.9",
-      "lon": "-98.63",
-      "notes": "Storm chaser confirmed tornado. Approximated location. (LBF)"
-    },
-    {
-      "date": "2026-09-07T23:35:00+00:00",
-      "ef": "UNK",
-      "location": "6 S Strawberry Lake",
-      "county": "McLean",
-      "state": "ND",
-      "lat": "47.67",
-      "lon": "-100.87",
-      "notes": "Multiple reports of a cone tornado that lasted less than a minute. Storm was still rapidly rotating after tornado dissipated. (BIS)"
-    },
-    {
-      "date": "2026-09-07T19:39:00+00:00",
-      "ef": "UNK",
-      "location": "2 W Hammond",
-      "county": "Tangipahoa",
-      "state": "LA",
-      "lat": "30.5",
-      "lon": "-90.5",
-      "notes": "Tornado began in a parking lot on West Thomas Street and traveled south-southwest for around 3 quarters of a mile. Damage was mostly to trees however... minor structura (LIX)"
     }
   ],
   "ef5": [
