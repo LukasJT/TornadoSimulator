@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T12:35:16Z",
+  "generated_at": "2026-10-10T11:55:37Z",
   "recent": [
     {
       "date": "2026-10-01T00:23:00+00:00",
@@ -380,16 +380,6 @@
       "lat": "45.46",
       "lon": "-96.12",
       "notes": "Initial touchdown... corrects location from previous report. Trained spotter confirmed brief tornado touchdown in an open field... with sporadic damage to crops along a (MPX)"
-    },
-    {
-      "date": "2026-09-10T20:35:00+00:00",
-      "ef": "UNK",
-      "location": "3 SE Toluca",
-      "county": "Marshall",
-      "state": "IL",
-      "lat": "40.97",
-      "lon": "-89.09",
-      "notes": "Video evidence of a tornado in a farm field 2-3 miles southeast of Toluca. No damage was observed or reported. (ILX)"
     }
   ],
   "ef5": [
