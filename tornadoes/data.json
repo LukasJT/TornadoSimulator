@@ -1,6 +1,126 @@
 {
-  "generated_at": "2026-10-10T11:55:37Z",
+  "generated_at": "2026-10-11T12:07:27Z",
   "recent": [
+    {
+      "date": "2026-10-10T21:15:00+00:00",
+      "ef": "UNK",
+      "location": "5 SSW Elko",
+      "county": "Barnwell",
+      "state": "SC",
+      "lat": "33.32",
+      "lon": "-81.41",
+      "notes": "Storm Spotters reported tornado northwest on Barnwell along 278. Radar confirmed debris as well. (CAE)"
+    },
+    {
+      "date": "2026-10-10T21:10:00+00:00",
+      "ef": "UNK",
+      "location": "3 NNW Barnwell",
+      "county": "Barnwell",
+      "state": "SC",
+      "lat": "33.29",
+      "lon": "-81.38",
+      "notes": "Storm spotters showed video of tornado on the ground near highway 37. Radar confirmed debris as well. (CAE)"
+    },
+    {
+      "date": "2026-10-10T20:47:00+00:00",
+      "ef": "UNK",
+      "location": "1 WSW Kline",
+      "county": "Barnwell",
+      "state": "SC",
+      "lat": "33.12",
+      "lon": "-81.36",
+      "notes": "Storm spotters showed video of tornado on the ground west of Kline. Radar confirmed debris as well. (CAE)"
+    },
+    {
+      "date": "2026-10-10T20:39:00+00:00",
+      "ef": "UNK",
+      "location": "3 NNE Appleton",
+      "county": "Allendale",
+      "state": "SC",
+      "lat": "33.09",
+      "lon": "-81.35",
+      "notes": "Tornado crossing Miller Creek Rd on live stream... which resulted in downed trees and powerlines. (CHS)"
+    },
+    {
+      "date": "2026-10-10T20:37:00+00:00",
+      "ef": "UNK",
+      "location": "3 N Appleton",
+      "county": "Allendale",
+      "state": "SC",
+      "lat": "33.09",
+      "lon": "-81.37",
+      "notes": "911 call center reported numerous trees and power lines down along Miller Creek Rd. Damage was likely due to a tornado. Time was estimated via radar data. (CHS)"
+    },
+    {
+      "date": "2026-10-10T20:19:00+00:00",
+      "ef": "UNK",
+      "location": "5 SSW Appleton",
+      "county": "Allendale",
+      "state": "SC",
+      "lat": "32.97",
+      "lon": "-81.4",
+      "notes": "Live stream showed active tornado on the ground... causing trees to be shredded and debris to be lofted. Roof and siding were also ripped off manufactured home... and p (CHS)"
+    },
+    {
+      "date": "2026-10-10T20:17:00+00:00",
+      "ef": "UNK",
+      "location": "6 SSW Appleton",
+      "county": "Allendale",
+      "state": "SC",
+      "lat": "32.97",
+      "lon": "-81.4",
+      "notes": "SCEMD reported four homes located along the 11000 block of Burtons Ferry Hwy with damage likely due to a tornado. They reported three of the homes with major damage and (CHS)"
+    },
+    {
+      "date": "2026-10-10T19:36:00+00:00",
+      "ef": "UNK",
+      "location": "6 W Waynesboro",
+      "county": "Burke",
+      "state": "GA",
+      "lat": "33.1",
+      "lon": "-82.11",
+      "notes": "Numerous reports with video and drone footage of several destroyed homes... flipped farm equipment... and considerable tree-powerline damage along highway 80 west of Wa (CAE)"
+    },
+    {
+      "date": "2026-10-10T19:27:00+00:00",
+      "ef": "UNK",
+      "location": "2 NW Newington",
+      "county": "Screven",
+      "state": "GA",
+      "lat": "32.61",
+      "lon": "-81.52",
+      "notes": "Numerous trees and power poles downed near Old Savannah Hwy and Hwy 21 likely due to tornado. Damage was estimated to be about 200 yards wide. (CHS)"
+    },
+    {
+      "date": "2026-10-10T19:20:00+00:00",
+      "ef": "UNK",
+      "location": "1 NW Newington",
+      "county": "Screven",
+      "state": "GA",
+      "lat": "32.6",
+      "lon": "-81.52",
+      "notes": "Fire Chief reports tornado on the ground near Highway 21... causing tree tops to be shredded. Live stream video also shows downed trees and debris being lofted into the (CHS)"
+    },
+    {
+      "date": "2026-10-10T19:17:00+00:00",
+      "ef": "UNK",
+      "location": "2 SSE Hunters",
+      "county": "Screven",
+      "state": "GA",
+      "lat": "32.62",
+      "lon": "-81.53",
+      "notes": "A 911 call center reported roof damage possibly to multiple homes near Hilltop Lane at Savannah Hwy. A downed power pole was also reported. Damage was likely due to a t (CHS)"
+    },
+    {
+      "date": "2026-10-10T18:33:00+00:00",
+      "ef": "UNK",
+      "location": "5 WNW Oliver",
+      "county": "Screven",
+      "state": "GA",
+      "lat": "32.55",
+      "lon": "-81.6",
+      "notes": "Picture of ongoing tornado near Effingham Highway. Spotter noted trees were being shredded by the tornado. (CHS)"
+    },
     {
       "date": "2026-10-01T00:23:00+00:00",
       "ef": "UNK",
@@ -370,16 +490,6 @@
       "lat": "29.6",
       "lon": "-81.28",
       "notes": "[Landspout] Video of a Landspout on the ground was taken and shared to Emergency Management as it formed near US-1 and Matanzas Woods Pkwy in NW section of Palm coast. (JAX)"
-    },
-    {
-      "date": "2026-09-12T00:44:00+00:00",
-      "ef": "UNK",
-      "location": "4 NE Artichoke",
-      "county": "Stevens",
-      "state": "MN",
-      "lat": "45.46",
-      "lon": "-96.12",
-      "notes": "Initial touchdown... corrects location from previous report. Trained spotter confirmed brief tornado touchdown in an open field... with sporadic damage to crops along a (MPX)"
     }
   ],
   "ef5": [
