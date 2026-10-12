@@ -1,6 +1,126 @@
 {
-  "generated_at": "2026-10-11T12:07:27Z",
+  "generated_at": "2026-10-12T14:27:22Z",
   "recent": [
+    {
+      "date": "2026-10-11T17:40:00+00:00",
+      "ef": "UNK",
+      "location": "6 W Bunn",
+      "county": "Franklin",
+      "state": "NC",
+      "lat": "35.98",
+      "lon": "-78.36",
+      "notes": "(RAH)"
+    },
+    {
+      "date": "2026-10-11T17:18:00+00:00",
+      "ef": "UNK",
+      "location": "Atkinson",
+      "county": "Pender",
+      "state": "NC",
+      "lat": "34.53",
+      "lon": "-78.17",
+      "notes": "Tornado sighted near Rankin St and Beattys Bridge Rd heading northeast toward Hwy 421 and Point Caswell Rd. (ILM)"
+    },
+    {
+      "date": "2026-10-11T16:32:00+00:00",
+      "ef": "UNK",
+      "location": "1 E Carpenter",
+      "county": "Wake",
+      "state": "NC",
+      "lat": "35.82",
+      "lon": "-78.86",
+      "notes": "(RAH)"
+    },
+    {
+      "date": "2026-10-11T16:25:00+00:00",
+      "ef": "UNK",
+      "location": "2 W Linden",
+      "county": "Cumberland",
+      "state": "NC",
+      "lat": "35.26",
+      "lon": "-78.78",
+      "notes": "Multiple reports of trees down and property damage around the Ramsey Street and Linden intersection. Potential start of a tornado track. (RAH)"
+    },
+    {
+      "date": "2026-10-11T16:07:00+00:00",
+      "ef": "UNK",
+      "location": "2 NE Clarendon",
+      "county": "Columbus",
+      "state": "NC",
+      "lat": "34.23",
+      "lon": "-78.82",
+      "notes": "Public reported 4 structures destroyed on property with power outage and power line snapped. (ILM)"
+    },
+    {
+      "date": "2026-10-11T16:03:00+00:00",
+      "ef": "UNK",
+      "location": "4 SSE Jordan Lake",
+      "county": "Chatham",
+      "state": "NC",
+      "lat": "35.69",
+      "lon": "-79.01",
+      "notes": "Numerous mature hardwood and pine trees downed... snapped and twisted on Beaver Creek Road... just south of Pea Ridge Road. Damage was coincident with a radar TDS. (RAH)"
+    },
+    {
+      "date": "2026-10-11T15:58:00+00:00",
+      "ef": "UNK",
+      "location": "1 SSE Bonnie Doone",
+      "county": "Cumberland",
+      "state": "NC",
+      "lat": "35.08",
+      "lon": "-78.96",
+      "notes": "Several reports of storm damage including 18 wheeler flipped... cars lifted and dropped... roof damage... power outages and trees down around the Walmart and Sams Club (RAH)"
+    },
+    {
+      "date": "2026-10-11T15:56:00+00:00",
+      "ef": "UNK",
+      "location": "2 S Bonnie Doone",
+      "county": "Cumberland",
+      "state": "NC",
+      "lat": "35.07",
+      "lon": "-78.97",
+      "notes": "Multiple trees down in this vicinity of Skibo Road and Morganton Road. Suspected beginning of tornado track based on initial reports. (RAH)"
+    },
+    {
+      "date": "2026-10-11T14:14:00+00:00",
+      "ef": "UNK",
+      "location": "1 NNE Candor",
+      "county": "Montgomery",
+      "state": "NC",
+      "lat": "35.31",
+      "lon": "-79.73",
+      "notes": "Emergency manager reports one building destroyed and another severely damaged along with several large trees snapped in the Hurricane Drive and Hillview street areas. (RAH)"
+    },
+    {
+      "date": "2026-10-11T10:06:00+00:00",
+      "ef": "UNK",
+      "location": "2 WSW Blair",
+      "county": "Newberry",
+      "state": "SC",
+      "lat": "34.42",
+      "lon": "-81.42",
+      "notes": "Newberry dispatch reported trees down along Old Blair Road. KCAE confirmed debris signature at this time and location. (CAE)"
+    },
+    {
+      "date": "2026-10-11T04:32:00+00:00",
+      "ef": "UNK",
+      "location": "4 SW Carpenter",
+      "county": "Wake",
+      "state": "NC",
+      "lat": "35.77",
+      "lon": "-78.92",
+      "notes": "(RAH)"
+    },
+    {
+      "date": "2026-10-10T21:58:00+00:00",
+      "ef": "UNK",
+      "location": "5 NNE Aiken State Park",
+      "county": "Aiken",
+      "state": "SC",
+      "lat": "33.62",
+      "lon": "-81.46",
+      "notes": "Aiken County EM relayed a report of two downed trees. One near the interaction of Coleman Bridge Road and Quail Run Road... the other near the intersection of Coleman B (CAE)"
+    },
     {
       "date": "2026-10-10T21:15:00+00:00",
       "ef": "UNK",
@@ -42,14 +162,14 @@
       "notes": "Tornado crossing Miller Creek Rd on live stream... which resulted in downed trees and powerlines. (CHS)"
     },
     {
-      "date": "2026-10-10T20:37:00+00:00",
+      "date": "2026-10-10T20:34:00+00:00",
       "ef": "UNK",
       "location": "3 N Appleton",
       "county": "Allendale",
       "state": "SC",
-      "lat": "33.09",
-      "lon": "-81.37",
-      "notes": "911 call center reported numerous trees and power lines down along Miller Creek Rd. Damage was likely due to a tornado. Time was estimated via radar data. (CHS)"
+      "lat": "33.08",
+      "lon": "-81.36",
+      "notes": "NWS Survey Team confired an EF-1 tornado in northern Allendale County. A tornado touched down in the wooded area between Miller Creek Road and Yackin Road... rapidly mo (CHS)"
     },
     {
       "date": "2026-10-10T20:19:00+00:00",
@@ -82,16 +202,6 @@
       "notes": "Numerous reports with video and drone footage of several destroyed homes... flipped farm equipment... and considerable tree-powerline damage along highway 80 west of Wa (CAE)"
     },
     {
-      "date": "2026-10-10T19:27:00+00:00",
-      "ef": "UNK",
-      "location": "2 NW Newington",
-      "county": "Screven",
-      "state": "GA",
-      "lat": "32.61",
-      "lon": "-81.52",
-      "notes": "Numerous trees and power poles downed near Old Savannah Hwy and Hwy 21 likely due to tornado. Damage was estimated to be about 200 yards wide. (CHS)"
-    },
-    {
       "date": "2026-10-10T19:20:00+00:00",
       "ef": "UNK",
       "location": "1 NW Newington",
@@ -102,6 +212,16 @@
       "notes": "Fire Chief reports tornado on the ground near Highway 21... causing tree tops to be shredded. Live stream video also shows downed trees and debris being lofted into the (CHS)"
     },
     {
+      "date": "2026-10-10T19:19:00+00:00",
+      "ef": "UNK",
+      "location": "2 NW Newington",
+      "county": "Screven",
+      "state": "GA",
+      "lat": "32.61",
+      "lon": "-81.53",
+      "notes": "NWS Survey Team confirmed an EF-1 tornado in eastern Screven County... GA. The tornado touched down just south of Hwy 21 near Ogeechee Creek before dissipating just nor (CHS)"
+    },
+    {
       "date": "2026-10-10T19:17:00+00:00",
       "ef": "UNK",
       "location": "2 SSE Hunters",
@@ -110,6 +230,16 @@
       "lat": "32.62",
       "lon": "-81.53",
       "notes": "A 911 call center reported roof damage possibly to multiple homes near Hilltop Lane at Savannah Hwy. A downed power pole was also reported. Damage was likely due to a t (CHS)"
+    },
+    {
+      "date": "2026-10-10T18:42:00+00:00",
+      "ef": "UNK",
+      "location": "2 SSE Captolo",
+      "county": "Screven",
+      "state": "GA",
+      "lat": "32.6",
+      "lon": "-81.58",
+      "notes": "NWS Survey Team confirmed an EF-0 tornado south southeast of Captolo... GA. A weak tornado briefly touched down near Wind Mill Road... southeast of Captolo... GA... bef (CHS)"
     },
     {
       "date": "2026-10-10T18:33:00+00:00",
@@ -470,26 +600,6 @@
       "lat": "37.02",
       "lon": "-107.39",
       "notes": "[Landspout] (GJT)"
-    },
-    {
-      "date": "2026-09-12T20:46:00+00:00",
-      "ef": "UNK",
-      "location": "1 ESE Spring Grove",
-      "county": "Surry",
-      "state": "VA",
-      "lat": "37.16",
-      "lon": "-76.96",
-      "notes": "Storm survey conducted by NWS employee found tornado damage consistent with an EF-0 along VA-10 east of Spring Grove. Time is estimated based on radar. (AKQ)"
-    },
-    {
-      "date": "2026-09-12T19:40:00+00:00",
-      "ef": "UNK",
-      "location": "5 WNW Palm Coast",
-      "county": "Flagler",
-      "state": "FL",
-      "lat": "29.6",
-      "lon": "-81.28",
-      "notes": "[Landspout] Video of a Landspout on the ground was taken and shared to Emergency Management as it formed near US-1 and Matanzas Woods Pkwy in NW section of Palm coast. (JAX)"
     }
   ],
   "ef5": [
