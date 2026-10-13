@@ -1,6 +1,16 @@
 {
-  "generated_at": "2026-10-12T14:27:22Z",
+  "generated_at": "2026-10-13T13:35:31Z",
   "recent": [
+    {
+      "date": "2026-10-11T17:42:00+00:00",
+      "ef": "UNK",
+      "location": "4 SW Louisburg",
+      "county": "Franklin",
+      "state": "NC",
+      "lat": "36.06",
+      "lon": "-78.36",
+      "notes": "Approximate starting point of confirmed EF-1 tornado. A tornado touched down southwest of Louisburg... NC and moved to the northeast before crossing NC-56 just west of (RAH)"
+    },
     {
       "date": "2026-10-11T17:40:00+00:00",
       "ef": "UNK",
@@ -12,6 +22,26 @@
       "notes": "(RAH)"
     },
     {
+      "date": "2026-10-11T17:25:00+00:00",
+      "ef": "UNK",
+      "location": "3 SE Harrells",
+      "county": "Sampson",
+      "state": "NC",
+      "lat": "34.69",
+      "lon": "-78.17",
+      "notes": "NWS Storm Survey confirmed a brief EF-0 Tornado that crossed US421 between Matthews Rd and Willard Rd. Path length 0.18 miles... width 30 yards. Time on ground approx 1 (RAH)"
+    },
+    {
+      "date": "2026-10-11T17:22:00+00:00",
+      "ef": "UNK",
+      "location": "3 ENE Clayton",
+      "county": "Johnston",
+      "state": "NC",
+      "lat": "35.67",
+      "lon": "-78.41",
+      "notes": "Approximate end of tornado path. The tornado occurred along a 3.2 mile-long discontinuous path... as it momentarily touched down and lifted several times before finally (RAH)"
+    },
+    {
       "date": "2026-10-11T17:18:00+00:00",
       "ef": "UNK",
       "location": "Atkinson",
@@ -20,6 +50,36 @@
       "lat": "34.53",
       "lon": "-78.17",
       "notes": "Tornado sighted near Rankin St and Beattys Bridge Rd heading northeast toward Hwy 421 and Point Caswell Rd. (ILM)"
+    },
+    {
+      "date": "2026-10-11T17:17:00+00:00",
+      "ef": "UNK",
+      "location": "1 ESE Clayton",
+      "county": "Johnston",
+      "state": "NC",
+      "lat": "35.64",
+      "lon": "-78.44",
+      "notes": "Approximate location of most intense damage. The tornado occurred along a 3.2 mile-long discontinuous path... as it momentarily touched down and lifted several times be (RAH)"
+    },
+    {
+      "date": "2026-10-11T17:15:00+00:00",
+      "ef": "UNK",
+      "location": "1 SE Clayton",
+      "county": "Johnston",
+      "state": "NC",
+      "lat": "35.63",
+      "lon": "-78.44",
+      "notes": "Approximate beginning of tornado path. The tornado occurred along a 3.2 mile-long discontinuous path... as it momentarily touched down and lifted several times before f (RAH)"
+    },
+    {
+      "date": "2026-10-11T17:12:00+00:00",
+      "ef": "UNK",
+      "location": "3 NNE New Hope",
+      "county": "Wake",
+      "state": "NC",
+      "lat": "35.85",
+      "lon": "-78.54",
+      "notes": "EF-1 tornado confirmed. Touched down in the Stone Ridge neighborhood... with a discontinuous path of tree and structural damage northward into the Neuse Crossing neighb (RAH)"
     },
     {
       "date": "2026-10-11T16:32:00+00:00",
@@ -92,14 +152,14 @@
       "notes": "Emergency manager reports one building destroyed and another severely damaged along with several large trees snapped in the Hurricane Drive and Hillview street areas. (RAH)"
     },
     {
-      "date": "2026-10-11T10:06:00+00:00",
+      "date": "2026-10-11T10:05:00+00:00",
       "ef": "UNK",
       "location": "2 WSW Blair",
       "county": "Newberry",
       "state": "SC",
-      "lat": "34.42",
-      "lon": "-81.42",
-      "notes": "Newberry dispatch reported trees down along Old Blair Road. KCAE confirmed debris signature at this time and location. (CAE)"
+      "lat": "34.41",
+      "lon": "-81.43",
+      "notes": "NWS survey team confirmed an EF-2 tornado in northeastern Newberry County. The tornado touched down near or just before the intersection of Old Blair Road and Henderson (CAE)"
     },
     {
       "date": "2026-10-11T04:32:00+00:00",
@@ -117,9 +177,9 @@
       "location": "5 NNE Aiken State Park",
       "county": "Aiken",
       "state": "SC",
-      "lat": "33.62",
+      "lat": "33.61",
       "lon": "-81.46",
-      "notes": "Aiken County EM relayed a report of two downed trees. One near the interaction of Coleman Bridge Road and Quail Run Road... the other near the intersection of Coleman B (CAE)"
+      "notes": "NWS survey team confirmed an EF-1 tornado in northern Aiken County. A tornado touched down just southeast of Bethcar Church Rd. It quickly strengthened and moved northw (CAE)"
     },
     {
       "date": "2026-10-10T21:15:00+00:00",
@@ -142,14 +202,24 @@
       "notes": "Storm spotters showed video of tornado on the ground near highway 37. Radar confirmed debris as well. (CAE)"
     },
     {
-      "date": "2026-10-10T20:47:00+00:00",
+      "date": "2026-10-10T20:49:00+00:00",
+      "ef": "UNK",
+      "location": "2 NNW Kline",
+      "county": "Barnwell",
+      "state": "SC",
+      "lat": "33.16",
+      "lon": "-81.36",
+      "notes": "NWS survey team confirmed an EF-1 tornado in Barnwell County. A tornado developed along Hwy 278 south of Mount Olive Cir... then continued north into the City of Barnwe (CAE)"
+    },
+    {
+      "date": "2026-10-10T20:41:00+00:00",
       "ef": "UNK",
       "location": "1 WSW Kline",
       "county": "Barnwell",
       "state": "SC",
       "lat": "33.12",
       "lon": "-81.36",
-      "notes": "Storm spotters showed video of tornado on the ground west of Kline. Radar confirmed debris as well. (CAE)"
+      "notes": "NWS storm survey team confirmed an EF-1 tornado in southern Barnwell County. A tornado developed south of Boiling Springs Rd... east of Shepherd Rd.... moved to the nor (CAE)"
     },
     {
       "date": "2026-10-10T20:39:00+00:00",
@@ -200,6 +270,16 @@
       "lat": "33.1",
       "lon": "-82.11",
       "notes": "Numerous reports with video and drone footage of several destroyed homes... flipped farm equipment... and considerable tree-powerline damage along highway 80 west of Wa (CAE)"
+    },
+    {
+      "date": "2026-10-10T19:30:00+00:00",
+      "ef": "UNK",
+      "location": "7 W Waynesboro",
+      "county": "Burke",
+      "state": "GA",
+      "lat": "33.09",
+      "lon": "-82.13",
+      "notes": "NWS survey team confirmed an EF-1 tornado in west central Burke County. A tornado touched down in the swampland south of Highway 80 near rocky Creek. It moved northeast (CAE)"
     },
     {
       "date": "2026-10-10T19:20:00+00:00",
