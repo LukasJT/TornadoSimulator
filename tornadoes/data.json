@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T13:35:31Z",
+  "generated_at": "2026-10-14T11:12:34Z",
   "recent": [
     {
       "date": "2026-10-11T17:42:00+00:00",
@@ -92,6 +92,16 @@
       "notes": "(RAH)"
     },
     {
+      "date": "2026-10-11T16:29:00+00:00",
+      "ef": "UNK",
+      "location": "1 ESE Carpenter",
+      "county": "Wake",
+      "state": "NC",
+      "lat": "35.81",
+      "lon": "-78.86",
+      "notes": "A short lived EF-1 tornado developed near the West Regional Library and traveled northeastward. Several trees were snapped in the library parking lot and in the adjacen (RAH)"
+    },
+    {
       "date": "2026-10-11T16:25:00+00:00",
       "ef": "UNK",
       "location": "2 W Linden",
@@ -112,14 +122,14 @@
       "notes": "Public reported 4 structures destroyed on property with power outage and power line snapped. (ILM)"
     },
     {
-      "date": "2026-10-11T16:03:00+00:00",
+      "date": "2026-10-11T16:02:00+00:00",
       "ef": "UNK",
       "location": "4 SSE Jordan Lake",
       "county": "Chatham",
       "state": "NC",
-      "lat": "35.69",
+      "lat": "35.68",
       "lon": "-79.01",
-      "notes": "Numerous mature hardwood and pine trees downed... snapped and twisted on Beaver Creek Road... just south of Pea Ridge Road. Damage was coincident with a radar TDS. (RAH)"
+      "notes": "A short lived EF-1 tornado developed just south of Beaver Creek Rd... causing EF-1 damage as it crossed the road and moved northeastward. It eventually crossed a small (RAH)"
     },
     {
       "date": "2026-10-11T15:58:00+00:00",
@@ -140,6 +150,16 @@
       "lat": "35.07",
       "lon": "-78.97",
       "notes": "Multiple trees down in this vicinity of Skibo Road and Morganton Road. Suspected beginning of tornado track based on initial reports. (RAH)"
+    },
+    {
+      "date": "2026-10-11T14:14:00+00:00",
+      "ef": "UNK",
+      "location": "1 NE Candor",
+      "county": "Montgomery",
+      "state": "NC",
+      "lat": "35.3",
+      "lon": "-79.73",
+      "notes": "Approximate beginning of tornado path. A brief... but strong... short-track tornado occurred on the northeast side of Candor in between Brutonville Road and I-73. Drone (RAH)"
     },
     {
       "date": "2026-10-11T14:14:00+00:00",
@@ -330,6 +350,16 @@
       "lat": "32.55",
       "lon": "-81.6",
       "notes": "Picture of ongoing tornado near Effingham Highway. Spotter noted trees were being shredded by the tornado. (CHS)"
+    },
+    {
+      "date": "2026-10-09T21:42:00+00:00",
+      "ef": "UNK",
+      "location": "1 N Green Point",
+      "county": "Franklin",
+      "state": "FL",
+      "lat": "29.78",
+      "lon": "-84.83",
+      "notes": "Large tree limbs damaged a couple of homes with power lines also down. (TAE)"
     },
     {
       "date": "2026-10-01T00:23:00+00:00",
@@ -660,26 +690,6 @@
       "lat": "41.24",
       "lon": "-102.38",
       "notes": "Brief tornado touchdown reported by storm chaser via social media photo. (LBF)"
-    },
-    {
-      "date": "2026-09-14T23:49:00+00:00",
-      "ef": "UNK",
-      "location": "3 SW Avoca",
-      "county": "Otoe",
-      "state": "NE",
-      "lat": "40.77",
-      "lon": "-96.16",
-      "notes": "An EF-0 tornado touched down in an agricultural field just south of County Road B... between 32nd and 34th Roads... flattening a path through corn. The tornado tracked (OAX)"
-    },
-    {
-      "date": "2026-09-14T22:30:00+00:00",
-      "ef": "UNK",
-      "location": "Arboles",
-      "county": "Archuleta",
-      "state": "CO",
-      "lat": "37.02",
-      "lon": "-107.39",
-      "notes": "[Landspout] (GJT)"
     }
   ],
   "ef5": [
