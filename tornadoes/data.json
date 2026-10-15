@@ -1,6 +1,16 @@
 {
-  "generated_at": "2026-10-14T11:12:34Z",
+  "generated_at": "2026-10-15T10:52:34Z",
   "recent": [
+    {
+      "date": "2026-10-14T19:29:00+00:00",
+      "ef": "UNK",
+      "location": "3 NE Fort Stockton",
+      "county": "Pecos",
+      "state": "TX",
+      "lat": "30.92",
+      "lon": "-102.85",
+      "notes": "Trained spotter and Pecos County EM reported a tornado NE of Fort Stockton. Preliminary reports of damage. (MAF)"
+    },
     {
       "date": "2026-10-11T17:42:00+00:00",
       "ef": "UNK",
@@ -102,14 +112,14 @@
       "notes": "A short lived EF-1 tornado developed near the West Regional Library and traveled northeastward. Several trees were snapped in the library parking lot and in the adjacen (RAH)"
     },
     {
-      "date": "2026-10-11T16:25:00+00:00",
+      "date": "2026-10-11T16:23:00+00:00",
       "ef": "UNK",
       "location": "2 W Linden",
       "county": "Cumberland",
       "state": "NC",
       "lat": "35.26",
       "lon": "-78.78",
-      "notes": "Multiple reports of trees down and property damage around the Ramsey Street and Linden intersection. Potential start of a tornado track. (RAH)"
+      "notes": "The start of the Linden... NC tornado based on NWS storm survey. Maximum winds of 105 mph (EF-1) occurred along Hungry Creek Drive where several windows were blown out (RAH)"
     },
     {
       "date": "2026-10-11T16:07:00+00:00",
@@ -144,12 +154,12 @@
     {
       "date": "2026-10-11T15:56:00+00:00",
       "ef": "UNK",
-      "location": "2 S Bonnie Doone",
+      "location": "2 SSW Bonnie Doone",
       "county": "Cumberland",
       "state": "NC",
       "lat": "35.07",
       "lon": "-78.97",
-      "notes": "Multiple trees down in this vicinity of Skibo Road and Morganton Road. Suspected beginning of tornado track based on initial reports. (RAH)"
+      "notes": "The start of the Bonnie Doone tornado path based on NWS storm survey. Maximum winds of 115 mph (EF-2) occurred on a short quarter-mile section between the Walmart and S (RAH)"
     },
     {
       "date": "2026-10-11T14:14:00+00:00",
