@@ -1,15 +1,35 @@
 {
-  "generated_at": "2026-10-15T10:52:34Z",
+  "generated_at": "2026-10-16T10:43:30Z",
   "recent": [
     {
-      "date": "2026-10-14T19:29:00+00:00",
+      "date": "2026-10-14T19:24:00+00:00",
       "ef": "UNK",
       "location": "3 NE Fort Stockton",
       "county": "Pecos",
       "state": "TX",
       "lat": "30.92",
-      "lon": "-102.85",
-      "notes": "Trained spotter and Pecos County EM reported a tornado NE of Fort Stockton. Preliminary reports of damage. (MAF)"
+      "lon": "-102.84",
+      "notes": "Corrects previous tornado report from 3 NE Fort Stockton. Trained spotter and Pecos County EM reported a tornado NE of Fort Stockton. The tornado pulled metal wall pane (MAF)"
+    },
+    {
+      "date": "2026-10-14T19:18:00+00:00",
+      "ef": "UNK",
+      "location": "1 SSE Fort Stockton",
+      "county": "Pecos",
+      "state": "TX",
+      "lat": "30.88",
+      "lon": "-102.88",
+      "notes": "Emergency management reported a brief tornado touched down in Fort Stockton near the intersection of Ryan and Young Streets. The tornado tracked past the Pecos County C (MAF)"
+    },
+    {
+      "date": "2026-10-11T18:48:00+00:00",
+      "ef": "UNK",
+      "location": "3 NE Pleasant Hill",
+      "county": "Jones",
+      "state": "NC",
+      "lat": "35.1",
+      "lon": "-77.56",
+      "notes": "Storm survey found evidence of an EF-1 tornado with estimated peak winds of 90 to 100 mph. The tornado was estimated to be 125 yards wide and 3.52 miles long. A debris (MHX)"
     },
     {
       "date": "2026-10-11T17:42:00+00:00",
@@ -30,6 +50,16 @@
       "lat": "35.98",
       "lon": "-78.36",
       "notes": "(RAH)"
+    },
+    {
+      "date": "2026-10-11T17:38:00+00:00",
+      "ef": "UNK",
+      "location": "2 W Wallace",
+      "county": "Duplin",
+      "state": "NC",
+      "lat": "34.74",
+      "lon": "-78.03",
+      "notes": "Storm survey found evidence of an EF-2 tornado with estimated peak winds of 115 to 125 mph. The tornado was estimated to be 150 yards wide and 24.43 miles long. The tor (MHX)"
     },
     {
       "date": "2026-10-11T17:25:00+00:00",
@@ -360,6 +390,16 @@
       "lat": "32.55",
       "lon": "-81.6",
       "notes": "Picture of ongoing tornado near Effingham Highway. Spotter noted trees were being shredded by the tornado. (CHS)"
+    },
+    {
+      "date": "2026-10-10T18:12:00+00:00",
+      "ef": "UNK",
+      "location": "4 NW Leefield",
+      "county": "Bulloch",
+      "state": "GA",
+      "lat": "32.46",
+      "lon": "-81.67",
+      "notes": "NWS storm survey team confirmed an EF-0 tornado with an estimated peak wind speed of 85 mph near the intersection of Clito Rd and Rough Rider Rd in eastern Bulloch Coun (CHS)"
     },
     {
       "date": "2026-10-09T21:42:00+00:00",
