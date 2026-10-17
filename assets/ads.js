@@ -48,7 +48,7 @@
       // Isolate each atOptions global. Preserve the provider's code and dimensions.
       frame.srcdoc = '<!doctype html><html><head><meta name="viewport" content="width=device-width,initial-scale=1"><style>html,body{margin:0;padding:0;background:transparent}</style></head><body>' +
         '<script>atOptions=' + JSON.stringify({key:unit.key,format:'iframe',height:unit.height,width:unit.width,params:{}}) + ';<\/script>' +
-        '<script src="https://' + unit.host + '/' + unit.key + '/invoke.js"><\/script></body></html>';
+        '<script src="' + unit.src + '"><\/script></body></html>';
       host.append(frame);
     }
     // Diagnostic event only; not an impression, click, conversion or revenue measurement.
