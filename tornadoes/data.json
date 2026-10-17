@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T10:43:30Z",
+  "generated_at": "2026-10-17T10:09:48Z",
   "recent": [
     {
       "date": "2026-10-14T19:24:00+00:00",
@@ -20,6 +20,16 @@
       "lat": "30.88",
       "lon": "-102.88",
       "notes": "Emergency management reported a brief tornado touched down in Fort Stockton near the intersection of Ryan and Young Streets. The tornado tracked past the Pecos County C (MAF)"
+    },
+    {
+      "date": "2026-10-13T22:32:00+00:00",
+      "ef": "UNK",
+      "location": "2 W Hardtner",
+      "county": "Barber",
+      "state": "KS",
+      "lat": "37.01",
+      "lon": "-98.69",
+      "notes": "A brief... weak dusty tornadic circulation... lasting one minute or less... developed with the dust column extending to a rotating cloud base beneath a supercell thunde (DDC)"
     },
     {
       "date": "2026-10-11T18:48:00+00:00",
@@ -730,16 +740,6 @@
       "lat": "26.28",
       "lon": "-80.08",
       "notes": "[Landspout] Broadcast media relayed video of a short duration landspout that lofted palm fronds and other small debris for a brief period before it dissipated. TPBI ra (MFL)"
-    },
-    {
-      "date": "2026-09-18T00:34:00+00:00",
-      "ef": "UNK",
-      "location": "11 NNE Chappell",
-      "county": "Garden",
-      "state": "NE",
-      "lat": "41.24",
-      "lon": "-102.38",
-      "notes": "Brief tornado touchdown reported by storm chaser via social media photo. (LBF)"
     }
   ],
   "ef5": [
