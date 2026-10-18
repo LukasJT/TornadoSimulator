@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T10:09:48Z",
+  "generated_at": "2026-10-18T10:24:49Z",
   "recent": [
     {
       "date": "2026-10-14T19:24:00+00:00",
@@ -700,46 +700,6 @@
       "lat": "42.82",
       "lon": "-108.21",
       "notes": "Delayed Report: On Saturday afternoon Sep 19... a non-mesocyclone tornado (often referred to as a \"landspout tornado\") touched down near the intersection of Sand Draw R (RIW)"
-    },
-    {
-      "date": "2026-09-18T23:05:00+00:00",
-      "ef": "UNK",
-      "location": "15 ESE Naples",
-      "county": "Uintah",
-      "state": "UT",
-      "lat": "40.32",
-      "lon": "-109.25",
-      "notes": "[Landspout] Public report shared via social media and television media (KUTV). (GJT)"
-    },
-    {
-      "date": "2026-09-18T23:00:00+00:00",
-      "ef": "UNK",
-      "location": "15 SE Naples",
-      "county": "Uintah",
-      "state": "UT",
-      "lat": "40.28",
-      "lon": "-109.28",
-      "notes": "(GJT)"
-    },
-    {
-      "date": "2026-09-18T19:52:00+00:00",
-      "ef": "UNK",
-      "location": "2 E Fruit Heights",
-      "county": "Davis",
-      "state": "UT",
-      "lat": "41.03",
-      "lon": "-111.87",
-      "notes": "Tornado seen in video shared on social media... showing rotation reaching the ground and debris being lofted into the air. The point that it touched down was near a sum (SLC)"
-    },
-    {
-      "date": "2026-09-18T17:30:00+00:00",
-      "ef": "UNK",
-      "location": "Lighthouse Point",
-      "county": "Broward",
-      "state": "FL",
-      "lat": "26.28",
-      "lon": "-80.08",
-      "notes": "[Landspout] Broadcast media relayed video of a short duration landspout that lofted palm fronds and other small debris for a brief period before it dissipated. TPBI ra (MFL)"
     }
   ],
   "ef5": [
