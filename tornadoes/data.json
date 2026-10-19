@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T10:24:49Z",
+  "generated_at": "2026-10-19T12:09:44Z",
   "recent": [
     {
       "date": "2026-10-14T19:24:00+00:00",
@@ -690,16 +690,6 @@
       "lat": "46.03",
       "lon": "-102.82",
       "notes": "Social media reports of a tornado touching down for about one minute west of Hettinger. The location is approximant based on multiple images and radar data. (BIS)"
-    },
-    {
-      "date": "2026-09-19T22:30:00+00:00",
-      "ef": "UNK",
-      "location": "15 SE Saint Stephens",
-      "county": "Fremont",
-      "state": "WY",
-      "lat": "42.82",
-      "lon": "-108.21",
-      "notes": "Delayed Report: On Saturday afternoon Sep 19... a non-mesocyclone tornado (often referred to as a \"landspout tornado\") touched down near the intersection of Sand Draw R (RIW)"
     }
   ],
   "ef5": [
