@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T12:09:44Z",
+  "generated_at": "2026-10-20T10:56:19Z",
   "recent": [
     {
       "date": "2026-10-14T19:24:00+00:00",
@@ -230,16 +230,6 @@
       "lat": "34.41",
       "lon": "-81.43",
       "notes": "NWS survey team confirmed an EF-2 tornado in northeastern Newberry County. The tornado touched down near or just before the intersection of Old Blair Road and Henderson (CAE)"
-    },
-    {
-      "date": "2026-10-11T04:32:00+00:00",
-      "ef": "UNK",
-      "location": "4 SW Carpenter",
-      "county": "Wake",
-      "state": "NC",
-      "lat": "35.77",
-      "lon": "-78.92",
-      "notes": "(RAH)"
     },
     {
       "date": "2026-10-10T21:58:00+00:00",
