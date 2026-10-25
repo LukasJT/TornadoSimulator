@@ -1,6 +1,26 @@
 {
-  "generated_at": "2026-10-24T10:18:01Z",
+  "generated_at": "2026-10-25T10:44:36Z",
   "recent": [
+    {
+      "date": "2026-10-22T01:59:00+00:00",
+      "ef": "UNK",
+      "location": "5 S Heber-Overgaard",
+      "county": "Navajo",
+      "state": "AZ",
+      "lat": "34.34",
+      "lon": "-110.57",
+      "notes": "*** 1 INJ *** Approximate start point of an EF-1 rated tornado that moved north through the Heber-Overgaard area. Peak winds estimated to be 110 mph along its 11 minute (FGZ)"
+    },
+    {
+      "date": "2026-10-21T14:32:00+00:00",
+      "ef": "UNK",
+      "location": "5 SE Ponderosa Park",
+      "county": "Yavapai",
+      "state": "AZ",
+      "lat": "34.4",
+      "lon": "-112.45",
+      "notes": "An EF1 rated tornado developed south of Walker and traveled north-northeast across Walker Road. The estimated maximum wind speed was 105 mph along its 8 mile path. Maxi (FGZ)"
+    },
     {
       "date": "2026-10-14T19:24:00+00:00",
       "ef": "UNK",
@@ -650,26 +670,6 @@
       "lat": "39.49",
       "lon": "-110.55",
       "notes": "Spotter posted a video depicting a mesocyclonic tornado to social media looking west-southwest from HWY 6 and Mud Spring rd. The tornado formed at 6:11PM MT and trekked (SLC)"
-    },
-    {
-      "date": "2026-09-25T22:45:00+00:00",
-      "ef": "UNK",
-      "location": "1 SE Wilmore",
-      "county": "Comanche",
-      "state": "KS",
-      "lat": "37.33",
-      "lon": "-99.2",
-      "notes": "[Landspout] An Emergency Manager passed along a public report of a landspout at 2050 Rd 20. At a similar time... the sherrifs office reported a large landspout southea (DDC)"
-    },
-    {
-      "date": "2026-09-25T22:42:00+00:00",
-      "ef": "UNK",
-      "location": "3 S Wilmore",
-      "county": "Comanche",
-      "state": "KS",
-      "lat": "37.29",
-      "lon": "-99.2",
-      "notes": "[Landspout] Minor damage at a farmstead with an unanchored lean-to shed flipped and adjacent fence bent due to the movement of this shed. Fence posts were in water-log (DDC)"
     }
   ],
   "ef5": [
