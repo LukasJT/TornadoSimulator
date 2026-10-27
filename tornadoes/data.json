@@ -1,6 +1,46 @@
 {
-  "generated_at": "2026-10-26T12:16:30Z",
+  "generated_at": "2026-10-27T11:36:55Z",
   "recent": [
+    {
+      "date": "2026-10-25T21:28:00+00:00",
+      "ef": "UNK",
+      "location": "3 NE McAlister",
+      "county": "Quay",
+      "state": "NM",
+      "lat": "34.72",
+      "lon": "-103.74",
+      "notes": "Emergency manager confirmed brief tornado but remained in open fields with no damage reported. (ABQ)"
+    },
+    {
+      "date": "2026-10-25T20:24:00+00:00",
+      "ef": "UNK",
+      "location": "12 S Rattlesnake",
+      "county": "San Juan",
+      "state": "NM",
+      "lat": "36.6",
+      "lon": "-108.74",
+      "notes": "Several pics and video of a tornado near Table Mesa in open land on social media. No damage reported. The period of the Tornado report was 8 minutes. (ABQ)"
+    },
+    {
+      "date": "2026-10-25T01:00:00+00:00",
+      "ef": "UNK",
+      "location": "3 E Agua Fria",
+      "county": "Santa Fe",
+      "state": "NM",
+      "lat": "35.63",
+      "lon": "-105.97",
+      "notes": "A tornado developed in the Via Caballero neighborhood in the south central portion of Santa Fe just north of I-25. The tornado traveled northward for approximately 1.4 (ABQ)"
+    },
+    {
+      "date": "2026-10-24T23:15:00+00:00",
+      "ef": "UNK",
+      "location": "3 NE Alto",
+      "county": "Lincoln",
+      "state": "NM",
+      "lat": "33.42",
+      "lon": "-105.64",
+      "notes": "Minor damage to a house... trees down... garage door blown in... and shed damaged. (ABQ)"
+    },
     {
       "date": "2026-10-22T01:59:00+00:00",
       "ef": "UNK",
@@ -50,6 +90,16 @@
       "lat": "37.01",
       "lon": "-98.69",
       "notes": "A brief... weak dusty tornadic circulation... lasting one minute or less... developed with the dust column extending to a rotating cloud base beneath a supercell thunde (DDC)"
+    },
+    {
+      "date": "2026-10-13T22:25:00+00:00",
+      "ef": "UNK",
+      "location": "2 S Tiffany",
+      "county": "La Plata",
+      "state": "CO",
+      "lat": "37.01",
+      "lon": "-107.53",
+      "notes": "(GJT)"
     },
     {
       "date": "2026-10-11T18:48:00+00:00",
