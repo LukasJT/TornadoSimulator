@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T11:36:55Z",
+  "generated_at": "2026-10-28T12:07:47Z",
   "recent": [
     {
       "date": "2026-10-25T21:28:00+00:00",
@@ -60,6 +60,26 @@
       "lat": "34.4",
       "lon": "-112.45",
       "notes": "An EF1 rated tornado developed south of Walker and traveled north-northeast across Walker Road. The estimated maximum wind speed was 105 mph along its 8 mile path. Maxi (FGZ)"
+    },
+    {
+      "date": "2026-10-20T19:05:00+00:00",
+      "ef": "UNK",
+      "location": "16 S Animas",
+      "county": "Hidalgo",
+      "state": "NM",
+      "lat": "31.72",
+      "lon": "-108.79",
+      "notes": "Videos via social media show a brief landspout that occurred south of Animas. A rating of EFO was given for this event. No reports of damage since this was in a remote (EPZ)"
+    },
+    {
+      "date": "2026-10-19T23:50:00+00:00",
+      "ef": "UNK",
+      "location": "8 W Deming",
+      "county": "Luna",
+      "state": "NM",
+      "lat": "32.24",
+      "lon": "-107.88",
+      "notes": "Emergency manager and law enforcement reported a brief tornado touchdown west of Deming. No damage was reported. The tornado occurred on BLM land. No survey was conduct (EPZ)"
     },
     {
       "date": "2026-10-14T19:24:00+00:00",
@@ -710,16 +730,6 @@
       "lat": "37.81",
       "lon": "-100.14",
       "notes": "delayed report...location estimate from radar...video evidence a brief tornado sent in from the public. (DDC)"
-    },
-    {
-      "date": "2026-09-29T00:11:00+00:00",
-      "ef": "UNK",
-      "location": "8 WSW East Carbon",
-      "county": "Carbon",
-      "state": "UT",
-      "lat": "39.49",
-      "lon": "-110.55",
-      "notes": "Spotter posted a video depicting a mesocyclonic tornado to social media looking west-southwest from HWY 6 and Mud Spring rd. The tornado formed at 6:11PM MT and trekked (SLC)"
     }
   ],
   "ef5": [
