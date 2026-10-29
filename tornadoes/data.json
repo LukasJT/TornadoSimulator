@@ -1,6 +1,16 @@
 {
-  "generated_at": "2026-10-28T12:07:47Z",
+  "generated_at": "2026-10-29T12:18:25Z",
   "recent": [
+    {
+      "date": "2026-10-28T22:40:00+00:00",
+      "ef": "UNK",
+      "location": "3 SE Danbury",
+      "county": "Burnett",
+      "state": "WI",
+      "lat": "45.98",
+      "lon": "-92.33",
+      "notes": "Weak... brief rotation on the ground... kicking up small branches... leaves... and water as the rotation passed over Love Lake. No damage as of now. (DLH)"
+    },
     {
       "date": "2026-10-25T21:28:00+00:00",
       "ef": "UNK",
@@ -60,6 +70,16 @@
       "lat": "34.4",
       "lon": "-112.45",
       "notes": "An EF1 rated tornado developed south of Walker and traveled north-northeast across Walker Road. The estimated maximum wind speed was 105 mph along its 8 mile path. Maxi (FGZ)"
+    },
+    {
+      "date": "2026-10-21T12:41:00+00:00",
+      "ef": "UNK",
+      "location": "4 N Bellemont (NWS Flag",
+      "county": "Coconino",
+      "state": "AZ",
+      "lat": "35.29",
+      "lon": "-111.81",
+      "notes": "Approximate start point of a brief EF1 rated tornado. Peak winds estimated to be 110 mph with path width of about 600 yards. The tornado proceeded about 2.3 miles north (FGZ)"
     },
     {
       "date": "2026-10-20T19:05:00+00:00",
@@ -690,46 +710,6 @@
       "lat": "25.05",
       "lon": "-80.48",
       "notes": "Preliminary highly-localized damage to one residence in the Silver Shores community between Tavernier and Rock Harbor investigated by Emergency Manager. Time is approxi (KEY)"
-    },
-    {
-      "date": "2026-09-30T02:45:00+00:00",
-      "ef": "UNK",
-      "location": "7 WNW Timbercreek Canyo",
-      "county": "Randall",
-      "state": "TX",
-      "lat": "35.09",
-      "lon": "-101.94",
-      "notes": "Corrects previous tornado report from 7 WNW Timbercreek Canyon.This tornado was observed by multiple spotters with picture and video evidence. The tornado developed in (AMA)"
-    },
-    {
-      "date": "2026-09-30T00:32:00+00:00",
-      "ef": "UNK",
-      "location": "9 N Dodge City",
-      "county": "Ford",
-      "state": "KS",
-      "lat": "37.88",
-      "lon": "-100.03",
-      "notes": "off duty NWS employee reported brief tornado touchdowns...location estimate from radar. (DDC)"
-    },
-    {
-      "date": "2026-09-30T00:12:00+00:00",
-      "ef": "UNK",
-      "location": "3 SSE Claude",
-      "county": "Armstrong",
-      "state": "TX",
-      "lat": "35.07",
-      "lon": "-101.34",
-      "notes": "Corrects previous tornado report from 3 SSE Claude. This tornado was documented by spotters via pictures and video. No damage was found with this tornado as indicators (AMA)"
-    },
-    {
-      "date": "2026-09-30T00:10:00+00:00",
-      "ef": "UNK",
-      "location": "3 NE Howell",
-      "county": "Ford",
-      "state": "KS",
-      "lat": "37.81",
-      "lon": "-100.14",
-      "notes": "delayed report...location estimate from radar...video evidence a brief tornado sent in from the public. (DDC)"
     }
   ],
   "ef5": [
