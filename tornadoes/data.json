@@ -1,6 +1,66 @@
 {
-  "generated_at": "2026-10-29T12:18:25Z",
+  "generated_at": "2026-10-30T12:09:14Z",
   "recent": [
+    {
+      "date": "2026-10-29T23:54:00+00:00",
+      "ef": "UNK",
+      "location": "7 E Alamo Village",
+      "county": "Kinney",
+      "state": "TX",
+      "lat": "29.43",
+      "lon": "-100.27",
+      "notes": "Tornado debris signature (TDS) noted at this location. (EWX)"
+    },
+    {
+      "date": "2026-10-29T23:54:00+00:00",
+      "ef": "UNK",
+      "location": "13 SW Montell",
+      "county": "Kinney",
+      "state": "TX",
+      "lat": "29.44",
+      "lon": "-100.19",
+      "notes": "Tornado debris signature (TDS) noted at this location. (EWX)"
+    },
+    {
+      "date": "2026-10-29T23:54:00+00:00",
+      "ef": "UNK",
+      "location": "4 NE Alamo Village",
+      "county": "Kinney",
+      "state": "TX",
+      "lat": "29.46",
+      "lon": "-100.33",
+      "notes": "Correction of previous LSR; tornado debris signature noted at this location. (EWX)"
+    },
+    {
+      "date": "2026-10-29T23:25:00+00:00",
+      "ef": "UNK",
+      "location": "15 S Montell",
+      "county": "Uvalde",
+      "state": "TX",
+      "lat": "29.32",
+      "lon": "-100.08",
+      "notes": "Tornado Debris Signature noted at this location at this time. (EWX)"
+    },
+    {
+      "date": "2026-10-29T23:04:00+00:00",
+      "ef": "UNK",
+      "location": "14 W Uvalde",
+      "county": "Uvalde",
+      "state": "TX",
+      "lat": "29.24",
+      "lon": "-100.02",
+      "notes": "Video of a tornado just north of the intersection of US 90 and RM 1022 in western Uvalde County. Time estimated via radar. (EWX)"
+    },
+    {
+      "date": "2026-10-29T22:18:00+00:00",
+      "ef": "UNK",
+      "location": "22 N Van Horn",
+      "county": "Culberson",
+      "state": "TX",
+      "lat": "31.36",
+      "lon": "-104.82",
+      "notes": "[Landspout] Public report of a landspout occurring near the Blue Origin Site north of Van Horn along Hwy 54. Per the video... debris was shown on the ground briefly... (MAF)"
+    },
     {
       "date": "2026-10-28T22:40:00+00:00",
       "ef": "UNK",
@@ -520,196 +580,6 @@
       "lat": "29.78",
       "lon": "-84.83",
       "notes": "Large tree limbs damaged a couple of homes with power lines also down. (TAE)"
-    },
-    {
-      "date": "2026-10-01T00:23:00+00:00",
-      "ef": "UNK",
-      "location": "2 SE Victor",
-      "county": "Mitchell",
-      "state": "KS",
-      "lat": "39.23",
-      "lon": "-98.26",
-      "notes": "Brief touchdown reported. (GID)"
-    },
-    {
-      "date": "2026-10-01T00:01:00+00:00",
-      "ef": "UNK",
-      "location": "4 S Ash Grove",
-      "county": "Lincoln",
-      "state": "KS",
-      "lat": "39.11",
-      "lon": "-98.34",
-      "notes": "Multi-vortex tornado ongoing. (ICT)"
-    },
-    {
-      "date": "2026-09-30T23:53:00+00:00",
-      "ef": "UNK",
-      "location": "5 N Sylvan Grove",
-      "county": "Lincoln",
-      "state": "KS",
-      "lat": "39.09",
-      "lon": "-98.39",
-      "notes": "(ICT)"
-    },
-    {
-      "date": "2026-09-30T23:45:00+00:00",
-      "ef": "UNK",
-      "location": "4 E Lucas",
-      "county": "Lincoln",
-      "state": "KS",
-      "lat": "39.06",
-      "lon": "-98.45",
-      "notes": "(ICT)"
-    },
-    {
-      "date": "2026-09-30T23:43:00+00:00",
-      "ef": "UNK",
-      "location": "4 NW Sylvan Grove",
-      "county": "Lincoln",
-      "state": "KS",
-      "lat": "39.06",
-      "lon": "-98.44",
-      "notes": "(ICT)"
-    },
-    {
-      "date": "2026-09-30T23:39:00+00:00",
-      "ef": "UNK",
-      "location": "3 E Lucas",
-      "county": "Lincoln",
-      "state": "KS",
-      "lat": "39.06",
-      "lon": "-98.48",
-      "notes": "Elephant trunk tornado ongoing. (ICT)"
-    },
-    {
-      "date": "2026-09-30T23:24:00+00:00",
-      "ef": "UNK",
-      "location": "6 S Lucas",
-      "county": "Russell",
-      "state": "KS",
-      "lat": "38.98",
-      "lon": "-98.55",
-      "notes": "Spotter reported tornado ongoing 3 miles west of the Wilson Lake Dam. (ICT)"
-    },
-    {
-      "date": "2026-09-30T22:51:00+00:00",
-      "ef": "UNK",
-      "location": "3 E Bunker Hill",
-      "county": "Russell",
-      "state": "KS",
-      "lat": "38.87",
-      "lon": "-98.65",
-      "notes": "Rope tornado reported 3 miles west of Dorrance... north of I-70. (ICT)"
-    },
-    {
-      "date": "2026-09-30T22:10:00+00:00",
-      "ef": "UNK",
-      "location": "4 NNW Susank",
-      "county": "Barton",
-      "state": "KS",
-      "lat": "38.69",
-      "lon": "-98.79",
-      "notes": "Tornado damage to some outbuildings. Time estimated from radar. (ICT)"
-    },
-    {
-      "date": "2026-09-30T22:06:00+00:00",
-      "ef": "UNK",
-      "location": "4 NW Susank",
-      "county": "Barton",
-      "state": "KS",
-      "lat": "38.68",
-      "lon": "-98.83",
-      "notes": "Location estimated from radar. (ICT)"
-    },
-    {
-      "date": "2026-09-30T22:01:00+00:00",
-      "ef": "UNK",
-      "location": "4 W Susank",
-      "county": "Barton",
-      "state": "KS",
-      "lat": "38.64",
-      "lon": "-98.85",
-      "notes": "Several brief touchdowns via storm chaser video. (ICT)"
-    },
-    {
-      "date": "2026-09-30T21:58:00+00:00",
-      "ef": "UNK",
-      "location": "4 ESE Galatia",
-      "county": "Barton",
-      "state": "KS",
-      "lat": "38.62",
-      "lon": "-98.89",
-      "notes": "Trained spotter is reported multiple tornadoes ongoing. (ICT)"
-    },
-    {
-      "date": "2026-09-30T21:52:00+00:00",
-      "ef": "UNK",
-      "location": "4 NNE Olmitz",
-      "county": "Barton",
-      "state": "KS",
-      "lat": "38.57",
-      "lon": "-98.91",
-      "notes": "Tornado via chaser video. Location estimated from radar. (ICT)"
-    },
-    {
-      "date": "2026-09-30T20:57:00+00:00",
-      "ef": "UNK",
-      "location": "2 E Ash Valley",
-      "county": "Pawnee",
-      "state": "KS",
-      "lat": "38.31",
-      "lon": "-99.19",
-      "notes": "Approximate end time for the third tornado in Pawnee County. (DDC)"
-    },
-    {
-      "date": "2026-09-30T20:53:00+00:00",
-      "ef": "UNK",
-      "location": "1 SE Ash Valley",
-      "county": "Pawnee",
-      "state": "KS",
-      "lat": "38.29",
-      "lon": "-99.2",
-      "notes": "Storm chaser report of a tornado with live feed video. (DDC)"
-    },
-    {
-      "date": "2026-09-30T20:51:00+00:00",
-      "ef": "UNK",
-      "location": "2 S Ash Valley",
-      "county": "Pawnee",
-      "state": "KS",
-      "lat": "38.28",
-      "lon": "-99.22",
-      "notes": "Approximate end time of the second tornado in Pawnee County. (DDC)"
-    },
-    {
-      "date": "2026-09-30T20:49:00+00:00",
-      "ef": "UNK",
-      "location": "3 SSW Ash Valley",
-      "county": "Pawnee",
-      "state": "KS",
-      "lat": "38.26",
-      "lon": "-99.23",
-      "notes": "Storm chaser reports with live video of an ongoing tornado. (DDC)"
-    },
-    {
-      "date": "2026-09-30T20:30:00+00:00",
-      "ef": "UNK",
-      "location": "3 SW Sanford",
-      "county": "Pawnee",
-      "state": "KS",
-      "lat": "38.15",
-      "lon": "-99.35",
-      "notes": "Multiple pictures of a brief tornado with a well-developed funnel southwest of Sanford. (DDC)"
-    },
-    {
-      "date": "2026-09-30T16:00:00+00:00",
-      "ef": "UNK",
-      "location": "2 SW Rock Harbor",
-      "county": "FLC087",
-      "state": "FL",
-      "lat": "25.05",
-      "lon": "-80.48",
-      "notes": "Preliminary highly-localized damage to one residence in the Silver Shores community between Tavernier and Rock Harbor investigated by Emergency Manager. Time is approxi (KEY)"
     }
   ],
   "ef5": [
