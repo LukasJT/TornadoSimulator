@@ -1,6 +1,16 @@
 {
-  "generated_at": "2026-10-30T12:09:14Z",
+  "generated_at": "2026-10-31T11:41:52Z",
   "recent": [
+    {
+      "date": "2026-10-30T18:45:00+00:00",
+      "ef": "UNK",
+      "location": "5 NE Marion",
+      "county": "Marion",
+      "state": "KS",
+      "lat": "38.38",
+      "lon": "-96.93",
+      "notes": "Delayed report. A brief touchdown was reported by broadcast media... as well as several social media reports... one of which included video evidence. Time and especiall (ICT)"
+    },
     {
       "date": "2026-10-29T23:54:00+00:00",
       "ef": "UNK",
@@ -14,22 +24,22 @@
     {
       "date": "2026-10-29T23:54:00+00:00",
       "ef": "UNK",
-      "location": "13 SW Montell",
-      "county": "Kinney",
-      "state": "TX",
-      "lat": "29.44",
-      "lon": "-100.19",
-      "notes": "Tornado debris signature (TDS) noted at this location. (EWX)"
-    },
-    {
-      "date": "2026-10-29T23:54:00+00:00",
-      "ef": "UNK",
       "location": "4 NE Alamo Village",
       "county": "Kinney",
       "state": "TX",
       "lat": "29.46",
       "lon": "-100.33",
-      "notes": "Correction of previous LSR; tornado debris signature noted at this location. (EWX)"
+      "notes": "Tornado was estimated from radar velocity and observed Tornadic Debris Signature. Based on satellite imagery... the tornado remained over open ranch land... and EF-0 da (EWX)"
+    },
+    {
+      "date": "2026-10-29T23:52:00+00:00",
+      "ef": "UNK",
+      "location": "13 SW Montell",
+      "county": "Kinney",
+      "state": "TX",
+      "lat": "29.44",
+      "lon": "-100.19",
+      "notes": "Tornado was estimated from radar velocity and observed Tornadic Debris Signature. Based on satellite imagery... the tornado remained over open ranch land... and EF-0 da (EWX)"
     },
     {
       "date": "2026-10-29T23:25:00+00:00",
@@ -39,7 +49,7 @@
       "state": "TX",
       "lat": "29.32",
       "lon": "-100.08",
-      "notes": "Tornado Debris Signature noted at this location at this time. (EWX)"
+      "notes": "Tornado was estimated from radar velocity and observed Tornadic Debris Signature. Based on satellite imagery... the tornado remained over open ranch land... and EF-0 da (EWX)"
     },
     {
       "date": "2026-10-29T23:04:00+00:00",
@@ -49,7 +59,7 @@
       "state": "TX",
       "lat": "29.24",
       "lon": "-100.02",
-      "notes": "Video of a tornado just north of the intersection of US 90 and RM 1022 in western Uvalde County. Time estimated via radar. (EWX)"
+      "notes": "Video evidence confirms a tornado touched down just north of U.S. 90 and east of Cline. The tornado remained over open ranch land... producing EF-0 damage to vegetation (EWX)"
     },
     {
       "date": "2026-10-29T22:18:00+00:00",
