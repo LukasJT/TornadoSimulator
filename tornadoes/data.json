@@ -1,6 +1,36 @@
 {
-  "generated_at": "2026-11-03T13:38:52Z",
+  "generated_at": "2026-11-04T13:47:11Z",
   "recent": [
+    {
+      "date": "2026-11-03T07:10:00+00:00",
+      "ef": "UNK",
+      "location": "2 NE Adair",
+      "county": "Mayes",
+      "state": "OK",
+      "lat": "36.45",
+      "lon": "-95.25",
+      "notes": "A tornado damaged a home... severely damaged an outbuilding... uprooted numerous trees... and snapped several wooden power poles. (TSA)"
+    },
+    {
+      "date": "2026-11-03T05:17:00+00:00",
+      "ef": "UNK",
+      "location": "4 SW Talala",
+      "county": "Rogers",
+      "state": "OK",
+      "lat": "36.5",
+      "lon": "-95.75",
+      "notes": "A tornado snapped numerous large tree limbs... moved into terrain that was inaccessible by road... and produced a TDS from the KINX WSR-88D radar. (TSA)"
+    },
+    {
+      "date": "2026-11-02T21:08:00+00:00",
+      "ef": "UNK",
+      "location": "6 S Nunda",
+      "county": "Lake",
+      "state": "SD",
+      "lat": "44.08",
+      "lon": "-97.05",
+      "notes": "Brief touchdown. (FSD)"
+    },
     {
       "date": "2026-11-02T04:59:00+00:00",
       "ef": "UNK",
@@ -130,6 +160,16 @@
       "lat": "33.42",
       "lon": "-105.64",
       "notes": "Minor damage to a house... trees down... garage door blown in... and shed damaged. (ABQ)"
+    },
+    {
+      "date": "2026-10-22T22:52:00+00:00",
+      "ef": "UNK",
+      "location": "8 E San Mateo",
+      "county": "McKinley",
+      "state": "NM",
+      "lat": "35.34",
+      "lon": "-107.51",
+      "notes": "Defined swath of numerous trees damaged/displaced on high resolution satellite imagery. Damage track based on high resolution satellite data before/after the tornado. T (ABQ)"
     },
     {
       "date": "2026-10-22T01:59:00+00:00",
