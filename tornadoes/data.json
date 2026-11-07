@@ -1,6 +1,26 @@
 {
-  "generated_at": "2026-11-06T13:44:58Z",
+  "generated_at": "2026-11-07T12:28:17Z",
   "recent": [
+    {
+      "date": "2026-11-03T17:21:00+00:00",
+      "ef": "UNK",
+      "location": "7 W Keachi",
+      "county": "De Soto",
+      "state": "LA",
+      "lat": "32.18",
+      "lon": "-94.03",
+      "notes": "An EF-0 tornado... with peak winds of 75 mph and a peak width of 150 yards... began just south of Holmes Road in far northwestern DeSoto Parish in a rural and wooded ar (SHV)"
+    },
+    {
+      "date": "2026-11-03T16:17:00+00:00",
+      "ef": "UNK",
+      "location": "4 E Oil City",
+      "county": "Caddo",
+      "state": "LA",
+      "lat": "32.73",
+      "lon": "-93.91",
+      "notes": "This EF-0 tornado... with peak winds of 75 mph and a peak width of 50 yards... began near the Texas and Louisiana border to the west of Mooringsport... LA on Parish Roa (SHV)"
+    },
     {
       "date": "2026-11-03T08:16:00+00:00",
       "ef": "UNK",
