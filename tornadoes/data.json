@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T12:28:17Z",
+  "generated_at": "2026-11-08T12:46:31Z",
   "recent": [
     {
       "date": "2026-11-03T17:21:00+00:00",
@@ -660,16 +660,6 @@
       "lat": "32.46",
       "lon": "-81.67",
       "notes": "NWS storm survey team confirmed an EF-0 tornado with an estimated peak wind speed of 85 mph near the intersection of Clito Rd and Rough Rider Rd in eastern Bulloch Coun (CHS)"
-    },
-    {
-      "date": "2026-10-09T21:42:00+00:00",
-      "ef": "UNK",
-      "location": "1 N Green Point",
-      "county": "Franklin",
-      "state": "FL",
-      "lat": "29.78",
-      "lon": "-84.83",
-      "notes": "Large tree limbs damaged a couple of homes with power lines also down. (TAE)"
     }
   ],
   "ef5": [
