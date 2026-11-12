@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T13:34:54Z",
+  "generated_at": "2026-11-12T14:38:29Z",
   "recent": [
     {
       "date": "2026-11-03T17:21:00+00:00",
@@ -270,26 +270,6 @@
       "lat": "30.88",
       "lon": "-102.88",
       "notes": "Emergency management reported a brief tornado touched down in Fort Stockton near the intersection of Ryan and Young Streets. The tornado tracked past the Pecos County C (MAF)"
-    },
-    {
-      "date": "2026-10-13T22:32:00+00:00",
-      "ef": "UNK",
-      "location": "2 W Hardtner",
-      "county": "Barber",
-      "state": "KS",
-      "lat": "37.01",
-      "lon": "-98.69",
-      "notes": "A brief... weak dusty tornadic circulation... lasting one minute or less... developed with the dust column extending to a rotating cloud base beneath a supercell thunde (DDC)"
-    },
-    {
-      "date": "2026-10-13T22:25:00+00:00",
-      "ef": "UNK",
-      "location": "2 S Tiffany",
-      "county": "La Plata",
-      "state": "CO",
-      "lat": "37.01",
-      "lon": "-107.53",
-      "notes": "(GJT)"
     }
   ],
   "ef5": [
