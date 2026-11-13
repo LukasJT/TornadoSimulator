@@ -47,6 +47,14 @@ main{max-width:1000px;margin:0 auto;padding:24px}
 .g-title{font-family:var(--serif);font-weight:700;font-size:20px;line-height:1.15;margin-bottom:8px}
 .g-desc{font-size:14px;color:var(--text-secondary);line-height:1.5;margin-bottom:12px}
 .g-go{font-size:13px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em}
+.g-feature{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);align-items:center;gap:24px;background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:22px}
+.g-feature img{display:block;width:100%;height:100%;min-height:180px;object-fit:cover;object-position:65% center}
+.g-feature>div{padding:20px 24px 20px 0}
+.g-feature h2{margin:0 0 8px}
+.g-feature p{margin-bottom:12px}
+.g-feature .g-go{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;background:var(--accent);color:white;border-radius:6px;text-transform:none;letter-spacing:0}
+.g-feature a:hover,.g-feature a:focus-visible{text-decoration:underline}
+@media(max-width:640px){.g-feature{grid-template-columns:minmax(0,1fr);gap:0}.g-feature img{height:auto;min-height:0}.g-feature>div{padding:16px}}
 .inline-ad{margin:28px auto;display:flex;justify-content:center}
 h2{font-family:var(--serif);font-size:26px;margin:34px 0 10px}
 p{color:var(--text-secondary);margin-bottom:14px}
@@ -66,6 +74,14 @@ p{color:var(--text-secondary);margin-bottom:14px}
 </section>
 
 <main id="main-content" tabindex="-1">
+  <section class="g-feature" aria-labelledby="stormwake-title">
+    <img src="https://playstormwake.com/stormwake-cover.png" width="1672" height="941" alt="Stormwake cover art showing a tornado beneath a supercell at sunset" decoding="async">
+    <div>
+      <h2 id="stormwake-title">Stormwake</h2>
+      <p>Pick a point on the world map and play as a tornado, hurricane, blizzard, thunderstorm, or wildfire. Evolve your storm and explore its path after the run.</p>
+      <a class="g-go" href="https://playstormwake.com/">Play Stormwake →</a>
+    </div>
+  </section>
   <div class="grid">
     <a class="g-card" href="/pathle/">
       <div class="g-emoji">🗺️</div>
