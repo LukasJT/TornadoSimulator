@@ -1,6 +1,26 @@
 {
-  "generated_at": "2026-11-12T14:38:29Z",
+  "generated_at": "2026-11-13T13:56:31Z",
   "recent": [
+    {
+      "date": "2026-11-12T18:15:00+00:00",
+      "ef": "UNK",
+      "location": "1 SE Eastburn Heights",
+      "county": "New Castle",
+      "state": "DE",
+      "lat": "39.69",
+      "lon": "-75.67",
+      "notes": "Several reports of tornado damage around Christiana Hospital. Radar analysis and video confirm a tornado did touch down in this area. More information regarding the tor (PHI)"
+    },
+    {
+      "date": "2026-11-11T22:27:00+00:00",
+      "ef": "UNK",
+      "location": "2 SW Riley",
+      "county": "Vigo",
+      "state": "IN",
+      "lat": "39.36",
+      "lon": "-87.33",
+      "notes": "An EF-0 tornado with max wind speed of 85 mph and a path width of 25 yards began at this location. The tornado tracked for 1.10 miles and impacted a barn and RV. (IND)"
+    },
     {
       "date": "2026-11-03T17:21:00+00:00",
       "ef": "UNK",
@@ -10,6 +30,16 @@
       "lat": "32.18",
       "lon": "-94.03",
       "notes": "An EF-0 tornado... with peak winds of 75 mph and a peak width of 150 yards... began just south of Holmes Road in far northwestern DeSoto Parish in a rural and wooded ar (SHV)"
+    },
+    {
+      "date": "2026-11-03T16:42:00+00:00",
+      "ef": "UNK",
+      "location": "4 S Renick",
+      "county": "Randolph",
+      "state": "MO",
+      "lat": "39.28",
+      "lon": "-92.4",
+      "notes": "NWS Storm Survey found damage consistent with a brief tornado west of Clark in rural southern Randolph County around 10:42 am on Tuesday... November 3rd. The tornado be (EAX)"
     },
     {
       "date": "2026-11-03T16:17:00+00:00",
@@ -250,26 +280,6 @@
       "lat": "32.24",
       "lon": "-107.88",
       "notes": "Emergency manager and law enforcement reported a brief tornado touchdown west of Deming. No damage was reported. The tornado occurred on BLM land. No survey was conduct (EPZ)"
-    },
-    {
-      "date": "2026-10-14T19:24:00+00:00",
-      "ef": "UNK",
-      "location": "3 NE Fort Stockton",
-      "county": "Pecos",
-      "state": "TX",
-      "lat": "30.92",
-      "lon": "-102.84",
-      "notes": "Corrects previous tornado report from 3 NE Fort Stockton. Trained spotter and Pecos County EM reported a tornado NE of Fort Stockton. The tornado pulled metal wall pane (MAF)"
-    },
-    {
-      "date": "2026-10-14T19:18:00+00:00",
-      "ef": "UNK",
-      "location": "1 SSE Fort Stockton",
-      "county": "Pecos",
-      "state": "TX",
-      "lat": "30.88",
-      "lon": "-102.88",
-      "notes": "Emergency management reported a brief tornado touched down in Fort Stockton near the intersection of Ryan and Young Streets. The tornado tracked past the Pecos County C (MAF)"
     }
   ],
   "ef5": [
