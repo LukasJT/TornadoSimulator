@@ -1,6 +1,16 @@
 {
-  "generated_at": "2026-11-15T13:26:55Z",
+  "generated_at": "2026-11-16T14:49:12Z",
   "recent": [
+    {
+      "date": "2026-11-14T23:59:00+00:00",
+      "ef": "UNK",
+      "location": "5 NW Sand",
+      "county": "Gaines",
+      "state": "TX",
+      "lat": "32.73",
+      "lon": "-102.25",
+      "notes": "Broadcast media reports a tornado east of Seminole around 6 PM CST. (MAF)"
+    },
     {
       "date": "2026-11-12T21:00:00+00:00",
       "ef": "UNK",
