@@ -1,6 +1,16 @@
 {
-  "generated_at": "2026-11-17T15:29:54Z",
+  "generated_at": "2026-11-18T15:07:36Z",
   "recent": [
+    {
+      "date": "2026-11-15T00:33:00+00:00",
+      "ef": "UNK",
+      "location": "4 NW Lamesa",
+      "county": "Dawson",
+      "state": "TX",
+      "lat": "32.79",
+      "lon": "-101.99",
+      "notes": "A brief tornado destroyed a metal outbuilding and some fencing west of Highway 137 and south of County Road 14. A tree was snapped and a couple of trailers were tossed. (MAF)"
+    },
     {
       "date": "2026-11-14T23:59:00+00:00",
       "ef": "UNK",
@@ -300,16 +310,6 @@
       "lat": "31.72",
       "lon": "-108.79",
       "notes": "Videos via social media show a brief landspout that occurred south of Animas. A rating of EFO was given for this event. No reports of damage since this was in a remote (EPZ)"
-    },
-    {
-      "date": "2026-10-19T23:50:00+00:00",
-      "ef": "UNK",
-      "location": "8 W Deming",
-      "county": "Luna",
-      "state": "NM",
-      "lat": "32.24",
-      "lon": "-107.88",
-      "notes": "Emergency manager and law enforcement reported a brief tornado touchdown west of Deming. No damage was reported. The tornado occurred on BLM land. No survey was conduct (EPZ)"
     }
   ],
   "ef5": [
