@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T15:07:36Z",
+  "generated_at": "2026-11-19T15:16:20Z",
   "recent": [
     {
       "date": "2026-11-15T00:33:00+00:00",
@@ -300,16 +300,6 @@
       "lat": "35.29",
       "lon": "-111.81",
       "notes": "Approximate start point of a brief EF1 rated tornado. Peak winds estimated to be 110 mph with path width of about 600 yards. The tornado proceeded about 2.3 miles north (FGZ)"
-    },
-    {
-      "date": "2026-10-20T19:05:00+00:00",
-      "ef": "UNK",
-      "location": "16 S Animas",
-      "county": "Hidalgo",
-      "state": "NM",
-      "lat": "31.72",
-      "lon": "-108.79",
-      "notes": "Videos via social media show a brief landspout that occurred south of Animas. A rating of EFO was given for this event. No reports of damage since this was in a remote (EPZ)"
     }
   ],
   "ef5": [
