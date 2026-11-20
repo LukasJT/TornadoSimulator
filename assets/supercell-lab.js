@@ -1,5 +1,6 @@
 import { calculateEnvironment, KNOT_TO_MS } from './supercell-model.js';
 import { drawCrossSection, getStage, stages } from './supercell-diagram.js';
+import { reportSimulatorEvent } from './simulator-events.js';
 
 const byId = id => document.getElementById(id);
 const inputs = {
@@ -32,6 +33,20 @@ let pinned = hasVersion && fields.every(key => params.has('a-' + key)) ? readRun
 let metricUnits = false;
 let timer;
 let scheduledFrame;
+let reportedStart = false;
+let reportedComparison = false;
+
+function reportRun() {
+  if (!reportedStart) {
+    reportSimulatorEvent('simulator_start', 'supercell');
+    reportSimulatorEvent('scenario_result', 'supercell');
+    reportedStart = true;
+  }
+  if (pinned && !reportedComparison && fields.some(key => state[key] !== pinned[key])) {
+    reportSimulatorEvent('comparison_completed', 'supercell');
+    reportedComparison = true;
+  }
+}
 
 function readRun(prefix) {
   return Object.fromEntries(fields.map(key => {
@@ -127,7 +142,9 @@ for (const key of fields) {
   exact.addEventListener('change', () => {
     if (exact.value !== '') state[key] = Math.min(Number(slider.max), Math.max(Number(slider.min), inputValue(key, Number(exact.value))));
     render();
+    reportRun();
   });
+  slider.addEventListener('change', reportRun);
   slider.addEventListener('input', () => {
     state[key] = Number(slider.value);
     cancelAnimationFrame(scheduledFrame);
@@ -144,6 +161,7 @@ for (const [id, [name, ...values]] of Object.entries(presets)) {
   button.addEventListener('click', () => {
     state = Object.fromEntries(fields.map((key, index) => [key, values[index]]));
     render();
+    reportRun();
   });
   byId('presets').append(button);
 }
