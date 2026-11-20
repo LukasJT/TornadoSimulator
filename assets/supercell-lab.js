@@ -25,6 +25,8 @@ const timeline = byId('storm-minute');
 const secondsPerFrame = 1000;
 const params = new URLSearchParams(location.search);
 const hasVersion = params.get('v') === '1';
+const slowerTimeline = hasVersion && params.get('pace') === 'slow';
+timeline.max = slowerTimeline ? 80 : 60;
 let state = readRun('');
 let pinned = hasVersion && fields.every(key => params.has('a-' + key)) ? readRun('a-') : null;
 let metricUnits = false;
@@ -66,7 +68,7 @@ function calculate(run) {
 
 function drawTimeline() {
   const minute = Number(timeline.value);
-  const stage = getStage(minute);
+  const stage = getStage(minute, slowerTimeline ? 4 / 3 : 1);
   drawCrossSection(byId('storm-diagram'), stage);
   byId('storm-stage').textContent = `Minute ${minute} · ${stages[stage]}. ${[
     'Air rises near the inflow.', 'The updraft deepens as a downdraft develops.',
@@ -166,6 +168,7 @@ byId('storm-share').addEventListener('click', async () => {
   const url = new URL(location.pathname, location.origin);
   url.searchParams.set('v', '1');
   url.searchParams.set('minute', timeline.value);
+  if (slowerTimeline) url.searchParams.set('pace', 'slow');
   for (const key of fields) {
     url.searchParams.set(key, state[key]);
     if (pinned) url.searchParams.set('a-' + key, pinned[key]);
@@ -184,13 +187,13 @@ function stopPlayback() {
 }
 byId('storm-play').addEventListener('click', () => {
   if (timer) { stopPlayback(); return; }
-  if (Number(timeline.value) === 60) timeline.value = 0;
+  if (timeline.value === timeline.max) timeline.value = 0;
   drawTimeline();
   byId('storm-play').textContent = 'Pause';
   timer = setInterval(() => {
     timeline.value = Number(timeline.value) + 1;
     drawTimeline();
-    if (Number(timeline.value) === 60) stopPlayback();
+    if (timeline.value === timeline.max) stopPlayback();
   }, secondsPerFrame);
 });
 for (const [id, delta] of [['storm-previous', -1], ['storm-next', 1]]) {

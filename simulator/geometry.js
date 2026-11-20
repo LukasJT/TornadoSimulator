@@ -101,4 +101,3 @@ export function generateSwathPolygon(pathPoints, pathWidthYards) {
 }
 
 // ─── INTERACTIVE MAP COMPONENT (Leaflet.js) ─────────────────────────────────
-
