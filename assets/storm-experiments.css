@@ -1,0 +1,17 @@
+.storm-experiment { width: min(100% - 2rem, 740px); margin: clamp(2rem, 6vw, 5rem) auto; color: #263631; }
+.storm-experiment h1 { font: 700 clamp(2.25rem, 6vw, 4.4rem)/1.03 Georgia, serif; letter-spacing: -.035em; margin: 0 0 1rem; text-wrap: balance; }
+.storm-experiment h2 { margin: 2.15rem 0 .65rem; font: 700 clamp(1.55rem, 4vw, 2.15rem)/1.15 Georgia, serif; }
+.storm-experiment p, .storm-experiment li, .storm-experiment td, .storm-experiment th { font-size: 1rem; line-height: 1.65; }
+.storm-experiment .experiment-lede { font-size: 1.2rem; }
+.storm-experiment .experiment-byline, .storm-experiment figcaption { color: #526158; font-size: .9rem; }
+.storm-experiment a { color: #7d2718; text-decoration: underline; text-underline-offset: .16em; }
+.storm-experiment figure { margin: 1rem 0; }
+.storm-experiment table { width: 100%; border-collapse: collapse; margin-block: 1rem; }
+.storm-experiment th, .storm-experiment td { vertical-align: top; text-align: left; padding: .55rem; border-bottom: 1px solid #c9cec7; }
+.storm-experiment caption { text-align: left; padding-bottom: .45rem; font-weight: 600; }
+.storm-experiment details { padding: .8rem; border: 1px solid #c9cec7; }
+.storm-experiment summary { cursor: pointer; }
+.storm-experiment :focus-visible { outline: 3px solid #763320; outline-offset: 4px; }
+.storm-exercise { width: 100%; height: auto; background: #121f30; }
+.overlap-figure > div { display: grid; gap: 1rem; padding: 1rem; color: #17372b; background: #d5e3d9; border: 1px solid #6d8c7c; }
+.overlap-figure span:last-child { text-align: right; }

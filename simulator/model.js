@@ -1135,4 +1135,3 @@ export {
   numFmt
 };
 import { pathLengthFromPoints } from './geometry.js';
-
