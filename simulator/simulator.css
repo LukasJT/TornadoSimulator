@@ -5,6 +5,15 @@ body { display: block; height: auto; overflow: auto; background: #101719; paddin
 .hub-nav-brand { white-space: nowrap; }
 .hub-nav-links { min-width: 0; }
 .hub-nav-links a { display: inline-flex; align-items: center; min-height: 44px; color: #c2cdd0; }
+.sim-entry { padding: 1.25rem max(20px, 4vw); background: #182124; border-bottom: 1px solid #334044; color: #e5eeee; }
+.sim-entry h1 { font-size: clamp(1.65rem, 4vw, 2.5rem); margin: 0; }
+.sim-entry p { margin: .45rem 0 .8rem; }
+.sim-entry div { display: flex; gap: .65rem; flex-wrap: wrap; }
+.sim-entry a { display: inline-flex; align-items: center; min-height: 44px; padding: .5rem .8rem; border: 1px solid #8db9b4; border-radius: 5px; color: #e5eeee; }
+.sim-entry a:first-child { background: #b7ddd7; color: #102827; }
+.scenario-actions { display: flex; gap: .5rem; flex-wrap: wrap; margin-block: .7rem; }
+.scenario-actions button { color: #e5eeee; background: #263a3d; border: 1px solid #8db9b4; border-radius: 5px; padding: .5rem .7rem; min-height: 44px; }
+.scenario-statistics input[type=url] { display: block; width: 100%; margin-block: .45rem; padding: .5rem; }
 #root { height: calc(100svh - 52px); min-height: 600px; overflow: hidden; }
 .simulator-app { height: 100% !important; background: #101719 !important; }
 .simulator-header { background: #182124 !important; gap: 12px; border-color: #334044 !important; }
