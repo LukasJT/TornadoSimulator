@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
+<script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Supercell Simulator — Model the Atmosphere That Makes Tornadoes</title>
-<meta name="description" content="An interactive supercell and storm-conditions simulator based on real meteorology. Adjust CAPE, wind shear, storm-relative helicity, LCL height, temperature and dewpoint — and see live estimates of storm mode, the Significant Tornado Parameter, and the maximum expected tornado strength. Presets for classic Plains supercells, Dixie Alley HP storms, capped days, and landspout setups." />
-<meta name="twitter:description" content="An interactive supercell and storm-conditions simulator based on real meteorology. Adjust CAPE, wind shear, storm-relative helicity, LCL height, temperature and dewpoint — and see live estimates of storm mode, the Significant Tornado Parameter, and the maximum expected tornado strength. Presets for classic Plains supercells, Dixie Alley HP storms, capped days, and landspout setups." />
+<meta name="description" content="Experiment with CAPE, wind shear, helicity and cloud-base height. See how the inputs change the Significant Tornado Parameter and the ideal parcel updraft speed." />
+<meta name="twitter:description" content="Experiment with CAPE, wind shear, helicity and cloud-base height. See how the inputs change the Significant Tornado Parameter and the ideal parcel updraft speed." />
 <meta name="twitter:title" content="Supercell Simulator — Model the Atmosphere That Makes Tornadoes" />
 <meta name="twitter:card" content="summary" />
 <meta property="og:site_name" content="Tornado Hub" />
 <meta name="keywords" content="supercell simulator, storm simulator, tornado formation, CAPE, wind shear, storm-relative helicity, significant tornado parameter, STP, atmospheric conditions, storm ingredients, meteorology simulator, tornado ingredients" />
 <meta property="og:title" content="Supercell Simulator — Model the Atmosphere That Makes Tornadoes" />
-<meta property="og:description" content="An interactive supercell and storm-conditions simulator based on real meteorology. Adjust CAPE, wind shear, storm-relative helicity, LCL height, temperature and dewpoint — and see live estimates of storm mode, the Significant Tornado Parameter, and the maximum expected tornado strength. Presets for classic Plains supercells, Dixie Alley HP storms, capped days, and landspout setups." />
+<meta property="og:description" content="Experiment with CAPE, wind shear, helicity and cloud-base height. See how the inputs change the Significant Tornado Parameter and the ideal parcel updraft speed." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.tornadosimulator.net/supercell-simulator/" />
 <link rel="canonical" href="https://www.tornadosimulator.net/supercell-simulator/" />
@@ -29,13 +31,13 @@
   "name":"Supercell Simulator",
   "applicationCategory":"EducationalApplication",
   "operatingSystem":"Web browser",
-  "description":"An interactive tool to simulate the atmospheric conditions that produce supercell thunderstorms and tornadoes.",
+  "description":"Experiment with CAPE, wind shear, helicity and cloud-base height. See how the inputs change the Significant Tornado Parameter and the ideal parcel updraft speed.",
   "url":"https://www.tornadosimulator.net/supercell-simulator/",
   "publisher":{"@type":"Organization","name":"Tornado Hub","url":"https://www.tornadosimulator.net/"}
 }
 </script>
 <script type="application/ld+json" data-seo="page">
-{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.tornadosimulator.net/supercell-simulator/#webpage","url":"https://www.tornadosimulator.net/supercell-simulator/","name":"Supercell Simulator — Model the Atmosphere That Makes Tornadoes","description":"An interactive supercell and storm-conditions simulator based on real meteorology. Adjust CAPE, wind shear, storm-relative helicity, LCL height, temperature and dewpoint — and see live estimates of storm mode, the Significant Tornado Parameter, and the maximum expected tornado strength. Presets for classic Plains supercells, Dixie Alley HP storms, capped days, and landspout setups.","isPartOf":{"@id":"https://www.tornadosimulator.net/#website"},"publisher":{"@id":"https://www.tornadosimulator.net/#organization"},"inLanguage":"en"},{"@type":"BreadcrumbList","@id":"https://www.tornadosimulator.net/supercell-simulator/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"},{"@type":"ListItem","position":2,"name":"Supercell Simulator — Model the Atmosphere That Makes Tornadoes","item":"https://www.tornadosimulator.net/supercell-simulator/"}]}]}
+{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.tornadosimulator.net/supercell-simulator/#webpage","url":"https://www.tornadosimulator.net/supercell-simulator/","name":"Supercell Simulator — Model the Atmosphere That Makes Tornadoes","description":"Experiment with CAPE, wind shear, helicity and cloud-base height. See how the inputs change the Significant Tornado Parameter and the ideal parcel updraft speed.","isPartOf":{"@id":"https://www.tornadosimulator.net/#website"},"publisher":{"@id":"https://www.tornadosimulator.net/#organization"},"inLanguage":"en"},{"@type":"BreadcrumbList","@id":"https://www.tornadosimulator.net/supercell-simulator/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.tornadosimulator.net/"},{"@type":"ListItem","position":2,"name":"Supercell Simulator — Model the Atmosphere That Makes Tornadoes","item":"https://www.tornadosimulator.net/supercell-simulator/"}]}]}
 </script>
 <style>
 :root {
@@ -378,7 +380,9 @@ a:hover { color: var(--accent); text-decoration: underline; }
   font-size: 13px;
 }
 
-.inline-ad { text-align: center; margin: 24px auto; max-width: 728px; overflow: hidden; }
+#initiation-note { color: var(--text-secondary); margin: 0 0 1rem; }
+.th-ad-slot { width: min(1100px, calc(100% - 2rem)); }
+.th-ad-slot .th-ad-label { color: var(--text-secondary); }
 </style>
 
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" /><link rel="stylesheet" href="/assets/ads.css?v=20260912">
@@ -407,9 +411,8 @@ a:hover { color: var(--accent); text-decoration: underline; }
 </nav>
 
 <section class="hero">
-  <div class="eyebrow">⛈️ Storm-Conditions Simulator</div>
-  <h1>Model the atmosphere that <em>spawns tornadoes</em></h1>
-  <p>Adjust the six ingredients meteorologists use to forecast tornadoes and see whether the atmosphere you built can produce a supercell — and if so, how strong a tornado it could drop.</p>
+  <h1>Supercell Simulator</h1>
+  <p>Explore how instability, wind shear and cloud-base height affect a supercell environment. Change one ingredient and see how the calculations respond.</p>
 </section>
 
 <div class="sim-wrap">
@@ -423,56 +426,56 @@ a:hover { color: var(--accent); text-decoration: underline; }
 
     <div class="control">
       <div class="control-head">
-        <div class="control-label">Surface CAPE <span class="abbr">SBCAPE — instability</span></div>
+        <label for="s-cape" class="control-label">Surface CAPE <span class="abbr">SBCAPE — instability</span></label>
         <div class="control-value"><span id="v-cape">2500</span><span class="unit">J/kg</span></div>
       </div>
-      <input type="range" min="0" max="6000" step="50" value="2500" class="slider" id="s-cape">
-      <div class="control-help">Fuel for the updraft. &lt;500 = weak, 1500 = moderate, 3000+ = strong instability, 5000+ = extreme.</div>
+      <input type="range" min="0" max="6000" step="50" value="2500" class="slider" id="s-cape" aria-describedby="help-cape">
+      <div class="control-help" id="help-cape">Energy available to accelerate an ideal rising parcel.</div>
     </div>
 
     <div class="control">
       <div class="control-head">
-        <div class="control-label">Convective inhibition <span class="abbr">SBCIN — the "cap"</span></div>
+        <label for="s-cin" class="control-label">Convective inhibition <span class="abbr">SBCIN — the "cap"</span></label>
         <div class="control-value"><span id="v-cin">-50</span><span class="unit">J/kg</span></div>
       </div>
-      <input type="range" min="-400" max="0" step="5" value="-50" class="slider" id="s-cin">
-      <div class="control-help">A warm layer aloft that suppresses storms. -50 breaks easily; below -200 usually caps the day.</div>
+      <input type="range" min="-400" max="0" step="5" value="-50" class="slider" id="s-cin" aria-describedby="help-cin">
+      <div class="control-help" id="help-cin">Energy a parcel must overcome before it can rise freely. The necessary lift depends on the environment.</div>
     </div>
 
     <div class="control">
       <div class="control-head">
-        <div class="control-label">0–6 km bulk shear <span class="abbr">deep-layer shear</span></div>
+        <label for="s-shear" class="control-label">0–6 km bulk shear <span class="abbr">deep-layer shear</span></label>
         <div class="control-value"><span id="v-shear">45</span><span class="unit">kt</span></div>
       </div>
-      <input type="range" min="0" max="100" step="1" value="45" class="slider" id="s-shear">
-      <div class="control-help">Wind speed change from surface to 6 km. &gt;40 kt strongly favors supercells over multicells.</div>
+      <input type="range" min="0" max="100" step="1" value="45" class="slider" id="s-shear" aria-describedby="help-shear">
+      <div class="control-help" id="help-shear">Magnitude of the vector wind difference between the surface and 6 km.</div>
     </div>
 
     <div class="control">
       <div class="control-head">
-        <div class="control-label">0–1 km storm-relative helicity <span class="abbr">SRH01 — low-level rotation</span></div>
+        <label for="s-srh" class="control-label">0–1 km storm-relative helicity <span class="abbr">SRH01 — low-level rotation</span></label>
         <div class="control-value"><span id="v-srh">150</span><span class="unit">m²/s²</span></div>
       </div>
-      <input type="range" min="0" max="500" step="5" value="150" class="slider" id="s-srh">
-      <div class="control-help">Streamwise vorticity feeding the mesocyclone. &gt;100 favors tornadoes; &gt;300 signals violent potential.</div>
+      <input type="range" min="0" max="500" step="5" value="150" class="slider" id="s-srh" aria-describedby="help-srh">
+      <div class="control-help" id="help-srh">Measures streamwise rotation available to a storm moving through the low-level wind profile.</div>
     </div>
 
     <div class="control">
       <div class="control-head">
-        <div class="control-label">LCL height <span class="abbr">cloud base above ground</span></div>
+        <label for="s-lcl" class="control-label">LCL height <span class="abbr">cloud base above ground</span></label>
         <div class="control-value"><span id="v-lcl">1000</span><span class="unit">m AGL</span></div>
       </div>
-      <input type="range" min="300" max="3000" step="50" value="1000" class="slider" id="s-lcl">
-      <div class="control-help">Lower cloud bases = more tornadoes. &lt;1000 m is ideal; &gt;2000 m usually means high-based storms.</div>
+      <input type="range" min="300" max="3000" step="50" value="1000" class="slider" id="s-lcl" aria-describedby="help-lcl">
+      <div class="control-help" id="help-lcl">Height where a lifted surface parcel first becomes saturated.</div>
     </div>
 
     <div class="control">
       <div class="control-head">
-        <div class="control-label">Surface dewpoint <span class="abbr">low-level moisture</span></div>
+        <label for="s-td" class="control-label">Surface dewpoint <span class="abbr">low-level moisture</span></label>
         <div class="control-value"><span id="v-td">68</span><span class="unit">°F</span></div>
       </div>
-      <input type="range" min="30" max="80" step="1" value="68" class="slider" id="s-td">
-      <div class="control-help">Moisture in the boundary layer. &gt;60°F feeds classic Plains supercells; &gt;70°F fuels HP monsters.</div>
+      <input type="range" min="30" max="80" step="1" value="68" class="slider" id="s-td" aria-describedby="help-td">
+      <div class="control-help" id="help-td">Context for low-level moisture. CAPE and LCL are entered independently in this tool.</div>
     </div>
 
   </div>
@@ -481,82 +484,73 @@ a:hover { color: var(--accent); text-decoration: underline; }
   <div class="panel">
     <div class="panel-head">
       <h2>Model output</h2>
-      <div id="mode-tag" class="preset-btn" style="cursor:default;pointer-events:none">Storm mode</div>
     </div>
 
-    <div id="verdict" class="verdict-box tier-mod">
-      <span class="verdict-tag" id="verdict-tag">Threat level</span>
-      <div class="verdict-headline" id="verdict-headline">Adjust the sliders</div>
-      <div class="verdict-body" id="verdict-body">Move the sliders on the left to build an atmospheric profile. The output updates live.</div>
-    </div>
+    <p id="initiation-note">Convective inhibition describes how much help a parcel may need to rise. The trigger for a storm is outside this calculation.</p>
 
     <div class="metric-grid">
       <div class="metric">
         <div class="metric-label">STP</div>
-        <div class="metric-value" id="m-stp">—</div>
+        <div class="metric-value" id="m-stp">1.93</div>
         <div class="metric-sub">Sig. Tornado Param</div>
       </div>
       <div class="metric">
         <div class="metric-label">EHI (0–1)</div>
-        <div class="metric-value" id="m-ehi">—</div>
+        <div class="metric-value" id="m-ehi">2.34</div>
         <div class="metric-sub">Energy-helicity</div>
       </div>
       <div class="metric">
-        <div class="metric-label">Max EF</div>
-        <div class="metric-value" id="m-ef">—</div>
-        <div class="metric-sub">Expected upper bound</div>
+        <div class="metric-label">Ideal updraft</div>
+        <div class="metric-value" id="m-updraft">70.7</div>
+        <div class="metric-sub">m/s, buoyancy only</div>
       </div>
     </div>
 
-    <div class="ingredients" id="ingredients"></div>
 
   </div>
 </div>
 
-<div class="inline-ad">
-
-
-</div>
+<aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
 
 <section class="explainer">
   <h2>How this simulator works</h2>
-  <p>Meteorologists don't just look at "will it storm today" — they look at a small set of atmospheric parameters that decide whether storms will fire, whether they'll organize into supercells, and whether those supercells will produce tornadoes. This tool exposes six of the most important ingredients as sliders so you can see how each one shifts the outcome.</p>
-  <p>The metrics you're computing are the same ones on the <a href="https://www.spc.noaa.gov/exper/mesoanalysis/" target="_blank" rel="noopener">SPC mesoanalysis</a> and the <a href="/1974-super-outbreak/">post-event write-ups</a> of historic outbreaks. When STP climbs above 3, meteorologists start using words like "particularly dangerous situation." When it approaches 8, they're describing 1999 Bridge Creek or April 27, 2011.</p>
-
+  <p>These calculations describe the environment around a hypothetical storm. Official <a href="https://www.weather.gov/oun/efscale">Enhanced Fujita ratings</a> come from surveyed damage.</p>
   <div class="callout">
-    <strong>Formulas used.</strong> STP (fixed-layer) = (SBCAPE/1500) × ((2000-LCL)/1000) × (SRH01/150) × (BulkShear06/20) × ((-CIN-50)/-50). EHI = SBCAPE × SRH01 / 160,000. Storm mode is a coarse decision tree on deep-layer shear plus CAPE. These are simplified relationships from Thompson et al. (2003, 2007) and Craven & Brooks (2004); they capture the shape of tornado potential well but they don't replace a real forecast.
+    <strong>Fixed-layer STP.</strong> Multiply SBCAPE / 1500, the cloud-base factor, 0–1 km SRH / 150 and the deep-layer shear factor. The cloud-base factor is (2000 − LCL) / 1000, constrained between zero and one. The shear factor is zero below 12.5 m/s, then shear / 20 up to a maximum of 1.5. Convert knots to m/s before applying the thresholds. <a href="https://unidata.github.io/MetPy/latest/api/generated/metpy.calc.significant_tornado.html">Reference formula</a>.
   </div>
+  <p>The 0–1 km energy-helicity index is CAPE × SRH / 160,000. The <a href="https://www.weather.gov/lmk/indices">ideal parcel updraft speed</a> is √(2 × CAPE). Mixing, water loading and other processes affect real updrafts. CIN provides context for initiation and is separate from this STP variant.</p>
+  <p>With 2500 J/kg CAPE, a 1000 m cloud base, 150 m²/s² helicity and 45 kt shear, the storm environment has an STP of about 1.93. Raising the cloud base to 1500 m halves the cloud-base factor and lowers the index to about 0.96.</p>
 
   <h2>The six ingredients</h2>
   <div class="term-grid">
     <div class="term">
       <div class="term-name">Instability <span class="term-abbr">CAPE</span></div>
-      <div class="term-body">Convective Available Potential Energy — the "fuel" that lets air parcels accelerate upward. Higher CAPE means taller and stronger updrafts. Values above ~2500 J/kg support severe storms.</div>
+      <div class="term-body">Convective available potential energy measures the positive buoyancy available to a rising air parcel.</div>
     </div>
     <div class="term">
       <div class="term-name">The cap <span class="term-abbr">CIN</span></div>
-      <div class="term-body">Convective inhibition — a stable layer aloft that acts like a lid. A small cap concentrates energy so storms explode late in the day; too much cap and nothing forms at all.</div>
+      <div class="term-body">Convective inhibition measures energy that must be overcome for a parcel to reach its level of free convection.</div>
     </div>
     <div class="term">
       <div class="term-name">Deep-layer shear <span class="term-abbr">0–6 km</span></div>
-      <div class="term-body">The change in wind speed and direction from the surface to about 6 km. Strong deep-layer shear tilts the updraft away from the rain, letting a supercell survive for hours instead of dying in its own rain-cooled outflow.</div>
+      <div class="term-body">A vector difference in wind over the first six kilometers above ground.</div>
     </div>
     <div class="term">
       <div class="term-name">Storm-relative helicity <span class="term-abbr">SRH</span></div>
-      <div class="term-body">A measure of low-level rotation available to the storm. When SRH is high — think 300+ m²/s² — the mesocyclone can stretch a low-level vortex into a tornado.</div>
+      <div class="term-body">The low-level contribution to storm-relative helicity depends on the wind profile and storm motion.</div>
     </div>
     <div class="term">
       <div class="term-name">LCL height <span class="term-abbr">cloud base</span></div>
-      <div class="term-body">The altitude where rising air becomes saturated (cloud base). Low LCLs mean the cool downdraft doesn't cut off the low-level circulation — a classic ingredient of Dixie Alley tornado outbreaks.</div>
+      <div class="term-body">The lifting condensation level estimates the base of a cloud produced by lifting a surface parcel.</div>
     </div>
     <div class="term">
       <div class="term-name">Surface moisture <span class="term-abbr">Td</span></div>
-      <div class="term-body">Dewpoint. It sets both CAPE and LCL indirectly — a 70°F dewpoint over the Plains is a red flag; a 40°F dewpoint means the air is too dry to fuel much of anything.</div>
+      <div class="term-body">Dewpoint describes moisture. This tool accepts independent CAPE and LCL inputs, so changing dewpoint leaves the calculated outputs unchanged.</div>
     </div>
   </div>
 
-  <h2>Try these real-atmosphere presets</h2>
-  <p>Click any preset above the sliders to load real-world parameter sets — the ingredients that produced classic Plains outbreaks, Dixie Alley HP monsters, high-based landspout days and cap busts. Then move a slider and watch the STP change.</p>
+  <h2>Try an illustrative environment</h2>
+  <p>Choose a preset above the sliders, change one input and check the result. Presets are synthetic examples.</p>
 
   <p style="margin-top:24px">Related tools: <a href="/simulator/">damage simulator</a> · <a href="/tornadle/">Tornadle</a> · <a href="/weather-trivia/">weather trivia</a> · <a href="/tornadoes/">live tornado index</a>.</p>
 </section>
@@ -565,7 +559,8 @@ a:hover { color: var(--accent); text-decoration: underline; }
   Educational tool. Not a forecast. For live watches and warnings see the <a href="https://www.spc.noaa.gov/" target="_blank" rel="noopener">NOAA Storm Prediction Center</a>.
 </footer>
 
-<script>
+<script type="module">
+import { calculateEnvironment, KNOT_TO_MS } from '/assets/supercell-model.js';
 (function () {
   'use strict';
 
@@ -573,10 +568,10 @@ a:hover { color: var(--accent); text-decoration: underline; }
   const PRESETS = {
     'Classic Plains': { cape: 3500, cin: -40, shear: 55, srh: 300, lcl: 900, td: 68, label: 'Classic Plains supercell — May, Oklahoma dryline day' },
     'Dixie Alley HP': { cape: 2200, cin: -30, shear: 60, srh: 380, lcl: 600, td: 72, label: 'Dixie Alley HP — moist, low LCL, extreme low-level rotation' },
-    'PDS setup':      { cape: 4200, cin: -20, shear: 70, srh: 450, lcl: 800, td: 70, label: 'PDS (Particularly Dangerous Situation) — 4/27/11 style' },
+    'High shear and helicity':      { cape: 4200, cin: -20, shear: 70, srh: 450, lcl: 800, td: 70, label: 'Illustrative environment with strong shear and high helicity' },
     'Landspout day':  { cape: 1500, cin: -10, shear: 15, srh: 40,  lcl: 1800, td: 55, label: 'Landspout day — weak shear, non-supercell tornadoes possible' },
     'High-based sup': { cape: 2500, cin: -60, shear: 50, srh: 180, lcl: 2400, td: 45, label: 'High-based supercell — big hail but few tornadoes' },
-    'Cap bust':       { cape: 3200, cin: -220, shear: 45, srh: 200, lcl: 1400, td: 65, label: 'Cap bust — plenty of instability but too much CIN, storms never fire' },
+    'Cap bust':       { cape: 3200, cin: -220, shear: 45, srh: 200, lcl: 1400, td: 65, label: 'Cap bust — plenty of instability but too much CIN, illustrative strong inhibition' },
     'Winter QLCS':    { cape: 500,  cin: -20, shear: 65, srh: 280, lcl: 500, td: 60, label: 'Cool-season QLCS — low CAPE but violent shear, spin-up tornadoes' },
     'Blue sky day':   { cape: 200,  cin: -100, shear: 12, srh: 30, lcl: 2200, td: 40, label: 'Nothing happening — no storms today' },
   };
@@ -611,125 +606,14 @@ a:hover { color: var(--accent); text-decoration: underline; }
     });
   });
 
-  // ─── SCIENCE ────────────────────────────────────────────────────
-  // Significant Tornado Parameter (fixed-layer variant, simplified)
-  function computeSTP(s) {
-    const capeTerm = Math.max(0, s.cape / 1500);
-    const lclTerm = s.lcl < 1000 ? 1 : (2000 - s.lcl) / 1000;
-    const srhTerm = s.srh / 150;
-    const shearTerm = clamp((s.shear - 12.5) / 7.5, 0, 1.5); // 12.5 kt lower cutoff, cap 1.5
-    // Above uses a smoother approach than the SPC formula but reflects the same shape.
-    // Actually replicate SPC formula for shear: if shear >= 20 kt use full weight; scale.
-    const shearNorm = s.shear < 12.5 ? 0 : Math.min(s.shear / 20, 1.5);
-    const cinTerm = s.cin > -50 ? 1 : (-s.cin - 50) < 0 ? 0 : (200 + s.cin) / 150;
-    const cinNorm = s.cin > -50 ? 1 : Math.max(0, (200 + s.cin) / 150);
-    if (Math.max(capeTerm, lclTerm, srhTerm, shearNorm, cinNorm) === 0) return 0;
-    return capeTerm * Math.max(0, lclTerm) * srhTerm * shearNorm * cinNorm;
-  }
-
-  function computeEHI(s) {
-    return (s.cape * s.srh) / 160000;
-  }
-
-  function clamp(x, lo, hi) { return Math.max(lo, Math.min(hi, x)); }
-
-  // Storm mode logic
-  function stormMode(s) {
-    // Can it even fire?
-    if (s.cape < 200) return { mode: 'No storms', color: 'green', reason: 'Insufficient CAPE — the atmosphere is too stable.' };
-    if (s.cin < -180) return { mode: 'Capped', color: 'green', reason: 'The cap is too strong. Even with plenty of CAPE, nothing breaks through.' };
-    // Storm type based on shear
-    if (s.shear < 20) return { mode: 'Pulse storms', color: 'green', reason: 'Weak shear — single-cell "popcorn" storms; brief microbursts possible.' };
-    if (s.shear < 35) return { mode: 'Multicell', color: 'yellow', reason: 'Moderate shear — organized multicell clusters; hail and gusty winds.' };
-    if (s.shear < 45) return { mode: 'Organized multicell', color: 'yellow', reason: 'Good shear — long-lived multicells or marginal supercells possible.' };
-    if (s.srh < 100) return { mode: 'Splitting supercell', color: 'orange', reason: 'Strong shear but low SRH — supercells possible, tornadoes unlikely.' };
-    if (s.srh < 200) return { mode: 'Supercell', color: 'orange', reason: 'Classic supercell environment — rotating storms with tornado potential.' };
-    return { mode: 'Tornadic supercell', color: 'red', reason: 'Textbook tornado environment — high shear + high low-level helicity.' };
-  }
-
-  function verdictFor(stp, mode) {
-    if (mode.mode === 'No storms' || mode.mode === 'Capped')
-      return { tier: 'none', tag: 'No threat', headline: mode.mode, body: mode.reason };
-    if (stp < 0.25)
-      return { tier: 'low', tag: 'Marginal', headline: 'Storms, but tornadoes unlikely',
-               body: mode.reason + ' STP below 0.25 rarely produces tornadoes.' };
-    if (stp < 1)
-      return { tier: 'mod', tag: 'Slight', headline: 'Isolated tornado possible',
-               body: 'STP under 1 supports isolated brief tornadoes (usually EF0–EF1). ' + mode.reason };
-    if (stp < 3)
-      return { tier: 'enhanced', tag: 'Enhanced', headline: 'Strong tornadoes possible',
-               body: 'STP in the 1–3 range typically produces significant (EF2+) tornadoes. Environment is favorable for long-lived supercells.' };
-    if (stp < 6)
-      return { tier: 'high', tag: 'Moderate → High', headline: 'Violent tornadoes possible',
-               body: 'STP 3–6 aligns with days like May 3, 1999 or May 20, 2013. Expect strong to violent (EF3–EF4) tornadoes if storms fire.' };
-    return { tier: 'extreme', tag: 'HIGH RISK', headline: 'PDS-level tornado environment',
-             body: 'STP above 6 is a Particularly Dangerous Situation — the atmosphere is capable of EF4–EF5 tornadoes. Historical analogs include April 27, 2011 and May 3, 1999.' };
-  }
-
-  function expectedMaxEF(stp, s) {
-    if (s.cape < 200 || s.cin < -180) return '—';
-    if (stp < 0.25) return 'EF0';
-    if (stp < 1) return 'EF1';
-    if (stp < 2) return 'EF2';
-    if (stp < 4) return 'EF3';
-    if (stp < 7) return 'EF4';
-    return 'EF5';
-  }
-
-  // Ingredient checklist
-  function ingredients(s) {
-    const items = [
-      { name: 'Instability', met: s.cape >= 1500, close: s.cape >= 500,
-        detail: `CAPE ${s.cape} J/kg — ${s.cape < 500 ? 'too low' : s.cape < 1500 ? 'marginal' : s.cape < 3000 ? 'moderate' : 'strong'}` },
-      { name: 'Cap breakable', met: s.cin > -100, close: s.cin > -180,
-        detail: `CIN ${s.cin} J/kg — ${s.cin > -50 ? 'no lid' : s.cin > -100 ? 'weak lid' : s.cin > -180 ? 'strong cap' : 'capped out'}` },
-      { name: 'Deep shear', met: s.shear >= 40, close: s.shear >= 25,
-        detail: `${s.shear} kt — ${s.shear < 20 ? 'unorganized' : s.shear < 40 ? 'multicells' : s.shear < 60 ? 'supercells' : 'extreme'}` },
-      { name: 'Low-level rotation', met: s.srh >= 200, close: s.srh >= 100,
-        detail: `SRH ${s.srh} m²/s² — ${s.srh < 100 ? 'low' : s.srh < 200 ? 'moderate' : s.srh < 350 ? 'strong' : 'extreme'}` },
-      { name: 'Low cloud base', met: s.lcl <= 1000, close: s.lcl <= 1500,
-        detail: `LCL ${s.lcl} m — ${s.lcl < 1000 ? 'ideal' : s.lcl < 1500 ? 'ok' : s.lcl < 2000 ? 'high' : 'too high'}` },
-      { name: 'Boundary-layer moisture', met: s.td >= 60, close: s.td >= 50,
-        detail: `Td ${s.td}°F — ${s.td < 50 ? 'dry' : s.td < 60 ? 'marginal' : s.td < 70 ? 'moist' : 'juicy'}` },
-    ];
-    return items;
-  }
-
-  // ─── RENDER ────────────────────────────────────────────────────
   function update() {
-    KEYS.forEach(k => {
-      document.getElementById('v-' + k).textContent = state[k];
+    KEYS.forEach(key => {
+      document.getElementById('v-' + key).textContent = state[key];
     });
-    const stp = computeSTP(state);
-    const ehi = computeEHI(state);
-    const mode = stormMode(state);
-    const verdict = verdictFor(stp, mode);
-    const ef = expectedMaxEF(stp, state);
-
-    document.getElementById('m-stp').textContent = stp.toFixed(2);
-    document.getElementById('m-ehi').textContent = ehi.toFixed(2);
-    document.getElementById('m-ef').textContent = ef;
-
-    const modeTag = document.getElementById('mode-tag');
-    modeTag.textContent = mode.mode;
-    modeTag.style.background = ({green:'rgba(107,207,127,0.18)', yellow:'rgba(255,209,102,0.18)', orange:'rgba(255,159,67,0.2)', red:'rgba(239,68,68,0.22)'}[mode.color]);
-    modeTag.style.color = ({green:'#6bcf7f', yellow:'#ffd166', orange:'#ff9f43', red:'#ef4444'}[mode.color]);
-    modeTag.style.borderColor = 'transparent';
-
-    const box = document.getElementById('verdict');
-    box.className = 'verdict-box tier-' + verdict.tier;
-    document.getElementById('verdict-tag').textContent = verdict.tag;
-    document.getElementById('verdict-headline').textContent = verdict.headline;
-    document.getElementById('verdict-body').textContent = verdict.body;
-
-    // Ingredients
-    const ingEl = document.getElementById('ingredients');
-    ingEl.innerHTML = ingredients(state).map(i => `
-      <div class="ing ${i.met ? 'met' : i.close ? 'close' : 'missing'}">
-        <div class="ing-title"><span class="ing-status"></span>${i.name}</div>
-        <div class="ing-detail">${i.detail}</div>
-      </div>
-    `).join('');
+    const results = calculateEnvironment({...state, shear: state.shear * KNOT_TO_MS});
+    document.getElementById('m-stp').textContent = results.stp.toFixed(2);
+    document.getElementById('m-ehi').textContent = results.ehi.toFixed(2);
+    document.getElementById('m-updraft').textContent = results.updraft.toFixed(1);
   }
 
   update();
@@ -738,6 +622,7 @@ a:hover { color: var(--accent); text-decoration: underline; }
 <script src="/assets/article-tracker.js" defer></script>
 
 
-<script src="/assets/house-ads.js?v=14" defer></script>
+<script src="/assets/ads-config.js?v=20261017" defer></script>
+<script src="/assets/ads.js?v=20261120" defer></script>
 </body>
 </html>
