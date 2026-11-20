@@ -10017,9 +10017,9 @@ window.TORNADO_CONTENT_INDEX = [
     "keywords": "tornadoes near me address local tornado history radius search"
   },
   {
-    "title": "Live Tornado Warnings and Risk Maps — North America",
+    "title": "Live Tornado Radar and Warnings",
     "path": "/live-tornado-warnings-north-america/",
-    "description": "Live U.S. and Canadian tornado warnings, recent warning history, and SPC Day 1 and Day 2 tornado-risk maps.",
+    "description": "Monitor live North American weather radar and official tornado warnings. Replay the last hour, jump to Southern Ontario or the U.S. Plains, and open full-screen monitor mode.",
     "category": "Interactive Tornado Tool",
     "keywords": "live tornado warnings map North America today tomorrow tornado risk outlook"
   },
@@ -11548,5 +11548,10 @@ window.TORNADO_CONTENT_INDEX = [
   {"path":"/tornado-path-retracing-area/","title":"How much land does a retracing tornado path cover?","description":"Draw an out-and-back tornado path and compare the two passes with the land they share.","category":"Simulator experiments","keywords":"How much land does a retracing tornado path cover?"},
   {"path":"/supercell-updraft-cross-section/","title":"Can you find the updraft in a supercell cross-section?","description":"Trace three arrows through an illustrated storm and identify which one carries air upward.","category":"Simulator experiments","keywords":"Can you find the updraft in a supercell cross-section?"},
   {"path":"/supercell-simulation-stage-vs-time/","title":"Why can two storm illustrations look different at minute 30?","description":"Align two version 1 timelines by illustrated elapsed time and then by life-cycle stage.","category":"Simulator experiments","keywords":"Why can two storm illustrations look different at minute 30?"},
-  {"path":"/supercell-simulator-archived-sounding/","title":"How much of an archived sounding fits in six sliders?","description":"Use the May 20, 2013 Norman sounding to test which observed inputs can be transferred into the version 1 simulator.","category":"Simulator experiments","keywords":"How much of an archived sounding fits in six sliders?"}
+  {"path":"/supercell-simulator-archived-sounding/","title":"How much of an archived sounding fits in six sliders?","description":"Use the May 20, 2013 Norman sounding to test which observed inputs can be transferred into the version 1 simulator.","category":"Simulator experiments","keywords":"How much of an archived sounding fits in six sliders?"},
+  {"path":"/where-do-supercells-form/","title":"Where Do Supercells Form?","description":"Find out why the Great Plains are known for supercells and how rotating thunderstorms also form in the Southeast, Canada and Australia.","category":"Supercells","keywords":"Where Do Supercells Form supercell storms"},
+  {"path":"/why-do-supercells-form/","title":"Why Do Supercells Form?","description":"Follow the four ingredients behind a supercell and see how a rising updraft turns wind shear into persistent rotation.","category":"Supercells","keywords":"Why Do Supercells Form supercell storms"},
+  {"path":"/supercells-in-southern-ontario/","title":"Supercells in Southern Ontario","description":"Yes, supercells form in Southern Ontario. See how Great Lakes breezes influence storm development, with documented cases from Toronto, Barrie and Thedford.","category":"Supercells","keywords":"Supercells in Southern Ontario supercell storms"},
+  {"path":"/do-all-supercells-produce-tornadoes/","title":"Do All Supercells Produce Tornadoes?","description":"Learn the difference between a mesocyclone and a tornado, how non-tornadic supercells cause damage, and what a hook echo can tell you.","category":"Supercells","keywords":"Do All Supercells Produce Tornadoes supercell storms"},
+  {"path":"/how-long-do-supercells-last/","title":"How Long Do Supercells Last?","description":"Some supercells last several hours. Learn what sustains them and why the lifetime of the thunderstorm differs from how long it affects your town.","category":"Supercells","keywords":"How Long Do Supercells Last supercell storms"}
 ];

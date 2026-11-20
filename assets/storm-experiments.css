@@ -15,3 +15,6 @@
 .storm-exercise { width: 100%; height: auto; background: #121f30; }
 .overlap-figure > div { display: grid; gap: 1rem; padding: 1rem; color: #17372b; background: #d5e3d9; border: 1px solid #6d8c7c; }
 .overlap-figure span:last-child { text-align: right; }
+.guide-photo img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; background: #dddcd4; }
+.guide-photo figcaption { padding-block: .5rem; }
+.guide-photo.secondary-photo img { aspect-ratio: auto; object-fit: contain; max-height: 37rem; }
