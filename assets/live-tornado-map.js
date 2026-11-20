@@ -46,9 +46,9 @@ function normalize(feature, country) {
 function setup() {
   const map = leaflet.map('live-map',{minZoom:3,maxZoom:15,worldCopyJump:true,zoomControl:false}).setView([42,-97],4);
   leaflet.control.zoom({position:'topright'}).addTo(map);
-  leaflet.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    maxZoom:15, subdomains:'abcd',
-    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+  leaflet.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom:15,
+    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
   }).addTo(map);
   const radar = connectRadar(map,leaflet);
   const monitor = get('live-monitor');

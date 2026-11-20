@@ -16,13 +16,14 @@
 }
 .live-monitor button { cursor: pointer; }
 .live-monitor button:disabled { cursor: default; opacity: .6; }
-.live-monitor button:hover:not(:disabled) { background: #354c4c; }
+.live-monitor button:hover:not(:disabled):not([aria-pressed=true]) { background: #354c4c; }
 .live-monitor button[aria-pressed=true] { background: var(--accent); color: #142d29; border-color: var(--accent); }
 .monitor-actions label { display: flex; align-items: center; gap: .45rem; font-size: .875rem; }
 .monitor-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, 310px); gap: 1rem; }
 .map-shell, .monitor-alerts { min-width: 0; border: 1px solid var(--line); background: var(--panel); border-radius: 9px; }
 .map-tabs { padding: .65rem; }
 #live-map { height: clamp(380px, 58vh, 770px); background: #172428; }
+#live-map .leaflet-tile-pane { filter: saturate(.55) brightness(.85); }
 .map-caption, .radar-control { padding: .65rem; color: var(--muted); font-size: .875rem; }
 .map-caption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1rem; border-bottom: 1px solid var(--line); }
 .legend { display: flex; align-items: center; gap: .85rem; flex-wrap: wrap; }
@@ -38,7 +39,7 @@
 .timeline-row input { flex: 1; min-width: 70px; }
 .paint-scale { justify-content: space-between; }
 .rain-key { width: 4rem; background: linear-gradient(90deg,#8dccff,#25aafb,#00d349,#167819,#effc02,#ff8b00,#f00013,#ff14b5,#330044); }
-.live-monitor a { color: #c7e9dc; text-underline-offset: .18em; }
+.monitor-alerts a, .radar-control a { color: #c7e9dc; text-underline-offset: .18em; }
 .monitor-alerts { padding: .95rem; overflow: auto; max-height: calc(clamp(380px, 58vh, 770px) + 13rem); }
 .monitor-alerts h2 { display: flex; gap: .55rem; justify-content: space-between; margin: 0 0 .9rem; align-items: baseline; font-size: 1.12rem; }
 #active-count { font: 700 1.3rem/1 system-ui,sans-serif; color: var(--accent); font-variant-numeric: tabular-nums; }
