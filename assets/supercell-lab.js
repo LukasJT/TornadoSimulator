@@ -219,6 +219,33 @@ for (const [id, delta] of [['storm-previous', -1], ['storm-next', 1]]) {
 }
 timeline.addEventListener('input', () => { stopPlayback(); drawTimeline(); });
 document.addEventListener('visibilitychange', () => { if (document.hidden) stopPlayback(); });
+const profilePlot = byId('wind-profile');
+const profileContext = profilePlot.getContext('2d');
+const windProfile = Array.from(byId('wind-profile-rows').rows, row =>
+  [Number(row.cells[1].textContent), Number(row.cells[2].textContent)]);
+profileContext.fillStyle = '#121f30';
+profileContext.fillRect(0, 0, 480, 210);
+profileContext.fillStyle = '#dae5f4';
+profileContext.font = '15px system-ui';
+profileContext.fillText('Northward wind (m/s)', 42, 22);
+profileContext.fillText('Eastward wind (m/s)', 194, 198);
+const point = ([u, v]) => [45 + u * 7, 164 - v * 7];
+profileContext.strokeStyle = '#71869d';
+profileContext.strokeRect(45, 38, 126, 126);
+profileContext.strokeStyle = '#ffbf78';
+profileContext.lineWidth = 2;
+profileContext.beginPath();
+windProfile.forEach((wind, index) => {
+  if (index === 0) profileContext.moveTo(...point(wind));
+  else profileContext.lineTo(...point(wind));
+});
+profileContext.stroke();
+windProfile.forEach((wind, index) => {
+  const [x, y] = point(wind);
+  profileContext.fillStyle = '#ffbf78';
+  profileContext.fillRect(x - 2, y - 2, 4, 4);
+  profileContext.fillText(byId('wind-profile-rows').rows[index].cells[0].textContent, x + 7, y - 4);
+});
 if (hasVersion && params.has('minute') && /^\d{1,2}$/.test(params.get('minute'))) timeline.value = params.get('minute');
 render();
 drawTimeline();
