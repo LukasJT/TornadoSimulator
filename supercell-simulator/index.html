@@ -540,6 +540,14 @@ a:hover { color: var(--accent); text-decoration: underline; }
         <tbody id="storm-compare-rows"></tbody>
       </table>
       <details><summary>Show the math</summary><p id="storm-factors"></p><p>Ideal updraft speed is √(2 × CAPE). EHI is CAPE × 0–1 km SRH ÷ 160,000.</p></details>
+      <details><summary>Read a sample hodograph</summary>
+        <p>This synthetic profile supplies wind components at four heights. The manual controls above accept bulk shear and helicity directly.</p>
+        <canvas id="wind-profile" width="480" height="210" role="img" aria-label="Hodograph of the four wind vectors in the following table"></canvas>
+        <table><caption>Sample wind profile</caption><thead><tr><th scope="col">Height AGL</th><th scope="col">East (m/s)</th><th scope="col">North (m/s)</th></tr></thead>
+          <tbody id="wind-profile-rows"><tr><th scope="row">0 km</th><td>5</td><td>0</td></tr><tr><th scope="row">1 km</th><td>5</td><td>6</td></tr><tr><th scope="row">3 km</th><td>9</td><td>12</td></tr><tr><th scope="row">6 km</th><td>17</td><td>16</td></tr></tbody>
+        </table>
+        <p>The 0–6 km vector difference is (12, 16) m/s. Its magnitude is 20 m/s. Helicity also depends on storm motion.</p>
+      </details>
     </section>
 
   </div>

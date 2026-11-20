@@ -1,4 +1,5 @@
 import { PRESETS, parseSimUrlParams } from './scenarios.js';
+import { reportSimulatorEvent } from '../assets/simulator-events.js';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { generatePathPoints, pathLengthFromPoints, generateSwathPolygon } from './geometry.js';
@@ -611,7 +612,7 @@ function ScenarioStatistics({ params, result, routeMiles, pathPoints, densitySou
   }
   return <section className="scenario-statistics" aria-labelledby="statistics-title"><h3 id="statistics-title">Your scenario at a glance</h3><dl>{rows.map(([label, value, note]) => <div key={label}><dt>{label}</dt><dd>{value}<small>{note}</small></dd></div>)}</dl>
     <div className="scenario-actions">
-      <button type="button" onClick={() => setPinned({ miles: routeMiles, area, travel })}>Pin route result</button>
+      <button type="button" onClick={() => { setPinned({ miles: routeMiles, area, travel }); reportSimulatorEvent('comparison_pinned', 'tornado-path'); }}>Pin route result</button>
       {pathMode === 'draw' && pathPoints.length >= 2 && pathPoints.length <= 100 && <button type="button" onClick={sharePath}>Get a link to this path</button>}
     </div>
     {pinned && <p role="status">Pinned route: {pinned.miles.toFixed(2)} mi, {pinned.area.toFixed(2)} sq mi, {pinned.travel?.toFixed(1) ?? '—'} min. Current minus pinned: {(routeMiles - pinned.miles).toFixed(2)} mi, {(area - pinned.area).toFixed(2)} sq mi{pinned.travel != null && travel != null ? ', ' + (travel - pinned.travel).toFixed(1) + ' min' : ''}.</p>}
@@ -871,10 +872,12 @@ function TornadoSimulator() {
   const [customWaypoints, setCustomWaypoints] = useState(URL_INIT?.waypoints ?? []); // [[lat, lng], ...] for draw mode
   const [isDrawing, setIsDrawing] = useState(!URL_INIT?.waypoints && location.hash === "#draw-path"); // actively drawing path
   const [showCoordinateEditor, setShowCoordinateEditor] = useState(false);
+  const sentResult = useRef(false);
 
   useEffect(() => {
     const draw = document.getElementById("start-drawn-path");
     function startDrawing() {
+      reportSimulatorEvent('simulator_start', 'tornado-path');
       setPathMode("draw");
       setVizMode("map");
       setMobileView("map");
@@ -884,6 +887,13 @@ function TornadoSimulator() {
     draw.addEventListener("click", startDrawing);
     return () => draw.removeEventListener("click", startDrawing);
   }, []);
+
+  useEffect(() => {
+    if (sentResult.current || isDrawing || pathMode !== 'draw' || customWaypoints.length < 2) return;
+    sentResult.current = true;
+    if (URL_INIT?.manual) reportSimulatorEvent('simulator_start', 'tornado-path');
+    reportSimulatorEvent('scenario_result', 'tornado-path');
+  }, [customWaypoints, isDrawing, pathMode]);
 
   // Live simulation animation state
   const [simRunning, setSimRunning] = useState(false);

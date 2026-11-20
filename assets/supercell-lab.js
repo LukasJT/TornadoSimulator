@@ -1,5 +1,6 @@
 import { calculateEnvironment, KNOT_TO_MS } from './supercell-model.js';
 import { drawCrossSection, getStage, stages } from './supercell-diagram.js';
+import { reportSimulatorEvent } from './simulator-events.js';
 
 const byId = id => document.getElementById(id);
 const inputs = {
@@ -32,6 +33,20 @@ let pinned = hasVersion && fields.every(key => params.has('a-' + key)) ? readRun
 let metricUnits = false;
 let timer;
 let scheduledFrame;
+let reportedStart = false;
+let reportedComparison = false;
+
+function reportRun() {
+  if (!reportedStart) {
+    reportSimulatorEvent('simulator_start', 'supercell');
+    reportSimulatorEvent('scenario_result', 'supercell');
+    reportedStart = true;
+  }
+  if (pinned && !reportedComparison && fields.some(key => state[key] !== pinned[key])) {
+    reportSimulatorEvent('comparison_completed', 'supercell');
+    reportedComparison = true;
+  }
+}
 
 function readRun(prefix) {
   return Object.fromEntries(fields.map(key => {
@@ -127,7 +142,9 @@ for (const key of fields) {
   exact.addEventListener('change', () => {
     if (exact.value !== '') state[key] = Math.min(Number(slider.max), Math.max(Number(slider.min), inputValue(key, Number(exact.value))));
     render();
+    reportRun();
   });
+  slider.addEventListener('change', reportRun);
   slider.addEventListener('input', () => {
     state[key] = Number(slider.value);
     cancelAnimationFrame(scheduledFrame);
@@ -144,6 +161,7 @@ for (const [id, [name, ...values]] of Object.entries(presets)) {
   button.addEventListener('click', () => {
     state = Object.fromEntries(fields.map((key, index) => [key, values[index]]));
     render();
+    reportRun();
   });
   byId('presets').append(button);
 }
@@ -201,6 +219,33 @@ for (const [id, delta] of [['storm-previous', -1], ['storm-next', 1]]) {
 }
 timeline.addEventListener('input', () => { stopPlayback(); drawTimeline(); });
 document.addEventListener('visibilitychange', () => { if (document.hidden) stopPlayback(); });
+const profilePlot = byId('wind-profile');
+const profileContext = profilePlot.getContext('2d');
+const windProfile = Array.from(byId('wind-profile-rows').rows, row =>
+  [Number(row.cells[1].textContent), Number(row.cells[2].textContent)]);
+profileContext.fillStyle = '#121f30';
+profileContext.fillRect(0, 0, 480, 210);
+profileContext.fillStyle = '#dae5f4';
+profileContext.font = '15px system-ui';
+profileContext.fillText('Northward wind (m/s)', 42, 22);
+profileContext.fillText('Eastward wind (m/s)', 194, 198);
+const point = ([u, v]) => [45 + u * 7, 164 - v * 7];
+profileContext.strokeStyle = '#71869d';
+profileContext.strokeRect(45, 38, 126, 126);
+profileContext.strokeStyle = '#ffbf78';
+profileContext.lineWidth = 2;
+profileContext.beginPath();
+windProfile.forEach((wind, index) => {
+  if (index === 0) profileContext.moveTo(...point(wind));
+  else profileContext.lineTo(...point(wind));
+});
+profileContext.stroke();
+windProfile.forEach((wind, index) => {
+  const [x, y] = point(wind);
+  profileContext.fillStyle = '#ffbf78';
+  profileContext.fillRect(x - 2, y - 2, 4, 4);
+  profileContext.fillText(byId('wind-profile-rows').rows[index].cells[0].textContent, x + 7, y - 4);
+});
 if (hasVersion && params.has('minute') && /^\d{1,2}$/.test(params.get('minute'))) timeline.value = params.get('minute');
 render();
 drawTimeline();
