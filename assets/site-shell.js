@@ -37,4 +37,28 @@
     const input=control.querySelector('input'),status=control.querySelector('p');
     input.addEventListener('input',()=>{const q=input.value.trim().toLocaleLowerCase();let total=0;sections.forEach(section=>{let visible=0;section.querySelectorAll('.link-card').forEach(card=>{card.hidden=!card.textContent.toLocaleLowerCase().includes(q);if(!card.hidden)visible++;});section.hidden=visible===0;total+=visible;});status.textContent=total?`${total} guides found`:'No guides found. Try a shorter search.';});
   }
+  const host = /^(www\.)?tornadosimulator\.net$/.test(location.hostname);
+  const preview = new URLSearchParams(location.search).has('ads-preview');
+  const directory = /^\/(?:articles|tornado-history-by-location|weather-calculators|learn|games)\/$/.test(location.pathname);
+  if ((host || preview) && (article || document.querySelector('article#main-content, main h2') || directory) &&
+      !document.querySelector('script[src^="/assets/ads.js"]')) {
+    const existingStyle = document.querySelector('link[href^="/assets/ads.css"]');
+    const config = document.createElement('script');
+    const stylesReady = existingStyle ? Promise.resolve() : new Promise(resolve => {
+      const styles = document.createElement('link');
+      styles.rel = 'stylesheet';
+      styles.href = '/assets/ads.css?v=20261120b';
+      styles.addEventListener('load', resolve, {once: true});
+      styles.addEventListener('error', resolve, {once: true});
+      document.head.append(styles);
+    });
+    config.src = '/assets/ads-config.js?v=20261120b';
+    config.addEventListener('load', async () => {
+      await stylesReady;
+      const loader = document.createElement('script');
+      loader.src = '/assets/ads.js?v=20261120b';
+      document.head.append(loader);
+    }, {once: true});
+    document.head.append(config);
+  }
 })();

@@ -7,5 +7,6 @@ window.ADSTERRA = Object.freeze({
   skyscraper: { key: 'da8c75671b236383c52eb13078c2a148', width: 160, height: 600, src: 'https://bauval.org/22/da8c75671b236383c52eb13078c2a148' },
   native: { src: 'https://bauval.org/21/e6d44dd184e6e948eb9c1a7c57155196', container: 'container-e6d44dd184e6e948eb9c1a7c57155196' },
   // The native unit uses the 1:1 layout saved in the publisher dashboard.
-  // 320x50, Popunder, Smartlink and Social Bar are inactive and intentionally omitted.
+  // Activate mobileBanner (320×50), banner468 (468×60) or rectangle (300×250) here
+  // only after the corresponding Adsterra display unit is active.
 });
