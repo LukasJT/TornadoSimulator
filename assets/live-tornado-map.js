@@ -1,25 +1,235 @@
-(() => {
-  const US_ACTIVE='https://api.weather.gov/alerts/active?event=Tornado%20Warning';
-  const US_HISTORY=()=>{const end=new Date(),start=new Date(end-72*36e5);return `https://api.weather.gov/alerts?start=${start.toISOString()}&end=${end.toISOString()}&event=Tornado%20Warning&limit=500`;};
-  const CA_HISTORY='https://api.weather.gc.ca/collections/weather-alerts/items?f=json&limit=500';
-  const urls={day1:'https://www.spc.noaa.gov/products/outlook/day1otlk_torn.nolyr.geojson',day2:'https://www.spc.noaa.gov/products/outlook/day2otlk_torn.nolyr.geojson'};
-  const map=L.map('live-map',{minZoom:2,worldCopyJump:true}).setView([43,-99],4), layers={};
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
-  const ui={status:document.querySelector('#map-status'),legend:document.querySelector('#map-legend'),active:document.querySelector('#active-count'),history:document.querySelector('#history-count'),list:document.querySelector('#warning-list'),filter:document.querySelector('#country-filter'),updated:document.querySelector('#update-label')};
-  let current='live', records=[];
-  const esc=s=>String(s??'').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
-  const fetchJson=async url=>{const r=await fetch(url,{headers:{Accept:'application/geo+json, application/json'}});if(!r.ok)throw new Error(`${r.status} from official feed`);return r.json();};
-  const time=d=>new Intl.DateTimeFormat('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'}).format(new Date(d));
-  const addLayer=(name,data,style,onEach)=>{layers[name]?.remove();layers[name]=L.geoJSON(data,{style,onEachFeature:onEach}).addTo(map);if(name!==current)layers[name].remove();};
-  function liveStyle(f){return {color:f.properties?.country==='Canada'?'#8a1c52':'#a02818',weight:3,fillColor:f.properties?.country==='Canada'?'#cf5b91':'#df5747',fillOpacity:.34};}
-  function riskStyle(f){const p=f.properties||{},v=Number(p.LABEL||0);return {color:p.stroke||'#315f35',weight:2,fillColor:p.fill||(v>=.15?'#d56d74':v>=.1?'#e49b58':v>=.05?'#d6c85d':'#79ba7a'),fillOpacity:.46};}
-  function warningPopup(f){const p=f.properties||{};return `<strong>${esc(p.headline||p.alert_name_en||'Tornado warning')}</strong><br>${esc(p.areaDesc||p.feature_name_en||'Area unavailable')}<br><small>${esc(time(p.sent||p.publication_datetime||Date.now()))}</small>`;}
-  function riskPopup(f){const p=f.properties||{};return `<strong>${esc(p.LABEL2||'Tornado risk')}</strong><br><small>Valid ${esc(time(p.VALID_ISO))} to ${esc(time(p.EXPIRE_ISO))}</small>`;}
-  function normalizeCa(features){return features.filter(f=>/tornado/i.test(`${f.properties?.alert_name_en} ${f.properties?.alert_short_name_en}`)).map(f=>({...f,properties:{...f.properties,country:'Canada',headline:f.properties.alert_name_en,areaDesc:f.properties.feature_name_en,sent:f.properties.publication_datetime,expires:f.properties.expiration_datetime,status:f.properties.status_en}}));}
-  function normalizeUs(features){return features.map(f=>({...f,properties:{...f.properties,country:'United States'}}));}
-  function renderHistory(){const country=ui.filter.value,list=records.filter(r=>country==='all'||r.country===country).sort((a,b)=>new Date(b.sent)-new Date(a.sent));ui.list.innerHTML=list.length?list.slice(0,100).map(r=>`<article class="warning-item"><time>${esc(time(r.sent))}<small>${esc(r.country==='us'?'United States':'Canada')}</small></time><div><h3>${esc(r.headline)}</h3><p>${esc(r.area)}</p></div><span class="tag">${esc(r.status||'Issued')}</span></article>`).join(''):`<p class="empty">No tornado warnings were found for this country during the previous 72 hours.</p>`;}
-  function show(name){current=name;Object.entries(layers).forEach(([key,layer])=>key===name?layer.addTo(map):layer.remove());document.querySelectorAll('.map-tabs button').forEach(b=>{const on=b.dataset.layer===name;b.classList.toggle('active',on);b.setAttribute('aria-selected',on)});if(name==='live'){ui.legend.innerHTML='<div class="legend-row"><span class="swatch" style="background:#df5747"></span>U.S. tornado warning</div><div class="legend-row"><span class="swatch" style="background:#cf5b91"></span>Canadian tornado warning</div>';ui.status.textContent=`${ui.active.textContent} active warning polygons`;}
-    else{ui.legend.innerHTML='<div class="legend-row"><span class="swatch" style="background:#79ba7a"></span>2% probability</div><div class="legend-row"><span class="swatch" style="background:#d6c85d"></span>5% probability</div><div class="legend-row"><span class="swatch" style="background:#e49b58"></span>10% probability</div><div class="legend-row"><span class="swatch" style="background:#d56d74"></span>15%+ probability</div>';ui.status.textContent=name==='day1'?'SPC Day 1 tornado outlook':'SPC Day 2 tornado outlook';}}
-  async function load(){ui.status.textContent='Loading official warning and outlook feeds…';const requests=await Promise.allSettled([fetchJson(US_ACTIVE),fetchJson(US_HISTORY()),fetchJson(CA_HISTORY),fetchJson(urls.day1),fetchJson(urls.day2)]),value=i=>requests[i].status==='fulfilled'?requests[i].value:{type:'FeatureCollection',features:[]};const [ua,uh,ch,d1,d2]=[0,1,2,3,4].map(value),cutoff=Date.now()-72*36e5;const ca=normalizeCa(ch.features||[]).filter(f=>new Date(f.properties.sent||0).getTime()>=cutoff),activeCa=ca.filter(f=>!/ended|expired/i.test(f.properties.status||'')&&new Date(f.properties.expires||0)>new Date()),active=[...normalizeUs(ua.features||[]),...activeCa];addLayer('live',{type:'FeatureCollection',features:active},liveStyle,(f,l)=>l.bindPopup(warningPopup(f)));addLayer('day1',d1,riskStyle,(f,l)=>l.bindPopup(riskPopup(f)));addLayer('day2',d2,riskStyle,(f,l)=>l.bindPopup(riskPopup(f)));records=[...normalizeUs(uh.features||[]).map(f=>({country:'us',sent:f.properties.sent,headline:f.properties.headline||'Tornado Warning',area:f.properties.areaDesc,status:f.properties.status})),...ca.map(f=>({country:'ca',sent:f.properties.sent,headline:f.properties.headline,area:f.properties.areaDesc,status:f.properties.status}))];ui.active.textContent=active.length.toLocaleString();ui.history.textContent=records.length.toLocaleString();ui.updated.textContent=`Updated ${time(new Date())}`;renderHistory();show(current);const failed=requests.filter(r=>r.status==='rejected').length;if(failed)ui.updated.textContent+=` · ${failed} feed${failed===1?'':'s'} unavailable`;}
-  document.querySelectorAll('.map-tabs button').forEach(b=>b.addEventListener('click',()=>show(b.dataset.layer)));document.querySelector('#refresh').addEventListener('click',load);ui.filter.addEventListener('change',renderHistory);load();setInterval(load,300000);
-})();
+import {connectRadar} from './live-radar.js';
+
+const get = id => document.getElementById(id);
+const warningUrls = {
+  us: 'https://api.weather.gov/alerts/active?event=Tornado%20Warning',
+  ca: 'https://api.weather.gc.ca/collections/weather-alerts/items?' + new URLSearchParams({
+    f:'json',limit:500,filter:"properties.alert_type=warning AND properties.alert_name_en LIKE '%tornado%'"
+  })
+};
+const outlookUrls = {
+  day1: 'https://www.spc.noaa.gov/products/outlook/day1otlk_torn.nolyr.geojson',
+  day2: 'https://www.spc.noaa.gov/products/outlook/day2otlk_torn.nolyr.geojson'
+};
+const weatherBase = 'https://www.weather.gov/';
+const utc = new Intl.DateTimeFormat('en-CA',{hour:'2-digit',minute:'2-digit',timeZone:'UTC',hourCycle:'h23'});
+const local = new Intl.DateTimeFormat('en-CA',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZoneName:'short'});
+const safe = value => String(value ?? '').replace(/[&<>'"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
+const time = value => Number.isFinite(Date.parse(value)) ? local.format(Date.parse(value)) : 'Time unavailable';
+const leaflet = window.L;
+
+async function feed(url) {
+  const response = await fetch(url,{headers:{Accept:'application/geo+json, application/json'}, signal:AbortSignal.timeout(12_000)});
+  if (!response.ok) throw new Error('Feed unavailable');
+  const data = await response.json();
+  if (!Array.isArray(data.features)) throw new Error('Invalid features');
+  return data.features;
+}
+
+function normalize(feature, country) {
+  const props = feature.properties ?? {};
+  const canada = country === 'ca';
+  if (canada && (props.alert_type !== 'warning' ||
+      !/tornado/i.test(`${props.alert_name_en} ${props.alert_short_name_en}`))) return null;
+  if (!canada && (props.event !== 'Tornado Warning' || props.status !== 'Actual' || props.messageType === 'Cancel')) return null;
+  return {
+    feature, country,
+    title: (canada ? props.alert_name_en : props.headline) || 'Tornado warning',
+    area: (canada ? props.feature_name_en : props.areaDesc) || 'Area details unavailable',
+    issued: canada ? props.publication_datetime : props.sent,
+    expires: canada ? props.expiration_datetime : (props.ends || props.expires),
+    ended: canada && /ended|expired|cancel/i.test(props.status_en || ''),
+    details: canada ? 'https://weather.gc.ca/warnings/index_e.html' : weatherBase
+  };
+}
+
+function setup() {
+  const map = leaflet.map('live-map',{minZoom:3,maxZoom:15,worldCopyJump:true,zoomControl:false}).setView([42,-97],4);
+  leaflet.control.zoom({position:'topright'}).addTo(map);
+  leaflet.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom:15,
+    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+  }).addTo(map);
+  const radar = connectRadar(map,leaflet);
+  const monitor = get('live-monitor');
+  const activeList = get('active-warnings');
+  const feedLabel = get('update-label');
+  const mapStatus = get('map-status');
+  const historyList = get('warning-list');
+  const filter = get('country-filter');
+  const layers = new Map();
+  const statuses = {};
+  const history = {us:[],ca:[]};
+  const active = {us:[],ca:[]};
+  const region = {
+    continent: [[42,-97],4], lakes:[[43,-83],6], ontario:[[44.25,-80.25],7],
+    plains:[[37.7,-98],6], southeast:[[33,-85],6], northeast:[[42,-75],6]
+  };
+  let activeRows = [];
+  let current = 'live';
+  let warningLayer;
+  let refreshing = false;
+
+  const regionSelect = get('monitor-region');
+  const initialRegion = new URLSearchParams(location.search).get('region');
+  if (Object.hasOwn(region,initialRegion)) {
+    regionSelect.value = initialRegion;
+    map.setView(...region[initialRegion],{animate:false});
+  }
+  regionSelect.addEventListener('change', event => {
+    const selected = event.target.value;
+    if (!Object.hasOwn(region,selected)) return;
+    map.setView(...region[selected],{animate:false});
+    const link = new URL(location.href);
+    if (selected === 'continent') link.searchParams.delete('region');
+    else link.searchParams.set('region',selected);
+    window.history.replaceState(null,'',link);
+  });
+  function clearLayer(name) { layers.get(name)?.remove(); }
+  function show(name) {
+    current = name;
+    for (const [key, layer] of layers) {
+      if (key === name) layer.addTo(map);
+      else layer.remove();
+    }
+    document.querySelectorAll('[data-layer]').forEach(btn => btn.setAttribute('aria-pressed',String(btn.dataset.layer === name)));
+    const legend = get('map-legend');
+    if (name === 'live') {
+      legend.innerHTML = '<span><i class="us-key"></i> U.S. warning</span><span><i class="ca-key"></i> Canada warning</span>';
+      mapStatus.textContent = statuses.us && statuses.ca ? 'Warning outlines from NWS and ECCC' :
+        'Warning coverage incomplete. Check official alerts.';
+    } else {
+      legend.innerHTML = '<span><i class="risk-key"></i> Select an SPC area for probability and validity</span>';
+      mapStatus.textContent = statuses[name] ? 'SPC ' + (name === 'day1' ? 'Day 1' : 'Day 2') + ' tornado outlook' : 'Outlook refresh failed or unavailable';
+    }
+  }
+
+  function isActive(item) { return !item.ended && Date.parse(item.expires) > Date.now(); }
+
+  function renderActive() {
+    activeRows = [...active.us,...active.ca].filter(isActive).sort((a,b) => Date.parse(b.issued)-Date.parse(a.issued));
+    get('active-count').textContent = statuses.us && statuses.ca ? String(activeRows.length) : (activeRows.length ? String(activeRows.length)+'+' : '—');
+    if (!activeRows.length) {
+      activeList.innerHTML = statuses.us && statuses.ca ?
+        '<p class="quiet">Both feeds responded. No active tornado warnings were returned.</p>' :
+        '<p class="quiet">Warning status is incomplete. Open the official alerts for your area.</p>';
+    } else {
+      activeList.innerHTML = activeRows.map((item,index) =>
+        `<div class="active-warning"><span class="country-tag">${item.country.toUpperCase()}</span><h3>${safe(item.area)}</h3>
+        <p>Expires ${safe(time(item.expires))}</p>${item.feature.geometry ? '<button type="button" data-warning="'+index+'">Locate on map</button>' : ''} <a href="${item.details}">Official alerts</a></div>`).join('');
+    }
+    clearLayer('live');
+    warningLayer = leaflet.featureGroup();
+    for (const item of activeRows) {
+      if (!item.feature.geometry) continue;
+      item.mapLayer = leaflet.geoJSON(item.feature,{style:{
+        color:item.country === 'ca' ? '#f3a2ee' : '#ff876e',weight:3,fillOpacity:.13
+      }}).bindPopup(`<strong>${safe(item.title)}</strong><br>${safe(item.area)}<br>Expires ${safe(time(item.expires))}`).addTo(warningLayer);
+    }
+    layers.set('live',warningLayer);
+  }
+
+  activeList.addEventListener('click', event => {
+    const button = event.target.closest('[data-warning]');
+    const item = button && activeRows[Number(button.dataset.warning)];
+    if (!item?.mapLayer) return;
+    show('live');
+    const bounds = item.mapLayer.getBounds();
+    if (bounds.isValid()) { map.fitBounds(bounds,{padding:[24,24],maxZoom:9}); item.mapLayer.openPopup(); }
+  });
+
+  function renderHistory() {
+    const entries = [...history.us,...history.ca].filter(item => filter.value === 'all' || item.country === filter.value)
+      .filter(item => Date.parse(item.issued) >= Date.now()-72*36e5)
+      .sort((a,b) => Date.parse(b.issued)-Date.parse(a.issued));
+    const complete = filter.value === 'us' ? statuses.usHistory : filter.value === 'ca' ? statuses.ca : statuses.usHistory && statuses.ca;
+    get('history-count').textContent = String(entries.length);
+    historyList.innerHTML = (complete ? '' : '<p class="empty">One or more history feeds are unavailable. Results may be incomplete.</p>') +
+      (entries.length ? entries.slice(0,100).map(item => `<article class="warning-item"><time>${safe(time(item.issued))}</time><div><h3>${safe(item.area)}</h3><p>${item.country === 'ca' ? 'Canada' : 'United States'}</p></div></article>`).join('') :
+      (complete ? '<p class="empty">No recent warnings returned for this selection.</p>' : ''));
+  }
+
+  function renderOutlook(name, features) {
+    clearLayer(name);
+    const layer = leaflet.geoJSON(features,{
+      style:feature=>{const p=feature.properties || {}; return {color:p.stroke||'#aad590',fillColor:p.fill||'#76a56b',weight:2,fillOpacity:.36};},
+      onEachFeature:(feature, child)=>{
+        const p=feature.properties||{};
+        child.bindPopup(`<strong>${safe(p.LABEL2 || 'SPC tornado outlook')}</strong><br>${safe(time(p.VALID_ISO))} to ${safe(time(p.EXPIRE_ISO))}`);
+      }
+    });
+    layers.set(name,layer);
+  }
+
+  async function refresh() {
+    if (refreshing) return;
+    refreshing = true;
+    get('refresh').disabled = true;
+    const since = new Date(Date.now()-72*36e5).toISOString();
+    const jobs=[['us',warningUrls.us],['ca',warningUrls.ca],
+      ['usHistory','https://api.weather.gov/alerts?'+new URLSearchParams({start:since,end:new Date().toISOString(),event:'Tornado Warning',limit:500})],
+      ...Object.entries(outlookUrls)];
+    await Promise.all(jobs.map(async ([key,url])=>{
+      try {
+        const features = await feed(url);
+        if (key === 'us') active.us = features.map(item=>normalize(item,'us')).filter(Boolean);
+        else if (key === 'ca') {
+          history.ca = features.map(item=>normalize(item,'ca')).filter(Boolean);
+          active.ca = history.ca;
+        } else if (key === 'usHistory') history.us = features.map(item=>normalize(item,'us')).filter(Boolean);
+        else renderOutlook(key,features);
+        statuses[key] = true;
+      } catch { statuses[key] = false; }
+    }));
+    renderActive();
+    renderHistory();
+    show(current);
+    const unavailable = [['us','NWS warnings'],['ca','ECCC warnings'],['usHistory','NWS history'],['day1','SPC Day 1'],['day2','SPC Day 2']]
+      .filter(([key])=>!statuses[key]).map(([,label])=>label);
+    const activeFeeds = Number(statuses.us) + Number(statuses.ca);
+    feedLabel.textContent = activeFeeds
+      ? `Checked ${utc.format(new Date())} UTC${unavailable.length?' · Unavailable: '+unavailable.join(', '):''}`
+      : 'Official warning feeds unavailable';
+    get('refresh').disabled = false;
+    refreshing = false;
+  }
+
+  document.querySelectorAll('[data-layer]').forEach(button=>button.addEventListener('click',()=>show(button.dataset.layer)));
+  get('refresh').addEventListener('click',()=>{refresh(); radar.refresh();});
+  filter.addEventListener('change',renderHistory);
+  const expand = get('monitor-fullscreen');
+  function resize() {
+    const expanded = document.fullscreenElement === monitor || monitor.classList.contains('monitor-expanded');
+    expand.textContent = expanded ? 'Exit monitor mode' : 'Full screen';
+    expand.setAttribute('aria-pressed',String(expanded));
+    requestAnimationFrame(()=>map.invalidateSize());
+  }
+  expand.addEventListener('click',async ()=>{
+    if (document.fullscreenElement === monitor) await document.exitFullscreen();
+    else if (monitor.classList.contains('monitor-expanded')) monitor.classList.remove('monitor-expanded');
+    else {
+      try {
+        if (!monitor.requestFullscreen) throw new Error('Fullscreen unavailable');
+        await monitor.requestFullscreen();
+      } catch { monitor.classList.add('monitor-expanded'); }
+    }
+    resize();
+  });
+  document.addEventListener('fullscreenchange',resize);
+  document.addEventListener('keydown',event=>{
+    if(event.key === 'Escape' && monitor.classList.contains('monitor-expanded')){
+      monitor.classList.remove('monitor-expanded');
+      resize();
+    }
+  });
+  document.addEventListener('visibilitychange',()=>{if (!document.hidden) refresh();});
+  refresh();
+  setInterval(()=>{if (!document.hidden) refresh();},120_000);
+  setInterval(()=>{if (!document.hidden && activeRows.some(item=>!isActive(item))) { renderActive(); show(current); }},30_000);
+}
+
+if (leaflet) setup();
+else {
+  get('update-label').textContent = 'Map library did not load';
+  get('map-status').textContent = 'Open the official radar or alert links below.';
+}
