@@ -1,0 +1,15 @@
+.lab, .lab details { margin-block: 1rem; }
+.lab figure { margin: 0 0 1rem; }
+.lab canvas, .storm-exercise { display: block; max-width: 100%; width: 100%; height: auto; border-radius: 8px; }
+.lab figcaption { color: var(--text-secondary); margin-block: .55rem; }
+.lab-actions { display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; margin-block: .8rem; }
+.lab-actions button, .lab-actions select, .lab-actions input { min-height: 44px; }
+.lab input[type=range] { display: block; width: 100%; accent-color: #ffbf78; }
+.lab table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.lab th, .lab td { text-align: left; padding: .55rem .4rem; border-bottom: 1px solid #455570; }
+.lab summary, .lab button { cursor: pointer; }
+.lab :focus-visible, .control :focus-visible { outline: 3px solid #ffbf78; outline-offset: 4px; }
+.lab-number { width: 5.8rem; padding: .35rem; margin-right: .25rem; background: #131c2c; border: 1px solid #7486a1; border-radius: 4px; color: #edf4ff; font: inherit; }
+.lab #scenario-status { min-height: 1.5em; color: var(--text-secondary); }
+.lab [hidden], .control [hidden] { display: none; }
+.lab-share { width: min(100%, 26rem); color: #f1f5fa; background: #131c2c; border: 1px solid #7486a1; padding: .5rem; }

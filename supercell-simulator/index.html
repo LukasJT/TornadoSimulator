@@ -386,6 +386,7 @@ a:hover { color: var(--accent); text-decoration: underline; }
 </style>
 
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" /><link rel="stylesheet" href="/assets/ads.css?v=20260912">
+<link rel="stylesheet" href="/assets/supercell-lab.css">
 </head>
 <body>
 
@@ -413,6 +414,7 @@ a:hover { color: var(--accent); text-decoration: underline; }
 <section class="hero">
   <h1>Supercell Simulator</h1>
   <p>Explore how instability, wind shear and cloud-base height affect a supercell environment. Change one ingredient and see how the calculations respond.</p>
+  <a href="#storm-timeline">Jump to the storm cross-section</a>
 </section>
 
 <div class="sim-wrap">
@@ -482,9 +484,7 @@ a:hover { color: var(--accent); text-decoration: underline; }
 
   <!-- RESULTS -->
   <div class="panel">
-    <div class="panel-head">
-      <h2>Model output</h2>
-    </div>
+    <div class="panel-head"><h2>Model output</h2></div>
 
     <p id="initiation-note">Convective inhibition describes how much help a parcel may need to rise. The trigger for a storm is outside this calculation.</p>
 
@@ -506,6 +506,41 @@ a:hover { color: var(--accent); text-decoration: underline; }
       </div>
     </div>
 
+
+    <section class="lab" id="storm-timeline" aria-labelledby="timeline-heading">
+      <h3 id="timeline-heading">Storm cross-section</h3>
+      <figure>
+        <canvas id="storm-diagram" width="540" height="240" role="img" aria-describedby="storm-stage" aria-label="Schematic storm cross-section">Text description follows.</canvas>
+        <figcaption id="storm-stage">Minute 30 · Mature. Air rises through the tilted core while a separate downdraft descends.</figcaption>
+      </figure>
+      <p>The diagram shows an illustrative life cycle on a fixed scale. The orange arrow rises, the cyan arrow descends, and the pale blue arrow shows near-surface inflow. The timeline is independent of the environment calculations.</p>
+      <label for="storm-minute">Illustrated minute</label>
+      <input type="range" id="storm-minute" min="0" max="60" value="30">
+      <div class="lab-actions">
+        <button class="preset-btn" type="button" id="storm-previous">Previous minute</button>
+        <button class="preset-btn" type="button" id="storm-play">Play</button>
+        <button class="preset-btn" type="button" id="storm-next">Next minute</button>
+      </div>
+    </section>
+    <section class="lab" aria-labelledby="compare-heading">
+      <h3 id="compare-heading">Compare environments</h3>
+      <div class="lab-actions">
+        <label for="storm-units">Units</label>
+        <select id="storm-units"><option value="mixed">Knots and °F</option><option value="metric">m/s and °C</option></select>
+        <button class="preset-btn" type="button" id="storm-pin">Pin run A</button>
+        <button class="preset-btn" type="button" id="storm-swap" disabled>Swap A and B</button>
+        <button class="preset-btn" type="button" id="storm-reset">Reset</button>
+        <button class="preset-btn" type="button" id="storm-share">Copy scenario link</button>
+      </div>
+      <input class="lab-share" type="url" id="storm-share-link" aria-label="Scenario link" readonly hidden>
+      <p id="scenario-status" role="status"></p>
+      <table id="storm-compare" hidden>
+        <caption>Pinned run A and current run B</caption>
+        <thead><tr><th scope="col">Quantity</th><th scope="col">A</th><th scope="col">B</th><th scope="col">B − A</th></tr></thead>
+        <tbody id="storm-compare-rows"></tbody>
+      </table>
+      <details><summary>Show the math</summary><p id="storm-factors"></p><p>Ideal updraft speed is √(2 × CAPE). EHI is CAPE × 0–1 km SRH ÷ 160,000.</p></details>
+    </section>
 
   </div>
 </div>
@@ -559,66 +594,7 @@ a:hover { color: var(--accent); text-decoration: underline; }
   Educational tool. Not a forecast. For live watches and warnings see the <a href="https://www.spc.noaa.gov/" target="_blank" rel="noopener">NOAA Storm Prediction Center</a>.
 </footer>
 
-<script type="module">
-import { calculateEnvironment, KNOT_TO_MS } from '/assets/supercell-model.js';
-(function () {
-  'use strict';
-
-  // ─── PRESETS (real-atmosphere setups) ──────────────────────────
-  const PRESETS = {
-    'Classic Plains': { cape: 3500, cin: -40, shear: 55, srh: 300, lcl: 900, td: 68, label: 'Classic Plains supercell — May, Oklahoma dryline day' },
-    'Dixie Alley HP': { cape: 2200, cin: -30, shear: 60, srh: 380, lcl: 600, td: 72, label: 'Dixie Alley HP — moist, low LCL, extreme low-level rotation' },
-    'High shear and helicity':      { cape: 4200, cin: -20, shear: 70, srh: 450, lcl: 800, td: 70, label: 'Illustrative environment with strong shear and high helicity' },
-    'Landspout day':  { cape: 1500, cin: -10, shear: 15, srh: 40,  lcl: 1800, td: 55, label: 'Landspout day — weak shear, non-supercell tornadoes possible' },
-    'High-based sup': { cape: 2500, cin: -60, shear: 50, srh: 180, lcl: 2400, td: 45, label: 'High-based supercell — big hail but few tornadoes' },
-    'Cap bust':       { cape: 3200, cin: -220, shear: 45, srh: 200, lcl: 1400, td: 65, label: 'Cap bust — plenty of instability but too much CIN, illustrative strong inhibition' },
-    'Winter QLCS':    { cape: 500,  cin: -20, shear: 65, srh: 280, lcl: 500, td: 60, label: 'Cool-season QLCS — low CAPE but violent shear, spin-up tornadoes' },
-    'Blue sky day':   { cape: 200,  cin: -100, shear: 12, srh: 30, lcl: 2200, td: 40, label: 'Nothing happening — no storms today' },
-  };
-
-  const KEYS = ['cape','cin','shear','srh','lcl','td'];
-  const state = { cape:2500, cin:-50, shear:45, srh:150, lcl:1000, td:68 };
-
-  // Render preset buttons
-  const presetsEl = document.getElementById('presets');
-  Object.entries(PRESETS).forEach(([name, p]) => {
-    const b = document.createElement('button');
-    b.className = 'preset-btn';
-    b.textContent = name;
-    b.title = p.label;
-    b.onclick = () => {
-      KEYS.forEach(k => {
-        const s = document.getElementById('s-' + k);
-        s.value = p[k];
-        state[k] = p[k];
-      });
-      update();
-    };
-    presetsEl.appendChild(b);
-  });
-
-  // Wire sliders
-  KEYS.forEach(k => {
-    const s = document.getElementById('s-' + k);
-    s.addEventListener('input', () => {
-      state[k] = parseFloat(s.value);
-      update();
-    });
-  });
-
-  function update() {
-    KEYS.forEach(key => {
-      document.getElementById('v-' + key).textContent = state[key];
-    });
-    const results = calculateEnvironment({...state, shear: state.shear * KNOT_TO_MS});
-    document.getElementById('m-stp').textContent = results.stp.toFixed(2);
-    document.getElementById('m-ehi').textContent = results.ehi.toFixed(2);
-    document.getElementById('m-updraft').textContent = results.updraft.toFixed(1);
-  }
-
-  update();
-})();
-</script>
+<script type="module" src="/assets/supercell-lab.js"></script>
 <script src="/assets/article-tracker.js" defer></script>
 
 
