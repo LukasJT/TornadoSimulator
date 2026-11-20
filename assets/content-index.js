@@ -11528,151 +11528,25 @@ window.TORNADO_CONTENT_INDEX = [
     "category": "State tornado data",
     "keywords": "Tornado Data for Every U.S. State Explore 200 state tornado guides built from the official NOAA/SPC historical archive: frequency, seasonality, monthly counts, and strongest recorded ratings."
   },
-  {
-    "title": "Winter 2026–27 U.S. Outlook: What NOAA Is Forecasting",
-    "path": "/winter-2026-27-us-outlook/",
-    "description": "A regional reading of NOAA's October 2026 winter outlook, including El Niño, temperature and precipitation odds, drought, and forecast limits.",
-    "category": "Winter 2026–27 outlook",
-    "keywords": "Winter 2026–27 U.S. Outlook: What NOAA Is Forecasting A regional reading of NOAA's October 2026 winter outlook, including El Niño, temperature and precipitation odds, drought, and forecast limits. winter weather forecast 2026 2027"
-  },
-  {
-    "title": "November 2026: The Run-Up to an El Niño Winter",
-    "path": "/winter-2026-27-november-transition/",
-    "description": "How to interpret the November-to-January outlook before meteorological winter begins, without mistaking it for a day-by-day November forecast.",
-    "category": "Winter 2026–27 outlook",
-    "keywords": "November 2026: The Run-Up to an El Niño Winter How to interpret the November-to-January outlook before meteorological winter begins, without mistaking it for a day-by-day November forecast. winter weather forecast 2026 2027"
-  },
-  {
-    "title": "December 2026 Winter Pattern: Where the Season Starts",
-    "path": "/winter-2026-27-december-pattern/",
-    "description": "December 2026 planning guide for the start of the 2026–27 winter outlook: southern storm track, northern warmth odds, and forecast uncertainty.",
-    "category": "Winter 2026–27 outlook",
-    "keywords": "December 2026 Winter Pattern: Where the Season Starts December 2026 planning guide for the start of the 2026–27 winter outlook: southern storm track, northern warmth odds, and forecast uncertainty. winter weather forecast 2026 2027"
-  },
-  {
-    "title": "January 2027: Cold Snaps Inside a Warm-Leaning Winter",
-    "path": "/winter-2026-27-january-pattern/",
-    "description": "Why a warm seasonal temperature outlook can still allow January cold waves, ice storms, and local snow during winter 2026–27.",
-    "category": "Winter 2026–27 outlook",
-    "keywords": "January 2027: Cold Snaps Inside a Warm-Leaning Winter Why a warm seasonal temperature outlook can still allow January cold waves, ice storms, and local snow during winter 2026–27. winter weather forecast 2026 2027"
-  },
-  {
-    "title": "February 2027 and the Late-Winter Pattern",
-    "path": "/winter-2026-27-february-late-season/",
-    "description": "How to read the late part of NOAA's 2026–27 winter outlook and watch for shifts before the February 2027 forecast becomes clearer.",
-    "category": "Winter 2026–27 outlook",
-    "keywords": "February 2027 and the Late-Winter Pattern How to read the late part of NOAA's 2026–27 winter outlook and watch for shifts before the February 2027 forecast becomes clearer. winter weather forecast 2026 2027"
-  },
-  {
-    "title": "Pacific Northwest Winter 2026–27: Warm Odds, Dry Pockets",
-    "path": "/winter-2026-27-pacific-northwest/",
-    "description": "NOAA's winter 2026–27 signals for Washington, Oregon, and the Northwest: warmer seasonal odds, drought concerns, and mountain snow uncertainty.",
-    "category": "Winter 2026–27 outlook",
-    "keywords": "Pacific Northwest Winter 2026–27: Warm Odds, Dry Pockets NOAA's winter 2026–27 signals for Washington, Oregon, and the Northwest: warmer seasonal odds, drought concerns, and mountain snow uncertainty. winter weather forecast 2026 2027"
-  },
-  {
-    "title": "California Winter 2026–27: Storm Track and Flood Questions",
-    "path": "/winter-2026-27-california/",
-    "description": "California's 2026–27 winter outlook explained: a southern wet tilt, northern warmth, mountain snow limits, and flood planning.",
-    "category": "Winter 2026–27 outlook",
-    "keywords": "California Winter 2026–27: Storm Track and Flood Questions California's 2026–27 winter outlook explained: a southern wet tilt, northern warmth, mountain snow limits, and flood planning. winter weather forecast 2026 2027"
-  },
-  {
-    "title": "Southwest Winter 2026–27: Wet Odds and Drought Relief",
-    "path": "/winter-2026-27-southwest/",
-    "description": "What NOAA's winter 2026–27 outlook means for Arizona, New Mexico, and the interior Southwest: wetter odds, drought, elevation, and flash floods.",
-    "category": "Winter 2026–27 outlook",
-    "keywords": "Southwest Winter 2026–27: Wet Odds and Drought Relief What NOAA's winter 2026–27 outlook means for Arizona, New Mexico, and the interior Southwest: wetter odds, drought, elevation, and flash floods. winter weather forecast 2026 2027"
-  },
-  {
-    "title": "Southern Plains Winter 2026–27: Rain, Drought, and Ice",
-    "path": "/winter-2026-27-southern-plains/",
-    "description": "The 2026–27 winter pattern for Texas, Oklahoma, and the southern Plains: NOAA wet odds, drought improvement, and event-scale icing risks.",
-    "category": "Winter 2026–27 outlook",
-    "keywords": "Southern Plains Winter 2026–27: Rain, Drought, and Ice The 2026–27 winter pattern for Texas, Oklahoma, and the southern Plains: NOAA wet odds, drought improvement, and event-scale icing risks. winter weather forecast 2026 2027"
-  },
-  {
-    "title": "Gulf Coast and Southeast Winter 2026–27: Wet Signal",
-    "path": "/winter-2026-27-gulf-southeast/",
-    "description": "NOAA's 2026–27 winter outlook for the Gulf Coast and Southeast, from wetter odds and flood exposure to uncertain cold and severe-weather events.",
-    "category": "Winter 2026–27 outlook",
-    "keywords": "Gulf Coast and Southeast Winter 2026–27: Wet Signal NOAA's 2026–27 winter outlook for the Gulf Coast and Southeast, from wetter odds and flood exposure to uncertain cold and severe-weather events. winter weather forecast 2026 2027"
-  },
-  {
-    "title": "Mid-Atlantic Winter 2026–27: Wet Odds, Snow Uncertain",
-    "path": "/winter-2026-27-mid-atlantic/",
-    "description": "NOAA's winter 2026–27 outlook for the Mid-Atlantic: warmer and wetter seasonal odds, coastal storms, and why snowfall remains uncertain.",
-    "category": "Winter 2026–27 outlook",
-    "keywords": "Mid-Atlantic Winter 2026–27: Wet Odds, Snow Uncertain NOAA's winter 2026–27 outlook for the Mid-Atlantic: warmer and wetter seasonal odds, coastal storms, and why snowfall remains uncertain. winter weather forecast 2026 2027"
-  },
-  {
-    "title": "Northeast Winter 2026–27: Coast, Interior, and Storm Track",
-    "path": "/winter-2026-27-northeast/",
-    "description": "A Northeast reading of NOAA's winter 2026–27 outlook, with East Coast wet odds, warm seasonal means, and uncertain rain–snow boundaries.",
-    "category": "Winter 2026–27 outlook",
-    "keywords": "Northeast Winter 2026–27: Coast, Interior, and Storm Track A Northeast reading of NOAA's winter 2026–27 outlook, with East Coast wet odds, warm seasonal means, and uncertain rain–snow boundaries. winter weather forecast 2026 2027"
-  },
-  {
-    "title": "Great Lakes Winter 2026–27: Warm Tilt, Local Snow",
-    "path": "/winter-2026-27-great-lakes/",
-    "description": "What NOAA's 2026–27 winter outlook suggests for the Great Lakes, and why a warm, sometimes dry regional signal cannot rule out lake-effect snow.",
-    "category": "Winter 2026–27 outlook",
-    "keywords": "Great Lakes Winter 2026–27: Warm Tilt, Local Snow What NOAA's 2026–27 winter outlook suggests for the Great Lakes, and why a warm, sometimes dry regional signal cannot rule out lake-effect snow. winter weather forecast 2026 2027"
-  },
-  {
-    "title": "Northern Rockies and Plains Winter 2026–27: Dry Signals",
-    "path": "/winter-2026-27-northern-rockies-plains/",
-    "description": "NOAA's northern Rockies and Plains winter 2026–27 outlook: warmer odds, northern mountain dryness, drought risk, and local forecast limits.",
-    "category": "Winter 2026–27 outlook",
-    "keywords": "Northern Rockies and Plains Winter 2026–27: Dry Signals NOAA's northern Rockies and Plains winter 2026–27 outlook: warmer odds, northern mountain dryness, drought risk, and local forecast limits. winter weather forecast 2026 2027"
-  },
-  {
-    "title": "Alaska Winter 2026–27: Warm Odds and Regional Dryness",
-    "path": "/winter-2026-27-alaska/",
-    "description": "An Alaska-focused reading of NOAA's 2026–27 winter outlook: warmer seasonal odds, drier areas, and why local hazards still vary widely.",
-    "category": "Winter 2026–27 outlook",
-    "keywords": "Alaska Winter 2026–27: Warm Odds and Regional Dryness An Alaska-focused reading of NOAA's 2026–27 winter outlook: warmer seasonal odds, drier areas, and why local hazards still vary widely. winter weather forecast 2026 2027"
-  },
-  {
-    "path": "/supercell-shear-stp-experiment/",
-    "title": "Why does 45 knots give an STP of 1.93?",
-    "description": "Follow the four factors in the supercell simulator and see what changes when the cloud base rises.",
-    "category": "Simulator experiments",
-    "keywords": "Why does 45 knots give an STP of 1.93?"
-  },
-  {
-    "path": "/ideal-supercell-updraft-speed/",
-    "title": "How fast can an ideal updraft rise?",
-    "description": "Compare three CAPE values and follow the square-root relationship behind ideal parcel speed.",
-    "category": "Simulator experiments",
-    "keywords": "How fast can an ideal updraft rise?"
-  },
-  {
-    "path": "/tornado-path-retracing-area/",
-    "title": "How much land does a retracing tornado path cover?",
-    "description": "Draw an out-and-back tornado path and compare the two passes with the land they share.",
-    "category": "Simulator experiments",
-    "keywords": "How much land does a retracing tornado path cover?"
-  },
-  {
-    "path": "/supercell-updraft-cross-section/",
-    "title": "Can you find the updraft in a supercell cross-section?",
-    "description": "Trace three arrows through an illustrated storm and identify which one carries air upward.",
-    "category": "Simulator experiments",
-    "keywords": "Can you find the updraft in a supercell cross-section?"
-  },
-  {
-    "path": "/supercell-simulation-stage-vs-time/",
-    "title": "Why can two storm illustrations look different at minute 30?",
-    "description": "Align two version 1 timelines by illustrated elapsed time and then by life-cycle stage.",
-    "category": "Simulator experiments",
-    "keywords": "Why can two storm illustrations look different at minute 30?"
-  },
-  {
-    "path": "/supercell-simulator-archived-sounding/",
-    "title": "How much of an archived sounding fits in six sliders?",
-    "description": "Use the May 20, 2013 Norman sounding to test which observed inputs can be transferred into the version 1 simulator.",
-    "category": "Simulator experiments",
-    "keywords": "How much of an archived sounding fits in six sliders?"
-  }
+  {"title": "Winter 2026–27 U.S. Outlook: What NOAA Is Forecasting", "path": "/winter-2026-27-us-outlook/", "description": "A regional reading of NOAA's October 2026 winter outlook, including El Niño, temperature and precipitation odds, drought, and forecast limits.", "category": "Winter 2026–27 outlook", "keywords": "Winter 2026–27 U.S. Outlook: What NOAA Is Forecasting A regional reading of NOAA's October 2026 winter outlook, including El Niño, temperature and precipitation odds, drought, and forecast limits. winter weather forecast 2026 2027"},
+  {"title": "November 2026: The Run-Up to an El Niño Winter", "path": "/winter-2026-27-november-transition/", "description": "How to interpret the November-to-January outlook before meteorological winter begins, without mistaking it for a day-by-day November forecast.", "category": "Winter 2026–27 outlook", "keywords": "November 2026: The Run-Up to an El Niño Winter How to interpret the November-to-January outlook before meteorological winter begins, without mistaking it for a day-by-day November forecast. winter weather forecast 2026 2027"},
+  {"title": "December 2026 Winter Pattern: Where the Season Starts", "path": "/winter-2026-27-december-pattern/", "description": "December 2026 planning guide for the start of the 2026–27 winter outlook: southern storm track, northern warmth odds, and forecast uncertainty.", "category": "Winter 2026–27 outlook", "keywords": "December 2026 Winter Pattern: Where the Season Starts December 2026 planning guide for the start of the 2026–27 winter outlook: southern storm track, northern warmth odds, and forecast uncertainty. winter weather forecast 2026 2027"},
+  {"title": "January 2027: Cold Snaps Inside a Warm-Leaning Winter", "path": "/winter-2026-27-january-pattern/", "description": "Why a warm seasonal temperature outlook can still allow January cold waves, ice storms, and local snow during winter 2026–27.", "category": "Winter 2026–27 outlook", "keywords": "January 2027: Cold Snaps Inside a Warm-Leaning Winter Why a warm seasonal temperature outlook can still allow January cold waves, ice storms, and local snow during winter 2026–27. winter weather forecast 2026 2027"},
+  {"title": "February 2027 and the Late-Winter Pattern", "path": "/winter-2026-27-february-late-season/", "description": "How to read the late part of NOAA's 2026–27 winter outlook and watch for shifts before the February 2027 forecast becomes clearer.", "category": "Winter 2026–27 outlook", "keywords": "February 2027 and the Late-Winter Pattern How to read the late part of NOAA's 2026–27 winter outlook and watch for shifts before the February 2027 forecast becomes clearer. winter weather forecast 2026 2027"},
+  {"title": "Pacific Northwest Winter 2026–27: Warm Odds, Dry Pockets", "path": "/winter-2026-27-pacific-northwest/", "description": "NOAA's winter 2026–27 signals for Washington, Oregon, and the Northwest: warmer seasonal odds, drought concerns, and mountain snow uncertainty.", "category": "Winter 2026–27 outlook", "keywords": "Pacific Northwest Winter 2026–27: Warm Odds, Dry Pockets NOAA's winter 2026–27 signals for Washington, Oregon, and the Northwest: warmer seasonal odds, drought concerns, and mountain snow uncertainty. winter weather forecast 2026 2027"},
+  {"title": "California Winter 2026–27: Storm Track and Flood Questions", "path": "/winter-2026-27-california/", "description": "California's 2026–27 winter outlook explained: a southern wet tilt, northern warmth, mountain snow limits, and flood planning.", "category": "Winter 2026–27 outlook", "keywords": "California Winter 2026–27: Storm Track and Flood Questions California's 2026–27 winter outlook explained: a southern wet tilt, northern warmth, mountain snow limits, and flood planning. winter weather forecast 2026 2027"},
+  {"title": "Southwest Winter 2026–27: Wet Odds and Drought Relief", "path": "/winter-2026-27-southwest/", "description": "What NOAA's winter 2026–27 outlook means for Arizona, New Mexico, and the interior Southwest: wetter odds, drought, elevation, and flash floods.", "category": "Winter 2026–27 outlook", "keywords": "Southwest Winter 2026–27: Wet Odds and Drought Relief What NOAA's winter 2026–27 outlook means for Arizona, New Mexico, and the interior Southwest: wetter odds, drought, elevation, and flash floods. winter weather forecast 2026 2027"},
+  {"title": "Southern Plains Winter 2026–27: Rain, Drought, and Ice", "path": "/winter-2026-27-southern-plains/", "description": "The 2026–27 winter pattern for Texas, Oklahoma, and the southern Plains: NOAA wet odds, drought improvement, and event-scale icing risks.", "category": "Winter 2026–27 outlook", "keywords": "Southern Plains Winter 2026–27: Rain, Drought, and Ice The 2026–27 winter pattern for Texas, Oklahoma, and the southern Plains: NOAA wet odds, drought improvement, and event-scale icing risks. winter weather forecast 2026 2027"},
+  {"title": "Gulf Coast and Southeast Winter 2026–27: Wet Signal", "path": "/winter-2026-27-gulf-southeast/", "description": "NOAA's 2026–27 winter outlook for the Gulf Coast and Southeast, from wetter odds and flood exposure to uncertain cold and severe-weather events.", "category": "Winter 2026–27 outlook", "keywords": "Gulf Coast and Southeast Winter 2026–27: Wet Signal NOAA's 2026–27 winter outlook for the Gulf Coast and Southeast, from wetter odds and flood exposure to uncertain cold and severe-weather events. winter weather forecast 2026 2027"},
+  {"title": "Mid-Atlantic Winter 2026–27: Wet Odds, Snow Uncertain", "path": "/winter-2026-27-mid-atlantic/", "description": "NOAA's winter 2026–27 outlook for the Mid-Atlantic: warmer and wetter seasonal odds, coastal storms, and why snowfall remains uncertain.", "category": "Winter 2026–27 outlook", "keywords": "Mid-Atlantic Winter 2026–27: Wet Odds, Snow Uncertain NOAA's winter 2026–27 outlook for the Mid-Atlantic: warmer and wetter seasonal odds, coastal storms, and why snowfall remains uncertain. winter weather forecast 2026 2027"},
+  {"title": "Northeast Winter 2026–27: Coast, Interior, and Storm Track", "path": "/winter-2026-27-northeast/", "description": "A Northeast reading of NOAA's winter 2026–27 outlook, with East Coast wet odds, warm seasonal means, and uncertain rain–snow boundaries.", "category": "Winter 2026–27 outlook", "keywords": "Northeast Winter 2026–27: Coast, Interior, and Storm Track A Northeast reading of NOAA's winter 2026–27 outlook, with East Coast wet odds, warm seasonal means, and uncertain rain–snow boundaries. winter weather forecast 2026 2027"},
+  {"title": "Great Lakes Winter 2026–27: Warm Tilt, Local Snow", "path": "/winter-2026-27-great-lakes/", "description": "What NOAA's 2026–27 winter outlook suggests for the Great Lakes, and why a warm, sometimes dry regional signal cannot rule out lake-effect snow.", "category": "Winter 2026–27 outlook", "keywords": "Great Lakes Winter 2026–27: Warm Tilt, Local Snow What NOAA's 2026–27 winter outlook suggests for the Great Lakes, and why a warm, sometimes dry regional signal cannot rule out lake-effect snow. winter weather forecast 2026 2027"},
+  {"title": "Northern Rockies and Plains Winter 2026–27: Dry Signals", "path": "/winter-2026-27-northern-rockies-plains/", "description": "NOAA's northern Rockies and Plains winter 2026–27 outlook: warmer odds, northern mountain dryness, drought risk, and local forecast limits.", "category": "Winter 2026–27 outlook", "keywords": "Northern Rockies and Plains Winter 2026–27: Dry Signals NOAA's northern Rockies and Plains winter 2026–27 outlook: warmer odds, northern mountain dryness, drought risk, and local forecast limits. winter weather forecast 2026 2027"},
+  {"title": "Alaska Winter 2026–27: Warm Odds and Regional Dryness", "path": "/winter-2026-27-alaska/", "description": "An Alaska-focused reading of NOAA's 2026–27 winter outlook: warmer seasonal odds, drier areas, and why local hazards still vary widely.", "category": "Winter 2026–27 outlook", "keywords": "Alaska Winter 2026–27: Warm Odds and Regional Dryness An Alaska-focused reading of NOAA's 2026–27 winter outlook: warmer seasonal odds, drier areas, and why local hazards still vary widely. winter weather forecast 2026 2027"},
+  {"path":"/supercell-shear-stp-experiment/","title":"Why does 45 knots give an STP of 1.93?","description":"Follow the four factors in the supercell simulator and see what changes when the cloud base rises.","category":"Simulator experiments","keywords":"Why does 45 knots give an STP of 1.93?"},
+  {"path":"/ideal-supercell-updraft-speed/","title":"How fast can an ideal updraft rise?","description":"Compare three CAPE values and follow the square-root relationship behind ideal parcel speed.","category":"Simulator experiments","keywords":"How fast can an ideal updraft rise?"},
+  {"path":"/tornado-path-retracing-area/","title":"How much land does a retracing tornado path cover?","description":"Draw an out-and-back tornado path and compare the two passes with the land they share.","category":"Simulator experiments","keywords":"How much land does a retracing tornado path cover?"},
+  {"path":"/supercell-updraft-cross-section/","title":"Can you find the updraft in a supercell cross-section?","description":"Trace three arrows through an illustrated storm and identify which one carries air upward.","category":"Simulator experiments","keywords":"Can you find the updraft in a supercell cross-section?"},
+  {"path":"/supercell-simulation-stage-vs-time/","title":"Why can two storm illustrations look different at minute 30?","description":"Align two version 1 timelines by illustrated elapsed time and then by life-cycle stage.","category":"Simulator experiments","keywords":"Why can two storm illustrations look different at minute 30?"},
+  {"path":"/supercell-simulator-archived-sounding/","title":"How much of an archived sounding fits in six sliders?","description":"Use the May 20, 2013 Norman sounding to test which observed inputs can be transferred into the version 1 simulator.","category":"Simulator experiments","keywords":"How much of an archived sounding fits in six sliders?"}
 ];
