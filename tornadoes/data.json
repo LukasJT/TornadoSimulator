@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T15:16:20Z",
+  "generated_at": "2026-11-20T14:54:14Z",
   "recent": [
     {
       "date": "2026-11-15T00:33:00+00:00",
@@ -270,36 +270,6 @@
       "lat": "35.34",
       "lon": "-107.51",
       "notes": "Defined swath of numerous trees damaged/displaced on high resolution satellite imagery. Damage track based on high resolution satellite data before/after the tornado. T (ABQ)"
-    },
-    {
-      "date": "2026-10-22T01:59:00+00:00",
-      "ef": "UNK",
-      "location": "5 S Heber-Overgaard",
-      "county": "Navajo",
-      "state": "AZ",
-      "lat": "34.34",
-      "lon": "-110.57",
-      "notes": "*** 1 INJ *** Approximate start point of an EF-1 rated tornado that moved north through the Heber-Overgaard area. Peak winds estimated to be 110 mph along its 11 minute (FGZ)"
-    },
-    {
-      "date": "2026-10-21T14:32:00+00:00",
-      "ef": "UNK",
-      "location": "5 SE Ponderosa Park",
-      "county": "Yavapai",
-      "state": "AZ",
-      "lat": "34.4",
-      "lon": "-112.45",
-      "notes": "An EF1 rated tornado developed south of Walker and traveled north-northeast across Walker Road. The estimated maximum wind speed was 105 mph along its 8 mile path. Maxi (FGZ)"
-    },
-    {
-      "date": "2026-10-21T12:41:00+00:00",
-      "ef": "UNK",
-      "location": "4 N Bellemont (NWS Flag",
-      "county": "Coconino",
-      "state": "AZ",
-      "lat": "35.29",
-      "lon": "-111.81",
-      "notes": "Approximate start point of a brief EF1 rated tornado. Peak winds estimated to be 110 mph with path width of about 600 yards. The tornado proceeded about 2.3 miles north (FGZ)"
     }
   ],
   "ef5": [
