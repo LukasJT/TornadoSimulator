@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Streamwise vs. crosswise vorticity: vector projection problems | Tornado Hub</title>
+<meta name="description" content="Streamwise vorticity is the projection of horizontal vorticity onto the direction the air moves in the reference frame you choose.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="Streamwise vs. crosswise vorticity: vector projection problems">
+<meta property="og:description" content="Streamwise vorticity is the projection of horizontal vorticity onto the direction the air moves in the reference frame you choose.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/streamwise-vorticity-problems/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/streamwise-vorticity-problems/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Streamwise vs. crosswise vorticity: vector projection problems","description":"Streamwise vorticity is the projection of horizontal vorticity onto the direction the air moves in the reference frame you choose.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/streamwise-vorticity-problems/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>Streamwise vs. crosswise vorticity: vector projection problems</h1><p class="experiment-byline">Tornado Hub · Practice set · Atmospheric science · vector calculus · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>Streamwise vorticity is the projection of horizontal vorticity onto the direction the air moves in the reference frame you choose. Crosswise vorticity lies perpendicular to that direction.</p></section><p>Start with <a href="/atmospheric-science/perturbation-pressure-acceleration/">How does a pressure perturbation accelerate air inside a supercell?</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Input</th><th scope="col">East component</th><th scope="col">North component</th></tr></thead><tbody><tr><th scope="row">Horizontal vorticity</th><td>0.006 s⁻¹</td><td>0.008 s⁻¹</td></tr><tr><th scope="row">Storm-relative unit vector</th><td>1</td><td>0</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Worked example</h2><p>For storm-relative flow due east, the unit vector is (1,0). With horizontal vorticity (0.006,0.008) s⁻¹, the signed streamwise component is 0.006 s⁻¹ and the residual (0,0.008) s⁻¹ has magnitude 0.008 s⁻¹. In general subtract the streamwise projection vector before finding the residual magnitude.</p>
+
+<section class="practice"><h2>Practice questions</h2><ol><li>Find the streamwise component in the table.</li><li>Find the crosswise magnitude in the table.</li><li>Rotate the flow due north. Find the new streamwise component and crosswise magnitude.</li><li>Let the unit flow vector be (0.6,0.8). What remains crosswise?</li><li>A student projects directly onto a wind velocity in m/s. Fix their calculation.</li><li>What happens to the signed streamwise component when flow reverses?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>The dot product gives +0.006 s⁻¹.</p></details><details class="answer"><summary>Answer 2</summary><p>The residual is (0,0.008) s⁻¹ and its magnitude is 0.008 s⁻¹.</p></details><details class="answer"><summary>Answer 3</summary><p>They are +0.008 and 0.006 s⁻¹, respectively.</p></details><details class="answer"><summary>Answer 4</summary><p>The vorticity is parallel to that vector. Its streamwise component is 0.010 s⁻¹ and the residual is zero.</p></details><details class="answer"><summary>Answer 5</summary><p>Normalize the velocity first. Projection onto a dimensionless unit vector keeps units of s⁻¹.</p></details><details class="answer"><summary>Answer 6</summary><p>It changes sign. The physical crosswise residual remains the same.</p></details><ol><li class="print-answer">The dot product gives +0.006 s⁻¹.</li><li class="print-answer">The residual is (0,0.008) s⁻¹ and its magnitude is 0.008 s⁻¹.</li><li class="print-answer">They are +0.008 and 0.006 s⁻¹, respectively.</li><li class="print-answer">The vorticity is parallel to that vector. Its streamwise component is 0.010 s⁻¹ and the residual is zero.</li><li class="print-answer">Normalize the velocity first. Projection onto a dimensionless unit vector keeps units of s⁻¹.</li><li class="print-answer">It changes sign. The physical crosswise residual remains the same.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://www.weather.gov/media/lmk/soo/Supercell_Structure.pdf">National Weather Service training · Supercell structure, tilting, stretching and storm splitting</a></li><li><a href="https://unidata.github.io/MetPy/latest/api/generated/metpy.calc.storm_relative_helicity.html">NSF Unidata · MetPy · Definition, assumptions and reference implementation of storm_relative_helicity</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/perturbation-pressure-acceleration/">How does a pressure perturbation accelerate air inside a supercell?</a></li><li><a href="/atmospheric-science/parcel-buoyancy/">How do you calculate parcel buoyancy using virtual temperature?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fixed-layer STP practice with low-level storm-relative helicity | Tornado Hub</title>
+<meta name="description" content="Hold the other fixed-layer STP factors at one and the index becomes the 0–1 km storm-relative helicity divided by 150 m²/s².">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="Fixed-layer STP practice with low-level storm-relative helicity">
+<meta property="og:description" content="Hold the other fixed-layer STP factors at one and the index becomes the 0–1 km storm-relative helicity divided by 150 m²/s².">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/fixed-layer-stp-helicity-problems/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/fixed-layer-stp-helicity-problems/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Fixed-layer STP practice with low-level storm-relative helicity","description":"Hold the other fixed-layer STP factors at one and the index becomes the 0–1 km storm-relative helicity divided by 150 m²/s².","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/fixed-layer-stp-helicity-problems/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>Fixed-layer STP practice with low-level storm-relative helicity</h1><p class="experiment-byline">Tornado Hub · Practice set · Storm modeling · algebra and sensitivity · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>Hold the other fixed-layer STP factors at one and the index becomes the 0–1 km storm-relative helicity divided by 150 m²/s².</p></section><p>Start with <a href="/atmospheric-science/stp-shear-cutoff-knots/">What happens at the knot-to-metre-per-second STP shear cutoff?</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">SRH (m²/s²)</th><th scope="col">Helicity factor</th><th scope="col">STP</th></tr></thead><tbody><tr><th scope="row">75</th><td>0.5</td><td>0.5</td></tr><tr><th scope="row">225</th><td>1.5</td><td>1.5</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Worked example</h2><p>For CAPE 1,500 J/kg, LCL 1,000 m AGL and shear 20 m/s, the non-helicity factors all equal one in the site equation. Compare 75 and 225 m²/s² of 0–1 km SRH. The indices are 0.5 and 1.5. The output is dimensionless and can exceed one.</p>
+
+<section class="practice"><h2>Practice questions</h2><ol><li>Find the result for SRH 75 m²/s².</li><li>Find the result for SRH 225 m²/s².</li><li>Double CAPE to 3,000 J/kg and keep SRH at 75 m²/s².</li><li>Use SRH of 225 m²/s² but raise LCL to 1,500 m.</li><li>A report gives only 0–3 km SRH. What input is missing?</li><li>Why can STP equal 1.5?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>75/150 = 0.5.</p></details><details class="answer"><summary>Answer 2</summary><p>225/150 = 1.5.</p></details><details class="answer"><summary>Answer 3</summary><p>The CAPE factor doubles to two and STP becomes 1.</p></details><details class="answer"><summary>Answer 4</summary><p>The LCL factor becomes one-half and STP is 0.75.</p></details><details class="answer"><summary>Answer 5</summary><p>The equation uses 0–1 km SRH. Recalculate it from the appropriate layer and storm motion.</p></details><details class="answer"><summary>Answer 6</summary><p>It is a product of normalized environmental factors, rather than a calibrated probability bounded by one.</p></details><ol><li class="print-answer">75/150 = 0.5.</li><li class="print-answer">225/150 = 1.5.</li><li class="print-answer">The CAPE factor doubles to two and STP becomes 1.</li><li class="print-answer">The LCL factor becomes one-half and STP is 0.75.</li><li class="print-answer">The equation uses 0–1 km SRH. Recalculate it from the appropriate layer and storm motion.</li><li class="print-answer">It is a product of normalized environmental factors, rather than a calibrated probability bounded by one.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://unidata.github.io/MetPy/latest/api/generated/metpy.calc.significant_tornado.html">NSF Unidata · MetPy · Definition, assumptions and reference implementation of significant_tornado</a></li><li><a href="https://www.tornadosimulator.net/supercell-simulator/">TornadoSim · Live supercell simulator, input ranges and published equations</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/stp-shear-cutoff-knots/">What happens at the knot-to-metre-per-second STP shear cutoff?</a></li><li><a href="/atmospheric-science/cape-updraft-sensitivity/">How sensitive is ideal updraft speed to a small CAPE error?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>

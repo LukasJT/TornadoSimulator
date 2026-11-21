@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Can two environments have the same STP and different ideal updraft speeds? | Tornado Hub</title>
+<meta name="description" content="Two environments can share a fixed-layer STP while having different CAPE.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="Can two environments have the same STP and different ideal updraft speeds?">
+<meta property="og:description" content="Two environments can share a fixed-layer STP while having different CAPE.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/matched-stp-environments/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/matched-stp-environments/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Can two environments have the same STP and different ideal updraft speeds?","description":"Two environments can share a fixed-layer STP while having different CAPE.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/matched-stp-environments/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>Can two environments have the same STP and different ideal updraft speeds?</h1><p class="experiment-byline">Tornado Hub · Lab · Storm modeling · algebra and sensitivity · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>Two environments can share a fixed-layer STP while having different CAPE. The ideal parcel speed depends only on CAPE in TornadoSim’s simplified energy calculation.</p></section><p>Start with <a href="/atmospheric-science/cape-shear-factorial-lab/">How do you build a two-factor supercell simulation experiment?</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">CAPE (J/kg)</th><th scope="col">SRH (m²/s²)</th><th scope="col">STP</th><th scope="col">Ideal speed</th></tr></thead><tbody><tr><th scope="row">1500</th><td>150</td><td>1</td><td>54.8 m/s</td></tr><tr><th scope="row">3000</th><td>75</td><td>1</td><td>77.5 m/s</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Set up the experiment</h2><p>Keep shear at 20 m/s and LCL at 1,000 m AGL. Before calculating, predict which combination has the larger theoretical speed and whether the index changes. The products of normalized CAPE and helicity are 1×1 and 2×0.5, both one. The theoretical speeds are √3000 and √6000 m/s. The square-root relation describes lossless parcel acceleration, so actual updrafts can differ.</p>
+
+<section class="practice"><h2>Practice questions</h2><ol><li>By what ratio did ideal speed change?</li><li>At 750 J/kg, what SRH retains an index of one under the same assumptions?</li><li>What happens if LCL rises to 1,500 m in both runs?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>√2 ≈ 1.414.</p></details><details class="answer"><summary>Answer 2</summary><p>CAPE factor is 0.5, so the helicity factor must be two and SRH must be 300 m²/s².</p></details><details class="answer"><summary>Answer 3</summary><p>Both indices halve and the ideal speeds stay the same.</p></details><ol><li class="print-answer">√2 ≈ 1.414.</li><li class="print-answer">CAPE factor is 0.5, so the helicity factor must be two and SRH must be 300 m²/s².</li><li class="print-answer">Both indices halve and the ideal speeds stay the same.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://unidata.github.io/MetPy/latest/api/generated/metpy.calc.significant_tornado.html">NSF Unidata · MetPy · Definition, assumptions and reference implementation of significant_tornado</a></li><li><a href="https://www.tornadosimulator.net/supercell-simulator/">TornadoSim · Live supercell simulator, input ranges and published equations</a></li><li><a href="https://www.weather.gov/lmk/indices">NWS Louisville · Environment parameters and indices, ideal updraft speed</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/cape-shear-factorial-lab/">How do you build a two-factor supercell simulation experiment?</a></li><li><a href="/atmospheric-science/cape-updraft-sensitivity/">How sensitive is ideal updraft speed to a small CAPE error?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>
