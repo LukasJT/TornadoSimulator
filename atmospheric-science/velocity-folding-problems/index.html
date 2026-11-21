@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Velocity folding exercises: how do you unwrap a Doppler measurement? | Tornado Hub</title>
+<meta name="description" content="A Doppler velocity outside the measurable interval wraps by multiples of twice the Nyquist velocity.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="Velocity folding exercises: how do you unwrap a Doppler measurement?">
+<meta property="og:description" content="A Doppler velocity outside the measurable interval wraps by multiples of twice the Nyquist velocity.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/velocity-folding-problems/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/velocity-folding-problems/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Velocity folding exercises: how do you unwrap a Doppler measurement?","description":"A Doppler velocity outside the measurable interval wraps by multiples of twice the Nyquist velocity.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/velocity-folding-problems/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>Velocity folding exercises: how do you unwrap a Doppler measurement?</h1><p class="experiment-byline">Tornado Hub · Practice set · Physical science · waves and logarithms · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>A Doppler velocity outside the measurable interval wraps by multiples of twice the Nyquist velocity. This is velocity aliasing.</p></section><p>Start with <a href="/atmospheric-science/radar-beam-width/">How wide is a radar beam when it reaches a distant supercell?</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">True velocity</th><th scope="col">Shift</th><th scope="col">Reported velocity</th></tr></thead><tbody><tr><th scope="row">+32 m/s</th><td>−50 m/s</td><td>−18 m/s</td></tr><tr><th scope="row">−32 m/s</th><td>+50 m/s</td><td>+18 m/s</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Worked example</h2><p>Take the unambiguous interval as [−25, +25) m/s. An outward 32 m/s velocity wraps by subtracting 50 m/s, giving −18 m/s. The observed value alone is compatible with many true velocities spaced 50 m/s apart. Dealiasing can use neighboring gates, previous scans or a wind estimate.</p>
+
+<section class="practice"><h2>Practice questions</h2><ol><li>Wrap +32 m/s into the interval.</li><li>Wrap −32 m/s into the interval.</li><li>Wrap +78 m/s.</li><li>Give three true values consistent with −18 m/s.</li><li>A student adds 25 m/s as one fold. Correct them.</li><li>What can help distinguish real inbound wind from an aliased outbound value?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>32−50 = −18 m/s.</p></details><details class="answer"><summary>Answer 2</summary><p>−32+50 = +18 m/s.</p></details><details class="answer"><summary>Answer 3</summary><p>78−100 = −22 m/s.</p></details><details class="answer"><summary>Answer 4</summary><p>−68, −18 and +32 m/s are three possibilities.</p></details><details class="answer"><summary>Answer 5</summary><p>A full fold is the entire interval width, 50 m/s.</p></details><details class="answer"><summary>Answer 6</summary><p>Examine spatial continuity, scan history and independent winds. The folded gate alone is ambiguous.</p></details><ol><li class="print-answer">32−50 = −18 m/s.</li><li class="print-answer">−32+50 = +18 m/s.</li><li class="print-answer">78−100 = −22 m/s.</li><li class="print-answer">−68, −18 and +32 m/s are three possibilities.</li><li class="print-answer">A full fold is the entire interval width, 50 m/s.</li><li class="print-answer">Examine spatial continuity, scan history and independent winds. The folded gate alone is ambiguous.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://training.weather.gov/wdtd/courses/rac/products/srm/story_content/external_files/Doppler%20Guide%202nd%20Ed.pdf">National Weather Service training · Doppler Radar Guide, second edition</a></li><li><a href="https://www.eoas.ubc.ca/books/Practical_Meteorology/prmet102/Ch08-satellite_radar-v102b.pdf">Roland Stull · University of British Columbia · Practical Meteorology, chapter 8 · Satellites and Radar</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/radar-beam-width/">How wide is a radar beam when it reaches a distant supercell?</a></li><li><a href="/atmospheric-science/parcel-buoyancy/">How do you calculate parcel buoyancy using virtual temperature?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>

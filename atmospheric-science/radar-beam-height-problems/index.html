@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How high is the radar beam above a storm at 100 km? | Tornado Hub</title>
+<meta name="description" content="Estimate the height of a low-elevation radar beam using both its elevation angle and the curvature of an effective Earth.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="How high is the radar beam above a storm at 100 km?">
+<meta property="og:description" content="Estimate the height of a low-elevation radar beam using both its elevation angle and the curvature of an effective Earth.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/radar-beam-height-problems/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/radar-beam-height-problems/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How high is the radar beam above a storm at 100 km?","description":"Estimate the height of a low-elevation radar beam using both its elevation angle and the curvature of an effective Earth.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/radar-beam-height-problems/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>How high is the radar beam above a storm at 100 km?</h1><p class="experiment-byline">Tornado Hub · Practice set · Physical science · waves and logarithms · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>Estimate the height of a low-elevation radar beam using both its elevation angle and the curvature of an effective Earth. State the antenna datum and propagation assumption.</p></section><p>Start with <a href="/atmospheric-science/velocity-couplet-rotation/">How is supercell rotation estimated from an inbound–outbound velocity pair?</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Term</th><th scope="col">Value at 100 km</th></tr></thead><tbody><tr><th scope="row">Elevation</th><td>0.873 km</td></tr><tr><th scope="row">Effective curvature</th><td>0.589 km</td></tr><tr><th scope="row">Sum</th><td>1.46 km</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Worked example</h2><p>For range r, angle θ and effective Earth radius R, use h ≈ r sin θ+r²/(2R) with all distances in the same units. At 100 km, θ = 0.5° and R = 8,495 km, the two terms are 0.873 and 0.589 km. Beam-centre height is about 1.46 km above the antenna. This approximation assumes conventional refraction and can depart from reality in anomalous propagation.</p>
+
+<section class="practice"><h2>Practice questions</h2><ol><li>Calculate the elevation term.</li><li>Calculate the curvature term.</li><li>Repeat both terms for 50 km.</li><li>For the original beam and a 0.20 km MSL antenna, find beam-centre altitude MSL.</li><li>Why is multiplying 100 by sin(0.5) in radian mode wrong?</li><li>If the beam center is 1.46 km above the antenna, does it sample only that height?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>100 sin 0.5° ≈ 0.873 km.</p></details><details class="answer"><summary>Answer 2</summary><p>100²/(2×8,495) ≈ 0.589 km.</p></details><details class="answer"><summary>Answer 3</summary><p>0.436+0.147 ≈ 0.583 km.</p></details><details class="answer"><summary>Answer 4</summary><p>1.46+0.20 ≈ 1.66 km MSL.</p></details><details class="answer"><summary>Answer 5</summary><p>The angle supplied is in degrees. Convert 0.5° to 0.008727 rad.</p></details><details class="answer"><summary>Answer 6</summary><p>No. Its finite width samples a volume and local beam height also depends on propagation.</p></details><ol><li class="print-answer">100 sin 0.5° ≈ 0.873 km.</li><li class="print-answer">100²/(2×8,495) ≈ 0.589 km.</li><li class="print-answer">0.436+0.147 ≈ 0.583 km.</li><li class="print-answer">1.46+0.20 ≈ 1.66 km MSL.</li><li class="print-answer">The angle supplied is in degrees. Convert 0.5° to 0.008727 rad.</li><li class="print-answer">No. Its finite width samples a volume and local beam height also depends on propagation.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://www.eoas.ubc.ca/books/Practical_Meteorology/prmet102/Ch08-satellite_radar-v102b.pdf">Roland Stull · University of British Columbia · Practical Meteorology, chapter 8 · Satellites and Radar</a></li><li><a href="https://training.weather.gov/wdtd/courses/rac/products/srm/story_content/external_files/Doppler%20Guide%202nd%20Ed.pdf">National Weather Service training · Doppler Radar Guide, second edition</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/velocity-couplet-rotation/">How is supercell rotation estimated from an inbound–outbound velocity pair?</a></li><li><a href="/atmospheric-science/parcel-buoyancy/">How do you calculate parcel buoyancy using virtual temperature?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>
