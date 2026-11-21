@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T14:54:14Z",
+  "generated_at": "2026-11-21T14:13:16Z",
   "recent": [
     {
       "date": "2026-11-15T00:33:00+00:00",
@@ -260,16 +260,6 @@
       "lat": "33.42",
       "lon": "-105.64",
       "notes": "Minor damage to a house... trees down... garage door blown in... and shed damaged. (ABQ)"
-    },
-    {
-      "date": "2026-10-22T22:52:00+00:00",
-      "ef": "UNK",
-      "location": "8 E San Mateo",
-      "county": "McKinley",
-      "state": "NM",
-      "lat": "35.34",
-      "lon": "-107.51",
-      "notes": "Defined swath of numerous trees damaged/displaced on high resolution satellite imagery. Damage track based on high resolution satellite data before/after the tornado. T (ABQ)"
     }
   ],
   "ef5": [
