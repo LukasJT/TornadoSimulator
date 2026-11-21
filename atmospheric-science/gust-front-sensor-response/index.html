@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How can a slow temperature sensor smooth a gust-front passage? | Tornado Hub</title>
+<meta name="description" content="A first-order sensor approaches a sudden air temperature change exponentially.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="How can a slow temperature sensor smooth a gust-front passage?">
+<meta property="og:description" content="A first-order sensor approaches a sudden air temperature change exponentially.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/gust-front-sensor-response/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/gust-front-sensor-response/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How can a slow temperature sensor smooth a gust-front passage?","description":"A first-order sensor approaches a sudden air temperature change exponentially.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/gust-front-sensor-response/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>How can a slow temperature sensor smooth a gust-front passage?</h1><p class="experiment-byline">Tornado Hub · Lab · Environmental science · measurement · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>A first-order sensor approaches a sudden air temperature change exponentially. After one time constant it has completed about 63% of the full adjustment.</p></section><p>Start with <a href="/atmospheric-science/storm-contingency-table-problems/">How do you build a contingency table for a supercell forecast?</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Time after step</th><th scope="col">Model reading</th></tr></thead><tbody><tr><th scope="row">0 s</th><td>24.00°C</td></tr><tr><th scope="row">30 s</th><td>18.94°C</td></tr><tr><th scope="row">60 s</th><td>17.08°C</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Set up the experiment</h2><p>Hold the sensor initially at 24°C and force a sudden step to 16°C. Its time constant is 30 s. Predict whether the reading reaches 16°C after 30 s, then compute T = 16+8 exp(−t/30). At 30 s it reads 18.94°C. This assumes constant airflow response and a perfect step change in the surrounding air.</p>
+
+<section class="practice"><h2>Practice questions</h2><ol><li>What is the model reading after two time constants?</li><li>When does the reading first reach 20°C?</li><li>Why could a real gust-front passage differ from the step experiment?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>16+8e⁻² ≈ 17.08°C.</p></details><details class="answer"><summary>Answer 2</summary><p>8e^(−t/30) = 4, so t = 30 ln 2 ≈ 20.8 s.</p></details><details class="answer"><summary>Answer 3</summary><p>Air temperature can change gradually and the sensor’s response can vary with ventilation or housing.</p></details><ol><li class="print-answer">16+8e⁻² ≈ 17.08°C.</li><li class="print-answer">8e^(−t/30) = 4, so t = 30 ln 2 ≈ 20.8 s.</li><li class="print-answer">Air temperature can change gradually and the sensor’s response can vary with ventilation or housing.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://eprintspublications.npl.co.uk/8884/">Quarterly Journal of the Royal Meteorological Society · Response times of meteorological air temperature sensors, primary study</a></li><li><a href="https://openstax.org/books/calculus-volume-2/pages/4-2-direction-fields-and-numerical-methods">OpenStax, Calculus Volume 2 · 4.2 Direction Fields and Numerical Methods</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/storm-contingency-table-problems/">How do you build a contingency table for a supercell forecast?</a></li><li><a href="/atmospheric-science/parcel-buoyancy/">How do you calculate parcel buoyancy using virtual temperature?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How do layer bounds change 0–1 km and 0–3 km SRH? | Tornado Hub</title>
+<meta name="description" content="The depth of integration changes storm-relative helicity.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="How do layer bounds change 0–1 km and 0–3 km SRH?">
+<meta property="og:description" content="The depth of integration changes storm-relative helicity.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/srh-layer-bounds/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/srh-layer-bounds/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How do layer bounds change 0–1 km and 0–3 km SRH?","description":"The depth of integration changes storm-relative helicity.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/srh-layer-bounds/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>How do layer bounds change 0–1 km and 0–3 km SRH?</h1><p class="experiment-byline">Tornado Hub · Lesson · Atmospheric science · advanced diagnostics · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>The depth of integration changes storm-relative helicity. Extending a layer can add positive or negative contributions from the additional height intervals.</p></section><p>Start with <a href="/atmospheric-science/supercell-composite-problems/">How do you calculate the supercell composite parameter with effective-layer inputs?</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Layer AGL</th><th scope="col">Signed contribution</th></tr></thead><tbody><tr><th scope="row">0–1 km</th><td>+80 m²/s²</td></tr><tr><th scope="row">1–2 km</th><td>−20 m²/s²</td></tr><tr><th scope="row">2–3 km</th><td>+35 m²/s²</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Worked example</h2><p>Use a common storm motion and heights above ground. For successive one-kilometre sections contributing +80, −20 and +35 m²/s², the 0–1 km integral is +80 and the 0–3 km integral is +95 m²/s². If a requested boundary falls between observed heights, interpolate the wind at that boundary before integrating.</p>
+
+<section class="practice"><h2>Practice questions</h2><ol><li>Compute 0–2 km SRH.</li><li>Find 1–3 km SRH.</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>80−20 = +60 m²/s².</p></details><details class="answer"><summary>Answer 2</summary><p>−20+35 = +15 m²/s².</p></details><ol><li class="print-answer">80−20 = +60 m²/s².</li><li class="print-answer">−20+35 = +15 m²/s².</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://unidata.github.io/MetPy/latest/api/generated/metpy.calc.storm_relative_helicity.html">NSF Unidata · MetPy · Definition, assumptions and reference implementation of storm_relative_helicity</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/supercell-composite-problems/">How do you calculate the supercell composite parameter with effective-layer inputs?</a></li><li><a href="/atmospheric-science/storm-relative-inflow-problems/">How do you calculate storm-relative inflow from ground-relative wind?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>

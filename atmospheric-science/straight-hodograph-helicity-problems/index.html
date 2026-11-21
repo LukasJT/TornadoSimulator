@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How do you calculate storm-relative helicity from a straight hodograph segment? | Tornado Hub</title>
+<meta name="description" content="A straight hodograph segment contributes the signed cross product of its upper and lower storm-relative wind endpoints to the discrete storm-relative helicity sum.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="How do you calculate storm-relative helicity from a straight hodograph segment?">
+<meta property="og:description" content="A straight hodograph segment contributes the signed cross product of its upper and lower storm-relative wind endpoints to the discrete storm-relative helicity sum.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/straight-hodograph-helicity-problems/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/straight-hodograph-helicity-problems/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How do you calculate storm-relative helicity from a straight hodograph segment?","description":"A straight hodograph segment contributes the signed cross product of its upper and lower storm-relative wind endpoints to the discrete storm-relative helicity sum.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/straight-hodograph-helicity-problems/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>How do you calculate storm-relative helicity from a straight hodograph segment?</h1><p class="experiment-byline">Tornado Hub · Practice set · Atmospheric science · advanced diagnostics · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>A straight hodograph segment contributes the signed cross product of its upper and lower storm-relative wind endpoints to the discrete storm-relative helicity sum.</p></section><p>Start with <a href="/atmospheric-science/storm-motion-helicity-sensitivity/">How much does storm motion change helicity on the same wind profile?</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Endpoint</th><th scope="col">u (m/s)</th><th scope="col">v (m/s)</th></tr></thead><tbody><tr><th scope="row">Bottom</th><td>0</td><td>10</td></tr><tr><th scope="row">Top</th><td>10</td><td>10</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Worked example</h2><p>For storm-relative lower wind (u₁,v₁) and upper wind (u₂,v₂), use u₂v₁−u₁v₂ with height increasing. Subtract storm motion from both winds before multiplying. For (0,10) and (10,10) m/s with zero storm motion, the signed term is +100 m²/s². With multiple levels, sum the segment contributions.</p>
+
+<section class="practice"><h2>Practice questions</h2><ol><li>Find u₂v₁ in the example.</li><li>Find the signed segment contribution.</li><li>Keep the bottom fixed and change the top to (5,15) m/s.</li><li>Use storm motion (0,5) m/s with the original winds.</li><li>A student reverses top and bottom. What changes?</li><li>What if the relative endpoints are collinear with the origin?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>10×10 = 100 m²/s².</p></details><details class="answer"><summary>Answer 2</summary><p>100−0×10 = +100 m²/s².</p></details><details class="answer"><summary>Answer 3</summary><p>5×10−0×15 = +50 m²/s².</p></details><details class="answer"><summary>Answer 4</summary><p>Relative endpoints are (0,5) and (10,5). The contribution is +50 m²/s².</p></details><details class="answer"><summary>Answer 5</summary><p>The signed contribution flips to −100 m²/s² under the same convention.</p></details><details class="answer"><summary>Answer 6</summary><p>The cross product is zero even when wind speed changes.</p></details><ol><li class="print-answer">10×10 = 100 m²/s².</li><li class="print-answer">100−0×10 = +100 m²/s².</li><li class="print-answer">5×10−0×15 = +50 m²/s².</li><li class="print-answer">Relative endpoints are (0,5) and (10,5). The contribution is +50 m²/s².</li><li class="print-answer">The signed contribution flips to −100 m²/s² under the same convention.</li><li class="print-answer">The cross product is zero even when wind speed changes.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://unidata.github.io/MetPy/latest/api/generated/metpy.calc.storm_relative_helicity.html">NSF Unidata · MetPy · Definition, assumptions and reference implementation of storm_relative_helicity</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/storm-motion-helicity-sensitivity/">How much does storm motion change helicity on the same wind profile?</a></li><li><a href="/atmospheric-science/storm-relative-inflow-problems/">How do you calculate storm-relative inflow from ground-relative wind?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why do effective-layer and fixed-layer tornado parameters differ? | Tornado Hub</title>
+<meta name="description" content="Fixed-layer and effective-layer tornado parameters use different parcel and wind-layer definitions.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="Why do effective-layer and fixed-layer tornado parameters differ?">
+<meta property="og:description" content="Fixed-layer and effective-layer tornado parameters use different parcel and wind-layer definitions.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/effective-vs-fixed-stp/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/effective-vs-fixed-stp/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Why do effective-layer and fixed-layer tornado parameters differ?","description":"Fixed-layer and effective-layer tornado parameters use different parcel and wind-layer definitions.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/effective-vs-fixed-stp/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>Why do effective-layer and fixed-layer tornado parameters differ?</h1><p class="experiment-byline">Tornado Hub · Lesson · Atmospheric science · advanced diagnostics · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>Fixed-layer and effective-layer tornado parameters use different parcel and wind-layer definitions. Their values can diverge even when both are calculated correctly for the same sounding.</p></section><p>Start with <a href="/atmospheric-science/convective-brn-problems/">How do you compute the bulk Richardson number for convection?</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Diagnostic</th><th scope="col">TornadoSim fixed-layer</th><th scope="col">Effective-layer convention</th></tr></thead><tbody><tr><th scope="row">Parcel CAPE and cloud base</th><td>Surface parcel</td><td>Mixed-layer parcel</td></tr><tr><th scope="row">SRH</th><td>Fixed 0–1 km</td><td>Effective inflow layer</td></tr><tr><th scope="row">Shear</th><td>Fixed 0–6 km</td><td>Effective bulk wind difference</td></tr><tr><th scope="row">CIN factor</th><td>Omitted</td><td>Included in the commonly used variant</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Worked example</h2><p>The TornadoSim fixed-layer version uses surface-based CAPE, surface-parcel cloud base, 0–1 km SRH and 0–6 km bulk shear. The commonly cited effective-layer variant uses mixed-layer parcel thermodynamics, including a CIN term, and effective inflow and shear diagnostics. A summary listing only surface CAPE and 0–1 km SRH lacks enough information to recover the effective-layer version. Identify both formulas when comparing values.</p>
+
+<section class="practice"><h2>Practice questions</h2><ol><li>Why can a shallow surface inversion affect the two diagnostics differently?</li><li>What information is needed to recompute the two versions?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>The surface and mixed-layer parcels can have different moisture, buoyancy and inhibition. Effective inflow can select different layer bounds.</p></details><details class="answer"><summary>Answer 2</summary><p>Obtain the thermodynamic and wind profiles, storm motion and exact parcel, layer and factor definitions.</p></details><ol><li class="print-answer">The surface and mixed-layer parcels can have different moisture, buoyancy and inhibition. Effective inflow can select different layer bounds.</li><li class="print-answer">Obtain the thermodynamic and wind profiles, storm motion and exact parcel, layer and factor definitions.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://unidata.github.io/MetPy/latest/api/generated/metpy.calc.significant_tornado.html">NSF Unidata · MetPy · Definition, assumptions and reference implementation of significant_tornado</a></li><li><a href="https://www.weather.gov/media/crp/Severe_Weather_Parameters_Tinsley_2016.pdf">NWS training, W. Tinsley · Severe weather parameters, effective and fixed-layer composites</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/convective-brn-problems/">How do you compute the bulk Richardson number for convection?</a></li><li><a href="/atmospheric-science/storm-relative-inflow-problems/">How do you calculate storm-relative inflow from ground-relative wind?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>
