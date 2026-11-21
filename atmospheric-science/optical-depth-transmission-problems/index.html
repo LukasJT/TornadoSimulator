@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How do you estimate visible-light transmission through a cloud? | Tornado Hub</title>
+<meta name="description" content="The direct beam passing through a cloud is reduced by a factor e to the power of minus optical depth.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="How do you estimate visible-light transmission through a cloud?">
+<meta property="og:description" content="The direct beam passing through a cloud is reduced by a factor e to the power of minus optical depth.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/optical-depth-transmission-problems/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/optical-depth-transmission-problems/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How do you estimate visible-light transmission through a cloud?","description":"The direct beam passing through a cloud is reduced by a factor e to the power of minus optical depth.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/optical-depth-transmission-problems/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>How do you estimate visible-light transmission through a cloud?</h1><p class="experiment-byline">Tornado Hub · Practice set · Environmental science · measurement · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>The direct beam passing through a cloud is reduced by a factor e to the power of minus optical depth. This is direct transmission before adding light scattered into the sensor’s view.</p></section><p>Start with <a href="/atmospheric-science/storm-top-parallax/">How much does satellite viewing angle displace a tall storm top?</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Optical depth</th><th scope="col">Direct fraction</th></tr></thead><tbody><tr><th scope="row">0</th><td>1</td></tr><tr><th scope="row">1</th><td>0.368</td></tr><tr><th scope="row">2</th><td>0.135</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Worked example</h2><p>Use T = exp(−τ). At τ = 2, T ≈ 0.1353, so about 13.5% of the direct beam remains. Optical depth is dimensionless and additive for successive layers along the path. Total illumination can include diffuse scattered light.</p>
+
+<section class="practice"><h2>Practice questions</h2><ol><li>Find the fraction at τ = 1.</li><li>Find percent transmission at τ = 2.</li><li>Find transmission through layers of depth 0.5 and 1.5 along one beam.</li><li>What optical depth gives about 50% direct transmission?</li><li>A classmate gets 739% transmission for τ = 2. Explain the sign error.</li><li>Can this direct fraction predict the full surface daylight?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>e⁻¹ ≈ 0.368.</p></details><details class="answer"><summary>Answer 2</summary><p>100e⁻² ≈ 13.5%.</p></details><details class="answer"><summary>Answer 3</summary><p>Add depths to two and compute e⁻² ≈ 0.135.</p></details><details class="answer"><summary>Answer 4</summary><p>−ln(0.5) ≈ 0.693.</p></details><details class="answer"><summary>Answer 5</summary><p>Use exp(−2), not exp(+2). Attenuation gives a fraction between zero and one.</p></details><details class="answer"><summary>Answer 6</summary><p>Diffuse scattering and other radiative effects also contribute to received daylight.</p></details><ol><li class="print-answer">e⁻¹ ≈ 0.368.</li><li class="print-answer">100e⁻² ≈ 13.5%.</li><li class="print-answer">Add depths to two and compute e⁻² ≈ 0.135.</li><li class="print-answer">−ln(0.5) ≈ 0.693.</li><li class="print-answer">Use exp(−2), not exp(+2). Attenuation gives a fraction between zero and one.</li><li class="print-answer">Diffuse scattering and other radiative effects also contribute to received daylight.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://www.eoas.ubc.ca/books/Practical_Meteorology/prmet102/Ch02-radiation-v102b.pdf">Roland Stull · University of British Columbia · Practical Meteorology, chapter 2 · Solar and Infrared Radiation</a></li><li><a href="https://www.eoas.ubc.ca/books/Practical_Meteorology/prmet102/Ch06-clouds-v102b.pdf">Roland Stull · University of British Columbia · Practical Meteorology, chapter 6 · Clouds</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/storm-top-parallax/">How much does satellite viewing angle displace a tall storm top?</a></li><li><a href="/atmospheric-science/parcel-buoyancy/">How do you calculate parcel buoyancy using virtual temperature?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>
