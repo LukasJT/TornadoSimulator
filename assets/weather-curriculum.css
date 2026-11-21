@@ -1,0 +1,13 @@
+.weather-curriculum .guide-photo { overflow-wrap: anywhere; }
+.weather-curriculum .practice ol > li { margin-block: .85rem; }
+.weather-curriculum .practice details { margin-block: .45rem; border-radius: .35rem; }
+.weather-curriculum .practice details p { margin-block: .5rem 0; }
+.weather-curriculum .practice summary { font-weight: 600; }
+.weather-curriculum .practice .print-answer { display: none; }
+@media print {
+  .weather-curriculum { width: auto; margin: 0; }
+  .th-nav, .th-skip, .weather-curriculum .th-ad-slot,
+  .weather-curriculum .practice details { display: none; }
+  .weather-curriculum .practice .print-answer { display: list-item; break-inside: avoid; }
+  .weather-curriculum figure, .weather-curriculum table { break-inside: avoid; }
+}

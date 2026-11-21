@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How do you calculate parcel buoyancy using virtual temperature? | Tornado Hub</title>
+<meta name="description" content="Use the parcel and environment virtual temperatures to calculate buoyant acceleration with units and a sign convention.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="How do you calculate parcel buoyancy using virtual temperature?">
+<meta property="og:description" content="Use the parcel and environment virtual temperatures to calculate buoyant acceleration with units and a sign convention.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/parcel-buoyancy/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/parcel-buoyancy/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How do you calculate parcel buoyancy using virtual temperature?","description":"Use the parcel and environment virtual temperatures to calculate buoyant acceleration with units and a sign convention.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/parcel-buoyancy/","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"},"datePublished":"2026-11-21"}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>How do you calculate parcel buoyancy using virtual temperature?</h1><p class="experiment-lede">Use the parcel and environment virtual temperatures to calculate buoyant acceleration with units and a sign convention.</p><p class="experiment-byline">Tornado Hub · Lesson · Atmospheric science · calculus · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>For a small parcel whose pressure matches its environment, upward buoyancy is approximately B = g(Tᵥ,p − Tᵥ,e)/Tᵥ,e. Use kelvins for the denominator. A warmer virtual temperature means the parcel is less dense at the same pressure.</p></section><p>Prerequisite. <a href="/cape-and-cin-explained/">Review parcel stability and the sounding</a>.</p>
+<figure class="guide-photo"><table><caption>Synthetic parcel and environment at the same level</caption><thead><tr><th scope="col">Quantity</th><th scope="col">Input</th></tr></thead><tbody><tr><th scope="row">Parcel virtual temperature</th><td>303 K</td></tr><tr><th scope="row">Environmental virtual temperature</th><td>300 K</td></tr><tr><th scope="row">Gravitational acceleration magnitude</th><td>9.81 m/s²</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>From density to virtual temperature</h2><p>In the parcel approximation, the upward pressure force per unit mass is gρₑ/ρₚ and the downward gravitational acceleration is g. Their difference is B = g(ρₑ/ρₚ − 1). At equal pressure, the virtual-temperature gas law gives ρₑ/ρₚ = Tᵥ,p/Tᵥ,e. These expressions use an environmental hydrostatic pressure gradient and omit dynamic pressure perturbations and condensate loading.</p><h2>Worked calculation</h2><p>Take upward as positive. A +3 K contrast divided by 300 K gives +0.010. Multiply by 9.81 m/s² to obtain +0.0981 m/s². This is the local acceleration contribution at one level. <a href="/cape-and-cin-explained/">Review how buoyancy relates to CAPE and CIN</a>.</p><section class="practice"><h2>Practice questions</h2><ol><li>Hold the environment at 300 K and lower the parcel virtual temperature to 298 K. Find B.</li><li>What happens at equal virtual temperatures? Can the parcel still be moving up?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>9.81 × (−2/300) ≈ −0.0654 m/s². Its thermal buoyancy points downward.</p></details><details class="answer"><summary>Answer 2</summary><p>The local buoyancy term is zero. A parcel can have nonzero vertical speed from earlier acceleration or experience other forces.</p></details><ol><li class="print-answer">9.81 × (−2/300) ≈ −0.0654 m/s². Its thermal buoyancy points downward.</li><li class="print-answer">The local buoyancy term is zero. A parcel can have nonzero vertical speed from earlier acceleration or experience other forces.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://www.eoas.ubc.ca/books/Practical_Meteorology/prmet102/Ch05-stability-v102b.pdf">Roland Stull · University of British Columbia · Practical Meteorology, chapter 5 · Atmospheric Stability</a></li><li><a href="https://www.eoas.ubc.ca/books/Practical_Meteorology/prmet102/Ch14-Tstorms-v102b.pdf">Roland Stull · University of British Columbia · Practical Meteorology, chapter 14 · Thunderstorm Fundamentals</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/cape-integration-problems/">CAPE integration practice with a three-level sounding</a></li><li><a href="/atmospheric-science/cape-updraft-sensitivity/">How sensitive is ideal updraft speed to a small CAPE error?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>
