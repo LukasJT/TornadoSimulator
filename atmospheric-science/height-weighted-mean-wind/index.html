@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How do you calculate mean wind through an unevenly sampled layer? | Tornado Hub</title>
+<meta name="description" content="Estimate a height-mean wind by averaging each pair of adjacent wind measurements, multiplying by that interval’s thickness and dividing the sum by the total depth.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="How do you calculate mean wind through an unevenly sampled layer?">
+<meta property="og:description" content="Estimate a height-mean wind by averaging each pair of adjacent wind measurements, multiplying by that interval’s thickness and dividing the sum by the total depth.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/height-weighted-mean-wind/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/height-weighted-mean-wind/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How do you calculate mean wind through an unevenly sampled layer?","description":"Estimate a height-mean wind by averaging each pair of adjacent wind measurements, multiplying by that interval’s thickness and dividing the sum by the total depth.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/height-weighted-mean-wind/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>How do you calculate mean wind through an unevenly sampled layer?</h1><p class="experiment-byline">Tornado Hub · Lesson · Physical science · vectors · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>Estimate a height-mean wind by averaging each pair of adjacent wind measurements, multiplying by that interval’s thickness and dividing the sum by the total depth. Do this separately for u and v.</p></section><p>Start with <a href="/atmospheric-science/wind-components-problems/">How do you convert meteorological wind direction into u and v?</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Height above ground (km)</th><th scope="col">u (m/s)</th></tr></thead><tbody><tr><th scope="row">0</th><td>0</td></tr><tr><th scope="row">1</th><td>10</td></tr><tr><th scope="row">3</th><td>10</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Worked example</h2><p>Assume the wind varies linearly between observations. With u values 0, 10 and 10 m/s at 0, 1 and 3 km, the first interval contributes 5 × 1 and the second 10 × 2 in units of m/s times km. Divide 25 by 3 km to find 8.33 m/s. The average of the three point samples is 6.67 m/s because it implicitly weights all measurements equally.</p>
+
+<section class="practice"><h2>Practice questions</h2><ol><li>Insert a sample of 10 m/s at 2 km. Does the height-weighted result change?</li><li>Suppose the middle measurement was made at 2 km instead, with the same u values. Recalculate.</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>No. It divides a constant 2 km interval into two identical 1 km contributions.</p></details><details class="answer"><summary>Answer 2</summary><p>(5×2 + 10×1)/3 = 20/3 ≈ 6.67 m/s.</p></details><ol><li class="print-answer">No. It divides a constant 2 km interval into two identical 1 km contributions.</li><li class="print-answer">(5×2 + 10×1)/3 = 20/3 ≈ 6.67 m/s.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://www.eoas.ubc.ca/books/Practical_Meteorology/prmet102/Ch14-Tstorms-v102b.pdf">Roland Stull · University of British Columbia · Practical Meteorology, chapter 14 · Thunderstorm Fundamentals</a></li><li><a href="https://openstax.org/books/calculus-volume-2/pages/3-6-numerical-integration">OpenStax, Calculus Volume 2 · 3.6 Numerical Integration</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/wind-components-problems/">How do you convert meteorological wind direction into u and v?</a></li><li><a href="/atmospheric-science/bunkers-storm-motion/">How does the Bunkers method estimate right-moving supercell motion?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>
