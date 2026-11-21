@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Central-difference practice using a storm pressure field | Tornado Hub</title>
+<meta name="description" content="A centered difference estimates the gradient at a grid point from samples on either side of that point.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="Central-difference practice using a storm pressure field">
+<meta property="og:description" content="A centered difference estimates the gradient at a grid point from samples on either side of that point.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/pressure-gradient-stencil-problems/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/pressure-gradient-stencil-problems/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Central-difference practice using a storm pressure field","description":"A centered difference estimates the gradient at a grid point from samples on either side of that point.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/pressure-gradient-stencil-problems/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>Central-difference practice using a storm pressure field</h1><p class="experiment-byline">Tornado Hub · Practice set · Applied math · introductory numerics · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>A centered difference estimates the gradient at a grid point from samples on either side of that point. Divide by the full separation between the samples.</p></section><p>Start with <a href="/atmospheric-science/explicit-cloud-diffusion/">How does an explicit diffusion step smooth a modeled cloud field?</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Position</th><th scope="col">Pressure</th></tr></thead><tbody><tr><th scope="row">−500 m</th><td>99,900 Pa</td></tr><tr><th scope="row">+500 m</th><td>99,800 Pa</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Worked example</h2><p>Take p = 99,900 Pa at x = −500 m and 99,800 Pa at +500 m. The center gradient estimate is (99,800−99,900)/1,000 = −0.10 Pa/m. A curved profile can give a different derivative than the centered estimate, especially on a coarse grid.</p>
+
+<section class="practice"><h2>Practice questions</h2><ol><li>What is the pressure difference from west to east?</li><li>Find the centered gradient.</li><li>Swap the two pressures and recompute.</li><li>Use the original pressures at −250 and +250 m.</li><li>Why is −0.20 Pa/m incorrect for the original locations?</li><li>What does a zero centered gradient mean if the centre pressure is not sampled?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>−100 Pa.</p></details><details class="answer"><summary>Answer 2</summary><p>−100/1,000 = −0.10 Pa/m.</p></details><details class="answer"><summary>Answer 3</summary><p>The gradient becomes +0.10 Pa/m.</p></details><details class="answer"><summary>Answer 4</summary><p>The span halves to 500 m, so the gradient is −0.20 Pa/m.</p></details><details class="answer"><summary>Answer 5</summary><p>That uses half of the full sample separation.</p></details><details class="answer"><summary>Answer 6</summary><p>The two endpoint values are equal. The interior can still contain pressure structure that the stencil cannot resolve.</p></details><ol><li class="print-answer">−100 Pa.</li><li class="print-answer">−100/1,000 = −0.10 Pa/m.</li><li class="print-answer">The gradient becomes +0.10 Pa/m.</li><li class="print-answer">The span halves to 500 m, so the gradient is −0.20 Pa/m.</li><li class="print-answer">That uses half of the full sample separation.</li><li class="print-answer">The two endpoint values are equal. The interior can still contain pressure structure that the stencil cannot resolve.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://www.eoas.ubc.ca/books/Practical_Meteorology/prmet102/Ch20-nwp-v102.pdf">Roland Stull · University of British Columbia · Practical Meteorology, chapter 20 · Numerical Weather Prediction</a></li><li><a href="https://www.eoas.ubc.ca/books/Practical_Meteorology/prmet102/Ch10-forces_winds-v102b.pdf">Roland Stull · University of British Columbia · Practical Meteorology, chapter 10 · Atmospheric Forces and Winds</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/explicit-cloud-diffusion/">How does an explicit diffusion step smooth a modeled cloud field?</a></li><li><a href="/atmospheric-science/parcel-buoyancy/">How do you calculate parcel buoyancy using virtual temperature?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>

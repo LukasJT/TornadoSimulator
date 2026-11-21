@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How do you check water-mass conservation in a cloud model? | Tornado Hub</title>
+<meta name="description" content="Check water conservation by comparing simulated final mass with initial mass plus gains minus losses.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="How do you check water-mass conservation in a cloud model?">
+<meta property="og:description" content="Check water conservation by comparing simulated final mass with initial mass plus gains minus losses.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/model-water-budget/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/model-water-budget/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How do you check water-mass conservation in a cloud model?","description":"Check water conservation by comparing simulated final mass with initial mass plus gains minus losses.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/model-water-budget/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>How do you check water-mass conservation in a cloud model?</h1><p class="experiment-byline">Tornado Hub · Lab · Storm modeling · upper undergraduate · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>Check water conservation by comparing simulated final mass with initial mass plus gains minus losses. State which forms of water and boundary fluxes are included.</p></section><p>Start with <a href="/atmospheric-science/shear-sweep-storm-persistence/">How does changing wind shear alter idealized storm organization at fixed buoyancy?</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Term</th><th scope="col">Water mass</th></tr></thead><tbody><tr><th scope="row">Initial</th><td>1000 kg</td></tr><tr><th scope="row">Gains</th><td>80 kg</td></tr><tr><th scope="row">Losses</th><td>30 kg</td></tr><tr><th scope="row">Expected final</th><td>1050 kg</td></tr><tr><th scope="row">Model final</th><td>1048 kg</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Set up the experiment</h2><p>Hold the volume and accounting window fixed. Start at 1,000 kg, add 80 kg and remove 30 kg. Predict the final mass if the budget closes. It should be 1,050 kg. An observed model total of 1,048 kg leaves −2 kg, or −0.19% of expected mass. Count exchanges consistently across the boundary and avoid double-counting transfers between phases.</p>
+
+<section class="practice"><h2>Practice questions</h2><ol><li>Find the residual if the model instead ends at 1,052 kg.</li><li>An additional 2 kg precipitation loss was omitted. Recalculate the expected final mass.</li><li>How can a falling hydrometeor transfer affect the total?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>It becomes +2 kg, about +0.19%.</p></details><details class="answer"><summary>Answer 2</summary><p>1,048 kg. Using the original model final mass, the revised residual is zero.</p></details><details class="answer"><summary>Answer 3</summary><p>A phase change within the domain leaves total water unchanged. Water leaving through the boundary is a loss.</p></details><ol><li class="print-answer">It becomes +2 kg, about +0.19%.</li><li class="print-answer">1,048 kg. Using the original model final mass, the revised residual is zero.</li><li class="print-answer">A phase change within the domain leaves total water unchanged. Water leaving through the boundary is a loss.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://www2.mmm.ucar.edu/people/bryan/cm1/cm1_equations.pdf">George Bryan, NSF NCAR · CM1 model equations and assumptions</a></li><li><a href="https://www.eoas.ubc.ca/books/Practical_Meteorology/prmet102/Ch04-watervapor-v102b.pdf">Roland Stull · University of British Columbia · Practical Meteorology, chapter 4 · Water Vapor</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/shear-sweep-storm-persistence/">How does changing wind shear alter idealized storm organization at fixed buoyancy?</a></li><li><a href="/atmospheric-science/parcel-buoyancy/">How do you calculate parcel buoyancy using virtual temperature?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>

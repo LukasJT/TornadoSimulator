@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CFL condition practice for one-dimensional storm advection | Tornado Hub</title>
+<meta name="description" content="For the explicit one-dimensional first-order upwind advection exercise, keep the Courant number ">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="CFL condition practice for one-dimensional storm advection">
+<meta property="og:description" content="For the explicit one-dimensional first-order upwind advection exercise, keep the Courant number ">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/courant-number-problems/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/courant-number-problems/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"CFL condition practice for one-dimensional storm advection","description":"For the explicit one-dimensional first-order upwind advection exercise, keep the Courant number ","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/courant-number-problems/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>CFL condition practice for one-dimensional storm advection</h1><p class="experiment-byline">Tornado Hub · Practice set · Applied math · introductory numerics · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>For the explicit one-dimensional first-order upwind advection exercise, keep the Courant number </p></section><p>Start with <a href="/atmospheric-science/upwind-moisture-advection/">How does an upwind scheme move a moisture pulse?</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Speed magnitude</th><th scope="col">Grid spacing</th><th scope="col">Largest step here</th></tr></thead><tbody><tr><th scope="row">25 m/s</th><td>500 m</td><td>20 s</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Worked example</h2><p>At speed 25 m/s and spacing 500 m, the largest step under that limit is 500/25 = 20 s. Compute using the speed magnitude. The neighboring cell comes from upstream, which changes with the sign of U. Other numerical schemes or model processes can impose different limits.</p>
+
+<section class="practice"><h2>Practice questions</h2><ol><li>Find the Courant number at 10 s.</li><li>Find it at 20 s.</li><li>With the same speed and 250 m spacing, find the largest step.</li><li>With 500 m spacing and a 30 s step, find the largest speed.</li><li>A student treats negative U as permission for any step. Correct that assumption.</li><li>Does passing this test guarantee accuracy?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>25×10/500 = 0.5.</p></details><details class="answer"><summary>Answer 2</summary><p>25×20/500 = 1.</p></details><details class="answer"><summary>Answer 3</summary><p>250/25 = 10 s.</p></details><details class="answer"><summary>Answer 4</summary><p>500/30 ≈ 16.67 m/s.</p></details><details class="answer"><summary>Answer 5</summary><p>Use its magnitude in the Courant number and change the upstream direction.</p></details><details class="answer"><summary>Answer 6</summary><p>No. It addresses a stability condition for the stated transport scheme. Resolution and other errors still matter.</p></details><ol><li class="print-answer">25×10/500 = 0.5.</li><li class="print-answer">25×20/500 = 1.</li><li class="print-answer">250/25 = 10 s.</li><li class="print-answer">500/30 ≈ 16.67 m/s.</li><li class="print-answer">Use its magnitude in the Courant number and change the upstream direction.</li><li class="print-answer">No. It addresses a stability condition for the stated transport scheme. Resolution and other errors still matter.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://www.eoas.ubc.ca/books/Practical_Meteorology/prmet102/Ch20-nwp-v102.pdf">Roland Stull · University of British Columbia · Practical Meteorology, chapter 20 · Numerical Weather Prediction</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/upwind-moisture-advection/">How does an upwind scheme move a moisture pulse?</a></li><li><a href="/atmospheric-science/parcel-buoyancy/">How do you calculate parcel buoyancy using virtual temperature?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>
