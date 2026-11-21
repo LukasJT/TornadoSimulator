@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brier score practice for probabilistic supercell forecasts | Tornado Hub</title>
+<meta name="description" content="Calculate the Brier score by averaging the squared difference between the forecast probability and the binary observation.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="Brier score practice for probabilistic supercell forecasts">
+<meta property="og:description" content="Calculate the Brier score by averaging the squared difference between the forecast probability and the binary observation.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/brier-score-problems/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/brier-score-problems/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Brier score practice for probabilistic supercell forecasts","description":"Calculate the Brier score by averaging the squared difference between the forecast probability and the binary observation.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/brier-score-problems/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>Brier score practice for probabilistic supercell forecasts</h1><p class="experiment-byline">Tornado Hub · Practice set · Applied math · probability and statistics · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>Calculate the Brier score by averaging the squared difference between the forecast probability and the binary observation. Smaller scores indicate smaller squared probability errors.</p></section><p>Start with <a href="/atmospheric-science/reliability-diagram-storms/">How do you read a reliability diagram for storm probabilities?</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Window</th><th scope="col">Forecast p</th><th scope="col">Observation o</th><th scope="col">Squared error</th></tr></thead><tbody><tr><th scope="row">1</th><td>0.80</td><td>1</td><td>0.04</td></tr><tr><th scope="row">2</th><td>0.40</td><td>0</td><td>0.16</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Worked example</h2><p>Use probability p between zero and one, and outcome o = 1 if the event occurred or 0 otherwise. For probabilities 0.8 and 0.4 paired with outcomes 1 and 0, the squared errors are 0.04 and 0.16. BS = (0.04+0.16)/2 = 0.10. Keep the event definition and eligible verification windows fixed when comparing two systems.</p>
+<details><summary>Hint for the exercises</summary><p>Write a binary observation next to each forecast probability and square each error separately.</p></details>
+<section class="practice"><h2>Practice questions</h2><ol><li>Find the squared error for the first window.</li><li>Compute the score for both windows.</li><li>Add a forecast of 0.90 for a third window that stays storm-free.</li><li>Compare the original forecast to a constant 0.5 forecast on the same two windows.</li><li>A spreadsheet squares 80−1 for the first window. What conversion is missing?</li><li>Why does a confident miss affect the score so strongly?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>(0.8−1)² = 0.04.</p></details><details class="answer"><summary>Answer 2</summary><p>(0.04+0.16)/2 = 0.10.</p></details><details class="answer"><summary>Answer 3</summary><p>The new term is 0.81. BS = (0.04+0.16+0.81)/3 ≈ 0.337.</p></details><details class="answer"><summary>Answer 4</summary><p>The constant forecast scores (0.25+0.25)/2 = 0.25. The original scores 0.10.</p></details><details class="answer"><summary>Answer 5</summary><p>Convert 80% to 0.8 before comparing with a binary outcome. The correct squared error is 0.04.</p></details><details class="answer"><summary>Answer 6</summary><p>A forecast near zero paired with outcome 1 produces a large absolute error. Squaring gives large errors extra weight relative to small errors.</p></details><ol><li class="print-answer">(0.8−1)² = 0.04.</li><li class="print-answer">(0.04+0.16)/2 = 0.10.</li><li class="print-answer">The new term is 0.81. BS = (0.04+0.16+0.81)/3 ≈ 0.337.</li><li class="print-answer">The constant forecast scores (0.25+0.25)/2 = 0.25. The original scores 0.10.</li><li class="print-answer">Convert 80% to 0.8 before comparing with a binary outcome. The correct squared error is 0.04.</li><li class="print-answer">A forecast near zero paired with outcome 1 produces a large absolute error. Squaring gives large errors extra weight relative to small errors.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://metplus.readthedocs.io/projects/met/en/v12.1.2/Users_Guide/appendixC.html">Developmental Testbed Center · MET 12.1.2 Appendix C, Verification Measures</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/reliability-diagram-storms/">How do you read a reliability diagram for storm probabilities?</a></li><li><a href="/atmospheric-science/brier-skill-problems/">How do you calculate Brier skill relative to climatology?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>

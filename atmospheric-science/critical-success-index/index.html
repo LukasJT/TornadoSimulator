@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How do you calculate the critical success index for rare storms? | Tornado Hub</title>
+<meta name="description" content="The critical success index measures how many forecast or observed storm events were matched hits.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="How do you calculate the critical success index for rare storms?">
+<meta property="og:description" content="The critical success index measures how many forecast or observed storm events were matched hits.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/critical-success-index/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/critical-success-index/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How do you calculate the critical success index for rare storms?","description":"The critical success index measures how many forecast or observed storm events were matched hits.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/critical-success-index/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>How do you calculate the critical success index for rare storms?</h1><p class="experiment-byline">Tornado Hub · Lesson · Applied math · probability and statistics · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>The critical success index measures how many forecast or observed storm events were matched hits. A long run of correctly forecast quiet periods leaves the score unchanged.</p></section><p>Start with <a href="/atmospheric-science/detection-false-alarm-problems/">Probability of detection vs. false alarm ratio: storm exercises</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Counts</th><th scope="col">Values</th></tr></thead><tbody><tr><th scope="row">Hits</th><td>6</td></tr><tr><th scope="row">Misses</th><td>2</td></tr><tr><th scope="row">False alarms</th><td>4</td></tr><tr><th scope="row">Correct negatives</th><td>Excluded from CSI</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Worked example</h2><p>Let H = hits, M = misses and FA = false alarms. Every case in which a storm was forecast or observed belongs to exactly one of these cells. Their union has H + M + FA cases, so CSI = H/(H+M+FA). Using synthetic counts H = 6, M = 2 and FA = 4 gives 6/12 = 0.50. If neither forecasts nor observations contain events, the denominator vanishes.</p>
+
+<section class="practice"><h2>Practice questions</h2><ol><li>Replace two of the misses with hits and keep false alarms fixed.</li><li>Add 100 quiet windows with correct negatives. How does CSI change?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>There are 8 hits and no misses. CSI = 8/(8+0+4) = 2/3.</p></details><details class="answer"><summary>Answer 2</summary><p>It stays at 0.50 because none of those windows join the event union.</p></details><ol><li class="print-answer">There are 8 hits and no misses. CSI = 8/(8+0+4) = 2/3.</li><li class="print-answer">It stays at 0.50 because none of those windows join the event union.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://metplus.readthedocs.io/projects/met/en/v12.1.2/Users_Guide/appendixC.html">Developmental Testbed Center · MET 12.1.2 Appendix C, Verification Measures</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/detection-false-alarm-problems/">Probability of detection vs. false alarm ratio: storm exercises</a></li><li><a href="/atmospheric-science/brier-score-problems/">Brier score practice for probabilistic supercell forecasts</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>

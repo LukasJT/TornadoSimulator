@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How do you read a reliability diagram for storm probabilities? | Tornado Hub</title>
+<meta name="description" content="A reliability diagram plots the average forecast probability on the horizontal axis and the observed frequency on the vertical axis.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="How do you read a reliability diagram for storm probabilities?">
+<meta property="og:description" content="A reliability diagram plots the average forecast probability on the horizontal axis and the observed frequency on the vertical axis.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/reliability-diagram-storms/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://www.tornadosimulator.net/assets/curriculum/forecast-reliability.png"><meta property="og:image:alt" content="Three forecast calibration points are shown against the perfect reliability line.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/reliability-diagram-storms/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How do you read a reliability diagram for storm probabilities?","description":"A reliability diagram plots the average forecast probability on the horizontal axis and the observed frequency on the vertical axis.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/reliability-diagram-storms/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"},"image":"https://www.tornadosimulator.net/assets/curriculum/forecast-reliability.png"}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>How do you read a reliability diagram for storm probabilities?</h1><p class="experiment-byline">Tornado Hub · Lesson · Applied math · probability and statistics · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>A reliability diagram plots the average forecast probability on the horizontal axis and the observed frequency on the vertical axis. A point above the diagonal indicates the event occurred more often than the forecast probability in that bin.</p></section><p>Start with <a href="/atmospheric-science/brier-score-problems/">Brier score practice for probabilistic supercell forecasts</a>.</p><figure class="guide-photo secondary-photo"><img src="/assets/curriculum/forecast-reliability.png" width="1000" height="600" alt="Three forecast calibration points are shown against the perfect reliability line." decoding="async" loading="lazy"><figcaption>The three bins contain 50, 20 and 4 forecasts, respectively.</figcaption></figure><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Probability group</th><th scope="col">Number of forecasts</th><th scope="col">Observed events</th><th scope="col">Plotted point</th></tr></thead><tbody><tr><th scope="row">0.10</th><td>50</td><td>5</td><td>(0.10, 0.10)</td></tr><tr><th scope="row">0.30</th><td>20</td><td>9</td><td>(0.30, 0.45)</td></tr><tr><th scope="row">0.70</th><td>4</td><td>2</td><td>(0.70, 0.50)</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Worked example</h2><p>Group forecasts into probability bins and compute the average prediction and observed event fraction inside each bin. Record bin counts because a point built from a few cases can move a lot when one case changes. In our synthetic 30% group, 9 of 20 windows verify, giving observed frequency 0.45 and calibration point (0.30, 0.45). The observed frequency exceeds the forecast mean by 0.15, or 15 percentage points.</p>
+
+<section class="practice"><h2>Practice questions</h2><ol><li>What is the observed frequency for the 70% bin? How should you interpret it?</li><li>One event classification changes from yes to no in each of the 10% and 70% bins. Which point moves more?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>2/4 = 0.50. The sample point lies below the diagonal, with only four cases supporting it.</p></details><details class="answer"><summary>Answer 2</summary><p>The 10% group moves by 1/50 = 0.02. The 70% group moves by 1/4 = 0.25. Keep sample sizes visible.</p></details><ol><li class="print-answer">2/4 = 0.50. The sample point lies below the diagonal, with only four cases supporting it.</li><li class="print-answer">The 10% group moves by 1/50 = 0.02. The 70% group moves by 1/4 = 0.25. Keep sample sizes visible.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://metplus.readthedocs.io/projects/met/en/v12.1.2/Users_Guide/appendixC.html">Developmental Testbed Center · MET 12.1.2 Appendix C, Verification Measures</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/brier-score-problems/">Brier score practice for probabilistic supercell forecasts</a></li><li><a href="/atmospheric-science/brier-skill-problems/">How do you calculate Brier skill relative to climatology?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>

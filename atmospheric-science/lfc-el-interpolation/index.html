@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How do you locate an LFC or equilibrium level between sounding levels? | Tornado Hub</title>
+<meta name="description" content="An LFC candidate lies where parcel buoyancy changes from negative to positive.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="How do you locate an LFC or equilibrium level between sounding levels?">
+<meta property="og:description" content="An LFC candidate lies where parcel buoyancy changes from negative to positive.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/lfc-el-interpolation/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://www.tornadosimulator.net/assets/curriculum/equilibrium-interpolation.png"><meta property="og:image:alt" content="Buoyancy crosses zero halfway between 8 and 9 kilometres.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/lfc-el-interpolation/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How do you locate an LFC or equilibrium level between sounding levels?","description":"An LFC candidate lies where parcel buoyancy changes from negative to positive.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/lfc-el-interpolation/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"},"image":"https://www.tornadosimulator.net/assets/curriculum/equilibrium-interpolation.png"}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>How do you locate an LFC or equilibrium level between sounding levels?</h1><p class="experiment-byline">Tornado Hub · Lesson · Atmospheric science · calculus · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>An LFC candidate lies where parcel buoyancy changes from negative to positive. An equilibrium level candidate lies where buoyancy changes from positive to negative. Between sampled heights, a simple exercise estimates the crossing by linear interpolation.</p></section><p>Start with <a href="/atmospheric-science/parcel-buoyancy/">How do you calculate parcel buoyancy using virtual temperature?</a>.</p><figure class="guide-photo secondary-photo"><img src="/assets/curriculum/equilibrium-interpolation.png" width="1000" height="600" alt="Buoyancy crosses zero halfway between 8 and 9 kilometres." decoding="async" loading="lazy"><figcaption>The positive-to-negative crossing occurs at 8.5 km.</figcaption></figure><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Height above ground (km)</th><th scope="col">Parcel buoyancy (m/s²)</th></tr></thead><tbody><tr><th scope="row">8.0</th><td>+0.10</td></tr><tr><th scope="row">8.5</th><td>0, interpolated</td></tr><tr><th scope="row">9.0</th><td>−0.10</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Worked example</h2><p>Let z₁ and z₂ be the bounding heights and B₁ and B₂ their buoyancies. The fraction from the lower point to the zero crossing is −B₁/(B₂−B₁). For +0.10 and −0.10 m/s² at 8 and 9 km, that fraction is 0.50. The crossing is at 8.5 km and has the sign transition associated with an equilibrium level. Actual soundings may have several crossings. State the parcel, height reference and selection rule when reporting a single level.</p>
+
+<section class="practice"><h2>Practice questions</h2><ol><li>Find the crossing for −0.02 and +0.06 m/s² at 1 and 2 km. Which transition is it?</li><li>Both samples are positive. Can the assumed linear segment contain a zero?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>The fraction is 0.02/0.08 = 0.25, giving 1.25 km. It is a negative-to-positive crossing and an LFC candidate.</p></details><details class="answer"><summary>Answer 2</summary><p>No. A linear segment between two strictly positive endpoints stays positive. A finer observed profile could reveal structure unresolved by these two samples.</p></details><ol><li class="print-answer">The fraction is 0.02/0.08 = 0.25, giving 1.25 km. It is a negative-to-positive crossing and an LFC candidate.</li><li class="print-answer">No. A linear segment between two strictly positive endpoints stays positive. A finer observed profile could reveal structure unresolved by these two samples.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://www.eoas.ubc.ca/books/Practical_Meteorology/prmet102/Ch05-stability-v102b.pdf">Roland Stull · University of British Columbia · Practical Meteorology, chapter 5 · Atmospheric Stability</a></li><li><a href="https://unidata.github.io/MetPy/latest/api/generated/metpy.calc.cape_cin.html">NSF Unidata · MetPy · Definition, assumptions and reference implementation of cape_cin</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/parcel-buoyancy/">How do you calculate parcel buoyancy using virtual temperature?</a></li><li><a href="/atmospheric-science/elevated-vs-surface-cape/">Why do surface-based and elevated CAPE disagree on the same sounding?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>

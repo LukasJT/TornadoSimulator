@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why do surface-based and elevated CAPE disagree on the same sounding? | Tornado Hub</title>
+<meta name="description" content="CAPE depends on which parcel you lift.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="Why do surface-based and elevated CAPE disagree on the same sounding?">
+<meta property="og:description" content="CAPE depends on which parcel you lift.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/elevated-vs-surface-cape/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/elevated-vs-surface-cape/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Why do surface-based and elevated CAPE disagree on the same sounding?","description":"CAPE depends on which parcel you lift.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/elevated-vs-surface-cape/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>Why do surface-based and elevated CAPE disagree on the same sounding?</h1><p class="experiment-byline">Tornado Hub · Lab · Atmospheric science · calculus · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>CAPE depends on which parcel you lift. A near-surface parcel can remain too cool to develop positive buoyancy while a parcel drawn above a shallow inversion finds a buoyant layer in the same environment.</p></section><p>Start with <a href="/atmospheric-science/cape-integration-problems/">CAPE integration practice with a three-level sounding</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Parcel source</th><th scope="col">Prescribed positive layer</th><th scope="col">CAPE (J/kg)</th></tr></thead><tbody><tr><th scope="row">Surface</th><td>None</td><td>0</td></tr><tr><th scope="row">Elevated above the inversion</th><td>1.0 to 2.5 km AGL at +0.10 m/s²</td><td>150</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Set up the experiment</h2><p>Use the same synthetic environmental sounding for both parcel choices. The example supplies idealized buoyancy profiles in height coordinates so you can isolate the integration. Use a single parcel at each source level with no averaging. Before calculating, predict which parcel has the larger positive integral. The surface profile has no positive area. The elevated parcel has +0.10 m/s² from 1.0 to 2.5 km AGL, giving 0.10 × 1,500 = 150 J/kg. These piecewise values approximate a profile and do not resolve its transitions.</p>
+
+<section class="practice"><h2>Practice questions</h2><ol><li>Keep the elevated layer thickness and halve its positive buoyancy. Recompute CAPE.</li><li>Keep buoyancy at +0.10 m/s² and raise the top from 2.5 to 3.0 km AGL. Find CAPE.</li><li>How would reporting just “CAPE = 150 J/kg” obscure this experiment?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>0.05 × 1,500 = 75 J/kg.</p></details><details class="answer"><summary>Answer 2</summary><p>The thickness is now 2,000 m, so CAPE is 200 J/kg.</p></details><details class="answer"><summary>Answer 3</summary><p>It hides that 150 J/kg is associated with the elevated parcel. A surface-based diagnostic gives zero in the same example.</p></details><ol><li class="print-answer">0.05 × 1,500 = 75 J/kg.</li><li class="print-answer">The thickness is now 2,000 m, so CAPE is 200 J/kg.</li><li class="print-answer">It hides that 150 J/kg is associated with the elevated parcel. A surface-based diagnostic gives zero in the same example.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://www.eoas.ubc.ca/books/Practical_Meteorology/prmet102/Ch05-stability-v102b.pdf">Roland Stull · University of British Columbia · Practical Meteorology, chapter 5 · Atmospheric Stability</a></li><li><a href="https://unidata.github.io/MetPy/latest/api/generated/metpy.calc.cape_cin.html">NSF Unidata · MetPy · Definition, assumptions and reference implementation of cape_cin</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/cape-integration-problems/">CAPE integration practice with a three-level sounding</a></li><li><a href="/atmospheric-science/cin-integration-problems/">How do you calculate convective inhibition from negative buoyancy?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>
