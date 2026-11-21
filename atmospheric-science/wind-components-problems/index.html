@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How do you convert meteorological wind direction into u and v? | Tornado Hub</title>
+<meta name="description" content="For wind speed S and meteorological direction θ, use u = −S sin θ and v = −S cos θ.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="How do you convert meteorological wind direction into u and v?">
+<meta property="og:description" content="For wind speed S and meteorological direction θ, use u = −S sin θ and v = −S cos θ.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/wind-components-problems/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://www.tornadosimulator.net/assets/curriculum/wind-direction-compass.png"><meta property="og:image:alt" content="A westerly wind points east. A wind from the northeast points southwest.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/wind-components-problems/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How do you convert meteorological wind direction into u and v?","description":"For wind speed S and meteorological direction θ, use u = −S sin θ and v = −S cos θ.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/wind-components-problems/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"},"image":"https://www.tornadosimulator.net/assets/curriculum/wind-direction-compass.png"}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>How do you convert meteorological wind direction into u and v?</h1><p class="experiment-byline">Tornado Hub · Practice set · Physical science · vectors · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>For wind speed S and meteorological direction θ, use u = −S sin θ and v = −S cos θ. Direction is measured clockwise from north and describes where the wind comes from. Positive u points east and positive v points north.</p></section><p>Start with <a href="/atmospheric-science/bulk-shear-vector-problems/">Bulk wind shear vector practice for a turning wind profile</a>.</p><figure class="guide-photo secondary-photo"><img src="/assets/curriculum/wind-direction-compass.png" width="1000" height="600" alt="A westerly wind points east. A wind from the northeast points southwest." decoding="async" loading="lazy"><figcaption>Direction-from and vector direction differ by 180°.</figcaption></figure><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Direction from</th><th scope="col">Speed</th><th scope="col">Component (u, v) in m/s</th></tr></thead><tbody><tr><th scope="row">270°</th><td>10 m/s</td><td>(+10, 0)</td></tr><tr><th scope="row">180°</th><td>10 m/s</td><td>(0, +10)</td></tr><tr><th scope="row">45°</th><td>10 m/s</td><td>(−7.07, −7.07)</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Worked example</h2><p>Draw a compass with north up and east to the right. For a 10 m/s wind from 270°, the arrow travels from west toward east. Since sin 270° = −1 and cos 270° = 0, u = +10 m/s and v = 0. For a southeast wind, both component signs change relative to a northwest wind.</p>
+<details><summary>Hint for the exercises</summary><p>Draw where the air comes from, then point the velocity arrow away from that direction.</p></details>
+<section class="practice"><h2>Practice questions</h2><ol><li>Find u and v for the 270° wind.</li><li>Find u and v for an 8 m/s northerly wind.</li><li>Find the components of a 10 m/s wind from 135°.</li><li>What meteorological direction corresponds to (6,8) m/s? Round to the nearest degree.</li><li>A calculator gives a nonzero northward component for an exactly westerly wind. What setting should you check?</li><li>Can you infer the direction from a vector with u = v = 0?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>u = −10(−1) = +10 m/s. v = 0.</p></details><details class="answer"><summary>Answer 2</summary><p>u = 0 and v = −8 m/s.</p></details><details class="answer"><summary>Answer 3</summary><p>u = −10 sin 135° ≈ −7.07 m/s. v = −10 cos 135° ≈ +7.07 m/s.</p></details><details class="answer"><summary>Answer 4</summary><p>The flow goes northeast with bearing arctan(6/8) ≈ 37°. Its source direction is about 217° and its speed is 10 m/s.</p></details><details class="answer"><summary>Answer 5</summary><p>Check the degree versus radian setting first. Small floating-point residuals close to zero are also possible.</p></details><details class="answer"><summary>Answer 6</summary><p>No. This is calm wind and the vector has no direction.</p></details><ol><li class="print-answer">u = −10(−1) = +10 m/s. v = 0.</li><li class="print-answer">u = 0 and v = −8 m/s.</li><li class="print-answer">u = −10 sin 135° ≈ −7.07 m/s. v = −10 cos 135° ≈ +7.07 m/s.</li><li class="print-answer">The flow goes northeast with bearing arctan(6/8) ≈ 37°. Its source direction is about 217° and its speed is 10 m/s.</li><li class="print-answer">Check the degree versus radian setting first. Small floating-point residuals close to zero are also possible.</li><li class="print-answer">No. This is calm wind and the vector has no direction.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://www.eoas.ubc.ca/books/Practical_Meteorology/prmet102/Ch01-atmos-v102b.pdf">Roland Stull · University of British Columbia · Practical Meteorology, chapter 1 · Atmospheric Basics</a></li><li><a href="https://unidata.github.io/MetPy/latest/api/generated/metpy.calc.wind_components.html">NSF Unidata · MetPy · Definition, assumptions and reference implementation of wind_components</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/bulk-shear-vector-problems/">Bulk wind shear vector practice for a turning wind profile</a></li><li><a href="/atmospheric-science/storm-relative-inflow-problems/">How do you calculate storm-relative inflow from ground-relative wind?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>

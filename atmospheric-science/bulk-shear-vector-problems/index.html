@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bulk wind shear vector practice for a turning wind profile | Tornado Hub</title>
+<meta name="description" content="Compute bulk wind shear by subtracting the bottom wind vector from the top wind vector.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="Bulk wind shear vector practice for a turning wind profile">
+<meta property="og:description" content="Compute bulk wind shear by subtracting the bottom wind vector from the top wind vector.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/bulk-shear-vector-problems/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/bulk-shear-vector-problems/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Bulk wind shear vector practice for a turning wind profile","description":"Compute bulk wind shear by subtracting the bottom wind vector from the top wind vector.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/bulk-shear-vector-problems/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>Bulk wind shear vector practice for a turning wind profile</h1><p class="experiment-byline">Tornado Hub · Practice set · Physical science · vectors · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>Compute bulk wind shear by subtracting the bottom wind vector from the top wind vector. Take the magnitude after subtracting the components.</p></section><p>Start with <a href="/atmospheric-science/wind-components-problems/">How do you convert meteorological wind direction into u and v?</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Layer position</th><th scope="col">East component (m/s)</th><th scope="col">North component (m/s)</th></tr></thead><tbody><tr><th scope="row">Bottom</th><td>4</td><td>2</td></tr><tr><th scope="row">Top</th><td>16</td><td>7</td></tr><tr><th scope="row">Shear</th><td>12</td><td>5</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Worked example</h2><p>For lower wind (4,2) and upper wind (16,7) m/s, the shear vector is (16−4,7−2) = (12,5) m/s. Its magnitude is √(12²+5²) = 13 m/s. State the vertical layer and use interpolated endpoint winds if needed. Interior turning matters to the hodograph and can differ between profiles with identical endpoints.</p>
+<details><summary>Hint for the exercises</summary><p>Subtract the east and north components separately before finding the magnitude.</p></details>
+<section class="practice"><h2>Practice questions</h2><ol><li>Find the east component of bulk shear in the worked sample.</li><li>Find the full shear magnitude in the worked sample.</li><li>Use lower (3,−4) and upper (−1,8) m/s. Find the shear vector and magnitude.</li><li>Wind turns from eastward 10 m/s at the bottom to northward 10 m/s at the top. Find the shear.</li><li>A classmate gets zero for the turning profile because both wind speeds are 10 m/s. What did they subtract?</li><li>Can an S-shaped hodograph have zero endpoint shear?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>16−4 = 12 m/s eastward.</p></details><details class="answer"><summary>Answer 2</summary><p>The vector is (12,5) m/s. Its magnitude is 13 m/s.</p></details><details class="answer"><summary>Answer 3</summary><p>(−4,12) m/s. Magnitude √160 ≈ 12.65 m/s.</p></details><details class="answer"><summary>Answer 4</summary><p>(0,10)−(10,0) = (−10,10) m/s, with magnitude about 14.14 m/s.</p></details><details class="answer"><summary>Answer 5</summary><p>They subtracted scalar speeds. Subtracting vectors retains the direction change and gives nonzero shear.</p></details><details class="answer"><summary>Answer 6</summary><p>Yes. It can return to its initial vector while changing considerably in the middle.</p></details><ol><li class="print-answer">16−4 = 12 m/s eastward.</li><li class="print-answer">The vector is (12,5) m/s. Its magnitude is 13 m/s.</li><li class="print-answer">(−4,12) m/s. Magnitude √160 ≈ 12.65 m/s.</li><li class="print-answer">(0,10)−(10,0) = (−10,10) m/s, with magnitude about 14.14 m/s.</li><li class="print-answer">They subtracted scalar speeds. Subtracting vectors retains the direction change and gives nonzero shear.</li><li class="print-answer">Yes. It can return to its initial vector while changing considerably in the middle.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://unidata.github.io/MetPy/latest/api/generated/metpy.calc.bulk_shear.html">NSF Unidata · MetPy · Definition, assumptions and reference implementation of bulk_shear</a></li><li><a href="https://www.eoas.ubc.ca/books/Practical_Meteorology/prmet102/Ch14-Tstorms-v102b.pdf">Roland Stull · University of British Columbia · Practical Meteorology, chapter 14 · Thunderstorm Fundamentals</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/wind-components-problems/">How do you convert meteorological wind direction into u and v?</a></li><li><a href="/atmospheric-science/bulk-shear-vs-shear-rate/">What is the difference between bulk shear and shear rate?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>
