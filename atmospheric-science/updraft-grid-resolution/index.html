@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How many grid cells resolve a simulated supercell updraft? | Tornado Hub</title>
+<meta name="description" content="Divide the physical width of an updraft by grid spacing to estimate how many nominal cells span it.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="How many grid cells resolve a simulated supercell updraft?">
+<meta property="og:description" content="Divide the physical width of an updraft by grid spacing to estimate how many nominal cells span it.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/updraft-grid-resolution/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/updraft-grid-resolution/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How many grid cells resolve a simulated supercell updraft?","description":"Divide the physical width of an updraft by grid spacing to estimate how many nominal cells span it.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/updraft-grid-resolution/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>How many grid cells resolve a simulated supercell updraft?</h1><p class="experiment-byline">Tornado Hub · Lab · Storm modeling · upper undergraduate · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>Divide the physical width of an updraft by grid spacing to estimate how many nominal cells span it. Use a refinement comparison to examine whether its structure is resolved.</p></section><p>Start with <a href="/atmospheric-science/supercell-grid-memory/">How much memory does a three-dimensional supercell grid require?</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Grid spacing</th><th scope="col">Updraft width</th><th scope="col">Nominal cells across</th></tr></thead><tbody><tr><th scope="row">1 km</th><td>3 km</td><td>3</td></tr><tr><th scope="row">250 m</th><td>3 km</td><td>12</td></tr><tr><th scope="row">125 m</th><td>3 km</td><td>24</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Set up the experiment</h2><p>Keep the updraft width fixed at 3 km. Predict how the number of cells changes when spacing is quartered. At 1 km spacing the width spans three nominal cells. At 250 m it spans twelve. Actual samples inside depend on grid alignment. To test resolution, refine again while retaining comparable physics, and compare width, peak w and track over the same period.</p>
+
+<section class="practice"><h2>Practice questions</h2><ol><li>How many nominal cells are across at 500 m spacing?</li><li>Does a count of twelve prove the updraft is resolved?</li><li>How should you compare simulated peak w across the runs?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>3,000/500 = 6.</p></details><details class="answer"><summary>Answer 2</summary><p>No. Compare the diagnosed structure and key outputs at finer spacings.</p></details><details class="answer"><summary>Answer 3</summary><p>Use the same time window, physical feature, height range and output definition.</p></details><ol><li class="print-answer">3,000/500 = 6.</li><li class="print-answer">No. Compare the diagnosed structure and key outputs at finer spacings.</li><li class="print-answer">Use the same time window, physical feature, height range and output definition.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://www2.mmm.ucar.edu/wrf/site/documentation/users_guide/idealized.html">NSF NCAR WRF development team · Idealized case initialization, including supercell configurations</a></li><li><a href="https://www.eoas.ubc.ca/books/Practical_Meteorology/prmet102/Ch20-nwp-v102.pdf">Roland Stull · University of British Columbia · Practical Meteorology, chapter 20 · Numerical Weather Prediction</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/supercell-grid-memory/">How much memory does a three-dimensional supercell grid require?</a></li><li><a href="/atmospheric-science/parcel-buoyancy/">How do you calculate parcel buoyancy using virtual temperature?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>

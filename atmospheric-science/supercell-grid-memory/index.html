@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How much memory does a three-dimensional supercell grid require? | Tornado Hub</title>
+<meta name="description" content="Raw grid memory equals the number of cells times the number of stored fields times bytes per field value.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="How much memory does a three-dimensional supercell grid require?">
+<meta property="og:description" content="Raw grid memory equals the number of cells times the number of stored fields times bytes per field value.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/supercell-grid-memory/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/supercell-grid-memory/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How much memory does a three-dimensional supercell grid require?","description":"Raw grid memory equals the number of cells times the number of stored fields times bytes per field value.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/supercell-grid-memory/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>How much memory does a three-dimensional supercell grid require?</h1><p class="experiment-byline">Tornado Hub · Lab · Storm modeling · upper undergraduate · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>Raw grid memory equals the number of cells times the number of stored fields times bytes per field value. Model overhead adds to that estimate.</p></section><p>Start with <a href="/atmospheric-science/storm-boundary-interaction/">How soon can a supercell interact with a simulation boundary?</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Grid</th><th scope="col">Fields</th><th scope="col">Raw memory</th></tr></thead><tbody><tr><th scope="row">100×100×50</th><td>10 float32</td><td>20,000,000 bytes</td></tr><tr><th scope="row">200×200×50</th><td>10 float32</td><td>80,000,000 bytes</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Set up the experiment</h2><p>Keep ten float32 fields with four bytes each on a 100×100×50 grid. Predict how memory will change if the horizontal grid dimensions both double. The original grid has 500,000 cells, giving 20,000,000 bytes or 19.1 MiB. This excludes halos, auxiliary arrays, extra time levels and output buffers.</p>
+
+<section class="practice"><h2>Practice questions</h2><ol><li>Keep the original grid and use float64 fields.</li><li>Double all three original dimensions.</li><li>Keep ten fields in two time levels simultaneously.</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>Eight bytes per value doubles the raw memory to 40,000,000 bytes.</p></details><details class="answer"><summary>Answer 2</summary><p>Eight times as many cells require 160,000,000 bytes for the same fields.</p></details><details class="answer"><summary>Answer 3</summary><p>The field data total 40,000,000 bytes before overhead.</p></details><ol><li class="print-answer">Eight bytes per value doubles the raw memory to 40,000,000 bytes.</li><li class="print-answer">Eight times as many cells require 160,000,000 bytes for the same fields.</li><li class="print-answer">The field data total 40,000,000 bytes before overhead.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://www2.mmm.ucar.edu/wrf/site/documentation/users_guide/idealized.html">NSF NCAR WRF development team · Idealized case initialization, including supercell configurations</a></li><li><a href="https://www.eoas.ubc.ca/books/Practical_Meteorology/prmet102/Ch20-nwp-v102.pdf">Roland Stull · University of British Columbia · Practical Meteorology, chapter 20 · Numerical Weather Prediction</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/storm-boundary-interaction/">How soon can a supercell interact with a simulation boundary?</a></li><li><a href="/atmospheric-science/parcel-buoyancy/">How do you calculate parcel buoyancy using virtual temperature?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>

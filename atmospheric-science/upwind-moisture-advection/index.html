@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How does an upwind scheme move a moisture pulse? | Tornado Hub</title>
+<meta name="description" content="An explicit upwind step replaces part of a cell’s old value with the upstream cell’s value.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="How does an upwind scheme move a moisture pulse?">
+<meta property="og:description" content="An explicit upwind step replaces part of a cell’s old value with the upstream cell’s value.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/upwind-moisture-advection/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/upwind-moisture-advection/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How does an upwind scheme move a moisture pulse?","description":"An explicit upwind step replaces part of a cell’s old value with the upstream cell’s value.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/upwind-moisture-advection/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>How does an upwind scheme move a moisture pulse?</h1><p class="experiment-byline">Tornado Hub · Lesson · Applied math · introductory numerics · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>An explicit upwind step replaces part of a cell’s old value with the upstream cell’s value. With positive flow, the upstream cell lies to its left.</p></section><p>Start with <a href="/atmospheric-science/pressure-gradient-stencil-problems/">Central-difference practice using a storm pressure field</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Local value</th><th scope="col">Upstream value</th><th scope="col">C</th><th scope="col">Updated value</th></tr></thead><tbody><tr><th scope="row">8 g/kg</th><td>12 g/kg</td><td>0.25</td><td>9 g/kg</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Worked example</h2><p>Set qnew = qhere − C(qhere−qupwind), where C = UΔt/Δx for positive U. If C = 0.25, qhere = 8 and qupwind = 12 g/kg, the new value is 8−0.25(8−12) = 9 g/kg. The update is a weighted average for 0≤C≤1 and can blur sharp gradients.</p>
+
+<section class="practice"><h2>Practice questions</h2><ol><li>What if C becomes 0.5?</li><li>If the upstream cell is 4 g/kg at C = 0.25, what happens?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>The update gives the mean of the two original values, 10 g/kg.</p></details><details class="answer"><summary>Answer 2</summary><p>The local value falls to 8−0.25(8−4) = 7 g/kg.</p></details><ol><li class="print-answer">The update gives the mean of the two original values, 10 g/kg.</li><li class="print-answer">The local value falls to 8−0.25(8−4) = 7 g/kg.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://www.eoas.ubc.ca/books/Practical_Meteorology/prmet102/Ch20-nwp-v102.pdf">Roland Stull · University of British Columbia · Practical Meteorology, chapter 20 · Numerical Weather Prediction</a></li><li><a href="https://www.clawpack.org/gallery/_static/apps/fvmbook/chap6/wavepacket/README.html">LeVeque and Clawpack contributors · Finite volume advection, wave packet example</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/pressure-gradient-stencil-problems/">Central-difference practice using a storm pressure field</a></li><li><a href="/atmospheric-science/parcel-buoyancy/">How do you calculate parcel buoyancy using virtual temperature?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Euler time stepping for a rising parcel with drag: worksheet | Tornado Hub</title>
+<meta name="description" content="Explicit Euler integration updates parcel speed by adding the current acceleration times the time step.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="Euler time stepping for a rising parcel with drag: worksheet">
+<meta property="og:description" content="Explicit Euler integration updates parcel speed by adding the current acceleration times the time step.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/euler-parcel-drag-problems/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/euler-parcel-drag-problems/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Euler time stepping for a rising parcel with drag: worksheet","description":"Explicit Euler integration updates parcel speed by adding the current acceleration times the time step.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/euler-parcel-drag-problems/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>Euler time stepping for a rising parcel with drag: worksheet</h1><p class="experiment-byline">Tornado Hub · Practice set · Applied math · introductory numerics · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>Explicit Euler integration updates parcel speed by adding the current acceleration times the time step. Evaluate acceleration at the start of the step.</p></section><p>Start with <a href="/atmospheric-science/midpoint-parcel-integration/">Does a midpoint time step improve a parcel trajectory?</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Start speed</th><th scope="col">Start acceleration</th><th scope="col">Step</th><th scope="col">Euler speed</th></tr></thead><tbody><tr><th scope="row">10 m/s</th><td>0.20 m/s²</td><td>5 s</td><td>11 m/s</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Worked example</h2><p>Take upward positive and a(w) = 0.4−0.02w in SI units. At w = 10 m/s, a = 0.20 m/s². Over five seconds Euler adds 1 m/s and gives 11 m/s. The midpoint or exact solution can differ because the acceleration changes as speed evolves.</p>
+
+<section class="practice"><h2>Practice questions</h2><ol><li>Evaluate a at 10 m/s.</li><li>Compute the new speed after the first five seconds.</li><li>Take a second five-second step.</li><li>Find the equilibrium speed for the prescribed acceleration law.</li><li>A student writes wnew = w+a with a five-second interval. Correct it.</li><li>What happens to the acceleration above equilibrium speed?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>0.4−0.02×10 = 0.20 m/s².</p></details><details class="answer"><summary>Answer 2</summary><p>10+0.20×5 = 11 m/s.</p></details><details class="answer"><summary>Answer 3</summary><p>At 11 m/s the acceleration is 0.18 m/s². The next speed is 11.9 m/s.</p></details><details class="answer"><summary>Answer 4</summary><p>Solve 0.4−0.02w = 0. The result is 20 m/s.</p></details><details class="answer"><summary>Answer 5</summary><p>Multiply acceleration by Δt so the increment has units of velocity.</p></details><details class="answer"><summary>Answer 6</summary><p>It becomes negative, slowing an upward-moving parcel in this example.</p></details><ol><li class="print-answer">0.4−0.02×10 = 0.20 m/s².</li><li class="print-answer">10+0.20×5 = 11 m/s.</li><li class="print-answer">At 11 m/s the acceleration is 0.18 m/s². The next speed is 11.9 m/s.</li><li class="print-answer">Solve 0.4−0.02w = 0. The result is 20 m/s.</li><li class="print-answer">Multiply acceleration by Δt so the increment has units of velocity.</li><li class="print-answer">It becomes negative, slowing an upward-moving parcel in this example.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://openstax.org/books/calculus-volume-2/pages/4-2-direction-fields-and-numerical-methods">OpenStax, Calculus Volume 2 · 4.2 Direction Fields and Numerical Methods</a></li><li><a href="https://www2.mmm.ucar.edu/people/bryan/cm1/cm1_equations.pdf">George Bryan, NSF NCAR · CM1 model equations and assumptions</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/midpoint-parcel-integration/">Does a midpoint time step improve a parcel trajectory?</a></li><li><a href="/atmospheric-science/parcel-buoyancy/">How do you calculate parcel buoyancy using virtual temperature?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>

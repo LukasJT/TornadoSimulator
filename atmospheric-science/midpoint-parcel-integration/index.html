@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Does a midpoint time step improve a parcel trajectory? | Tornado Hub</title>
+<meta name="description" content="A midpoint step samples acceleration halfway through the interval.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="Does a midpoint time step improve a parcel trajectory?">
+<meta property="og:description" content="A midpoint step samples acceleration halfway through the interval.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/midpoint-parcel-integration/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/midpoint-parcel-integration/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Does a midpoint time step improve a parcel trajectory?","description":"A midpoint step samples acceleration halfway through the interval.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/midpoint-parcel-integration/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>Does a midpoint time step improve a parcel trajectory?</h1><p class="experiment-byline">Tornado Hub · Lab · Applied math · introductory numerics · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>A midpoint step samples acceleration halfway through the interval. For acceleration linear in time, that single sample gives the exact average over the step.</p></section><p>Start with <a href="/atmospheric-science/wind-interpolation-problems/">Linear interpolation exercises for wind on model levels</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Method</th><th scope="col">Acceleration sample</th><th scope="col">Speed at 2 s</th></tr></thead><tbody><tr><th scope="row">Start-point Euler</th><td>0</td><td>0</td></tr><tr><th scope="row">Midpoint</th><td>0.2 m/s²</td><td>0.4 m/s</td></tr><tr><th scope="row">Exact integration</th><td>Mean 0.2 m/s²</td><td>0.4 m/s</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Set up the experiment</h2><p>Hold initial speed at zero and use a(t) = 0.2t m/s² with t in seconds. Predict whether start-point Euler underestimates the gain. With a two-second interval, Euler samples zero and gives zero. Midpoint samples a(1) = 0.2 m/s² and gives 0.4 m/s. The integral from zero to two seconds is also 0.4 m/s. For acceleration that depends on speed, a midpoint method must estimate the midpoint state.</p>
+
+<section class="practice"><h2>Practice questions</h2><ol><li>Use a four-second step. Find the midpoint estimate.</li><li>Use constant acceleration 0.2 m/s² for the original two seconds.</li><li>Is midpoint always exact?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>a(2) = 0.4 m/s², giving 1.6 m/s.</p></details><details class="answer"><summary>Answer 2</summary><p>Both methods add 0.4 m/s.</p></details><details class="answer"><summary>Answer 3</summary><p>No. It is exact here for linear-in-time prescribed acceleration. Curvature and state dependence can introduce error.</p></details><ol><li class="print-answer">a(2) = 0.4 m/s², giving 1.6 m/s.</li><li class="print-answer">Both methods add 0.4 m/s.</li><li class="print-answer">No. It is exact here for linear-in-time prescribed acceleration. Curvature and state dependence can introduce error.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://openstax.org/books/calculus-volume-2/pages/4-2-direction-fields-and-numerical-methods">OpenStax, Calculus Volume 2 · 4.2 Direction Fields and Numerical Methods</a></li><li><a href="https://openstax.org/books/calculus-volume-2/pages/3-6-numerical-integration">OpenStax, Calculus Volume 2 · 3.6 Numerical Integration</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/wind-interpolation-problems/">Linear interpolation exercises for wind on model levels</a></li><li><a href="/atmospheric-science/parcel-buoyancy/">How do you calculate parcel buoyancy using virtual temperature?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>

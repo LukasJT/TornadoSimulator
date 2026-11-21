@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why do saved output times change estimated storm peak intensity? | Tornado Hub</title>
+<meta name="description" content="Coarse output intervals can miss the strongest simulated updraft even when the model integrates every event internally.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="Why do saved output times change estimated storm peak intensity?">
+<meta property="og:description" content="Coarse output intervals can miss the strongest simulated updraft even when the model integrates every event internally.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/model-output-sampling/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/model-output-sampling/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Why do saved output times change estimated storm peak intensity?","description":"Coarse output intervals can miss the strongest simulated updraft even when the model integrates every event internally.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/model-output-sampling/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>Why do saved output times change estimated storm peak intensity?</h1><p class="experiment-byline">Tornado Hub · Lab · Storm modeling · upper undergraduate · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>Coarse output intervals can miss the strongest simulated updraft even when the model integrates every event internally. Diagnose the sampling effect by thinning output from one run.</p></section><p>Start with <a href="/atmospheric-science/updraft-centroid-tracking/">How do you track an updraft centroid in model output?</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Minute</th><th scope="col">0</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th></tr></thead><tbody><tr><th scope="row">Updraft speed (m/s)</th><td>10</td><td>18</td><td>31</td><td>19</td><td>12</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Set up the experiment</h2><p>Use the same five minute-by-minute values in both samples. Predict what happens when only minutes 0 and 4 are retained. The full series peaks at 31 m/s at minute 2. The sparse output reports a maximum of 12 m/s, 19 m/s below that sampled peak. Neither record establishes the maximum between its own output times.</p>
+
+<section class="practice"><h2>Practice questions</h2><ol><li>Save at minutes 0, 2 and 4. What maximum survives?</li><li>Save at minutes 1 and 3. What maximum survives?</li><li>Does this experiment change the numerical solution?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>31 m/s, because the sampled peak is retained.</p></details><details class="answer"><summary>Answer 2</summary><p>19 m/s, which misses the sampled peak by 12 m/s.</p></details><details class="answer"><summary>Answer 3</summary><p>No. Thinning the saved values changes the available diagnostics while leaving the original run unchanged.</p></details><ol><li class="print-answer">31 m/s, because the sampled peak is retained.</li><li class="print-answer">19 m/s, which misses the sampled peak by 12 m/s.</li><li class="print-answer">No. Thinning the saved values changes the available diagnostics while leaving the original run unchanged.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://www.eoas.ubc.ca/books/Practical_Meteorology/prmet102/Ch20-nwp-v102.pdf">Roland Stull · University of British Columbia · Practical Meteorology, chapter 20 · Numerical Weather Prediction</a></li><li><a href="https://www2.mmm.ucar.edu/wrf/site/documentation/users_guide/idealized.html">NSF NCAR WRF development team · Idealized case initialization, including supercell configurations</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/updraft-centroid-tracking/">How do you track an updraft centroid in model output?</a></li><li><a href="/atmospheric-science/parcel-buoyancy/">How do you calculate parcel buoyancy using virtual temperature?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>

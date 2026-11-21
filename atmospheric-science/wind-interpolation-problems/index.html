@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Linear interpolation exercises for wind on model levels | Tornado Hub</title>
+<meta name="description" content="Linear interpolation estimates wind between model levels by weighting the measured change according to the fraction of the height interval.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="Linear interpolation exercises for wind on model levels">
+<meta property="og:description" content="Linear interpolation estimates wind between model levels by weighting the measured change according to the fraction of the height interval.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/wind-interpolation-problems/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/wind-interpolation-problems/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Linear interpolation exercises for wind on model levels","description":"Linear interpolation estimates wind between model levels by weighting the measured change according to the fraction of the height interval.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/wind-interpolation-problems/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>Linear interpolation exercises for wind on model levels</h1><p class="experiment-byline">Tornado Hub · Practice set · Applied math · introductory numerics · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>Linear interpolation estimates wind between model levels by weighting the measured change according to the fraction of the height interval.</p></section><p>Start with <a href="/atmospheric-science/grid-convergence-order/">How do you measure numerical convergence in a storm simulation?</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Height</th><th scope="col">Eastward wind</th></tr></thead><tbody><tr><th scope="row">400 m</th><td>6 m/s</td></tr><tr><th scope="row">550 m</th><td>9 m/s interpolated</td></tr><tr><th scope="row">1000 m</th><td>18 m/s</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Worked example</h2><p>At 400 m let u = 6 m/s and at 1,000 m let u = 18 m/s. At 550 m the fractional distance from the lower level is 150/600 = 0.25. Then u = 6+0.25(18−6) = 9 m/s. For vectors repeat the interpolation separately for each component.</p>
+
+<section class="practice"><h2>Practice questions</h2><ol><li>Find the fractional weight at 550 m.</li><li>Compute u at 550 m.</li><li>Find u at 700 m.</li><li>If the upper wind is 2 m/s instead, find u at 550 m.</li><li>A student uses 550/1,000 as the weight. Correct the reference.</li><li>Is applying this equation at 1,200 m interpolation?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>(550−400)/(1,000−400) = 0.25.</p></details><details class="answer"><summary>Answer 2</summary><p>6+0.25×12 = 9 m/s.</p></details><details class="answer"><summary>Answer 3</summary><p>The weight is 0.5 and the resulting wind is 12 m/s.</p></details><details class="answer"><summary>Answer 4</summary><p>6+0.25(2−6) = 5 m/s.</p></details><details class="answer"><summary>Answer 5</summary><p>Measure from the lower level and divide by the height between the bounding levels.</p></details><details class="answer"><summary>Answer 6</summary><p>That is extrapolation. No upper observation brackets the target.</p></details><ol><li class="print-answer">(550−400)/(1,000−400) = 0.25.</li><li class="print-answer">6+0.25×12 = 9 m/s.</li><li class="print-answer">The weight is 0.5 and the resulting wind is 12 m/s.</li><li class="print-answer">6+0.25(2−6) = 5 m/s.</li><li class="print-answer">Measure from the lower level and divide by the height between the bounding levels.</li><li class="print-answer">That is extrapolation. No upper observation brackets the target.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://www.eoas.ubc.ca/books/Practical_Meteorology/prmet102/Ch20-nwp-v102.pdf">Roland Stull · University of British Columbia · Practical Meteorology, chapter 20 · Numerical Weather Prediction</a></li><li><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.RegularGridInterpolator.html">SciPy project · RegularGridInterpolator reference and linear interpolation</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/grid-convergence-order/">How do you measure numerical convergence in a storm simulation?</a></li><li><a href="/atmospheric-science/parcel-buoyancy/">How do you calculate parcel buoyancy using virtual temperature?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>

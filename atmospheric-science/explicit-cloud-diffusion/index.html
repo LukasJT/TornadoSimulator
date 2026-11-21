@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How does an explicit diffusion step smooth a modeled cloud field? | Tornado Hub</title>
+<meta name="description" content="An explicit diffusion step moves a modeled scalar toward the average of its neighboring values.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="How does an explicit diffusion step smooth a modeled cloud field?">
+<meta property="og:description" content="An explicit diffusion step moves a modeled scalar toward the average of its neighboring values.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/explicit-cloud-diffusion/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/explicit-cloud-diffusion/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How does an explicit diffusion step smooth a modeled cloud field?","description":"An explicit diffusion step moves a modeled scalar toward the average of its neighboring values.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/explicit-cloud-diffusion/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>How does an explicit diffusion step smooth a modeled cloud field?</h1><p class="experiment-byline">Tornado Hub · Lesson · Applied math · introductory numerics · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>An explicit diffusion step moves a modeled scalar toward the average of its neighboring values. The stencil approximates the second spatial derivative.</p></section><p>Start with <a href="/atmospheric-science/euler-parcel-drag-problems/">Euler time stepping for a rising parcel with drag: worksheet</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Left</th><th scope="col">Centre</th><th scope="col">Right</th><th scope="col">μ</th><th scope="col">New centre</th></tr></thead><tbody><tr><th scope="row">0</th><td>8</td><td>0</td><td>0.10</td><td>6.4</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Worked example</h2><p>Use qnew = qi + μ(qleft−2qi+qright), where μ = KΔt/Δx². For neighbors zero and centre eight, μ = 0.10 gives 8−1.6 = 6.4. This example uses a uniform one-dimensional grid and constant diffusivity. For the standard explicit stencil the stability limit is μ ≤ 0.5.</p>
+
+<section class="practice"><h2>Practice questions</h2><ol><li>If all three values equal eight, what is the update?</li><li>Halve grid spacing at fixed K and time step. What changes?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>The second difference is zero, so the value remains eight.</p></details><details class="answer"><summary>Answer 2</summary><p>μ quadruples to 0.40. This is still within the stated one-dimensional stability limit.</p></details><ol><li class="print-answer">The second difference is zero, so the value remains eight.</li><li class="print-answer">μ quadruples to 0.40. This is still within the stated one-dimensional stability limit.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://www.eoas.ubc.ca/books/Practical_Meteorology/prmet102/Ch20-nwp-v102.pdf">Roland Stull · University of British Columbia · Practical Meteorology, chapter 20 · Numerical Weather Prediction</a></li><li><a href="https://web.cecs.pdx.edu/~gerry/class/ME448/notes/1Dmodels/finiteDifferenceHeatEquation/">Portland State University, ME 448/548 · Finite-difference methods for the one-dimensional heat equation</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/euler-parcel-drag-problems/">Euler time stepping for a rising parcel with drag: worksheet</a></li><li><a href="/atmospheric-science/parcel-buoyancy/">How do you calculate parcel buoyancy using virtual temperature?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>
