@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How do you calculate radar-rain accumulation from uneven time steps? | Tornado Hub</title>
+<meta name="description" content="Convert each radar rainfall rate to accumulated depth by multiplying by the duration it represents.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="How do you calculate radar-rain accumulation from uneven time steps?">
+<meta property="og:description" content="Convert each radar rainfall rate to accumulated depth by multiplying by the duration it represents.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/rain-rate-integration-problems/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/rain-rate-integration-problems/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How do you calculate radar-rain accumulation from uneven time steps?","description":"Convert each radar rainfall rate to accumulated depth by multiplying by the duration it represents.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/rain-rate-integration-problems/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>How do you calculate radar-rain accumulation from uneven time steps?</h1><p class="experiment-byline">Tornado Hub · Practice set · Environmental science · algebra · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>Convert each radar rainfall rate to accumulated depth by multiplying by the duration it represents. Sum those depths across the event.</p></section><p>Start with <a href="/atmospheric-science/precipitable-water-integral/">How do you estimate precipitable water from a humidity profile?</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Interval</th><th scope="col">Rate</th><th scope="col">Duration</th><th scope="col">Accumulation</th></tr></thead><tbody><tr><th scope="row">First</th><td>20 mm/h</td><td>0.25 h</td><td>5 mm</td></tr><tr><th scope="row">Second</th><td>8 mm/h</td><td>0.50 h</td><td>4 mm</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Worked example</h2><p>Treat each supplied rate as the interval mean or assume it is constant through that interval. At 20 mm/h for 15 minutes the contribution is 5 mm. At 8 mm/h for 30 minutes it is 4 mm. The estimate totals 9 mm. Keep missing scans distinct from measured zero rainfall.</p>
+
+<section class="practice"><h2>Practice questions</h2><ol><li>Convert the first interval to depth.</li><li>Convert the second interval to depth.</li><li>Add a 10-minute interval at 12 mm/h.</li><li>Find the duration-weighted mean rate over the original 45 minutes.</li><li>A student averages the two rates and multiplies by 0.75 h. Explain the difference.</li><li>How should you treat a missing radar interval?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>20×0.25 = 5 mm.</p></details><details class="answer"><summary>Answer 2</summary><p>8×0.50 = 4 mm.</p></details><details class="answer"><summary>Answer 3</summary><p>The interval contributes 2 mm and the new total is 11 mm.</p></details><details class="answer"><summary>Answer 4</summary><p>9/0.75 = 12 mm/h.</p></details><details class="answer"><summary>Answer 5</summary><p>Their simple average gives equal weight to the two samples, but the lower-rate interval lasts twice as long.</p></details><details class="answer"><summary>Answer 6</summary><p>Flag it as missing or use an explicitly documented estimate. A missing scan is not evidence of zero rain.</p></details><ol><li class="print-answer">20×0.25 = 5 mm.</li><li class="print-answer">8×0.50 = 4 mm.</li><li class="print-answer">The interval contributes 2 mm and the new total is 11 mm.</li><li class="print-answer">9/0.75 = 12 mm/h.</li><li class="print-answer">Their simple average gives equal weight to the two samples, but the lower-rate interval lasts twice as long.</li><li class="print-answer">Flag it as missing or use an explicitly documented estimate. A missing scan is not evidence of zero rain.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://www.eoas.ubc.ca/books/Practical_Meteorology/prmet102/Ch07-precipitation-v102b.pdf">Roland Stull · University of British Columbia · Practical Meteorology, chapter 7 · Precipitation Processes</a></li><li><a href="https://openstax.org/books/calculus-volume-2/pages/3-6-numerical-integration">OpenStax, Calculus Volume 2 · 3.6 Numerical Integration</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/precipitable-water-integral/">How do you estimate precipitable water from a humidity profile?</a></li><li><a href="/atmospheric-science/parcel-buoyancy/">How do you calculate parcel buoyancy using virtual temperature?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>

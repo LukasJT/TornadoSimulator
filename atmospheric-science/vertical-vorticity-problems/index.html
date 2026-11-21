@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vertical vorticity from a wind grid: finite-difference exercises | Tornado Hub</title>
+<meta name="description" content="Estimate vertical vorticity on a wind grid by subtracting the northward derivative of eastward wind from the eastward derivative of northward wind.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="Vertical vorticity from a wind grid: finite-difference exercises">
+<meta property="og:description" content="Estimate vertical vorticity on a wind grid by subtracting the northward derivative of eastward wind from the eastward derivative of northward wind.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/vertical-vorticity-problems/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/vertical-vorticity-problems/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Vertical vorticity from a wind grid: finite-difference exercises","description":"Estimate vertical vorticity on a wind grid by subtracting the northward derivative of eastward wind from the eastward derivative of northward wind.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/vertical-vorticity-problems/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>Vertical vorticity from a wind grid: finite-difference exercises</h1><p class="experiment-byline">Tornado Hub · Practice set · Atmospheric science · vector calculus · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>Estimate vertical vorticity on a wind grid by subtracting the northward derivative of eastward wind from the eastward derivative of northward wind.</p></section><p>Start with <a href="/atmospheric-science/updraft-vorticity-tilting/">How does a tilted updraft turn horizontal vorticity upward?</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Derivative</th><th scope="col">Sample difference</th><th scope="col">Full separation</th><th scope="col">Gradient</th></tr></thead><tbody><tr><th scope="row">∂v/∂x</th><td>8 m/s</td><td>2000 m</td><td>+0.004 s⁻¹</td></tr><tr><th scope="row">∂u/∂y</th><td>−4 m/s</td><td>2000 m</td><td>−0.002 s⁻¹</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Worked example</h2><p>Use ζ = ∂v/∂x − ∂u/∂y with x east and y north. On a centered stencil, each derivative is the difference between opposing edge samples divided by their full separation. For ∂v/∂x = 0.004 and ∂u/∂y = −0.002 s⁻¹, the result is +0.006 s⁻¹. Positive is counterclockwise viewed from above.</p>
+
+<section class="practice"><h2>Practice questions</h2><ol><li>Compute ζ using both gradients in the table.</li><li>Find ζ if both derivatives are +0.004 s⁻¹.</li><li>Use v east = 4 and v west = −2 m/s, u north = 3 and u south = 1 m/s with 1 km full separations.</li><li>Use ∂v/∂x = −0.003 and ∂u/∂y = 0.002 s⁻¹. Identify the rotation sense.</li><li>A student divides the table differences by 1 km. What went wrong?</li><li>Can zero vertical vorticity rule out horizontal vorticity?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>0.004−(−0.002) = 0.006 s⁻¹.</p></details><details class="answer"><summary>Answer 2</summary><p>They cancel, giving zero.</p></details><details class="answer"><summary>Answer 3</summary><p>The derivatives are 0.006 and 0.002 s⁻¹. Their difference is 0.004 s⁻¹.</p></details><details class="answer"><summary>Answer 4</summary><p>−0.005 s⁻¹, clockwise when viewed from above.</p></details><details class="answer"><summary>Answer 5</summary><p>The neighbors are each 1 km from the target in opposite directions. The difference spans 2 km.</p></details><details class="answer"><summary>Answer 6</summary><p>No. Vertical gradients of horizontal flow can produce horizontal vorticity even where the horizontal derivatives cancel.</p></details><ol><li class="print-answer">0.004−(−0.002) = 0.006 s⁻¹.</li><li class="print-answer">They cancel, giving zero.</li><li class="print-answer">The derivatives are 0.006 and 0.002 s⁻¹. Their difference is 0.004 s⁻¹.</li><li class="print-answer">−0.005 s⁻¹, clockwise when viewed from above.</li><li class="print-answer">The neighbors are each 1 km from the target in opposite directions. The difference spans 2 km.</li><li class="print-answer">No. Vertical gradients of horizontal flow can produce horizontal vorticity even where the horizontal derivatives cancel.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://ocw.mit.edu/courses/12-800-fluid-dynamics-of-the-atmosphere-and-ocean-fall-2004/pages/lecture-notes/">MIT OpenCourseWare · Fluid Dynamics of the Atmosphere and Ocean, lecture notes</a></li><li><a href="https://www.eoas.ubc.ca/books/Practical_Meteorology/prmet102/Ch10-forces_winds-v102b.pdf">Roland Stull · University of British Columbia · Practical Meteorology, chapter 10 · Atmospheric Forces and Winds</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/updraft-vorticity-tilting/">How does a tilted updraft turn horizontal vorticity upward?</a></li><li><a href="/atmospheric-science/parcel-buoyancy/">How do you calculate parcel buoyancy using virtual temperature?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>

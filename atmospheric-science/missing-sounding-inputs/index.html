@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How do you reproduce a simulator result from a sounding with missing inputs? | Tornado Hub</title>
+<meta name="description" content="Reproducing a fixed-layer STP requires all four inputs and their layer definitions.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="How do you reproduce a simulator result from a sounding with missing inputs?">
+<meta property="og:description" content="Reproducing a fixed-layer STP requires all four inputs and their layer definitions.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/missing-sounding-inputs/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/missing-sounding-inputs/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How do you reproduce a simulator result from a sounding with missing inputs?","description":"Reproducing a fixed-layer STP requires all four inputs and their layer definitions.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/missing-sounding-inputs/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>How do you reproduce a simulator result from a sounding with missing inputs?</h1><p class="experiment-byline">Tornado Hub · Lab · Storm modeling · algebra and sensitivity · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>Reproducing a fixed-layer STP requires all four inputs and their layer definitions. With surface-based CAPE, cloud base and 0–6 km shear supplied, the remaining input is 0–1 km storm-relative helicity.</p></section><p>Start with <a href="/atmospheric-science/latent-heat-condensation/">How much latent heat is released as water condenses inside an updraft?</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Input</th><th scope="col">Required detail</th><th scope="col">Status in example</th></tr></thead><tbody><tr><th scope="row">Surface CAPE</th><td>J/kg</td><td>Supplied</td></tr><tr><th scope="row">Deep-layer shear</th><td>0–6 km and correct units</td><td>Supplied</td></tr><tr><th scope="row">LCL</th><td>Metres above ground</td><td>Supplied</td></tr><tr><th scope="row">SRH</th><td>0–1 km and storm motion</td><td>Missing</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Set up the experiment</h2><p>Start with the same supplied sounding summary for all runs. Predict which values can be reconstructed with no additional observations. CAPE, shear and LCL are available by assumption. For SRH, obtain the vertical wind vectors through the first kilometre above ground and choose or estimate storm motion. Integrate the storm-relative hodograph with consistent sign and units. Until then report the index as unavailable. Filling the field with zero would represent an explicit physical input and force the product to zero.</p>
+
+<section class="practice"><h2>Practice questions</h2><ol><li>Can a single surface wind determine SRH?</li><li>What must you record if storm motion is estimated?</li><li>If the cloud base is 1,500 m MSL at a station 500 m MSL, what LCL enters the formula?</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>No. The integral depends on the wind profile and its variation across the layer.</p></details><details class="answer"><summary>Answer 2</summary><p>Record the method, vector and units, along with the winds used for integration.</p></details><details class="answer"><summary>Answer 3</summary><p>Use 1,000 m AGL.</p></details><ol><li class="print-answer">No. The integral depends on the wind profile and its variation across the layer.</li><li class="print-answer">Record the method, vector and units, along with the winds used for integration.</li><li class="print-answer">Use 1,000 m AGL.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://www.tornadosimulator.net/supercell-simulator/">TornadoSim · Live supercell simulator, input ranges and published equations</a></li><li><a href="https://unidata.github.io/MetPy/latest/api/generated/metpy.calc.storm_relative_helicity.html">NSF Unidata · MetPy · Definition, assumptions and reference implementation of storm_relative_helicity</a></li><li><a href="https://unidata.github.io/MetPy/latest/api/generated/metpy.calc.bulk_shear.html">NSF Unidata · MetPy · Definition, assumptions and reference implementation of bulk_shear</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/latent-heat-condensation/">How much latent heat is released as water condenses inside an updraft?</a></li><li><a href="/atmospheric-science/cape-updraft-sensitivity/">How sensitive is ideal updraft speed to a small CAPE error?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>
