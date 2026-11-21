@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mean bias, MAE and RMSE practice with simulated updraft speeds | Tornado Hub</title>
+<meta name="description" content="Mean bias tells you the signed average error.">
+<meta name="robots" content="max-image-preview:large">
+<meta property="og:title" content="Mean bias, MAE and RMSE practice with simulated updraft speeds">
+<meta property="og:description" content="Mean bias tells you the signed average error.">
+<meta property="og:url" content="https://www.tornadosimulator.net/atmospheric-science/updraft-error-metrics-problems/">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://www.tornadosimulator.net/atmospheric-science/updraft-error-metrics-problems/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/site-shell.css?v=1">
+<link rel="stylesheet" href="/assets/ads.css?v=20261120b">
+<link rel="stylesheet" href="/assets/storm-experiments.css?v=supercells">
+<link rel="stylesheet" href="/assets/weather-curriculum.css">
+<script src="/assets/site-shell.js?v=20261120b" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Mean bias, MAE and RMSE practice with simulated updraft speeds","description":"Mean bias tells you the signed average error.","mainEntityOfPage":"https://www.tornadosimulator.net/atmospheric-science/updraft-error-metrics-problems/","datePublished":"2026-11-21","author":{"@type":"Organization","name":"Tornado Hub"},"publisher":{"@type":"Organization","name":"Tornado Hub"}}</script>
+</head>
+<body>
+<a class="th-skip" href="#main-content">Skip to content</a><nav class="th-nav" aria-label="Menu"><div class="th-nav-inner"><a href="/" class="th-brand"><svg viewBox="0 0 32 36" fill="none" aria-hidden="true"><path d="M3 5h26M6 11h22M10 17h15M13 23h9M16 29h4M18 34h2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>Tornado Hub</a><button class="th-menu" type="button" aria-expanded="false" aria-controls="th-primary-links">Menu</button><div class="th-links" id="th-primary-links"><a href="/articles/">Guides</a><a href="/tornado-forecast/">Forecast</a><a href="/games/">Games</a><a href="/safety/">Safety</a><a href="/search/">Search</a><a href="/simulator/" class="th-launch">Simulator ↗</a></div></div></nav>
+<noscript><style>.th-links{display:flex!important}.th-menu{display:none!important}</style></noscript>
+<main id="main-content"><article class="article storm-experiment illustrated-guide weather-curriculum">
+<header><h1>Mean bias, MAE and RMSE practice with simulated updraft speeds</h1><p class="experiment-byline">Tornado Hub · Practice set · Applied math · probability and statistics · <time datetime="2026-11-21">November 21, 2026</time></p></header>
+<section aria-label="Quick answer"><p>Mean bias tells you the signed average error. MAE averages error magnitudes. RMSE is the square root of the mean squared error and gives larger misses more influence.</p></section><p>Start with <a href="/atmospheric-science/storm-contingency-table-problems/">How do you build a contingency table for a supercell forecast?</a>.</p><figure class="guide-photo"><table><caption>Worked values</caption><thead><tr><th scope="col">Error (m/s)</th><th scope="col">Magnitude (m/s)</th><th scope="col">Square (m²/s²)</th></tr></thead><tbody><tr><th scope="row">−2</th><td>2</td><td>4</td></tr><tr><th scope="row">+2</th><td>2</td><td>4</td></tr><tr><th scope="row">+6</th><td>6</td><td>36</td></tr></tbody></table></figure><aside class="th-ad-slot" data-th-ad="primary" data-th-ad-consent="required" aria-label="Advertisement"><span class="th-ad-label">Advertisement</span><div class="th-ad-creative"></div></aside>
+<h2>Worked example</h2><p>Take error e as simulated minus observed updraft speed, with paired values for the same space and time. For −2, +2 and +6 m/s, bias is (+6)/3 = +2.00 m/s. MAE is (2+2+6)/3 ≈ 3.33 m/s. RMSE is √((4+4+36)/3) ≈ 3.83 m/s. These synthetic errors illustrate metric behavior without claiming actual simulated or observed storm speeds.</p>
+<details><summary>Hint for the exercises</summary><p>Make three columns for signed errors, absolute errors and squared errors.</p></details>
+<section class="practice"><h2>Practice questions</h2><ol><li>Calculate mean bias for the table.</li><li>Calculate MAE for the table.</li><li>Calculate all three metrics after adding a fourth error of zero.</li><li>Replace the +6 m/s error with −6 m/s. Find the new bias and RMSE.</li><li>A student reports 14.67 m/s as RMSE for the original sample. Locate the missing step.</li><li>Can a system have zero bias and nonzero MAE? Give an example.</li></ol><h2>Worked answers</h2><details class="answer"><summary>Answer 1</summary><p>(−2+2+6)/3 = +2.00 m/s.</p></details><details class="answer"><summary>Answer 2</summary><p>(2+2+6)/3 ≈ 3.33 m/s.</p></details><details class="answer"><summary>Answer 3</summary><p>Bias is 6/4 = 1.50 m/s. MAE is 10/4 = 2.50 m/s. RMSE is √(44/4) ≈ 3.32 m/s.</p></details><details class="answer"><summary>Answer 4</summary><p>Bias is −2.00 m/s. RMSE remains about 3.83 m/s because the squared errors stay the same.</p></details><details class="answer"><summary>Answer 5</summary><p>44/3 ≈ 14.67 m²/s² is mean squared error. Taking the square root restores m/s and gives about 3.83.</p></details><details class="answer"><summary>Answer 6</summary><p>Yes. Errors +2 and −2 m/s average to zero and have MAE of 2 m/s.</p></details><ol><li class="print-answer">(−2+2+6)/3 = +2.00 m/s.</li><li class="print-answer">(2+2+6)/3 ≈ 3.33 m/s.</li><li class="print-answer">Bias is 6/4 = 1.50 m/s. MAE is 10/4 = 2.50 m/s. RMSE is √(44/4) ≈ 3.32 m/s.</li><li class="print-answer">Bias is −2.00 m/s. RMSE remains about 3.83 m/s because the squared errors stay the same.</li><li class="print-answer">44/3 ≈ 14.67 m²/s² is mean squared error. Taking the square root restores m/s and gives about 3.83.</li><li class="print-answer">Yes. Errors +2 and −2 m/s average to zero and have MAE of 2 m/s.</li></ol></section>
+<section class="article-sources"><h2>Sources</h2><ul><li><a href="https://metplus.readthedocs.io/projects/met/en/v12.1.2/Users_Guide/appendixC.html">Developmental Testbed Center · MET 12.1.2 Appendix C, Verification Measures</a></li></ul></section>
+<section class="related"><h2>Continue reading</h2><ul><li><a href="/atmospheric-science/">Atmospheric science curriculum</a></li><li><a href="/atmospheric-science/storm-contingency-table-problems/">How do you build a contingency table for a supercell forecast?</a></li><li><a href="/atmospheric-science/storm-fractions-skill-score/">How does the fractions skill score credit a near-miss storm location?</a></li></ul></section>
+</article></main>
+<script src="/assets/article-tracker.js" defer></script>
+<script src="/assets/ads-config.js?v=20261120b" defer></script><script src="/assets/ads.js?v=20261120b" defer></script>
+<script type="module" src="/assets/article-tool-events.js"></script>
+
+</body>
+</html>
