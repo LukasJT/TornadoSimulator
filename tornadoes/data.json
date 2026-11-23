@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T14:03:22Z",
+  "generated_at": "2026-11-23T17:25:07Z",
   "recent": [
     {
       "date": "2026-11-15T00:33:00+00:00",
@@ -240,26 +240,6 @@
       "lat": "36.6",
       "lon": "-108.74",
       "notes": "Several pics and video of a tornado near Table Mesa in open land on social media. No damage reported. The period of the Tornado report was 8 minutes. (ABQ)"
-    },
-    {
-      "date": "2026-10-25T01:00:00+00:00",
-      "ef": "UNK",
-      "location": "3 E Agua Fria",
-      "county": "Santa Fe",
-      "state": "NM",
-      "lat": "35.63",
-      "lon": "-105.97",
-      "notes": "A tornado developed in the Via Caballero neighborhood in the south central portion of Santa Fe just north of I-25. The tornado traveled northward for approximately 1.4 (ABQ)"
-    },
-    {
-      "date": "2026-10-24T23:15:00+00:00",
-      "ef": "UNK",
-      "location": "3 NE Alto",
-      "county": "Lincoln",
-      "state": "NM",
-      "lat": "33.42",
-      "lon": "-105.64",
-      "notes": "Minor damage to a house... trees down... garage door blown in... and shed damaged. (ABQ)"
     }
   ],
   "ef5": [
